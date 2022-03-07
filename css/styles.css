@@ -1,4 +1,4 @@
-body { margin : 0 auto; margin-bottom : 50px; width : 70%;}
+body { margin : 0 15%; margin-bottom : 50px; zoom:1; }
 body p, body li, td, th, address { font-family : Arial, Helvetica, sans-serif; line-height : 150%;}
 h1,h2,h3 {font-family : Georgia, serif; font-weight : normal;}
 h1 { color : #55aaaa; font-size : 40px; max-width : 350px;}
@@ -22,3 +22,55 @@ tr td, tr th {
 td:nth-child(1) { white-space: nowrap;}
 td:nth-child(2) {font-weight : bold;}
 td:nth-child(4) {font-style : italic;}
+
+.phonetip { display : none; }
+
+@media only screen and (max-width : 767px) and (orientation : portrait) {
+    body { margin : 0 30px; }
+
+    .phonetip { display : block; padding : 15px; background : #ececff; border-radius : 10px; margin-left : -15px; margin-right : -15px; }
+	
+	/* Force table to not be like tables anymore */
+	#giglist table, 
+	#giglist thead, 
+	#giglist tbody, 
+	#giglist th, 
+	#giglist td, 
+	#giglist tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#giglist thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#giglist tr { 
+        margin-bottom : 10px;
+     }
+ 
+	#giglist td { 
+		/* Behave  like a "row" */
+        padding-left :0;
+		border: none;
+		position: relative;
+		white-space: normal;
+		text-align:left;
+	}
+
+    #giglist td:first-child {
+        color : #aaa;
+    }
+
+    #giglist td:last-child {
+        border-bottom : solid 1px #aaa;
+        padding-bottom : 14px;
+    }
+
+    #giglist td:last-child:empty {
+        padding-bottom : 8px;
+    }
+
+}
