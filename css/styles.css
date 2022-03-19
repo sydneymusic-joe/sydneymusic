@@ -21,6 +21,7 @@ tr td, tr th {
 
 td:nth-child(1) { white-space: nowrap;}
 td:nth-child(2) {font-weight : bold;}
+td:nth-child(3) {min-width: 180px;}
 td:nth-child(4) {font-style : italic;}
 
 .phonetip { display : none; }
