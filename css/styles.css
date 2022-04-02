@@ -20,7 +20,7 @@ tr td, tr th {
 }
 
 td:nth-child(1) { white-space: nowrap;}
-td:nth-child(2) {font-weight : bold;}
+td:nth-child(2) {font-weight : bold; width : 30%; }
 td:nth-child(3) {min-width: 180px;}
 td:nth-child(4) {font-style : italic;}
 
@@ -64,6 +64,7 @@ td:nth-child(4) {font-style : italic;}
     #giglist td:first-child {
         color : #aaa;
     }
+    #giglist td:nth-child(2) {font-weight : bold; width : 100%; }
 
     #giglist td:last-child {
         border-bottom : solid 1px #aaa;
