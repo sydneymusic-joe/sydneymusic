@@ -11,9 +11,13 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@contentful/rich-text-html-renderer": "^15.12.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
+    "graphql": "^16.4.0",
+    "graphql-request": "^4.2.0",
     "postcss": "^8.4.13",
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
