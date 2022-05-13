@@ -2,6 +2,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import API from "$lib/contentful/" 
 
 export async function get({ params }) {
+
   let data = false
   try {
     data = await API(`query {
@@ -20,7 +21,7 @@ export async function get({ params }) {
       }
     }`)
   } catch (e) {
-    console.log(e);
+    console.log(e)
   }
 
   if (data) {
