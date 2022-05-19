@@ -11,16 +11,16 @@
       <Logo />
     </a>
 
-    <div class="w-full flex justify-between items-center">
+    <div class="w-full flex justify-between">
       <a href="/" class="hidden lg:block shrink-0">
         <Logo />
       </a>
       
-      <div class="flex items-center font-semibold w-full">
+      <div class="flex items-end font-semibold w-full">
         {#each navigation as item}
 				<a
 					href={item.href}
-					class="notch-right font-semibold uppercase block border-b-2 border-black hover:border-ruby w-full pr-3 text-right text-lg lg:text-xl"
+					class="notch-right hover:border-ruby text-right text-lg lg:text-xl py-1"
           >
 					{item.title}
 				</a>

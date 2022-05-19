@@ -13,7 +13,11 @@ module.exports = {
         graphite: "#6d7278",
       },
       aspectRatio : {
-        '3/1': "3/1"
+        '3/1': "3/1",
+        "banner": "7/1"
+      },
+      gridTemplateColumns: {
+        "sidebar-right": "1fr 220px",
       }
     },
   },

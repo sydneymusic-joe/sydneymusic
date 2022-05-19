@@ -111,18 +111,19 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.notch-right {
+
+.notch-right,
+.notch-left {
+  @apply font-semibold uppercase leading-tight block border-b-2 border-black w-full px-3;
   position: relative;
  }
+
 .notch-right::after {
   content: "";
   border-color: inherit;
   @apply absolute right-0 bottom-0 h-3 border-r-2;
 }
 
-.notch-left {
-  position: relative;
- }
 .notch-left::after {
   content: "";
   border-color: inherit;

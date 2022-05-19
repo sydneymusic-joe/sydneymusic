@@ -3,7 +3,8 @@
 	import Logo from './logo.svelte';
 </script>
 
-<footer class="max-w-5xl px-5 mx-auto mt-5 lg:mt-20 mb-10 space-y-5">
+<footer class="max-w-5xl px-5 mx-auto mt-5 lg:mt-20 mb-10">
+  
 	<div class="bg-gray-500 px-10 py-10 text-white">
 		<p>
 			This website was created on the unceded lands on the Gadigal people of the Eora nation. We
@@ -24,7 +25,7 @@
 					{#each navigation as item}
 						<a
 							href={item.href}
-							class="w-40 notch-right font-semibold uppercase block border-b-2 border-white hover:border-ruby w-full pr-3 text-right text-lg"
+							class="w-40 notch-right hover:border-white text-right text-lg"
 						>
 							{item.title}
 						</a>
@@ -35,7 +36,7 @@
 					{#each navigation as item}
 						<a
 							href={item.href}
-							class="w-40 notch-right font-semibold uppercase block border-b-2 border-white hover:border-ruby w-full pr-3 text-right text-lg"
+							class="w-40 notch-right hover:border-white text-right text-lg"
 						>
 							{item.title}
 						</a>

@@ -75,6 +75,13 @@
     esbuild "^0.14.21"
     tiny-glob "^0.2.9"
 
+"@sveltejs/adapter-static@next":
+  version "1.0.0-next.31"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.31.tgz#9ff34d78afd8906f371e120c4a4d446077093748"
+  integrity sha512-d9RNA/de5ljb+gN8mKA3YfmfJoTbYFdH96NYDD8u4Lu9O/ZnseUxOAcAmD4/LKbLXOY/oYhRpt029xT2owyI3Q==
+  dependencies:
+    tiny-glob "^0.2.9"
+
 "@sveltejs/adapter-vercel@1.0.0-next.50":
   version "1.0.0-next.50"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-vercel/-/adapter-vercel-1.0.0-next.50.tgz#840e05fac4515e3fcbf8375ec3e6d32581206bd1"
@@ -520,6 +527,13 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+ical-generator@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/ical-generator/-/ical-generator-3.4.3.tgz#799edd40fe967eeb4b9de5a862efc97c648660da"
+  integrity sha512-9NkhRZ1cnfgIeXfv9iPPXIqBLYlKBUq8iteSDQxf1qEzhrmWgwb4jitTDGKOLvCoHB/pPmmtBTVHQw1WgCK3dg==
+  dependencies:
+    uuid-random "^1.3.2"
+
 is-binary-path@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-2.1.0.tgz#ea1f7f3b80f064236e83470f86c09c254fb45b09"
@@ -862,6 +876,11 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+uuid-random@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/uuid-random/-/uuid-random-1.3.2.tgz#96715edbaef4e84b1dcf5024b00d16f30220e2d0"
+  integrity sha512-UOzej0Le/UgkbWEO8flm+0y+G+ljUon1QWTEZOq1rnMAsxo2+SckbiZdKzAHHlVh6gJqI1TjC/xwgR50MuCrBQ==
 
 vite@^2.9.0:
   version "2.9.8"
