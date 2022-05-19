@@ -75,6 +75,15 @@
     esbuild "^0.14.21"
     tiny-glob "^0.2.9"
 
+"@sveltejs/adapter-netlify@^1.0.0-next.58":
+  version "1.0.0-next.58"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-netlify/-/adapter-netlify-1.0.0-next.58.tgz#0ac415615cef6e8bf7b5bde91ebc2863a629f3c4"
+  integrity sha512-ZkL9mop/oTLfSj3tPCnTjQw7cKfoYLiptDzTypv7l+HDfE7SCFzJuK7YenjTMPoKTakFVfYAEEVIdJEySZt5MQ==
+  dependencies:
+    "@iarna/toml" "^2.2.5"
+    esbuild "^0.14.21"
+    tiny-glob "^0.2.9"
+
 "@sveltejs/adapter-static@next":
   version "1.0.0-next.31"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.31.tgz#9ff34d78afd8906f371e120c4a4d446077093748"

@@ -14,6 +14,7 @@
     "@contentful/rich-text-html-renderer": "^15.12.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "next",
+    "@sveltejs/adapter-netlify": "next",
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
