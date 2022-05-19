@@ -13,7 +13,7 @@ const config = {
       onError: 'fail'
     },
     browser: {
-      hydrate: false,
+      hydrate: true,
       router: false
     },
 	}
