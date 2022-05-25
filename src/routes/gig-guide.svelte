@@ -1,8 +1,6 @@
-<script>
-	import Event from '$lib/components/event.svelte';
-	import Button from '$lib/components/button.svelte';
-	import API from '$lib/contentful/';
-	import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
+<script context="module">
+  import API from '$lib/contentful/';
+  import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
 
 	const getGigs = async () => {
 		const d = new Date();
@@ -50,8 +48,21 @@
 		return {};
 	};
 
-	let gigs = getGigs();
-  
+	export async function load() {
+		let gigs = await getGigs();
+
+		return {
+			props: {
+				gigs
+			}
+		};
+	}
+</script>
+
+<script>
+import Event from '$lib/components/event.svelte';
+import Button from '$lib/components/button.svelte';
+export let gigs;  
 </script>
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
@@ -62,39 +73,37 @@
 		<div class="grid lg:grid-cols-sidebar-right gap-5">
 			<!-- left col -->
 			<div class="space-y-10 pr-20 lg:pr-28">
-				{#await gigs then byMonth}
-					{#each byMonth as month}
-						<div class="space-y-10">
-							<h3 class="notch-left text-lg lg:text-xl">
-								{month.label}
-							</h3>
-							<div class="grid space-y-10">
-								{#each month.items as { label, items }}
-									<div class="day flex items-start">
-										<div class="grid text-center items-center justify-center pl-3 pr-10 font-bold">
-											<p class="text-ruby font-semibold text-lg leading-none uppercase">
-												{label.split(':')[1]}
-											</p>
-											<p class="text-4xl leading-none">{label.split(':')[0]}</p>
-										</div>
-										<div class="space-y-5">
-											{#each items as event}
-												<div>
-													<Event
-														name={event.promotedName}
-														performers={event.performers}
-														calendarLink={createCalendarLink(event)}
-														website={event.ticketUrl}
-													/>
-												</div>
-											{/each}
-										</div>
-									</div>
-								{/each}
-							</div>
-						</div>
-					{/each}
-				{/await}
+        {#each gigs as month}
+          <div class="space-y-10">
+            <h3 class="notch-left text-lg lg:text-xl">
+              {month.label}
+            </h3>
+            <div class="grid space-y-10">
+              {#each month.items as { label, items }}
+                <div class="day flex items-start">
+                  <div class="grid text-center items-center justify-center pl-3 pr-10 font-bold">
+                    <p class="text-ruby font-semibold text-lg leading-none uppercase">
+                      {label.split(':')[1]}
+                    </p>
+                    <p class="text-4xl leading-none">{label.split(':')[0]}</p>
+                  </div>
+                  <div class="space-y-5">
+                    {#each items as event}
+                      <div>
+                        <Event
+                          name={event.promotedName}
+                          performers={event.performers}
+                          calendarLink={createCalendarLink(event)}
+                          website={event.ticketUrl}
+                        />
+                      </div>
+                    {/each}
+                  </div>
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/each}
 			</div>
 			<!-- right col -->
 			<div class="space-y-3">

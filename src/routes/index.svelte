@@ -1,13 +1,9 @@
-<script>
-	import Event from '$lib/components/event.svelte';
-	import Read from '$lib/components/read.svelte';
-	import Button from '../lib/components/button.svelte';
-
+<script context="module">
 	import API from '$lib/contentful/';
 	import { groupBy, createCalendarLink, isToday, formatDateLong } from '$lib/globals.mjs';
 
 	const getGigs = async () => {
-		// ToDo: We're doing this in the user's (or server's) local timezone.
+		// ToDo: We're doing this in the or server's local timezone.
 		// Is this okay? (I think it's okay, but I'm not sure)
 		const n = new Date();
 		n.setHours(0, 0, 0, 0); // Start of Day
@@ -57,8 +53,6 @@
 		return {};
 	};
 
-	let gigs = getGigs();
-
 	const getReads = async () => {
 		const data = await API(`query {
       articlesCollection(order: sys_firstPublishedAt_ASC, limit: 4) {
@@ -79,7 +73,26 @@
 		return {};
 	};
 
-	let reads = getReads();
+	export async function load() {
+		let reads = await getReads();
+		let gigs = await getGigs();
+
+		return {
+			props: {
+				reads,
+				gigs
+			}
+		};
+	}
+</script>
+
+<script>
+	import Event from '$lib/components/event.svelte';
+	import Read from '$lib/components/read.svelte';
+	import Button from '../lib/components/button.svelte';
+
+  export let gigs;
+  export let reads;
 </script>
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
@@ -90,53 +103,42 @@
 		<div class="grid lg:grid-cols-2 gap-5">
 			<!-- left col -->
 			<div class="space-y-10">
-				{#await gigs then group}
-					<h2 class="notch-left text-xl">Gigs right now</h2>
+        <h2 class="notch-left text-xl">Gigs right now</h2>
 
-					<div class="space-y-10 pr-20 lg:pr-28">
-						{#each group as { label, items }}
-							<div class="space-y-0">
-								<h3 class="notch-left text-lg">
-									<span class="font-bold text-ruby">{label.split(':')[0]}</span>
-									<span class="font-normal text-graphite">{label.split(':')[1]}</span>
-								</h3>
-								<div class="divide-black divide-y">
-									{#each items as event}
-										<div class="py-4">
-											<Event
-												name={event.promotedName}
-												performers={event.performers}
-												calendarLink={createCalendarLink(event)}
-												website={event.ticketUrl}
-											/>
-										</div>
-									{/each}
-								</div>
-							</div>
-						{/each}
-						<Button />
-					</div>
-				{/await}
+        <div class="space-y-10 pr-20 lg:pr-28">
+          {#each gigs as { label, items }}
+            <div class="space-y-0">
+              <h3 class="notch-left text-lg">
+                <span class="font-bold text-ruby">{label.split(':')[0]}</span>
+                <span class="font-normal text-graphite">{label.split(':')[1]}</span>
+              </h3>
+              <div class="divide-black divide-y">
+                {#each items as event}
+                  <div class="py-4">
+                    <Event
+                      name={event.promotedName}
+                      performers={event.performers}
+                      calendarLink={createCalendarLink(event)}
+                      website={event.ticketUrl}
+                    />
+                  </div>
+                {/each}
+              </div>
+            </div>
+          {/each}
+          <Button />
+        </div>
 			</div>
 
 			<!-- Right col -->
 			<div class="space-y-10">
 				<h2 class="notch-left text-xl">Latest Reads</h2>
 				<div class="space-y-5 pr-20 lg:pr-28">
-					{#await reads}
-						<Read />
-						<Read />
-						<Read />
-						<Read />
-					{:then latest}
-						{#each latest as { headline, excerpt, slug }}
-							<a href="/reads/{slug}" class="block">
-								<Read {headline} body={excerpt} />
-							</a>
-						{/each}
-					{:catch e}
-						<p style="color: red">Could not find the latest reads. Please panic, and try again!</p>
-					{/await}
+          {#each reads as { headline, excerpt, slug }}
+            <a href="/reads/{slug}" class="block">
+              <Read {headline} body={excerpt} />
+            </a>
+          {/each}
 					<Button />
 				</div>
 			</div>

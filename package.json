@@ -14,7 +14,6 @@
     "@contentful/rich-text-html-renderer": "^15.12.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "next",
-    "@sveltejs/adapter-netlify": "next",
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
@@ -24,10 +23,9 @@
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.44.0",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "html-minifier": "^4.0.0",
+    "ical-generator": "^3.4.3"
   },
   "type": "module",
-  "dependencies": {
-    "ical-generator": "^3.4.3"
-  }
 }
