@@ -27,5 +27,5 @@
     "html-minifier": "^4.0.0",
     "ical-generator": "^3.4.3"
   },
-  "type": "module",
+  "type": "module"
 }
