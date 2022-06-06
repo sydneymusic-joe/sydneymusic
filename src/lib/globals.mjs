@@ -54,7 +54,7 @@ export const createCalendarLink = (event) => {
     summary: event.promotedName,
     url: event.ticketUrl
   });
-  return `data:text/calendar;charset=utf8,${cal.toString()}`;
+  return `data:text/calendar;charset=utf8,${encodeURIComponent(cal.toString())}`;
 }
 
 export const isToday = (date) => {
