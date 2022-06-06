@@ -11,7 +11,7 @@ export const navigation = [
 
 export const navigationSecondary = [
   { title: "contact", href: "/contact" },
-  { title: "who's involved", href: "/who" }
+  { title: "links", href: "/links" }
 ]
 
 export const formatDay = (dateOrString) => {
