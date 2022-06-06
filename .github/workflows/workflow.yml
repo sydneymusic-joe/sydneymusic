@@ -34,6 +34,9 @@ jobs:
         run: npm install
       - name: Build Stage
         run: npm run build
+        env:
+          VITE_CONTENTFUL_SPACE: ${{ secrets.VITE_CONTENTFUL_SPACE }}
+          VITE_CONTENTFUL_TOKEN: ${{ secrets.VITE_CONTENTFUL_TOKEN }}
       - name: Setup AWS Access
         uses: aws-actions/configure-aws-credentials@v1
         with:
