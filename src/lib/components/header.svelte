@@ -11,7 +11,7 @@
       <Logo />
     </a>
 
-    <div class="w-full flex justify-between">
+    <div class="w-full flex justify-between items-end">
       <a href="/" class="hidden lg:block shrink-0">
         <Logo />
       </a>

@@ -7,9 +7,7 @@
   
 	<div class="bg-gray-500 px-10 py-10 text-white">
 		<p>
-			This website was created on the unceded lands on the Gadigal people of the Eora nation. We
-			acknowledge their legacy and extend our respects to their elders past, present and emerging.
-			We extend that respect to all Aboriginal and Torres Strait Islanders today.
+      This website was created on the unceded lands of the Gadigal people of the Eora nation. We acknowledge their legacy and extend our respects to their elders past, present and emerging. We extend that respect to all Aboriginal and Torres Strait Islanders today, and encourage all settlers building communities and telling stories on stolen land to Pay The Rent by donating to First Nations-run community organisations on the country where they live and work.
 		</p>
 	</div>
 

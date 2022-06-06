@@ -15,22 +15,17 @@
           gigStartDate
           promotedName
           ticketUrl
-          performersCollection {
-            items {
-              name
-            }
-          }
+          performersList
         }
       }
     }`);
 
 		if (data) {
       let event = data.eventsCollection.items.map((i) => {
-        let { gigStartDate, performersCollection, ...rest } = i;
+        let { gigStartDate, ...rest } = i;
 				return {
           date: new Date(gigStartDate),
           // Collapse performers into an array of names
-					performers: performersCollection.items.map(({ name }) => name),
 					...rest
 				};
 			});
@@ -92,7 +87,7 @@ export let gigs;
                       <div>
                         <Event
                           name={event.promotedName}
-                          performers={event.performers}
+                          performers={event.performersList}
                           calendarLink={createCalendarLink(event)}
                           website={event.ticketUrl}
                         />
