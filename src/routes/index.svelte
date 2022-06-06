@@ -153,6 +153,7 @@
         <!-- left col -->
         <div class="space-y-10">
           <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-3">
+		  <p class="font-bold">This site exists to promote the community that music creates, with a local focus on Sydney, Australia.</p>
             <p>Community online is well served by many platforms and services — you can usually find your people somewhere on the internet. So the main goal of this site is to point you to where the good stuff is happening IRL, so you can find your people and your favourite artists, new or old, all in the same place.</p>
             <p>At its heart is a simple, no-nonsense gig guide that does exactly what it says on the tin. We’ll also be publishing the occasional bit of writing,including commentary on cultural trends, music reviews, opinion pieces, and round-ups from contributing writers. We also have a Discord, to help foster connections, again in the hope that it will make it easier to find Sydney’s music community and find your place in it.</p>
           </div>
