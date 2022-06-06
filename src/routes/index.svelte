@@ -169,28 +169,23 @@
       <div class="space-y-10">
         <h2 class="notch-left text-xl">Built with love</h2>
         <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-4">
-        <p>This site is emphatically not-for-profit. Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>
+        <p>This site is emphatically not-for-profit.</p>
+        <p>Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>
         <p>This site will never attempt to disguise promotional consideration within “native content” or “sponsored content”, run retina-scorching banner ads, or promote artists in exchange for cash or favours. We will never collect data that could be considered PII (personally identifiable information) or profile you in any way.</p>
         <p>The site is run by volunteers donating their skills and time, and hosting costs are covered by one member of that volunteer team. We’re not currently seeking donations of any kind — just enjoy the site, spread the word, and send us tips on where to find great shows.</p>
         </div>
       </div>
       <!-- right col -->
       <div class="space-y-10">
-        <h2 class="notch-left text-xl">Header</h2>
-        <p class="text-base leading-relaxed pr-20 lg:pr-28">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore.
-        </p>
+        <h2 class="notch-left text-xl">Join our Discord!</h2>
+
+        <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-4">
+          <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" />
+          <p>
+            <strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.
+          </p>
+          <Button />
+        </div>
       </div>
     </div>
 	</div>

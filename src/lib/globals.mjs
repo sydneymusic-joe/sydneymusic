@@ -9,6 +9,11 @@ export const navigation = [
   { title: "reads", href: "/reads/" }
 ]
 
+export const navigationSecondary = [
+  { title: "contact", href: "/contact" },
+  { title: "who's involved", href: "/who" }
+]
+
 export const formatDay = (dateOrString) => {
   const d = new Date(dateOrString);
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

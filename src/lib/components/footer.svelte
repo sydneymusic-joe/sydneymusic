@@ -1,5 +1,5 @@
 <script>
-	import { navigation } from '../globals.mjs';
+	import { navigation, navigationSecondary } from '../globals.mjs';
 	import Logo from './logo.svelte';
 </script>
 
@@ -20,7 +20,7 @@
 
 			<div class="grid grid-cols-2 gap-5 mr-5">
 				<div class="space-y-3">
-					{#each navigation as item}
+					{#each navigationSecondary as item}
 						<a
 							href={item.href}
 							class="w-40 notch-right hover:border-white text-right text-lg"
