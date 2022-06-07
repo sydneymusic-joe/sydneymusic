@@ -75,6 +75,7 @@
 
 		return {
 			props: {
+        title : 'Welcome',
 				reads,
 				gigs
 			}
