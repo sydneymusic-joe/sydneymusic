@@ -125,7 +125,7 @@
             </div>
           {/if}
           {/each}
-          <Button />
+          <Button label="More Gigs" href="/gig-guide" />
         </div>
 			</div>
 
@@ -138,7 +138,7 @@
               <Read {headline} body={excerpt} />
             </a>
           {/each}
-					<Button />
+					<Button label="More Reads" href="/reads" />
 				</div>
 			</div>
 		</div>
@@ -184,7 +184,7 @@
           <p>
             <strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.
           </p>
-          <Button />
+          <Button label="Join our Discord!" href="https://discord.gg/jv8VKrXymJ" />
         </div>
       </div>
     </div>
