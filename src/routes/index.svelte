@@ -167,7 +167,7 @@
     <div class="grid lg:grid-cols-2 gap-5">
       <!-- left col -->
       <div class="space-y-10">
-        <h2 class="notch-left text-xl">Built with love</h2>
+        <h2 class="notch-left text-xl">Built with love ♡</h2>
         <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-4">
         <p>This site is emphatically not-for-profit.</p>
         <p>Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>

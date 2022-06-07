@@ -1,20 +1,28 @@
 <script context="module">
     import API from '$lib/contentful/';
+    import { groupBy } from '../lib/globals.mjs';
   
       const getLinks = async () => {
-          const data = await API(`{
-        linkCollection(
-          order: title_ASC
-        ) {
-          items {
-            title
-            url
-            description
+        const data = await API(`{
+          linkCollection(
+            order: title_ASC
+          ) {
+            items {
+              title
+              url
+              description,
+              category
+            }
           }
+        }`);
+
+        if (data) {
+          let byCategory = groupBy(data.linkCollection.items, ({category}) => category);
+
+          return byCategory;
         }
-      }`);
-  
-          return data.linkCollection.items;
+
+        return {}
       };
   
       export async function load() {
@@ -39,9 +47,12 @@
 
 		<div class="space-y-10 pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">A Bunch Of Links</h2>
-
+      
+      <div class="space-y-3 pl-3">
+      {#each links as { label, items}, i}
+      <h4 class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight">{label}</h4>
             <dl>
-                {#each links as { title, url, description }}
+                {#each items as { title, url, description }}
                     <dt><a href="{url}">
                         <strong>{title}</strong>
                         </a>
@@ -49,6 +60,8 @@
                     <dd>{description}</dd>
             {/each}
             </dl>
+            {/each}
 		</div>
+  </div>
 	</div>
     </div>
