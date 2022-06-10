@@ -12,7 +12,7 @@
 		d.setHours(23, 59, 59, 999); // End of day
 		const data = await API(`{
       eventsCollection(
-        order: gigStartDate_ASC, 
+        order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
         limit: 50,
         where: { 
           gigStartDate_gte: "${n.toISOString()}"
@@ -120,7 +120,8 @@
                 <span class="font-normal text-graphite">{label.split(':')[1]}</span>
               </h3>
               <div class="divide-black divide-y">
-                {#each items as event}
+                {#each items as event, i}
+                  {#if i < 3}
                   <div class="py-4">
                     <Event
                       name={event.promotedName}
@@ -130,7 +131,13 @@
                       website={event.ticketUrl}
                     />
                   </div>
+                  {/if}
                 {/each}
+                {#if items.length > 3}
+                <div class="text-gray-700 text-sm my-0 py-2">
+                + {items.length - 3} more
+                </div>
+                {/if}
               </div>
             </div>
           {/if}

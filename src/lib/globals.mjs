@@ -57,7 +57,8 @@ export const createCalendarLink = (event) => {
     start,
     end,
     summary: event.promotedName,
-    url: event.ticketUrl
+    url: event.ticketUrl,
+    location:event.venue.venueName + (event.venue.address ? ', ' + event.venue.address : '') + (event.venue.suburb ? ', ' + event.venue.suburb : '')
   });
   return `data:text/calendar;charset=utf8,${encodeURIComponent(cal.toString())}`;
 }
