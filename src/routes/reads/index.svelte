@@ -51,7 +51,6 @@
 
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">Latest Reads</h2>
-			<!-- TODo: how do we feel about this greeking method? What do we want the load strategy to be? -->
 
       {#each reads.latest as { headline, excerpt, slug }}
         <a href="/reads/{slug}" class="block">
