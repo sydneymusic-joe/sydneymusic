@@ -7,7 +7,7 @@
 
 		const data = await API(`{
       eventsCollection(
-        order: gigStartDate_ASC, 
+        limit : 1000, order: gigStartDate_ASC, 
         where: { gigStartDate_gte: "${d.toISOString()}" }
       ) {
         items {

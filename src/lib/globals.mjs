@@ -50,7 +50,7 @@ export const groupBy = (items, cb) => {
 export const createCalendarLink = (event) => {
   const start = new Date(event.date);
   const end = new Date(start);
-  end.setTime(start.getTime() + 60 * 60 * 1000); // Default to 1 hour
+  end.setTime(start.getTime() + (60 * 60 * 1000)*2.5); // Default to 2.5 hours
 
   const cal = ical();
   cal.createEvent({
