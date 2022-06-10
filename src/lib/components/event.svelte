@@ -11,7 +11,7 @@
 	<div class="">
 		<h4 class="font-bold uppercase italic">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm">W/ {performers.join(", ")}</p>{/if}
-		{#if venue}<p class="uppercase text-sm">{venue}</p>{/if}
+		{#if venue}<p class="text-sm uppercase">{venue.venueName}</p>{/if}
 	</div>
 	<div class="flex items-center space-x-5">
     {#if website}
@@ -36,11 +36,11 @@
   {#if comment}
   <div class="relative border border-black bg-yellow-50 py-3 pr-5 pl-8">
 
-    <svg class="absolute left-0 top-4 w-12 h-12 transform -translate-x-1/2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg class="absolute left-0 top-0 w-12 h-12 transform -translate-x-1/2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <circle cx="10" cy="10" r="9" fill="currentColor" />
     </svg>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat vel ipsum in molestie. Mauris congue sapien mauris, ut vestibulum enim rhoncus. Mauris placerat vel ipsum in molestie. Mauris congue sapien mauris, ut vestibulum enim rhoncus.</p>
+    <p>{comment}</p>
   </div>
   {/if}
 </div>

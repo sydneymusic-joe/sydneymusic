@@ -4,7 +4,6 @@
 
 	const getGigs = async () => {
 		const d = new Date();
-		d.setMonth(d.getMonth() - 6); // ToDO: should remove -6 to only get current events in production
 
 		const data = await API(`{
       eventsCollection(
@@ -16,6 +15,14 @@
           promotedName
           ticketUrl
           performersList
+          furtherInfo
+          furtherInfoContributorInitials
+          venue {
+            venueName
+            address
+            suburb
+            url
+          }
         }
       }
     }`);
@@ -89,7 +96,9 @@ export let gigs;
                           name={event.promotedName}
                           performers={event.performersList}
                           calendarLink={createCalendarLink(event)}
+                          venue={event.venue}
                           website={event.ticketUrl}
+                          comment={event.furtherInfo}
                         />
                       </div>
                     {/each}
@@ -102,9 +111,19 @@ export let gigs;
 			</div>
 			<!-- right col -->
 			<div class="space-y-3">
-				<Button />
-				<Button />
-				<Button />
+        <h3 class="notch-left text-lg lg:text-xl">gig guide</h3>
+        <p>Welcome to Sydney’s finest gig guide — the most comprehensive, curated, ardently sponcon-free listing of musical activity in the local area.</p>
+        <p>This guide is as simple as we can practically get away with. We’ll include some occasional commentary (feel free to submit your own!) to help give you context on what can be a dizzyingly complex network of musicians, collectives, communities, and spaces, or just make sure you don’t miss out on catching your next favourite act.</p>
+        <p>There are no social sharing buttons, but there is one to download a super basic calendar entry file for each individual gig so you can add it to your personal calendar. This doesn’t track you, or nick your data — it’s literally just the info in the listing in a handy file that saves you 40 seconds or so compared to entering it manually.</p>
+        <p>Got a gig you think should be listed here? <a href="mailto:contact@sydneymusic.net">Drop us an email</a>.</p>
+        
+        <p class="text-sm">
+          <span class="font-bold text-sm">NB for artists, managers, promoters, and venues:</span>
+          Self-promo is fine — we love it when you let us know what you’ve got going on! Just so you know: we won’t publish your marketing/social copy verbatim or give you any special consideration in the guide, we generally don’t list cover/tribute bands or background-music sets at hospitality venues, and all listings are at our own discretion. We will also graciously refuse any offers of door spots for shows we could still buy a ticket to.
+        </p>
+				<Button label="Submit a gig" href="mailto:contact@sydneymusic.net" />
+				<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
+				<Button label="Other links" href="/links" />
 			</div>
 		</div>
 	</div>

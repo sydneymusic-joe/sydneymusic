@@ -24,6 +24,14 @@
           promotedName
           ticketUrl
           performersList
+          furtherInfo
+          furtherInfoContributorInitials
+          venue {
+            venueName
+            address
+            suburb
+            url
+          }
         }
       }
     }`);
@@ -118,6 +126,7 @@
                       name={event.promotedName}
                       performers={event.performersList}
                       calendarLink={createCalendarLink(event)}
+                      venue={event.venue}
                       website={event.ticketUrl}
                     />
                   </div>

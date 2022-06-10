@@ -33,7 +33,7 @@ export const formatDate = (dateOrString) => {
 
 export const formatDateLong = (dateOrString) => {
   const d = new Date(dateOrString);
-  return `${String(d.getDate()).padStart(2,'0')} ${String(d.getMonth() + 1).padStart(2,'0')} ${String(d.getFullYear()).substring(2, 4)}`
+  return `${String(d.getDate()).padStart(2,'0')} ${String(formatMonth(d))}`
 }
 
 export const groupBy = (items, cb) => {

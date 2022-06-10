@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         ruby: "#e02020",
         graphite: "#6d7278",
+        acknowledgement : '#BEBEBE',
       },
       aspectRatio : {
         '3/1': "3/1",
