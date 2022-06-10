@@ -9,9 +9,22 @@ export const navigation = [
   { title: "reads", href: "/reads/" }
 ]
 
-export const navigationSecondary = [
-  { title: "contact", href: "/contact" },
-  { title: "links", href: "/links" }
+export const navigationFooter = [
+  { title: "Home", href: "/" },
+  { title: "Gig Guide", href: "/gig-guide" },
+  { title: "Reads", href: "/reads" },
+  { title: "About & FAQ", href: "/" }
+]
+
+export const navigationFooterSecondary = [
+  { title: "Contact", href: "/contact" },
+  { title: "Links", href: "/links" },
+  { title: "Resource", href: "/" },
+  { title: "Resource", href: "/" },
+  { title: "Resource", href: "/" },
+  { title: "Resource", href: "/" },
+  { title: "Resource", href: "/" },
+  { title: "Resource", href: "/" }
 ]
 
 export const formatDay = (dateOrString) => {

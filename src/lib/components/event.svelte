@@ -5,11 +5,14 @@
   export let calendarLink = null;
   export let performers = [];
   export let comment = null;
+  export let initials = null;
+  // Can't set a default here cause null is explicitly provided
+  if(!initials) initials = "NB:"  
 </script>
 
 <div class="space-y-2">
 	<div class="">
-		<h4 class="font-bold uppercase italic">{name}</h4>
+		<h4 class="text-lg font-bold uppercase italic">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm">W/ {performers.join(", ")}</p>{/if}
 		{#if venue}<p class="text-sm uppercase"><a href="{venue.url}">{venue.venueName}</a></p>{/if}
 	</div>
@@ -34,10 +37,11 @@
     {/if}
 	</div>
   {#if comment}
-  <div class="relative border border-black bg-yellow-50 py-3 pr-5 pl-8">
+  <div class="relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic">
 
-    <svg class="absolute left-0 top-0 w-12 h-12 transform -translate-x-1/2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg class="absolute left-0 top-0 w-10 h-10 transform -translate-x-1/2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <circle cx="10" cy="10" r="9" fill="currentColor" />
+      <text x="50%" y="55%" font-size="7px" dominant-baseline="middle" fill="white" text-anchor="middle">{initials}</text>    
     </svg>
 
     <p>{comment}</p>

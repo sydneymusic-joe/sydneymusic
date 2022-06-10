@@ -110,8 +110,8 @@
 			<div class="space-y-10">
         <h2 class="notch-left text-xl">Gigs right now</h2>
 
-        <div class="space-y-10 pr-20 lg:pr-28">
-          {#each gigs as { label, items } , i}
+        <div class="space-y-10 sm:pr-20 lg:pr-28">
+          {#each gigs as { label, items }, i}
           <!-- Only get the next 2 days -->
           {#if i < 2}
             <div class="space-y-0">
@@ -128,6 +128,7 @@
                       calendarLink={createCalendarLink(event)}
                       venue={event.venue}
                       website={event.ticketUrl}
+                      initials={event.furtherInfoContributorInitials}
                     />
                   </div>
                 {/each}
@@ -142,7 +143,7 @@
 			<!-- Right col -->
 			<div class="space-y-10">
 				<h2 class="notch-left text-xl">Latest Reads</h2>
-				<div class="space-y-5 pr-20 lg:pr-28">
+				<div class="space-y-10 sm:pr-20 lg:pr-28">
           {#each reads as { headline, excerpt, slug }}
             <a href="/reads/{slug}" class="block">
               <Read {headline} body={excerpt} />
@@ -162,7 +163,7 @@
       <div class="grid lg:grid-cols-2 gap-5">
         <!-- left col -->
         <div class="space-y-10">
-          <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-3">
+          <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-3">
 		  <p class="font-bold">This site exists to promote the community that music creates, with a local focus on Sydney, Australia.</p>
             <p>Community online is well served by many platforms and services — you can usually find your people somewhere on the internet. So the main goal of this site is to point you to where the good stuff is happening IRL, so you can find your people and your favourite artists, new or old, all in the same place.</p>
             <p>At its heart is a simple, no-nonsense gig guide that does exactly what it says on the tin. We’ll also be publishing the occasional bit of writing,including commentary on cultural trends, music reviews, opinion pieces, and round-ups from contributing writers. We also have a Discord, to help foster connections, again in the hope that it will make it easier to find Sydney’s music community and find your place in it.</p>
@@ -178,7 +179,7 @@
       <!-- left col -->
       <div class="space-y-10">
         <h2 class="notch-left text-xl">Built with love ♡</h2>
-        <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-4">
+        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4">
         <p>This site is emphatically not-for-profit.</p>
         <p>Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>
         <p>This site will never attempt to disguise promotional consideration within “native content” or “sponsored content”, run retina-scorching banner ads, or promote artists in exchange for cash or favours. We will never collect data that could be considered PII (personally identifiable information) or profile you in any way.</p>
@@ -189,7 +190,7 @@
       <div class="space-y-10">
         <h2 class="notch-left text-xl">Join our Discord!</h2>
 
-        <div class="text-base leading-relaxed pr-20 lg:pr-28 space-y-4">
+        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4">
           <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" />
           <p>
             <strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.
