@@ -69,7 +69,7 @@ export const createCalendarLink = (event) => {
   cal.createEvent({
     start,
     end,
-    summary: event.promotedName,
+    summary: event.promotedName + (event.performersList ? ' w/ ' + event.performersList.join(', ') : ''),
     url: event.ticketUrl,
     location:event.venue.venueName + (event.venue.address ? ', ' + event.venue.address : '') + (event.venue.suburb ? ', ' + event.venue.suburb : '')
   });

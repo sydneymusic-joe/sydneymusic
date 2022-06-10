@@ -5,7 +5,7 @@
 	const getLinks = async () => {
 		const data = await API(`{
           linkCollection(
-            order: title_ASC
+            order: [category_ASC, title_ASC]
           ) {
             items {
               title
@@ -62,7 +62,7 @@
 									<strong>{title}</strong>
 								</a>
 							</dt>
-							<dd>{description}</dd>
+							{#if description}<dd>{description}</dd>{/if}
 						{/each}
 					</dl>
 				{/each}
