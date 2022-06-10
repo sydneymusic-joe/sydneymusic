@@ -1,4 +1,5 @@
 <script>
+  import { page } from '$app/stores';
 	import { navigation } from '../globals.mjs';
 	import Logo from './logo.svelte';
 </script>
@@ -20,8 +21,9 @@
         {#each navigation as item}
 				<a
 					href={item.href}
-					class="notch-right hover:border-ruby text-right text-lg lg:text-xl py-1"
-          >
+					class="notch-right notch-thic hover:border-ruby hover:text-ruby text-right text-lg lg:text-xl py-1"
+          class:border-ruby="{$page.url.pathname === item.href}"
+        >
 					{item.title}
 				</a>
         {/each}
