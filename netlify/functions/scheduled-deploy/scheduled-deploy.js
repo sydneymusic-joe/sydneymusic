@@ -1,4 +1,6 @@
 const { schedule } = require('@netlify/functions')
+const fetch = require('node-fetch');
+
 const REBUILD_URL = process.env.BUILD_TRIGGER_URL;
 
 // To learn about scheduled functions and supported cron extensions,
