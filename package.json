@@ -29,7 +29,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@netlify/functions": "^1.0.0",
     "contentful-management": "^10.6.2",
-    "csv-parse": "^5.1.0"
+    "csv-parse": "^5.1.0",
+    "form-data": "^4.0.0",
+    "hashids": "^2.2.10"
   }
 }
