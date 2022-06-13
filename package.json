@@ -17,6 +17,7 @@
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
+    "fetch": "^1.1.0",
     "graphql": "^16.4.0",
     "graphql-request": "^4.2.0",
     "html-minifier": "^4.0.0",
