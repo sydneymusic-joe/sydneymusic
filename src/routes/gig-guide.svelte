@@ -10,7 +10,7 @@
       eventsCollection(
         order: gigStartDate_ASC,
         limit: 1000, 
-        where: { gigStartDate_gte: "${d.toISOString()}" }
+        where: { gigStartDate_gte: "${new Date(d.setHours(0)).toISOString()}" }
       ) {
         items {
           gigStartDate
