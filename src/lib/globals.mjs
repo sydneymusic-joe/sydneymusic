@@ -20,11 +20,6 @@ export const navigationFooterSecondary = [
   { title: "Contact", href: "/contact" },
   { title: "Links", href: "/links" },
   { title: "Resource", href: "/" },
-  { title: "Resource", href: "/" },
-  { title: "Resource", href: "/" },
-  { title: "Resource", href: "/" },
-  { title: "Resource", href: "/" },
-  { title: "Resource", href: "/" }
 ]
 
 export const formatDay = (dateOrString) => {

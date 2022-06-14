@@ -1,5 +1,6 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import API from "$lib/contentful/" 
+import { formatDateLong } from '$lib/globals.mjs';
 
 export async function get({ params }) {
   let data = false;
@@ -12,10 +13,17 @@ export async function get({ params }) {
           bodyContent {
             json
           }
-          associatedPerformersCollection {
-            items {
-              name
-            }
+          heroImage {
+            title,
+            description,
+            url
+          }
+          author {
+            authorName
+            authorUrl
+          }
+          sys {
+            firstPublishedAt
           }
         }
       }
@@ -30,7 +38,7 @@ export async function get({ params }) {
           items {
             headline
             excerpt
-            slug,
+            slug
             sys {
               firstPublishedAt
             }
@@ -44,13 +52,16 @@ export async function get({ params }) {
 
   if (data && otherReadData) {
     
-    const {headline, bodyContent} = data.articlesCollection.items[0]
+    const {headline, bodyContent, heroImage, author, sys} = data.articlesCollection.items[0]
 
     return {
       body: {
         headline,
         body: documentToHtmlString(bodyContent.json),
-        otherReads: otherReadData.articlesCollection.items
+        otherReads: otherReadData.articlesCollection.items,
+        author:author,
+        heroImage:heroImage,
+        publishDate:formatDateLong(sys.firstPublishedAt) + ' ' + new Date(sys.firstPublishedAt).getFullYear()
       }
     };
   }
