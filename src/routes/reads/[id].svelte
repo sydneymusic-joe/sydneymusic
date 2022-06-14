@@ -27,8 +27,10 @@
 			<div>
 				<div>
 					<dl>
+						{#if author}
 						<dt class="text-ruby uppercase text-sm">by</dt>
 						<dd class="uppercase italic text-lg"><a href="{author.authorUrl}">{author.authorName}</a></dd>
+						{/if}
 						<dt class="mt-10 text-ruby uppercase text-sm">Published</dt>
 						<dd class="uppercase italic text-lg">{publishDate}</dd>
 					</dl>
