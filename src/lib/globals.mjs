@@ -72,17 +72,13 @@ export const createCalendarLink = (event) => {
 
 export const isToday = (date) => {
   const today = new Date();
-  return date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear();
+  return today.toDateString() === date.toDateString()
 };
 
 export const isTomorrow = (date) => {
   const tomorrow = new Date();
-  tomorrow.setDate(date.getDate() + 1)
-  return date.getDate() === tomorrow.getDate() &&
-      date.getMonth() === tomorrow.getMonth() &&
-      date.getFullYear() === tomorrow.getFullYear();
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  return tomorrow.toDateString() === date.toDateString();
 };
 
 export const formatDayOfWeek = (date) =>  isToday(date) ? "Today" : isTomorrow(date) ? "Tomorrow" : formatDay(date);
