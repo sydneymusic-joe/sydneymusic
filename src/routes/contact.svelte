@@ -1,3 +1,9 @@
+<script>
+	import SeoSocial from '$lib/components/seo-social.svelte';
+</script>
+
+<SeoSocial title="Contact" />
+
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<div class="space-y-10">
 		<img

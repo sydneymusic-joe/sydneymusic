@@ -1,12 +1,17 @@
 <script>
 	import Read from '$lib/components/read.svelte';
+	import SeoSocial from '$lib/components/seo-social.svelte';
+
 	export let headline;
+	export let excerpt;
 	export let body;
 	export let heroImage;
 	export let author;
 	export let otherReads;
 	export let publishDate;
 </script>
+
+<SeoSocial title="{headline}" type="article" image="{heroImage ? heroImage.url : null}" description="{excerpt}" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->
@@ -20,7 +25,7 @@
 		<div class="grid lg:grid-cols-sidebar-right">
 			<div class="prose prose-xl">
 				{#if heroImage}
-				<img src="{heroImage.url}" alt="heroImage.description" />
+				<img src="{heroImage.url}" alt="{heroImage.description}" />
 				{/if}
 				{@html body}
 			</div>

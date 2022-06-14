@@ -59,7 +59,7 @@
 
 	const getReads = async () => {
 		const data = await API(`query {
-      articlesCollection(order: sys_firstPublishedAt_ASC, limit: 4) {
+      articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4) {
           items {
             headline
             excerpt
@@ -96,9 +96,13 @@
 	import Read from '$lib/components/read.svelte';
 	import Button from '../lib/components/button.svelte';
 
+  import SeoSocial from '$lib/components/seo-social.svelte';
+
   export let gigs;
   export let reads;
 </script>
+
+<SeoSocial title="Welcome" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->

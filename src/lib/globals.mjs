@@ -13,13 +13,12 @@ export const navigationFooter = [
   { title: "Home", href: "/" },
   { title: "Gig Guide", href: "/gig-guide" },
   { title: "Reads", href: "/reads" },
-  { title: "About & FAQ", href: "/" }
+  { title: "About & FAQ", href: "/about" }
 ]
 
 export const navigationFooterSecondary = [
   { title: "Contact", href: "/contact" },
-  { title: "Links", href: "/links" },
-  { title: "Resource", href: "/" },
+  { title: "Links", href: "/links" }
 ]
 
 export const formatDay = (dateOrString) => {

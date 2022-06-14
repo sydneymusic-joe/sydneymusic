@@ -1,6 +1,7 @@
 <script context="module">
 	import API from '$lib/contentful/';
 	import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
+	import SeoSocial from '$lib/components/seo-social.svelte';
 
 	const getGigs = async () => {
 		const d = new Date();
@@ -66,6 +67,8 @@
 	import Button from '$lib/components/button.svelte';
 	export let gigs;
 </script>
+
+<SeoSocial title="Gig Guide" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->
@@ -133,7 +136,8 @@
 					<Button label="Submit a gig" href="mailto:contact@sydneymusic.net" />
 				</div>
 
-				<p class="text-sm">
+				<div class="prose prose-sm">
+				<p>
 					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br/>
 					Self-promo is fine —we love it when you let us know what you’ve got going on! But we won’t 
 					publish your marketing/social copy verbatim or give you special consideration
@@ -141,6 +145,7 @@
 					venues. All listings are at our own discretion. We will also graciously refuse any offer
 					of door spots for shows where we can buy tickets.
 				</p>
+				</div>
 				<div class="space-y-3">
 					<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
 					<Button label="Other links" href="/links" />

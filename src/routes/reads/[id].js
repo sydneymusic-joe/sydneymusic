@@ -10,6 +10,7 @@ export async function get({ params }) {
       articlesCollection(where: { slug: "${params.id}" } ) {
         items {
           headline
+          excerpt
           bodyContent {
             json
           }
@@ -52,11 +53,12 @@ export async function get({ params }) {
 
   if (data && otherReadData) {
     
-    const {headline, bodyContent, heroImage, author, sys} = data.articlesCollection.items[0]
+    const {headline, excerpt, bodyContent, heroImage, author, sys} = data.articlesCollection.items[0]
 
     return {
       body: {
         headline,
+        excerpt:excerpt,
         body: documentToHtmlString(bodyContent.json),
         otherReads: otherReadData.articlesCollection.items,
         author:author,
