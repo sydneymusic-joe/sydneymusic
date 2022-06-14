@@ -139,9 +139,9 @@
                   {/if}
                 {/each}
                 {#if items.length > 3}
-                <div class="text-gray-700 text-sm my-0 py-2">
+                <a class="text-gray-700 text-sm my-0 py-2 block hover:underline" href="/gig-guide">
                 + {items.length - 3} more
-                </div>
+                </a>
                 {/if}
               </div>
             </div>
