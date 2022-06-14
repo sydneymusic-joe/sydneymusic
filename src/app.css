@@ -143,4 +143,8 @@
     @apply border-l-2;
   }
 
+  .about dt {
+    @apply font-bold uppercase
+  }
+  .about dd { @apply mb-2; }
 }
