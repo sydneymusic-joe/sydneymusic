@@ -1,30 +1,18 @@
 <script>
 	export let title;
-	export let description;
-	export let keywords;
+	export let description =
+		'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.';
+	export let keywords =
+		'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife';
 	export let canonical;
 	export let type;
-	export let image;
-	export let imageWidth;
-	export let imageHeight;
+	export let image = 'https://sydneymusic.net/static/social-image.png';
+	export let imageWidth = 1200;
+	export let imageHeight = 630;
 
-    if (!title) {
-        title = "Welcome"
-    }
-
-    if (!description) {
-        description = "SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read."
-    }
-
-    if (!keywords) {
-        keywords = "sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife"
-    }
-
-    if (!image) {
-        image = "https://sydneymusic.net/static/social-image.png"
-		imageWidth=1366
-		imageHeight=768
-    }
+	if (!title) {
+		title = 'Welcome';
+	}
 </script>
 
 <svelte:head>
@@ -50,8 +38,8 @@
 	<meta property="og:type" content={type ? type : 'site'} />
 	<meta property="og:image" content={image} />
 	{#if imageWidth && imageHeight}
-	<meta property="og:image:width" content="{imageWidth}" />
-	<meta property="og:image:height" content="{imageHeight}" />
+		<meta property="og:image:width" content={imageWidth} />
+		<meta property="og:image:height" content={imageHeight} />
 	{/if}
 
 	<meta name="twitter:card" content="summary_large_image" />
