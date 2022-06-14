@@ -27,7 +27,7 @@
                     <dd>Illustration</dd>
                     <dt><a href="https://www.madebymike.com.au">Mike Riethmuller</a></dt>
                     <dd>Front End Architecture and Development</dd>
-                    <dt><a href="https://twitter.com/caitlin_welsh">Caitlin Welsh</a></dt>
+                    <dt>Caitlin Welsh</dt>
                     <dd>Content Direction</dd>
                 </dl>
 

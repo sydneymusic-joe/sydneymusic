@@ -5,6 +5,8 @@
 	export let canonical;
 	export let type;
 	export let image;
+	export let imageWidth;
+	export let imageHeight;
 
     if (!title) {
         title = "Welcome"
@@ -20,6 +22,8 @@
 
     if (!image) {
         image = "https://sydneymusic.net/static/social-image.png"
+		imageWidth=1366
+		imageHeight=768
     }
 </script>
 
@@ -45,6 +49,10 @@
 	{/if}
 	<meta property="og:type" content={type ? type : 'site'} />
 	<meta property="og:image" content={image} />
+	{#if imageWidth && imageHeight}
+	<meta property="og:image:width" content="{imageWidth}" />
+	<meta property="og:image:height" content="{imageHeight}" />
+	{/if}
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
