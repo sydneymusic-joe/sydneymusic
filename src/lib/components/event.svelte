@@ -13,7 +13,7 @@
 <div class="space-y-2">
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic">{name}</h4>
-		{#if performers && performers.length}<p class="uppercase text-sm">W/ {performers.join(", ")}</p>{/if}
+		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
 		{#if venue}<p class="text-sm uppercase"><a href="{venue.url}">{venue.venueName}</a></p>{/if}
 	</div>
 	<div class="flex items-center space-x-5">

@@ -58,7 +58,7 @@
 					>
 						{label}
 					</h4>
-					<dl>
+					<dl class="pb-10">
 						{#each items as { title, url, description }}
 							<dt>
 								<a href={url} class="hover:text-ruby">

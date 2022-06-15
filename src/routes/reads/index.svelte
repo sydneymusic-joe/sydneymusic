@@ -48,7 +48,7 @@
 
 <SeoSocial title="Reads" />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<img src="https://picsum.photos/1000/150?grayscale" alt="" class="aspect-3/1 sm:aspect-banner object-cover w-full" />

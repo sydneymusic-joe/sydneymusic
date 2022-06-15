@@ -102,14 +102,14 @@
   export let reads;
 </script>
 
-<SeoSocial title="Welcome" />
+<SeoSocial />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<img src="https://picsum.photos/1500/500?grayscale" alt="" class="aspect-3/1 w-full" />
 
-		<div class="grid lg:grid-cols-2 gap-5">
+		<div class="grid lg:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
         <h2 class="notch-left text-xl">Gigs right now</h2>
@@ -202,10 +202,10 @@
         <h2 class="notch-left text-xl">Join our Discord!</h2>
 
         <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4">
-          <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" />
           <p>
             <strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.
           </p>
+          <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" />
           <Button label="Join our Discord!" href="https://discord.gg/jv8VKrXymJ" />
         </div>
       </div>

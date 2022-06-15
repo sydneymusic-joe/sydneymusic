@@ -94,7 +94,7 @@
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
-									<div class="space-y-5">
+									<div class="space-y-5 w-full">
 										{#each items as event}
 											<div>
 												<Event

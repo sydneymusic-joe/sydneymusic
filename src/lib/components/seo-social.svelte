@@ -6,17 +6,22 @@
 		'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife';
 	export let canonical;
 	export let type;
-	export let image = 'https://sydneymusic.net/static/social-image.png';
+	export let image = 'https://sydneymusic.net/social-image.png';
 	export let imageWidth = 1200;
 	export let imageHeight = 630;
 
-	if (!title) {
-		title = 'Welcome';
+	if (title) {
+		title += ' | '
 	}
+	else {
+		title = ''
+	}
+
+	title += "SydneyMusic.net - Sydney's live music community guide"
 </script>
 
 <svelte:head>
-	<title>{title} | SydneyMusic.net, Sydney's live music map</title>
+	<title>{title}</title>
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index,follow" />
 	{#if description}

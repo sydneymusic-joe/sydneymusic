@@ -14,7 +14,7 @@
 	<nav class="bg-black text-gray-200 p-10">
 		<div class="grid lg:grid-cols-2 gap-5 justify-between py-5">
 
-			<a href="/" class="shrink-0 px-5 mx-auto lg:mx-0">
+			<a href="/" class="shrink-0">
 				<Logo invert={true} />
 			</a>
 
