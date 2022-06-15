@@ -6,12 +6,6 @@
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<div class="space-y-10">
-		<img
-			src="https://picsum.photos/1000/150?grayscale"
-			alt=""
-			class="aspect-3/1 sm:aspect-banner object-cover w-full"
-		/>
-
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">Contact Us</h2>
 

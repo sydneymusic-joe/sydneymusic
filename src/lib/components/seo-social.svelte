@@ -1,5 +1,5 @@
 <script>
-	export let title;
+	export let title = '';
 	export let description =
 		'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.';
 	export let keywords =
@@ -10,11 +10,8 @@
 	export let imageWidth = 1200;
 	export let imageHeight = 630;
 
-	if (title) {
+	if (title != '') {
 		title += ' | '
-	}
-	else {
-		title = ''
 	}
 
 	title += "SydneyMusic.net - Sydney's live music community guide"

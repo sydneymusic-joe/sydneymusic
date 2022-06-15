@@ -20,7 +20,7 @@
 
 			<div class="grid grid-cols-2 gap-5 mr-5">
 				<div class="space-y-3">
-          <h2 class="font-bold text-lg tracking-wide">Navigation</h2>
+          			<h2 class="font-bold text-lg tracking-wide">Navigation</h2>
 					{#each navigationFooter as item}
 						<a
 							href={item.href}
@@ -32,7 +32,7 @@
 				</div>
 
 				<div class="space-y-3">
-          <h2 class="font-bold text-lg tracking-wide">Links &amp; Resources</h2>
+          			<h2 class="font-bold text-lg tracking-wide">Links &amp; Resources</h2>
 					{#each navigationFooterSecondary as item}
 						<a
 							href={item.href}

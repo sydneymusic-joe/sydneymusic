@@ -73,7 +73,7 @@
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<img src="https://picsum.photos/1000/150?grayscale" alt="" class="aspect-3/1 sm:aspect-banner object-cover w-full" />
+		<img src="/canman-gigs.png" alt="SydneyMusic.net mascot Can Man loves a gig" class="aspect-3/1 sm:aspect-banner object-cover w-full" />
 
 		<div class="grid lg:grid-cols-sidebar-right-wide">
 			<!-- left col -->
@@ -116,7 +116,7 @@
 				{/each}
 			</div>
 			<!-- right col -->
-			<div class="space-y-10">
+			<div class="space-y-10 mt-20 lg:mt-0">
         		<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>
 				<div class="prose prose-sm">
 					<p>

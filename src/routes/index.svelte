@@ -107,7 +107,7 @@
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<img src="https://picsum.photos/1500/500?grayscale" alt="" class="aspect-3/1 w-full" />
+		<img src="/canman-homehero.png" alt="SydneyMusic.net mascot Can Man welcoming you to the website" class="aspect-3/1 w-full" />
 
 		<div class="grid lg:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
@@ -181,7 +181,7 @@
           </div>
         </div>
         <!-- right col -->
-        <img src="https://picsum.photos/500/500?grayscale" alt="" class="aspect-square w-full" />
+        <img src="/canman-about.png" alt="" class="aspect-square w-full hidden lg:block" />
       </div>
     </div>
 

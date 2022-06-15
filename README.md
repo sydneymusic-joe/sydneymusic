@@ -1,38 +1,20 @@
-# create-svelte
+# SydneyMusic.net
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+_Lead Developer and Architect:_
+Mike Riethmuller
+https://www.madebymike.com.au
 
-## Creating a project
+_Additional Code:_
+Joe Hardy
+https://joe.hardy.id.au
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tech stack info
 
-```bash
-# create a new project in the current directory
-npm init svelte
+* SvelteKit
+* TailwindCSS
 
-# create a new project in my-app
-npm init svelte my-app
-```
+... and we're deploying to Netlify and using Contentful as our Headless CMS.
 
-## Developing
+## How this repo works
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+You're welcome to read this code, get inspiration from it, fork it, or drop a pull request in with some suggestions. We just ask that anything you do be done in the spirit of the community project.
