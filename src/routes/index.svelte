@@ -12,7 +12,7 @@
 		d.setHours(23, 59, 59, 999); // End of day
 		const data = await API(`{
       eventsCollection(
-        order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
+        order: [sys_firstPublishedAt_ASC], 
         limit: 50,
         where: { 
           gigStartDate_gte: "${n.toISOString()}"
@@ -40,8 +40,10 @@
 			let event = data.eventsCollection.items
       .map((i) => {
 				let { gigStartDate, ...rest } = i;
+        let d = new Date(gigStartDate);
 				return {
-					date: new Date(gigStartDate),
+					date: d,
+          time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					// Collapse performers into an array of names
 					...rest
 				};
@@ -136,6 +138,7 @@
                       calendarLink={createCalendarLink(event)}
                       venue={event.venue}
                       website={event.ticketUrl}
+                      time={event.time}
                       initials={event.furtherInfoContributorInitials}
                     />
                   </div>
