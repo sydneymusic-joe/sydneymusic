@@ -6,15 +6,17 @@
   export let performers = [];
   export let comment = null;
   export let initials = null;
+  export let time = null;
   // Can't set a default here cause null is explicitly provided
   if(!initials) initials = "NB:"  
+  if(!time) time = '8pm'
 </script>
 
 <div class="space-y-2">
 	<div class="">
-		<h4 class="text-lg font-bold uppercase italic">{name}</h4>
+		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
-		{#if venue}<p class="text-sm uppercase"><a href="{venue.url}">{venue.venueName}</a></p>{/if}
+		{#if venue}<p class="text-sm uppercase text-neutral-500"><span class="time">{time}</span><a href="{venue.url}">{venue.venueName}</a></p>{/if}
 	</div>
 	<div class="flex items-center space-x-5">
     {#if website}

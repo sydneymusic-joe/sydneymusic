@@ -147,4 +147,9 @@
     @apply font-bold uppercase
   }
   .about dd { @apply mb-2; }
+
+  .time {
+    @apply border-r mr-3 pr-3;
+    border-color : #7f7f7f;
+  }
 }

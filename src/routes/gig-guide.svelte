@@ -32,8 +32,10 @@
 		if (data) {
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
+				let d = new Date(gigStartDate);
 				return {
-					date: new Date(gigStartDate),
+					date: d,
+					time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					...rest
 				};
 			});
@@ -104,7 +106,8 @@
 													venue={event.venue}
 													website={event.ticketUrl}
 													comment={event.furtherInfo}
-                          initials={event.furtherInfoContributorInitials}
+                          							initials={event.furtherInfoContributorInitials}
+													time={event.time}
 												/>
 											</div>
 										{/each}
