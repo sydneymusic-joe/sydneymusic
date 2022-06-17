@@ -12,7 +12,7 @@
 		d.setHours(23, 59, 59, 999); // End of day
 		const data = await API(`{
       eventsCollection(
-        order: [sys_firstPublishedAt_ASC], 
+        order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
         limit: 50,
         where: { 
           gigStartDate_gte: "${n.toISOString()}"
