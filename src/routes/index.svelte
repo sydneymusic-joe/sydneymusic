@@ -103,16 +103,19 @@
 </script>
 
 <SeoSocial />
+<img 
+  src="/canman-homehero.png" 
+  alt="SydneyMusic.net mascot Can Man welcoming you to the website" 
+  class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<img src="/canman-homehero.png" alt="SydneyMusic.net mascot Can Man welcoming you to the website" class="aspect-3/1 w-full" />
 
 		<div class="grid lg:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
-        <h2 class="notch-left text-xl">Gigs right now</h2>
+        <h2 class="notch-left text-xl">Gigs at a glance</h2>
 
         <div class="space-y-10 sm:pr-20 lg:pr-28">
           {#each gigs as { label, items }, i}
@@ -126,7 +129,7 @@
               <div class="divide-black divide-y">
                 {#each items as event, i}
                   {#if i < 3}
-                  <div class="py-4">
+                  <div class="py-4 pl-3">
                     <Event
                       name={event.promotedName}
                       performers={event.performersList}
@@ -139,7 +142,7 @@
                   {/if}
                 {/each}
                 {#if items.length > 3}
-                <a class="text-gray-700 text-sm my-0 py-2 block hover:underline" href="/gig-guide">
+                <a class="text-gray-700 text-sm my-0 py-2 pl-3 block hover:underline" href="/gig-guide">
                 + {items.length - 3} more
                 </a>
                 {/if}

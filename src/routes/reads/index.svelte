@@ -48,10 +48,11 @@
 
 <SeoSocial title="Reads" />
 
-<div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
+<img src="/canman-reads.png" alt="SydneyMusic.net mascot Can Man loves a read" class="aspect-3/1 sm:aspect-banner object-cover w-full lg:max-w-5xl mx-auto" />
+
+<div class="max-w-5xl px-5 mx-auto mt-10 space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<img src="/canman-reads.png" alt="SydneyMusic.net mascot Can Man loves a read" class="aspect-3/1 sm:aspect-banner object-cover w-full" />
 
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">Latest Reads</h2>

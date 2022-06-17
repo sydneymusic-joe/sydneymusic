@@ -70,12 +70,12 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<img src="/canman-gigs.png" alt="SydneyMusic.net mascot Can Man loves a gig" class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl" />
+
+<div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<img src="/canman-gigs.png" alt="SydneyMusic.net mascot Can Man loves a gig" class="aspect-3/1 sm:aspect-banner object-cover w-full" />
-
-		<div class="grid lg:grid-cols-sidebar-right-wide">
+		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
 				{#each gigs as month}
@@ -116,7 +116,7 @@
 				{/each}
 			</div>
 			<!-- right col -->
-			<div class="space-y-10 mt-20 lg:mt-0">
+			<div class="space-y-10 mt-20 md:mt-0">
         		<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>
 				<div class="prose prose-sm">
 					<p>
