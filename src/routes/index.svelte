@@ -106,7 +106,7 @@
 
 <SeoSocial />
 <img 
-  src="/canman-homehero.png" 
+  srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w" 
   alt="SydneyMusic.net mascot Can Man welcoming you to the website" 
   class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto" />
 
@@ -114,7 +114,7 @@
 	<!-- First section -->
 	<div class="space-y-10">
 
-		<div class="grid lg:grid-cols-2 gap-5 gap-y-20">
+		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
         <h2 class="notch-left text-xl">Gigs at a glance</h2>
@@ -177,7 +177,7 @@
     <div class="space-y-10">
       <h2 class="notch-left text-xl">Welcome to SydneyMusic!</h2>
 
-      <div class="grid lg:grid-cols-2 gap-5">
+      <div class="grid md:grid-cols-2 gap-5">
         <!-- left col -->
         <div class="space-y-10">
           <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-3">
@@ -187,7 +187,10 @@
           </div>
         </div>
         <!-- right col -->
-        <img src="/canman-about.png" alt="" class="aspect-square w-full hidden lg:block" />
+        <img
+          srcset="/canman-about@2x.png 964w, /canman-about@1x.png 482w"
+          alt="Our mascot Can Man"
+          class="aspect-square w-full hidden md:block" />
       </div>
     </div>
 

@@ -72,7 +72,19 @@
 
 <SeoSocial title="Gig Guide" />
 
-<img src="/canman-gigs.png" alt="SydneyMusic.net mascot Can Man loves a gig" class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl" />
+<picture>
+	<source
+		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
+		media="(min-width : 640px)" />
+	<source
+		srcset="/canman-gigs-mobile.png"
+		media="(max-width : 640px)" />
+	<img
+		src="/canman-gigs@1x.png"
+		alt="SydneyMusic.net mascot Can Man loves a gig"
+		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		 />
+</picture>
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
 	<!-- First section -->
