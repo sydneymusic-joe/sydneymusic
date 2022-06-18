@@ -16,7 +16,10 @@
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
-		{#if venue}<p class="text-sm uppercase text-neutral-500"><span class="time">{time}</span><a href="{venue.url}">{venue.venueName}</a></p>{/if}
+		<p class="text-sm uppercase text-neutral-500">
+      <span class="time">{time}</span>
+      {#if venue}<a href="{venue.url}">{venue.venueName}</a>{/if}
+    </p>
 	</div>
 	<div class="flex items-center space-x-5">
     {#if website}
