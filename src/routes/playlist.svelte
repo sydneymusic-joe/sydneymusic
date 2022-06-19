@@ -1,0 +1,12 @@
+<script context="module">
+	import PlaylistPromo from '$lib/components/playlist.svelte';
+</script>
+
+<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+	<div class="space-y-10">
+		<div class="space-y-10 sm:pr-20 lg:pr-28">
+
+            <PlaylistPromo />
+        </div>
+    </div>
+</div>
