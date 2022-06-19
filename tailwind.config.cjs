@@ -33,6 +33,7 @@ module.exports = {
       gridTemplateColumns: {
         "sidebar-right": "1fr 220px",
         "sidebar-right-wide": "1fr 320px",
+        "sidebar-left-wide": "320px 1fr",
       }
     },
   },
