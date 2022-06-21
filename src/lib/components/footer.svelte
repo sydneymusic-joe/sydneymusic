@@ -32,7 +32,7 @@
 				</div>
 
 				<div class="space-y-3">
-          			<h2 class="font-bold text-lg tracking-wide">Links &amp; Resources</h2>
+          			<h2 class="font-bold text-lg tracking-wide">&nbsp;</h2>
 					{#each navigationFooterSecondary as item}
 						<a
 							href={item.href}

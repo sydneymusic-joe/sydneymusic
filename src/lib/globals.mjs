@@ -19,7 +19,9 @@ export const navigationFooter = [
 
 export const navigationFooterSecondary = [
   { title: "Contact", href: "/contact" },
-  { title: "Links", href: "/links" }
+  { title: "Join the Discord!", href: "https://discord.gg/jv8VKrXymJ" },
+  { title: "Links", href: "/links" },
+  { title: "Weekly Gig Guide Playlist", href: "/playlist" }
 ]
 
 export const formatDay = (dateOrString) => {
