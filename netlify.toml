@@ -1,2 +1,7 @@
 [build.environment]
   TZ="Australia/Sydney"
+
+[[redirects]]
+  from = "/gigs.html"
+  to = "/gig-guide"
+  status = 301
