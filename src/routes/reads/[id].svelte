@@ -11,7 +11,7 @@
 	export let publishDate;
 </script>
 
-<SeoSocial title="{headline}" type="article" image="{heroImage ? heroImage.url : null}" description="{excerpt}" />
+<SeoSocial title="{headline}" type="article" image="{heroImage ? heroImage.url + "?w=1200" : null}" description="{excerpt}" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->
@@ -24,7 +24,7 @@
 		<div class="grid lg:grid-cols-sidebar-right">
 			<div class="prose prose-xl">
 				{#if heroImage}
-				<img src="{heroImage.url}" alt="{heroImage.description}" />
+				<img src="{heroImage.url}?w=2000" alt="{heroImage.description}" />
 				{/if}
 				{@html body}
 			</div>
