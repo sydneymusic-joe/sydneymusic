@@ -3,6 +3,15 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import API from "$lib/contentful/" 
 import { formatDateLong } from '$lib/globals.mjs';
 
+function htmlEncode(s) {
+  return s.replace(/&/g, '&amp;')
+  			.replace(/</g, '&lt;')
+  			.replace(/>/g, '&gt;')
+  			.replace(/'/g, '&#39;')
+  			.replace(/"/g, '&#34;')
+  			.replace(/\//, '&#x2F;');
+}
+
 function renderOptions(links) {
     const entryBlockMap = new Map();
     for (const entry of links.entries.block) {
@@ -14,8 +23,6 @@ function renderOptions(links) {
         [BLOCKS.EMBEDDED_ENTRY]: (node) => {
           // find the entry in the entryBlockMap by ID
           const entry = entryBlockMap.get(node.data.target.sys.id);
-
-          console.log(entry);
   
           return `<div class="font-sans rounded border px-6 py-4 max-w-md">
           <div class="flex items-center">
@@ -28,7 +35,7 @@ function renderOptions(links) {
                 <path d="    M 630, 425    A 195, 195 0 0 1 331, 600    A 142, 142 0 0 0 428, 570    A  70,  70 0 0 1 370, 523    A  70,  70 0 0 0 401, 521    A  70,  70 0 0 1 344, 455    A  70,  70 0 0 0 372, 460    A  70,  70 0 0 1 354, 370    A 195, 195 0 0 0 495, 442    A  67,  67 0 0 1 611, 380    A 117, 117 0 0 0 654, 363    A  65,  65 0 0 1 623, 401    A 117, 117 0 0 0 662, 390    A  65,  65 0 0 1 630, 425    Z"    style="fill:#3BA9EE;"/>
                 </svg>
             </div>
-            <div class=" mt-3 mb-1 leading-normal text-lg">${entry.content}</div>
+            <div class=" mt-3 mb-1 leading-normal text-lg">${htmlEncode(entry.content)}</div>
             <div class="text-grey mb-3 text-sm"><a href="${entry.tweetUrl}">11:56 AM - Aug 3, 2009</a></div>
             <div class="flex text-grey text-sm">
                 <div class="flex items-center mr-4">
