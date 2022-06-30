@@ -1,6 +1,5 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import { tweetembed } from '$lib/components/tweet-embed.svelte';
 import API from "$lib/contentful/" 
 import { formatDateLong } from '$lib/globals.mjs';
 
