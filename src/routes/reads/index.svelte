@@ -6,8 +6,7 @@
 		const data = await API(`query {
     articlesCollection(
       order: sys_firstPublishedAt_DESC,
-      limit: 20,
-	  preview : true
+      limit: 20
       ) {
         items {
           headline

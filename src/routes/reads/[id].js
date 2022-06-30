@@ -62,7 +62,7 @@ export async function get({ params }) {
   let otherReadData = false;
   try {
     data = await API(`query {
-      articlesCollection(where: { slug: "${params.id}" }, preview : true, limit:1 ) {
+      articlesCollection(where: { slug: "${params.id}" }, limit:1 ) {
         items {
           headline
           excerpt
