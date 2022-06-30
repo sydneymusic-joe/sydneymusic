@@ -32,6 +32,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@contentful/rich-text-types": "^15.12.1",
     "@netlify/functions": "^1.0.0",
     "contentful-management": "^10.6.2",
     "csv-parse": "^5.1.0",
