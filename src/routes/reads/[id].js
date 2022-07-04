@@ -14,8 +14,12 @@ function htmlEncode(s) {
 
 function renderOptions(links) {
     const entryBlockMap = new Map();
+    const assetBlockMap = new Map();
     for (const entry of links.entries.block) {
       entryBlockMap.set(entry.sys.id, entry);
+    }
+    for (const asset of links.assets.block) {
+      assetBlockMap.set(asset.sys.id, asset);
     }
   
     return {
@@ -54,6 +58,10 @@ function renderOptions(links) {
               </div>
             </div>`;
           }
+        },
+        [BLOCKS.EMBEDDED_ASSET] : (node) => {
+          const asset = assetBlockMap.get(node.data.target.sys.id);
+          return `<img src="${asset.url}?w=2000" alt="${asset.description}" />`;
         }
       }
     }    
@@ -90,6 +98,16 @@ export async function get({ params }) {
                       url
                     }
                   }
+                }
+              }
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  title,
+                  description,
+                  url
                 }
               }
             }
