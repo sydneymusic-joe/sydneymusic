@@ -1,7 +1,7 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import API from "$lib/contentful/" 
-import { formatDateLong } from '$lib/globals.mjs';
+import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
 function htmlEncode(s) {
   return s.replace(/&/g, '&amp;')
@@ -61,7 +61,15 @@ function renderOptions(links) {
         },
         [BLOCKS.EMBEDDED_ASSET] : (node) => {
           const asset = assetBlockMap.get(node.data.target.sys.id);
-          return `<img src="${asset.url}?w=2000" alt="${asset.description}" />`;
+          return `
+          <figure>
+            <img src="${asset.url}?w=2000" alt="${asset.description}" />
+            <figcaption>
+              <span>Image: ${asset.title}</span>
+              <span class="description">${asset.description}</span>
+            </figcaption>
+          </figure>
+          `;
         }
       }
     }    
@@ -72,7 +80,7 @@ export async function get({ params }) {
   let otherReadData = false;
   try {
     data = await API(`query {
-      articlesCollection(where: { slug: "${params.id}" }, limit:1 ) {
+      articlesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
         items {
           headline
           excerpt
@@ -132,7 +140,7 @@ export async function get({ params }) {
       articlesCollection(
         order: sys_firstPublishedAt_ASC,
         limit: 4
-        where: { slug_not: "${params.id}" }
+        where: { slug_not: "${params.id}" }, preview : ${previewMode}
       ) {
           items {
             headline

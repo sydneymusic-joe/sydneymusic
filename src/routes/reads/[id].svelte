@@ -24,7 +24,13 @@
 		<div class="grid lg:grid-cols-sidebar-right">
 			<div class="prose prose-xl">
 				{#if heroImage}
-				<img src="{heroImage.url}?w=2000" alt="{heroImage.description}" />
+				<figure>
+					<img src="{heroImage.url}?w=2000" alt="${heroImage.title}" />
+					<figcaption>
+					  <span>Image: {heroImage.title}</span>
+					  <span class="description">{heroImage.description}</span>
+					</figcaption>
+				  </figure>
 				{/if}
 				{@html body}
 			</div>

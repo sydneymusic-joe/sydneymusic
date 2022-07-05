@@ -1,6 +1,6 @@
 <script context="module">
 	import API from '$lib/contentful/';
-	import { groupBy, createCalendarLink, formatDayOfWeek, formatDateLong } from '$lib/globals.mjs';
+	import { previewMode, groupBy, createCalendarLink, formatDayOfWeek, formatDateLong } from '$lib/globals.mjs';
 
 	const getGigs = async () => {
 		// ToDo: We're doing this in the or server's local timezone.
@@ -17,7 +17,8 @@
         where: { 
           gigStartDate_gte: "${n.toISOString()}"
           gigStartDate_lte: "${d.toISOString()}"
-        }
+        },
+        preview:${previewMode}
       ) {
         items {
           gigStartDate
@@ -61,7 +62,7 @@
 
 	const getReads = async () => {
 		const data = await API(`query {
-      articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4) {
+      articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4, preview:${previewMode}) {
           items {
             headline
             excerpt

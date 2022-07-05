@@ -1,12 +1,13 @@
 <script context="module">
 	import API from '$lib/contentful/';
-	import { formatDate, groupBy } from '$lib/globals.mjs';
+	import { previewMode, formatDate, groupBy } from '$lib/globals.mjs';
 
 	const getReads = async () => {
 		const data = await API(`query {
     articlesCollection(
       order: sys_firstPublishedAt_DESC,
-      limit: 20
+      limit: 20,
+	  preview : ${previewMode}
       ) {
         items {
           headline
