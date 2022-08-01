@@ -118,7 +118,7 @@
 		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
-        <h2 class="notch-left text-xl">Gigs at a glance</h2>
+        <h1 class="notch-left text-xl">Sydney live music this week</h1>
 
         <div class="space-y-10 sm:pr-20 lg:pr-28">
           {#each gigs as { label, items }, i}
@@ -160,7 +160,7 @@
 
 			<!-- Right col -->
 			<div class="space-y-10">
-				<h2 class="notch-left text-xl">Latest Reads</h2>
+				<h1 class="notch-left text-xl">Latest Reads</h1>
 				<div class="space-y-10 sm:pr-20 lg:pr-28">
           {#each reads as { headline, excerpt, slug }}
             <a href="/reads/{slug}" class="block">
@@ -175,49 +175,25 @@
 
 	<!-- Second section -->
 	<div class="space-y-10">
-    <div class="space-y-10">
-      <h2 class="notch-left text-xl">Welcome to SydneyMusic!</h2>
-
-      <div class="grid md:grid-cols-2 gap-5">
-        <!-- left col -->
-        <div class="space-y-10">
-          <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-3">
-		  <p class="font-bold">This site exists to promote the community that music creates, with a local focus on Sydney, Australia.</p>
-            <p>Community online is well served by many platforms and services — you can usually find your people somewhere on the internet. So the main goal of this site is to point you to where the good stuff is happening IRL, so you can find your people and your favourite artists, new or old, all in the same place.</p>
-            <p>At its heart is a simple, no-nonsense gig guide that does exactly what it says on the tin. We’ll also be publishing the occasional bit of writing,including commentary on cultural trends, music reviews, opinion pieces, and round-ups from contributing writers. We also have a Discord, to help foster connections, again in the hope that it will make it easier to find Sydney’s music community and find your place in it.</p>
-          </div>
-        </div>
-        <!-- right col -->
-        <img
-          srcset="/canman-about@2x.png 964w, /canman-about@1x.png 482w"
-          alt="Our mascot Can Man"
-          class="aspect-square w-full hidden md:block" />
-      </div>
-    </div>
-
-    <!-- Third section -->
-    <div class="grid lg:grid-cols-2 gap-5">
+    <div class="grid md:grid-cols-2 gap-5">
       <!-- left col -->
-      <div class="space-y-10">
-        <h2 class="notch-left text-xl">How SydneyMusic.net Works</h2>
-        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4">
-        <p>This site is emphatically not-for-profit.</p>
-        <p>Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>
-        <p>This site will never attempt to disguise promotional consideration within “native content” or “sponsored content”, run retina-scorching banner ads, or promote artists in exchange for cash or favours. We will never collect data that could be considered PII (personally identifiable information) or profile you in any way.</p>
-        <p>The site is run by volunteers donating their skills and time, and hosting costs are covered by one member of that volunteer team. We’re not currently seeking donations of any kind — just enjoy the site, spread the word, and send us tips on where to find great shows.</p>
+      <div class="space-y-6 mb-20 md:mb-0">
+        <h2 class="notch-left text-xl">Welcome to SydneyMusic!</h2>
+        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
+          <p class="font-bold">This site exists to promote the community that music creates, with a local focus on Sydney, Australia.</p>
+          <p>At its heart is a simple, no-nonsense gig guide that does exactly what it says on the tin. We’ll also be publishing the occasional bit of writing, including commentary on cultural trends, music reviews, opinion pieces, and round-ups from contributing writers. We also have a Discord, to help foster connections, again in the hope that it will make it easier to find Sydney’s music community and find your place in it.</p>
+          <Button label="Read more" href="/about" />    
         </div>
       </div>
-      <!-- right col -->
-      <div class="space-y-10">
+
+      <div class="space-y-6">
         <h2 class="notch-left text-xl">Join our Discord!</h2>
 
-        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4">
-          <p>
-            <strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.
-          </p>
+        <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
+          <p><strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.</p>
           <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" height="80" width="292" />
           <Button label="Join our Discord!" href="https://discord.gg/jv8VKrXymJ" />
-        </div>
+        </div>  
       </div>
     </div>
 	</div>

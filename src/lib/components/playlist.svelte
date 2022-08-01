@@ -1,4 +1,9 @@
+<script>
+    export let showtitle = false;
+</script>
+{#if showtitle}
 <h3 class="notch-left text-lg lg:text-xl"><span class="text-ruby">New!</span> Gig Guide Playlist</h3>
+{/if}
 <div class="prose prose-sm">
     <p>Listen to (almost) every artist listed in the gig guide this week:</p>
     <ul>

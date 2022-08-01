@@ -9,7 +9,7 @@
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 
-            <PlaylistPromo />
+            <PlaylistPromo showtitle="true" />
         </div>
     </div>
 </div>

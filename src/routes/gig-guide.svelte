@@ -87,6 +87,56 @@
 		 />
 </picture>
 
+<div class="max-w-5xl px-5 mt-10 mx-auto space-y-4 md:hidden">
+	<h1 class="notch-left text-xl">Gig Guide</h1>
+
+	<div class="prose prose-sm px-3">
+		<p>Below you'll find every live music event taking place in Sydney, all on one page with no ads.</p>
+	</div>
+
+	<div class="transition">
+        <div class="accordion-header cursor-pointer transition flex items-center">
+			<h3 class="mb-0 notch-left text-lg lg:text-xl">
+				How Does This Work?
+			</h3>
+		</div>
+		<div class="accordion-content overflow-hidden max-h-0">
+			<div class="prose prose-sm">
+				<p>
+					This guide is as simple as we can practically get away with. We’ll include some
+					occasional commentary (feel free to submit your own!) to help give you context on
+					what can be a dizzyingly complex network of musicians, collectives, communities,
+					and spaces, or just make sure you don’t miss out on catching your next favourite
+					act.
+				</p>
+				<p>
+					Got a gig you think should be listed here?<br />&raquo; <a href="mailto:contact@sydneymusic.net">Drop us an email to submit a show</a>.
+				</p>
+
+				<p>Want to read up on how this works?<br />&raquo; <a href="/about">Head over to our About / FAQs page</a>.</p>
+				<p>
+					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br/>
+					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t 
+					publish your marketing/social copy verbatim or give you special consideration
+					in the guide. We generally don’t list cover/tribute bands or background-music sets at hospitality
+					venues. All listings are at our own discretion. We will also graciously refuse any offer
+					of door spots for shows where we can buy tickets.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="transition">
+		<div class="accordion-header cursor-pointer transition flex items-center">
+			<h3 class="mb-0 notch-left text-lg lg:text-xl">
+				Gig Guide Playlist
+			</h3>
+		</div>
+		<div class="accordion-content overflow-hidden max-h-0">
+			<PlaylistPromo />
+		</div>
+	</div>
+</div>
+
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
@@ -133,7 +183,7 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-				<PlaylistPromo />
+				<PlaylistPromo showtitle="true" />
 
 				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>
 				<div class="prose prose-sm">
@@ -172,3 +222,10 @@
 		</div>
 	</div>
 </div>
+
+
+<style>
+    .accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    }
+</style>

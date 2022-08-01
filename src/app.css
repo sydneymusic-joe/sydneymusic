@@ -118,6 +118,10 @@
     position: relative;
   }
 
+  .notch-left * {
+    @apply font-semibold uppercase leading-tight;
+  }
+
   .notch-right::after {
     content: "";
     border-color: inherit;
@@ -143,10 +147,14 @@
     @apply border-l-2;
   }
 
-  .about dt {
+  .about-copy > div {
+    @apply px-3 prose;
+  }
+
+  .about-copy dt {
     @apply font-bold uppercase
   }
-  .about dd { @apply mb-2; }
+  .about-copy dd { @apply mb-2; }
 
   .time {
     @apply border-r mr-3 pr-3;
@@ -161,5 +169,17 @@
     border-left : solid 1px #aaa;
     padding-left : 10px;
     margin-left : 8px;
+  }
+
+  .accordion-header h3::before {
+    content : '+ ';
+  }
+
+  .accordion-header.accordion-expanded h3::before {
+    content : '– ';
+  }
+
+  .accordion-content > div {
+    @apply px-3 py-5 space-y-3;
   }
 }
