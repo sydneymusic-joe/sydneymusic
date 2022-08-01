@@ -2,7 +2,6 @@
 	import API from '$lib/contentful/';
 	import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
 	import SeoSocial from '$lib/components/seo-social.svelte';
-	import PlaylistPromo from '$lib/components/playlist.svelte';
 
 	const getGigs = async () => {
 		const d = new Date();
@@ -71,7 +70,7 @@
 	export let gigs;
 </script>
 
-<SeoSocial title="Gig Guide" />
+<SeoSocial title="Gig Guide Archive" />
 
 <picture>
 	<source
