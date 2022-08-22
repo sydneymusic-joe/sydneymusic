@@ -9,3 +9,4 @@ node_modules
 gigs-import*
 # Local Netlify folder
 .netlify
+/email-generator
