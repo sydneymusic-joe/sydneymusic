@@ -1,5 +1,6 @@
 <script>
-	import {  navigationFooterSecondary, navigationFooter } from '../globals.mjs';
+	import { add_render_callback, get_store_value } from 'svelte/internal';
+import {  navigationFooterSecondary, navigationFooter } from '../globals.mjs';
 	import Logo from './logo.svelte';
 </script>
 
@@ -14,9 +15,20 @@
 	<nav class="bg-black text-gray-200 p-10">
 		<div class="grid lg:grid-cols-2 gap-5 justify-between py-5">
 
-			<a href="/" class="shrink-0">
-				<Logo invert={true} />
-			</a>
+			<div>
+				<a href="/" class="shrink-0">
+					<Logo invert={true} />
+				</a>
+
+				<p class="prose text-xs text-slate-300 mt-5">
+					&copy; SydneyMusic Ltd. 2022<br />
+					ABN 87 663 482 513<br />
+					<br />
+					SydneyMusic is registered as a not-for-profit entity with the <a href="https://www.acnc.gov.au" class="text-white">Australian Charities and Not-for-profits Commission</a>.<br /><br />
+					The SydneyMusic "Can Man" mascot and all illustrations were created by and &copy; Hugh McKinnon, 2022. All rights reserved.
+				</p>
+			</div>
+
 
 			<div class="grid grid-cols-2 gap-5 mr-5">
 				<div class="space-y-3">

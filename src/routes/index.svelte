@@ -115,6 +115,10 @@
 	<!-- First section -->
 	<div class="space-y-10">
 
+    <div class="rounded bg-slate-200 text-sm p-5 border-b-2">
+      <p class="prose max-w-none"><strong>The SydneyMusic store is now open!</strong><br />If you like what we do, you can support the site by making a donation or buying some merch through <a href="https://store.sydneymusic.net">our new online store</a>.</p>
+    </div>
+
 		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">

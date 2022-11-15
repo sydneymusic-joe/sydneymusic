@@ -22,7 +22,7 @@
 				<p>This site is emphatically not-for-profit.</p>
 				<p>Everyone’s gotta eat, but Sydney’s music landscape has been made worse for having to put profit before principles more often than not. It’s reflected in our (lack of) music press, the fact that outsider music is having a harder and harder time finding ears and getting attention, and a general lack of risks being taken — resulting in a music scene that plays it safe and takes fewer risks compared to other global music communities.</p>
 				<p>This site will never attempt to disguise promotional consideration within “native content” or “sponsored content”, run retina-scorching banner ads, or promote artists in exchange for cash or favours. We will never collect data that could be considered PII (personally identifiable information) or profile you in any way.</p>
-				<p>The site is run by volunteers donating their skills and time, and hosting costs are covered by one member of that volunteer team. We’re not currently seeking donations of any kind — just enjoy the site, spread the word, and send us tips on where to find great shows.</p>
+				<p>The site is run by volunteers donating their skills and time. We are registered as a not-for-profit with the Australian Charities and Not-for-profit Commission (ACNC) and welcome <a href="https://store.sydneymusic.net">donations</a> to help us to keep this viable. Other than that, the site is free for all: enjoy it, spread the word, and send us tips on where to find great shows.</p>
 			</div>
 
 			<h2 class="notch-left text-xl">Who's Behind This?</h2>

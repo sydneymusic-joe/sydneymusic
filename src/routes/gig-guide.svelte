@@ -91,9 +91,9 @@
 	<h1 class="notch-left text-xl">Gig Guide</h1>
 
 	<div class="prose prose-sm px-3">
-		<p>Below you'll find every live music event taking place in Sydney, all on one page with no ads.</p>
+		<p>Below you'll find every live music event taking place in Sydney, all on one page.</p>
 	</div>
-
+  
 	<div class="transition">
         <div class="accordion-header cursor-pointer transition flex items-center">
 			<h3 class="mb-0 notch-left text-lg lg:text-xl">
@@ -134,6 +134,10 @@
 		<div class="accordion-content overflow-hidden max-h-0">
 			<PlaylistPromo />
 		</div>
+	</div>
+
+    <div class="rounded bg-slate-200 text-sm p-5 border-b-2">
+		<p class="prose text-sm max-w-none"><strong>Would you like to support SydneyMusic?</strong><br />This site is not-for-profit, but costs money to run. If you like what we do, you can support the site by making a donation or buying some merch through <a href="https://store.sydneymusic.net">our new online store</a>.</p>
 	</div>
 </div>
 
@@ -183,6 +187,12 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
+				<h3 class="notch-left text-lg lg:text-xl"><span class="text-ruby">NEW!</span> Support Us!</h3>
+				<div class="prose prose-sm">
+					<a href="https://store.sydneymusic.net"><img src="/store-promo.jpg" alt="SydneyMusic Store Items: Tote, Tee, Stubby Holder" /></a>
+					<p>We're an officially registered not-for-profit these days, and we now have an <a href="https://store.sydneymusic.net">online store</a> where you can make donations and/or buy merch.</p>
+				</div>
+
 				<PlaylistPromo showtitle="true" />
 
 				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>

@@ -112,6 +112,7 @@
 }
 
 @layer base {
+  .notch-thic,
   .notch-right,
   .notch-left {
     @apply font-semibold uppercase leading-tight block border-b border-black w-full px-3;
@@ -134,8 +135,7 @@
     @apply absolute left-0 bottom-0 h-3 border-l;
   }
   
-  .notch-left.notch-thic, 
-  .notch-right.notch-thic {
+  .notch-thic {
     @apply border-b-2;
   }
 

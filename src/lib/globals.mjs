@@ -5,9 +5,9 @@ export const previewMode = (import.meta.env ? import.meta.env : process.env).VIT
 
 // ToDo get this from contentful?
 export const navigation = [
-  { title: "home", href: "/" },
   { title: "gigs", href: "/gig-guide" },
   { title: "reads", href: "/reads" },
+  { title: "support", href: "https://store.sydneymusic.net" },
   { title: "links", href: "/links" }
 ]
 
@@ -15,13 +15,14 @@ export const navigationFooter = [
   { title: "Home", href: "/" },
   { title: "Gig Guide", href: "/gig-guide" },
   { title: "Reads", href: "/reads" },
-  { title: "About & FAQ", href: "/about" }
+  { title: "About & FAQ", href: "/about" },
+  { title: "Donate / Merch Store", href: "https://store.sydneymusic.net" }
 ]
 
 export const navigationFooterSecondary = [
   { title: "Contact", href: "/contact" },
-  { title: "Join the Discord!", href: "https://discord.gg/jv8VKrXymJ" },
   { title: "Links", href: "/links" },
+  { title: "Join the Discord!", href: "https://discord.gg/jv8VKrXymJ" },
   { title: "Weekly Gig Guide Playlist", href: "/playlist" }
 ]
 
