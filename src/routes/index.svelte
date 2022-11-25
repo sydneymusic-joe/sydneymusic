@@ -129,15 +129,15 @@
           {#each gigs as { label, items }, i}
           <!-- Only get the next 2 days -->
           {#if i < 2}
-            <div class="space-y-0">
+            <div class="space-y-5">
               <h3 class="notch-left text-lg">
                 <span class="font-bold text-ruby">{label.split(':')[0]}</span>
                 <span class="font-normal text-graphite">{label.split(':')[1]}</span>
               </h3>
-              <div class="divide-black divide-y">
+              <div>
                 {#each items as event, i}
                   {#if i < 3}
-                  <div class="py-4 pl-3">
+                  <div class="pl-3">
                     <Event
                       name={event.promotedName}
                       performers={event.performersList}
@@ -151,7 +151,7 @@
                   {/if}
                 {/each}
                 {#if items.length > 3}
-                <a class="text-gray-700 text-sm my-0 py-2 pl-3 block hover:underline" href="/gig-guide">
+                <a class="text-gray-700 text-sm my-0 pl-3 block italic hover:underline" href="/gig-guide">
                 + {items.length - 3} more
                 </a>
                 {/if}
