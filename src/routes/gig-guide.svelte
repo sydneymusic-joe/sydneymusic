@@ -20,6 +20,7 @@
           performersList
           furtherInfo
           furtherInfoContributorInitials
+		  isFree
           venue {
             venueName
             address
@@ -147,8 +148,16 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
+				<div class="filterbox">
+					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative mb-4">
+						<input type="checkbox" id="toggle-freegigs" class="sr-only">
+						<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full"></div>
+						<span class="ml-2">FREE GIGS ONLY</span>
+					  </label>
+				</div>
+		
 				{#each gigs as month}
-					<div class="space-y-10">
+					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}
 						</h3>
@@ -163,20 +172,19 @@
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
-									<div class="space-y-5 w-full">
+									<div class="w-full">
 										{#each items as event}
-											<div>
-												<Event
-													name={event.promotedName}
-													performers={event.performersList}
-													calendarLink={createCalendarLink(event)}
-													venue={event.venue}
-													website={event.ticketUrl}
-													comment={event.furtherInfo}
-                          							initials={event.furtherInfoContributorInitials}
-													time={event.time}
-												/>
-											</div>
+											<Event
+												name={event.promotedName}
+												performers={event.performersList}
+												calendarLink={createCalendarLink(event)}
+												venue={event.venue}
+												website={event.ticketUrl}
+												comment={event.furtherInfo}
+												initials={event.furtherInfoContributorInitials}
+												time={event.time}
+												isFree={event.isFree}
+											/>
 										{/each}
 									</div>
 								</div>

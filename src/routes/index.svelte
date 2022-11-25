@@ -27,6 +27,7 @@
           performersList
           furtherInfo
           furtherInfoContributorInitials
+          isFree
           venue {
             venueName
             address

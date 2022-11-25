@@ -7,12 +7,13 @@
   export let comment = null;
   export let initials = null;
   export let time = null;
+  export let isFree = false;
   // Can't set a default here cause null is explicitly provided
   if(!initials) initials = "NB:"  
   if(!time) time = '8pm'
 </script>
 
-<div class="space-y-2">
+<div class="space-y-2 mb-5 eventcard {isFree ? 'freegig' : ''}">
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
@@ -39,6 +40,10 @@
         </svg>
 			<p class="group-hover:underline" >Add to calendar</p>
 		</a>
+    {/if}
+
+    {#if isFree}
+    <div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
     {/if}
 	</div>
   {#if comment}

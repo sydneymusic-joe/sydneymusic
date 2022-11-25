@@ -24,6 +24,7 @@ module.exports = {
         ruby: "#e02020",
         graphite: "#6d7278",
         acknowledgement : '#BEBEBE',
+        pill : '#666666',
       },
       aspectRatio : {
         '3/1': "3/1",

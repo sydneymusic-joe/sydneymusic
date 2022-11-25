@@ -161,6 +161,22 @@
     border-color : #7f7f7f;
   }
 
+  .filterbox label {
+    @apply italic font-semibold text-pill;
+  }
+
+  .toggle-bg:after {
+    content: '';
+    @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+  }
+  input:checked + .toggle-bg:after {
+      transform: translateX(100%);
+      @apply border-white;
+  }
+  input:checked + .toggle-bg {
+      @apply bg-blue-600 border-blue-600;
+  }
+
   figcaption {
     @apply text-sm !important;
   }
@@ -182,4 +198,14 @@
   .accordion-content > div {
     @apply px-3 py-5 space-y-3;
   }
+}
+
+body.freegigs .day:not(:has(.freegig)) {
+  @apply hidden;
+}
+body.freegigs .guide-month > h3:not(:has(+ div .freegig)) {
+  @apply hidden;
+}
+body.freegigs .eventcard:not(:is(.freegig)) {
+  @apply hidden;
 }
