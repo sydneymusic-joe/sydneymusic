@@ -13,7 +13,7 @@
   if(!time) time = '8pm'
 </script>
 
-<div class="space-y-2 mb-5 eventcard {isFree ? 'freegig' : ''}">
+<div class="space-y-2 mb-5 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''} {isFree ? 'freegig' : ''}">
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
