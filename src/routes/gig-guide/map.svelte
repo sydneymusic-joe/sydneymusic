@@ -2,7 +2,7 @@
 	import API from '$lib/contentful/';
 	import { groupBy } from '../../lib/globals.mjs';
 
-    export let key = 'AIzaSyCW1mfMQMzS9unKFF_XIc9TlIqDm2uw2T0';
+    export let key = ''; // TODO get key from env
 
     let container;
 
