@@ -222,6 +222,39 @@ body.freegigs .eventcard:not(:is(.freegig)) {
   background-size : contain;
 }
 
+/* feed divider experiment */
+
+.guide-divider {
+  @apply relative flex items-center
+}
+
+.guide-divider div:first-child {
+  @apply flex-grow border-t border-gray-400;
+  position : relative;
+}
+.guide-divider div:first-child::before {
+  position : absolute;
+  content: "";
+  width : 50px;
+  height : 20px;
+  top : -21px;
+  right : 0;
+  background-image: url(/canman-peek-horiz.png);
+  background-size : contain;
+  background-repeat : no-repeat;
+}
+
+.guide-divider span {
+  @apply flex-shrink mx-4 italic text-sm text-gray-600
+}
+.guide-divider span a {
+  @apply underline
+}
+
+.guide-divider div:last-child {
+  @apply flex-grow border-t border-gray-400
+}
+
 /* mm-mm-mm-mm-mm it's map time */
 #gigmap { @apply bg-black h-screen w-screen text-white p-5 relative
 }

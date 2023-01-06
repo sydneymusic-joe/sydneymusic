@@ -69,7 +69,10 @@
 <script>
 	import Event from '$lib/components/event.svelte';
 	import Button from '$lib/components/button.svelte';
+	import Feedprompt from '../../lib/components/feedprompt.svelte';
 	export let gigs;
+
+	let gigcount = 0;
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -136,10 +139,6 @@
 			<PlaylistPromo />
 		</div>
 	</div>
-
-    <div class="rounded bg-slate-200 text-sm p-5 border-b-2">
-		<p class="prose text-sm max-w-none"><strong>Would you like to support SydneyMusic?</strong><br />This site is not-for-profit, but costs money to run. If you like what we do, you can support the site by making a donation or buying some merch through <a href="https://store.sydneymusic.net">our new online store</a>.</p>
-	</div>
 </div>
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
@@ -172,7 +171,7 @@
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
-									<div class="w-full">
+									<div class="w-full space-y-5">
 										{#each items as event}
 											<Event
 												name={event.promotedName}
@@ -188,6 +187,7 @@
 										{/each}
 									</div>
 								</div>
+								<Feedprompt />
 							{/each}
 						</div>
 					</div>
