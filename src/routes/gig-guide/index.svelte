@@ -4,9 +4,11 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 
-	let promptCounter = 0;
-	const increment = () => { promptCounter++; return ""; }
-	const resetCounter = () => { if (promptCounter > 9) promptCounter = 0; return ""; }
+	let gigCounter = 0;
+	let whichPrompt = 0;
+	const increment = () => { gigCounter++; return ""; }
+	const resetCounter = () => { if (gigCounter > 9) gigCounter = 0; return ""; }
+	const incrementDisplay = () => { whichPrompt++; return ""; }
 
 	const getGigs = async () => {
 		const d = new Date();
@@ -192,9 +194,10 @@
 										{/each}
 									</div>
 								</div>
-								{#if promptCounter > 9}
-								<Feedprompt />
+								{#if gigCounter > 9}
+								<Feedprompt Index={whichPrompt % 7} />
 								{resetCounter() }
+								{incrementDisplay()}
 								{/if}
 							{/each}
 						</div>
