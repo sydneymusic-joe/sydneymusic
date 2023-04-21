@@ -4,6 +4,10 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 
+	let promptCounter = 0;
+	const increment = () => { promptCounter++; return ""; }
+	const resetCounter = () => { if (promptCounter > 9) promptCounter = 0; return ""; }
+
 	const getGigs = async () => {
 		const d = new Date();
 
@@ -184,10 +188,14 @@
 												time={event.time}
 												isFree={event.isFree}
 											/>
+											{increment()}
 										{/each}
 									</div>
 								</div>
+								{#if promptCounter > 9}
 								<Feedprompt />
+								{resetCounter() }
+								{/if}
 							{/each}
 						</div>
 					</div>

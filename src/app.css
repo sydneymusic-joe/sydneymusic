@@ -239,13 +239,14 @@ body.freegigs .eventcard:not(:is(.freegig)) {
   height : 20px;
   top : -21px;
   right : 0;
-  background-image: url(/canman-peek-horiz.png);
+  /*background-image: url(/canman-peek-horiz.png);
   background-size : contain;
-  background-repeat : no-repeat;
+  background-repeat : no-repeat;*/
 }
 
 .guide-divider span {
-  @apply flex-shrink mx-4 italic text-sm text-gray-600
+  @apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[75%];
+  text-align : center;
 }
 .guide-divider span a {
   @apply underline
@@ -272,4 +273,17 @@ body.freegigs .eventcard:not(:is(.freegig)) {
   position : absolute;
   z-index : 0;
   @apply h-screen w-screen top-0 left-0;
+}
+
+.home-storelink { position : relative; }
+.home-storelink::before {
+  position : absolute;
+  content: "";
+  width : 60px;
+  height : 30px;
+  top : -29px;
+  left : 30px;
+  background-image: url(/canman-peek-horiz.png);
+  background-size : contain;
+  background-repeat : no-repeat;
 }
