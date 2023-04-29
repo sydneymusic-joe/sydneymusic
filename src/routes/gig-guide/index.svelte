@@ -195,7 +195,7 @@
 									</div>
 								</div>
 								{#if gigCounter > 9}
-								<Feedprompt Index={whichPrompt % 7} />
+								<Feedprompt Index={whichPrompt} />
 								{resetCounter() }
 								{incrementDisplay()}
 								{/if}
