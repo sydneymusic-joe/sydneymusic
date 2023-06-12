@@ -21,7 +21,7 @@ import {  navigationFooterSecondary, navigationFooter } from '../globals.mjs';
 				</a>
 
 				<p class="prose text-xs text-slate-300 mt-5">
-					&copy; SydneyMusic Ltd. 2022<br />
+					&copy; SydneyMusic Ltd. 2022-2023<br />
 					ABN 87 663 482 513<br />
 					<br />
 					SydneyMusic is registered as a not-for-profit entity with the <a href="https://www.acnc.gov.au" class="text-white">Australian Charities and Not-for-profits Commission</a>.<br /><br />

@@ -1,6 +1,7 @@
 <script>
     export let Index = 0;
     let prompts = [
+        'The SydneyMusic website codebase is open source and free for anyone to use and adapt. Want to make a similar website for your own city, sub-community or interest? <a href="https://github.com/sydneymusic-joe/sydneymusic">The code can be found here</a> with deployment instructions.',
         'Our <a href="https://store.sydneymusic.net">online store</a> is now open! If you find this site useful, your support is greatly appreciated: every donation or merch sale helps us cover our operating costs.',
         'Want to submit a gig? <a href="mailto:contact@sydneymusic.net">Email us</a>!',
         'The SydneyMusic Discord is a friendly online community of live music loving individuals discussing our local music community. Everyone is welcome: <a href="https://discord.gg/HuzdkUct">join in here</a>!',
