@@ -1,0 +1,15 @@
+[
+  {
+    "ts": "2023-08-02T14:57:24.737Z",
+    "level": "error",
+    "error": {
+      "originalError": {
+      },
+      "stacktrace": [
+        "Error: TypeError: Cannot read properties of undefined (reading 'id')",
+        "/Users/luked/.nvm/versions/node/v16.19.0/lib/node_modules/contentful-cli/node_modules/contentful-batch-libs/dist/listr.js:24:29",
+        "processTicksAndRejections (node:internal/process/task_queues:96:5)"
+      ]
+    }
+  }
+]
