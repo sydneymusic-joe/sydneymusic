@@ -16,7 +16,7 @@
 		const data = await API(`{
       eventsCollection(
         order: gigStartDate_ASC,
-        limit: 1000, 
+        limit: 1000,
         where: { gigStartDate_gte: "${new Date(d.setHours(0)).toISOString()}" }
       ) {
         items {
@@ -41,8 +41,10 @@
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
 				let d = new Date(gigStartDate);
+				let dateString = `${d.getFullYear()}${`0${d.getMonth()+1}`.slice(-2)}${d.getDate()}`;
 				return {
 					date: d,
+					dateString: dateString,
 					time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					...rest
 				};
@@ -103,7 +105,7 @@
 	<div class="prose prose-sm px-3">
 		<p>Below you'll find every live music event taking place in Sydney, all on one page.</p>
 	</div>
-  
+
 	<div class="transition">
         <div class="accordion-header cursor-pointer transition flex items-center">
 			<h3 class="mb-0 notch-left text-lg lg:text-xl">
@@ -126,7 +128,7 @@
 				<p>Want to read up on how this works?<br />&raquo; <a href="/about">Head over to our About / FAQs page</a>.</p>
 				<p>
 					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br/>
-					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t 
+					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
 					publish your marketing/social copy verbatim or give you special consideration
 					in the guide. We generally don’t list cover/tribute bands or background-music sets at hospitality
 					venues. All listings are at our own discretion. We will also graciously refuse any offer
@@ -160,7 +162,7 @@
 						<span class="ml-2">FREE GIGS ONLY</span>
 					  </label>
 				</div>
-		
+
 				{#each gigs as month}
 					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
@@ -172,10 +174,12 @@
 									<div
 										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
-										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-											{label.split(':')[1]}
-										</p>
-										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+										<a href={`/gig-guide/${items[0].dateString}`} class="no-underline hover:underline" >
+											<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
+												{label.split(':')[1]}
+											</p>
+											<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+										</a>
 									</div>
 									<div class="w-full space-y-5">
 										{#each items as event}
@@ -236,7 +240,7 @@
 				<div class="prose prose-sm">
 				<p>
 					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br/>
-					Self-promo is fine —we love it when you let us know what you’ve got going on! But we won’t 
+					Self-promo is fine —we love it when you let us know what you’ve got going on! But we won’t
 					publish your marketing/social copy verbatim or give you special consideration
 					in the guide. We generally don’t list cover/tribute bands or background-music sets at hospitality
 					venues. All listings are at our own discretion. We will also graciously refuse any offer

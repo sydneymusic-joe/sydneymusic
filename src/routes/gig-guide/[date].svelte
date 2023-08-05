@@ -64,7 +64,8 @@
 	};
 
 	export async function load({ url, params }) {
-		let gigs = await getGigs(params.date);
+    const date = params && params.date ? params.date : '20230807';
+		let gigs = await getGigs(date);
 
 		return {
 			props: {
@@ -81,8 +82,8 @@
 	import Button from '$lib/components/button.svelte';
 	import Feedprompt from '../../lib/components/feedprompt.svelte';
 	export let gigs;
-  export let url;
-  export let params;
+  // export let url;
+  // export let params;
 
 	let gigcount = 0;
 </script>
@@ -175,16 +176,16 @@
 						<div class="grid space-y-10">
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
-                  <a href={`/gig-guide/${items[0].dateString}`}>
-									  <div
-										  class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
-									  >
-										  <p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-											  {label.split(':')[1]}
-										  </p>
-										  <p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
-									  </div>
-                  </a>
+									<div
+										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+									>
+										<a href={`/gig-guide/${items[0].dateString}`} class="no-underline hover:underline" >
+											<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
+												{label.split(':')[1]}
+											</p>
+											<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+										</a>
+									</div>
 									<div class="w-full space-y-5">
 										{#each items as event}
 											<Event
