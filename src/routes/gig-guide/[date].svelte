@@ -11,7 +11,13 @@
 	const incrementDisplay = () => { whichPrompt++; return ""; }
 
 	const getGigs = async (date) => {
-		const d = new Date(date.slice(0,4), date.slice(4, 6)-1, date.slice(6,8));
+    let d;
+    // check we have something that at least resembles YYYMMDD
+    if ((typeof date === 'string') && (date.length === 8) && (parseInt(date) == date)) {
+      d = new Date(date.slice(0,4), date.slice(4, 6)-1, date.slice(6,8));
+    } else {
+      d = new Date();
+    }
 
 		const data = await API(`{
       eventsCollection(
@@ -82,8 +88,6 @@
 	import Button from '$lib/components/button.svelte';
 	import Feedprompt from '../../lib/components/feedprompt.svelte';
 	export let gigs;
-  // export let url;
-  // export let params;
 
 	let gigcount = 0;
 </script>
@@ -177,7 +181,7 @@
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky -top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
 										<a href={`/gig-guide/${items[0].dateString}`} class="no-underline hover:underline" >
 											<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
