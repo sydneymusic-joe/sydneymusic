@@ -182,7 +182,7 @@
 										</a>
 									</div>
 									<div class="w-full space-y-5">
-										{#each items as event}
+										{#each items as event, index}
 											<Event
 												name={event.promotedName}
 												performers={event.performersList}
@@ -193,6 +193,8 @@
 												initials={event.furtherInfoContributorInitials}
 												time={event.time}
 												isFree={event.isFree}
+												dateString={event.dateString}
+                        id={index}
 											/>
 											{increment()}
 										{/each}

@@ -8,14 +8,27 @@
   export let initials = null;
   export let time = null;
   export let isFree = false;
+  export let dateString = null;
+  export let id = null;
   // Can't set a default here cause null is explicitly provided
-  if(!initials) initials = "NB:"  
+  if(!initials) initials = "NB:"
   if(!time) time = '8pm'
+  const slug = `${name}-${dateString}-${id}`
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[\W_]+/g, '-')
+    .toLowerCase()
+    .replace(/^-+|-+$/g, '');
 </script>
 
 <div class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''} {isFree ? 'freegig' : ''}">
 	<div class="">
-		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
+		<h4 id="{slug}" class="text-lg font-bold uppercase italic leading-[1.5rem]">
+      <a href="{`#${slug}`}">{name}</a>
+      <span class="lowercase text-xs text-neutral-500 font-normal hover:underline pl-2">
+        <a href="{`#${slug}`}">[link]</a>
+      </span>
+    </h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">W/ {performers.join(", ")}</p>{/if}
 		<p class="text-sm uppercase text-neutral-500">
       <span class="time">{time}</span>
@@ -51,7 +64,7 @@
 
     <svg class="absolute left-0 top-0 w-10 h-10 transform -translate-x-1/2" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <circle cx="10" cy="10" r="9" fill="currentColor" />
-      <text x="50%" y="55%" font-size="7px" dominant-baseline="middle" fill="white" text-anchor="middle">{initials}</text>    
+      <text x="50%" y="55%" font-size="7px" dominant-baseline="middle" fill="white" text-anchor="middle">{initials}</text>
     </svg>
 
     <p>{comment}</p>

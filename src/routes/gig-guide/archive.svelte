@@ -9,7 +9,7 @@
 		const data = await API(`{
       eventsCollection(
         order: gigStartDate_DESC,
-        limit: 1000, 
+        limit: 1000,
         where: { gigStartDate_lt: "${new Date(d.setHours(0)).toISOString()}" }
       ) {
         items {
@@ -33,8 +33,10 @@
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
 				let d = new Date(gigStartDate);
+				let dateString = `${d.getFullYear()}${`0${d.getMonth()+1}`.slice(-2)}${d.getDate()}`;
 				return {
 					date: d,
+					dateString: dateString,
 					time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					...rest
 				};
@@ -117,7 +119,7 @@
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
 									<div class="space-y-5 w-full">
-										{#each items as event}
+										{#each items as event, index}
 											<div>
 												<Event
 													name={event.promotedName}
@@ -126,8 +128,10 @@
 													venue={event.venue}
 													website={event.ticketUrl}
 													comment={event.furtherInfo}
-                          							initials={event.furtherInfoContributorInitials}
+                          initials={event.furtherInfoContributorInitials}
 													time={event.time}
+													dateString={event.dateString}
+													id={index}
 												/>
 											</div>
 										{/each}
