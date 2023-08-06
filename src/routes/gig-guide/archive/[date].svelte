@@ -3,14 +3,20 @@
 	import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 
-	const getGigs = async () => {
-		const d = new Date();
+	const getGigs = async (date) => {
+		let d;
+    // check we have something that at least resembles YYYMMDD
+    if ((typeof date === 'string') && (date.length === 8) && (parseInt(date) == date)) {
+      d = new Date(date.slice(0,4), date.slice(4, 6)-1, date.slice(6,8));
+    } else {
+      d = new Date();
+    }
 
 		const data = await API(`{
       eventsCollection(
         order: gigStartDate_DESC,
         limit: 1000,
-        where: { gigStartDate_lt: "${new Date(d.setHours(0)).toISOString()}" }
+        where: { gigStartDate_lte: "${new Date(d.setHours(24)).toISOString()}" }
       ) {
         items {
           gigStartDate
@@ -33,7 +39,7 @@
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
 				let d = new Date(gigStartDate);
-				let dateString = `${d.getFullYear()}${`0${d.getMonth()+1}`.slice(-2)}${d.getDate()}`;
+				let dateString = `${d.getFullYear()}${`00${d.getMonth()+1}`.slice(-2)}${`00${d.getDate()}`.slice(-2)}`;
 				return {
 					date: d,
 					dateString: dateString,
@@ -55,12 +61,15 @@
 		return {};
 	};
 
-	export async function load() {
-		let gigs = await getGigs();
+	export async function load({ url, params }) {
+    const date = params && params.date;
+		let gigs = await getGigs(date);
 
 		return {
 			props: {
-				gigs
+				gigs,
+        url,
+        params
 			}
 		};
 	}
@@ -113,10 +122,13 @@
 									<div
 										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
-										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-											{label.split(':')[1]}
-										</p>
-										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+                    <a href={`/gig-guide/archive/${items[0].dateString}`} class="no-underline hover:underline" >
+                      <p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
+                        {label.split(':')[1]}
+                      </p>
+                      <p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+                      <p class="text-neutral-500 font-normal text-base sm:text-xs leading-none uppercase pt-1">{month.label}</p>
+                    </a>
 									</div>
 									<div class="space-y-5 w-full">
 										{#each items as event, index}

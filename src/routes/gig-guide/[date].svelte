@@ -47,7 +47,7 @@
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
 				let d = new Date(gigStartDate);
-        let dateString = `${d.getFullYear()}${`0${d.getMonth()+1}`.slice(-2)}${d.getDate()}`;
+        let dateString = `${d.getFullYear()}${`00${d.getMonth()+1}`.slice(-2)}${`00${d.getDate()}`.slice(-2)}`;
 				return {
 					date: d,
           dateString: dateString,
