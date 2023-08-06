@@ -70,7 +70,7 @@
 	};
 
 	export async function load({ url, params }) {
-    const date = params && params.date ? params.date : '20230807';
+    const date = params && params.date;
 		let gigs = await getGigs(date);
 
 		return {
