@@ -1,56 +1,76 @@
 import API from "$lib/contentful/" 
 import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
+
 export async function get({ params }) {
-	let data=false;
-	let gigs = null
+    data = await API(`query {
+		venuesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
+		  items {
+			venueName,
+			address,
+			suburb,
+			postcode,
+			url,
+			isRip,
+			sys {
+				id
+			}
+		  }
+		}
+	}`)
 
-	try {
-		const d = new Date();
+	venueInfo = data.venuesCollection.items[0];
+	const d = new Date();
 
-		data = await API(`query {
-			venuesCollection(
-				limit : 1,
-				where : { slug : "${params.id}" }
+	/*gigs = await API(`query {
+		eventsCollection(
+			limit : 50,
+			order : [gigStartDate_ASC],
+			where : {gigStartDate_gte : "${new Date(d.setHours(0)).toISOString()}"},
+			preview : ${previewMode}
 			) {
 				items {
-					venueName,
-					address,
-					suburb,
-					postcode,
-					url,
-					isRip,
-					sys {
-						id
+					gigStartDate,
+					promotedName,
+					performersList,
+					venue(where: {slug : "the-oxford-tavern"}) {
+						slug
 					},
-					linkedFrom {
-						eventsCollection {
-							total
-							items {
-								gigStartDate,
-								promotedName,
-								performersList,
-								ticketUrl,
-								furtherInfo,
-								furtherInfoContributorInitials,
-								isFree
-							}
+					ticketUrl,
+					furtherInfo,
+					furtherInfoContributorInitials,
+					isFree
+				}
+			}
+		}`)
+		*/
+	gigs = await API(`query {
+		venuesCollection(
+			limit : 1,
+			where : { slug : "${params.id}" }
+		) {
+			items {
+				linkedFrom {
+					eventsCollection {
+						total
+						items {
+							gigStartDate,
+							promotedName,
+							performersList,
+							ticketUrl,
+							furtherInfo,
+							furtherInfoContributorInitials,
+							isFree
 						}
 					}
 				}
 			}
 		}
-		`)
-	} catch (e) {
-		console.log(e);
-
-		return {
-			status: 404
-		};
 	}
+	`)
 
-	if (data){
-		gigs = data.venuesCollection.items[0].linkedFrom.eventsCollection.items.map((i) => {
+	if (gigs){
+		gigs = gigs.venuesCollection.items[0].linkedFrom.eventsCollection.items.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {

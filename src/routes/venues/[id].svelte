@@ -20,7 +20,9 @@
 			</div>
 
 			<div>
-				<h3 class="notch-left text-lg lg:text-xl">Upcoming Gigs</h3>
+				<h3 class="notch-left text-lg lg:text-xl">
+					Upcoming Gigs
+				</h3>
 
 				{#if events.filter(item => item.date >= new Date()).length == 0}<div class="pl-3 py-2">There are no upcoming gigs listed for this venue.</div>{/if}
 
