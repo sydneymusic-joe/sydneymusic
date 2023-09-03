@@ -287,3 +287,24 @@ body.freegigs .eventcard:not(:is(.freegig)) {
   background-size : contain;
   background-repeat : no-repeat;
 }
+
+
+.venues {
+  @apply space-y-3 pl-3 columns-3
+}
+
+.venues h4 {
+  /*@apply break-after-column*/
+}
+.venues .venue { break-inside: avoid-column}
+.venues .venue .gigcount { @apply font-normal; color : #aaa }
+
+.venue a { @apply font-bold; }
+.venue a.rip {
+  color : #aaa;
+  font-weight : normal;
+}
+.venue .rip::after {
+  content: "🕯️";
+  margin-left : 5px;
+}
