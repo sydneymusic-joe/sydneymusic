@@ -6,7 +6,6 @@
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "postbuild": "npx svelte-sitemap --domain https://sydneymusic.net"
@@ -15,7 +14,7 @@
     "@contentful/rich-text-html-renderer": "^15.12.1",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/adapter-static": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/kit": "1.0.0-next.405",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "fetch": "^1.1.0",
