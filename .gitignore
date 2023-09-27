@@ -10,3 +10,4 @@ gigs-import*
 # Local Netlify folder
 .netlify
 /email-generator/*.html
+.idea/
