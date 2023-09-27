@@ -166,6 +166,16 @@
           ],
           "disabled": false,
           "omitted": false
+        },
+        {
+          "id": "isFree",
+          "name": "Is Free",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
