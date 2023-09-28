@@ -12,9 +12,9 @@
 		d.setHours(23, 59, 59, 999); // End of day
 		const data = await API(`{
       eventsCollection(
-        order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
+        order: [gigStartDate_ASC sys_firstPublishedAt_ASC],
         limit: 50,
-        where: { 
+        where: {
           gigStartDate_gte: "${n.toISOString()}"
           gigStartDate_lte: "${d.toISOString()}"
         },
@@ -43,19 +43,21 @@
       .map((i) => {
 				let { gigStartDate, ...rest } = i;
         let d = new Date(gigStartDate);
+        let dateString = `${d.getFullYear()}${`00${d.getMonth()+1}`.slice(-2)}${`00${d.getDate()}`.slice(-2)}`;
 				return {
 					date: d,
+          dateString: dateString,
           time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					// Collapse performers into an array of names
 					...rest
 				};
 			})
-			
+
       let byDay = groupBy(
 				event,
 				({ date }) => `${formatDayOfWeek(date)}:${formatDateLong(date)}`
 			)
-      
+
 			return byDay;
 		}
 		return {};
@@ -107,9 +109,9 @@
 </script>
 
 <SeoSocial />
-<img 
-  srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w" 
-  alt="SydneyMusic.net mascot Can Man welcoming you to the website" 
+<img
+  srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w"
+  alt="SydneyMusic.net mascot Can Man welcoming you to the website"
   class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto" />
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
@@ -142,6 +144,8 @@
                       website={event.ticketUrl}
                       time={event.time}
                       initials={event.furtherInfoContributorInitials}
+                      dateString={event.dateString}
+                      id={i}
                     />
                   </div>
                   {/if}
@@ -187,7 +191,7 @@
         <div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
           <p class="font-bold">This site exists to promote the community that music creates, with a local focus on Sydney, Australia.</p>
           <p>At its heart is a simple, no-nonsense gig guide that does exactly what it says on the tin. We’ll also be publishing the occasional bit of writing, including commentary on cultural trends, music reviews, opinion pieces, and round-ups from contributing writers. We also have a Discord, to help foster connections, again in the hope that it will make it easier to find Sydney’s music community and find your place in it.</p>
-          <Button label="Read more" href="/about" />    
+          <Button label="Read more" href="/about" />
         </div>
       </div>
 
@@ -198,7 +202,7 @@
           <p><strong>We have a Discord</strong> (online chat server), so we can have a more dynamic and discussion-oriented place for Sydney's music community to meet. It's about as Web 2.0 as it gets around here.</p>
           <img src="/discord-logo-wordmark-black.svg" alt="Discord logo" height="80" width="292" />
           <Button label="Join our Discord!" href="https://discord.gg/jv8VKrXymJ" />
-        </div>  
+        </div>
       </div>
     </div>
 	</div>

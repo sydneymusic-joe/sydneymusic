@@ -10,8 +10,14 @@
 	const resetCounter = () => { if (gigCounter > 9) gigCounter = 0; return ""; }
 	const incrementDisplay = () => { whichPrompt++; return ""; }
 
-	const getGigs = async () => {
-		const d = new Date();
+	const getGigs = async (date) => {
+    let d;
+    // check we have something that at least resembles YYYMMDD
+    if ((typeof date === 'string') && (date.length === 8) && (parseInt(date) == date)) {
+      d = new Date(date.slice(0,4), date.slice(4, 6)-1, date.slice(6,8));
+    } else {
+      d = new Date();
+    }
 
 		const data = await API(`{
       eventsCollection(
@@ -41,10 +47,10 @@
 			let event = data.eventsCollection.items.map((i) => {
 				let { gigStartDate, ...rest } = i;
 				let d = new Date(gigStartDate);
-				let dateString = `${d.getFullYear()}${`00${d.getMonth()+1}`.slice(-2)}${`00${d.getDate()}`.slice(-2)}`;
+        let dateString = `${d.getFullYear()}${`00${d.getMonth()+1}`.slice(-2)}${`00${d.getDate()}`.slice(-2)}`;
 				return {
 					date: d,
-					dateString: dateString,
+          dateString: dateString,
 					time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
 					...rest
 				};
@@ -63,12 +69,15 @@
 		return {};
 	};
 
-	export async function load() {
-		let gigs = await getGigs();
+	export async function load({ url, params }) {
+    const date = params && params.date;
+		let gigs = await getGigs(date);
 
 		return {
 			props: {
-				gigs
+				gigs,
+        url,
+        params
 			}
 		};
 	}
@@ -172,7 +181,7 @@
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky -top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
 										<a href={`/gig-guide/${items[0].dateString}`} class="no-underline hover:underline" >
 											<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
@@ -193,7 +202,7 @@
 												initials={event.furtherInfoContributorInitials}
 												time={event.time}
 												isFree={event.isFree}
-												dateString={event.dateString}
+                        dateString={event.dateString}
                         id={index}
 											/>
 											{increment()}
