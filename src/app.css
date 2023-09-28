@@ -4,305 +4,305 @@
 
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgLsM.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgLsM.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgA.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7ThA.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7ThA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK4.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vipYY1Fw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vspYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYY1Fw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvipYY1Fw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvspYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYotEyq5.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYotEyq5.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYQtEw.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'IBM Plex Sans Condensed';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYQtEw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @layer base {
-	.notch-thic,
-	.notch-right,
-	.notch-left {
-		@apply font-semibold uppercase leading-tight block border-b border-black w-full px-3;
-		position: relative;
-	}
+  .notch-thic,
+  .notch-right,
+  .notch-left {
+    @apply font-semibold uppercase leading-tight block border-b border-black w-full px-3;
+    position: relative;
+  }
 
-	.notch-left * {
-		@apply font-semibold uppercase leading-tight;
-	}
+  .notch-left * {
+    @apply font-semibold uppercase leading-tight;
+  }
 
-	.notch-right::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute right-0 bottom-0 h-3 border-r;
-	}
+  .notch-right::after {
+    content: '';
+    border-color: inherit;
+    @apply absolute right-0 bottom-0 h-3 border-r;
+  }
 
-	.notch-left::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute left-0 bottom-0 h-3 border-l;
-	}
+  .notch-left::after {
+    content: '';
+    border-color: inherit;
+    @apply absolute left-0 bottom-0 h-3 border-l;
+  }
 
-	.notch-thic {
-		@apply border-b-2;
-	}
+  .notch-thic {
+    @apply border-b-2;
+  }
 
-	.notch-thic.notch-right::after {
-		@apply border-r-2;
-	}
+  .notch-thic.notch-right::after {
+    @apply border-r-2;
+  }
 
-	.notch-thic.notch-left::after {
-		@apply border-l-2;
-	}
+  .notch-thic.notch-left::after {
+    @apply border-l-2;
+  }
 
-	.about-copy > div {
-		@apply px-3 prose;
-	}
+  .about-copy > div {
+    @apply px-3 prose;
+  }
 
-	.about-copy dt {
-		@apply font-bold uppercase;
-	}
-	.about-copy dd {
-		@apply mb-2;
-	}
+  .about-copy dt {
+    @apply font-bold uppercase;
+  }
+  .about-copy dd {
+    @apply mb-2;
+  }
 
-	.time {
-		@apply border-r mr-3 pr-3;
-		border-color: #7f7f7f;
-	}
+  .time {
+    @apply border-r mr-3 pr-3;
+    border-color: #7f7f7f;
+  }
 
-	.filterbox label {
-		@apply italic font-semibold text-pill;
-	}
+  .filterbox label {
+    @apply italic font-semibold text-pill;
+  }
 
-	.toggle-bg:after {
-		content: '';
-		@apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
-	}
-	input:checked + .toggle-bg:after {
-		transform: translateX(100%);
-		@apply border-white;
-	}
-	input:checked + .toggle-bg {
-		@apply bg-blue-600 border-blue-600;
-	}
+  .toggle-bg:after {
+    content: '';
+    @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+  }
+  input:checked + .toggle-bg:after {
+    transform: translateX(100%);
+    @apply border-white;
+  }
+  input:checked + .toggle-bg {
+    @apply bg-blue-600 border-blue-600;
+  }
 
-	figcaption {
-		@apply text-sm !important;
-	}
+  figcaption {
+    @apply text-sm !important;
+  }
 
-	figcaption .description:not(:empty) {
-		border-left: solid 1px #aaa;
-		padding-left: 10px;
-		margin-left: 8px;
-	}
+  figcaption .description:not(:empty) {
+    border-left: solid 1px #aaa;
+    padding-left: 10px;
+    margin-left: 8px;
+  }
 
-	.accordion-header h3::before {
-		content: '+ ';
-	}
+  .accordion-header h3::before {
+    content: '+ ';
+  }
 
-	.accordion-header.accordion-expanded h3::before {
-		content: '– ';
-	}
+  .accordion-header.accordion-expanded h3::before {
+    content: '– ';
+  }
 
-	.accordion-content > div {
-		@apply px-3 py-5 space-y-3;
-	}
+  .accordion-content > div {
+    @apply px-3 py-5 space-y-3;
+  }
 }
 
 body.freegigs .day:not(:has(.freegig)) {
-	@apply hidden;
+  @apply hidden;
 }
 body.freegigs .guide-month > h3:not(:has(+ div .freegig)) {
-	@apply hidden;
+  @apply hidden;
 }
 body.freegigs .eventcard:not(:is(.freegig)) {
-	@apply hidden;
+  @apply hidden;
 }
 
 .smn .bg-yellow-50:before {
-	position: absolute;
-	content: '';
-	height: 51px;
-	width: 25px;
-	left: -26px;
-	bottom: 0px;
-	background-image: url(/canman-peek.png);
-	background-repeat: no-repeat;
-	background-size: contain;
+  position: absolute;
+  content: '';
+  height: 51px;
+  width: 25px;
+  left: -26px;
+  bottom: 0px;
+  background-image: url(/canman-peek.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* feed divider experiment */
 
 .guide-divider {
-	@apply relative flex items-center;
+  @apply relative flex items-center;
 }
 
 .guide-divider div:first-child {
-	@apply flex-grow border-t border-gray-400;
-	position: relative;
+  @apply flex-grow border-t border-gray-400;
+  position: relative;
 }
 .guide-divider div:first-child::before {
-	position: absolute;
-	content: '';
-	width: 50px;
-	height: 20px;
-	top: -21px;
-	right: 0;
-	/*background-image: url(/canman-peek-horiz.png);
+  position: absolute;
+  content: '';
+  width: 50px;
+  height: 20px;
+  top: -21px;
+  right: 0;
+  /*background-image: url(/canman-peek-horiz.png);
   background-size : contain;
   background-repeat : no-repeat;*/
 }
 
 .guide-divider span {
-	@apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[75%];
-	text-align: center;
+  @apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[75%];
+  text-align: center;
 }
 .guide-divider span a {
-	@apply underline;
+  @apply underline;
 }
 
 .guide-divider div:last-child {
-	@apply flex-grow border-t border-gray-400;
+  @apply flex-grow border-t border-gray-400;
 }
 
 /* mm-mm-mm-mm-mm it's map time */
 #gigmap {
-	@apply bg-black h-screen w-screen text-white p-5 relative;
+  @apply bg-black h-screen w-screen text-white p-5 relative;
 }
 #gigmap .toolbar {
-	@apply flex flex-col gap-4 z-10 absolute;
+  @apply flex flex-col gap-4 z-10 absolute;
 }
 #gigmap .toolbar > div {
-	@apply bg-ruby py-2 px-5 basis-1/3 rounded-lg transition-colors;
+  @apply bg-ruby py-2 px-5 basis-1/3 rounded-lg transition-colors;
 }
 #gigmap .toolbar > div:hover {
-	@apply bg-ruby/50;
+  @apply bg-ruby/50;
 }
 
 #map-container {
-	position: absolute;
-	z-index: 0;
-	@apply h-screen w-screen top-0 left-0;
+  position: absolute;
+  z-index: 0;
+  @apply h-screen w-screen top-0 left-0;
 }
 
 .home-storelink {
-	position: relative;
+  position: relative;
 }
 .home-storelink::before {
-	position: absolute;
-	content: '';
-	width: 60px;
-	height: 30px;
-	top: -29px;
-	left: 30px;
-	background-image: url(/canman-peek-horiz.png);
-	background-size: contain;
-	background-repeat: no-repeat;
+  position: absolute;
+  content: '';
+  width: 60px;
+  height: 30px;
+  top: -29px;
+  left: 30px;
+  background-image: url(/canman-peek-horiz.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 
