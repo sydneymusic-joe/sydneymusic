@@ -1,6 +1,5 @@
 import API from '$lib/contentful/';
-import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
-import SeoSocial from '$lib/components/seo-social.svelte';
+import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 
 const getGigs = async () => {
 	const d = new Date();

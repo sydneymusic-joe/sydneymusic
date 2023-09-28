@@ -7,14 +7,14 @@
 <header>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-5">
-			<Logo />
+			<Logo invert />
 		</a>
 	</div>
 
 	<nav class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-20 mb-10 space-y-5">
 		<div class="w-full flex justify-between items-end">
 			<a href="/" class="hidden lg:block shrink-0">
-				<Logo />
+				<Logo invert />
 			</a>
 
 			<div class="flex items-end font-semibold w-full">

@@ -81,7 +81,6 @@ const getReads = async () => {
 };
 
 export async function load() {
-	console.log('here');
 	let reads = await getReads();
 	let gigs = await getGigs();
 

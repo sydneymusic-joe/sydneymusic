@@ -1,11 +1,4 @@
 <script context="module">
-	throw new Error(
-		'@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)'
-	);
-
-	// import API from '$lib/contentful/';
-	// import { groupBy } from '../../../lib/globals.mjs';
-
 	export let key = ''; // TODO get key from env
 
 	let container;

@@ -1,11 +1,6 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
-	export let links;
-	export let venues;
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	export let data;
 </script>
 
 <SeoSocial title="Links" />
@@ -17,7 +12,7 @@
 			<h2 class="notch-left text-xl">A Bunch Of Links</h2>
 
 			<div class="space-y-3 pl-3">
-				{#each links as { label, items }, i}
+				{#each data.links as { label, items }, i}
 					<h4
 						class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight"
 					>
@@ -45,7 +40,7 @@
 			</p>
 
 			<div class="space-y-3 pl-3">
-				{#each venues as { label, items }, i}
+				{#each data.venues as { label, items }, i}
 					<h4
 						class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight"
 					>

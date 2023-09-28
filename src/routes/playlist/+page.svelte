@@ -1,10 +1,6 @@
 <script context="module">
-	throw new Error(
-		'@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)'
-	);
-
-	// import SeoSocial from '$lib/components/seo-social.svelte';
-	// import PlaylistPromo from '$lib/components/playlist.svelte';
+	import SeoSocial from '$lib/components/seo-social.svelte';
+	import PlaylistPromo from '$lib/components/playlist.svelte';
 </script>
 
 <SeoSocial
