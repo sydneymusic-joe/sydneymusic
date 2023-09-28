@@ -6,18 +6,18 @@ import { formatDate, groupBy, formatDay, createCalendarLink } from '../src/lib/g
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const client = new GraphQLClient(
-  `https://graphql.contentful.com/content/v1/spaces/${process.env.VITE_CONTENTFUL_SPACE}`,
-  {
-    headers: {
-      authorization: `Bearer ${process.env.VITE_CONTENTFUL_TOKEN}`
-    }
-  }
+	`https://graphql.contentful.com/content/v1/spaces/${process.env.VITE_CONTENTFUL_SPACE}`,
+	{
+		headers: {
+			authorization: `Bearer ${process.env.VITE_CONTENTFUL_TOKEN}`
+		}
+	}
 );
 
 const getGigs = async () => {
-  const d = new Date();
+	const d = new Date();
 
-  const data = await client.request(gql`{
+	const data = await client.request(gql`{
   eventsCollection(
     order: gigStartDate_ASC,
     limit: 1000, 
@@ -43,74 +43,74 @@ const getGigs = async () => {
   }
 }`);
 
-  if (data) {
-    let event = data.eventsCollection.items.map((i) => {
-      let { gigStartDate, ...rest } = i;
-      let d = new Date(gigStartDate);
-      return {
-        date: d,
-        time:
-          (d.getHours() % 12) +
-          ':' +
-          d.getMinutes().toString().padStart(2, '0') +
-          (d.getHours() >= 12 ? 'pm' : 'am'),
-        ...rest
-      };
-    });
+	if (data) {
+		let event = data.eventsCollection.items.map((i) => {
+			let { gigStartDate, ...rest } = i;
+			let d = new Date(gigStartDate);
+			return {
+				date: d,
+				time:
+					(d.getHours() % 12) +
+					':' +
+					d.getMinutes().toString().padStart(2, '0') +
+					(d.getHours() >= 12 ? 'pm' : 'am'),
+				...rest
+			};
+		});
 
-    let byMonth = groupBy(event, (i) => formatDate(i.date));
+		let byMonth = groupBy(event, (i) => formatDate(i.date));
 
-    // Group by month
-    return byMonth.map((month) => {
-      return {
-        ...month,
-        items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
-      };
-    });
-  }
-  return {};
+		// Group by month
+		return byMonth.map((month) => {
+			return {
+				...month,
+				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
+			};
+		});
+	}
+	return {};
 };
 
 async function main() {
-  let gigs = await getGigs();
+	let gigs = await getGigs();
 
-  var template = '';
-  for (const month of gigs) {
-    template += `<tr class="month"><td colspan="2">${month.label}</td></tr>`;
-    for (const day of month.items) {
-      template += `
+	var template = '';
+	for (const month of gigs) {
+		template += `<tr class="month"><td colspan="2">${month.label}</td></tr>`;
+		for (const day of month.items) {
+			template += `
             <tr class="day">
                 <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${
-                  day.label.split(':')[1]
-                }</strong><br /><font style="font-size : 36px; font-weight : bold">${
-        day.label.split(':')[0]
-      }</font></td>
+									day.label.split(':')[1]
+								}</strong><br /><font style="font-size : 36px; font-weight : bold">${
+				day.label.split(':')[0]
+			}</font></td>
                 <td>
                     <table border="0" cellspacing="0" cellpadding="0" class="giglist">`;
 
-      for (const gig of day.items) {
-        template += `<tr>
+			for (const gig of day.items) {
+				template += `<tr>
                     <td style="">
                         <font>${gig.promotedName || gig.performersList[0]}</font><br />`;
-        if (gig.performersList != null) {
-          template += `<strong>w/ ${gig.performersList.join(', ')}</strong><br />`;
-        }
-        template += `${gig.time} &nbsp;| &nbsp;<a href="${gig.venue.url}">${gig.venue.venueName}</a>`;
-        if (gig.furtherInfo) {
-          template += `<div class="blurb">${gig.furtherInfo} &mdash; ${
-            gig.furtherInfoContributorInitials ? gig.furtherInfoContributorInitials : 'SMn'
-          }</div>`;
-        }
-        template += `</td>
+				if (gig.performersList != null) {
+					template += `<strong>w/ ${gig.performersList.join(', ')}</strong><br />`;
+				}
+				template += `${gig.time} &nbsp;| &nbsp;<a href="${gig.venue.url}">${gig.venue.venueName}</a>`;
+				if (gig.furtherInfo) {
+					template += `<div class="blurb">${gig.furtherInfo} &mdash; ${
+						gig.furtherInfoContributorInitials ? gig.furtherInfoContributorInitials : 'SMn'
+					}</div>`;
+				}
+				template += `</td>
                 </tr>`;
-      }
-      template += `</table>
+			}
+			template += `</table>
             </td>
         </tr>`;
-    }
-  }
+		}
+	}
 
-  template = `
+	template = `
     <html>
     <head>
         <meta charset="utf-8" />
@@ -164,7 +164,7 @@ async function main() {
     </table>
 </body></html>`;
 
-  console.log(template);
+	console.log(template);
 }
 
 main().catch(console.error);
