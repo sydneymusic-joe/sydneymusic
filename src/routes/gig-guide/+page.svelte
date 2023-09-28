@@ -3,8 +3,8 @@
 	import Button from '$lib/components/button.svelte';
 	import Feedprompt from '../../lib/components/feedprompt.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
-	import {createCalendarLink} from "../../lib/globals.mjs";
-	import PlaylistPromo from "$lib/components/playlist.svelte";
+	import { createCalendarLink } from '../../lib/globals.mjs';
+	import PlaylistPromo from '$lib/components/playlist.svelte';
 
 	export let data;
 
@@ -22,7 +22,6 @@
 		whichPrompt++;
 		return '';
 	};
-
 </script>
 
 <SeoSocial title="Gig Guide" />
