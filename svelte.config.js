@@ -7,15 +7,8 @@ const config = {
 		prerender: {
 			concurrency: 5,
 			crawl: true,
-			default: true,
-			enabled: true,
 			entries: ['*'],
-			onError: 'fail'
 		},
-		browser: {
-			hydrate: false,
-			router: false
-		}
 	},
 	preprocess: vitePreprocess()
 };

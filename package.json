@@ -19,6 +19,7 @@
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.5",
+		"svelte-sitemap": "^2.6.0",
 		"tailwindcss": "^3.3.3",
 		"vite": "^4.4.2"
 	},
@@ -36,7 +37,6 @@
 		"graphql-request": "^6.1.0",
 		"hashids": "^2.3.0",
 		"html-minifier": "^4.0.0",
-		"ical-generator": "^5.0.1",
-		"svelte-sitemap": "^2.6.0"
+		"ical-generator": "^3.4.3"
 	}
 }

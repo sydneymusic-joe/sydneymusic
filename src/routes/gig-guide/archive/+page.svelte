@@ -1,11 +1,9 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
+	import SeoSocial from '$lib/components/seo-social.svelte';
+	import { createCalendarLink } from '$lib/globals.mjs';
 	import Event from '$lib/components/event.svelte';
-	import Button from '$lib/components/button.svelte';
-	export let gigs;
+
+	export let data;
 </script>
 
 <SeoSocial title="Gig Guide Archive" />
@@ -37,7 +35,7 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
-				{#each gigs as month}
+				{#each data.gigs as month}
 					<div class="space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}

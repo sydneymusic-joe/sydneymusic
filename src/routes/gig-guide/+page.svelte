@@ -1,14 +1,28 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
 	import Event from '$lib/components/event.svelte';
 	import Button from '$lib/components/button.svelte';
 	import Feedprompt from '../../lib/components/feedprompt.svelte';
-	export let gigs;
+	import SeoSocial from '$lib/components/seo-social.svelte';
+	import {createCalendarLink} from "../../lib/globals.mjs";
+	import PlaylistPromo from "$lib/components/playlist.svelte";
 
-	let gigcount = 0;
+	export let data;
+
+	let gigCounter = 0;
+	let whichPrompt = 0;
+	const increment = () => {
+		gigCounter++;
+		return '';
+	};
+	const resetCounter = () => {
+		if (gigCounter > 9) gigCounter = 0;
+		return '';
+	};
+	const incrementDisplay = () => {
+		whichPrompt++;
+		return '';
+	};
+
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -89,7 +103,7 @@
 					</label>
 				</div>
 
-				{#each gigs as month}
+				{#each data.gigs as month}
 					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}

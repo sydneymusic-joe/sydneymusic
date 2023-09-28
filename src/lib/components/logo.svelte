@@ -7,8 +7,9 @@
 	fill="none"
 	viewBox="0 0 1306 132"
 	aria-labelledby="title"
-	class={'w-64 sm:w-80 mr-5 stroke-white'}
-	class:stroke-black={!invert}
+	class="w-64 sm:w-80 mr-5"
+	class:stroke-black={invert}
+	class:stroke-white={!invert}
 >
 	<title lang="en">SydneyMusic logo</title>
 	<path

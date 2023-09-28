@@ -1,12 +1,8 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
 	import Read from '$lib/components/read.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 
-	export let reads;
+	export let data;
 </script>
 
 <SeoSocial title="Reads" />
@@ -30,7 +26,7 @@
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">Latest Reads</h2>
 
-			{#each reads.latest as { headline, excerpt, slug }}
+			{#each data.reads.latest as { headline, excerpt, slug }}
 				<a href="/reads/{slug}" class="block">
 					<Read {headline} body={excerpt} />
 				</a>
@@ -38,7 +34,7 @@
 		</div>
 	</div>
 
-	{#each reads.byMonth as month}
+	{#each data.reads.byMonth as month}
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">{month.label}</h2>
 			<div class="grid lg:grid-cols-2">

@@ -1,22 +1,5 @@
 import API from '$lib/contentful/';
-import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
-import SeoSocial from '$lib/components/seo-social.svelte';
-import PlaylistPromo from '$lib/components/playlist.svelte';
-
-let gigCounter = 0;
-let whichPrompt = 0;
-const increment = () => {
-	gigCounter++;
-	return '';
-};
-const resetCounter = () => {
-	if (gigCounter > 9) gigCounter = 0;
-	return '';
-};
-const incrementDisplay = () => {
-	whichPrompt++;
-	return '';
-};
+import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 
 const getGigs = async () => {
 	const d = new Date();
