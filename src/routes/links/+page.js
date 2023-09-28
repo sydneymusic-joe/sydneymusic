@@ -2,7 +2,7 @@ import API from '$lib/contentful/';
 import { groupBy } from '../../lib/globals.mjs';
 
 const getLinks = async () => {
-  const data = await API(`{
+	const data = await API(`{
           linkCollection(
             order: [category_ASC, title_ASC]
           ) {
@@ -15,17 +15,17 @@ const getLinks = async () => {
           }
         }`);
 
-  if (data) {
-    let byCategory = groupBy(data.linkCollection.items, ({ category }) => category);
+	if (data) {
+		let byCategory = groupBy(data.linkCollection.items, ({ category }) => category);
 
-    return byCategory;
-  }
+		return byCategory;
+	}
 
-  return {};
+	return {};
 };
 
 const getVenues = async () => {
-  const dataLinks = await API(`{
+	const dataLinks = await API(`{
 			venuesCollection(
 				order : [suburb_ASC, venueName_ASC]
 			) {
@@ -37,18 +37,18 @@ const getVenues = async () => {
 			}
 		}`);
 
-  if (dataLinks) {
-    let bySuburb = groupBy(dataLinks.venuesCollection.items, ({ suburb }) => suburb);
-    return bySuburb;
-  }
+	if (dataLinks) {
+		let bySuburb = groupBy(dataLinks.venuesCollection.items, ({ suburb }) => suburb);
+		return bySuburb;
+	}
 };
 
 export async function load() {
-  let links = await getLinks();
-  let venues = await getVenues();
+	let links = await getLinks();
+	let venues = await getVenues();
 
-  return {
-    links,
-    venues
-  };
+	return {
+		links,
+		venues
+	};
 }
