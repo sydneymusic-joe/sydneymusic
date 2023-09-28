@@ -12,8 +12,8 @@ https://joe.hardy.id.au
 
 SydneyMusic.net is a static site that is generated at build time. It has been coded using the following technologies:
 
-* SvelteKit
-* TailwindCSS
+- SvelteKit
+- TailwindCSS
 
 ... and we're deploying to Netlify and using Contentful as our Headless CMS.
 
@@ -27,15 +27,16 @@ You're welcome to read this code, get inspiration from it, fork it, deploy it or
 
 Here are the conditions of use which we request in good faith:
 
-* You make your own version of the site's code available in a similar way
-* You don't run ads or pixel tracking technology on the site - the surveillance economy needs to stop
-* The rights to the code don't extend to the re-use of the Can Man mascot and associated artwork by Hugh McKinnon. These need to be replaced in your version of the site by the time you send it live.
+- You make your own version of the site's code available in a similar way
+- You don't run ads or pixel tracking technology on the site - the surveillance economy needs to stop
+- The rights to the code don't extend to the re-use of the Can Man mascot and associated artwork by Hugh McKinnon. These need to be replaced in your version of the site by the time you send it live.
 
 ## Installation instructions
 
 Software pre-requisites that you'll need to have installed on your computer:
-* Git / developer tools (hint: bundled with Xcode Command Line Tools on a Mac)
-* npm
+
+- Git / developer tools (hint: bundled with Xcode Command Line Tools on a Mac)
+- npm
 
 You will also need to create a free Contentful account at www.contentful.com. You can replace Contentful with any other GraphQL-compatible datastore for your own site, but start with this.
 
