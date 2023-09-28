@@ -7,8 +7,8 @@ const config = {
 		prerender: {
 			concurrency: 5,
 			crawl: true,
-			entries: ['*'],
-		},
+			entries: ['*']
+		}
 	},
 	preprocess: vitePreprocess()
 };
