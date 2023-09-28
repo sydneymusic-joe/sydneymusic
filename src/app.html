@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%svelte.assets%/favicon.png" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
 	</head>
-	<body class="h-full">
-		<div class="h-full">%svelte.body%</div>
-		<script src="/js/accordion.js"></script>
-		<script src="/js/freegigs.js"></script>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

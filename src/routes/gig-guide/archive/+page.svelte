@@ -1,70 +1,8 @@
-<script context="module">
-	import API from '$lib/contentful/';
-	import { formatDate, groupBy, formatDay, createCalendarLink } from '$lib/globals.mjs';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-
-	const getGigs = async () => {
-		const d = new Date();
-
-		const data = await API(`{
-      eventsCollection(
-        order: gigStartDate_DESC,
-        limit: 1000, 
-        where: { gigStartDate_lt: "${new Date(d.setHours(0)).toISOString()}" }
-      ) {
-        items {
-          gigStartDate
-          promotedName
-          ticketUrl
-          performersList
-          furtherInfo
-          furtherInfoContributorInitials
-          venue {
-            venueName
-            address
-            suburb
-            url
-          }
-        }
-      }
-    }`);
-
-		if (data) {
-			let event = data.eventsCollection.items.map((i) => {
-				let { gigStartDate, ...rest } = i;
-				let d = new Date(gigStartDate);
-				return {
-					date: d,
-					time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
-					...rest
-				};
-			});
-
-			let byMonth = groupBy(event, (i) => formatDate(i.date));
-
-			// Group by month
-			return byMonth.map((month) => {
-				return {
-					...month,
-					items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
-				};
-			});
-		}
-		return {};
-	};
-
-	export async function load() {
-		let gigs = await getGigs();
-
-		return {
-			props: {
-				gigs
-			}
-		};
-	}
-</script>
-
 <script>
+	throw new Error(
+		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
+	);
+
 	import Event from '$lib/components/event.svelte';
 	import Button from '$lib/components/button.svelte';
 	export let gigs;
@@ -75,23 +13,22 @@
 <picture>
 	<source
 		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
-		media="(min-width : 640px)" />
-	<source
-		srcset="/canman-gigs-mobile.png"
-		media="(max-width : 640px)" />
+		media="(min-width : 640px)"
+	/>
+	<source srcset="/canman-gigs-mobile.png" media="(max-width : 640px)" />
 	<img
 		src="/canman-gigs@1x.png"
 		alt="SydneyMusic.net mascot Can Man loves a gig"
 		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
-		 />
+	/>
 </picture>
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
 	<h1 class="notch-left text-xl">Gig Guide <span class="text-ruby">Archive</span></h1>
-    <div class="px-3">
-        <p>"We have to go back, Marty!!!"</p>
-        <p>Yes, this is time travel.</p>
-    </div>
+	<div class="px-3">
+		<p>"We have to go back, Marty!!!"</p>
+		<p>Yes, this is time travel.</p>
+	</div>
 </div>
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
@@ -126,7 +63,7 @@
 													venue={event.venue}
 													website={event.ticketUrl}
 													comment={event.furtherInfo}
-                          							initials={event.furtherInfoContributorInitials}
+													initials={event.furtherInfoContributorInitials}
 													time={event.time}
 												/>
 											</div>
@@ -140,14 +77,15 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-
 				<h3 class="notch-left text-lg lg:text-xl">about the archive</h3>
 				<div class="prose prose-sm">
-					<p>
-						This is just what's in the database. It may have errors.
-					</p>
+					<p>This is just what's in the database. It may have errors.</p>
 
-                    <p>We're interested in the notion of creating a more complete archive of gigs that have taken place in Sydney over the years... but we're not there just yet. For now, enjoy this!</p>
+					<p>
+						We're interested in the notion of creating a more complete archive of gigs that have
+						taken place in Sydney over the years... but we're not there just yet. For now, enjoy
+						this!
+					</p>
 				</div>
 			</div>
 		</div>
