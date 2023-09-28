@@ -1,9 +1,8 @@
-import API from "$lib/contentful/" 
+import API from '$lib/contentful/';
 import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
-
-export async function get({ params }) {
-    data = await API(`query {
+export async function load({ params }) {
+	let data = await API(`query {
 		venuesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
 		  items {
 			venueName,
@@ -17,9 +16,9 @@ export async function get({ params }) {
 			}
 		  }
 		}
-	}`)
+	}`);
 
-	venueInfo = data.venuesCollection.items[0];
+	let venueInfo = data.venuesCollection.items[0];
 	const d = new Date();
 
 	/*gigs = await API(`query {
@@ -44,7 +43,7 @@ export async function get({ params }) {
 			}
 		}`)
 		*/
-	gigs = await API(`query {
+	let gigs = await API(`query {
 		venuesCollection(
 			limit : 1,
 			where : { slug : "${params.id}" }
@@ -67,24 +66,26 @@ export async function get({ params }) {
 			}
 		}
 	}
-	`)
+	`);
 
-	if (gigs){
+	if (gigs) {
 		gigs = gigs.venuesCollection.items[0].linkedFrom.eventsCollection.items.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {
 				date: d,
-				time:(d.getHours() % 12) + ":" + d.getMinutes().toString().padStart(2, "0") + (d.getHours() >= 12 ? "pm" : "am"),
+				time:
+					(d.getHours() % 12) +
+					':' +
+					d.getMinutes().toString().padStart(2, '0') +
+					(d.getHours() >= 12 ? 'pm' : 'am'),
 				...rest
 			};
 		});
 	}
 
 	return {
-		body: {
-			venueData : data.venuesCollection.items[0],
-			events : gigs
-		}
-	}
+		venueData: venueInfo,
+		events: gigs
+	};
 }

@@ -6,27 +6,27 @@ export const previewMode =
 
 // ToDo get this from contentful?
 export const navigation = [
-  { title: "gigs", href: "/gig-guide" },
-  { title: "reads", href: "/reads" },
-  { title: "support", href: "https://store.sydneymusic.net" },
-  { title: "venues", href: "/venues" }
-]
+	{ title: 'gigs', href: '/gig-guide' },
+	{ title: 'reads', href: '/reads' },
+	{ title: 'support', href: 'https://store.sydneymusic.net' },
+	{ title: 'venues', href: '/venues' }
+];
 
 export const navigationFooter = [
-  { title: "Home", href: "/" },
-  { title: "Gig Guide", href: "/gig-guide" },
-  { title: "Venues", href: "/venues" },
-  { title: "About & FAQ", href: "/about" },
-  { title: "Donate / Merch Store", href: "https://store.sydneymusic.net" }
-]
+	{ title: 'Home', href: '/' },
+	{ title: 'Gig Guide', href: '/gig-guide' },
+	{ title: 'Venues', href: '/venues' },
+	{ title: 'About & FAQ', href: '/about' },
+	{ title: 'Donate / Merch Store', href: 'https://store.sydneymusic.net' }
+];
 
 export const navigationFooterSecondary = [
-  { title: "Contact", href: "/contact" },
-  { title: "Reads", href: "/reads" },
-  { title: "Links", href: "/links" },
-  { title: "Join the Discord!", href: "https://discord.gg/jv8VKrXymJ" },
-  { title: "Weekly Gig Guide Playlist", href: "/playlist" }
-]
+	{ title: 'Contact', href: '/contact' },
+	{ title: 'Reads', href: '/reads' },
+	{ title: 'Links', href: '/links' },
+	{ title: 'Join the Discord!', href: 'https://discord.gg/jv8VKrXymJ' },
+	{ title: 'Weekly Gig Guide Playlist', href: '/playlist' }
+];
 
 export const formatDay = (dateOrString) => {
 	const d = new Date(dateOrString);
@@ -75,7 +75,8 @@ export const groupBy = (items, cb) => {
 	return Object.entries(group).map(([key, value]) => ({ label: key, items: value }));
 };
 
-export const createCalendarLink = (event) => {
+export const createCalendarLink = (event, venue) => {
+	const v = (venue ? venue : event.venue);
 	const start = new Date(event.date);
 	const end = new Date(start);
 	end.setTime(start.getTime() + 60 * 60 * 1000 * 2.5); // Default to 2.5 hours
@@ -88,9 +89,9 @@ export const createCalendarLink = (event) => {
 			event.promotedName + (event.performersList ? ' w/ ' + event.performersList.join(', ') : ''),
 		url: event.ticketUrl,
 		location:
-			event.venue.venueName +
-			(event.venue.address ? ', ' + event.venue.address : '') +
-			(event.venue.suburb ? ', ' + event.venue.suburb : '')
+			v.venueName +
+			(v.address ? ', ' + v.address : '') +
+			(v.suburb ? ', ' + v.suburb : '')
 	});
 	return `data:text/calendar;charset=utf8,${encodeURIComponent(cal.toString())}`;
 };
