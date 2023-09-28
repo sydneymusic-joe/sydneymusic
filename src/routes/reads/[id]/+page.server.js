@@ -1,39 +1,44 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import API from "$lib/contentful/" 
+import API from '$lib/contentful/';
 import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
 function htmlEncode(s) {
-  return s.replace(/&/g, '&amp;')
-  			.replace(/</g, '&lt;')
-  			.replace(/>/g, '&gt;')
-  			.replace(/'/g, '&#39;')
-  			.replace(/"/g, '&#34;')
-  			.replace(/\//, '&#x2F;');
+	return s
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/'/g, '&#39;')
+		.replace(/"/g, '&#34;')
+		.replace(/\//, '&#x2F;');
 }
 
 function renderOptions(links) {
-    const entryBlockMap = new Map();
-    const assetBlockMap = new Map();
-    for (const entry of links.entries.block) {
-      entryBlockMap.set(entry.sys.id, entry);
-    }
-    for (const asset of links.assets.block) {
-      assetBlockMap.set(asset.sys.id, asset);
-    }
-  
-    return {
-      renderNode: {
-        [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-          // find the entry in the entryBlockMap by ID
-          const entry = entryBlockMap.get(node.data.target.sys.id);
+	const entryBlockMap = new Map();
+	const assetBlockMap = new Map();
+	for (const entry of links.entries.block) {
+		entryBlockMap.set(entry.sys.id, entry);
+	}
+	for (const asset of links.assets.block) {
+		assetBlockMap.set(asset.sys.id, asset);
+	}
 
-          if (entry.__typename == 'EmbedTweet') {
-            return `<div class="font-sans rounded border px-6 py-4 max-w-md">
+	return {
+		renderNode: {
+			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
+				// find the entry in the entryBlockMap by ID
+				const entry = entryBlockMap.get(node.data.target.sys.id);
+
+				if (entry.__typename == 'EmbedTweet') {
+					return `<div class="font-sans rounded border px-6 py-4 max-w-md">
             <div class="flex items-center">
-              <img src="${entry.profileImage.url}" class="mt-0 mb-0 h-12 w-12 rounded-full" alt="${entry.name} Profile Image" />
+              <img src="${entry.profileImage.url}" class="mt-0 mb-0 h-12 w-12 rounded-full" alt="${
+						entry.name
+					} Profile Image" />
               <div class="flex leading-tight flex-col ml-4">
-                  <a class="font-bold text-black" href="https://twitter.com/${entry.username}">${entry.name}</a>
+                  <a class="font-bold text-black" href="https://twitter.com/${entry.username}">${
+						entry.name
+					}</a>
                   <span class="text-grey">@${entry.username}</span>
                 </div>
                 <svg viewBox="328 355 335 276" class="ml-auto" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +46,9 @@ function renderOptions(links) {
                 </svg>
               </div>
               <div class=" mt-3 mb-1 leading-normal text-lg">${htmlEncode(entry.content)}</div>
-              <div class="text-grey mb-3 text-sm"><a href="${entry.tweetUrl}">11:56 AM - Aug 3, 2009</a></div>
+              <div class="text-grey mb-3 text-sm"><a href="${
+								entry.tweetUrl
+							}">11:56 AM - Aug 3, 2009</a></div>
               <div class="flex text-grey text-sm">
                 <div class="flex items-center mr-4">
                   <svg class="mr-2" width="24" height="24" viewBox="0 0 24 24"><path class="fill-current"  d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.045.286.12.403.143.225.385.347.633.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.368-3.43-7.788-7.8-7.79zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.334-.75-.75-.75h-.395c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"/></svg>
@@ -57,11 +64,11 @@ function renderOptions(links) {
                 </div>
               </div>
             </div>`;
-          }
-        },
-        [BLOCKS.EMBEDDED_ASSET] : (node) => {
-          const asset = assetBlockMap.get(node.data.target.sys.id);
-          return `
+				}
+			},
+			[BLOCKS.EMBEDDED_ASSET]: (node) => {
+				const asset = assetBlockMap.get(node.data.target.sys.id);
+				return `
           <figure>
             <img src="${asset.url}?w=2000" alt="${asset.description}" />
             <figcaption>
@@ -70,16 +77,16 @@ function renderOptions(links) {
             </figcaption>
           </figure>
           `;
-        }
-      }
-    }    
+			}
+		}
+	};
 }
 
-export async function get({ params }) {
-  let data = false;
-  let otherReadData = false;
-  try {
-    data = await API(`query {
+export async function load({ params }) {
+	let data = false;
+	let otherReadData = false;
+	try {
+		data = await API(`query {
       articlesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
         items {
           headline
@@ -134,7 +141,7 @@ export async function get({ params }) {
           }
         }
       }
-    }`)
+    }`);
 
 		otherReadData = await API(`query {
       articlesCollection(
@@ -152,29 +159,25 @@ export async function get({ params }) {
           }
         }
       }`);
+	} catch (e) {
+		console.log(e);
+	}
 
-  } catch (e) {
-    console.log(e);
-  }
+	if (data && otherReadData) {
+		const { headline, excerpt, bodyContent, heroImage, author, sys } =
+			data.articlesCollection.items[0];
 
-  if (data && otherReadData) {
-    
-    const {headline, excerpt, bodyContent, heroImage, author, sys} = data.articlesCollection.items[0]
+		return {
+			headline,
+			excerpt: excerpt,
+			body: documentToHtmlString(bodyContent.json, renderOptions(bodyContent.links)),
+			otherReads: otherReadData.articlesCollection.items,
+			author: author,
+			heroImage: heroImage,
+			publishDate:
+				formatDateLong(sys.firstPublishedAt) + ' ' + new Date(sys.firstPublishedAt).getFullYear()
+		};
+	}
 
-    return {
-      body: {
-        headline,
-        excerpt:excerpt,
-        body: documentToHtmlString(bodyContent.json, renderOptions(bodyContent.links)),
-        otherReads: otherReadData.articlesCollection.items,
-        author:author,
-        heroImage:heroImage,
-        publishDate:formatDateLong(sys.firstPublishedAt) + ' ' + new Date(sys.firstPublishedAt).getFullYear()
-      }
-    };
-  }
- 
-  return {
-    status: 404
-  };
+	throw error(404, 'not found');
 }

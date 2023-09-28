@@ -11,10 +11,10 @@
 	export let imageHeight = 630;
 
 	if (title != '') {
-		title += ' | '
+		title += ' | ';
 	}
 
-	title += "SydneyMusic.net - Sydney's live music community guide"
+	title += "SydneyMusic.net - Sydney's live music community guide";
 </script>
 
 <svelte:head>
