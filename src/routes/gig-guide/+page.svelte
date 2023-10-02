@@ -22,10 +22,6 @@
 		whichPrompt++;
 		return '';
 	};
-
-	const toggleGigs = () => {
-		document.body.classList.toggle('freegigs')
-	}
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -100,7 +96,7 @@
 			<div class="space-y-10 sm:pr-20">
 				<div class="filterbox">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative mb-4">
-						<input type="checkbox" id="toggle-freegigs" class="sr-only" on:change={toggleGigs} />
+						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 						<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
 						<span class="ml-2">FREE GIGS ONLY</span>
 					</label>
