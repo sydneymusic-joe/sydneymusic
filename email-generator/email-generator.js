@@ -17,13 +17,16 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
+    const dateFrom = new Date("2023-11-15T00:00:00+1100");
+    const dateTo = new Date("2023-11-23T00:00:00+1100");
+
 	const data = await client.request(gql`{
   eventsCollection(
     order: gigStartDate_ASC,
     limit: 1000, 
     where: {
-        gigStartDate_gte: "${new Date(d.setHours(0)).toISOString()}",
-        gigStartDate_lt:"${new Date(d.setDate(d.getDate() + 8)).toISOString()}"
+        gigStartDate_gte: "${dateFrom.toISOString()}",
+        gigStartDate_lt:"${dateTo.toISOString()}"
     }
   ) {
     items {

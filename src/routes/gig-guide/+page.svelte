@@ -111,7 +111,7 @@
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
 										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
 											{label.split(':')[1]}

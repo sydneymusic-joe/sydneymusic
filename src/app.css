@@ -304,3 +304,7 @@ body.freegigs .eventcard:not(:is(.freegig)) {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+
+/*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
+
+.guide-month > h3 { @apply sticky top-0; background : white; z-index : 100; }
