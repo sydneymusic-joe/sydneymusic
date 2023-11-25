@@ -23,8 +23,8 @@
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
 	<h1 class="notch-left text-xl">Gig Guide <span class="text-ruby">Archive</span></h1>
-	<div class="px-3">
-		<p>"We have to go back, Marty!!!"</p>
+	<div class="px-3 space-y-5">
+		<h1 class="font-bold font-italic">"We have to go back, Marty!"</h1>
 		<p>Yes, this is time travel.</p>
 	</div>
 </div>
@@ -36,7 +36,7 @@
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
 				{#each data.gigs as month}
-					<div class="space-y-10">
+					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}
 						</h3>
@@ -44,7 +44,7 @@
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
 										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
 											{label.split(':')[1]}
@@ -57,7 +57,6 @@
 												<Event
 													name={event.promotedName}
 													performers={event.performersList}
-													calendarLink={createCalendarLink(event)}
 													venue={event.venue}
 													website={event.ticketUrl}
 													comment={event.furtherInfo}
