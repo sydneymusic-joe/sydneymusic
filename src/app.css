@@ -176,7 +176,11 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap h-10 items-center max-[370px]:space-y-3;
+		@apply flex flex-wrap h-10 items-center;
+	}
+
+	.filterbox > * {
+		padding-bottom : 5px;
 	}
 
 	.filterbox label, .filterbox a {
