@@ -175,9 +175,16 @@
 		border-color: #7f7f7f;
 	}
 
-	.filterbox label {
-		@apply italic font-semibold text-pill;
+	.filterbox {
+		@apply flex flex-wrap h-10 items-center max-[370px]:space-y-3;
 	}
+
+	.filterbox label, .filterbox a {
+		@apply italic font-semibold text-pill pr-3;
+	}
+
+	.filterbox a { @apply flex items-center }
+	.filterbox a svg { @apply w-11;}
 
 	.toggle-bg:after {
 		content: '';
