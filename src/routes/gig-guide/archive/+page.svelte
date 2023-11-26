@@ -24,8 +24,8 @@
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
 	<h1 class="notch-left text-xl">Gig Guide <span class="text-ruby">Archive</span></h1>
 	<div class="px-3 space-y-5">
-		<h1 class="font-bold font-italic">"We have to go back, Marty!"</h1>
 		<p>Yes, this is time travel.</p>
+		<p>There are <strong>{data.gigs.totalGigs.toLocaleString()}</strong> gigs in the archive.</p>
 	</div>
 </div>
 
@@ -35,7 +35,7 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
-				{#each data.gigs as month}
+				{#each data.gigs.byMonth as month}
 					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}
@@ -53,17 +53,15 @@
 									</div>
 									<div class="w-full">
 										{#each items as event}
-											<div>
-												<Event
-													name={event.promotedName}
-													performers={event.performersList}
-													venue={event.venue}
-													website={event.ticketUrl}
-													comment={event.furtherInfo}
-													initials={event.furtherInfoContributorInitials}
-													time={event.time}
-												/>
-											</div>
+											<Event
+												name={event.promotedName}
+												performers={event.performersList}
+												venue={event.venue}
+												website={event.ticketUrl}
+												comment={event.furtherInfo}
+												initials={event.furtherInfoContributorInitials}
+												time={event.time}
+											/>
 										{/each}
 									</div>
 								</div>

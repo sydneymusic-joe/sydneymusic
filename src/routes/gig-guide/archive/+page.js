@@ -55,10 +55,8 @@ const getGigs = async () => {
 		}
 		}`);
 
-		console.log(iter);
 		iter++;
 		ret = data.eventsCollection.items.length;
-		console.log(ret);
 
 		if (fullSet) {
 			fullSet.eventsCollection.items = fullSet.eventsCollection.items.concat(data.eventsCollection.items);
@@ -86,12 +84,12 @@ const getGigs = async () => {
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
 
 		// Group by month
-		return byMonth.map((month) => {
+		return {byMonth : byMonth.map((month) => {
 			return {
 				...month,
 				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
 			};
-		});
+		}), totalGigs : (iter*1000)+ret}
 	}
 	return {};
 };

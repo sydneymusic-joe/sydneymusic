@@ -28,6 +28,7 @@
 			{#if venue}<a href={venue.url}>{venue.venueName}</a>{/if}
 		</p>
 	</div>
+	{#if website && calendarLink}
 	<div class="flex items-center space-x-5">
 		{#if website}
 			<a href={website} target="_blank" class="flex items-center space-x-1 text-sm group">
@@ -63,6 +64,7 @@
 			<div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
 		{/if}
 	</div>
+	{/if}
 	{#if comment}
 		<div
 			class="relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic"
