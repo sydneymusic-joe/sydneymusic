@@ -28,7 +28,7 @@
 			{#if venue}<a href={venue.url}>{venue.venueName}</a>{/if}
 		</p>
 	</div>
-	{#if website && calendarLink}
+	{#if website || calendarLink}
 	<div class="flex items-center space-x-5">
 		{#if website}
 			<a href={website} target="_blank" class="flex items-center space-x-1 text-sm group">
