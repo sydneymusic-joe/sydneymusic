@@ -88,13 +88,13 @@
 	</div>
 </div>
 
-<div class="max-w-5xl px-5 mt-10 mx-auto space-y-32 pb-24">
+<div class="max-w-5xl px-5 mt-5 mx-auto space-y-32 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
-				<div class="filterbox">
+				<div class="filterbox pt-5">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
 						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 						<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />

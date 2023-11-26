@@ -176,15 +176,16 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap h-10 items-center;
+		@apply flex flex-wrap items-center;
+		margin-bottom : -15px;
 	}
 
 	.filterbox > * {
-		padding-bottom : 5px;
+		padding-bottom : 15px;
 	}
 
 	.filterbox label, .filterbox a {
-		@apply italic font-semibold text-pill pr-3;
+		@apply italic font-semibold text-pill pr-5;
 	}
 
 	.filterbox a { @apply flex items-center }
