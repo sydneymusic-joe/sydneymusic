@@ -124,7 +124,7 @@
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
-									<div class="w-full space-y-5">
+									<div class="w-full">
 										{#each items as event}
 											<Event
 												name={event.promotedName}
