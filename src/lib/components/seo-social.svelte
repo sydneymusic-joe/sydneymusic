@@ -6,7 +6,7 @@
 		'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife';
 	export let canonical;
 	export let type;
-	export let image = 'https://sydneymusic.net/social-image.jpg';
+	export let image = 'https://sydneymusic.net/social-image.png';
 	export let imageWidth = 1200;
 	export let imageHeight = 630;
 
