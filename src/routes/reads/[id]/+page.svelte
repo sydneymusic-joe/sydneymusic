@@ -17,7 +17,7 @@
 	<div class="space-y-10">
 		<div>
 			<div class="prose prose-xl">
-				<h1 class="uppercase text-xl italic">{data.headline}</h1>
+				<h1 class="uppercase text-xl italic mt-10">{data.headline}</h1>
 			</div>
 		</div>
 		<div class="grid lg:grid-cols-sidebar-right">

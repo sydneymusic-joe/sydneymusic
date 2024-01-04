@@ -17,8 +17,8 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2023-11-15T00:00:00+1100");
-    const dateTo = new Date("2023-11-23T00:00:00+1100");
+    const dateFrom = new Date("2023-12-13T00:00:00+1100");
+    const dateTo = new Date("2023-12-21T00:00:00+1100");
 
 	const data = await client.request(gql`{
   eventsCollection(
