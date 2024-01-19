@@ -62,7 +62,7 @@
 				<p>The website and initiative was co-founded by:</p>
 
 				<dl>
-					<dt>Joe Hardy</dt>
+					<dt><a href="https://joe.hardy.id.au">Joe Hardy</a></dt>
 					<dd>Project and Technology Direction</dd>
 					<dt>Will McKinnon</dt>
 					<dd>Art Direction and Web Design</dd>
