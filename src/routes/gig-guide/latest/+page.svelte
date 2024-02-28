@@ -21,7 +21,7 @@
 			<div class="sm:pr-20">
 				<div class="space-y-8 ml-3">
 					<div class="prose">
-					<p>This is a list of our last 50 updates to the guide, with the most recent upupdates shown first. If you'd like to make a submission or a correction, please <a href="/contact">contact us</a>.</p>
+					<p>If you like to stay <em>really</em> up-to-the-second on gig announcements, this (currently beta) feature lets you see the most recent changes we've made to the guide.</p><p>If you'd like to make a submission or a correction, please <a href="/contact">contact us</a>. If you have any feedback on this feature, feel free to drop us a note as well!</p>
 				</div>
 
 					{#each data.gigs as event }
@@ -52,15 +52,9 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-				<h3 class="notch-left text-lg lg:text-xl">about the archive</h3>
+				<h3 class="notch-left text-lg lg:text-xl">This is a beta feature</h3>
 				<div class="prose prose-sm">
-					<p>This is just what's in the database. It may have errors.</p>
-
-					<p>
-						We're interested in the notion of creating a more complete archive of gigs that have
-						taken place in Sydney over the years... but we're not there just yet. For now, enjoy
-						this!
-					</p>
+					<p>You can send feedback to <a href="mailto:contact@sydneymusic.net">contact@sydneymusic.net</a></p>
 				</div>
 			</div>
 		</div>
