@@ -1,5 +1,27 @@
 import API from '$lib/contentful/';
-import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
+import { formatDate, formatDateLong, groupBy, formatDay } from '$lib/globals.mjs';
+
+const getLastUpdated = async () => {
+	const data = await API(`{
+		eventsCollection(
+			order: sys_publishedAt_DESC,
+			limit : 1
+			) {
+				items {
+					sys {
+						publishedAt
+					}
+				}
+			}
+	}
+	`);
+
+	if (data) {
+		return data.eventsCollection.items[0].sys.publishedAt;
+	}
+
+	return null;
+}
 
 const getGigs = async () => {
 	const d = new Date();
@@ -58,8 +80,12 @@ const getGigs = async () => {
 
 export async function load() {
 	let gigs = await getGigs();
+	let lastUpdated = new Date(await getLastUpdated());
+
+	lastUpdated = `${lastUpdated.toTimeString().substring(0, 5)} on ${lastUpdated.getDate()} ${formatDate(lastUpdated)}`;
 
 	return {
-		gigs
+		gigs,
+		lastUpdated
 	};
 }

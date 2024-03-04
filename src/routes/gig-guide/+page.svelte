@@ -93,7 +93,7 @@
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
-			<div class="space-y-10 sm:pr-20">
+			<div class="space-y-5 sm:pr-20">
 				<div class="filterbox pt-5">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
 						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
@@ -106,6 +106,10 @@
 
 						<span class="ml-2">GO BACK IN TIME</span>
 					</a>
+				</div>
+
+				<div class="prose">
+					<p class="text-xs">Guide last updated: <span class="text-ruby">{data.lastUpdated}</span>. <a href="/gig-guide/latest/">View latest updates</a>.</p>
 				</div>
 
 				{#each data.gigs as month}
