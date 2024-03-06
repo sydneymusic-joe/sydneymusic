@@ -21,11 +21,14 @@
 				{#each navigation as item}
 					<a
 						href={item.href}
-						class="notch-thic hover:border-ruby hover:text-ruby text-center text-lg lg:text-xl py-1"
+						class="notch-thic hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-lg lg:text-xl py-1"
 						class:notch-right={navigation.indexOf(item) < navigation.length - 1}
 						class:border-ruby={$page.url.pathname === item.href}
 					>
 						{item.title}
+						{#if item.title == 'venues'}
+						<span>New!</span>
+						{/if}
 					</a>
 				{/each}
 			</div>

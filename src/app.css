@@ -271,6 +271,12 @@ body.freegigs .guide-month > h3:not(:has(+ div .freegig)) {
 body.freegigs .eventcard:not(:is(.freegig)) {
 	@apply hidden;
 }
+div > .day > div:first-child {
+	width : 98px;
+}
+div > .day > div:first-child p {
+	width : 100%;
+}
 
 .eventcard { margin-bottom : 20px; }
 .eventcard:last-child { margin-bottom : 0 }
@@ -344,6 +350,33 @@ body.freegigs .eventcard:not(:is(.freegig)) {
 .home-storelink {
 	position: relative;
 }
+
+.venues {
+	@apply space-y-3 pl-3 sm:columns-3;
+}
+
+.venues h4 {
+	/*@apply break-after-column*/
+}
+.venues .venue {
+	break-inside: avoid-column;
+}
+.venues .venue .gigcount {
+	@apply font-normal;
+	color: #aaa;
+}
+
+.venue a {
+	@apply font-bold;
+}
+.venue a.rip {
+	color: #aaa;
+	font-weight: normal;
+}
+.venue .rip::after {
+	content: '🕯️';
+	margin-left: 5px;
+}
 .home-storelink::before {
 	position: absolute;
 	content: '';
@@ -359,3 +392,9 @@ body.freegigs .eventcard:not(:is(.freegig)) {
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
 .guide-month > h3 { @apply sticky top-0; background : white; z-index : 100; }
+
+.accordion-content {
+	transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margin-top : -2px; background : yellow; line-height: 100%; font-size : 11px; border-radius : 3px; padding : 2px; }

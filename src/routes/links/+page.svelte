@@ -36,27 +36,10 @@
 			</h2>
 
 			<p class="prose">
-				Are we missing any vital spaces? <a href="/contact">Please let us know!</a>
+				This is now on a dedicated <a href="/gig-guide/venues">Venues page</a>
 			</p>
 
-			<div class="space-y-3 pl-3">
-				{#each data.venues as { label, items }, i}
-					<h4
-						class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight"
-					>
-						{label}
-					</h4>
-					<dl class="pb-10">
-						{#each items as { venueName, url }}
-							<dt>
-								<a href={url} class="hover:text-ruby">
-									<strong>{venueName}</strong>
-								</a>
-							</dt>
-						{/each}
-					</dl>
-				{/each}
-			</div>
+			
 		</div>
 	</div>
 </div>

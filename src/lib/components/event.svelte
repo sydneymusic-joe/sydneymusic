@@ -24,8 +24,8 @@
 				W/ {performers.join(', ')}
 			</p>{/if}
 		<p class="text-sm uppercase text-neutral-500">
-			<span class="time">{time}</span>
-			{#if venue}<a href={venue.url}>{venue.venueName}</a>{/if}
+		<span class="time">{time}</span>
+			{#if venue}<a href="/gig-guide/venues/{venue.slug}">{venue.venueName}</a>{/if}
 		</p>
 	</div>
 	{#if website || calendarLink}

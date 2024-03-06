@@ -44,7 +44,8 @@ const getGigs = async () => {
             venueName
             address
             suburb
-            url
+            url,
+			slug
           }
         }
       }
