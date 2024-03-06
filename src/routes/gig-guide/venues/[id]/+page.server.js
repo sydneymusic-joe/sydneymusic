@@ -1,5 +1,5 @@
 import API from '$lib/contentful/';
-import { previewMode, formatDateLong } from '$lib/globals.mjs';
+import { previewMode, formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 
 export async function load({ params }) {
 	let data = await API(`query {
@@ -11,6 +11,7 @@ export async function load({ params }) {
 			postcode,
 			url,
 			isRip,
+			capacity,
 			sys {
 				id
 			}
@@ -21,28 +22,6 @@ export async function load({ params }) {
 	let venueInfo = data.venuesCollection.items[0];
 	const d = new Date();
 
-	/*gigs = await API(`query {
-		eventsCollection(
-			limit : 50,
-			order : [gigStartDate_ASC],
-			where : {gigStartDate_gte : "${new Date(d.setHours(0)).toISOString()}"},
-			preview : ${previewMode}
-			) {
-				items {
-					gigStartDate,
-					promotedName,
-					performersList,
-					venue(where: {slug : "the-oxford-tavern"}) {
-						slug
-					},
-					ticketUrl,
-					furtherInfo,
-					furtherInfoContributorInitials,
-					isFree
-				}
-			}
-		}`)
-		*/
 	let gigs = await API(`query {
 		venuesCollection(
 			limit : 1,
@@ -50,7 +29,7 @@ export async function load({ params }) {
 		) {
 			items {
 				linkedFrom {
-					eventsCollection {
+					eventsCollection(order : [gigStartDate_ASC], limit : 1000) {
 						total
 						items {
 							gigStartDate,
@@ -85,7 +64,29 @@ export async function load({ params }) {
 	}
 
 	return {
+		title : 'Venue Listing',
 		venueData: venueInfo,
-		events: gigs
+		eventsFuture: splitAndGroup(gigs, true),
+		eventsPast : splitAndGroup(gigs, false)
 	};
+}
+
+function splitAndGroup(gigs, upcoming) {
+	let local = upcoming ? gigs.filter((item) => item.date >= new Date()) : gigs.reverse().filter((item) => item.date <= new Date());
+	let byMonth =
+		groupBy(
+			local,
+			(i) => formatDate(i.date)
+		);
+
+	// Group by month
+	byMonth = byMonth.map((month) => {
+		return {
+			...month,
+			items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
+		};
+	});
+	byMonth.childCount = local.length;
+
+	return byMonth;
 }

@@ -11,7 +11,7 @@
 		</a>
 	</div>
 
-	<nav class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-20 mb-10 space-y-5">
+	<nav class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-15 mb-5 space-y-5">
 		<div class="w-full flex justify-between items-end">
 			<a href="/" class="hidden lg:block shrink-0">
 				<Logo invert />
@@ -21,11 +21,14 @@
 				{#each navigation as item}
 					<a
 						href={item.href}
-						class="notch-thic hover:border-ruby hover:text-ruby text-center text-lg lg:text-xl py-1"
+						class="notch-thic hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-lg lg:text-xl py-1"
 						class:notch-right={navigation.indexOf(item) < navigation.length - 1}
 						class:border-ruby={$page.url.pathname === item.href}
 					>
 						{item.title}
+						{#if item.title == 'venues'}
+						<span>New!</span>
+						{/if}
 					</a>
 				{/each}
 			</div>

@@ -7,15 +7,15 @@ export const previewMode =
 // ToDo get this from contentful?
 export const navigation = [
 	{ title: 'gigs', href: '/gig-guide' },
+	{ title: 'venues', href: '/gig-guide/venues' },
 	{ title: 'reads', href: '/reads' },
-	{ title: 'support', href: 'https://store.sydneymusic.net' },
-	{ title: 'venues', href: '/venues' }
+	{ title: 'support', href: 'https://store.sydneymusic.net' }
 ];
 
 export const navigationFooter = [
 	{ title: 'Home', href: '/' },
 	{ title: 'Gig Guide', href: '/gig-guide' },
-	{ title: 'Venues', href: '/venues' },
+	{ title: 'Venues', href: '/gig-guide/venues' },
 	{ title: 'About & FAQ', href: '/about' },
 	{ title: 'Donate / Merch Store', href: 'https://store.sydneymusic.net' }
 ];

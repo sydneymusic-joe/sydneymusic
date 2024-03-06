@@ -23,9 +23,9 @@
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
 	<h1 class="notch-left text-xl">Gig Guide <span class="text-ruby">Archive</span></h1>
-	<div class="px-3">
-		<p>"We have to go back, Marty!!!"</p>
+	<div class="px-3 space-y-5">
 		<p>Yes, this is time travel.</p>
+		<p>There are <strong>{data.gigs.totalGigs.toLocaleString()}</strong> gigs in the archive.</p>
 	</div>
 </div>
 
@@ -35,8 +35,8 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="space-y-10 sm:pr-20">
-				{#each data.gigs as month}
-					<div class="space-y-10">
+				{#each data.gigs.byMonth as month}
+					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}
 						</h3>
@@ -44,27 +44,24 @@
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-5 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
 									>
 										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
 											{label.split(':')[1]}
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 									</div>
-									<div class="space-y-5 w-full">
+									<div class="w-full">
 										{#each items as event}
-											<div>
-												<Event
-													name={event.promotedName}
-													performers={event.performersList}
-													calendarLink={createCalendarLink(event)}
-													venue={event.venue}
-													website={event.ticketUrl}
-													comment={event.furtherInfo}
-													initials={event.furtherInfoContributorInitials}
-													time={event.time}
-												/>
-											</div>
+											<Event
+												name={event.promotedName}
+												performers={event.performersList}
+												venue={event.venue}
+												website={event.ticketUrl}
+												comment={event.furtherInfo}
+												initials={event.furtherInfoContributorInitials}
+												time={event.time}
+											/>
 										{/each}
 									</div>
 								</div>
