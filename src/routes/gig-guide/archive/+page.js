@@ -8,29 +8,6 @@ const getGigs = async () => {
 	let ret = 1000;
 	let iter = 0;
 	while (ret == 1000) {
-		console.log(`{
-			eventsCollection(
-				order: gigStartDate_DESC,
-				limit: 1000, 
-				skip:${iter*1000},
-				where: { gigStartDate_lt: "${new Date(d.setHours(0)).toISOString()}" }
-			) {
-				items {
-				gigStartDate
-				promotedName
-				ticketUrl
-				performersList
-				furtherInfo
-				furtherInfoContributorInitials
-				venue {
-					venueName
-					address
-					suburb
-					url
-				}
-				}
-			}
-			}`);
 		const data = await API(`{
 		eventsCollection(
 			order: gigStartDate_DESC,
@@ -49,7 +26,8 @@ const getGigs = async () => {
 				venueName
 				address
 				suburb
-				url
+				url,
+				slug
 			}
 			}
 		}

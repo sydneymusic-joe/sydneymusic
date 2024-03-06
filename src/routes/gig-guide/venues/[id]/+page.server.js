@@ -10,6 +10,7 @@ export async function load({ params }) {
 			suburb,
 			postcode,
 			url,
+			slug,
 			isRip,
 			capacity,
 			sys {
