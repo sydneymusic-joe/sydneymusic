@@ -116,7 +116,7 @@
 			<div>
 				<div class="transition">
 					<div class="accordion-header cursor-pointer transition flex items-center">
-						<h3 class="uppercase text-2xl italic font-bold">Past Gigs <span class="font-normal text-gray-500">({eventsPast.length})</span></h3>
+						<h3 class="uppercase text-2xl italic font-bold">Past Gigs <span class="font-normal text-gray-500">({eventsPast.childCount})</span></h3>
 					</div>
 					<div class="accordion-content overflow-hidden max-h-0">
 					{#each data.eventsPast as month}
