@@ -27,7 +27,7 @@
 				<h4
 					class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight"
 				>
-					{label}
+					{label != 'null' ? label : 'Unknown Suburb'}
 				</h4>
 				<dl class="pb-10">
 					{#each items as { venueName, slug, isRip, linkedFrom }}

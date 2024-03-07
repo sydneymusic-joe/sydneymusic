@@ -4,6 +4,7 @@ import { groupBy } from '../../../lib/globals.mjs';
 const getVenues = async () => {
 	const dataLinks = await API(`{
 		venuesCollection(
+			where : { hideFromDirectory_not : true }
 			order : [suburb_ASC, venueName_ASC],
 			limit : 1000
 		) {
