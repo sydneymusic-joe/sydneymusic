@@ -5,14 +5,17 @@ export async function load({ params }) {
 	let data = await API(`query {
 		venuesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
 		  items {
-			venueName,
-			address,
-			suburb,
-			postcode,
-			url,
-			slug,
-			isRip,
-			capacity,
+			venueName
+			address
+			suburb
+			postcode
+			url
+			slug
+			isRip
+			capacity
+			blurb {
+				json
+			}
 			sys {
 				id
 			}

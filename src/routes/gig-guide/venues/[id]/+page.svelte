@@ -6,6 +6,7 @@
 		formatDayOfWeek,
 		formatDateLong
 	} from '$lib/globals.mjs';
+	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 	//export let venueData;
 	export let data;
@@ -44,15 +45,26 @@
 				{/if}
 
 				<p>
-					{venueData.address}<br />{venueData.suburb} NSW {venueData.postcode} [<a
-						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address},%20{venueData.suburb}&ia=maps&iaxm=maps"
+					<span class="{!venueData.address ? 'text-gray-400' : ''}">{venueData.address ?? '[Address not provided]'}</span><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
+						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ?? ''},%20{venueData.suburb}&ia=maps&iaxm=maps"
 						>see map</a
 					>]
 				</p>
 
+				{#if venueData.url}
 				<p><a href={venueData.url}>{venueData.url}</a></p>
+				{/if}
 
 				<p><strong>Capacity:</strong> {venueData.capacity ? venueData.capacity : 'Unknown'}</p>
+
+				{#if venueData.blurb}
+				<div class="blurb">
+					<h3 class="uppercase text-sm text-ruby">About {venueData.venueName}</h3>
+					<div class="prose text-sm">
+						{@html documentToHtmlString(venueData.blurb.json)}
+					</div>
+				</div>
+				{/if}
 
 				<div class="bg-gray-200 p-5 rounded-md prose">
 					<p class="m-0"><strong>Do you have information about this venue?</strong></p>

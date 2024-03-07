@@ -398,3 +398,11 @@ div > .day > div:first-child p {
 }
 
 header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margin-top : -2px; background : yellow; line-height: 100%; font-size : 11px; border-radius : 3px; padding : 2px; }
+
+/* venue page stuff */
+.blurb p {
+	@apply m-0 mb-2;
+}
+.blurb {
+	@apply mb-8;
+}
