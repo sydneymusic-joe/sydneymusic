@@ -9,6 +9,26 @@ const getGigs = async () => {
 	const d = new Date();
 	d.setDate(d.getDate() + 6); // 1 week
 	d.setHours(23, 59, 59, 999); // End of day
+
+	const sow = new Date(n.getFullYear(), n.getMonth(), (n.getDate() - n.getDay())+1);
+	let eow = new Date(sow);
+	eow.setDate(sow.getDate() + 7);
+	const counter = await API(`
+	{
+		eventsCollection(
+			limit: 500,
+			where: {
+				gigStartDate_gte: "${sow.toISOString()}"
+				gigStartDate_lt: "${eow.toISOString()}"
+			}
+		) {
+			items {
+				gigStartDate
+			}
+		}
+	}
+	`);
+
 	const data = await API(`{
       eventsCollection(
         order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
@@ -55,6 +75,8 @@ const getGigs = async () => {
 		});
 
 		let byDay = groupBy(event, ({ date }) => `${formatDayOfWeek(date)}:${formatDateLong(date)}`);
+
+		byDay.thisWeek = counter.eventsCollection.items.length;
 
 		return byDay;
 	}

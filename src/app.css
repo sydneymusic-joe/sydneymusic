@@ -123,6 +123,12 @@
 		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+	font-family : 'ITC Souvenir';
+	font-display: swap;
+	src : url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
+}
+
 @layer base {
 	.notch-thic,
 	.notch-right,
@@ -405,4 +411,21 @@ header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margi
 }
 .blurb {
 	@apply mb-8;
+}
+
+.feature-thisweek .bigtext {
+	font-family : 'ITC Souvenir';
+	color : black;
+	@apply text-4xl md:text-7xl font-bold;
+}
+
+.feature-thisweek.prose {
+	@apply max-w-[100%]
+}
+
+.feature-thisweek .links {
+}
+
+.feature-thisweek .links a {
+	@apply px-2 whitespace-nowrap
 }
