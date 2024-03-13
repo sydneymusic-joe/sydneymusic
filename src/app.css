@@ -416,7 +416,7 @@ header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margi
 .feature-thisweek .bigtext {
 	font-family : 'ITC Souvenir';
 	color : black;
-	@apply text-4xl md:text-7xl font-bold;
+	@apply text-4xl md:text-7xl;
 }
 
 .feature-thisweek.prose {
