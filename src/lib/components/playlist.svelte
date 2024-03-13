@@ -27,5 +27,5 @@
 			>
 		</li>
 	</ul>
-	<p>Updated every Sunday!</p>
+	<p>Updated every Wednesday!</p>
 </div>
