@@ -18,8 +18,16 @@
 	/>
 </picture>
 
-<div class="max-w-5xl px-5 mt-10 mx-auto space-y-10">
-	<h1 class="notch-left text-xl">Live Music Venues in Sydney</h1>
+<div class="max-w-5xl px-5 mt-10 mx-auto">
+	<h1 class="notch-left text-2xl mb-5">Live Music Venues in Sydney</h1>
+
+	<div class="px-3 prose max-w-[100%] mb-10">
+		<p>Here’s every live music venue in Sydney that's hosted gigs since SydneyMusic's inception in 2022.</p>
+		<p>Whether you’re looking for the best gigs in your neighbourhood, planning an Inner West music crawl across the free front bar shows of Newtown, or scoping out potential stages for your band's EP launch, the live venue that's right for you is right here.*</p>
+		<p>Scroll by suburb, click the venue name to see gig listings for this week and beyond, and don't forget to pour one out for the Sydney live music venues that have closed their doors (marked with a 🕯️).</p>
+		<p class="text-xs">* Unless it's not! If we're missing your venue or don't have a gig listing, please <a href="/contact">let us know</a>. Venues will appear here once at least one gig has been listed in the guide.</p>
+
+	</div>
 
 	<div class="venues">
 		{#each data.venues as { label, items }, i}
