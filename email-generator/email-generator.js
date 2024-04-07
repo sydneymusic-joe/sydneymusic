@@ -17,8 +17,8 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-03-13T00:00:00+1100");
-    const dateTo = new Date("2024-03-21T00:00:00+1100");
+    const dateFrom = new Date("2024-03-20T00:00:00+1100");
+    const dateTo = new Date("2024-03-27T00:00:00+1000");
 
 	const data = await client.request(gql`{
   eventsCollection(
@@ -40,7 +40,8 @@ const getGigs = async () => {
         venueName
         address
         suburb
-        url
+        url,
+        slug
       }
     }
   }
@@ -98,7 +99,7 @@ async function main() {
 				if (gig.performersList != null) {
 					template += `<strong>w/ ${gig.performersList.join(', ')}</strong><br />`;
 				}
-				template += `${gig.time} &nbsp;| &nbsp;<a href="${gig.venue.url}">${gig.venue.venueName}</a>`;
+				template += `${gig.time} &nbsp;| &nbsp;<a href="https://sydneymusic.net/gig-guide/venues/${gig.venue.slug}">${gig.venue.venueName}</a>`;
 				if (gig.furtherInfo) {
 					template += `<div class="blurb">${gig.furtherInfo} &mdash; ${
 						gig.furtherInfoContributorInitials ? gig.furtherInfoContributorInitials : 'SMn'
