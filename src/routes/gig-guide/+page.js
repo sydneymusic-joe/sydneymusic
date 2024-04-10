@@ -83,7 +83,7 @@ export async function load() {
 	let gigs = await getGigs();
 	let lastUpdated = new Date(await getLastUpdated());
 
-	lastUpdated = `${lastUpdated.toTimeString().substring(0, 5)} on ${lastUpdated.getDate()} ${formatDate(lastUpdated)}`;
+	lastUpdated = `${lastUpdated.getDate()} ${formatDate(lastUpdated)} @ ${lastUpdated.toTimeString().substring(0, 5)}`;
 
 	return {
 		gigs,

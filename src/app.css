@@ -183,6 +183,7 @@
 
 	.filterbox {
 		@apply flex flex-wrap items-center;
+		justify-content: center;
 		margin-bottom : -15px;
 	}
 
@@ -423,9 +424,40 @@ header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margi
 	@apply max-w-[100%]
 }
 
-.feature-thisweek .links {
-}
-
 .feature-thisweek .links a {
 	@apply px-2 whitespace-nowrap
+}
+
+.blinddate-host {
+	display : flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.blinddate-plug {
+	@apply border-l-2 border-r-2 px-8 my-3 border-ruby text-center p-3;
+	border-radius : 20px;
+	font-family : 'ITC Souvenir';
+}
+
+.blinddate-plug a {
+	text-decoration: none;
+	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
+	background-position: 0 bottom;
+	background-size: auto 3px;
+	background-repeat: repeat-x;
+	padding-bottom: 3px;
+}
+
+.blinddate-plug a:hover {
+	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'><style type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
+}
+
+h1.special {
+	font-family : 'ITC Souvenir';
+	font-size : 28px;
+	line-height : 100%;
+	@apply text-center;
+	margin-bottom : 8px;
+	margin-top : 10px;
 }
