@@ -18,45 +18,45 @@
 			<div>
 				<label for="gigheadline">Gig Date & Time</label>
 				<div>
-					<input type="datetime-local" />
+					<input name="gig-datetime" type="datetime-local" />
 				</div>
 			</div>
 			<div>
 				<label for="gigheadline">Name of event</label>
 				<div>
-					<input type="text" placeholder="RadFest 2025" />
+					<input type="text" name="gig-name" placeholder="RadFest 2025" />
 					You don't need to enter anything here. If you do, just keep it simple.<br />Examples: "Laneway Festival Sydney 2024", "SWELL TIME #75" or "Best In The West Festival".
 				</div>
 			</div>
 			<div>
 				<label for="headlineact">Headline Act</label>
 				<div>
-					<input type="text" placeholder="The Big Kahunas" />
+					<input type="text" name="gig-headliner" placeholder="The Big Kahunas" />
 				</div>
 			</div>
 			<div>
 				<label for="headlineact">Other Performers</label>
 				<div>
-					<textarea placeholder="Names of bands here, one per line"></textarea>
+					<textarea name="gig-performers" placeholder="Names of bands here, one per line"></textarea>
 					One artist per line in billing order. Please don't put your own band at the top if you're not - we will notice.
 				</div>
 			</div>
 			<div>
 				<label for="venuename">Venue Name</label>
 				<div>
-					<input type="text" name="venuename" placeholder="The Bait Shop" />
+					<input type="text" name="venue-name" placeholder="The Bait Shop" />
 					Yes, just a name - we'll research the rest. If we don't have it, we'll add it.
 				</div>
 			</div>
 			<div>
 				<label for="moreinfo">Link for more information</label>
 				<div>
-					<input type="text" name="moreinfo" placeholder="https://www.ticketsite.com.au/my-awesome-show" />
+					<input type="text" name="gig-moreinfo" placeholder="https://www.ticketsite.com.au/my-awesome-show" />
 					We highly recommend including a URL - users appreciate being able to purchase tickets in advance, check if the show is sold out, look for set times, etc.
 				</div>
 			</div>
 			<div>
-				<label for="description">Anything you want to tell us about this show?</label>
+				<label for="description" name="gig-notes">Anything you want to tell us about this show?</label>
 				<div>
 					<textarea placeholder="Tell us a story! What's the show for? Are you launching something? Is it an anniversary show? Is this a new band? Will there be a special guest? Is this in support of a cause?"></textarea>
 					<strong>Note: all entries are subject to editorial review.</strong> Use this to explain the show to the editors, and they'll make their best judgement on how to reflect the information in the listing.
@@ -65,7 +65,7 @@
 			<div>
 				<label for="description">Anything else you want to say to the person reading this?</label>
 				<div>
-					<textarea></textarea>
+					<textarea name="other-notes"></textarea>
 				</div>
 			</div>
 			<div>
