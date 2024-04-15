@@ -461,3 +461,46 @@ h1.special {
 	margin-bottom : 8px;
 	margin-top : 10px;
 }
+
+h1.special.left {
+	@apply text-left;
+}
+
+form input, form textarea {
+	@apply block pl-2 w-full py-1.5 text-gray-900 border-black border-2 placeholder:text-gray-400 mb-2 text-lg ring-ruby;
+	box-shadow : 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+form textarea {
+	@apply h-28;
+}
+
+form > div > div {
+	@apply mt-2;
+}
+
+div:has(> input, > textarea) {
+	@apply italic text-xs;
+}
+
+form label {
+	@apply font-bold block mb-1;
+}
+
+form button, a.button {
+	@apply px-5 py-2 italic font-bold text-lg bg-ruby text-white no-underline;
+	box-shadow : 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+form input[type=checkbox] {
+	@apply inline w-8 h-8;
+}
+
+a.button::after {
+	content:'»';
+	margin-left : 10px;
+}
+
+.checkbox label {
+
+}
