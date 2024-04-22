@@ -461,3 +461,8 @@ h1.special {
 	margin-bottom : 8px;
 	margin-top : 10px;
 }
+
+.yt-embed iframe {
+	width : 100%;
+	aspect-ratio: 16/9;
+}
