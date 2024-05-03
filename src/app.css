@@ -466,3 +466,9 @@ h1.special {
 	width : 100%;
 	aspect-ratio: 16/9;
 }
+
+#support-banner {
+	padding : 15px;
+	@apply bg-ruby;
+	color : white;
+}

@@ -131,7 +131,7 @@
 						/></a
 					>
 					<p>
-						<strong>This guide is not-for-profit</strong> and relies on the support of our readers to keep this service running. To support our work, you can donate or buy merch at our <a
+						<strong>This guide is not-for-profit</strong> and relies on the support of our readers to keep this service running. To support our work, you can <a href="https://patreon.com/sydneymusic">become a supporter on Patreon</a> or buy merch at our <a
 							href="https://store.sydneymusic.net">online store</a>.
 					</p>
 				</div>

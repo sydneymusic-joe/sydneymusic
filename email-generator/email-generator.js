@@ -17,8 +17,8 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-03-20T00:00:00+1100");
-    const dateTo = new Date("2024-03-27T00:00:00+1000");
+    const dateFrom = new Date("2024-05-01T00:00:00+1000");
+    const dateTo = new Date("2024-05-08T00:00:00+1000");
 
 	const data = await client.request(gql`{
   eventsCollection(
@@ -121,7 +121,7 @@ async function main() {
     </head>
     <body>
     <style>
-        body { background : white; color : black; font-family : Arial, Helvetica, sans-serif; font-size : 14px; }
+        body { background : white; color : black; font-family : "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; font-size : 14px; }
         .maintable tr td { padding-left : 20px; padding-right : 20px; }
         .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
         .preamble p { margin-top : 12px; line-height : 150% }
@@ -141,13 +141,13 @@ async function main() {
     <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
-            <td>
+            <td align="center">
                 <img src="https://downloads.sydneymusic.net/lockup_1.png" vspace="20" height="100" />
             </td>
         </tr>
         <tr class="nav">
-            <td>
-                <a href="https://sydneymusic.net">go to sydneymusic.net</a> • <a href="https://sydneymusic.net/gig-guide">gig guide</a> • <a href="https://sydneymusic.net/reads">reads</a> • <a href="https://sydneymusic.net/links">links</a>
+            <td align="center">
+                <a href="https://sydneymusic.net">go to sydneymusic.net</a> • <a href="https://sydneymusic.net/gig-guide">gig guide</a> • <a href="https://sydneymusic.net/gig-guide/venues">venue directory</a> • <a href="https://sydneymusic.net/reads">reads</a> • <a href="https://sydneymusic.net/links">links</a>
             </td>
         </tr>
         <tr>
