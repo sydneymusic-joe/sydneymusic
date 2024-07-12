@@ -147,19 +147,19 @@
 						or just make sure you don’t miss out on catching your next favourite act.
 					</p>
 					<p>
-						Got a gig you think should be listed here? <a href="mailto:contact@sydneymusic.net"
-							>Drop us an email</a
+						Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
+							>Send our friendly team of Gig Researchers an email!</a
 						>.
 					</p>
 				</div>
 				<div class="space-y-3">
-					<Button label="Submit a gig" href="mailto:contact@sydneymusic.net" />
+					<Button label="Submit a gig" href="mailto:gigs@sydneymusic.net" />
 				</div>
 
 				<div class="prose prose-sm">
 					<p>
 						<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br />
-						Self-promo is fine —we love it when you let us know what you’ve got going on! But we won’t
+						Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
 						publish your marketing/social copy verbatim or give you special consideration in the guide.
 						We generally don’t list cover/tribute bands or background-music sets at hospitality venues.
 						All listings are at our own discretion. We will also graciously refuse any offer of door

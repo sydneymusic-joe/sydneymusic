@@ -11,10 +11,12 @@
 
 			<div class="prose">
 				<p>
-					Contacting us is pretty simple! You can <a href="mailto:contact@sydneymusic.net"
-						>e-mail us</a
-					> any feedback, questions, gig submissions, ideas or thoughts.
-				</p>
+					Contacting us is pretty simple!</p>
+					<ul>
+						<li>You can <strong>submit a gig</strong> via <a href="mailto:gigs@sydneymusic.net">gigs@sydneymusic.net</a></li>
+						<li>Or send all other feedback, questions, ideas or thoughts to <a href="mailto:contact@sydneymusic.net"
+							>contact@sydneymusic.net</a></li>
+					</ul>
 			</div>
 		</div>
 	</div>
