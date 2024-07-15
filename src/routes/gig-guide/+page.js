@@ -55,10 +55,11 @@ const getGigs = async () => {
 		let event = data.eventsCollection.items.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
+			let hours = (d.getHours() != 12 ? d.getHours() % 12 : 12);
 			return {
 				date: d,
 				time:
-					(d.getHours() % 12) +
+					hours +
 					':' +
 					d.getMinutes().toString().padStart(2, '0') +
 					(d.getHours() >= 12 ? 'pm' : 'am'),
