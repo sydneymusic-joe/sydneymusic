@@ -38,7 +38,7 @@ export async function load({ params }) {
 						items {
 							gigStartDate,
 							promotedName,
-							performersList,
+							performersListJson,
 							ticketUrl,
 							furtherInfo,
 							furtherInfoContributorInitials,

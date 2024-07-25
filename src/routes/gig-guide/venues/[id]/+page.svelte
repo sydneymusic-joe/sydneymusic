@@ -104,7 +104,7 @@
 										{#each items as event}
 											<Event
 												name={event.promotedName}
-												performers={event.performersList}
+												performers={event.performersListJson}
 												calendarLink={createCalendarLink(event, venueData)}
 												venue={venueData}
 												website={event.ticketUrl}
@@ -151,7 +151,7 @@
 											{#each items as event, i}
 												<Event
 													name={event.promotedName}
-													performers={event.performersList}
+													performers={event.performersListJson}
 													calendarLink={createCalendarLink(event, venueData)}
 													venue={venueData}
 													website={event.ticketUrl}

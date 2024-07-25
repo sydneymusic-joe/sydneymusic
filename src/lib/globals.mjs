@@ -15,7 +15,6 @@ export const navigation = [
 export const navigationFooter = [
 	{ title: 'Home', href: '/' },
 	{ title: 'Gig Guide', href: '/gig-guide' },
-	{ title: 'Full Archive', href: '/gig-guide/archive' },
 	{ title: 'Venue Directory', href: '/gig-guide/venues' },
 	{ title: 'About & FAQ', href: '/about' },
 	{ title: 'Donate / Merch Store', href: 'https://store.sydneymusic.net' }
@@ -87,7 +86,7 @@ export const createCalendarLink = (event, venue) => {
 		start,
 		end,
 		summary:
-			event.promotedName + (event.performersList ? ' w/ ' + event.performersList.join(', ') : ''),
+			event.promotedName + (event.performersListJson ? ' w/ ' + event.performersListJson.join(', ') : ''),
 		url: event.ticketUrl,
 		location:
 			v.venueName +

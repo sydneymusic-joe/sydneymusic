@@ -1,22 +1,20 @@
-import API from '$lib/contentful/';
+import APId from '$lib/datocms/';
 import { groupBy } from '../../lib/globals.mjs';
 
 const getLinks = async () => {
-	const data = await API(`{
-          linkCollection(
-            order: [category_ASC, title_ASC]
+	const data = await APId(`{
+          allLinks(
+            orderBy: [category_ASC, title_ASC]
           ) {
-            items {
-              title
-              url
-              description,
-              category
-            }
+            title
+            url
+            description,
+            category
           }
         }`);
 
 	if (data) {
-		let byCategory = groupBy(data.linkCollection.items, ({ category }) => category);
+		let byCategory = groupBy(data.allLinks, ({ category }) => category);
 
 		return byCategory;
 	}

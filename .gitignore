@@ -12,3 +12,4 @@ gigs-import*
 .netlify
 /email-generator/*.html
 .idea/
+*.cpuprofile

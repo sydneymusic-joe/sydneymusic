@@ -38,11 +38,11 @@
 					{label != 'null' ? label : 'Unknown Suburb'}
 				</h4>
 				<dl class="pb-10">
-					{#each items as { venueName, slug, isRip, linkedFrom }}
-						{#if linkedFrom.eventsCollection.total > 0}
+					{#each items as { venueName, slug, isRip, _allReferencingEventsMeta }}
+						{#if _allReferencingEventsMeta.count > 0}
 						<dt>
 							<a href="/gig-guide/venues/{slug}" style="hover:text-ruby;" class={!isRip ? '' : 'rip'}>
-								{venueName} <span class="gigcount">({linkedFrom.eventsCollection.total})</span>
+								{venueName} <span class="gigcount">({_allReferencingEventsMeta.count})</span>
 							</a>
 						</dt>
 						{/if}
