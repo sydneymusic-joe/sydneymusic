@@ -1,10 +1,9 @@
-import API from '$lib/contentful/';
+import API from '$lib/datocms/';
 import { previewMode, formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 
 export async function load({ params }) {
 	let data = await API(`query {
-		venuesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
-		  items {
+		allVenues(filter: { slug: {eq : "${params.id}" } }, first:1 ) {
 			venueName
 			address
 			suburb
@@ -13,46 +12,36 @@ export async function load({ params }) {
 			slug
 			isRip
 			capacity
+			id
 			blurb {
-				json
+				value
 			}
-			sys {
-				id
-			}
-		  }
 		}
 	}`);
 
-	let venueInfo = data.venuesCollection.items[0];
+	let venueInfo = data.allVenues[0];
 	const d = new Date();
 
 	let gigs = await API(`query {
-		venuesCollection(
-			limit : 1,
-			where : { slug : "${params.id}" }
+		allVenues(
+			first : 1,
+			filter : { slug : { eq : "${params.id}"} }
 		) {
-			items {
-				linkedFrom {
-					eventsCollection(order : [gigStartDate_ASC], limit : 1000) {
-						total
-						items {
-							gigStartDate,
-							promotedName,
-							performersListJson,
-							ticketUrl,
-							furtherInfo,
-							furtherInfoContributorInitials,
-							isFree
-						}
-					}
-				}
+			_allReferencingEvents(orderBy : [gigStartDate_ASC], first : 100) {
+				gigStartDate,
+				promotedName,
+				performersListJson,
+				ticketUrl,
+				furtherInfo,
+				furtherInfoContributorInitials,
+				isFree
 			}
 		}
 	}
 	`);
 
 	if (gigs) {
-		gigs = gigs.venuesCollection.items[0].linkedFrom.eventsCollection.items.map((i) => {
+		gigs = gigs.allVenues[0]._allReferencingEvents.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {

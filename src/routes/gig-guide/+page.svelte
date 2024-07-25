@@ -174,9 +174,3 @@
 		</div>
 	</div>
 </div>
-
-<style>
-	.accordion-content {
-		transition: max-height 0.3s ease-out, padding 0.3s ease;
-	}
-</style>

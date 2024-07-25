@@ -6,7 +6,7 @@
 		formatDayOfWeek,
 		formatDateLong
 	} from '$lib/globals.mjs';
-	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { render } from 'datocms-structured-text-to-html-string';
 
 	//export let venueData;
 	export let data;
@@ -45,7 +45,7 @@
 				{/if}
 
 				<p>
-					<span class="{!venueData.address ? 'text-gray-400' : ''}">{venueData.address ?? '[Address not provided]'}</span><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
+					<span class="{venueData.address == "" ? 'text-gray-400' : ''}">{venueData.address == "" ? '[Address not provided]' : venueData.address}</span><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
 						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ?? ''},%20{venueData.suburb}&ia=maps&iaxm=maps"
 						>see map</a
 					>]
@@ -61,7 +61,7 @@
 				<div class="blurb">
 					<h3 class="uppercase text-sm text-ruby">About {venueData.venueName}</h3>
 					<div class="prose text-sm">
-						{@html documentToHtmlString(venueData.blurb.json)}
+						{@html render(venueData.blurb)}
 					</div>
 				</div>
 				{/if}
