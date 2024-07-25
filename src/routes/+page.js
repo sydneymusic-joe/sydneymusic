@@ -1,4 +1,5 @@
 import API from '$lib/contentful/';
+import APId from '$lib/datocms/';
 import { previewMode, groupBy, formatDayOfWeek, formatDateLong } from '$lib/globals.mjs';
 
 const getGigs = async () => {
@@ -13,53 +14,45 @@ const getGigs = async () => {
 	const sow = new Date(n.getFullYear(), n.getMonth(), (n.getDate() - n.getDay())+1);
 	let eow = new Date(sow);
 	eow.setDate(sow.getDate() + 7);
-	const counter = await API(`
+	const counter = await APId(`
 	{
-		eventsCollection(
-			limit: 500,
-			where: {
-				gigStartDate_gte: "${sow.toISOString()}"
-				gigStartDate_lt: "${eow.toISOString()}"
+		_allEventsMeta(
+			filter: {
+				gigStartDate: {gte : "${sow.toISOString()}", lt: "${eow.toISOString()}"}
 			}
 		) {
-			items {
-				gigStartDate
-			}
+			count
 		}
 	}
 	`);
 
-	const data = await API(`{
-      eventsCollection(
-        order: [gigStartDate_ASC sys_firstPublishedAt_ASC], 
-        limit: 50,
-        where: { 
-          gigStartDate_gte: "${n.toISOString()}"
-          gigStartDate_lte: "${d.toISOString()}"
-        },
-        preview:${previewMode}
-      ) {
-        items {
-          gigStartDate
-          promotedName
-          ticketUrl
-          performersList
-          furtherInfo
-          furtherInfoContributorInitials
-          isFree
-          venue {
-            venueName
-            address
-            suburb
-            url,
-			slug
-          }
+	const data = await APId(`{
+      allEvents(
+        orderBy: [gigStartDate_ASC], 
+        first: 50,
+        filter: { 
+          gigStartDate: { gte : "${n.toISOString()}", lte: "${d.toISOString()}" }
         }
+      ) {
+		gigStartDate
+		promotedName
+		ticketUrl
+		performersListJson
+		furtherInfo
+		furtherInfoContributorInitials
+		isFree
+		venue {
+			venueName
+			address
+			suburb
+			url,
+			slug
+		}
       }
     }`);
 
 	if (data) {
-		let event = data.eventsCollection.items.map((i) => {
+		let event = data.allEvents.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {
@@ -76,7 +69,7 @@ const getGigs = async () => {
 
 		let byDay = groupBy(event, ({ date }) => `${formatDayOfWeek(date)}:${formatDateLong(date)}`);
 
-		byDay.thisWeek = counter.eventsCollection.items.length;
+		byDay.thisWeek = counter._allEventsMeta.count;
 
 		return byDay;
 	}
@@ -85,19 +78,18 @@ const getGigs = async () => {
 
 const getReads = async () => {
 	const data = await API(`query {
-      articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4, preview:${previewMode}) {
-          items {
-            headline
-            excerpt
-            slug,
-            sys {
-              firstPublishedAt
-            }
-          }
-        }
-      }`);
-
-	if (data) {
+		articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4, preview:${previewMode}) {
+			items {
+			  headline
+			  excerpt
+			  slug,
+			  sys {
+				firstPublishedAt
+			  }
+			}
+		  }
+		}`);
+	  if (data) {
 		return data.articlesCollection.items;
 	}
 	return {};

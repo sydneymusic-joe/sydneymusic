@@ -1,23 +1,20 @@
 import API from '$lib/contentful/';
+import APId from '$lib/datocms/';
 import { formatDate, formatDateLong, groupBy, formatDay } from '$lib/globals.mjs';
 
 const getLastUpdated = async () => {
-	const data = await API(`{
-		eventsCollection(
-			order: sys_publishedAt_DESC,
-			limit : 1
+	const data = await APId(`{
+		allEvents(
+			orderBy: [_publishedAt_DESC],
+			first : 1
 			) {
-				items {
-					sys {
-						publishedAt
-					}
-				}
+				_publishedAt
 			}
-	}
+		}
 	`);
 
 	if (data) {
-		return data.eventsCollection.items[0].sys.publishedAt;
+		return data.allEvents[0]._publishedAt;
 	}
 
 	return null;
@@ -26,33 +23,55 @@ const getLastUpdated = async () => {
 const getGigs = async () => {
 	const d = new Date();
 
-	const data = await API(`{
-      eventsCollection(
-        order: gigStartDate_ASC,
-        limit: 1000, 
-        where: { gigStartDate_gte: "${new Date(d.setHours(0)).toISOString()}" }
-      ) {
-        items {
-          gigStartDate
-          promotedName
-          ticketUrl
-          performersList
-          furtherInfo
-          furtherInfoContributorInitials
-		  isFree
-          venue {
-            venueName
-            address
-            suburb
-            url,
-			slug
-          }
-        }
-      }
-    }`);
+	const pagesize=100;
+	let iter=0;
+	let ret = 100;
+
+	let data = [];
+	let query = "";
+	while (iter < 10) {
+		query += `
+		page${iter+1}:allEvents(
+			orderBy: [gigStartDate_ASC],
+			first: ${pagesize},
+			skip:${iter*pagesize}
+			filter: { gigStartDate : {gte: "${new Date(d.setHours(0)).toISOString()}" }}
+		) {
+			gigStartDate
+			promotedName
+			ticketUrl
+			performersListJson
+			furtherInfo
+			furtherInfoContributorInitials
+			isFree
+			venue {
+				venueName
+				address
+				suburb
+				url,
+				slug
+			}
+		}
+		`;
+
+		iter++;
+	}
+
+	const page = await APId(`{
+		${query}
+	}`);
+
+	for (iter=1;iter<11;iter++) {
+		const p = page['page' + iter];
+		if (p.length == 0)
+			break;
+
+		data = data.concat(p);
+	}
+	ret = data.length;
 
 	if (data) {
-		let event = data.eventsCollection.items.map((i) => {
+		let event = data.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			let hours = (d.getHours() != 12 ? d.getHours() % 12 : 12);

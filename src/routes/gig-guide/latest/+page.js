@@ -1,20 +1,20 @@
 import API from '$lib/contentful/';
+import APId from '$lib/datocms/';
 import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 
 const getGigs = async () => {
 	const d = new Date();
 
-	const data = await API(`{
-		eventsCollection(
-		  order: sys_publishedAt_DESC,
-		  limit: 50, 
-		  where: { gigStartDate_gte: "${new Date(d.setHours(0)).toISOString()}" }
+	const data = await APId(`{
+		allEvents(
+		  orderBy: [_publishedAt_DESC],
+		  first: 50, 
+		  filter: { gigStartDate : { gte: "${new Date(d.setHours(0)).toISOString()}" } }
 		) {
-		  items {
 			gigStartDate
 			promotedName
 			ticketUrl
-			performersList
+			performersListJson
 			furtherInfo
 			furtherInfoContributorInitials
 			isFree
@@ -25,23 +25,20 @@ const getGigs = async () => {
 			  url,
 			  slug
 			}
-			sys {
-				publishedAt
-				firstPublishedAt
-			}
-		  }
+			_publishedAt
+			_firstPublishedAt
 		}
 	  }`);
   
 	  if (data) {
-		  let event = data.eventsCollection.items.map((i) => {
-			  let { gigStartDate, sys, ...rest } = i;
+		  let event = data.allEvents.map((i) => {
+			  let { gigStartDate, ...rest } = i;
 
-			  let dU = new Date(sys.publishedAt);
+			  let dU = new Date(i._publishedAt);
 			  let d = new Date(gigStartDate);
 			  return {
 				  updatedNice : `${dU.toTimeString().substring(0, 5)} on ${dU.getDate()} ${formatDate(dU)}`,
-				  isNew : sys.publishedAt == sys.firstPublishedAt,
+				  isNew : i._publishedAt == i._firstPublishedAt,
 				  date: d,
 				  time:
 					  (d.getHours() % 12) +

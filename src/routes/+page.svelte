@@ -48,7 +48,7 @@
 											<div class="pl-3 py-2">
 												<Event
 													name={event.promotedName}
-													performers={event.performersList}
+													performers={event.performersListJson}
 													calendarLink={createCalendarLink(event)}
 													venue={event.venue}
 													website={event.ticketUrl}
