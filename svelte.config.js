@@ -5,7 +5,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender : {
-			concurrency : 20
+			concurrency : 5
 		}
 	},
 	preprocess: vitePreprocess()
