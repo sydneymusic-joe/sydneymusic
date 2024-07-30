@@ -7,6 +7,16 @@
   status = 301
 
 [[redirects]]
+  from = "/js/script.js"
+  to = "https://plausible.io/js/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/api/event"
+  to = "https://plausible.io/api/event"
+  status = 200
+
+[[redirects]]
   from = "/researcher"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSf0EB6u36A3PQ0rK97HMAF8FrFx3eep6GOhdPhwx5CLsp2Otw/viewform"
   status = 301
