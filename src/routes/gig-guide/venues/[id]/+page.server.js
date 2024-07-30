@@ -36,7 +36,6 @@ export async function load({ params }) {
 	`);
 
 	const total = gigs.allVenues[0]._allReferencingEventsMeta.count;
-console.log(total);
 	let q = '';
 	let i = 0;
 	while (i*100 < total) {
@@ -66,7 +65,6 @@ console.log(total);
 		combinedGigs = combinedGigs.concat(sourcePages['page'+(i+1)]);
 	}
 
-	console.log(combinedGigs.length);
 	if (combinedGigs.length > 0) {
 		combinedGigs = combinedGigs.map((i) => {
 			let { gigStartDate, ...rest } = i;
@@ -92,7 +90,6 @@ console.log(total);
 }
 
 function splitAndGroup(gigs, upcoming) {
-	console.log(gigs);
 	let local = upcoming ? gigs.filter((item) => item.date >= new Date()) : gigs.reverse().filter((item) => item.date <= new Date());
 	let byMonth =
 		groupBy(
