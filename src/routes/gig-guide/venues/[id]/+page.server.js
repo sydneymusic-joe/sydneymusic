@@ -27,7 +27,21 @@ export async function load({ params }) {
 			first : 1,
 			filter : { slug : { eq : "${params.id}"} }
 		) {
-			_allReferencingEvents(orderBy : [gigStartDate_ASC], first : 100) {
+			id
+			_allReferencingEventsMeta {
+				count
+			}
+		}
+	}
+	`);
+
+	const total = gigs.allVenues[0]._allReferencingEventsMeta.count;
+console.log(total);
+	let q = '';
+	let i = 0;
+	while (i*100 < total) {
+		q += `
+			page${i+1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${i*100}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
 				gigStartDate,
 				promotedName,
 				performersListJson,
@@ -36,12 +50,25 @@ export async function load({ params }) {
 				furtherInfoContributorInitials,
 				isFree
 			}
-		}
+		`;
+		i++;
 	}
-	`);
 
-	if (gigs) {
-		gigs = gigs.allVenues[0]._allReferencingEvents.map((i) => {
+	let sourcePages = await API(`query {
+		${q}
+	}`);
+
+	let combinedGigs = [];
+	for (i=0;i<=total%100;i++) {
+		const p = sourcePages['page'+(i+1)];
+		if (!p || p.length == 0)
+			break;
+		combinedGigs = combinedGigs.concat(sourcePages['page'+(i+1)]);
+	}
+
+	console.log(combinedGigs.length);
+	if (combinedGigs.length > 0) {
+		combinedGigs = combinedGigs.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {
@@ -59,12 +86,13 @@ export async function load({ params }) {
 	return {
 		title : 'Venue Listing',
 		venueData: venueInfo,
-		eventsFuture: splitAndGroup(gigs, true),
-		eventsPast : splitAndGroup(gigs, false)
+		eventsFuture: splitAndGroup(combinedGigs, true),
+		eventsPast : splitAndGroup(combinedGigs, false)
 	};
 }
 
 function splitAndGroup(gigs, upcoming) {
+	console.log(gigs);
 	let local = upcoming ? gigs.filter((item) => item.date >= new Date()) : gigs.reverse().filter((item) => item.date <= new Date());
 	let byMonth =
 		groupBy(
