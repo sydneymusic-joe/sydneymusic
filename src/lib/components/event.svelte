@@ -1,5 +1,6 @@
 <script>
 	export let name = 'Performer';
+	export let gigId = '';
 	export let venue = null;
 	export let website = null;
 	export let calendarLink = null;
@@ -47,7 +48,7 @@
 			</a>
 		{/if}
 		{#if calendarLink}
-			<a href={calendarLink} class="flex items-center space-x-1 text-sm group">
+			<a href={calendarLink} class="flex items-center space-x-1 text-sm group plausible-event-name=Add+To+Calendar plausible-event-gigid={gigId}">
 				<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 					<path
 						class="group-hover:text-ruby"

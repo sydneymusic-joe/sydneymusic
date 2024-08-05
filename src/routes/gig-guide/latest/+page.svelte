@@ -37,6 +37,7 @@
 						<div class="uppercase mt-2 text-sm font-bold">{formatDay(event.date)}, <span class="text-ruby">{formatDateLong(event.date)}</span> {1900 + event.date.getYear()}</div>
 						<Event
 						name={event.promotedName}
+						gigId={event.id}
 						performers={event.performersListJson}
 						calendarLink={createCalendarLink(event)}
 						venue={event.venue}

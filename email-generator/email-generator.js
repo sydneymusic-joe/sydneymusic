@@ -6,10 +6,10 @@ import { formatDate, groupBy, formatDay, createCalendarLink } from '../src/lib/g
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const client = new GraphQLClient(
-	`https://graphql.contentful.com/content/v1/spaces/${process.env.VITE_CONTENTFUL_SPACE}`,
+	`https://graphql.datocms.com/`,
 	{
 		headers: {
-			authorization: `Bearer ${process.env.VITE_CONTENTFUL_TOKEN}`
+			authorization: `Bearer ${process.env.VITE_DATOCMS_TOKEN}`
 		}
 	}
 );
@@ -17,38 +17,35 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-07-25T00:00:00+1000");
-    const dateTo = new Date("2024-08-01T00:00:00+1000");
+    const dateFrom = new Date("2024-08-01T00:00:00+1000");
+    const dateTo = new Date("2024-08-08T00:00:00+1000");
 
 	const data = await client.request(gql`{
-  eventsCollection(
-    order: gigStartDate_ASC,
-    limit: 1000, 
-    where: {
-        gigStartDate_gte: "${dateFrom.toISOString()}",
-        gigStartDate_lt:"${dateTo.toISOString()}"
+  allEvents(
+    orderBy: gigStartDate_ASC,
+    first: 100, 
+    filter: {
+        gigStartDate : { gte : "${dateFrom.toISOString()}", lt : "${dateTo.toISOString()}" }
     }
   ) {
-    items {
-      gigStartDate
-      promotedName
-      ticketUrl
-      performersList
-      furtherInfo
-      furtherInfoContributorInitials
-      venue {
+    gigStartDate
+    promotedName
+    ticketUrl
+    performersListJson
+    furtherInfo
+    furtherInfoContributorInitials
+    venue {
         venueName
         address
         suburb
         url,
         slug
-      }
     }
   }
 }`);
 
 	if (data) {
-		let event = data.eventsCollection.items.map((i) => {
+		let event = data.allEvents.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {
@@ -95,9 +92,9 @@ async function main() {
 			for (const gig of day.items) {
 				template += `<tr>
                     <td style="">
-                        <font>${gig.promotedName || gig.performersList[0]}</font><br />`;
-				if (gig.performersList != null) {
-					template += `<strong>w/ ${gig.performersList.join(', ')}</strong><br />`;
+                        <font>${gig.promotedName || gig.performersListJson[0]}</font><br />`;
+				if (gig.performersListJson != null) {
+					template += `<strong>w/ ${gig.performersListJson.join(', ')}</strong><br />`;
 				}
 				template += `${gig.time} &nbsp;| &nbsp;<a href="https://sydneymusic.net/gig-guide/venues/${gig.venue.slug}">${gig.venue.venueName}</a>`;
 				if (gig.furtherInfo) {

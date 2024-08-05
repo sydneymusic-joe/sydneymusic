@@ -87,6 +87,7 @@
 										{#each items as event}
 											<Event
 												name={event.promotedName}
+												gigId={event.id}
 												performers={event.performersListJson}
 												calendarLink={createCalendarLink(event)}
 												venue={event.venue}

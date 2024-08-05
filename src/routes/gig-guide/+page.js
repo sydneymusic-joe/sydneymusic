@@ -37,6 +37,7 @@ const getGigs = async () => {
 			skip:${iter*pagesize}
 			filter: { gigStartDate : {gte: "${new Date(d.setHours(0)).toISOString()}" }}
 		) {
+			id
 			gigStartDate
 			promotedName
 			ticketUrl

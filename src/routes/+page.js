@@ -34,7 +34,8 @@ const getGigs = async () => {
           gigStartDate: { gte : "${n.toISOString()}", lte: "${d.toISOString()}" }
         }
       ) {
-		gigStartDate
+		id
+	 	gigStartDate
 		promotedName
 		ticketUrl
 		performersListJson
