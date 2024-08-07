@@ -37,7 +37,6 @@
 	<li>Expert level creator of beautiful HTML and CSS</li>
 	<li>A passion for performant browser rendering, site performance, and getting rid of the bloat that's permeated the internet for the last two decades</li>
 	<li>Keen product design skills with a developed understanding of prototyping, design thinking and iteration</li>
-	<li>Notable experience with Static Site Generation (SSG) frameworks and tooling, including best practices and build time reduction</li>
 	<li>Intermediate JavaScript (all run at build-time - we do not do client-side rendering)</li>
 	<li>A professional pride in good project and code structure</li>
 </ul>
