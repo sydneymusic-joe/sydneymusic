@@ -52,12 +52,10 @@
 					<p class="text-xs">Last updated: <span class="text-ruby">{data.lastUpdated}</span>. <a href="/gig-guide/latest/">View latest updates</a>.</p>
 				</div>
 			</div>
-				<div class="blinddate-host md:hidden">
-					<div class="blinddate-plug">
-						<div>Want to discover something new? Try:</div>
-						<a href="https://genres.sydneymusic.net" target="_blank" class="text-ruby text-xl">Blind Date With A Band</a>
-					</div>
-				</div>
+
+			<div class="p-3 text-center text-sm space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
+				<div><strong>We're looking for a freelance developer/designer.</strong><br />&raquo; <a href="/frontend" class="underline">Help us make the gig guide better!</a> &laquo;</div>
+			</div>
 
 				<div class="filterbox">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
