@@ -15,8 +15,3 @@
   from = "/api/event"
   to = "https://plausible.io/api/event"
   status = 200
-
-[[redirects]]
-  from = "/frontend"
-  to = "https://docs.google.com/forms/d/e/1FAIpQLSeTAVO3ASs1wv2NIHEnxgSpxUStwz4VWbzgLMvj0XFvL3Nkug/viewform"
-  status = 301
