@@ -141,7 +141,7 @@
 					<p>
 						Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
 							>Send our friendly team of Gig Researchers an email!</a
-						>.
+						>
 					</p>
 				</div>
 				<div class="space-y-3">
