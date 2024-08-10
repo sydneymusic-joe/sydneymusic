@@ -65,6 +65,15 @@
 					</label>
 				</div>
 
+				<div class="text-center text-xs pb-5 space-y-1">
+					<div><strong>SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
+					<div>Do you find this guide useful? It can be even better with your help:</div>
+					<div class="prose text-xs m-auto space-x-5">
+						<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
+						<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
+					</div>
+				</div>
+
 				{#each data.gigs as month}
 					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
@@ -117,22 +126,6 @@
 						<div>Discover something new! Try:</div>
 						<a href="https://genres.sydneymusic.net" target="_blank" class="text-ruby text-xl">Blind Date With A Band</a>
 					</div>
-				</div>
-
-				<h3 class="notch-left text-lg lg:text-xl">
-					Support Us
-				</h3>
-				<div class="prose prose-sm">
-					<a href="https://store.sydneymusic.net"
-						><img
-							src="/store-promo.jpg"
-							alt="SydneyMusic Store Items: Tote, Tee, Stubby Holder" class="rounded-xl"
-						/></a
-					>
-					<p>
-						<strong>This guide is not-for-profit</strong> and relies on the support of our readers to keep this service running. To support our work, you can <a href="https://patreon.com/sydneymusic">become a supporter on Patreon</a> or buy merch at our <a
-							href="https://store.sydneymusic.net">online store</a>.
-					</p>
 				</div>
 
 				<PlaylistPromo showtitle="true" />

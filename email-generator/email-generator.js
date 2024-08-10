@@ -17,8 +17,8 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-08-01T00:00:00+1000");
-    const dateTo = new Date("2024-08-08T00:00:00+1000");
+    const dateFrom = new Date("2024-08-08T00:00:00+1000");
+    const dateTo = new Date("2024-08-15T00:00:00+1000");
 
 	const data = await client.request(gql`{
   allEvents(
@@ -92,7 +92,7 @@ async function main() {
 			for (const gig of day.items) {
 				template += `<tr>
                     <td style="">
-                        <font>${gig.promotedName || gig.performersListJson[0]}</font><br />`;
+                        <div class="headliner">${gig.promotedName || gig.performersListJson[0]}</div>`;
 				if (gig.performersListJson != null) {
 					template += `<strong>w/ ${gig.performersListJson.join(', ')}</strong><br />`;
 				}
@@ -112,7 +112,7 @@ async function main() {
 	}
 
 	template = `
-    <html>
+    <!DOCTYPE html><html>
     <head>
         <meta charset="utf-8" />
     </head>
@@ -127,7 +127,7 @@ async function main() {
         tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
         tr.day td { padding-top : 20px }
         .giglist tr td { font-size : 13px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
-        .giglist tr td font { font-size : 16px; font-weight : bold; font-style : italic }
+        .giglist tr td div.headliner { font-size : 16px; font-weight : bold; font-style : italic }
         h1 { margin-top : 20px; font-size : 26px; text-transform : uppercase; font-weight : bold; font-style : italic; }
         a { color : #6d7278}
         .nav td { font-size : 13px; padding-bottom : 20px; }
@@ -135,7 +135,7 @@ async function main() {
         .preamble li { margin-bottom : 10px; line-height : 150%; }
         .blurb { font-size : 12px; font-style : italic; margin-top : 5px; text-transform : none; }
     </style>
-    <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a>
+    <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
             <td align="center">
