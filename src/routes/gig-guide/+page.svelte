@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="text-center text-xs pb-5 space-y-1">
-					<div><strong>SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
+					<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
 					<div>Do you find this guide useful? It can be even better with your help:</div>
 					<div class="prose text-xs m-auto space-x-5">
 						<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
