@@ -17,35 +17,52 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-08-08T00:00:00+1000");
-    const dateTo = new Date("2024-08-15T00:00:00+1000");
+    const dateFrom = new Date("2024-08-15T00:00:00+1000");
+    const dateTo = new Date("2024-08-22T00:00:00+1000");
 
-	const data = await client.request(gql`{
-  allEvents(
-    orderBy: gigStartDate_ASC,
-    first: 100, 
-    filter: {
+	let data = await client.request(gql`{
+        getCount : _allEventsMeta(filter: {
         gigStartDate : { gte : "${dateFrom.toISOString()}", lt : "${dateTo.toISOString()}" }
-    }
-  ) {
-    gigStartDate
-    promotedName
-    ticketUrl
-    performersListJson
-    furtherInfo
-    furtherInfoContributorInitials
-    venue {
-        venueName
-        address
-        suburb
-        url,
-        slug
-    }
-  }
-}`);
+    }) {
+        count
+    }}`);
 
-	if (data) {
-		let event = data.allEvents.map((i) => {
+    const total = data.getCount.count;
+
+    let allEvents = [];
+    let idx = 0;
+    while (idx < Math.ceil(total/100)) {
+        data = await client.request(gql`{allEvents(
+            orderBy: gigStartDate_ASC,
+            skip:${idx*100},
+            first: 100, 
+            filter: {
+                gigStartDate : { gte : "${dateFrom.toISOString()}", lt : "${dateTo.toISOString()}" }
+            }
+        ) {
+            gigStartDate
+            promotedName
+            ticketUrl
+            performersListJson
+            furtherInfo
+            furtherInfoContributorInitials
+            venue {
+                venueName
+                address
+                suburb
+                url,
+                slug
+            }
+        }
+        }
+        `);
+
+        allEvents = allEvents.concat(data.allEvents);
+        idx++;
+    }
+
+	if (allEvents.length > 0) {
+		let event = allEvents.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			return {
@@ -69,7 +86,7 @@ const getGigs = async () => {
 			};
 		});
 	}
-	return {};
+	return [];
 };
 
 async function main() {
@@ -93,7 +110,7 @@ async function main() {
 				template += `<tr>
                     <td style="">
                         <div class="headliner">${gig.promotedName || gig.performersListJson[0]}</div>`;
-				if (gig.performersListJson != null) {
+				if (gig.performersListJson != null && gig.performersListJson.length > 0) {
 					template += `<strong>w/ ${gig.performersListJson.join(', ')}</strong><br />`;
 				}
 				template += `${gig.time} &nbsp;| &nbsp;<a href="https://sydneymusic.net/gig-guide/venues/${gig.venue.slug}">${gig.venue.venueName}</a>`;
@@ -115,26 +132,26 @@ async function main() {
     <!DOCTYPE html><html>
     <head>
         <meta charset="utf-8" />
+        <style>
+            body { background : white; color : black; font-family : "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; font-size : 14px; }
+            .maintable tr td { padding-left : 20px; padding-right : 20px; }
+            .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
+            .preamble p { margin-top : 12px; line-height : 150% }
+            .ruby { color : #e02020 }
+            .graphite { color : #6d7278 }
+            tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
+            tr.day td { padding-top : 20px }
+            .giglist tr td { font-size : 13px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
+            .giglist tr td div.headliner { font-size : 16px; font-weight : bold; font-style : italic }
+            h1 { margin-top : 20px; font-size : 26px; text-transform : uppercase; font-weight : bold; font-style : italic; }
+            a { color : #6d7278}
+            .nav td { font-size : 13px; padding-bottom : 20px; }
+            .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; }
+            .preamble li { margin-bottom : 10px; line-height : 150%; }
+            .blurb { font-size : 12px; font-style : italic; margin-top : 5px; text-transform : none; }
+        </style>
     </head>
     <body>
-    <style>
-        body { background : white; color : black; font-family : "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; font-size : 14px; }
-        .maintable tr td { padding-left : 20px; padding-right : 20px; }
-        .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
-        .preamble p { margin-top : 12px; line-height : 150% }
-        .ruby { color : #e02020 },
-        .graphite { color : #6d7278 }
-        tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
-        tr.day td { padding-top : 20px }
-        .giglist tr td { font-size : 13px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
-        .giglist tr td div.headliner { font-size : 16px; font-weight : bold; font-style : italic }
-        h1 { margin-top : 20px; font-size : 26px; text-transform : uppercase; font-weight : bold; font-style : italic; }
-        a { color : #6d7278}
-        .nav td { font-size : 13px; padding-bottom : 20px; }
-        .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; }
-        .preamble li { margin-bottom : 10px; line-height : 150%; }
-        .blurb { font-size : 12px; font-style : italic; margin-top : 5px; text-transform : none; }
-    </style>
     <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
