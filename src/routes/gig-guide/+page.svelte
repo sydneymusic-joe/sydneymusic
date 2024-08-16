@@ -53,9 +53,14 @@
 				</div>
 			</div>
 
-			<div class="p-3 text-center text-sm space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
-				<div><strong>We're looking for a freelance developer/designer.</strong><br />&raquo; <a href="/frontend" class="underline">Help us make the gig guide better!</a> &laquo;</div>
-			</div>
+			<div class="p-3 text-center text-xs space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
+				<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
+				<div>Do you find this guide useful? It can be even better with your help:</div>
+				<div class="prose text-xs m-auto space-x-5">
+					<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
+					<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
+				</div>
+		</div>
 
 				<div class="filterbox">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -63,15 +68,6 @@
 						<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
 						<span class="ml-2">FREE GIGS ONLY</span>
 					</label>
-				</div>
-
-				<div class="text-center text-xs pb-5 space-y-1">
-					<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
-					<div>Do you find this guide useful? It can be even better with your help:</div>
-					<div class="prose text-xs m-auto space-x-5">
-						<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
-						<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
-					</div>
 				</div>
 
 				{#each data.gigs as month}
