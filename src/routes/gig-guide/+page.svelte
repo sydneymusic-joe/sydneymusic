@@ -56,7 +56,7 @@
 			<div class="p-3 text-center text-xs space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
 				<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
 				<div>Do you find this guide useful? It can be even better with your help:</div>
-				<div class="prose text-xs m-auto space-x-5">
+				<div class="prose text-xs m-auto space-x-3 sm:space-x-5">
 					<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
 					<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
 				</div>
