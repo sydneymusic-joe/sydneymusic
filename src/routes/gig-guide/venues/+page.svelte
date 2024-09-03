@@ -41,7 +41,7 @@
 					{#each items as { venueName, slug, isRip, _allReferencingEventsMeta }}
 						{#if _allReferencingEventsMeta.count > 0}
 						<dt>
-							<a href="/gig-guide/venues/{slug}" style="hover:text-ruby;" class={!isRip ? '' : 'rip'}>
+							<a href="/gig-guide/venues/{slug}" class={`hover:text-ruby transition-colors duration-100 ease-in-out ${isRip && 'rip'}`}>
 								{venueName} <span class="gigcount">({_allReferencingEventsMeta.count})</span>
 							</a>
 						</dt>

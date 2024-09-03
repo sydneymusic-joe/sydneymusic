@@ -37,7 +37,7 @@
 	{#each data.reads.byMonth as month}
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<h2 class="notch-left text-xl">{month.label}</h2>
-			<div class="grid lg:grid-cols-2">
+			<div class="grid lg:grid-cols-2 gap-10">
 				{#each month.items as { headline, excerpt, slug }}
 					<a href="/reads/{slug}" class="block">
 						<Read {headline} body={excerpt} />

@@ -26,11 +26,11 @@
 			</p>{/if}
 		<p class="text-sm uppercase text-neutral-500">
 		<span class="time">{time}</span>
-			{#if venue}<a href="/gig-guide/venues/{venue.slug}">{venue.venueName}</a>{/if}
+			{#if venue}<a href="/gig-guide/venues/{venue.slug}" class="hover:underline hover:text-black transition-colors duration-100 ease-in-out">{venue.venueName}</a>{/if}
 		</p>
 	</div>
 	{#if website || calendarLink}
-	<div class="flex items-center space-x-5">
+	<div class={`flex items-center space-x-3 sm:space-x-5`}>
 		{#if website}
 			<a href={website} target="_blank" class="flex items-center space-x-1 text-sm group">
 				<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
