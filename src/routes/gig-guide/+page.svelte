@@ -117,13 +117,6 @@
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
 
-				<div class="blinddate-host">
-					<div class="blinddate-plug">
-						<div>Discover something new! Try:</div>
-						<a href="https://genres.sydneymusic.net" target="_blank" class="text-ruby text-xl">Blind Date With A Band</a>
-					</div>
-				</div>
-
 				<PlaylistPromo showtitle="true" />
 
 				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>

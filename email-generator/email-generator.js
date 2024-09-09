@@ -17,8 +17,8 @@ export const client = new GraphQLClient(
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-08-15T00:00:00+1000");
-    const dateTo = new Date("2024-08-22T00:00:00+1000");
+    const dateFrom = new Date("2024-08-22T00:00:00+1000");
+    const dateTo = new Date("2024-08-29T00:00:00+1000");
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -68,10 +68,7 @@ const getGigs = async () => {
 			return {
 				date: d,
 				time:
-					(d.getHours() % 12) +
-					':' +
-					d.getMinutes().toString().padStart(2, '0') +
-					(d.getHours() >= 12 ? 'pm' : 'am'),
+					d.toLocaleTimeString('en-AU', {timeZone : 'Australia/Sydney', hour12:true,timeStyle:"short"}),
 				...rest
 			};
 		});
