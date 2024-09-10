@@ -496,3 +496,25 @@ h1.special {
 	@apply bg-ruby;
 	color: white;
 }
+
+.bottom-sheet {
+	transform: translateY(100%);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.bottom-sheet.show {
+	transform: translateY(0);
+	pointer-events: auto; /* Enable interaction when shown */
+}
+
+.overlay {
+	opacity: 0;
+	transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.overlay.show {
+	opacity: 0.8;
+	pointer-events: auto;
+}

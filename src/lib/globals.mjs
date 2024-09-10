@@ -28,6 +28,26 @@ export const navigationFooterSecondary = [
 	{ title: 'Weekly Gig Guide Playlist', href: '/playlist' }
 ];
 
+//ToDo: Get config from source of truth in datoCMS
+export const bottomSheetConfig = [
+	{
+		key: 'merchDrop',
+		message: 'Merch!',
+		action: '[ ACTION ]',
+		route: '/reads',
+		delay: 3000,
+		localStorageKey: 'merchDropSeen'
+	},
+	{
+		key: 'venuePromotion',
+		message: 'Venue',
+		action: '[ ACTION ]',
+		route: '/gig-guide/venues',
+		delay: 5000,
+		localStorageKey: 'venuePromotionSeen'
+	}
+];
+
 export const formatDay = (dateOrString) => {
 	const d = new Date(dateOrString);
 	const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
