@@ -38,8 +38,6 @@
 			<p class="prose">
 				This is now on a dedicated <a href="/gig-guide/venues">Venues page</a>
 			</p>
-
-			
 		</div>
 	</div>
 </div>
