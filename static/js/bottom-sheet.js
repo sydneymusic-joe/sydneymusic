@@ -1,28 +1,24 @@
 //ToDo: Generate js at build from source of truth config in datoCMS
 const bottomSheetConfig = [
 	{
-		key: 'merchDrop',
-		message: 'Merch!',
-		action: '[ ACTION ]',
-		route: '/reads',
-		delay: 3000,
+		key: 'merchDropGigGuide',
+		route: '/gig-guide',
+		delay: 10000,
 		localStorageKey: 'merchDropSeen'
 	},
 	{
-		key: 'venuePromotion',
-		message: 'Venue',
-		action: '[ ACTION ]',
+		key: 'merchDropVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'venuePromotionSeen'
+		localStorageKey: 'merchDropSeen'
 	}
 ];
-
 document.addEventListener('DOMContentLoaded', () => {
 	const createBottomSheet = (config) => {
 		const sheet = document.getElementById(`${config.key}-sheet`);
 		const overlay = document.getElementById(`${config.key}-overlay`);
 		const closeSheetBtn = document.getElementById(`${config.key}-close-btn`);
+		const buttons = sheet.querySelectorAll('a');
 
 		if (!sheet || !overlay || !closeSheetBtn) {
 			console.error(`Bottom sheet elements not found for config key: ${config.key}`);
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			overlay.classList.add('show');
 
 			const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-			document.body.style.paddingRight = `${scrollbarWidth}px`; // avoid layout shift when effecting body
+			document.body.style.paddingRight = `${scrollbarWidth}px`; // avoid layout shift when affecting body
 
 			document.body.style.pointerEvents = 'none';
 			document.body.style.overflow = 'hidden';
@@ -65,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 
 		closeSheetBtn.addEventListener('click', closeSheet);
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', closeSheet);
+		});
 
 		return { showSheet };
 	};

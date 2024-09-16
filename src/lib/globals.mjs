@@ -31,20 +31,16 @@ export const navigationFooterSecondary = [
 //ToDo: Get config from source of truth in datoCMS
 export const bottomSheetConfig = [
 	{
-		key: 'merchDrop',
-		message: 'Merch!',
-		action: '[ ACTION ]',
-		route: '/reads',
-		delay: 3000,
+		key: 'merchDropGigGuide',
+		route: '/gig-guide',
+		delay: 10000,
 		localStorageKey: 'merchDropSeen'
 	},
 	{
-		key: 'venuePromotion',
-		message: 'Venue',
-		action: '[ ACTION ]',
+		key: 'merchDropVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'venuePromotionSeen'
+		localStorageKey: 'merchDropSeen'
 	}
 ];
 

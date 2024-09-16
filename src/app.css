@@ -129,6 +129,21 @@
 	src: url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
 }
 
+@font-face {
+	font-family: 'Instrument Serif', system-ui;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.ttf) format('ttf');
+}
+@font-face {
+	font-family: 'Instrument Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/instrument-sans/InstrumentSans-Regular.ttf) format('ttf');
+}
+
 @layer base {
 	.notch-thic,
 	.notch-right,
@@ -410,9 +425,8 @@ div > .day > div:first-child p {
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
 .guide-month > h3 {
-	@apply sticky top-0;
+	@apply sticky top-0 z-30;
 	background: white;
-	z-index: 100;
 }
 
 .accordion-content {
