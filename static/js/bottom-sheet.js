@@ -16,22 +16,16 @@ const bottomSheetConfig = [
 document.addEventListener('DOMContentLoaded', () => {
 	const createBottomSheet = (config) => {
 		const sheet = document.getElementById(`${config.key}-sheet`);
-		const overlay = document.getElementById(`${config.key}-overlay`);
 		const closeSheetBtn = document.getElementById(`${config.key}-close-btn`);
 		const buttons = sheet.querySelectorAll('a');
 
-		if (!sheet || !overlay || !closeSheetBtn) {
+		if (!sheet || !closeSheetBtn) {
 			console.error(`Bottom sheet elements not found for config key: ${config.key}`);
 			return null;
 		}
 
 		const closeSheet = () => {
 			sheet.classList.remove('show');
-			overlay.classList.remove('show');
-
-			document.body.style.pointerEvents = '';
-			document.body.style.overflow = '';
-			document.body.style.paddingRight = '';
 
 			if (config.localStorageKey) {
 				localStorage.setItem(config.localStorageKey, 'true');
@@ -49,14 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const showSheet = () => {
 			sheet.classList.add('show');
-			overlay.classList.add('show');
-
-			const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-			document.body.style.paddingRight = `${scrollbarWidth}px`; // avoid layout shift when affecting body
-
-			document.body.style.pointerEvents = 'none';
-			document.body.style.overflow = 'hidden';
-
 			document.addEventListener('click', handleOutsideClick);
 		};
 

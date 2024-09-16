@@ -3,8 +3,6 @@
 	export let key;
 </script>
 
-<div id="{key}-overlay" class="overlay fixed inset-0 bg-backgroundDark opacity-80 z-40" />
-
 <div
 	id="{key}-sheet"
 	class="bottom-sheet fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50"
