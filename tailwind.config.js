@@ -16,7 +16,7 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: ['IBM Plex Sans Condensed', 'sans-serif'],
-				serif: ['Instrument Serif'],
+				instrumentSerif: ['Instrument Serif', 'serif'],
 				instrumentSans: ['Instrument Sans', 'sans-serif']
 			},
 			fontSize: {
@@ -27,7 +27,7 @@ module.exports = {
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
-				backgroundDark: '#212121'
+				backgroundDark: '#221F20'
 			},
 			aspectRatio: {
 				'3/1': '3/1',

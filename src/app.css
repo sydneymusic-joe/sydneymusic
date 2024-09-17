@@ -130,11 +130,10 @@
 }
 
 @font-face {
-	font-family: 'Instrument Serif', system-ui;
+	font-family: 'Instrument Serif';
 	font-style: normal;
 	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.ttf) format('ttf');
+	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.woff2) format('woff2');
 }
 @font-face {
 	font-family: 'Instrument Sans';
