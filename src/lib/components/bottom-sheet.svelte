@@ -5,7 +5,7 @@
 
 <div
 	id="{key}-sheet"
-	class="bottom-sheet show fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50"
+	class="bottom-sheet fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50"
 >
 	<div class="flex w-full gap-4 items-center">
 		<div class="space-y-8 xl:ml-32 sm:max-w-md">
