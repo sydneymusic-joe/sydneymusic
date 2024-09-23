@@ -124,9 +124,9 @@
 }
 
 @font-face {
-	font-family : 'ITC Souvenir';
+	font-family: 'ITC Souvenir';
 	font-display: swap;
-	src : url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
+	src: url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
 }
 
 @layer base {
@@ -182,53 +182,52 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap items-center;
-		justify-content: center;
-		margin-bottom : -15px;
+		@apply flex flex-wrap;
+		margin-bottom: -15px;
 	}
 
-	.filterbox > * {
-		padding-bottom : 15px;
-	}
 	.filterbox > *:hover {
-		@apply text-black;
-		transition :ease-in-out .3s;
+		transition: ease-in-out 0.2s;
 	}
 
-	.filterbox label, .filterbox a {
-		@apply italic font-semibold text-pill pr-5;
+	.filterbox label,
+	.filterbox a {
+		@apply font-semibold text-sm pr-5 text-ruby;
 	}
 
-	.filterbox a { @apply flex items-center }
-	.filterbox a svg { @apply w-11;}
-	.filterbox a:hover svg { animation : broombroom 2s ease 0s 1 normal forwards; }
+	.filterbox a svg {
+		@apply w-11;
+	}
+	.filterbox a:hover svg {
+		animation: broombroom 2s ease 0s 1 normal forwards;
+	}
 	@keyframes broombroom {
 		0%,
 		100% {
 			transform: rotate(0deg);
-			transform-origin : 90% 80%;
+			transform-origin: 90% 80%;
 		}
-	
+
 		10% {
 			transform: rotate(8deg);
 		}
-	
+
 		20%,
 		40%,
 		60% {
 			transform: rotate(0deg);
 		}
-	
+
 		30%,
 		50%,
 		70% {
 			transform: rotate(10deg);
 		}
-	
+
 		80% {
 			transform: rotate(0deg);
 		}
-	
+
 		90% {
 			transform: rotate(8deg);
 		}
@@ -236,14 +235,10 @@
 
 	.toggle-bg:after {
 		content: '';
-		@apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+		@apply absolute top-0.5 ml-0.5 bg-black rounded-full h-4 w-4 transition shadow-sm;
 	}
 	input:checked + .toggle-bg:after {
-		transform: translateX(100%);
-		@apply border-white;
-	}
-	input:checked + .toggle-bg {
-		@apply bg-blue-600 border-blue-600;
+		transform: translateX(80%);
 	}
 
 	figcaption {
@@ -279,14 +274,18 @@ body.freegigs .eventcard:not(:is(.freegig)) {
 	@apply hidden;
 }
 div > .day > div:first-child {
-	width : 98px;
+	width: 98px;
 }
 div > .day > div:first-child p {
-	width : 100%;
+	width: 100%;
 }
 
-.eventcard { margin-bottom : 20px; }
-.eventcard:last-child { margin-bottom : 0 }
+.eventcard {
+	margin-bottom: 20px;
+}
+.eventcard:last-child {
+	margin-bottom: 0;
+}
 
 .smn .bg-yellow-50:before {
 	position: absolute;
@@ -398,13 +397,26 @@ div > .day > div:first-child p {
 
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
-.guide-month > h3 { @apply sticky top-0; background : white; z-index : 100; }
+.guide-month > h3 {
+	@apply sticky top-0;
+	background: white;
+	z-index: 100;
+}
 
 .accordion-content {
 	transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
 
-header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margin-top : -2px; background : yellow; line-height: 100%; font-size : 11px; border-radius : 3px; padding : 2px; }
+header nav a span {
+	@apply hidden sm:inline-block;
+	vertical-align: middle;
+	margin-top: -2px;
+	background: yellow;
+	line-height: 100%;
+	font-size: 11px;
+	border-radius: 3px;
+	padding: 2px;
+}
 
 /* venue page stuff */
 .blurb p {
@@ -415,29 +427,29 @@ header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margi
 }
 
 .feature-thisweek .bigtext {
-	font-family : 'ITC Souvenir';
-	color : black;
+	font-family: 'ITC Souvenir';
+	color: black;
 	@apply text-4xl md:text-7xl;
 }
 
 .feature-thisweek.prose {
-	@apply max-w-[100%]
+	@apply max-w-[100%];
 }
 
 .feature-thisweek .links a {
-	@apply px-2 whitespace-nowrap
+	@apply px-2 whitespace-nowrap;
 }
 
 .blinddate-host {
-	display : flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .blinddate-plug {
 	@apply border-l-2 border-r-2 px-8 my-3 border-ruby text-center p-3;
-	border-radius : 20px;
-	font-family : 'ITC Souvenir';
+	border-radius: 20px;
+	font-family: 'ITC Souvenir';
 }
 
 .blinddate-plug a {
@@ -454,21 +466,21 @@ header nav a span { @apply hidden sm:inline-block; vertical-align: middle; margi
 }
 
 h1.special {
-	font-family : 'ITC Souvenir';
-	font-size : 28px;
-	line-height : 100%;
+	font-family: 'ITC Souvenir';
+	font-size: 28px;
+	line-height: 100%;
 	@apply text-center;
-	margin-bottom : 8px;
-	margin-top : 10px;
+	margin-bottom: 8px;
+	margin-top: 10px;
 }
 
 .yt-embed iframe {
-	width : 100%;
+	width: 100%;
 	aspect-ratio: 16/9;
 }
 
 #support-banner {
-	padding : 15px;
+	padding: 15px;
 	@apply bg-ruby;
-	color : white;
+	color: white;
 }

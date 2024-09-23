@@ -5,6 +5,7 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '../../lib/globals.mjs';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
+	import PromotionButton from '../../lib/components/promotion-button.svelte';
 
 	export let data;
 
@@ -26,50 +27,68 @@
 
 <SeoSocial title="Gig Guide" />
 
-<picture>
-	<source
-		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
-		media="(min-width : 640px)"
-	/>
-	<source srcset="/canman-gigs-mobile.png" media="(max-width : 640px)" />
-	<img
-		src="/canman-gigs@1x.png"
-		alt="SydneyMusic.net mascot Can Man loves a gig"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
-	/>
-</picture>
+<div class="max-w-5xl px-5 mt-5 mx-auto">
+	<div
+		class="flex relative border-b border-black border-dashed mb-7 pb-7 lg:pb-12 flex-col md:flex-row justify-between"
+	>
+		<div class="mt-5 md:mt-14">
+			<div class="font-semibold text-3xl sm:text-4xl lg:text-5xl">
+				<h1>Your Favourite</h1>
+				<h1>FREE Gig-Guide</h1>
+			</div>
+			<p class="text-xs md:text-base max-w-40 sm:max-w-56 pt-2 sm:pt-5">
+				SydneyMusic.net is not-for-profit & 100% reader-supported.
+			</p>
+			<div class="prose max-w-44 sm:max-w-56 my-5">
+				<p class="text-xs md:text-base">
+					Last updated: <span class="">{data.lastUpdated}</span>
+					<a href="/gig-guide/latest/" class="text-ruby">View latest updates</a>.
+				</p>
+			</div>
+		</div>
+		<div class="mt-5 md:pb-8 flex flex-col justify-end items-stretch pr-8 md:max-w-56">
+			<p class="text-xs mb-2 md:mb-4 md:max-w-44">You can help us make this guide even BETTER!</p>
+			<div class="flex gap-4 text-sm md:flex-col">
+				<PromotionButton
+					label="Become a supporter"
+					href="https://store.sydneymusic.net"
+					variant="primary"
+				/>
+				<PromotionButton
+					label="make a donation"
+					href="https://store.sydneymusic.net"
+					variant="secondary"
+				/>
+			</div>
+		</div>
 
-<div class="max-w-5xl px-5 mt-5 mx-auto space-y-32 pb-24">
+		<picture
+			class="absolute -top-2 -right-11 xs:right-0 sm:right-[5%] lg:right-[28%] md:right-[30%]"
+		>
+			<img
+				src="/hero-character.png"
+				alt="SydneyMusic.net mascot Can Man loves a gig"
+				class="w-full max-w-52 xs:max-w-64 sm:max-w-72 md:max-w-[328px] lg:max-w-sm"
+			/>
+		</picture>
+	</div>
+
+	<div class="filterbox w-full my-5">
+		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
+			<span class="mr-2">FREE GIGS ONLY</span>
+			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
+			<div
+				class="toggle-bg border border-black h-5 w-9 rounded-full"
+				style="box-shadow: 1px 1px 0px 0px #000;"
+			/>
+		</label>
+	</div>
+
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
-			<div class="space-y-5 sm:pr-20">
-				<div>
-				<h1 class="special">Welcome to the <span class="text-ruby">gig guide</span>!</h1>
-
-				<div class="prose text-center max-w-5xl px-5">
-					<p class="text-xs">Last updated: <span class="text-ruby">{data.lastUpdated}</span>. <a href="/gig-guide/latest/">View latest updates</a>.</p>
-				</div>
-			</div>
-
-			<div class="p-3 text-center text-xs space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
-				<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
-				<div>Do you find this guide useful? It can be even better with your help:</div>
-				<div class="prose text-xs m-auto space-x-3 sm:space-x-5">
-					<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
-					<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
-				</div>
-		</div>
-
-				<div class="filterbox">
-					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
-						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
-						<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 w-11 rounded-full" />
-						<span class="ml-2">FREE GIGS ONLY</span>
-					</label>
-				</div>
-
+			<div class="space-y-10 sm:pr-20">
 				{#each data.gigs as month}
 					<div class="guide-month space-y-10">
 						<h3 class="notch-left text-lg lg:text-xl">
@@ -116,7 +135,6 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-
 				<PlaylistPromo showtitle="true" />
 
 				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>
