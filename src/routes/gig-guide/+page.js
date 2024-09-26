@@ -18,23 +18,23 @@ const getLastUpdated = async () => {
 	}
 
 	return null;
-}
+};
 
 const getGigs = async () => {
 	const d = new Date();
 
-	const pagesize=100;
-	let iter=0;
+	const pagesize = 100;
+	let iter = 0;
 	let ret = 100;
 
 	let data = [];
-	let query = "";
+	let query = '';
 	while (iter < 10) {
 		query += `
-		page${iter+1}:allEvents(
+		page${iter + 1}:allEvents(
 			orderBy: [gigStartDate_ASC],
 			first: ${pagesize},
-			skip:${iter*pagesize}
+			skip:${iter * pagesize}
 			filter: { gigStartDate : {gte: "${new Date(d.setHours(0)).toISOString()}" }}
 		) {
 			id
@@ -62,10 +62,9 @@ const getGigs = async () => {
 		${query}
 	}`);
 
-	for (iter=1;iter<11;iter++) {
+	for (iter = 1; iter < 11; iter++) {
 		const p = page['page' + iter];
-		if (p.length == 0)
-			break;
+		if (p.length == 0) break;
 
 		data = data.concat(p);
 	}
@@ -75,7 +74,7 @@ const getGigs = async () => {
 		let event = data.map((i) => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
-			let hours = (d.getHours() != 12 ? d.getHours() % 12 : 12);
+			let hours = d.getHours() != 12 ? d.getHours() % 12 : 12;
 			return {
 				date: d,
 				time:
@@ -104,7 +103,9 @@ export async function load() {
 	let gigs = await getGigs();
 	let lastUpdated = new Date(await getLastUpdated());
 
-	lastUpdated = `${lastUpdated.getDate()} ${formatDate(lastUpdated)} @ ${lastUpdated.toTimeString().substring(0, 5)}`;
+	lastUpdated = `${lastUpdated.getDate()} ${formatDate(lastUpdated)} @ ${lastUpdated
+		.toTimeString()
+		.substring(0, 5)}`;
 
 	return {
 		gigs,

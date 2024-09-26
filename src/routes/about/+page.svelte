@@ -102,7 +102,13 @@
 					>.
 				</p>
 
-				<p>DeLorean icon on gig guide by Aaron Humphreys from <a href="https://thenounproject.com/browse/icons/term/delorean/" target="_blank" title="DeLorean Icons">Noun Project</a> (CC BY 3.0)</p>
+				<p>
+					DeLorean icon on gig guide by Aaron Humphreys from <a
+						href="https://thenounproject.com/browse/icons/term/delorean/"
+						target="_blank"
+						title="DeLorean Icons">Noun Project</a
+					> (CC BY 3.0)
+				</p>
 
 				<p>
 					You're welcome to read this code, get inspiration from it, fork it, deploy it or drop a

@@ -17,7 +17,7 @@ function renderOptions(links) {
 	const entryBlockMap = new Map();
 	const assetBlockMap = new Map();
 
-  for (const entry of links.entries.block) {
+	for (const entry of links.entries.block) {
 		entryBlockMap.set(entry.sys.id, entry);
 	}
 	for (const asset of links.assets.block) {
@@ -29,8 +29,8 @@ function renderOptions(links) {
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				// find the entry in the entryBlockMap by ID
 				const entry = entryBlockMap.get(node.data.target.sys.id);
-console.log(entry.__typename);
-        if (entry.__typename == 'EmbedTweet') {
+				console.log(entry.__typename);
+				if (entry.__typename == 'EmbedTweet') {
 					return `<div class="font-sans rounded border px-6 py-4 max-w-md">
             <div class="flex items-center">
               <img src="${entry.profileImage.url}" class="mt-0 mb-0 h-12 w-12 rounded-full" alt="${
@@ -65,10 +65,11 @@ console.log(entry.__typename);
                 </div>
               </div>
             </div>`;
+				} else if (entry.__typename == 'EmbedVideo') {
+					return `<div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/${htmlEncode(
+						entry.videoId
+					)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
 				}
-        else if (entry.__typename == 'EmbedVideo') {
-          return `<div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/${htmlEncode(entry.videoId)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`
-        }
 			},
 			[BLOCKS.EMBEDDED_ASSET]: (node) => {
 				const asset = assetBlockMap.get(node.data.target.sys.id);
@@ -186,7 +187,6 @@ export async function load({ params }) {
 				formatDateLong(sys.firstPublishedAt) + ' ' + new Date(sys.firstPublishedAt).getFullYear()
 		};
 	}
-
 
 	throw error(404, 'not found');
 }

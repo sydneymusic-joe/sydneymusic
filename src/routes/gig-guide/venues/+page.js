@@ -3,8 +3,8 @@ import APId from '$lib/datocms/';
 import { groupBy } from '../../../lib/globals.mjs';
 
 const getVenues = async () => {
-	const pagesize=100;
-	let iter=0;
+	const pagesize = 100;
+	let iter = 0;
 	let ret = 100;
 
 	let data = null;
@@ -14,7 +14,7 @@ const getVenues = async () => {
 				filter : { hideFromDirectory : {eq : false}, suburb : {isPresent : true} },
 				orderBy : [suburb_ASC, venueName_ASC],
 				first : ${pagesize},
-				skip : ${pagesize*iter}
+				skip : ${pagesize * iter}
 			) {
 				venueName,
 				suburb,

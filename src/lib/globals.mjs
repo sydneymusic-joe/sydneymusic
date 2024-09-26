@@ -28,6 +28,22 @@ export const navigationFooterSecondary = [
 	{ title: 'Weekly Gig Guide Playlist', href: '/playlist' }
 ];
 
+//ToDo: Get config from source of truth in datoCMS
+export const bottomSheetConfig = [
+	{
+		key: 'merchDropGigGuide',
+		route: '/gig-guide',
+		delay: 10000,
+		localStorageKey: 'merchDropSeen'
+	},
+	{
+		key: 'merchDropVenues',
+		route: '/gig-guide/venues',
+		delay: 5000,
+		localStorageKey: 'merchDropSeen'
+	}
+];
+
 export const formatDay = (dateOrString) => {
 	const d = new Date(dateOrString);
 	const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -76,7 +92,7 @@ export const groupBy = (items, cb) => {
 };
 
 export const createCalendarLink = (event, venue) => {
-	const v = (venue ? venue : event.venue);
+	const v = venue ? venue : event.venue;
 	const start = new Date(event.date);
 	const end = new Date(start);
 	end.setTime(start.getTime() + 60 * 60 * 1000 * 2.5); // Default to 2.5 hours
@@ -86,12 +102,10 @@ export const createCalendarLink = (event, venue) => {
 		start,
 		end,
 		summary:
-			event.promotedName + (event.performersListJson ? ' w/ ' + event.performersListJson.join(', ') : ''),
+			event.promotedName +
+			(event.performersListJson ? ' w/ ' + event.performersListJson.join(', ') : ''),
 		url: event.ticketUrl,
-		location:
-			v.venueName +
-			(v.address ? ', ' + v.address : '') +
-			(v.suburb ? ', ' + v.suburb : '')
+		location: v.venueName + (v.address ? ', ' + v.address : '') + (v.suburb ? ', ' + v.suburb : '')
 	});
 	return `data:text/calendar;charset=utf8,${encodeURIComponent(cal.toString())}`;
 };

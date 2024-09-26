@@ -11,7 +11,7 @@ const getGigs = async () => {
 	d.setDate(d.getDate() + 6); // 1 week
 	d.setHours(23, 59, 59, 999); // End of day
 
-	const sow = new Date(n.getFullYear(), n.getMonth(), (n.getDate() - n.getDay())+1);
+	const sow = new Date(n.getFullYear(), n.getMonth(), n.getDate() - n.getDay() + 1);
 	let eow = new Date(sow);
 	eow.setDate(sow.getDate() + 7);
 	const counter = await APId(`
@@ -90,7 +90,7 @@ const getReads = async () => {
 			}
 		  }
 		}`);
-	  if (data) {
+	if (data) {
 		return data.articlesCollection.items;
 	}
 	return {};

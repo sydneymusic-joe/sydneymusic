@@ -38,9 +38,11 @@ export async function load({ params }) {
 	const total = gigs.allVenues[0]._allReferencingEventsMeta.count;
 	let q = '';
 	let i = 0;
-	while (i*100 < total) {
+	while (i * 100 < total) {
 		q += `
-			page${i+1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${i*100}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
+			page${i + 1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${
+			i * 100
+		}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
 				id,
 				gigStartDate,
 				promotedName,
@@ -59,11 +61,10 @@ export async function load({ params }) {
 	}`);
 
 	let combinedGigs = [];
-	for (i=0;i<=total%100;i++) {
-		const p = sourcePages['page'+(i+1)];
-		if (!p || p.length == 0)
-			break;
-		combinedGigs = combinedGigs.concat(sourcePages['page'+(i+1)]);
+	for (i = 0; i <= total % 100; i++) {
+		const p = sourcePages['page' + (i + 1)];
+		if (!p || p.length == 0) break;
+		combinedGigs = combinedGigs.concat(sourcePages['page' + (i + 1)]);
 	}
 
 	if (combinedGigs.length > 0) {
@@ -83,20 +84,18 @@ export async function load({ params }) {
 	}
 
 	return {
-		title : 'Venue Listing',
+		title: 'Venue Listing',
 		venueData: venueInfo,
 		eventsFuture: splitAndGroup(combinedGigs, true),
-		eventsPast : splitAndGroup(combinedGigs, false)
+		eventsPast: splitAndGroup(combinedGigs, false)
 	};
 }
 
 function splitAndGroup(gigs, upcoming) {
-	let local = upcoming ? gigs.filter((item) => item.date >= new Date()) : gigs.reverse().filter((item) => item.date <= new Date());
-	let byMonth =
-		groupBy(
-			local,
-			(i) => formatDate(i.date)
-		);
+	let local = upcoming
+		? gigs.filter((item) => item.date >= new Date())
+		: gigs.reverse().filter((item) => item.date <= new Date());
+	let byMonth = groupBy(local, (i) => formatDate(i.date));
 
 	// Group by month
 	byMonth = byMonth.map((month) => {
