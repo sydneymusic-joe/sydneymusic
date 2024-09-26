@@ -9,7 +9,7 @@ export const navigation = [
 	{ title: 'gigs', href: '/gig-guide' },
 	{ title: 'venues', href: '/gig-guide/venues' },
 	{ title: 'reads', href: '/reads' },
-	{ title: 'Patreon', href: 'https://patreon.com/sydneymusic' }
+	{ title: 'Merch', href: 'https://store.sydneymusic.net' }
 ];
 
 export const navigationFooter = [
