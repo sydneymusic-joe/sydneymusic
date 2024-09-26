@@ -46,21 +46,33 @@
 			<!-- left col -->
 			<div class="space-y-5 sm:pr-20">
 				<div>
-				<h1 class="special">Welcome to the <span class="text-ruby">gig guide</span>!</h1>
+					<h1 class="special">Welcome to the <span class="text-ruby">gig guide</span>!</h1>
 
-				<div class="prose text-center max-w-5xl px-5">
-					<p class="text-xs">Last updated: <span class="text-ruby">{data.lastUpdated}</span>. <a href="/gig-guide/latest/">View latest updates</a>.</p>
+					<div class="prose text-center max-w-5xl px-5">
+						<p class="text-xs">
+							Last updated: <span class="text-ruby">{data.lastUpdated}</span>.
+							<a href="/gig-guide/latest/">View latest updates</a>.
+						</p>
+					</div>
 				</div>
-			</div>
 
-			<div class="p-3 text-center text-xs space-y-2 bg-amber-50 border-black border-2" style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)">
-				<div><strong class="text-ruby">SydneyMusic.net is not-for-profit and 100% reader-supported.</strong></div>
-				<div>Do you find this guide useful? It can be even better with your help:</div>
-				<div class="prose text-xs m-auto space-x-3 sm:space-x-5">
-					<a href="https://patreon.com/sydneymusic" target="_blank">Become a SydneyMusic Supporter</a>
-					<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
+				<div
+					class="p-3 text-center text-xs space-y-2 bg-amber-50 border-black border-2"
+					style="box-shadow : 3px 3px 0px rgba(0,0,0,0.5)"
+				>
+					<div>
+						<strong class="text-ruby"
+							>SydneyMusic.net is not-for-profit and 100% reader-supported.</strong
+						>
+					</div>
+					<div>Do you find this guide useful? It can be even better with your help:</div>
+					<div class="prose text-xs m-auto space-x-3 sm:space-x-5">
+						<a href="https://patreon.com/sydneymusic" target="_blank"
+							>Become a SydneyMusic Supporter</a
+						>
+						<a href="https://store.sydneymusic.net" target="_blank">Make a one-off donation</a>
+					</div>
 				</div>
-		</div>
 
 				<div class="filterbox">
 					<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -116,7 +128,6 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-
 				<PlaylistPromo showtitle="true" />
 
 				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>

@@ -29,29 +29,29 @@ const getGigs = async () => {
 			_firstPublishedAt
 		}
 	  }`);
-  
-	  if (data) {
-		  let event = data.allEvents.map((i) => {
-			  let { gigStartDate, ...rest } = i;
 
-			  let dU = new Date(i._publishedAt);
-			  let d = new Date(gigStartDate);
-			  return {
-				  updatedNice : `${dU.toTimeString().substring(0, 5)} on ${dU.getDate()} ${formatDate(dU)}`,
-				  isNew : i._publishedAt == i._firstPublishedAt,
-				  date: d,
-				  time:
-					  (d.getHours() % 12) +
-					  ':' +
-					  d.getMinutes().toString().padStart(2, '0') +
-					  (d.getHours() >= 12 ? 'pm' : 'am'),
-				  ...rest
-			  };
-		  });
-  
-		  return event;
-	  }
-	  return {};
+	if (data) {
+		let event = data.allEvents.map((i) => {
+			let { gigStartDate, ...rest } = i;
+
+			let dU = new Date(i._publishedAt);
+			let d = new Date(gigStartDate);
+			return {
+				updatedNice: `${dU.toTimeString().substring(0, 5)} on ${dU.getDate()} ${formatDate(dU)}`,
+				isNew: i._publishedAt == i._firstPublishedAt,
+				date: d,
+				time:
+					(d.getHours() % 12) +
+					':' +
+					d.getMinutes().toString().padStart(2, '0') +
+					(d.getHours() >= 12 ? 'pm' : 'am'),
+				...rest
+			};
+		});
+
+		return event;
+	}
+	return {};
 };
 
 export async function load() {

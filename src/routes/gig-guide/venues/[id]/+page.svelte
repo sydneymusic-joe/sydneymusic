@@ -41,134 +41,151 @@
 				<h1 class="uppercase text-xl italic">{venueData.venueName}</h1>
 
 				{#if venueData.isRip}
-				<p class="text-sm">🕯️ <strong>Note:</strong> This venue is sadly no longer with us.</p>
+					<p class="text-sm">🕯️ <strong>Note:</strong> This venue is sadly no longer with us.</p>
 				{/if}
 
 				<p>
-					<span class="{venueData.address == "" ? 'text-gray-400' : ''}">{venueData.address == "" ? '[Address not provided]' : venueData.address}</span><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a target="_blank"
-						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ?? ''},%20{venueData.suburb}&ia=maps&iaxm=maps"
-						>see map</a
+					<span class={venueData.address == '' ? 'text-gray-400' : ''}
+						>{venueData.address == '' ? '[Address not provided]' : venueData.address}</span
+					><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
+						target="_blank"
+						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ??
+							''},%20{venueData.suburb}&ia=maps&iaxm=maps">see map</a
 					>]
 				</p>
 
 				{#if venueData.url}
-				<p><a href={venueData.url} target="_blank">{venueData.url}</a></p>
+					<p><a href={venueData.url} target="_blank">{venueData.url}</a></p>
 				{/if}
 
 				<p><strong>Capacity:</strong> {venueData.capacity ? venueData.capacity : 'Unknown'}</p>
 
 				{#if venueData.blurb}
-				<div class="blurb">
-					<h3 class="uppercase text-sm text-ruby">About {venueData.venueName}</h3>
-					<div class="prose text-sm">
-						{@html render(venueData.blurb)}
+					<div class="blurb">
+						<h3 class="uppercase text-sm text-ruby">About {venueData.venueName}</h3>
+						<div class="prose text-sm">
+							{@html render(venueData.blurb)}
+						</div>
 					</div>
-				</div>
 				{/if}
 
 				<div class="bg-gray-200 p-5 rounded-md prose">
 					<p class="m-0"><strong>Do you have information about this venue?</strong></p>
-					<p class="m-0">We want to build a comprehensive reference of venue specs, accessibility information and much more. If you would like to contribute, please <a href="mailto:contact@sydneymusic.net">get in touch</a>.</p>
+					<p class="m-0">
+						We want to build a comprehensive reference of venue specs, accessibility information and
+						much more. If you would like to contribute, please <a
+							href="mailto:contact@sydneymusic.net">get in touch</a
+						>.
+					</p>
 				</div>
 			</div>
 
 			<div>
 				{#if !venueData.isRip}
-				<div class="transition">
-					<div class="accordion-header cursor-pointer transition flex items-center">
-						<h3 class="uppercase text-2xl italic font-bold">Upcoming Gigs <span class="font-normal text-gray-500">({eventsFuture.childCount})</span></h3>
-					</div>
-					<div class="accordion-content overflow-hidden max-h-0">
+					<div class="transition">
+						<div class="accordion-header cursor-pointer transition flex items-center">
+							<h3 class="uppercase text-2xl italic font-bold">
+								Upcoming Gigs <span class="font-normal text-gray-500"
+									>({eventsFuture.childCount})</span
+								>
+							</h3>
+						</div>
+						<div class="accordion-content overflow-hidden max-h-0">
+							{#if eventsFuture.length === 0}<div class="pl-3 py-2">
+									There are no upcoming gigs listed for this venue.
+								</div>{/if}
 
-					{#if eventsFuture.length === 0}<div class="pl-3 py-2">
-						There are no upcoming gigs listed for this venue.
-					</div>{/if}
-
-					{#each eventsFuture as month}
-					<div class="guide-month space-y-10">
-						<h3 class="notch-left text-lg lg:text-xl">
-							{month.label}
-						</h3>
-						<div class="grid">
-							{#each month.items as { label, items }}
-								<div class="relative day flex items-start">
-									<div
-										class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
-									>
-										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-											{label.split(':')[1]}
-										</p>
-										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
-									</div>
-									<div class="w-full mb-5">
-										{#each items as event}
-											<Event
-												name={event.promotedName}
-												gigId={event.id}
-												performers={event.performersListJson}
-												calendarLink={createCalendarLink(event, venueData)}
-												venue={venueData}
-												website={event.ticketUrl}
-												comment={event.furtherInfo}
-												initials={event.furtherInfoContributorInitials}
-												time={event.time}
-												isFree={event.isFree}
-											/>
+							{#each eventsFuture as month}
+								<div class="guide-month space-y-10">
+									<h3 class="notch-left text-lg lg:text-xl">
+										{month.label}
+									</h3>
+									<div class="grid">
+										{#each month.items as { label, items }}
+											<div class="relative day flex items-start">
+												<div
+													class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+												>
+													<p
+														class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase"
+													>
+														{label.split(':')[1]}
+													</p>
+													<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+												</div>
+												<div class="w-full mb-5">
+													{#each items as event}
+														<Event
+															name={event.promotedName}
+															gigId={event.id}
+															performers={event.performersListJson}
+															calendarLink={createCalendarLink(event, venueData)}
+															venue={venueData}
+															website={event.ticketUrl}
+															comment={event.furtherInfo}
+															initials={event.furtherInfoContributorInitials}
+															time={event.time}
+															isFree={event.isFree}
+														/>
+													{/each}
+												</div>
+											</div>
 										{/each}
 									</div>
 								</div>
 							{/each}
 						</div>
 					</div>
-					{/each}
-				</div>
-			</div>
-			{/if}
+				{/if}
 			</div>
 
 			<div>
 				<div class="transition">
 					<div class="accordion-header cursor-pointer transition flex items-center">
-						<h3 class="uppercase text-2xl italic font-bold">Past Gigs <span class="font-normal text-gray-500">({eventsPast.childCount})</span></h3>
+						<h3 class="uppercase text-2xl italic font-bold">
+							Past Gigs <span class="font-normal text-gray-500">({eventsPast.childCount})</span>
+						</h3>
 					</div>
 					<div class="accordion-content overflow-hidden max-h-0">
-					{#each data.eventsPast as month}
-						<div class="guide-month">
-							<h3 class="notch-left text-lg lg:text-xl">
-								{month.label}
-							</h3>
-							<div class="grid">
-								{#each month.items as { label, items }}
-									<div class="relative day flex items-start">
-										<div
-											class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
-										>
-											<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-												{label.split(':')[1]}
-											</p>
-											<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+						{#each data.eventsPast as month}
+							<div class="guide-month">
+								<h3 class="notch-left text-lg lg:text-xl">
+									{month.label}
+								</h3>
+								<div class="grid">
+									{#each month.items as { label, items }}
+										<div class="relative day flex items-start">
+											<div
+												class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+											>
+												<p
+													class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase"
+												>
+													{label.split(':')[1]}
+												</p>
+												<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+											</div>
+											<div class="w-full mb-5">
+												{#each items as event, i}
+													<Event
+														name={event.promotedName}
+														gigId={event.id}
+														performers={event.performersListJson}
+														calendarLink={createCalendarLink(event, venueData)}
+														venue={venueData}
+														website={event.ticketUrl}
+														comment={event.furtherInfo}
+														initials={event.furtherInfoContributorInitials}
+														time={event.time}
+														isFree={event.isFree}
+													/>
+												{/each}
+											</div>
 										</div>
-										<div class="w-full mb-5">
-											{#each items as event, i}
-												<Event
-													name={event.promotedName}
-													gigId={event.id}
-													performers={event.performersListJson}
-													calendarLink={createCalendarLink(event, venueData)}
-													venue={venueData}
-													website={event.ticketUrl}
-													comment={event.furtherInfo}
-													initials={event.furtherInfoContributorInitials}
-													time={event.time}
-													isFree={event.isFree}
-												/>
-											{/each}
-										</div>
-									</div>
-								{/each}
+									{/each}
+								</div>
 							</div>
-						</div>
-					{/each}
+						{/each}
 					</div>
 				</div>
 			</div>

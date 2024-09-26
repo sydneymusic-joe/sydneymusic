@@ -19,12 +19,21 @@
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="feature-thisweek space-y-8 md:py-5 text-center prose">
-			<div class="bigtext">There are <span class="text-ruby">{data.gigs.thisWeek} shows</span> in the gig guide this week</div>
+			<div class="bigtext">
+				There are <span class="text-ruby">{data.gigs.thisWeek} shows</span> in the gig guide this week
+			</div>
 			<div class="links">
 				<a href="/gig-guide"><span>Read</span> the full guide</a>
-				<a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"><span>Subscribe</span> to weekly e-mail</a>
-				<a href="/playlist" title="Every act playing in Sydney this week in one playlist"><span>Listen</span> to gig guide playlist</a>
-				<a href="https://www.instagram.com/sydneymusicdotnet"><span>Follow</span> on Instagram for daily stories</a>
+				<a
+					href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
+					><span>Subscribe</span> to weekly e-mail</a
+				>
+				<a href="/playlist" title="Every act playing in Sydney this week in one playlist"
+					><span>Listen</span> to gig guide playlist</a
+				>
+				<a href="https://www.instagram.com/sydneymusicdotnet"
+					><span>Follow</span> on Instagram for daily stories</a
+				>
 			</div>
 		</div>
 

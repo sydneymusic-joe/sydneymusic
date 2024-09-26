@@ -15,7 +15,9 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				sans: ['IBM Plex Sans Condensed', 'sans-serif']
+				sans: ['IBM Plex Sans Condensed', 'sans-serif'],
+				instrumentSerif: ['Instrument Serif', 'serif'],
+				instrumentSans: ['Instrument Sans', 'sans-serif']
 			},
 			fontSize: {
 				xl: '1.375rem'
@@ -24,7 +26,8 @@ module.exports = {
 				ruby: '#e02020',
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
-				pill: '#666666'
+				pill: '#666666',
+				backgroundDark: '#221F20'
 			},
 			aspectRatio: {
 				'3/1': '3/1',
