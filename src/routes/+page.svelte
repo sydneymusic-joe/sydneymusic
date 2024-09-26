@@ -9,16 +9,23 @@
 </script>
 
 <SeoSocial />
-<img
-	srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w"
-	alt="SydneyMusic.net mascot Can Man welcoming you to the website"
-	class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto"
-/>
+
+<div class="bg-black py-16">
+	<div class="max-w-5xl mx-auto grid md:items-end md:grid-flow-col gap-4 place-content-center">
+		<div><img src="/dancer.png" alt="Dancer by Studio 3AM" class="h-48 md:h-72 md:float-right" /></div>
+		<div class="space-y-5">
+			<div class="font-instrumentSerif text-white uppercase text-5xl">There's music<br />in every corner<br />of our city</div>
+			<div class="font-instrumentSans uppercase text-2xl">
+				<a href="https://store.sydneymusic.net" target="_blank" class="text-white py-2 uppercase plausible-event-name=Become+A+Supporter underline transition-all duration-100 ease-in-out">New merch available now! &raquo;</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<div class="feature-thisweek space-y-8 md:py-5 text-center prose">
+		<div class="feature-thisweek space-y-8 py-8 text-center prose">
 			<div class="bigtext">
 				There are <span class="text-ruby">{data.gigs.thisWeek} shows</span> in the gig guide this week
 			</div>
