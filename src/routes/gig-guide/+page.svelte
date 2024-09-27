@@ -27,17 +27,17 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mt-5 mx-auto">
+<div class="max-w-5xl px-5 mt-5 mx-auto overflow-x-hidden">
 	<div
-		class="flex relative border-b border-black border-dashed mb-7 pb-7 lg:pb-12 flex-col md:flex-row justify-between"
+		class="flex relative border-b border-black border-dashed mb-7 pb-14 lg:pb-20 flex-col md:flex-row justify-between"
 	>
 		<div class="mt-5 md:mt-14">
-			<div class="font-semibold text-3xl sm:text-4xl lg:text-5xl">
-				<h1>Your Favourite</h1>
-				<h1>FREE Gig-Guide</h1>
+			<div class="font-semibold text-[32px] leading-[1.75rem] sm:text-4xl sm:leading-8 lg:text-5xl">
+				<h1>You’re on</h1>
+				<h1>the Gig Guide</h1>
 			</div>
 			<p class="text-xs md:text-base max-w-40 sm:max-w-56 pt-2 sm:pt-5">
-				SydneyMusic.net is not-for-profit & 100% reader-supported.
+				If it’s out there, it’s in here.
 			</p>
 			<div class="prose max-w-44 sm:max-w-56 my-5">
 				<p class="text-xs md:text-base">
@@ -47,7 +47,9 @@
 			</div>
 		</div>
 		<div class="mt-5 md:pb-8 flex flex-col justify-end items-stretch pr-8 md:max-w-56">
-			<p class="text-xs mb-2 md:mb-4 md:max-w-44">You can help us make this guide even BETTER!</p>
+			<p class="text-xs mb-2 md:mb-4 max-w-52">
+				SydneyMusic.net is crowd-supported. Help us keep the Guide in peak condition!
+			</p>
 			<div class="flex gap-4 text-sm md:flex-col">
 				<PromotionButton
 					label="Become a supporter"
