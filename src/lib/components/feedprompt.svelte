@@ -11,6 +11,7 @@
 						<img
 							src="/merch-sydney-music-tote.png"
 							alt="SydneyMusic.net new merch featuring a t-shirt with dancing mascot"
+							class="object-cover aspect-[4/6]"
 						/>
 					</picture>
 					<div class="flex flex-col gap-4 pt-4">
@@ -51,11 +52,12 @@
 		{
 			type: 'component',
 			content: `
-				<div class="w-full border-y border-black border-dashed py-8 flex items-center justify-center gap-2 sm:gap-4">
+				<div class="w-full border-y border-black border-dashed py-7 flex items-center justify-center gap-2 sm:gap-4">
 					<picture class="max-w-36 sm:max-w-44">
 						<img
 							src="/merch-dancer-shirt.png"
 							alt="SydneyMusic.net new merch featuring a tote bag with Sydney Music text logo"
+							class="object-cover aspect-[5/4]"
 						/>
 					</picture>
 					<div class="flex flex-col gap-4">
