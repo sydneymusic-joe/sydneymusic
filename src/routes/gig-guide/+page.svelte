@@ -27,7 +27,7 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mt-5 mx-auto overflow-x-hidden">
+<div class="max-w-5xl px-5 mt-5 mx-auto overflow-x-clip">
 	<div class="pb-7 mb-7 border-b border-dashed border-black">
 		<div class="flex flex-col md:flex-row justify-between sm:px-4 md:px-8">
 			<div class="flex justify-between md:gap-6 md:w-2/3">
@@ -94,13 +94,13 @@
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
-			<div class="space-y-10 sm:pr-20">
+			<div class="sm:pr-20">
 				{#each data.gigs as month}
-					<div class="guide-month space-y-10">
+					<div class="guide-month space-y-10 mb-10">
 						<h3 class="notch-left text-lg lg:text-xl">
 							{month.label}
 						</h3>
-						<div class="grid space-y-10">
+						<div class="grid gap-10">
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
