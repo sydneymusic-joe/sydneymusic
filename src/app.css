@@ -278,6 +278,9 @@
 	}
 }
 
+body.freegigs .guide-month:not(:has(.freegig)) {
+	@apply hidden;
+}
 body.freegigs .day:not(:has(.freegig)) {
 	@apply hidden;
 }
@@ -412,9 +415,8 @@ div > .day > div:first-child p {
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
 .guide-month > h3 {
-	@apply sticky top-0;
+	@apply sticky top-0 z-40;
 	background: white;
-	z-index: 100;
 }
 
 .accordion-content {
