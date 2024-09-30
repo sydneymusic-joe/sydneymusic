@@ -4,8 +4,8 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	kit: {
 		adapter: adapter(),
-		prerender : {
-			concurrency : 5
+		prerender: {
+			concurrency: 5
 		}
 	},
 	preprocess: vitePreprocess()

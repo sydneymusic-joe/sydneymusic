@@ -5,20 +5,17 @@ import { formatDate, groupBy, formatDay, createCalendarLink } from '../src/lib/g
 
 import { GraphQLClient, gql } from 'graphql-request';
 
-export const client = new GraphQLClient(
-	`https://graphql.datocms.com/`,
-	{
-		headers: {
-			authorization: `Bearer ${process.env.VITE_DATOCMS_TOKEN}`
-		}
+export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
+	headers: {
+		authorization: `Bearer ${process.env.VITE_DATOCMS_TOKEN}`
 	}
-);
+});
 
 const getGigs = async () => {
 	const d = new Date();
 
-    const dateFrom = new Date("2024-08-22T00:00:00+1000");
-    const dateTo = new Date("2024-08-29T00:00:00+1000");
+	const dateFrom = new Date('2024-08-22T00:00:00+1000');
+	const dateTo = new Date('2024-08-29T00:00:00+1000');
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -27,14 +24,14 @@ const getGigs = async () => {
         count
     }}`);
 
-    const total = data.getCount.count;
+	const total = data.getCount.count;
 
-    let allEvents = [];
-    let idx = 0;
-    while (idx < Math.ceil(total/100)) {
-        data = await client.request(gql`{allEvents(
+	let allEvents = [];
+	let idx = 0;
+	while (idx < Math.ceil(total / 100)) {
+		data = await client.request(gql`{allEvents(
             orderBy: gigStartDate_ASC,
-            skip:${idx*100},
+            skip:${idx * 100},
             first: 100, 
             filter: {
                 gigStartDate : { gte : "${dateFrom.toISOString()}", lt : "${dateTo.toISOString()}" }
@@ -57,9 +54,9 @@ const getGigs = async () => {
         }
         `);
 
-        allEvents = allEvents.concat(data.allEvents);
-        idx++;
-    }
+		allEvents = allEvents.concat(data.allEvents);
+		idx++;
+	}
 
 	if (allEvents.length > 0) {
 		let event = allEvents.map((i) => {
@@ -67,8 +64,11 @@ const getGigs = async () => {
 			let d = new Date(gigStartDate);
 			return {
 				date: d,
-				time:
-					d.toLocaleTimeString('en-AU', {timeZone : 'Australia/Sydney', hour12:true,timeStyle:"short"}),
+				time: d.toLocaleTimeString('en-AU', {
+					timeZone: 'Australia/Sydney',
+					hour12: true,
+					timeStyle: 'short'
+				}),
 				...rest
 			};
 		});
@@ -106,7 +106,9 @@ async function main() {
 			for (const gig of day.items) {
 				template += `<tr>
                     <td style="">
-                        <div class="headliner">${gig.promotedName || gig.performersListJson[0]}</div>`;
+                        <div class="headliner">${
+													gig.promotedName || gig.performersListJson[0]
+												}</div>`;
 				if (gig.performersListJson != null && gig.performersListJson.length > 0) {
 					template += `<strong>w/ ${gig.performersListJson.join(', ')}</strong><br />`;
 				}

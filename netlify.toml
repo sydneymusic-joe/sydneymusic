@@ -7,6 +7,11 @@
   status = 301
 
 [[redirects]]
+  from = "/party"
+  to = "https://events.humanitix.com/sydneymusic-net-merch-launch-and-fundraiser"
+  status = 301
+
+[[redirects]]
   from = "/js/script.js"
   to = "https://plausible.io/js/script.outbound-links.tagged-events.js"
   status = 200

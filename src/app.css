@@ -129,6 +129,20 @@
 	src: url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
 }
 
+@font-face {
+	font-family: 'Instrument Serif';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Instrument Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/instrument-sans/InstrumentSans-Regular.ttf) format('ttf');
+}
+
 @layer base {
 	.notch-thic,
 	.notch-right,
@@ -483,4 +497,15 @@ h1.special {
 	padding: 15px;
 	@apply bg-ruby;
 	color: white;
+}
+
+.bottom-sheet {
+	transform: translateY(100%);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.bottom-sheet.show {
+	transform: translateY(0);
+	pointer-events: auto; /* Enable interaction when shown */
 }
