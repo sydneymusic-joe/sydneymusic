@@ -14,6 +14,9 @@ module.exports = {
 					}
 				}
 			},
+			screens: {
+				xs: '480px'
+			},
 			fontFamily: {
 				sans: ['IBM Plex Sans Condensed', 'sans-serif'],
 				instrumentSerif: ['Instrument Serif', 'serif'],

@@ -196,27 +196,19 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap items-center;
-		justify-content: center;
+		@apply flex flex-wrap;
 		margin-bottom: -15px;
 	}
 
-	.filterbox > * {
-		padding-bottom: 15px;
-	}
 	.filterbox > *:hover {
-		@apply text-black;
-		transition: ease-in-out 0.3s;
+		transition: ease-in-out 0.2s;
 	}
 
 	.filterbox label,
 	.filterbox a {
-		@apply italic font-semibold text-pill pr-5;
+		@apply font-semibold text-sm pr-5 text-ruby;
 	}
 
-	.filterbox a {
-		@apply flex items-center;
-	}
 	.filterbox a svg {
 		@apply w-11;
 	}
@@ -257,14 +249,10 @@
 
 	.toggle-bg:after {
 		content: '';
-		@apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
+		@apply absolute top-0.5 ml-0.5 bg-black rounded-full h-4 w-4 transition shadow-sm;
 	}
 	input:checked + .toggle-bg:after {
-		transform: translateX(100%);
-		@apply border-white;
-	}
-	input:checked + .toggle-bg {
-		@apply bg-blue-600 border-blue-600;
+		transform: translateX(80%);
 	}
 
 	figcaption {
@@ -424,8 +412,9 @@ div > .day > div:first-child p {
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
 .guide-month > h3 {
-	@apply sticky top-0 z-30;
+	@apply sticky top-0;
 	background: white;
+	z-index: 100;
 }
 
 .accordion-content {
