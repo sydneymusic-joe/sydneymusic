@@ -28,51 +28,55 @@
 <SeoSocial title="Gig Guide" />
 
 <div class="max-w-5xl px-5 mt-5 mx-auto overflow-x-hidden">
-	<div
-		class="flex relative border-b border-black border-dashed mb-7 pb-14 lg:pb-20 flex-col md:flex-row justify-between"
-	>
-		<div class="mt-5 md:mt-14">
-			<div class="font-semibold text-[32px] leading-[1.75rem] sm:text-4xl sm:leading-8 lg:text-5xl">
-				<h1>You’re on</h1>
-				<h1>the Gig Guide</h1>
+	<div class="pb-7 mb-7 border-b border-dashed border-black">
+		<div class="flex flex-col md:flex-row justify-between sm:px-4 md:px-8">
+			<div class="flex justify-between md:gap-6 md:w-2/3">
+				<div class="relative">
+					<div
+						class="absolute top-6 xs:top-8 left-0 font-semibold w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
+					>
+						<h1>You’re on</h1>
+						<h1>the Gig Guide</h1>
+					</div>
+					<div class="xs:mt-24 mt-20">
+						<p class="text-xs md:text-base max-w-40 sm:max-w-52 pt-2 xs:pt-6 lg:pt-10">
+							If it’s out there, it’s in here.
+						</p>
+						<div class="max-w-44 md:max-w-56 my-5">
+							<p class="text-xs md:text-base">
+								Last updated: <span class="">{data.lastUpdated}</span>
+								<a href="/gig-guide/latest/" class="text-ruby">View latest updates</a>.
+							</p>
+						</div>
+					</div>
+				</div>
+				<picture class="w-[60%] xs:w-[50%] sm:w-[48%] md:[w-60%] -mr-8 xs:-mr-3 sm:mr-0">
+					<img
+						src="/hero-character.png"
+						alt="SydneyMusic.net mascot Can Man loves a gig"
+						class="w-full"
+					/>
+				</picture>
 			</div>
-			<p class="text-xs md:text-base max-w-40 sm:max-w-56 pt-2 sm:pt-5">
-				If it’s out there, it’s in here.
-			</p>
-			<div class="prose max-w-44 sm:max-w-56 my-5">
-				<p class="text-xs md:text-base">
-					Last updated: <span class="">{data.lastUpdated}</span>
-					<a href="/gig-guide/latest/" class="text-ruby">View latest updates</a>.
-				</p>
+			<div
+				class="flex flex-col justify-end items-stretch -mt-2 sm:-mt-16 md:mt-0 md:max-w-52 md:pb-4 lg:pr-6"
+			>
+				<p class="text-xs">SydneyMusic.net is crowd-supported.</p>
+				<p class="text-xs mb-2 md:mb-4">Help us keep the Guide in peak condition!</p>
+				<div class="flex gap-4 text-sm md:flex-col">
+					<PromotionButton
+						label="Become a supporter"
+						href="https://www.patreon.com/sydneymusic"
+						variant="primary"
+					/>
+					<PromotionButton
+						label="make a donation"
+						href="https://store.sydneymusic.net/#jVJaYW"
+						variant="secondary"
+					/>
+				</div>
 			</div>
 		</div>
-		<div class="mt-5 md:pb-8 flex flex-col justify-end items-stretch pr-8 md:max-w-56">
-			<p class="text-xs mb-2 md:mb-4 max-w-52">
-				SydneyMusic.net is crowd-supported. Help us keep the Guide in peak condition!
-			</p>
-			<div class="flex gap-4 text-sm md:flex-col">
-				<PromotionButton
-					label="Become a supporter"
-					href="https://store.sydneymusic.net"
-					variant="primary"
-				/>
-				<PromotionButton
-					label="make a donation"
-					href="https://store.sydneymusic.net"
-					variant="secondary"
-				/>
-			</div>
-		</div>
-
-		<picture
-			class="absolute -top-2 -right-11 xs:right-0 sm:right-[5%] lg:right-[28%] md:right-[30%]"
-		>
-			<img
-				src="/hero-character.png"
-				alt="SydneyMusic.net mascot Can Man loves a gig"
-				class="w-full max-w-52 xs:max-w-64 sm:max-w-72 md:max-w-[328px] lg:max-w-sm"
-			/>
-		</picture>
 	</div>
 
 	<div class="filterbox w-full my-5">
