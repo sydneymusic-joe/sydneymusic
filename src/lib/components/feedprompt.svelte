@@ -9,7 +9,7 @@
 				>
 					<picture class="max-w-24 sm:max-w-28">
 						<img
-							src="/merch-sydney-music-tote.png"
+							src="/merch-dancer-tote.png"
 							alt="SydneyMusic.net new merch featuring a t-shirt with dancing mascot"
 							class="object-cover aspect-[4/6]"
 						/>
