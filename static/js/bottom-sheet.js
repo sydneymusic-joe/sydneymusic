@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const showBottomSheet = (config) => {
-		if (config.localStorageKey && localStorage.getItem(config.localStorageKey) === 'true') {
+		/*if (config.localStorageKey && localStorage.getItem(config.localStorageKey) === 'true') {
 			return;
-		}
+		}*/
 
 		const bottomSheet = createBottomSheet(config);
 		if (!bottomSheet) return;
