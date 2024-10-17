@@ -15,28 +15,29 @@
 					<h1 class="">SYDNEYMUSIC.NET!</h1>
 				</div>
 				<p class="text-base max-w-xl font-instrumentSans">
-					We're thrilled to announce a brand new merch drop in collaboration with Studio 3AM. You
+					<strong>SydneyMusic.net is not-for-profit and 100% crowd-supported. We urgently need to raise more funds to continue producing this guide.</strong><br /><br />By buying merch, you
 					can represent your favourite local gig guide while looking awesome and supporting us
 					financially. Now that's value!
 				</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
-				<Button label="SHOP MERCH" href="https://store.sydneymusic.net" variant="primary" />
+				<Button label="SHOP MERCH" href="https://store.sydneymusic.net" target="_blank" variant="primary" />
 				<Button
 					label="DONATE NOW"
 					href="https://store.sydneymusic.net/#jVJaYW"
-					variant="secondary"
+					variant="secondary" target="_blank"
 				/>
 			</div>
 		</div>
 		<div class="relative items-end lg:mr-12 mr-2 hidden sm:flex mt-auto">
+			<a href="https://store.sydneymusic.net" target="_blank">
 			<picture class="w-full">
 				<img
-					src="/dancer.png"
-					alt="SydneyMusic.net dancer"
+					src="/store-promo.jpg"
+					alt="SydneyMusic.net merch"
 					class="w-full h-full object-contain max-w-md max-h-96"
 				/>
-			</picture>
+			</picture></a>
 		</div>
 	</div>
 	<button
