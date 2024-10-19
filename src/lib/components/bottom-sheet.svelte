@@ -11,14 +11,15 @@
 		<div class="space-y-8 xl:ml-32 sm:max-w-md">
 			<div class="space-y-3">
 				<div class="font-instrumentSerif text-3xl md:text-5xl">
-					<h1 class="">SUPPORT</h1>
-					<h1 class="">SYDNEYMUSIC.NET!</h1>
+					<h1 class="">SYDNEYMUSIC.NET</h1>
+					<h1>IS AT RISK OF</h1>
+					<h1>SHUTTING DOWN</h1>
 				</div>
 				<p class="text-base max-w-xl font-instrumentSans">
-					<strong>SydneyMusic.net is not-for-profit and 100% crowd-supported. We urgently need to raise more funds to continue producing this guide.</strong><br /><br />By buying merch, you
-					can represent your favourite local gig guide while looking awesome and supporting us
-					financially. Now that's value!
+					<strong>We are turning to our community for help.</strong><br />We don't want to give up: <strong>over 4,000 people every week</strong> use this website to connect with their scene. You can help us continue this work!
 				</p>
+
+				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant donation? <a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
 				<Button label="SHOP MERCH" href="https://store.sydneymusic.net" target="_blank" variant="primary" />
