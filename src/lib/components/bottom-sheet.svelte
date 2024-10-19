@@ -19,7 +19,7 @@
 					<strong>We are turning to our community for help.</strong><br />We don't want to give up: <strong>over 4,000 people every week</strong> use this website to connect with their scene. You can help us continue this work!
 				</p>
 
-				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant donation? <a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
+				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant contribution? <a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
 				<Button label="SHOP MERCH" href="https://store.sydneymusic.net" target="_blank" variant="primary" />
