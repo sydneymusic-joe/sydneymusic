@@ -11,14 +11,14 @@
 		<div class="space-y-8 xl:ml-32 sm:max-w-md">
 			<div class="space-y-3">
 				<div class="font-instrumentSerif text-3xl md:text-5xl">
-					<h1 class="">SYDNEYMUSIC.NET</h1>
-					<h1>IS AT RISK OF</h1>
-					<h1>SHUTTING DOWN</h1>
+					<h1>HELP US KEEP GOING</h1>
 				</div>
 				<p class="text-base max-w-xl font-instrumentSans">
-					<strong>We are turning to our community for help.</strong><br />We don't want to give up: <strong>over 4,000 people every week</strong> use this website to connect with their scene. You can help us continue this work!
-				</p>
-
+					Thanks for being part of the community that is keeping Sydney's music scene alive.
+				</p>				
+				<p class="text-base max-w-xl font-instrumentSans">
+					SydneyMusic.net is not-for profit, but costs money to curate and run - and <strong>we're at risk of needing to shut the project down due to costs.</strong> If you find it useful, please consider buying some <a href="https://store.sydneymusic.net" target="_blank" class="underline">merch</a> or <a href="https://store.sydneymusic.net/#jVJaYW" class="underline" target="_blank">donating</a> to support us.
+				</p>				
 				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant contribution? <a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
