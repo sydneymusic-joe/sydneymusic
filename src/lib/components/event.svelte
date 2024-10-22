@@ -1,4 +1,6 @@
 <script>
+	import EventShared from './event-shared.svelte';
+
 	export let name = 'Performer';
 	export let gigId = '';
 	export let venue = null;
@@ -12,6 +14,14 @@
 	// Can't set a default here cause null is explicitly provided
 	if (!initials) initials = 'NB:';
 	if (!time) time = '8pm';
+
+	let shareData = {
+		name,
+		venue,
+		time,
+		performers,
+		isFree
+	};
 </script>
 
 <div
@@ -74,6 +84,14 @@
 			{#if isFree}
 				<div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
 			{/if}
+			<div id={`event-${gigId}`}>
+				<button
+					data-gig-id={gigId}
+					class="text-sm hover:underline cursor-pointer share-event-button"
+				>
+					Share this Event
+				</button>
+			</div>
 		</div>
 	{/if}
 	{#if comment}
@@ -99,4 +117,8 @@
 			<p>{comment}</p>
 		</div>
 	{/if}
+</div>
+
+<div id={`event-shared-${gigId}`} class="h-0 w-0 overflow-hidden">
+	<EventShared {...shareData} />
 </div>

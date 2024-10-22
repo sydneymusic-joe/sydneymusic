@@ -40,6 +40,7 @@
 		"graphql-request": "^6.1.0",
 		"hashids": "^2.3.0",
 		"html-minifier": "^4.0.0",
+		"html-to-image": "^1.11.11",
 		"ical-generator": "^3.4.3"
 	}
 }
