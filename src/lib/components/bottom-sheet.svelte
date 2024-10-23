@@ -17,7 +17,7 @@
 					Thanks for being part of the community that is keeping Sydney's music scene alive.
 				</p>				
 				<p class="text-base max-w-xl font-instrumentSans">
-					SydneyMusic.net is not-for profit, but costs money to curate and run - and <strong>we're at risk of needing to shut the project down due to costs.</strong> If you find it useful, please consider buying some <a href="https://store.sydneymusic.net" target="_blank" class="underline">merch</a> or <a href="https://store.sydneymusic.net/#jVJaYW" class="underline" target="_blank">donating</a> to support us.
+					SydneyMusic.net is not-for-profit, but costs money to curate and run - and <strong>we're at risk of needing to shut the project down due to costs.</strong> If you find it useful, please consider buying some <a href="https://store.sydneymusic.net" target="_blank" class="underline">merch</a> or <a href="https://store.sydneymusic.net/#jVJaYW" class="underline" target="_blank">donating</a> to support us.
 				</p>				
 				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant contribution?<br /><a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
 			</div>
