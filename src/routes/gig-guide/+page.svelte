@@ -81,7 +81,7 @@
 
 	<div class="filterbox w-full my-5">
 		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
-			<span class="mr-2">FREE GIGS ONLY</span>
+			<span class="mr-2">FREE / PAY-WHAT-YOU-CAN GIGS ONLY</span>
 			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 			<div
 				class="toggle-bg border border-black h-5 w-9 rounded-full"
@@ -124,6 +124,7 @@
 												initials={event.furtherInfoContributorInitials}
 												time={event.time}
 												isFree={event.isFree}
+												isPwyc={event.isPwyc}
 											/>
 											{increment()}
 										{/each}

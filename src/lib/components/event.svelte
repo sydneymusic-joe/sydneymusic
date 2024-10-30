@@ -9,6 +9,7 @@
 	export let initials = null;
 	export let time = null;
 	export let isFree = false;
+	export let isPwyc = false;
 	// Can't set a default here cause null is explicitly provided
 	if (!initials) initials = 'NB:';
 	if (!time) time = '8pm';
@@ -17,7 +18,7 @@
 <div
 	class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1
 		? 'smn'
-		: ''} {isFree ? 'freegig' : ''}"
+		: ''} {isFree || isPwyc ? 'freegig' : ''}"
 >
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
@@ -73,6 +74,9 @@
 
 			{#if isFree}
 				<div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
+			{/if}
+			{#if isPwyc}
+				<div class="bg-pjforest text-[10px] font-semibold text-white px-3 py-px rounded-lg">PWYC</div>
 			{/if}
 		</div>
 	{/if}

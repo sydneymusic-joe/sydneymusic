@@ -30,6 +30,7 @@ module.exports = {
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
+				pjforest:'#344A2F',
 				backgroundDark: '#221F20'
 			},
 			aspectRatio: {

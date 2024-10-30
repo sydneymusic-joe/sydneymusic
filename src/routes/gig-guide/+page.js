@@ -45,6 +45,7 @@ const getGigs = async () => {
 			furtherInfo
 			furtherInfoContributorInitials
 			isFree
+			isPwyc
 			venue {
 				venueName
 				address
