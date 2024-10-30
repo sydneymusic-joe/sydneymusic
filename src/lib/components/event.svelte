@@ -18,7 +18,7 @@
 <div
 	class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1
 		? 'smn'
-		: ''} {isFree || isPwyc ? 'freegig' : ''}"
+		: ''} {isFree || isPwyc ? 'freegig' : ''} {isPwyc ? 'pwycgig' : ''}"
 >
 	<div class="">
 		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
