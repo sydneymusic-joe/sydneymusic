@@ -9,11 +9,11 @@
 </script>
 
 <SeoSocial />
-<img
-	srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w"
+<a href="https://events.humanitix.com/music-trivia-w-dom-and-adam-a-sydneymusic-net-fundraiser"><img
+	src="/homepage-trivia-header.jpg"
 	alt="SydneyMusic.net mascot Can Man welcoming you to the website"
-	class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto"
-/>
+	class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto shadow-xl"
+/></a>
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
