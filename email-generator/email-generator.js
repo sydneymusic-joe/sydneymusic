@@ -14,8 +14,8 @@ export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
 const getGigs = async () => {
 	const d = new Date();
 
-	const dateFrom = new Date('2024-10-10T00:00:00+1000');
-	const dateTo = new Date('2024-10-17T00:00:00+1000');
+	const dateFrom = new Date('2024-11-07T00:00:00+1000');
+	const dateTo = new Date('2024-11-14T00:00:00+1000');
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
