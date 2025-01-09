@@ -7,11 +7,11 @@
 				<div
 					class="w-full border-y border-black border-dashed pb-8 pt-5 flex items-center justify-center gap-4 sm:gap-8"
 				>
-					<picture class="max-w-24 sm:max-w-28">
+					<picture class="max-w-24 sm:max-w-28 border-black border-solid border-2" style="box-shadow: 3px 3px 0px 0px #000;">
 						<img
-							src="/merch-dancer-tote.png"
-							alt="SydneyMusic.net new merch featuring a t-shirt with dancing mascot"
-							class="object-cover aspect-[4/6]"
+							src="/merch-promo.jpg"
+							alt="SydneyMusic.net new merch featuring a logo t-shirt and stubby cooler"
+							class="object-cover aspect-[5/6]"
 						/>
 					</picture>
 					<div class="flex flex-col gap-4 pt-4">

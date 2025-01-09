@@ -14,8 +14,8 @@ export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
 const getGigs = async () => {
 	const d = new Date();
 
-	const dateFrom = new Date('2024-11-07T00:00:00+1000');
-	const dateTo = new Date('2024-11-14T00:00:00+1000');
+	const dateFrom = new Date('2025-01-09T00:00:00+1000');
+	const dateTo = new Date('2025-01-17T00:00:00+1000');
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -142,8 +142,9 @@ async function main() {
             tr.day td { padding-top : 20px }
             .giglist tr td { font-size : 13px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
             .giglist tr td div.headliner { font-size : 16px; font-weight : bold; font-style : italic }
+            .giglist a { color : #6d7278 }
             h1 { margin-top : 20px; font-size : 26px; text-transform : uppercase; font-weight : bold; font-style : italic; }
-            a { color : #6d7278}
+            a { color : #e02020}
             .nav td { font-size : 13px; padding-bottom : 20px; }
             .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
