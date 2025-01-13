@@ -1,4 +1,3 @@
-import API from '$lib/contentful/';
 import APId from '$lib/datocms/';
 import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
 

@@ -1,4 +1,3 @@
-import API from '$lib/contentful/';
 import APId from '$lib/datocms/';
 import { groupBy } from '../../../lib/globals.mjs';
 
