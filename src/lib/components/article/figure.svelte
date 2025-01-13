@@ -9,7 +9,7 @@
 	<img src="{block.file.url}?w=2000" alt="{block.file.alt}" />
 	<figcaption>
 		<span>Image: {block.file.title}</span>
-		<span class="description">{block.file.alt}</span>
+		{#if block.file.alt}<span class="description">{block.file.alt}</span>{/if}
 	</figcaption>
 </figure>
 {/if}
