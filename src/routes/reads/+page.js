@@ -1,28 +1,23 @@
-import API from '$lib/contentful/';
+import API from '$lib/datocms/';
 import { previewMode, formatDate, groupBy } from '$lib/globals.mjs';
 
 const getReads = async () => {
 	const data = await API(`query {
-    articlesCollection(
-      order: sys_firstPublishedAt_DESC,
-      limit: 20,
-	  preview : ${previewMode}
+    allArticles(
+      orderBy: _firstPublishedAt_DESC,
+      first: 20
       ) {
-        items {
           headline
           excerpt
           slug,
-          sys {
-            firstPublishedAt
-          }
-        }
+          _firstPublishedAt
       }
     }`);
 
 	if (data) {
 		return {
-			latest: data.articlesCollection.items.slice(0, 4),
-			byMonth: groupBy(data.articlesCollection.items, (i) => formatDate(i.sys.firstPublishedAt))
+			latest: data.allArticles.slice(0, 4),
+			byMonth: groupBy(data.allArticles, (i) => formatDate(i._firstPublishedAt))
 		};
 	}
 	return {};

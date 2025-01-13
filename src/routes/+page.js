@@ -1,4 +1,3 @@
-import API from '$lib/contentful/';
 import APId from '$lib/datocms/';
 import { previewMode, groupBy, formatDayOfWeek, formatDateLong } from '$lib/globals.mjs';
 
@@ -78,20 +77,16 @@ const getGigs = async () => {
 };
 
 const getReads = async () => {
-	const data = await API(`query {
-		articlesCollection(order: sys_firstPublishedAt_DESC, limit: 4, preview:${previewMode}) {
-			items {
-			  headline
-			  excerpt
-			  slug,
-			  sys {
-				firstPublishedAt
-			  }
-			}
+	const data = await APId(`query {
+		allArticles(orderBy: _firstPublishedAt_DESC, first: 4) {
+			headline
+			excerpt
+			slug,
+			_firstPublishedAt
 		  }
 		}`);
 	if (data) {
-		return data.articlesCollection.items;
+		return data.allArticles;
 	}
 	return {};
 };

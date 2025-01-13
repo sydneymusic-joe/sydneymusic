@@ -1,6 +1,10 @@
 <script>
+	import { StructuredText } from '@datocms/svelte';
 	import Read from '$lib/components/read.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Embed from '$lib/components/article/embed.svelte';
+	import Figure from '$lib/components/article/figure.svelte';
+	import { isBlock, isInlineItem, isItemLink } from 'datocms-structured-text-utils';
 
 	export let data;
 </script>
@@ -24,14 +28,14 @@
 			<div class="prose prose-xl">
 				{#if data.heroImage}
 					<figure>
-						<img src="{data.heroImage.url}?w=2000" alt="${data.heroImage.title}" />
+						<img src="{data.heroImage.url}?w=2000" alt="{data.heroImage.title}" />
 						<figcaption>
 							<span>Image: {data.heroImage.title}</span>
-							<span class="description">{data.heroImage.description}</span>
+							<span class="description">{data.heroImage.alt}</span>
 						</figcaption>
 					</figure>
 				{/if}
-				{@html data.body}
+				<StructuredText data={data.body} components={[[isInlineItem, Embed], [isBlock, Figure]]} />
 			</div>
 			<div>
 				<dl class="mt-20 lg:mt-0">

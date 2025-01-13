@@ -1,6 +1,6 @@
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
-import API from '$lib/contentful/';
+import {render, renderNodeRule} from 'datocms-structured-text-to-html-string';
+import {isHeading} from 'datocms-structured-text-utils';
+import API from '$lib/datocms/';
 import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
 function htmlEncode(s) {
@@ -14,22 +14,11 @@ function htmlEncode(s) {
 }
 
 function renderOptions(links) {
-	const entryBlockMap = new Map();
-	const assetBlockMap = new Map();
-
-	for (const entry of links.entries.block) {
-		entryBlockMap.set(entry.sys.id, entry);
-	}
-	for (const asset of links.assets.block) {
-		assetBlockMap.set(asset.sys.id, asset);
-	}
-
 	return {
-		renderNode: {
+		/*renderNode: {
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				// find the entry in the entryBlockMap by ID
 				const entry = entryBlockMap.get(node.data.target.sys.id);
-				console.log(entry.__typename);
 				if (entry.__typename == 'EmbedTweet') {
 					return `<div class="font-sans rounded border px-6 py-4 max-w-md">
             <div class="flex items-center">
@@ -83,7 +72,7 @@ function renderOptions(links) {
           </figure>
           `;
 			}
-		}
+		}*/
 	};
 }
 
@@ -92,80 +81,78 @@ export async function load({ params }) {
 	let otherReadData = false;
 	try {
 		data = await API(`query {
-      articlesCollection(where: { slug: "${params.id}" }, limit:1, preview : ${previewMode} ) {
-        items {
+      allArticles(filter: { slug: {eq:"${params.id}" }}, first:1) {
           headline
           excerpt
           bodyContent {
-            json
+            value
             links {
-              entries {
-                block {
-                  sys {
-                    id
-                  }
-                  __typename
-                  ... on EmbedTweet {
-                    tweetUrl,
-                    username,
-                    name,
-                    content,
-                    timestamp,
-                    replies,
-                    retweets,
-                    likes,
-                    profileImage {
-                      url
-                    }
-                  }
-                  ... on EmbedVideo {
-                    videoId,
-                    title
-                  }
-                }
+              __typename
+              ... on RecordInterface {
+                id
+                __typename
               }
-              assets {
-                block {
-                  sys {
-                    id
-                  }
-                  title,
-                  description,
+              ... on EmbedVideoModelRecord {
+                id
+                __typename
+                title
+                videoId
+              }
+              ... on EmbedTweetModelRecord {
+                id
+                __typename
+                username
+                tweetUrl
+                timestamp
+                retweets
+                replies
+                profileImage {
+                  title
                   url
+                }
+                name
+                likes
+                content
+              }
+            }
+            blocks {
+              ... on StructuredTextAssetRecord {
+                id
+                __typename
+                file {
+                  id
+                  url
+                  title
+                  alt
+                  width
+                  height
                 }
               }
             }
           }
           heroImage {
-            title,
-            description,
+            title
             url
+            alt
           }
           author {
             authorName
             authorUrl
           }
-          sys {
-            firstPublishedAt
-          }
+          _firstPublishedAt
         }
-      }
     }`);
 
 		otherReadData = await API(`query {
-      articlesCollection(
-        order: sys_firstPublishedAt_ASC,
-        limit: 4
-        where: { slug_not: "${params.id}" }, preview : ${previewMode}
+      allArticles(
+        orderBy: _firstPublishedAt_ASC,
+        first: 4
+        filter: { slug : {neq: "${params.id}" }}
       ) {
-          items {
-            headline
-            excerpt
-            slug
-            sys {
-              firstPublishedAt
-            }
-          }
+          headline
+          excerpt
+          slug
+          _firstPublishedAt
         }
       }`);
 	} catch (e) {
@@ -173,18 +160,18 @@ export async function load({ params }) {
 	}
 
 	if (data && otherReadData) {
-		const { headline, excerpt, bodyContent, heroImage, author, sys } =
-			data.articlesCollection.items[0];
+		const { headline, excerpt, bodyContent, heroImage, author, _firstPublishedAt } =
+			data.allArticles[0];
 
 		return {
 			headline,
 			excerpt: excerpt,
-			body: documentToHtmlString(bodyContent.json, renderOptions(bodyContent.links)),
-			otherReads: otherReadData.articlesCollection.items,
+			body: bodyContent,
+			otherReads: otherReadData.allArticles,
 			author: author,
 			heroImage: heroImage,
 			publishDate:
-				formatDateLong(sys.firstPublishedAt) + ' ' + new Date(sys.firstPublishedAt).getFullYear()
+				formatDateLong(_firstPublishedAt) + ' ' + new Date(_firstPublishedAt).getFullYear()
 		};
 	}
 
