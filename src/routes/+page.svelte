@@ -4,16 +4,45 @@
 	import Button from '../lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
+	import PromotionButton from '../lib/components/promotion-button.svelte';
 
 	export let data;
 </script>
 
 <SeoSocial />
-<img
+<!--<img
 	srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w"
 	alt="SydneyMusic.net mascot Can Man welcoming you to the website"
 	class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto"
-/>
+/>-->
+<div class="mb-10 mt-4 text-xs relative max-[400px]:text-red lg:max-w-5xl md:w-full m-auto">
+	<a href="https://sydneymusic.net/reads/2024-in-review-the-sydney-tracks-we-loved" class="hover:opacity-75 transition-opacity">
+		<img src="/2024tracks-promo.jpg" class="w-full" style="box-shadow : 0 10px 10px rgba(0,0,0,0.3)" alt="Likemind Society @ Oxford Art Factory, January 2024. Photo by Joe Hardy" />
+	
+		<div class="absolute bottom-5 left-5 text-white" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
+			<div class="font-instrumentSans md:text-6xl text-4xl font-bold">2024 In Review:</div>
+			<div class="font-instrumentSerif uppercase text-2xl">The Sydney Tracks We Loved</div>
+		</div>
+
+		<div class="absolute top-5 right-5 text-black">
+			<div><img src="/smnlogo-black.png" class="w-32"></div>
+			<div class="font-instrumentSerif uppercase text-lg">It's A Gig Guide</div>
+		</div>
+	</a>
+
+	<div class="absolute bottom-5 right-5 gap-2 md:text-lg text-sm hidden xs:flex">
+		<PromotionButton
+			label="Full List &raquo;"
+			href="https://sydneymusic.net/reads/2024-in-review-the-sydney-tracks-we-loved"
+			variant="primary"
+		/>
+		<PromotionButton
+			label="Listen &raquo;"
+			href="https://www.patreon.com/posts/special-two-hour-120155379"
+			variant="secondary"
+		/>
+	</div>
+</div>
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
