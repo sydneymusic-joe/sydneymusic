@@ -95,6 +95,33 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="sm:pr-20">
+				<div class="mb-10 mt-4 text-xs relative max-[400px]:text-red">
+					<a href="https://sydneymusic.net/reads/2024-in-review-the-sydney-tracks-we-loved" class="hover:opacity-75 transition-opacity"><img src="/2024tracks-promo.jpg" style="box-shadow : 0 10px 10px rgba(0,0,0,0.3)" alt="Likemind Society @ Oxford Art Factory, January 2024. Photo by Joe Hardy" />
+					
+					<div class="absolute bottom-5 left-5 text-white" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
+						<div class="font-instrumentSans text-2xl font-bold">2024 In Review:</div>
+						<div class="font-instrumentSerif uppercase text-lg">The Sydney Tracks We Loved</div>
+					</div>
+
+					<div class="absolute top-5 right-5 text-black hidden lg:block">
+						<div><img src="/smnlogo-black.png" class="w-32"></div>
+						<div class="font-instrumentSerif uppercase text-lg">It's A Gig Guide</div>
+					</div>
+				</a>
+
+					<div class="absolute bottom-5 right-5 grid gap-2 text-sm w-32 hidden lg:grid">
+						<PromotionButton
+							label="Full List &raquo;"
+							href="https://sydneymusic.net/reads/2024-in-review-the-sydney-tracks-we-loved"
+							variant="primary"
+						/>
+						<PromotionButton
+							label="Listen &raquo;"
+							href="https://www.patreon.com/posts/special-two-hour-120155379"
+							variant="secondary"
+						/>
+					</div>
+				</div>
 				{#each data.gigs as month}
 					<div class="guide-month space-y-10 mb-10">
 						<h3 class="notch-left text-lg lg:text-xl">

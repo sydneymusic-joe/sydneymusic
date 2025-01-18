@@ -511,3 +511,7 @@ h1.special {
 	transform: translateY(0);
 	pointer-events: auto; /* Enable interaction when shown */
 }
+
+.mything * {
+	color : lime !important;
+}

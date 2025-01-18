@@ -2,7 +2,7 @@
 //  ToDo: Investigate impact on bundle size if any and find a tiny lib?
 import ical from 'ical-generator';
 export const previewMode =
-	(import.meta.env ? import.meta.env : process.env).VITE_CONTENT_PREVIEW == 'true';
+	(import.meta.env ? import.meta.env : process.env).VITE_DATOCMS_SHOWDRAFTS == 'true';
 
 // ToDo get this from contentful?
 export const navigation = [
