@@ -1,7 +1,7 @@
 //ToDo: Generate js at build from source of truth config in datoCMS
 const bottomSheetConfig = [
 	{
-		key: 'merchDropGigGuide',
+		key: 'merchDropHomepage',
 		route: '/',
 		delay: 5000,
 		localStorageKey: 'surveyTaken'

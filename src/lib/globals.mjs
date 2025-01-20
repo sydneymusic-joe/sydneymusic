@@ -31,16 +31,22 @@ export const navigationFooterSecondary = [
 //ToDo: Get config from source of truth in datoCMS
 export const bottomSheetConfig = [
 	{
+		key: 'merchDropHomepage',
+		route: '/',
+		delay: 5000,
+		localStorageKey: 'surveyTaken'
+	},
+	{
 		key: 'merchDropGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
-		localStorageKey: 'merchDropSeen'
+		localStorageKey: 'surveyTaken'
 	},
 	{
 		key: 'merchDropVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'merchDropSeen'
+		localStorageKey: 'surveyTaken'
 	}
 ];
 
