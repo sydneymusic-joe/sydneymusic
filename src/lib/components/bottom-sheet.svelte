@@ -10,18 +10,18 @@
 	<div class="flex w-full gap-4 items-center">
 		<div class="space-y-5 xl:ml-32 sm:max-w-md">
 			<div class="space-y-3">
-				<div class="font-instrumentSerif text-3xl md:text-5xl mt-8">
-					<h1>Help us improve SydneyMusic.net by telling us what you think!</h1>
+				<div class="font-instrumentSerif text-3xl md:text-5xl mt-8 uppercase">
+					<h1>Have your say!</h1>
 				</div>
-				<p class="text-base max-w-xl font-instrumentSans hidden md:block">
-					The gig guide's getting an upgrade in 2025, and we want to hear from you!
+				<p class="text-base max-w-xl font-instrumentSans">
+					<strong>The gig guide's getting an upgrade in 2025, and we want to hear from you!</strong>
 				</p>
-				<p class="text-base max-w-xl font-instrumentSans hidden md:block">
-					We're running a survey to give our readers an opportunity to share their thoughts and feedback.
+				<p class="text-base max-w-xl font-instrumentSans">
+					Be part of our first-ever reader survey for an opportunity to share your thoughts and feedback.
 				</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
-				<Button label="Take the 5 minute survey" href="https://sydneymusic.net/survey" target="_blank" variant="primary" />
+				<Button label="Take the survey [3-5 mins]" href="https://sydneymusic.net/survey" target="_blank" variant="primary" />
 			</div>
 		</div>
 		<div class="relative items-end lg:mr-12 mr-2 hidden sm:flex mt-auto">
