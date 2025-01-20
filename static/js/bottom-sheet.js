@@ -2,6 +2,12 @@
 const bottomSheetConfig = [
 	{
 		key: 'merchDropGigGuide',
+		route: '/',
+		delay: 5000,
+		localStorageKey: 'surveyTaken'
+	},
+	{
+		key: 'merchDropGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
 		localStorageKey: 'surveyTaken'
