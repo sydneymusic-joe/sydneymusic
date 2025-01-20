@@ -4,13 +4,13 @@ const bottomSheetConfig = [
 		key: 'merchDropGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
-		localStorageKey: 'merchDropSeen'
+		localStorageKey: 'surveyTaken'
 	},
 	{
 		key: 'merchDropVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'merchDropSeen'
+		localStorageKey: 'surveyTaken'
 	}
 ];
 document.addEventListener('DOMContentLoaded', () => {
