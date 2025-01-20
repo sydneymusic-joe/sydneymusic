@@ -5,38 +5,32 @@
 
 <div
 	id="{key}-sheet"
-	class="bottom-sheet fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50"
+	class="bottom-sheet fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50 rounded-t-3xl"
 >
 	<div class="flex w-full gap-4 items-center">
-		<div class="space-y-8 xl:ml-32 sm:max-w-md">
+		<div class="space-y-5 xl:ml-32 sm:max-w-md">
 			<div class="space-y-3">
-				<div class="font-instrumentSerif text-3xl md:text-5xl">
-					<h1>HELP US KEEP GOING</h1>
+				<div class="font-instrumentSerif text-3xl md:text-5xl mt-8">
+					<h1>Help us improve SydneyMusic.net by telling us what you think!</h1>
 				</div>
-				<p class="text-base max-w-xl font-instrumentSans">
-					Thanks for being part of the community that is keeping Sydney's music scene alive.
-				</p>				
-				<p class="text-base max-w-xl font-instrumentSans">
-					SydneyMusic.net is not-for-profit, but costs money to curate and run - and <strong>we're at risk of needing to shut the project down due to costs.</strong> If you find it useful, please consider buying some <a href="https://store.sydneymusic.net" target="_blank" class="underline">merch</a> or <a href="https://store.sydneymusic.net/#jVJaYW" class="underline" target="_blank">donating</a> to support us.
-				</p>				
-				<p class="text-xs max-w-xl font-instrumentSans">Want to discuss partnership, investment or a significant contribution?<br /><a href="mailto:contact@sydneymusic.net" class="underline">E-mail us here</a>.</p>
+				<p class="text-base max-w-xl font-instrumentSans hidden md:block">
+					The gig guide's getting an upgrade in 2025, and we want to hear from you!
+				</p>
+				<p class="text-base max-w-xl font-instrumentSans hidden md:block">
+					We're running a survey to give our readers an opportunity to share their thoughts and feedback.
+				</p>
 			</div>
 			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
-				<Button label="SHOP MERCH" href="https://store.sydneymusic.net" target="_blank" variant="primary" />
-				<Button
-					label="DONATE NOW"
-					href="https://store.sydneymusic.net/#jVJaYW"
-					variant="secondary" target="_blank"
-				/>
+				<Button label="Take the 5 minute survey" href="https://sydneymusic.net/survey" target="_blank" variant="primary" />
 			</div>
 		</div>
 		<div class="relative items-end lg:mr-12 mr-2 hidden sm:flex mt-auto">
-			<a href="https://store.sydneymusic.net" target="_blank">
+			<a href="https://sydneymusic.net/survey" target="_blank">
 			<picture class="w-full">
 				<img
-					src="/store-promo.jpg"
-					alt="SydneyMusic.net merch"
-					class="w-full h-full object-contain max-w-md max-h-96"
+					src="/dancer.png"
+					alt="SydneyMusic.net merch dancer"
+					class="w-full h-full object-contain max-w-md max-h-96 rounded-lg"
 				/>
 			</picture></a>
 		</div>

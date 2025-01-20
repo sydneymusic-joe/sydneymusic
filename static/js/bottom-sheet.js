@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			return null;
 		}
 
-		const closeSheet = () => {
+		const closeSheet = (evt) => {
 			sheet.classList.remove('show');
 
-			if (config.localStorageKey) {
+			if (config.localStorageKey && evt.srcElement.target === '_blank') {
 				localStorage.setItem(config.localStorageKey, 'true');
 			}
 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const handleOutsideClick = (event) => {
 			if (!sheet.contains(event.target) && !closeSheetBtn.contains(event.target)) {
-				closeSheet();
+				closeSheet(false);
 			}
 		};
 
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const showBottomSheet = (config) => {
-		/*if (config.localStorageKey && localStorage.getItem(config.localStorageKey) === 'true') {
+		if (config.localStorageKey && localStorage.getItem(config.localStorageKey) === 'true') {
 			return;
-		}*/
+		}
 
 		const bottomSheet = createBottomSheet(config);
 		if (!bottomSheet) return;

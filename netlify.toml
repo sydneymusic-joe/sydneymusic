@@ -25,3 +25,8 @@
   from = "/api/event"
   to = "https://plausible.io/api/event"
   status = 200
+
+[[redirects]]
+  from = "/survey"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSe09CMW4ZGNdKuPt1O8nG0iWFj1St_6DNKvDqS7Rm4WqgjdOg/viewform"
+  status = 301
