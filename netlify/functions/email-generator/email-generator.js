@@ -103,7 +103,6 @@ async function generate() {
             newsletterDate
         }}`);
     content = content.emailnewsletter;
-    console.log(content.preambleContent);
 
 	var template = '';
 	for (const month of gigs) {
@@ -148,7 +147,8 @@ async function generate() {
     <head>
         <meta charset="utf-8" />
         <style>
-            body { background : white; color : black; font-family : Helvetica, Arial, sans-serif; font-size : 18px; }
+            body { background : black; color : black; font-family : Helvetica, Arial, sans-serif; font-size : 18px; }
+            .maintable { background : white; }
             .maintable tr td { padding-left : 20px; padding-right : 20px; }
             .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
             .preamble p { margin-top : 12px; }
@@ -164,7 +164,7 @@ async function generate() {
 			.giglist tr td div.performers { line-height : 120%; padding-bottom : 3px; font-weight : bold; }
             .giglist a { color : #888; text-transform: none; }
             h1 { margin-top : 10px; margin-bottom : 10px; font-size : 60px; font-weight : bold; letter-spacing : -2px; line-height : 100%; }
-            a { color : black; }
+            .maintable a { color : black; }
             .nav td { font-size : 18px; padding-bottom : 20px; }
             .preamble, .gigcontainer { border-width : 1px 0px 0px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
@@ -172,10 +172,11 @@ async function generate() {
 
             .plug { background :#eee; padding : 15px; margin-bottom : 10px; }
             .plug p { font-style : italic; font-size : 14px; margin : 0; text-align : center }
+            .subscribeme, .subscribeme a { color : white; }
         </style>
     </head>
     <body>
-    <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
+    <p class="subscribeme" style="font-size : 12px; text-align : center; margin-bottom : 20px;">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
             <td>
