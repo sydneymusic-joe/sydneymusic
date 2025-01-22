@@ -123,7 +123,7 @@ async function generate() {
                     <td style="">
                         <div class="headliner">${
 													gig.promotedName || gig.performersListJson[0]
-												} <span><a href="#">more info</a> &raquo;</span></div>`;
+												} <span>` + (gig.ticketUrl ? `<a href="${gig.ticketUrl}">more info</a> &raquo;` : "") + `</span></div>`;
 				if (gig.performersListJson != null && gig.performersListJson.length > 0) {
 					template += `<div class="performers">w/ ${gig.performersListJson.join(', ')}</div>`;
 				}
@@ -152,6 +152,7 @@ async function generate() {
             .maintable tr td { padding-left : 20px; padding-right : 20px; }
             .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
             .preamble p { margin-top : 12px; }
+            p, td { font-family : Helvetica, Arial, sans-serif; }
 			p { line-height : 150%; }
             .ruby { color : #344A2F }
             .graphite { color : #6d7278 }
