@@ -1,21 +1,25 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
-import { formatDate, groupBy, formatDay, createCalendarLink } from '../src/lib/globals.mjs';
-
+import { formatDate, groupBy, formatDay, createCalendarLink } from '../../../src/lib/globals.mjs';
 import { GraphQLClient, gql } from 'graphql-request';
+
+export default async (req, context) => {
+    let ret = await generate();
+    return new Response(ret, {
+        headers: { "content-type": "text/html"},
+      });
+};
 
 export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
 	headers: {
-		authorization: `Bearer ${process.env.VITE_DATOCMS_TOKEN}`
+		authorization: `Bearer ${Netlify.env.get("VITE_DATOCMS_TOKEN")}`
 	}
 });
 
 const getGigs = async () => {
 	const d = new Date();
 
-	const dateFrom = new Date('2025-01-16T00:00:00+1000');
-	const dateTo = new Date('2025-01-23T00:00:00+1000');
+	const dateFrom = new Date();
+	const dateTo = new Date();
+    dateTo.setDate(dateFrom.getDate() + 7);
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -76,18 +80,20 @@ const getGigs = async () => {
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
 
 		// Group by month
-		return byMonth.map((month) => {
+		return { 'total' : total, 'gigs' : byMonth.map((month) => {
 			return {
 				...month,
 				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
 			};
-		});
+		})};
 	}
 	return [];
 };
 
-async function main() {
-	let gigs = await getGigs();
+async function generate() {
+	const obj = await getGigs();
+    const total = obj.total;
+    const gigs = obj.gigs;
 
 	var template = '';
 	for (const month of gigs) {
@@ -108,11 +114,11 @@ async function main() {
                     <td style="">
                         <div class="headliner">${
 													gig.promotedName || gig.performersListJson[0]
-												}</div>`;
+												} <span><a href="#">more info</a> &raquo;</span></div>`;
 				if (gig.performersListJson != null && gig.performersListJson.length > 0) {
-					template += `<strong>w/ ${gig.performersListJson.join(', ')}</strong><br />`;
+					template += `<div class="performers">w/ ${gig.performersListJson.join(', ')}</div>`;
 				}
-				template += `${gig.time} &nbsp;| &nbsp;<a href="https://sydneymusic.net/gig-guide/venues/${gig.venue.slug}">${gig.venue.venueName}</a>`;
+				template += `${gig.time}&nbsp; • &nbsp;<a href="https://sydneymusic.net/gig-guide/venues/${gig.venue.slug}">${gig.venue.venueName}</a>`;
 				if (gig.furtherInfo) {
 					template += `<div class="blurb">${gig.furtherInfo} &mdash; ${
 						gig.furtherInfoContributorInitials ? gig.furtherInfoContributorInitials : 'SMn'
@@ -132,40 +138,52 @@ async function main() {
     <head>
         <meta charset="utf-8" />
         <style>
-            body { background : white; color : black; font-family : "IBM Plex Sans Condensed", Helvetica, Arial, sans-serif; font-size : 14px; }
+            body { background : white; color : black; font-family : Helvetica, Arial, sans-serif; font-size : 18px; }
             .maintable tr td { padding-left : 20px; padding-right : 20px; }
             .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
-            .preamble p { margin-top : 12px; line-height : 150% }
-            .ruby { color : #e02020 }
+            .preamble p { margin-top : 12px; }
+			p { line-height : 150%; }
+            .ruby { color : #344A2F }
             .graphite { color : #6d7278 }
+			.section { text-transform : uppercase; color : #344A2F; font-weight : bold; }
             tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
             tr.day td { padding-top : 20px }
-            .giglist tr td { font-size : 13px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
-            .giglist tr td div.headliner { font-size : 16px; font-weight : bold; font-style : italic }
-            .giglist a { color : #6d7278 }
-            h1 { margin-top : 20px; font-size : 26px; text-transform : uppercase; font-weight : bold; font-style : italic; }
-            a { color : #e02020}
-            .nav td { font-size : 13px; padding-bottom : 20px; }
-            .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; }
+            .giglist tr td { font-size : 15px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
+            .giglist tr td div.headliner { padding-bottom : 2px; font-size : 18px; font-weight : bold; }
+			.giglist tr td div.headliner span { font-size : 10px; text-transform: lowercase; font-weight : normal; }
+			.giglist tr td div.performers { line-height : 120%; padding-bottom : 3px; font-weight : bold; }
+            .giglist a { color : #888; text-transform: none; }
+            h1 { margin-top : 20px; margin-bottom : 10px; font-size : 60px; font-weight : bold; letter-spacing : -2px; line-height : 100%; }
+            a { color : black; }
+            .nav td { font-size : 18px; padding-bottom : 20px; }
+            .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
-            .blurb { font-size : 12px; font-style : italic; margin-top : 5px; text-transform : none; }
+            .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #344A2F; padding-left : 10px; }
         </style>
     </head>
     <body>
     <p style="font-size : 12px; text-align : center; margin-bottom : 20px">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
-            <td align="center">
-                <img src="https://downloads.sydneymusic.net/lockup_1.png" vspace="20" height="100" />
+            <td>
+                <img src="https://downloads.sydneymusic.net/newlogo.png" vspace="20" height="100" />
             </td>
         </tr>
         <tr class="nav">
-            <td align="center">
-                <a href="https://sydneymusic.net">go to sydneymusic.net</a> • <a href="https://sydneymusic.net/gig-guide">gig guide</a> • <a href="https://sydneymusic.net/gig-guide/venues">venue directory</a> • <a href="https://sydneymusic.net/reads">reads</a> • <a href="https://sydneymusic.net/links">links</a>
+            <td>
+                &raquo; <a href="https://sydneymusic.net">go to sydneymusic.net</a> (it's a nice place)
             </td>
         </tr>
         <tr>
             <td class="preamble">
+				<div class="section">INTRODUCTION</div>
+				<h1>This is a heading</h1>
+				<p>This is a paragraph</p>
+				<h2>What's new on the site</h2>
+				<ul>
+					<li>There are <strong>${total}</strong> shows in the gig guide this week.</li>
+                    <li>Another bullet point</li>
+				</ul>
             </td>
         </tr>
         <tr>
@@ -182,7 +200,5 @@ async function main() {
     </table>
 </body></html>`;
 
-	console.log(template);
+return template;
 }
-
-main().catch(console.error);
