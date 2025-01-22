@@ -6,6 +6,7 @@
 	import { createCalendarLink } from '../../lib/globals.mjs';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 	import PromotionButton from '../../lib/components/promotion-button.svelte';
+	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
 
 	export let data;
 
@@ -137,6 +138,11 @@
 											{label.split(':')[1]}
 										</p>
 										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+										{#if month.label == "Jan '25" && label == "26:Sun"}
+										<div class="w-full mt-3">
+											<AboriginalFlag />
+										</div>
+										{/if}
 									</div>
 									<div class="w-full">
 										{#each items as event}
