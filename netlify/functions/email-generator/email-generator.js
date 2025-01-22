@@ -1,5 +1,6 @@
 import { formatDate, groupBy, formatDay, createCalendarLink } from '../../../src/lib/globals.mjs';
 import { GraphQLClient, gql } from 'graphql-request';
+import {marked} from 'marked';
 
 export default async (req, context) => {
     let ret = await generate();
@@ -95,6 +96,15 @@ async function generate() {
     const total = obj.total;
     const gigs = obj.gigs;
 
+    let content = await client.request(gql`{
+        emailnewsletter {
+            welcomeHeading,
+            preambleContent,
+            newsletterDate
+        }}`);
+    content = content.emailnewsletter;
+    console.log(content.preambleContent);
+
 	var template = '';
 	for (const month of gigs) {
 		template += `<tr class="month"><td colspan="2">${month.label}</td></tr>`;
@@ -153,12 +163,15 @@ async function generate() {
 			.giglist tr td div.headliner span { font-size : 10px; text-transform: lowercase; font-weight : normal; }
 			.giglist tr td div.performers { line-height : 120%; padding-bottom : 3px; font-weight : bold; }
             .giglist a { color : #888; text-transform: none; }
-            h1 { margin-top : 20px; margin-bottom : 10px; font-size : 60px; font-weight : bold; letter-spacing : -2px; line-height : 100%; }
+            h1 { margin-top : 10px; margin-bottom : 10px; font-size : 60px; font-weight : bold; letter-spacing : -2px; line-height : 100%; }
             a { color : black; }
             .nav td { font-size : 18px; padding-bottom : 20px; }
-            .preamble { border-width : 1px 0px 1px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
+            .preamble, .gigcontainer { border-width : 1px 0px 0px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
             .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #344A2F; padding-left : 10px; }
+
+            .plug { background :#eee; padding : 15px; margin-bottom : 10px; }
+            .plug p { font-style : italic; font-size : 14px; margin : 0; text-align : center }
         </style>
     </head>
     <body>
@@ -176,19 +189,19 @@ async function generate() {
         </tr>
         <tr>
             <td class="preamble">
-				<div class="section">INTRODUCTION</div>
-				<h1>This is a heading</h1>
-				<p>This is a paragraph</p>
-				<h2>What's new on the site</h2>
-				<ul>
-					<li>There are <strong>${total}</strong> shows in the gig guide this week.</li>
-                    <li>Another bullet point</li>
-				</ul>
+				<h1>${content.welcomeHeading}</h1>
+				${content.preambleContent}
+
+                <div class="plug">
+                    <p><strong>This project is made possible thanks to the financial support of our community</strong>. If you like the work we do, please consider supporting us via our <a href="https://patreon.com/sydneymusic">Patreon</a> or <a href="https://store.sydneymusic.net">merch store</a>.</p>
+                </div>
             </td>
         </tr>
         <tr>
-            <td>
+            <td class="gigcontainer">
                 <h1>Gigs This Week</h1>
+
+                <p>There are <strong>${total}</strong> shows in this week's newsletter.</p>
 
                 <p>Don't forget nearly all of these bands can be found in the <a href="https://sydneymusic.net/playlist">Gig Guide Playlist</a>.</p><p>You can also view more information about the shows and links to ticket sales via the <a href="https://sydneymusic.net/gig-guide">gig guide</a> on our website.</p>
 
