@@ -515,3 +515,19 @@ h1.special {
 .mything * {
 	color : lime !important;
 }
+
+.flirt {
+	text-decoration: wavy;
+	text-decoration-line: underline;
+	cursor: help;
+}
+
+.flirt:hover::after {
+	content : attr(data-genre);
+	display:block;
+	position : absolute;
+	background : white;
+	border : solid 2px black;
+	color : black;
+	padding : 10px;
+}

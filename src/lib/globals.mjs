@@ -1,6 +1,7 @@
 //  Not sure if ical will end up bundled on the FE, but I really don't want to write my own func for this
 //  ToDo: Investigate impact on bundle size if any and find a tiny lib?
 import ical from 'ical-generator';
+
 export const previewMode =
 	(import.meta.env ? import.meta.env : process.env).VITE_DATOCMS_SHOWDRAFTS == 'true';
 

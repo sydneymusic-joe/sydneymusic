@@ -1,4 +1,6 @@
 <script>
+	import ArtistName from '$lib/components/artist-name.svelte';
+
 	export let name = 'Performer';
 	export let gigId = '';
 	export let venue = null;
@@ -21,9 +23,9 @@
 		: ''} {isFree || isPwyc ? 'freegig' : ''} {isPwyc ? 'pwycgig' : ''}"
 >
 	<div class="">
-		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
+		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]"><ArtistName artistName={name} /></h4>
 		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">
-				W/ {performers.join(', ')}
+				W/{#each performers as p, i} <ArtistName artistName={p} />{#if i < performers.length-1},{/if}{/each}
 			</p>{/if}
 		<p class="text-sm uppercase text-neutral-500">
 			<span class="time">{time}</span>

@@ -39,6 +39,8 @@
 		"hashids": "^2.3.0",
 		"html-minifier": "^4.0.0",
 		"ical-generator": "^3.4.3",
-		"marked": "^15.0.6"
+		"marked": "^15.0.6",
+		"require": "^2.4.20",
+		"requirejs": "^2.3.7"
 	}
 }

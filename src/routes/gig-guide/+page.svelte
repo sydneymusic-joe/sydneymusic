@@ -7,7 +7,7 @@
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 	import PromotionButton from '../../lib/components/promotion-button.svelte';
 	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
-
+	
 	export let data;
 
 	let gigCounter = 0;
