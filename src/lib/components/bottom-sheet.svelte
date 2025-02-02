@@ -11,7 +11,7 @@
 		<div class="space-y-5 xl:ml-32 sm:max-w-md">
 			<div class="space-y-3">
 				<div class="font-instrumentSerif text-3xl md:text-5xl mt-8 uppercase">
-					<h1>Have your say!</h1>
+					<h1>The SydneyMusic.net survey closes tonight</h1>
 				</div>
 				<p class="text-base max-w-xl font-instrumentSans">
 					<strong>The gig guide's getting an upgrade in 2025, and we want to hear from you!</strong>
