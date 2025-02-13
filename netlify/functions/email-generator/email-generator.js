@@ -123,7 +123,7 @@ async function generate() {
                     <td style="">
                         <div class="headliner">${
 													gig.promotedName || gig.performersListJson[0]
-												} <span>` + (gig.ticketUrl ? `<a href="${gig.ticketUrl}">more info</a> &raquo;` : "") + `</span></div>`;
+												}</div>`;
 				if (gig.performersListJson != null && gig.performersListJson.length > 0) {
 					template += `<div class="performers">w/ ${gig.performersListJson.join(', ')}</div>`;
 				}
