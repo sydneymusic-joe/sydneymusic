@@ -1,8 +1,12 @@
 <script>
-	export let headline =
-		'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li';
-	export let body =
-		'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [headline]
+	 * @property {string} [body]
+	 */
+
+	/** @type {Props} */
+	let { headline = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo li', body = 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui' } = $props();
 </script>
 
 <div class="space-y-3 pl-3">

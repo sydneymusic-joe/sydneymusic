@@ -1,14 +1,27 @@
 <script>
-	export let title = '';
-	export let description =
-		'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.';
-	export let keywords =
-		'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife';
-	export let canonical;
-	export let type;
-	export let image = 'https://sydneymusic.net/social-image.png';
-	export let imageWidth = 1200;
-	export let imageHeight = 630;
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [title]
+	 * @property {string} [description]
+	 * @property {string} [keywords]
+	 * @property {any} canonical
+	 * @property {any} type
+	 * @property {string} [image]
+	 * @property {number} [imageWidth]
+	 * @property {number} [imageHeight]
+	 */
+
+	/** @type {Props} */
+	let {
+		title = $bindable(''),
+		description = 'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.',
+		keywords = 'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife',
+		canonical,
+		type,
+		image = 'https://sydneymusic.net/social-image.png',
+		imageWidth = 1200,
+		imageHeight = 630
+	} = $props();
 
 	if (title != '') {
 		title += ' | ';

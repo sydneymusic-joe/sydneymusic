@@ -28,7 +28,6 @@ const getLinks = async () => {
 	}`);
 
 	data.linkInBio.links.forEach(l => {
-		console.log(l);
 		if (l.url == '' && l.articleLink != null) {
 			l.title = l.articleLink.headline;
 			l.description = l.articleLink.excerpt;

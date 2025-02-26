@@ -1,15 +1,33 @@
 <script>
-	export let name = 'Performer';
-	export let gigId = '';
-	export let venue = null;
-	export let website = null;
-	export let calendarLink = null;
-	export let performers = [];
-	export let comment = null;
-	export let initials = null;
-	export let time = null;
-	export let isFree = false;
-	export let isPwyc = false;
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [name]
+	 * @property {string} [gigId]
+	 * @property {any} [venue]
+	 * @property {any} [website]
+	 * @property {any} [calendarLink]
+	 * @property {any} [performers]
+	 * @property {any} [comment]
+	 * @property {any} [initials]
+	 * @property {any} [time]
+	 * @property {boolean} [isFree]
+	 * @property {boolean} [isPwyc]
+	 */
+
+	/** @type {Props} */
+	let {
+		name = 'Performer',
+		gigId = '',
+		venue = null,
+		website = null,
+		calendarLink = null,
+		performers = [],
+		comment = null,
+		initials = $bindable(null),
+		time = $bindable(null),
+		isFree = false,
+		isPwyc = false
+	} = $props();
 	// Can't set a default here cause null is explicitly provided
 	if (!initials) initials = 'NB:';
 	if (!time) time = '8pm';

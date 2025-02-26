@@ -1,8 +1,7 @@
 <script>
 	import { isInlineItem } from 'datocms-structured-text-utils';
 
-	export let link;
-	export let node;
+	let { link, node } = $props();
 </script>
 
 

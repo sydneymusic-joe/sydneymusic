@@ -1,6 +1,6 @@
 <script>
 	import Button from './button-dark.svelte';
-	export let key;
+	let { key } = $props();
 </script>
 
 <div

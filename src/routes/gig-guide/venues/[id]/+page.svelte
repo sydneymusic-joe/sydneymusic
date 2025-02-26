@@ -8,13 +8,24 @@
 	} from '$lib/globals.mjs';
 	import { render } from 'datocms-structured-text-to-html-string';
 
-	//export let venueData;
-	export let data;
-	export let venueData = data.venueData;
-	export let eventsFuture = data.eventsFuture;
-	export let eventsPast = data.eventsPast;
+	
 	import Event from '$lib/components/event.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} data - export let venueData;
+	 * @property {any} [venueData]
+	 * @property {any} [eventsFuture]
+	 * @property {any} [eventsPast]
+	 */
+
+	/** @type {Props} */
+	let {
+		data,
+		venueData = data.venueData,
+		eventsFuture = data.eventsFuture,
+		eventsPast = data.eventsPast
+	} = $props();
 </script>
 
 <SeoSocial title="{venueData.venueName} venue information" />

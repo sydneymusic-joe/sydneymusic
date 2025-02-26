@@ -3,7 +3,7 @@
 	import { formatDay, formatDateLong, createCalendarLink } from '../../../lib/globals.mjs';
 	import Event from '$lib/components/event.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <SeoSocial title="Gig Guide - Latest Feed" />

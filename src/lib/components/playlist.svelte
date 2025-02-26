@@ -1,5 +1,11 @@
 <script>
-	export let showtitle = false;
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [showtitle]
+	 */
+
+	/** @type {Props} */
+	let { showtitle = false } = $props();
 </script>
 
 {#if showtitle}

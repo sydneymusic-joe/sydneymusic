@@ -1,5 +1,4 @@
 <script>
-	import { add_render_callback, get_store_value } from 'svelte/internal';
 	import { navigationFooterSecondary, navigationFooter } from '../globals.mjs';
 	import Logo from './logo.svelte';
 </script>

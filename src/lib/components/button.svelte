@@ -1,6 +1,12 @@
 <script>
-	export let label = 'Button';
-	export let href = '#';
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [label]
+	 * @property {string} [href]
+	 */
+
+	/** @type {Props} */
+	let { label = 'Button', href = '#' } = $props();
 </script>
 
 <a
