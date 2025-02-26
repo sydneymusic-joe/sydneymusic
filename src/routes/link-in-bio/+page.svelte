@@ -1,39 +1,43 @@
+<script>
+	export let data;
+
+	const primary = data.linkinbio.links.filter((l) => l.image != null);
+	const secondary = data.linkinbio.links.filter((l) => l.image == null);
+</script>
 <div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
-			<h3 class="notch-left text-lg lg:text-xl">Hello! You've found SydneyMusic.net</h3>
+			<div class="flex items-center gap-3 mt-10 max-w-[65ch]">
+				<div class="lib-logo aspect-square"></div>
+				<h3 class="text-2xl md:text-4xl font-bold p-2 basis-auto">{data.linkinbio.headline}</h3>
+			</div>
 
 			<div class="prose">
-				<p>
-					Welcome! We made this site so you don't need to rely on Instagram, Facebook or other such
-					platforms to find out about what's happening in your local community.
-				</p>
+				{@html data.linkinbio.welcomeParagraph}
 
-				<p>Here are some links to try:</p>
+				<h2>"Link in Bio"</h2>
 
-				<ul>
-					<li>
-						Our <a href="/gig-guide">gig guide</a> has every single gig in Sydney (to the best of our
-						ability), on one page, with no ads, algorithms or bullshit.
-					</li>
-					<li>
-						Our <a href="/playlist">playlist</a> is 100% hand-curated, once a week, every Wednesday:
-						1 song from every single act in the next 7 days of our gig guide. Available on Apple Music,
-						Spotify and TIDAL.
-					</li>
-					<li>
-						Our <a href="https://store.sydneymusic.net">online store</a> is where you can buy merch or
-						donate to help us keep this running.
-					</li>
-					<li>
-						We have a <a
-							href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
-							>weekly e-mail newsletter</a
-						> where we send out the week's upcoming gigs, every week, for free in your inbox.
-					</li>
-				</ul>
+				<div class="link-in-bio primary mb-5 space-y-5">
+					{#each primary as link, index}
+					<div data-idx="{index+1}" style="background-image :  url({link.image.url})">
+						<div class="p-3 w-full linkpanel">
+							<div class="link"><a href="{link.url}">{link.title}</a></div>
+							<div class="description">{@html link.description}</div>
+						</div>
+					</div>
+					{/each}
+				</div>
 
-				<p>Bookmark <a href="/">SydneyMusic.net</a> and never miss a gig again!</p>
+				<h2>Main Links</h2>
+
+				<div class="link-in-bio secondary">
+					{#each secondary as link}
+					<div>
+						<div class="title"><a href="{link.url}">{link.title}</a></div>
+						{@html link.description}
+					</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>

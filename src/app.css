@@ -515,3 +515,75 @@ h1.special {
 .mything * {
 	color : lime !important;
 }
+
+.lib-logo {
+	@apply w-24 h-24;
+	background-image : url(/canman-about@1x.png);
+	background-repeat : no-repeat;
+	background-position : center center;
+	background-size : 6.8rem;
+	border-radius : 100%;
+	border : solid 2px black;
+	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
+}
+
+.link-in-bio.primary {
+}
+
+.link-in-bio.primary > div {
+	@apply h-56 flex items-end;
+	position : relative;
+	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
+	border : solid 4px black; 
+	background-size : cover;
+	background-image : attr(data-bg);
+}
+
+.link-in-bio.primary .linkpanel {
+}
+
+.link-in-bio.primary .linkpanel .link {
+	@apply text-xl;
+	margin-bottom : 10px;
+	line-height : 120%;
+}
+
+.link-in-bio.primary .linkpanel .link a {
+	@apply text-xl;
+	color : white;
+	font-weight : bold;
+}
+
+.link-in-bio.primary .linkpanel .description {
+	@apply text-sm text-white;
+}
+
+.link-in-bio.primary > div::before {
+	width: 50px;
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	content : attr(data-idx);
+	aspect-ratio: 1;
+	background : black;
+	color : white;
+	padding-left: 5px;
+	font-weight : bold;
+	clip-path : polygon(100% 0,0% 0%,0% 100%);
+}
+
+.link-in-bio.primary > div > div {
+	background : linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.6));
+}
+
+.link-in-bio.secondary {
+	@apply grid grid-cols-2 gap-5;
+}
+
+.link-in-bio.secondary div.title::before {
+	content : '> ';
+}
+
+.link-in-bio div p {
+	margin : 0;
+}
