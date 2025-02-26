@@ -6,7 +6,7 @@
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import PromotionButton from '../lib/components/promotion-button.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <SeoSocial />

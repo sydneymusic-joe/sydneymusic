@@ -1,5 +1,11 @@
 <script>
-	export let invert = false;
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [invert]
+	 */
+
+	/** @type {Props} */
+	let { invert = false } = $props();
 </script>
 
 <svg

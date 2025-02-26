@@ -6,7 +6,7 @@
 	import Figure from '$lib/components/article/figure.svelte';
 	import { isBlock, isInlineItem, isItemLink } from 'datocms-structured-text-utils';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <SeoSocial
@@ -50,7 +50,7 @@
 				</dl>
 			</div>
 		</div>
-		<div />
+		<div></div>
 	</div>
 
 	<!-- Second section -->

@@ -1,5 +1,5 @@
 <script>
-	export let data;
+	let { data } = $props();
 
 	const primary = data.linkinbio.links.filter((l) => l.image != null);
 	const secondary = data.linkinbio.links.filter((l) => l.image == null);

@@ -8,10 +8,10 @@
 	import PromotionButton from '../../lib/components/promotion-button.svelte';
 	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
 
-	export let data;
+	let { data } = $props();
 
-	let gigCounter = 0;
-	let whichPrompt = 0;
+	let gigCounter = $state(0);
+	let whichPrompt = $state(0);
 	const increment = () => {
 		gigCounter++;
 		return '';
@@ -87,7 +87,7 @@
 			<div
 				class="toggle-bg border border-black h-5 w-9 rounded-full"
 				style="box-shadow: 1px 1px 0px 0px #000;"
-			/>
+			></div>
 		</label>
 	</div>
 

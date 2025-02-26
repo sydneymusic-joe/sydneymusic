@@ -2,7 +2,7 @@
 	import Read from '$lib/components/read.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <SeoSocial title="Reads" />

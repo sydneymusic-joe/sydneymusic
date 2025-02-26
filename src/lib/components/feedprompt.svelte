@@ -1,5 +1,11 @@
 <script>
-	export let Index = 0;
+	/**
+	 * @typedef {Object} Props
+	 * @property {number} [Index]
+	 */
+
+	/** @type {Props} */
+	let { Index = $bindable(0) } = $props();
 	let prompts = [
 		{
 			type: 'component',
@@ -123,10 +129,10 @@
 	{@html prompts[Index].content}
 {:else if prompts[Index].type === 'text'}
 	<div class="guide-divider">
-		<div />
+		<div></div>
 		<span>
 			{@html prompts[Index].content}
 		</span>
-		<div />
+		<div></div>
 	</div>
 {/if}

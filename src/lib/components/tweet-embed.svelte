@@ -1,5 +1,15 @@
 <script>
-	export let url, datetime, username, name, content, replies, likes, retweets, profileimg;
+	let {
+		url,
+		datetime,
+		username,
+		name,
+		content,
+		replies,
+		likes,
+		retweets,
+		profileimg
+	} = $props();
 </script>
 
 <div class="font-sans rounded border px-6 py-4 max-w-md">
