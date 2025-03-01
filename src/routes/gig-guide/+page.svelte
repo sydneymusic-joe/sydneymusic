@@ -99,16 +99,16 @@
 				<div class="relative">
 					<div class="mb-10 mt-4 text-xs max-[400px]:text-red" style="box-shadow : 0 10px 10px rgba(0,0,0,0.3); background-color : black">
 						<a href="/reads/sydney-music-reads-call-for-contributors" class="hover:opacity-75 transition-opacity block">
-							<div style="background-image : url(/canman-reads@1x.png); background-repeat : no-repeat; background-size : cover; height : 150px; background-position : center center"></div>
-							<div class="text-white p-4 mt-2" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
+							<div style="background-image : url(https://www.datocms-assets.com/137422/1740097844-banner-4.png?w=2000); background-repeat : no-repeat; background-size : cover; aspect-ratio : 1.91; background-position : center center"></div>
+							<!--<div class="text-white p-4 mt-2" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
 								<div class="font-instrumentSans text-lg lg:text-2xl font-bold">Want to write for SydneyMusic?</div>
 								<div class="font-instrumentSerif uppercase text-2xl lg:text-3xl">Find out how to pitch us!</div>
-							</div>
+							</div>-->
 						</a>
 
-						<div class="absolute bottom-5 right-5 grid gap-2 text-sm w-32 hidden lg:grid">
+						<div class="absolute top-5 right-5 grid gap-2 text-sm w-32 hidden lg:grid">
 							<PromotionButton
-								label="More Info &raquo;"
+								label="Read it! &raquo;"
 								href="https://sydneymusic.net/reads/sydney-music-reads-call-for-contributors"
 								variant="secondary"
 							/>
