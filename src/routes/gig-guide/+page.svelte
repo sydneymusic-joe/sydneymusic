@@ -98,7 +98,7 @@
 			<div class="sm:pr-20">
 				<div class="relative">
 					<div class="mb-10 mt-4 text-xs max-[400px]:text-red" style="box-shadow : 0 10px 10px rgba(0,0,0,0.3); background-color : black">
-						<a href="/reads/sydney-music-reads-call-for-contributors" class="hover:opacity-75 transition-opacity block">
+						<a href="/reads/buy-some-music-sydney-record-stores-february-2025" class="hover:opacity-75 transition-opacity block">
 							<div style="background-image : url(https://www.datocms-assets.com/137422/1740097844-banner-4.png?w=2000); background-repeat : no-repeat; background-size : cover; aspect-ratio : 1.91; background-position : center center"></div>
 							<!--<div class="text-white p-4 mt-2" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
 								<div class="font-instrumentSans text-lg lg:text-2xl font-bold">Want to write for SydneyMusic?</div>
@@ -109,7 +109,7 @@
 						<div class="absolute top-5 right-5 grid gap-2 text-sm w-32 hidden lg:grid">
 							<PromotionButton
 								label="Read it! &raquo;"
-								href="https://sydneymusic.net/reads/sydney-music-reads-call-for-contributors"
+								href="/reads/buy-some-music-sydney-record-stores-february-2025"
 								variant="secondary"
 							/>
 						</div>
