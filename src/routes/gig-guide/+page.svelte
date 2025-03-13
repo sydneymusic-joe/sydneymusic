@@ -98,18 +98,19 @@
 			<div class="sm:pr-20">
 				<div class="relative">
 					<div class="mb-10 mt-4 text-xs max-[400px]:text-red" style="box-shadow : 0 10px 10px rgba(0,0,0,0.3); background-color : black">
-						<a href="/reads/buy-some-music-sydney-record-stores-february-2025" class="hover:opacity-75 transition-opacity block">
-							<div style="background-image : url(https://www.datocms-assets.com/137422/1740097844-banner-4.png?w=2000); background-repeat : no-repeat; background-size : cover; aspect-ratio : 1.91; background-position : center center"></div>
-							<!--<div class="text-white p-4 mt-2" style="text-shadow : 0px 1px 1px rgba(0,0,0,1)">
-								<div class="font-instrumentSans text-lg lg:text-2xl font-bold">Want to write for SydneyMusic?</div>
-								<div class="font-instrumentSerif uppercase text-2xl lg:text-3xl">Find out how to pitch us!</div>
-							</div>-->
+						<a href="/reads/annabelle-scobie-best-spots-sydney" class="hover:opacity-75 transition-opacity block">
+							<div style="background-image : url(https://www.datocms-assets.com/137422/1741844584-scobie-cover.png?w=800&h=1000&crop=faces&fit=crop); background-repeat : no-repeat; background-size : cover; aspect-ratio : 1.91; background-position : center center">
+							</div>
+							<div class="p-4 text-white">
+								<div class="font-instrumentSans text-lg lg:text-2xl font-bold uppercase">Pick &amp; Mix</div>
+								<div class="font-instrumentSerif text-2xl lg:text-3xl">Annabelle Scobie’s fave places to rock out and chill out								</div>
+							</div>
 						</a>
 
 						<div class="absolute top-5 right-5 grid gap-2 text-sm w-32 hidden lg:grid">
 							<PromotionButton
 								label="Read it! &raquo;"
-								href="/reads/buy-some-music-sydney-record-stores-february-2025"
+								href="/reads/annabelle-scobie-best-spots-sydney"
 								variant="secondary"
 							/>
 						</div>
