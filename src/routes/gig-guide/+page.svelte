@@ -102,6 +102,25 @@
 							<div class="p-4">
 								<div class="font-instrumentSans text-lg lg:text-2xl font-bold uppercase">Super Supporter Mixtape</div>
 								<div class="font-instrumentSerif text-xl lg:text-2xl">Volume 6 out now on Patreon! <u>Get it now</u></div>
+								<div class="mt-3 font-instrumentSerif uppercase text-lg">Featuring new music by:</div>
+								<div class="font-instrumentSans text-sm lg:text-md artists">
+									<ul>
+										<li>Paste</li>
+										<li>koreancrashout</li>
+										<li>Annabelle Scobie</li>
+										<li>Jennifers Last Name</li>
+										<li>Twelve Point Buck</li>
+										<li>O.M.R & Busted Head Racket</li>
+										<li>Chloe Parché</li>
+										<li>Ant Gallery</li>
+										<li>Soma</li>
+										<li>B WISE</li>
+										<li>Jerome Blazé ft. Dylan Atlantis & Miles Nautu</li>
+										<li>calm tyson</li>
+										<li>Global Rations ft. Threatnique</li>
+										<li>RAGEFLOWER</li>
+									</ul>
+								</div>
 							</div>
 						</a>
 					</div>

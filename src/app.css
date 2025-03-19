@@ -587,3 +587,24 @@ h1.special {
 .link-in-bio div p {
 	margin : 0;
 }
+
+.artists ul li {
+	display : inline;
+	list-style-position: inside;
+}
+
+.artists ul li::after {
+	content : " • ";
+	font-weight : normal;
+}
+.artists ul li:last-child::after {
+	content : "";
+}
+
+.artists ul li:nth-child(odd) {
+	font-style : italic;
+}
+
+.artists ul li:nth-child(even) {
+	font-weight : 600;
+}
