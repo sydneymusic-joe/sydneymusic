@@ -1,18 +1,20 @@
 <script>
 	import { isInlineItem } from 'datocms-structured-text-utils';
 	import Event from '../event.svelte';
-	import { createCalendarLink } from '../../globals.mjs';
+	import { formatDay, formatDateLong, createCalendarLink } from '../../globals.mjs';
 
 	let { link, node } = $props();
-	let d = new Date(link.gigStartDate);
-	let hours = d.getHours() != 12 ? d.getHours() % 12 : 12;
-	link.date = d;
-	link.time = 
-		hours +
-		':' +
-		d.getMinutes().toString().padStart(2, '0') +
-		(d.getHours() >= 12 ? 'pm' : 'am');
-
+	let d, hours;
+	if (link.gigStartDate) {
+		d = new Date(link.gigStartDate);
+		hours = d.getHours() != 12 ? d.getHours() % 12 : 12;
+		link.date = d;
+		link.time = 
+			hours +
+			':' +
+			d.getMinutes().toString().padStart(2, '0') +
+			(d.getHours() >= 12 ? 'pm' : 'am');
+	}
 </script>
 
 
@@ -23,6 +25,10 @@
 {#if link.__typename == 'EventRecord' && isInlineItem(node)}
 <div class="flex justify-center">
 <div class="rounded-2xl shadow-xl p-5 not-prose">
+	<div class="uppercase mt-2 text-sm font-bold">
+		{formatDay(link.date)}, <span class="text-ruby">{formatDateLong(link.date)}</span>
+		{1900 + link.date.getYear()}
+	</div>
 <Event
 	name={link.promotedName}
 	gigId={link.id}
