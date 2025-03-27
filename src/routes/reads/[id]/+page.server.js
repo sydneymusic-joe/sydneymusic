@@ -92,6 +92,24 @@ export async function load({ params }) {
                 id
                 __typename
               }
+              ... on EventRecord {
+                id
+                gigStartDate
+                promotedName
+                ticketUrl
+                performersListJson
+                furtherInfo
+                furtherInfoContributorInitials
+                isFree
+                isPwyc
+                venue {
+                  venueName
+                  address
+                  suburb
+                  url,
+                  slug
+                }
+              }
               ... on EmbedVideoModelRecord {
                 id
                 __typename

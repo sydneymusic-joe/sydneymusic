@@ -1,12 +1,43 @@
 <script>
 	import { isInlineItem } from 'datocms-structured-text-utils';
+	import Event from '../event.svelte';
+	import { createCalendarLink } from '../../globals.mjs';
 
 	let { link, node } = $props();
+	let d = new Date(link.gigStartDate);
+	let hours = d.getHours() != 12 ? d.getHours() % 12 : 12;
+	link.date = d;
+	link.time = 
+		hours +
+		':' +
+		d.getMinutes().toString().padStart(2, '0') +
+		(d.getHours() >= 12 ? 'pm' : 'am');
+
 </script>
 
 
 {#if link.__typename == 'EmbedVideoModelRecord' && isInlineItem(node)}
 <div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/{link.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+{/if}
+
+{#if link.__typename == 'EventRecord' && isInlineItem(node)}
+<div class="flex justify-center">
+<div class="rounded-2xl shadow-xl p-5 not-prose">
+<Event
+	name={link.promotedName}
+	gigId={link.id}
+	performers={link.performersListJson}
+	venue={link.venue}
+	website={link.ticketUrl}
+	comment={link.furtherInfo}
+	initials={link.furtherInfoContributorInitials}
+	calendarLink={createCalendarLink(link)}
+	time={link.time}
+	isFree={link.isFree}
+	isPwyc={link.isPwyc}
+/>
+</div>
+</div>
 {/if}
 
 {#if link.__typename == 'EmbedTweetModelRecord' && isInlineItem(node)}
