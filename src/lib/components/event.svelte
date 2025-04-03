@@ -28,9 +28,32 @@
 		isFree = false,
 		isPwyc = false
 	} = $props();
+
 	// Can't set a default here cause null is explicitly provided
 	if (!initials) initials = 'NB:';
 	if (!time) time = '8pm';
+
+	// Mapping of ticketing providers to their affiliate link templates
+	const ticketingProviderTemplates = {
+		'ticketmaster.com.au': 'https://ticketmaster-au.tm7566.net/c/6123356/431533/7566?u={url}&utm_medium=affiliate',
+		'moshtix.com.au': 'https://moshtix-au.sjv.io/c/6123356/1070760/13716?u={url}&utm_medium=affiliate'
+	};
+
+	// Function to wrap URL in the appropriate affiliate link
+	function getAffiliateLink(url) {
+		for (const [provider, template] of Object.entries(ticketingProviderTemplates)) {
+			if (url.includes(provider)) {
+				const encodedUrl = encodeURIComponent(url);
+				return template.replace('{url}', encodedUrl);
+			}
+		}
+		return url; // Return the original URL if no provider matches
+	}
+
+	// Check if the website matches a ticketing provider and wrap it in an affiliate link
+	if (website) {
+		website = getAffiliateLink(website);
+	}
 </script>
 
 <div

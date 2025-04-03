@@ -91,40 +91,12 @@
 		</label>
 	</div>
 
+
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="sm:pr-20">
-				<div class="relative">
-					<div class="mb-10 mt-4 text-xs max-[400px]:text-red" style="border : solid 2px black">
-						<a href="https://www.patreon.com/posts/124667971" target="_blank" class="hover:opacity-75 transition-opacity block">
-							<div class="p-4">
-								<div class="font-instrumentSans text-lg lg:text-2xl font-bold uppercase">Super Supporter Mixtape</div>
-								<div class="font-instrumentSerif text-xl lg:text-2xl">Volume 6 out now on Patreon! <u>Get it now</u></div>
-								<div class="mt-3 font-instrumentSerif uppercase text-lg">Featuring new music by:</div>
-								<div class="font-instrumentSans text-sm lg:text-md artists">
-									<ul>
-										<li>Paste</li>
-										<li>koreancrashout</li>
-										<li>Annabelle Scobie</li>
-										<li>Jennifers Last Name</li>
-										<li>Twelve Point Buck</li>
-										<li>O.M.R & Busted Head Racket</li>
-										<li>Chloe Parché</li>
-										<li>Ant Gallery</li>
-										<li>Soma</li>
-										<li>B WISE</li>
-										<li>Jerome Blazé ft. Dylan Atlantis & Miles Nautu</li>
-										<li>calm tyson</li>
-										<li>Global Rations ft. Threatnique</li>
-										<li>RAGEFLOWER</li>
-									</ul>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
 				{#each data.gigs as month}
 					<div class="guide-month space-y-10 mb-10">
 						<h3 class="notch-left text-lg lg:text-xl">
@@ -206,6 +178,10 @@
 						All listings are at our own discretion. We will also graciously refuse any offer of door
 						spots for shows where we can buy tickets.
 					</p>
+
+					<p><strong>Affiliate disclosure:</strong><br />
+						To keep SydneyMusic.net running, we’re testing out affiliate links programs with several ticketing providers. This means we may receive a little bit of money if you click through and buy tickets to a gig via the links here in the guide. We’re not tracking you, we still don’t have ads or cookies, and nothing else about our gig guide changes – we will never base any decisions about which gigs we highlight or list on whether they’re ticketed through a certain provider or not. And we’re still committed to total transparency. We’re just getting a little back for the clicks we send to big and medium ticketing companies – and buying tickets to shows at all levels is still one of the best ways to support our whole community.</p>
+					<p>For more about how affiliate links work, or any other questions, feedback, and ideas about how to keep SydneyMusic sustainable, send us a message via <a href="mailto:contact@sydneymusic.net">e-mail</a> or <a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>, or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.</p>
 				</div>
 				<div class="space-y-3">
 					<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
