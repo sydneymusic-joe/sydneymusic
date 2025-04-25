@@ -278,16 +278,20 @@
 	}
 }
 
-body.freegigs .guide-month:not(:has(.freegig)) {
+body.freegigs .guide-month:not(:has(.freegig)),
+body.selectedonly .guide-month:not(:has(.selected)) {
 	@apply hidden;
 }
-body.freegigs .day:not(:has(.freegig)) {
+body.freegigs .day:not(:has(.freegig)),
+body.selectedonly .day:not(:has(.selected)) {
 	@apply hidden;
 }
-body.freegigs .guide-month > h3:not(:has(+ div .freegig)) {
+body.freegigs .guide-month > h3:not(:has(+ div .freegig)),
+body.selectedonly .guide-month > h3:not(:has(+ div .selected)) {
 	@apply hidden;
 }
-body.freegigs .eventcard:not(:is(.freegig)) {
+body.freegigs .eventcardhost:not(:is(.freegig)),
+body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
 }
 div > .day > div:first-child {
@@ -295,13 +299,6 @@ div > .day > div:first-child {
 }
 div > .day > div:first-child p {
 	width: 100%;
-}
-
-.eventcard {
-	margin-bottom: 20px;
-}
-.eventcard:last-child {
-	margin-bottom: 0;
 }
 
 .smn .bg-yellow-50:before {
@@ -607,4 +604,68 @@ h1.special {
 
 .artists ul li:nth-child(even) {
 	font-weight : 600;
+}
+
+.sharegig {
+	transition : opacity .1s ease-in;
+}
+
+.sharegig.selected {
+	@apply opacity-100;
+	background-image : url(/shareability-selected.svg);
+	background-size : contain;
+	background-repeat : no-repeat;
+	background-position : top left;
+}
+
+#sharesheet {
+	@apply p-3 flex flex-col items-center;
+	background : black;
+	bottom : 0;
+	position : fixed;
+	color : white;
+	width : 100%;
+	display : none;
+}
+
+#sharesheet .buttonpanel {
+	@apply flex uppercase font-bold m-5;
+}
+
+#sharesheet .buttonpanel > a {
+	@apply uppercase border-2 border-white px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby;
+}
+
+#shareprompt {
+	@apply p-5 flex flex-col items-center;
+	position : fixed;
+	bottom : 0;
+	width : 100%;
+}
+
+#shareprompt a {
+	background : black;
+	color : white;
+	border-radius : 20px;
+	@apply px-5 py-2 text-sm uppercase font-bold;
+}
+
+#shareprompt span {
+	background : red;
+	border-radius : 10px;
+	padding : 2px 5px;
+	margin-right : 6px;
+}
+
+#share-preview {
+	overflow-y : scroll;
+}
+
+body.showsheet #sharesheet {
+	display : flex;
+}
+
+body:not(.gotgigs) #shareprompt,
+body.showsheet #shareprompt {
+	display : none;
 }

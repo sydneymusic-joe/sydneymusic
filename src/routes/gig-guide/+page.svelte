@@ -89,6 +89,14 @@
 				style="box-shadow: 1px 1px 0px 0px #000;"
 			></div>
 		</label>
+		<label for="toggle-selected" class="flex items-center cursor-pointer relative">
+			<span class="mr-2">Gigs I've selected only</span>
+			<input type="checkbox" id="toggle-selected" class="sr-only" />
+			<div
+				class="toggle-bg border border-black h-5 w-9 rounded-full"
+				style="box-shadow: 1px 1px 0px 0px #000;"
+			></div>
+		</label>
 	</div>
 
 
@@ -96,7 +104,7 @@
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
-			<div class="sm:pr-20">
+			<div class="sm:pr-20 gigcolumn">
 				{#each data.gigs as month}
 					<div class="guide-month space-y-10 mb-10">
 						<h3 class="notch-left text-lg lg:text-xl">
@@ -118,21 +126,24 @@
 										</div>
 										{/if}
 									</div>
-									<div class="w-full">
+									<div class="w-full space-y-5">
 										{#each items as event}
-											<Event
-												name={event.promotedName}
-												gigId={event.id}
-												performers={event.performersListJson}
-												calendarLink={createCalendarLink(event)}
-												venue={event.venue}
-												website={event.ticketUrl}
-												comment={event.furtherInfo}
-												initials={event.furtherInfoContributorInitials}
-												time={event.time}
-												isFree={event.isFree}
-												isPwyc={event.isPwyc}
-											/>
+											<div class="eventcardhost flex flex-row gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
+												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer opacity-50 hover:opacity-100"><img class="w-6" src="/shareability-unselected.svg" /></div>
+												<Event
+													name={event.promotedName}
+													gigId={event.id}
+													performers={event.performersListJson}
+													calendarLink={createCalendarLink(event)}
+													venue={event.venue}
+													website={event.ticketUrl}
+													comment={event.furtherInfo}
+													initials={event.furtherInfoContributorInitials}
+													time={event.time}
+													isFree={event.isFree}
+													isPwyc={event.isPwyc}
+												/>
+											</div>
 											{increment()}
 										{/each}
 									</div>
