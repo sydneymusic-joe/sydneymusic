@@ -147,7 +147,7 @@
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply font-semibold uppercase leading-tight block border-b border-black w-full px-3;
+		@apply uppercase font-semibold leading-tight block border-b border-black w-full px-2;
 		position: relative;
 	}
 
@@ -280,6 +280,10 @@
 
 .eventcardhost {
 	@apply pb-5;
+}
+
+.eventcardhost:last-child {
+	@apply pb-0;
 }
 
 body.freegigs .guide-month:not(:has(.freegig)),
@@ -628,7 +632,8 @@ h1.special {
 	bottom : 20px;
 	position : fixed;
 	color : black;
-	width : 400px;
+	width : 90%;
+	max-width : 400px;
 	left : 50%;
 	transform: translateX(-50%);
 	display : none;

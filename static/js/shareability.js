@@ -89,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		return gigList;
 	}
 	document.querySelector('#shareability-copy').addEventListener('click', function(evt) {
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { y: 0.6 }
+		  });
+		evt.target.classList.add('success');
 		navigator.clipboard.writeText(getTextPrefix() + "\n\n" + getGigText());
 		evt.preventDefault();
 	});
@@ -102,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		} else {
 			alert('Sharing is not supported on this browser.');
 		}
-
+		evt.target.classList.add('success');
 
 		evt.preventDefault();
 	});

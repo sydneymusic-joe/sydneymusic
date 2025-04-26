@@ -6,9 +6,9 @@ export const previewMode =
 
 // ToDo get this from contentful?
 export const navigation = [
-	{ title: 'gigs', href: '/gig-guide' },
-	{ title: 'venues', href: '/gig-guide/venues' },
-	{ title: 'reads', href: '/reads' },
+	{ title: 'Gigs', href: '/gig-guide' },
+	{ title: 'Venues', href: '/gig-guide/venues' },
+	{ title: 'Reads', href: '/reads' },
 	{ title: 'Merch', href: 'https://store.sydneymusic.net' }
 ];
 

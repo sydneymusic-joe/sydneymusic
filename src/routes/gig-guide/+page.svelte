@@ -34,19 +34,19 @@
 			<div class="flex justify-between md:gap-6 md:w-2/3">
 				<div class="relative">
 					<div
-						class="absolute top-6 xs:top-8 left-0 w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
+						class="absolute tracking-tight top-6 xs:top-8 left-0 w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
 					style="font-family : 'Instrument Serif'">
 						<h1>You’re on</h1>
 						<h1>the Gig Guide</h1>
 					</div>
 					<div class="xs:mt-24 mt-20">
-						<p class="text-xs md:text-base max-w-40 sm:max-w-52 pt-2 xs:pt-6 lg:pt-10">
-							If it’s out there, it’s in here.
+						<p class="text-sm md:text-md max-w-40 sm:max-w-52 pt-2 xs:pt-6 lg:pt-10 italic">
+							<strong>Proudly community-first, not-for-profit and ad-free since 2022.</strong> <a href="/about" class="text-nowrap underline">Read more</a> &raquo;
 						</p>
 						<div class="max-w-44 md:max-w-56 my-5">
-							<p class="text-xs md:text-base">
-								Last updated: <span class="">{data.lastUpdated}</span>
-								<a href="/gig-guide/latest/" class="text-ruby">View latest updates</a>.
+							<p class="text-xs md:text-md">
+								Last updated: <span class="">{data.lastUpdated}</span><br />
+								<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;
 							</p>
 						</div>
 					</div>
@@ -62,8 +62,8 @@
 			<div
 				class="flex flex-col justify-end items-stretch -mt-2 sm:-mt-16 md:mt-0 md:max-w-52 md:pb-4 lg:pr-6"
 			>
-				<p class="text-xs font-bold">SydneyMusic.net is crowd-supported.</p>
-				<p class="text-xs mb-2 md:mb-4">If you've found this guide useful, please consider becoming one of our financial supporters.</p>
+				<p class="text-sm font-semibold italic mb-1">SydneyMusic.net is made possible thanks to our wonderful supporters.</p>
+				<p class="text-xs mb-2 md:mb-4">If you've found this guide useful, please consider contributing to help us cover our costs.</p>
 				<div class="flex gap-4 text-sm md:flex-col">
 					<PromotionButton
 						label="Become a supporter"
@@ -107,7 +107,7 @@
 			<div class="sm:pr-20 gigcolumn">
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
-						<h3 class="uppercase text-md lg:text-lg font-bold mb-5 font-instrumentSerif" style="border-bottom : solid 1px black">
+						<h3 class="text-md lg:text-lg font-semibold mb-5 uppercase" style="border-bottom : solid 1px black">
 							{month.label}
 						</h3>
 						<div class="grid gap-10">
@@ -159,10 +159,10 @@
 				{/each}
 			</div>
 			<!-- right col -->
-			<div class="space-y-10 mt-20 md:mt-0">
+			<div class="space-y-5 mt-20 md:mt-0">
 				<PlaylistPromo showtitle="true" />
 
-				<h3 class="notch-left text-lg lg:text-xl">about the guide</h3>
+				<h3 class="notch-left text-lg lg:text-xl">About this guide</h3>
 				<div class="prose prose-sm">
 					<p>
 						This guide is as simple as we can practically get away with. We’ll include some
