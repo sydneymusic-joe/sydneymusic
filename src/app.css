@@ -196,7 +196,7 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap;
+		@apply flex flex-wrap gap-y-3;
 		margin-bottom: -15px;
 	}
 
@@ -206,7 +206,7 @@
 
 	.filterbox label,
 	.filterbox a {
-		@apply font-semibold text-sm pr-5 text-ruby;
+		@apply font-semibold text-sm pr-5;
 	}
 
 	.filterbox a svg {
@@ -278,6 +278,10 @@
 	}
 }
 
+.eventcardhost {
+	@apply pb-5;
+}
+
 body.freegigs .guide-month:not(:has(.freegig)),
 body.selectedonly .guide-month:not(:has(.selected)) {
 	@apply hidden;
@@ -295,7 +299,7 @@ body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
 }
 div > .day > div:first-child {
-	width: 98px;
+	width: 58px;
 }
 div > .day > div:first-child p {
 	width: 100%;
@@ -620,20 +624,25 @@ h1.special {
 
 #sharesheet {
 	@apply p-3 flex flex-col items-center;
-	background : black;
-	bottom : 0;
+	background : #FFFBEB;
+	bottom : 20px;
 	position : fixed;
-	color : white;
-	width : 100%;
+	color : black;
+	width : 400px;
+	left : 50%;
+	transform: translateX(-50%);
 	display : none;
+	z-index : 101;
+	border : solid 1px black;
+	box-shadow : 3px 3px 0px black;
 }
 
 #sharesheet .buttonpanel {
-	@apply flex uppercase font-bold m-5;
+	@apply flex uppercase font-bold m-5 gap-x-2;
 }
 
 #sharesheet .buttonpanel > a {
-	@apply uppercase border-2 border-white px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby;
+	@apply uppercase border-2 border-black px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby bg-white;
 }
 
 #shareprompt {
@@ -644,17 +653,19 @@ h1.special {
 }
 
 #shareprompt a {
-	background : black;
-	color : white;
-	border-radius : 20px;
-	@apply px-5 py-2 text-sm uppercase font-bold;
+	background : #FFFBEB;
+	color : black;
+	border : black solid 1px;
+	box-shadow: 3px 3px 0px rgb(0,0,0);
+	@apply px-3 py-2 text-sm uppercase;
 }
 
 #shareprompt span {
-	background : red;
+	background : black;
+	color : white;
 	border-radius : 10px;
 	padding : 2px 5px;
-	margin-right : 6px;
+	margin-left : 6px;
 }
 
 #share-preview {
@@ -668,4 +679,9 @@ body.showsheet #sharesheet {
 body:not(.gotgigs) #shareprompt,
 body.showsheet #shareprompt {
 	display : none;
+}
+
+body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
+	content:"You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
+	@apply text-sm italic border border-black bg-yellow-50 p-2 block;
 }

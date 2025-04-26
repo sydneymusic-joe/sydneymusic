@@ -34,8 +34,8 @@
 			<div class="flex justify-between md:gap-6 md:w-2/3">
 				<div class="relative">
 					<div
-						class="absolute top-6 xs:top-8 left-0 font-semibold w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
-					>
+						class="absolute top-6 xs:top-8 left-0 w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
+					style="font-family : 'Instrument Serif'">
 						<h1>You’re on</h1>
 						<h1>the Gig Guide</h1>
 					</div>
@@ -62,8 +62,8 @@
 			<div
 				class="flex flex-col justify-end items-stretch -mt-2 sm:-mt-16 md:mt-0 md:max-w-52 md:pb-4 lg:pr-6"
 			>
-				<p class="text-xs">SydneyMusic.net is crowd-supported.</p>
-				<p class="text-xs mb-2 md:mb-4">Help us keep the Guide in peak condition!</p>
+				<p class="text-xs font-bold">SydneyMusic.net is crowd-supported.</p>
+				<p class="text-xs mb-2 md:mb-4">If you've found this guide useful, please consider becoming one of our financial supporters.</p>
 				<div class="flex gap-4 text-sm md:flex-col">
 					<PromotionButton
 						label="Become a supporter"
@@ -82,20 +82,20 @@
 
 	<div class="filterbox w-full my-5">
 		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
-			<span class="mr-2">FREE / PAY-WHAT-YOU-CAN GIGS ONLY</span>
 			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 			<div
 				class="toggle-bg border border-black h-5 w-9 rounded-full"
 				style="box-shadow: 1px 1px 0px 0px #000;"
 			></div>
+			<span class="ml-2">Free / pay-what-you-can gigs only</span>
 		</label>
 		<label for="toggle-selected" class="flex items-center cursor-pointer relative">
-			<span class="mr-2">Gigs I've selected only</span>
 			<input type="checkbox" id="toggle-selected" class="sr-only" />
 			<div
 				class="toggle-bg border border-black h-5 w-9 rounded-full"
 				style="box-shadow: 1px 1px 0px 0px #000;"
 			></div>
+			<span class="ml-2">Gigs I've selected only</span>
 		</label>
 	</div>
 
@@ -106,15 +106,15 @@
 			<!-- left col -->
 			<div class="sm:pr-20 gigcolumn">
 				{#each data.gigs as month}
-					<div class="guide-month space-y-10 mb-10">
-						<h3 class="notch-left text-lg lg:text-xl">
+					<div class="guide-month mb-10">
+						<h3 class="uppercase text-md lg:text-lg font-bold mb-5 font-instrumentSerif" style="border-bottom : solid 1px black">
 							{month.label}
 						</h3>
 						<div class="grid gap-10">
 							{#each month.items as { label, items }}
 								<div class="relative day flex items-start">
 									<div
-										class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+										class="sticky top-10 grid font-bold m-[-2px]"
 									>
 										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
 											{label.split(':')[1]}
@@ -126,10 +126,10 @@
 										</div>
 										{/if}
 									</div>
-									<div class="w-full space-y-5">
+									<div class="w-full">
 										{#each items as event}
 											<div class="eventcardhost flex flex-row gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer opacity-50 hover:opacity-100"><img class="w-6" src="/shareability-unselected.svg" /></div>
+												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer opacity-50 hover:opacity-100"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
 												<Event
 													name={event.promotedName}
 													gigId={event.id}

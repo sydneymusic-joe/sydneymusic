@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('share-preview').innerText = getTextPrefix() + "\n\n" + getGigText();
 	};
 
-	document.querySelector('#shareprompt').addEventListener('click', function(evt) {
+	document.querySelector('#shareprompt a').addEventListener('click', function(evt) {
 		document.body.classList.add('showsheet');
 		evt.preventDefault();
 	});
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.getElementById('shareability-close').addEventListener('click', function(evt) {
 		document.body.classList.remove('showsheet');
+		evt.preventDefault();
 	});
 
 	let btns = document.querySelectorAll('.sharegig');
