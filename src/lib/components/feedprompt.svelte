@@ -11,7 +11,7 @@
 			type: 'component',
 			content: `
 				<div
-					class="w-full border-y border-black border-dashed pb-8 pt-5 flex items-center justify-center gap-4 sm:gap-8"
+					class="storeplug w-full border-y border-black border-dashed pb-8 pt-5 flex items-center justify-center gap-4 sm:gap-8"
 				>
 					<a href="https://store.sydneymusic.net" class="max-w-24 sm:max-w-28" style="border : solid 1px black; box-shadow: 3px 3px 0px 0px #000;">
 					<picture>
@@ -60,7 +60,7 @@
 		{
 			type: 'component',
 			content: `
-				<div class="w-full border-y border-black border-dashed py-7 flex items-center justify-center gap-2 sm:gap-4">
+				<div class="storeplug w-full border-y border-black border-dashed py-7 flex items-center justify-center gap-2 sm:gap-4">
 					<a href="https://store.sydneymusic.net" class="max-w-36 sm:max-w-44" style="box-shadow: 3px 3px 0px 0px #000;">
 					<picture>
 						<img

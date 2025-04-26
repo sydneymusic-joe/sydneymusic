@@ -323,6 +323,11 @@ div > .day > div:first-child p {
 
 /* feed divider experiment */
 
+body.selectedonly .day:not(:has(.selected)) ~ .guide-divider,
+body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
+	display : none;
+}
+
 .guide-divider {
 	@apply relative flex items-center;
 }
@@ -428,8 +433,7 @@ div > .day > div:first-child p {
 	transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
 
-header nav a span {
-	@apply hidden sm:inline-block;
+header nav a span, span.new {
 	vertical-align: middle;
 	margin-top: -2px;
 	background: yellow;

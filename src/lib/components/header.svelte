@@ -26,9 +26,6 @@
 						class:border-ruby={$page.url.pathname === item.href}
 					>
 						{item.title}
-						{#if item.title == 'Merch'}
-						<span>New!</span>
-						{/if}
 					</a>
 				{/each}
 			</div>

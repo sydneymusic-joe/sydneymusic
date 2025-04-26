@@ -28,9 +28,9 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mt-5 mx-auto overflow-x-clip">
-	<div class="pb-7 mb-7 border-b border-dashed border-black">
-		<div class="flex flex-col md:flex-row justify-between sm:px-4 md:px-8">
+<div class="max-w-5xl px-5 -mt-5 mx-auto overflow-x-clip">
+	<div class="pb-7 mb-5 border-b border-dashed border-black">
+		<div class="flex flex-col md:flex-row justify-between">
 			<div class="flex justify-between md:gap-6 md:w-2/3">
 				<div class="relative">
 					<div
@@ -80,7 +80,8 @@
 		</div>
 	</div>
 
-	<div class="filterbox w-full my-5">
+	<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter by:</h4>
+	<div class="filterbox w-full mb-5">
 		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
 			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 			<div
@@ -95,7 +96,7 @@
 				class="toggle-bg border border-black h-5 w-9 rounded-full"
 				style="box-shadow: 1px 1px 0px 0px #000;"
 			></div>
-			<span class="ml-2">Gigs I've selected only</span>
+			<span class="ml-2">Gigs I've selected only <span class="new">NEW!</span></span>
 		</label>
 	</div>
 
