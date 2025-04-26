@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (navigator.share) {
 			navigator.share({
 				title : getTextPrefix(),
-				text: getGigText(),
+				text: getGigText() + "Find more gigs at sydneymusic.net",
 			}).catch((error) => console.error('Error sharing:', error));
 		} else {
 			alert('Sharing is not supported on this browser.');
