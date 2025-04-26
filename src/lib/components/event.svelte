@@ -59,18 +59,17 @@
 <div
 	class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1
 		? 'smn'
-		: ''} {isFree || isPwyc ? 'freegig' : ''} {isPwyc ? 'pwycgig' : ''}"
->
+		: ''}">
 	<div class="">
-		<h4 class="text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
-		{#if performers && performers.length}<p class="uppercase text-sm font-semibold">
+		<h4 class="headliner text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
+		{#if performers && performers.length}<p class="supports uppercase text-sm font-semibold">
 				W/ {performers.join(', ')}
 			</p>{/if}
 		<p class="text-sm uppercase text-neutral-500">
 			<span class="time">{time}</span>
 			{#if venue}<a
 					href="/gig-guide/venues/{venue.slug}"
-					class="hover:underline hover:text-black transition-colors duration-100 ease-in-out"
+					class="venue hover:underline hover:text-black transition-colors duration-100 ease-in-out"
 					>{venue.venueName}</a
 				>{/if}
 		</p>
@@ -78,7 +77,7 @@
 	{#if website || calendarLink}
 		<div class={`flex items-center space-x-3 sm:space-x-5`}>
 			{#if website}
-				<a href={website} target="_blank" class="flex items-center space-x-1 text-sm group">
+				<a href={website} target="_blank" class="moreinfo flex items-center space-x-1 text-sm group">
 					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path
 							class="group-hover:text-ruby"
@@ -96,7 +95,7 @@
 			{#if calendarLink}
 				<a
 					href={calendarLink}
-					class="flex items-center space-x-1 text-sm group plausible-event-name=Add+To+Calendar plausible-event-gigid={gigId}"
+					class="addtocalendar flex items-center space-x-1 text-sm group plausible-event-name=Add+To+Calendar plausible-event-gigid={gigId}"
 				>
 					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path

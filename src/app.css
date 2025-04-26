@@ -147,7 +147,7 @@
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply font-semibold uppercase leading-tight block border-b border-black w-full px-3;
+		@apply uppercase font-semibold leading-tight block border-b border-black w-full px-2;
 		position: relative;
 	}
 
@@ -196,7 +196,7 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap;
+		@apply flex flex-wrap gap-y-3;
 		margin-bottom: -15px;
 	}
 
@@ -206,7 +206,7 @@
 
 	.filterbox label,
 	.filterbox a {
-		@apply font-semibold text-sm pr-5 text-ruby;
+		@apply font-semibold text-sm pr-5;
 	}
 
 	.filterbox a svg {
@@ -278,30 +278,35 @@
 	}
 }
 
-body.freegigs .guide-month:not(:has(.freegig)) {
+.eventcardhost {
+	@apply pb-5;
+}
+
+.eventcardhost:last-child {
+	@apply pb-0;
+}
+
+body.freegigs .guide-month:not(:has(.freegig)),
+body.selectedonly .guide-month:not(:has(.selected)) {
 	@apply hidden;
 }
-body.freegigs .day:not(:has(.freegig)) {
+body.freegigs .day:not(:has(.freegig)),
+body.selectedonly .day:not(:has(.selected)) {
 	@apply hidden;
 }
-body.freegigs .guide-month > h3:not(:has(+ div .freegig)) {
+body.freegigs .guide-month > h3:not(:has(+ div .freegig)),
+body.selectedonly .guide-month > h3:not(:has(+ div .selected)) {
 	@apply hidden;
 }
-body.freegigs .eventcard:not(:is(.freegig)) {
+body.freegigs .eventcardhost:not(:is(.freegig)),
+body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
 }
 div > .day > div:first-child {
-	width: 98px;
+	width: 58px;
 }
 div > .day > div:first-child p {
 	width: 100%;
-}
-
-.eventcard {
-	margin-bottom: 20px;
-}
-.eventcard:last-child {
-	margin-bottom: 0;
 }
 
 .smn .bg-yellow-50:before {
@@ -607,4 +612,81 @@ h1.special {
 
 .artists ul li:nth-child(even) {
 	font-weight : 600;
+}
+
+.sharegig {
+	transition : opacity .1s ease-in;
+}
+
+.sharegig.selected {
+	@apply opacity-100;
+	background-image : url(/shareability-selected.svg);
+	background-size : contain;
+	background-repeat : no-repeat;
+	background-position : top left;
+}
+
+#sharesheet {
+	@apply p-3 flex flex-col items-center;
+	background : #FFFBEB;
+	bottom : 20px;
+	position : fixed;
+	color : black;
+	width : 90%;
+	max-width : 400px;
+	left : 50%;
+	transform: translateX(-50%);
+	display : none;
+	z-index : 101;
+	border : solid 1px black;
+	box-shadow : 3px 3px 0px black;
+}
+
+#sharesheet .buttonpanel {
+	@apply flex uppercase font-bold m-5 gap-x-2;
+}
+
+#sharesheet .buttonpanel > a {
+	@apply uppercase border-2 border-black px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby bg-white;
+}
+
+#shareprompt {
+	@apply p-5 flex flex-col items-center;
+	position : fixed;
+	bottom : 0;
+	width : 100%;
+}
+
+#shareprompt a {
+	background : #FFFBEB;
+	color : black;
+	border : black solid 1px;
+	box-shadow: 3px 3px 0px rgb(0,0,0);
+	@apply px-3 py-2 text-sm uppercase;
+}
+
+#shareprompt span {
+	background : black;
+	color : white;
+	border-radius : 10px;
+	padding : 2px 5px;
+	margin-left : 6px;
+}
+
+#share-preview {
+	overflow-y : scroll;
+}
+
+body.showsheet #sharesheet {
+	display : flex;
+}
+
+body:not(.gotgigs) #shareprompt,
+body.showsheet #shareprompt {
+	display : none;
+}
+
+body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
+	content:"You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
+	@apply text-sm italic border border-black bg-yellow-50 p-2 block;
 }
