@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		let gigList = "";
 		const datesDone = [];
+		const chk = document.getElementById('share-links');
 
 		arr.forEach(g => {
 			const d = new Date(g.gigStartDate);
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			gigList += d.toLocaleTimeString([], {hour12: true, hour: '2-digit', minute:'2-digit'})
 + `—${g.headliner} ${g.supports} at ${g.venueName}
-` + (g.url != null ? `More info ⇢ ${g.url}
+` + (chk.checked && g.url != null ? `More info ⇢ ${g.url}
 ` : "") + `
 `;
 		});
@@ -97,6 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		evt.target.classList.add('success');
 		navigator.clipboard.writeText(getTextPrefix() + "\n\n" + getGigText());
 		evt.preventDefault();
+	});
+
+	document.getElementById('share-links').addEventListener('click', function(evt) {
+		updateShareSheet();
 	});
 
 	document.querySelector('#shareability-share').addEventListener('click', function(evt) {
