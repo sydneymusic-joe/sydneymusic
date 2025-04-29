@@ -9,7 +9,8 @@ export const navigation = [
 	{ title: 'Gigs', href: '/gig-guide' },
 	{ title: 'Venues', href: '/gig-guide/venues' },
 	{ title: 'Reads', href: '/reads' },
-	{ title: 'Merch', href: 'https://store.sydneymusic.net' }
+	{ title: 'Merch', href: 'https://store.sydneymusic.net' },
+	{ title: 'Support Us', href:'/support' }
 ];
 
 export const navigationFooter = [
@@ -31,22 +32,22 @@ export const navigationFooterSecondary = [
 //ToDo: Get config from source of truth in datoCMS
 export const bottomSheetConfig = [
 	{
-		key: 'merchDropHomepage',
+		key: 'donorPromoHomepage',
 		route: '/',
 		delay: 5000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'merchDropGigGuide',
+		key: 'donorPromoGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'merchDropVenues',
+		key: 'donorPromoVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	}
 ];
 

@@ -230,4 +230,3 @@
 		<button id="shareability-close" class="plausible-event-name=Share+Sheet+Close">Close</button>
 	</div>
 </div>
-
