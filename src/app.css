@@ -449,6 +449,16 @@ header nav .navbar a.support {
 	@apply bg-black text-white
 }
 
+header nav a span, span.new {
+	vertical-align: middle;
+	margin-top: -2px;
+	background: yellow;
+	line-height: 100%;
+	font-size: 11px;
+	border-radius: 3px;
+	padding: 2px;
+}
+
 /* venue page stuff */
 .blurb p {
 	@apply m-0 mb-2;
