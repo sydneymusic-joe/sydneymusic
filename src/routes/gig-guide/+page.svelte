@@ -38,7 +38,8 @@
 			<p class="italic">Proudly serving Sydney since 2022</p>
 			<p class="text-xs md:text-md">
 				Last updated: <span class="">{data.lastUpdated}</span><br />
-				<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;
+				<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
+				<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
 			</p>
 		</div>
 	</div>

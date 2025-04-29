@@ -545,7 +545,7 @@ h1.special {
 }
 
 .cta a {
-	@apply flex justify-self-start px-3 md:px-6 py-2 transition-all duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
+	@apply flex font-semibold justify-self-start px-3 md:px-6 py-2 transition-opacity duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
 	border : solid 1px black;
 }
 
