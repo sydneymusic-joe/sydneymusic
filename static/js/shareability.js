@@ -49,9 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('share-preview').innerText = getTextPrefix() + "\n\n" + getGigText();
 	};
 
-	document.querySelector('#shareprompt a').addEventListener('click', function(evt) {
+	document.querySelector('#shareprompt button').addEventListener('click', function(evt) {
 		document.body.classList.add('showsheet');
-		evt.preventDefault();
 	});
 
 	const getGigText = () => {
@@ -97,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		  });
 		evt.target.classList.add('success');
 		navigator.clipboard.writeText(getTextPrefix() + "\n\n" + getGigText());
-		evt.preventDefault();
 	});
 
 	document.getElementById('share-links').addEventListener('click', function(evt) {
@@ -114,13 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('Sharing is not supported on this browser.');
 		}
 		evt.target.classList.add('success');
-
-		evt.preventDefault();
 	});
 
 	document.getElementById('shareability-close').addEventListener('click', function(evt) {
 		document.body.classList.remove('showsheet');
-		evt.preventDefault();
 	});
 
 	let btns = document.querySelectorAll('.sharegig');

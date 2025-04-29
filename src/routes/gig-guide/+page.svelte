@@ -203,3 +203,31 @@
 		</div>
 	</div>
 </div>
+
+
+<div id="shareprompt" class="hidden">
+	<button class="plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+</div>
+
+<div id="sharesheet" class="space-y-3">
+	<div class="title text-lg font-bold">You've selected <span></span> to share!</div>
+	<div class="hint text-sm italic">Here's a preview of your list:</div>
+
+	<div id="share-preview" class="bg-white text-xs max-h-[200px] max-w-[360px] m-y-5 text-black p-2 break-all" style="border : 1px dashed">
+		Preview text here
+	</div>
+
+	<div class="text-xs">
+		<div class="flex gap-x-1 items-center">
+			<input type="checkbox" id="share-links" checked />
+			<label for="share-links">Include links</label>
+		</div>
+	</div>
+
+	<div class="flex buttonpanel">
+		<button id="shareability-copy" class="plausible-event-name=Share+Sheet+Copy">Copy</button>
+		<button id="shareability-share" class="plausible-event-name=Share+Sheet+Share">Share</button>
+		<button id="shareability-close" class="plausible-event-name=Share+Sheet+Close">Close</button>
+	</div>
+</div>
+

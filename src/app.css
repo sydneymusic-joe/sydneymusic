@@ -650,7 +650,7 @@ h1.special {
 	@apply flex uppercase font-bold m-5 gap-x-2;
 }
 
-#sharesheet .buttonpanel > a {
+#sharesheet .buttonpanel > button {
 	@apply uppercase border-2 border-black px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby bg-white;
 }
 
@@ -662,7 +662,7 @@ h1.special {
 	z-index : 101;
 }
 
-#shareprompt a {
+#shareprompt button {
 	background : #FFFBEB;
 	color : black;
 	border : black solid 1px;
