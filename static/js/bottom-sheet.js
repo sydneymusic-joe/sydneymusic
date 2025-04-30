@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const closeSheet = (evt) => {
 			sheet.classList.remove('show');
 
+			if (!evt) return;
+
 			if (config.localStorageKey && evt.srcElement.target === '_blank') {
 				localStorage.setItem(config.localStorageKey, 'true');
 			}

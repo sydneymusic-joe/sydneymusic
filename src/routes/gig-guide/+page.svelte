@@ -94,7 +94,7 @@
 									<div class="w-full">
 										{#each items as event}
 											<div class="eventcardhost flex flex-row gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer opacity-50 hover:opacity-100"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
+												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
 												<Event
 													name={event.promotedName}
 													gigId={event.id}

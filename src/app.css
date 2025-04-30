@@ -309,6 +309,22 @@ div > .day > div:first-child p {
 	width: 100%;
 }
 
+.eventcardhost .headliner {
+	text-decoration-line:underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 1px;
+	text-decoration-color: #aaaaaa;
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 2px;
+
+	cursor : pointer;
+}
+
+.eventcardhost .headliner:hover {
+	text-decoration-style : solid;
+	text-decoration-color : black;
+}
+
 .smn .bg-yellow-50:before {
 	position: absolute;
 	content: '';
@@ -654,12 +670,41 @@ h1.special {
 	font-weight : 600;
 }
 
+.eventcardhost .headliner {
+	text-decoration-line:underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 1px;
+	text-decoration-color: #aaaaaa;
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 2px;
+
+	cursor : pointer;
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.eventcardhost:hover:has(.sharegig:hover) .headliner,
+	.eventcardhost .headliner:hover {
+		text-decoration-style : solid;
+		text-decoration-color : black;
+	}
+
+	.eventcardhost:hover:has(.headliner:hover) .sharegig,
+	.sharegig:hover {
+		opacity : 1;
+	}
+}
+
 .sharegig {
-	transition : opacity .1s ease-in;
+	opacity : .5;
+}
+
+.eventcardhost:has(.sharegig.selected) .headliner {
+	text-decoration-style : solid;
+	text-decoration-color : black;
 }
 
 .sharegig.selected {
-	@apply opacity-100;
+	opacity : 1;
 	background-image : url(/shareability-selected.svg);
 	background-size : contain;
 	background-repeat : no-repeat;

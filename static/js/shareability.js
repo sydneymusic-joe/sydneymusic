@@ -125,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			this.classList.toggle("selected", !this.classList.contains('selected'));
 			updateShareSheet();
 		});
+		sharegig.parentElement.querySelector('.headliner').addEventListener('click', function(evt) {
+			sharegig.click();
+		});
 	});
 
 	getLocalStorage();
