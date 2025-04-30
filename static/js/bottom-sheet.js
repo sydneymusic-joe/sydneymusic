@@ -3,19 +3,19 @@ const bottomSheetConfig = [
 	{
 		key: 'donorPromoHomepage',
 		route: '/',
-		delay: 5000,
+		delay: 1000,
 		localStorageKey: 'donorPromo'
 	},
 	{
 		key: 'donorPromoGigGuide',
 		route: '/gig-guide',
-		delay: 10000,
+		delay: 5000,
 		localStorageKey: 'donorPromo'
 	},
 	{
 		key: 'donorPromoVenues',
 		route: '/gig-guide/venues',
-		delay: 5000,
+		delay: 3000,
 		localStorageKey: 'donorPromo'
 	}
 ];
