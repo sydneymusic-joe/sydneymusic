@@ -28,55 +28,19 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 -mt-5 mx-auto overflow-x-clip">
-	<div class="pb-7 mb-5 border-b border-dashed border-black">
-		<div class="flex flex-col md:flex-row justify-between">
-			<div class="flex justify-between md:gap-6 md:w-2/3">
-				<div class="relative">
-					<div
-						class="absolute tracking-tight top-6 xs:top-8 left-0 w-72 text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl"
-					style="font-family : 'Instrument Serif'">
-						<h1>You’re on</h1>
-						<h1>the Gig Guide</h1>
-					</div>
-					<div class="xs:mt-24 mt-20">
-						<p class="text-sm md:text-md max-w-40 sm:max-w-52 pt-2 xs:pt-6 lg:pt-10 italic">
-							<strong>Proudly community-first, not-for-profit and ad-free since 2022.</strong> <a href="/about" class="text-nowrap underline">Read more</a> &raquo;
-						</p>
-						<div class="max-w-44 md:max-w-56 my-5">
-							<p class="text-xs md:text-md">
-								Last updated: <span class="">{data.lastUpdated}</span><br />
-								<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;
-							</p>
-						</div>
-					</div>
-				</div>
-				<picture class="w-[60%] xs:w-[50%] sm:w-[48%] md:[w-60%] -mr-8 xs:-mr-3 sm:mr-0">
-					<img
-						src="/hero-character.png"
-						alt="SydneyMusic.net mascot Can Man loves a gig"
-						class="w-full"
-					/>
-				</picture>
-			</div>
-			<div
-				class="flex flex-col justify-end items-stretch -mt-2 sm:-mt-16 md:mt-0 md:max-w-52 md:pb-4 lg:pr-6"
-			>
-				<p class="text-sm font-semibold italic mb-1">SydneyMusic.net is made possible thanks to our wonderful supporters.</p>
-				<p class="text-xs mb-2 md:mb-4">If you've found this guide useful, please consider contributing to help us cover our costs.</p>
-				<div class="flex gap-4 text-sm md:flex-col">
-					<PromotionButton
-						label="Become a supporter"
-						href="https://www.patreon.com/sydneymusic"
-						variant="primary"
-					/>
-					<PromotionButton
-						label="make a donation"
-						href="https://store.sydneymusic.net/#jVJaYW"
-						variant="secondary"
-					/>
-				</div>
-			</div>
+<div class="max-w-5xl px-5 mx-auto overflow-x-clip">
+	<div class="pb-7 mb-5 border-b border-solid border-black text-center space-y-3">
+		<div
+			class="tracking-tight text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl" style="font-family : 'Instrument Serif'">
+			<h1>You’re on the Gig Guide.</h1>
+		</div>
+		<div class="space-y-2">
+			<p class="italic">Proudly serving Sydney since 2022</p>
+			<p class="text-xs md:text-md">
+				Last updated: <span class="">{data.lastUpdated}</span><br />
+				<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
+				<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
+			</p>
 		</div>
 	</div>
 
@@ -230,4 +194,3 @@
 		<button id="shareability-close" class="plausible-event-name=Share+Sheet+Close">Close</button>
 	</div>
 </div>
-

@@ -1,22 +1,22 @@
 //ToDo: Generate js at build from source of truth config in datoCMS
 const bottomSheetConfig = [
 	{
-		key: 'merchDropHomepage',
+		key: 'donorPromoHomepage',
 		route: '/',
 		delay: 5000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'merchDropGigGuide',
+		key: 'donorPromoGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'merchDropVenues',
+		key: 'donorPromoVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'surveyTaken'
+		localStorageKey: 'donorPromo'
 	}
 ];
 document.addEventListener('DOMContentLoaded', () => {

@@ -433,6 +433,22 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 	transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
 
+header nav .navbar {
+	@apply flex justify-center font-semibold w-full gap-x-3;
+}
+
+header nav .navbar a {
+	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;	
+}
+
+header nav .navbar a.current {
+	@apply border-b-2 border-ruby
+}
+
+header nav .navbar a.support {
+	@apply bg-black text-white
+}
+
 header nav a span, span.new {
 	vertical-align: middle;
 	margin-top: -2px;
@@ -511,14 +527,34 @@ h1.special {
 }
 
 .bottom-sheet {
+	@apply fixed bottom-0 inset-x-0 border-black bg-yellow-50 p-6;
+	z-index : 102;
 	transform: translateY(100%);
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
+	border-top : solid 1px black;
 }
 
 .bottom-sheet.show {
 	transform: translateY(0);
 	pointer-events: auto; /* Enable interaction when shown */
+}
+
+.cta h3 {
+	@apply font-bold;
+}
+
+.cta a {
+	@apply flex font-semibold justify-self-start px-3 md:px-6 py-2 transition-opacity duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
+	border : solid 1px black;
+}
+
+.cta.support div a {
+	@apply mt-4;
+}
+
+.cta a.primary {
+	@apply bg-black text-[#ffffff] hover:bg-[#ffffff] hover:text-[#000000];
 }
 
 .mything * {

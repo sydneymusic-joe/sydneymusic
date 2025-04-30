@@ -5,34 +5,29 @@
 
 <div
 	id="{key}-sheet"
-	class="bottom-sheet fixed bottom-0 inset-x-0 bg-backgroundDark text-white p-6 z-50 rounded-t-3xl"
+	class="bottom-sheet"
 >
-	<div class="flex w-full gap-4 items-center">
-		<div class="space-y-5 xl:ml-32 sm:max-w-md">
+	<div class="flex max-w-5xl m-auto gap-4 items-end">
+		<div class="space-y-5 basis-full md:basis-2/3">
 			<div class="space-y-3">
-				<div class="font-instrumentSerif text-3xl md:text-5xl mt-8 uppercase">
-					<h1>The SydneyMusic.net survey closes tonight</h1>
+				<div class="text-lg font-semibold md:text-2xl">
+					<h1>SydneyMusic.net needs your support.</h1>
+					<h1>Donate now to help keep us running.</h1>
 				</div>
-				<p class="text-base max-w-xl font-instrumentSans">
-					<strong>The gig guide's getting an upgrade in 2025, and we want to hear from you!</strong>
+				<p class="text-sm md:text-base">
+					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
 				</p>
-				<p class="text-base max-w-xl font-instrumentSans">
-					Be part of our first-ever reader survey for an opportunity to share your thoughts and feedback.
+				<p class="text-sm md:text-base">
+					Make a donation today to help us keep the site running, support the scene, and get more people to shows.
 				</p>
 			</div>
-			<div class="flex flex-col sm:flex-row-reverse gap-4 w-full justify-end">
-				<Button label="Take the survey [3-5 mins]" href="https://sydneymusic.net/survey" target="_blank" variant="primary" />
+			<div class="cta flex flex-row gap-3 w-full">
+				<Button label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
+				<Button label="More info" href="/support" target="_blank" variant="secondary" />
 			</div>
 		</div>
-		<div class="relative items-end lg:mr-12 mr-2 hidden sm:flex mt-auto">
-			<a href="https://sydneymusic.net/survey" target="_blank">
-			<picture class="w-full">
-				<img
-					src="/dancer.png"
-					alt="SydneyMusic.net merch dancer"
-					class="w-full h-full object-contain max-w-md max-h-96 rounded-lg"
-				/>
-			</picture></a>
+		<div class="hidden md:basis-1/3 md:block">
+			<img src="/dancer-black.png" />
 		</div>
 	</div>
 	<button
@@ -45,7 +40,7 @@
 			class="h-6 w-6"
 			fill="none"
 			viewBox="0 0 24 24"
-			stroke="currentColor"
+			stroke="#000000"
 			stroke-width="2"
 		>
 			<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
