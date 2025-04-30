@@ -11,7 +11,7 @@
 </script>
 
 <a
-	{href} target="_blank" class="{variant}"
+	{href} target="_blank" class="{variant} plausible-event-name=Support+CTA"
 >
 	{label} &raquo;
 </a>
