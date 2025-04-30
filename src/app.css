@@ -532,7 +532,7 @@ h1.special {
 	transform: translateY(100%);
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	border-top : solid 2px black;
+	border-top : solid 1px black;
 }
 
 .bottom-sheet.show {

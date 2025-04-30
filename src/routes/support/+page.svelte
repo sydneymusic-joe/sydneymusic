@@ -2,13 +2,15 @@
 	import Button from '../../lib/components/button-dark.svelte';
 </script>
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
-	<div class="flex flex-row">
-		<div class="basis-1/2 md:basis-3/4">
+	<div class="grid grid-flow-row md:grid-flow-col grid-rows-2">
+		<div>
 			<h1 class="text-2xl lg:text-3xl font-semibold">SydneyMusic.net needs your support.</h1>
 			<h1 class="text-2xl lg:text-3xl font-semibold">Help keep us running, support the scene, and get more people out to shows.</h1>
+		</div>
+		<div class="self-start">
 			<p class="mt-2 md:mt-4 lg:mt-8">Sydneymusic.net is a not-for-profit initiative, built and maintained by a small team of volunteers and music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.</p>
 		</div>
-		<div class="basis-1/2 md:basis-1/4"><img src="/hero-character.png" class="w-full" /></div>
+		<div class="md:row-span-2"><img src="/hero-character.png" class="m-auto w-1/2 md:w-1/2" /></div>
 	</div>
 
 	<div class="cta support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
