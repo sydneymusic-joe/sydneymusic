@@ -20,7 +20,7 @@
 			<div class="navbar">
 				{#each navigation as item}
 					<a
-						href={item.href}
+						href={item.href} class="plausible-event-name=Top+Nav"
 						class:support={navigation.indexOf(item) === navigation.length - 1}
 						class:current={$page.url.pathname === item.href}
 					>

@@ -40,7 +40,7 @@
 				<div class="space-y-3">
 					<h2 class="font-bold text-lg tracking-wide">Navigation</h2>
 					{#each navigationFooter as item}
-						<a href={item.href} class="block hover:border-white text-sm hover:underline">
+						<a href={item.href} class="plausible-event-name=Footer+Nav block hover:border-white text-sm hover:underline">
 							{item.title}
 						</a>
 					{/each}
@@ -49,7 +49,7 @@
 				<div class="space-y-3">
 					<h2 class="font-bold text-lg tracking-wide">&nbsp;</h2>
 					{#each navigationFooterSecondary as item}
-						<a href={item.href} class="block hover:border-white text-sm hover:underline">
+						<a href={item.href} class="plausible-event-name=Footer+Nav block hover:border-white text-sm hover:underline">
 							{item.title}
 						</a>
 					{/each}
