@@ -1,6 +1,8 @@
 <script>
 	import Button from '../../lib/components/button-dark.svelte';
+	import SeoSocial from '$lib/components/seo-social.svelte';
 </script>
+<SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
 	<div class="grid grid-flow-row md:grid-flow-col grid-rows-2">
 		<div>
@@ -16,7 +18,7 @@
 	<div class="cta support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
 		<div>
 			<h3>Make a donation</h3>
-			<p>Make a one off or recurring donation today. Any small amount helps keeps us running.</p>
+			<p>Make a one off or recurring donation today. Any small amount helps keep us running.</p>
 			<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
 		</div>
 		<div>
