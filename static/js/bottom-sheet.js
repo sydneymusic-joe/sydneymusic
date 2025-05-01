@@ -9,7 +9,7 @@ const bottomSheetConfig = [
 	{
 		key: 'donorPromoGigGuide',
 		route: '/gig-guide',
-		delay: 5000,
+		delay: 10000,
 		localStorageKey: 'donorPromo'
 	},
 	{
