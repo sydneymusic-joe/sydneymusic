@@ -35,3 +35,8 @@
   from = "/survey"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSe09CMW4ZGNdKuPt1O8nG0iWFj1St_6DNKvDqS7Rm4WqgjdOg/viewform"
   status = 301
+
+[[redirects]]
+  from = "/discussion"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSeqvBq381rDhQFPHIDQIR7DCBKrAqKFFesZfU2PIBgQcwa9rg/viewform"
+  status = 301
