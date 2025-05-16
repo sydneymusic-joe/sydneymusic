@@ -196,8 +196,13 @@
 	}
 
 	.filterbox {
-		@apply flex flex-wrap gap-y-3;
+		@apply flex flex-wrap gap-x-2;
 		margin-bottom: -15px;
+	}
+
+	.filterbox label {
+		border : solid 1px black;
+		padding : 5px 10px;
 	}
 
 	.filterbox > *:hover {
@@ -206,51 +211,14 @@
 
 	.filterbox label,
 	.filterbox a {
-		@apply font-semibold text-sm pr-5;
+		@apply text-sm;
 	}
 
-	.filterbox a svg {
-		@apply w-11;
-	}
-	.filterbox a:hover svg {
-		animation: broombroom 2s ease 0s 1 normal forwards;
-	}
-	@keyframes broombroom {
-		0%,
-		100% {
-			transform: rotate(0deg);
-			transform-origin: 90% 80%;
-		}
-
-		10% {
-			transform: rotate(8deg);
-		}
-
-		20%,
-		40%,
-		60% {
-			transform: rotate(0deg);
-		}
-
-		30%,
-		50%,
-		70% {
-			transform: rotate(10deg);
-		}
-
-		80% {
-			transform: rotate(0deg);
-		}
-
-		90% {
-			transform: rotate(8deg);
-		}
+	.filterbox label:has(input:checked) {
+		background :black;
+		color : white;
 	}
 
-	.toggle-bg:after {
-		content: '';
-		@apply absolute top-0.5 ml-0.5 bg-black rounded-full h-4 w-4 transition shadow-sm;
-	}
 	input:checked + .toggle-bg:after {
 		transform: translateX(80%);
 	}
@@ -309,20 +277,15 @@ div > .day > div:first-child p {
 	width: 100%;
 }
 
-.eventcardhost .headliner {
-	text-decoration-line:underline;
-	text-decoration-style: dotted;
-	text-decoration-thickness: 1px;
-	text-decoration-color: #aaaaaa;
-	text-decoration-skip-ink: auto;
-	text-underline-offset: 2px;
+.eventcardhost .eventcard {
+	@apply flex-1
+}
 
+.eventcardhost .headliner {
 	cursor : pointer;
 }
 
 .eventcardhost .headliner:hover {
-	text-decoration-style : solid;
-	text-decoration-color : black;
 }
 
 .smn .bg-yellow-50:before {
@@ -671,22 +634,10 @@ h1.special {
 }
 
 .eventcardhost .headliner {
-	text-decoration-line:underline;
-	text-decoration-style: dotted;
-	text-decoration-thickness: 1px;
-	text-decoration-color: #aaaaaa;
-	text-decoration-skip-ink: auto;
-	text-underline-offset: 2px;
-
 	cursor : pointer;
 }
 
 @media(hover: hover) and (pointer: fine) {
-	.eventcardhost:hover:has(.sharegig:hover) .headliner,
-	.eventcardhost .headliner:hover {
-		text-decoration-style : solid;
-		text-decoration-color : black;
-	}
 
 	.eventcardhost:hover:has(.headliner:hover) .sharegig,
 	.sharegig:hover {
@@ -699,8 +650,6 @@ h1.special {
 }
 
 .eventcardhost:has(.sharegig.selected) .headliner {
-	text-decoration-style : solid;
-	text-decoration-color : black;
 }
 
 .sharegig.selected {
@@ -709,6 +658,9 @@ h1.special {
 	background-size : contain;
 	background-repeat : no-repeat;
 	background-position : top left;
+}
+.sharegig.selected img {
+	
 }
 
 #sharesheet {
