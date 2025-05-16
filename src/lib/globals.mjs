@@ -53,32 +53,32 @@ export const bottomSheetConfig = [
 
 export const formatDay = (dateOrString) => {
 	const d = new Date(dateOrString);
-	const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 	return days[d.getDay()];
 };
 
 export const formatMonth = (dateOrString) => {
 	const d = new Date(dateOrString);
 	const months = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
+		'January',
+		'February',
+		'March',
+		'April',
 		'May',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
 	];
 	return months[d.getMonth()];
 };
 
 export const formatDate = (dateOrString) => {
 	const d = new Date(dateOrString);
-	return `${formatMonth(d)} '${String(d.getFullYear()).substring(2, 4)}`;
+	return `${formatMonth(d)} ${d.getFullYear()}`;
 };
 
 export const formatDateLong = (dateOrString) => {
