@@ -172,7 +172,7 @@
 												<p
 													class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase"
 												>
-													{label.split(':')[1]}
+													{label.split(':')[1].substr(0,3)}
 												</p>
 												<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
 											</div>
