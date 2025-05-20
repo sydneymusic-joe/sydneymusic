@@ -46,10 +46,6 @@
 
 	<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 	<div class="filterbox w-full mb-5">
-		<label>
-			<input type="checkbox" id="toggle-all" checked="checked" class="sr-only" />
-			All gigs
-		</label>
 		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
 			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 			Free / pay-what-you-can
@@ -69,6 +65,7 @@
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
 						{#each month.items as { label, items }}
+							<div class="day">
 							<h3 class="text-md lg:text-lg font-semibold mb-5" style="border-bottom : solid 1px black">
 								<span class="text-ruby">{label.split(':')[1]}</span>
 								{label.split(':')[0]}
@@ -76,7 +73,7 @@
 							</h3>
 							{#each items as event}
 								<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-									<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
+									<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
 									<Event
 										name={event.promotedName}
 										gigId={event.id}
@@ -93,6 +90,7 @@
 								</div>
 								{increment()}
 							{/each}
+							</div>
 							{#if gigCounter > 9}
 								<Feedprompt Index={whichPrompt} />
 								{resetCounter()}
@@ -149,7 +147,8 @@
 
 
 <div id="shareprompt" class="hidden">
-	<button class="plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+	<button class="share plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+	<button class="clear plausible-event-name=Share+Clear+All">Clear all</button>
 </div>
 
 <div id="sharesheet" class="space-y-3">
