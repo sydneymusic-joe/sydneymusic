@@ -44,23 +44,15 @@
 		</div>
 	</div>
 
-	<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter by:</h4>
+	<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 	<div class="filterbox w-full mb-5">
 		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
 			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
-			<div
-				class="toggle-bg border border-black h-5 w-9 rounded-full"
-				style="box-shadow: 1px 1px 0px 0px #000;"
-			></div>
-			<span class="ml-2">Free / pay-what-you-can gigs only</span>
+			Free / pay-what-you-can
 		</label>
 		<label for="toggle-selected" class="flex items-center cursor-pointer relative">
 			<input type="checkbox" id="toggle-selected" class="sr-only" />
-			<div
-				class="toggle-bg border border-black h-5 w-9 rounded-full"
-				style="box-shadow: 1px 1px 0px 0px #000;"
-			></div>
-			<span class="ml-2">Gigs I've selected only <span class="new">NEW!</span></span>
+			My favourites
 		</label>
 	</div>
 
@@ -72,54 +64,39 @@
 			<div class="sm:pr-20 gigcolumn">
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
-						<h3 class="text-md lg:text-lg font-semibold mb-5 uppercase" style="border-bottom : solid 1px black">
-							{month.label}
-						</h3>
-						<div class="grid gap-10">
-							{#each month.items as { label, items }}
-								<div class="relative day flex items-start">
-									<div
-										class="sticky top-10 grid font-bold m-[-2px]"
-									>
-										<p class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase">
-											{label.split(':')[1]}
-										</p>
-										<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
-										{#if month.label == "Jan '25" && label == "26:Sun"}
-										<div class="w-full mt-3">
-											<AboriginalFlag />
-										</div>
-										{/if}
-									</div>
-									<div class="w-full">
-										{#each items as event}
-											<div class="eventcardhost flex flex-row gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-												<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig w-6 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
-												<Event
-													name={event.promotedName}
-													gigId={event.id}
-													performers={event.performersListJson}
-													calendarLink={createCalendarLink(event)}
-													venue={event.venue}
-													website={event.ticketUrl}
-													comment={event.furtherInfo}
-													initials={event.furtherInfoContributorInitials}
-													time={event.time}
-													isFree={event.isFree}
-													isPwyc={event.isPwyc}
-												/>
-											</div>
-											{increment()}
-										{/each}
-									</div>
+						{#each month.items as { label, items }}
+							<h3 class="text-md lg:text-lg font-semibold mb-5" style="border-bottom : solid 1px black">
+								<span class="text-ruby">{label.split(':')[1]}</span>
+								{label.split(':')[0]}
+								{month.label}
+							</h3>
+							<div class="day">
+							{#each items as event}
+								<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
+									<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
+									<Event
+										name={event.promotedName}
+										gigId={event.id}
+										performers={event.performersListJson}
+										calendarLink={createCalendarLink(event)}
+										venue={event.venue}
+										website={event.ticketUrl}
+										comment={event.furtherInfo}
+										initials={event.furtherInfoContributorInitials}
+										time={event.time}
+										isFree={event.isFree}
+										isPwyc={event.isPwyc}
+									/>
 								</div>
-								{#if gigCounter > 9}
-									<Feedprompt Index={whichPrompt} />
-									{resetCounter()}
-									{incrementDisplay()}
-								{/if}
+								{increment()}
 							{/each}
-						</div>
+							</div>
+							{#if gigCounter > 9}
+								<Feedprompt Index={whichPrompt} />
+								{resetCounter()}
+								{incrementDisplay()}
+							{/if}
+						{/each}
 					</div>
 				{/each}
 			</div>
@@ -170,7 +147,8 @@
 
 
 <div id="shareprompt" class="hidden">
-	<button class="plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+	<button class="share plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+	<button class="clear plausible-event-name=Share+Clear+All">Clear all</button>
 </div>
 
 <div id="sharesheet" class="space-y-3">

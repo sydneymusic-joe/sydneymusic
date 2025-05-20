@@ -8,11 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const getTextPrefix = () => {
-		return getAllSelectedPanels().length + " gig picks from https://sydneymusic.net/gig-guide";
+		return getAllSelectedPanels().length + " gig picks from sydneymusic.net";
 	}
 
 	const getAllSelectedPanels = () => {
 		return document.querySelectorAll('.sharegig.selected');
+	}
+
+	const clearAllGigs = () => {
+		localStorage.setItem("selectedgigs", "");
+		document.querySelectorAll(".sharegig.selected").forEach((g) => {
+			g.classList.remove('selected');
+		});
+		updateShareSheet();
 	}
 
 	const updateLocalStorage = () => {
@@ -49,8 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById('share-preview').innerText = getTextPrefix() + "\n\n" + getGigText();
 	};
 
-	document.querySelector('#shareprompt button').addEventListener('click', function(evt) {
+	document.querySelector('#shareprompt button.share').addEventListener('click', function(evt) {
 		document.body.classList.add('showsheet');
+	});
+	document.querySelector('#shareprompt button.clear').addEventListener('click', function(evt) {
+		clearAllGigs();
 	});
 
 	const getGigText = () => {
