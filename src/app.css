@@ -258,19 +258,13 @@ body.freegigs .day:not(:has(.freegig)),
 body.selectedonly .day:not(:has(.selected)) {
 	@apply hidden;
 }
-body.freegigs .guide-month > .day > h3:not(:has(+ .freegig)),
-body.selectedonly .guide-month > .day > h3:not(:has(+ .eventcardhost .sharegig.selected)) {
+body.freegigs .guide-month > h3:not(:has(+ .day .freegig)),
+body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)) {
 	@apply hidden;
 }
 body.freegigs .eventcardhost:not(:is(.freegig)),
 body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
-}
-div > .day > div:first-child {
-	width: 58px;
-}
-div > .day > div:first-child p {
-	width: 100%;
 }
 
 .eventcardhost .eventcard {
@@ -403,7 +397,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
-.guide-month > .day > h3::before {
+.guide-month > h3::before {
 	content : "";
 	background : white;
 	height : 100%;
@@ -411,7 +405,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 	position : absolute;
 	margin-left : -20px;
 }
-.guide-month > .day > h3 {
+.guide-month > h3 {
 	@apply sticky top-0 z-40;
 	background: white;
 }
@@ -668,7 +662,7 @@ h1.special {
 	background-position : top left;
 }
 .sharegig.selected img {
-	
+	opacity : 0;
 }
 
 #sharesheet {

@@ -65,12 +65,12 @@
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
 						{#each month.items as { label, items }}
-							<div class="day">
 							<h3 class="text-md lg:text-lg font-semibold mb-5" style="border-bottom : solid 1px black">
 								<span class="text-ruby">{label.split(':')[1]}</span>
 								{label.split(':')[0]}
 								{month.label}
 							</h3>
+							<div class="day">
 							{#each items as event}
 								<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
 									<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
