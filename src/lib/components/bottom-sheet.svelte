@@ -10,15 +10,15 @@
 	<div class="flex max-w-5xl m-auto gap-4 items-end">
 		<div class="space-y-5 basis-full md:basis-2/3">
 			<div class="space-y-3">
-				<div class="text-lg font-semibold md:text-2xl">
-					<h1>SydneyMusic.net needs your support.</h1>
-					<h1>Donate now to help keep us running.</h1>
+				<div class="text-lg font-semibold md:text-2xl pr-5">
+					<h1>All donations over $2 to SydneyMusic.net are now tax deductible</h1>
 				</div>
+				<p class="text-sm md:text-base font-bold">SydneyMusic has received DGR (Deductible Gift Recipient) status from the Australian Taxation Office.</p>
 				<p class="text-sm md:text-base">
 					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
 				</p>
 				<p class="text-sm md:text-base">
-					Make a donation today to help us keep the site running, support the scene, and get more people to shows.
+					<strong>We are at risk of shutting down due to a lack of funding.</strong> Make a donation today to help us keep the site running, support the scene, and get more people to shows.
 				</p>
 			</div>
 			<div class="cta flex flex-row gap-3 w-full">
