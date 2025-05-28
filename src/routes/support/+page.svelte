@@ -4,6 +4,11 @@
 </script>
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
+
+	<div class="bg-yellow-50 p-3 text-center" style="border : solid 1px black">
+		<p class="italic font-bold">All donations over $2 made to SydneyMusic Ltd. are now tax deductible.</p>
+	</div>
+
 	<div class="grid grid-flow-row md:grid-flow-col grid-rows-2">
 		<div>
 			<h1 class="text-2xl lg:text-3xl font-semibold">SydneyMusic.net needs your support.</h1>
