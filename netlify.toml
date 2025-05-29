@@ -37,6 +37,11 @@
   status = 301
 
 [[redirects]]
+  from = "/newsletter"
+  to = "https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
+  status = 301
+
+[[redirects]]
   from = "/discussion"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSeqvBq381rDhQFPHIDQIR7DCBKrAqKFFesZfU2PIBgQcwa9rg/viewform"
   status = 301
