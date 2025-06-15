@@ -11,9 +11,10 @@
 		<div class="space-y-5 basis-full md:basis-2/3">
 			<div class="space-y-3">
 				<div class="text-lg font-semibold md:text-2xl pr-5">
-					<h1>All donations over $2 to SydneyMusic.net are now tax deductible</h1>
+					<h1>We still need a little help getting over the finish line</h1>
 				</div>
-				<p class="text-sm md:text-base font-bold">SydneyMusic has received DGR (Deductible Gift Recipient) status from the Australian Taxation Office.</p>
+				<p class="text-sm md:text-base font-bold">Despite being slated for shutdown on the 13th of July, 2025, we continue to have ongoing costs to maintain this resource for the remainder of its lifetime while we figure out a transition plan.</p>
+				<p><a href="/support" class="underline">All donations</a> over $2 to SydneyMusic Ltd are tax deductible.</p>
 				<p class="text-sm md:text-base">
 					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
 				</p>

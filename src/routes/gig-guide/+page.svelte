@@ -62,6 +62,12 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="sm:pr-20 gigcolumn">
+				<div class="border-2 border-black p-5 mb-5 space-y-3">
+					<p><strong>SydneyMusic will be shutting down soon.</strong> We've announced the imminent closure of this resource due to our inability to secure funding to continue the project.</p>
+					<p>A couple of us will be maintaining the guide to the best of our ability until it gets shut down. You can <a href="mailto:gigs@sydneymusic.net" class="underline">send in gigs</a> to help us out!</p>
+					<p><a href="https://sydneymusic.net/reads/on-sydneymusic-shutdown" class="underline">Read our most recent announcement here</a>.</p>
+				</div>
+
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
 						{#each month.items as { label, items }}
