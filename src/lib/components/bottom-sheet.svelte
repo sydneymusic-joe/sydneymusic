@@ -14,12 +14,9 @@
 					<h1>We still need a little help getting over the finish line</h1>
 				</div>
 				<p class="text-sm md:text-base font-bold">Despite being slated for shutdown on the 13th of July, 2025, we continue to have ongoing costs to maintain this resource for the remainder of its lifetime while we figure out a transition plan.</p>
-				<p><a href="/support" class="underline">All donations</a> over $2 to SydneyMusic Ltd are tax deductible.</p>
+				<p class="text-sm md:text-base"><a href="/support" class="underline">All donations</a> over $2 to SydneyMusic Ltd are tax deductible.</p>
 				<p class="text-sm md:text-base">
 					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
-				</p>
-				<p class="text-sm md:text-base">
-					<strong>We are at risk of shutting down due to a lack of funding.</strong> Make a donation today to help us keep the site running, support the scene, and get more people to shows.
 				</p>
 			</div>
 			<div class="cta flex flex-row gap-3 w-full">
