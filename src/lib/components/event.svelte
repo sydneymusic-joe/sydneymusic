@@ -122,7 +122,7 @@
 	{/if}
 	{#if comment}
 		<div
-			class="relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic mr-[-30px]"
+			class="relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic mr-[-28px]"
 		>
 			<svg
 				class="absolute left-0 top-0 w-10 h-10 transform -translate-x-1/2"
