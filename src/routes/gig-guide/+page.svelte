@@ -63,9 +63,9 @@
 			<!-- left col -->
 			<div class="sm:pr-20 gigcolumn">
 				<div class="border-2 border-black p-5 mb-5 space-y-3">
-					<p><strong>SydneyMusic will be shutting down soon.</strong> We've announced the imminent closure of this resource due to our inability to secure funding to continue the project.</p>
-					<p>A couple of us will be maintaining the guide to the best of our ability until it gets shut down. You can <a href="mailto:gigs@sydneymusic.net" class="underline">send in gigs</a> to help us out!</p>
-					<p><a href="https://sydneymusic.net/reads/on-sydneymusic-shutdown" class="underline">Read our most recent announcement here</a>.</p>
+					<p><strong>SydneyMusic is (55.3%) saved!</strong> We're blown away to report that thanks to the community rallying in support, Sydney's most comprehensive gig guide has been given another chance at life.</p>
+					<p><a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline">Read our most recent announcement here</a>.</p>
+					<p>More soon.</p>
 				</div>
 
 				{#each data.gigs as month}
