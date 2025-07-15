@@ -13,7 +13,7 @@
 				<div class="text-lg font-semibold md:text-2xl pr-5">
 					<h1>SydneyMusic is (55.3%) saved!</h1>
 				</div>
-				<p class="text-sm md:text-base">Our community is amazing: thanks an incredible response, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
+				<p class="text-sm md:text-base">Our community is amazing: thanks to an incredible response, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
 				<p class="text-sm md:text-base"><strong>We’re not out of the woods yet:</strong> we’re continuing to seek our readers' help while we build out a sponsorship model. Can you help us?</p>
 			</div>
 			<div class="cta flex flex-row gap-3 w-full">
