@@ -1,21 +1,21 @@
 //ToDo: Generate js at build from source of truth config in datoCMS
 const bottomSheetConfig = [
 	{
-		key: 'donorPromoHomepage',
+		key: 'savedPromoHomepage',
 		route: '/',
-		delay: 10000,
+		delay: 5000,
 		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'donorPromoGigGuide',
+		key: 'savedPromoGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
 		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'donorPromoVenues',
+		key: 'savedPromoVenues',
 		route: '/gig-guide/venues',
-		delay: 3000,
+		delay: 5000,
 		localStorageKey: 'donorPromo'
 	}
 ];

@@ -62,11 +62,6 @@
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="sm:pr-20 gigcolumn">
-				<div class="border-2 border-black p-5 mb-5 space-y-3">
-					<p><strong>SydneyMusic is (55.3%) saved!</strong> We're blown away to report that thanks to the community rallying in support, Sydney's most comprehensive gig guide has been given another chance at life.</p>
-					<p><a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline">Read our most recent announcement here</a>.</p>
-					<p>More soon.</p>
-				</div>
 
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">

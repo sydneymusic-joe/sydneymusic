@@ -11,8 +11,11 @@
 
 	<div class="grid grid-flow-row md:grid-flow-col grid-rows-2">
 		<div>
-			<h1 class="text-2xl lg:text-3xl font-semibold">SydneyMusic.net needs your support.</h1>
-			<h1 class="text-2xl lg:text-3xl font-semibold">Help keep us running, support the scene, and get more people out to shows.</h1>
+			<h1 class="text-lg lg:text-3xl font-semibold">SydneyMusic.net needs your support.</h1>
+			<h1 class="text-sm lg:text-3xl font-semibold">Help keep us running, support the scene, and get more people out to shows.</h1>
+			<div class="cta support mt-3">
+				<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
+			</div>
 		</div>
 		<div class="self-start">
 			<p class="mt-2 md:mt-4 lg:mt-8">Sydneymusic.net is a not-for-profit initiative, built and maintained by a small team of volunteers and music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.</p>
@@ -23,13 +26,8 @@
 	<div class="cta support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
 		<div>
 			<h3>Make a donation</h3>
-			<p>Make a one off or recurring donation today. Any small amount helps keep us running.</p>
-			<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
-		</div>
-		<div>
-			<h3>Become a monthly supporter</h3>
-			<p>Subscribe to our Patreon for as little as $5 per month. Access mixtapes, merch discounts and more goodies.</p>
-			<Button variant="secondary" label="Subscribe to Patreon" href="https://patreon.com/sydneymusic" target="_blank" />
+			<p>Make a one off or recurring monthly donation today. Any small amount helps keep us running.</p>
+			<Button variant="secondary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
 		</div>
 		<div>
 			<h3>Buy some merch</h3>

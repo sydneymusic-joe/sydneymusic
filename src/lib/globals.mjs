@@ -32,19 +32,19 @@ export const navigationFooterSecondary = [
 //ToDo: Get config from source of truth in datoCMS
 export const bottomSheetConfig = [
 	{
-		key: 'donorPromoHomepage',
+		key: 'savedPromoHomepage',
 		route: '/',
 		delay: 5000,
 		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'donorPromoGigGuide',
+		key: 'savedPromoGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
 		localStorageKey: 'donorPromo'
 	},
 	{
-		key: 'donorPromoVenues',
+		key: 'savedPromoVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
 		localStorageKey: 'donorPromo'
