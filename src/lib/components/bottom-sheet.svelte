@@ -13,7 +13,7 @@
 				<div class="text-lg font-semibold md:text-2xl pr-5">
 					<h1>SydneyMusic has been given another chance!</h1>
 				</div>
-				<p class="text-sm md:text-base font-bold">We're delighted to announce that thanks to an incredible response from our community, <strong>SydneyMusic is no longer slated for shutdown this weekend</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
+				<p class="text-sm md:text-base font-bold">We're delighted to announce that thanks to an incredible response from our community, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
 				<p class="text-sm md:text-base">As we move forward for this exciting new chapter for this organisation, we are continuing to seek our readers' help. <a href="/support" class="underline">All donations</a> over $2 to SydneyMusic Ltd are tax deductible.</p>
 				<p class="text-sm md:text-base">
 					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
