@@ -11,18 +11,18 @@
 		<div class="space-y-5 basis-full md:basis-2/3">
 			<div class="space-y-3">
 				<div class="text-lg font-semibold md:text-2xl pr-5">
-					<h1>SydneyMusic has been given another chance!</h1>
+					<h1>SydneyMusic is (55.3%) saved!</h1>
 				</div>
-				<p class="text-sm md:text-base font-bold">We're delighted to announce that thanks to an incredible response from our community, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
-				<p class="text-sm md:text-base">As we move forward for this exciting new chapter for this organisation, we are continuing to seek our readers' help. <a href="/support" class="underline">All donations</a> over $2 to SydneyMusic Ltd are tax deductible.</p>
-				<p class="text-sm md:text-base">
-					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
-				</p>
+				<p class="text-sm md:text-base">Our community is amazing: thanks an incredible response, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
+				<p class="text-sm md:text-base"><strong>We’re not out of the woods yet:</strong> we’re continuing to seek our readers' help while we build out a sponsorship model. Can you help us?</p>
 			</div>
 			<div class="cta flex flex-row gap-3 w-full">
+				<Button label="Learn more" href="/support" target="_blank" variant="secondary" />
 				<Button label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
-				<Button label="More info" href="/support" target="_blank" variant="secondary" />
 			</div>
+				<p class="text-xs md:text-md">
+					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
+				</p>
 		</div>
 		<div class="hidden md:basis-1/3 md:block">
 			<img src="/dancer-black.png" />
