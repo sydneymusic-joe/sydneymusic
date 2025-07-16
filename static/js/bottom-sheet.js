@@ -4,19 +4,19 @@ const bottomSheetConfig = [
 		key: 'savedPromoHomepage',
 		route: '/',
 		delay: 5000,
-		localStorageKey: 'donorPromo'
+		localStorageKey: 'doitagaindonorPromo'
 	},
 	{
 		key: 'savedPromoGigGuide',
 		route: '/gig-guide',
 		delay: 10000,
-		localStorageKey: 'donorPromo'
+		localStorageKey: 'doitagaindonorPromo'
 	},
 	{
 		key: 'savedPromoVenues',
 		route: '/gig-guide/venues',
 		delay: 5000,
-		localStorageKey: 'donorPromo'
+		localStorageKey: 'doitagaindonorPromo'
 	}
 ];
 document.addEventListener('DOMContentLoaded', () => {

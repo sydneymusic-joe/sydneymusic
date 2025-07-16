@@ -18,10 +18,10 @@
 				<div class="space-y-2">
 					<h2><strong>Choose a monthly donation amount:</strong></h2>
 					<div class="cta flex flex-row gap-3 w-full text-sm">
-						<Button label="$10" href="https://square.link/u/hbwswm65" target="_blank" variant="secondary" pointer="" />
-						<Button label="$25" href="https://square.link/u/otfmCL39" target="_blank" variant="secondary" pointer="" />
+						<Button label="$2" href="https://square.link/u/L0GTRapn" target="_blank" variant="secondary" pointer="" />
+						<Button label="$5" href="https://square.link/u/Gw8URGj2" target="_blank" variant="secondary" pointer="" />
+						<Button label="$15" href="https://square.link/u/JYzf9LTF" target="_blank" variant="secondary" pointer="" />
 						<Button label="$50" href="https://square.link/u/moL86XF5" target="_blank" variant="secondary" pointer="" />
-						<Button label="$100" href="https://square.link/u/EVv3B9NX" target="_blank" variant="secondary" pointer="" />
 						<Button label="$200" href="https://square.link/u/Dicl3TrR" target="_blank" variant="secondary" pointer="" />
 					</div>
 					<div class="text-xs md:text-sm font-bold"><a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline">I'd like to choose a different amount / one-off donation</a></div>
