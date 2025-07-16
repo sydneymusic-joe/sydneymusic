@@ -10,22 +10,32 @@
 	<div class="flex max-w-5xl m-auto gap-4 items-end">
 		<div class="space-y-5 basis-full md:basis-2/3">
 			<div class="space-y-3">
-				<div class="text-lg font-semibold md:text-2xl pr-5">
+				<div class="text-lg font-semibold md:text-2xl pr-5 uppercase italic leading-none">
 					<h1>SydneyMusic is (55.3%) saved!</h1>
 				</div>
-				<p class="text-sm md:text-base">Our community is amazing: thanks to an incredible response, <strong>SydneyMusic is no longer slated for shutdown</strong>. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
-				<p class="text-sm md:text-base"><strong>We’re not out of the woods yet:</strong> we’re continuing to seek our readers' help while we build out a sponsorship model. Can you help us?</p>
-			</div>
-			<div class="cta flex flex-row gap-3 w-full">
-				<Button label="Learn more" href="/support" target="_blank" variant="secondary" />
-				<Button label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
-			</div>
+				<p class="text-sm md:text-base">Our community is amazing: thanks to an incredible response, SydneyMusic is no longer slated for shutdown. <a href="/reads/sydneymusic.net-is-55-point-3-percent-saved" class="underline" target="_blank">Read our news update</a> for more information.</p>
+				<p class="text-sm md:text-base"><strong>We still need help meeting our minimum monthly budget.</strong> Can you help us stay afloat while we build and implement a sponsorship model?</p>
+				<div class="space-y-2">
+					<h2><strong>Choose a monthly donation amount:</strong></h2>
+					<div class="cta flex flex-row gap-3 w-full text-sm">
+						<Button label="$10" href="https://square.link/u/hbwswm65" target="_blank" variant="secondary" pointer="" />
+						<Button label="$25" href="https://square.link/u/otfmCL39" target="_blank" variant="secondary" pointer="" />
+						<Button label="$50" href="https://square.link/u/moL86XF5" target="_blank" variant="secondary" pointer="" />
+						<Button label="$100" href="https://square.link/u/EVv3B9NX" target="_blank" variant="secondary" pointer="" />
+						<Button label="$200" href="https://square.link/u/Dicl3TrR" target="_blank" variant="secondary" pointer="" />
+					</div>
+					<div class="text-xs md:text-sm font-bold"><a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline">I'd like to choose a different amount / one-off donation</a></div>
+				</div>
 				<p class="text-xs md:text-md">
-					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.
+					SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of passionate music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene. <a href="/support" target="_blank" class="underline font-bold">Learn more &raquo;</a>
 				</p>
+				<p class="italic text-xs md:text-md">
+					All donations of $2 and above are tax deductible.
+				</p>
+			</div>
 		</div>
 		<div class="hidden md:basis-1/3 md:block">
-			<img src="/dancer-black.png" />
+			<img src="/dancer-black.png" alt="Cliff the Glyph" />
 		</div>
 	</div>
 	<button

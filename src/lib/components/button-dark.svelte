@@ -7,11 +7,11 @@
 	 */
 
 	/** @type {Props} */
-	let { label = 'Button', href = '#', variant = 'primary' } = $props();
+	let { label = 'Button', href = '#', variant = 'primary', pointer = '»' } = $props();
 </script>
 
 <a
 	{href} target="_blank" class="{variant} plausible-event-name=Support+CTA"
 >
-	{label} &raquo;
+	{label} {pointer}
 </a>
