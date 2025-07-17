@@ -111,7 +111,7 @@ async function generate() {
 			template += `
             <tr class="day">
                 <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${
-									day.label.split(':')[1]
+									day.label.split(':')[1].substr(0,3)
 								}</strong><br /><font style="font-size : 36px; font-weight : bold">${
 				day.label.split(':')[0]
 			}</font></td>
