@@ -147,7 +147,7 @@ async function generate() {
     <head>
         <meta charset="utf-8" />
         <style>
-            body { background : black; color : black; font-family : Helvetica, Arial, sans-serif; font-size : 18px; }
+            body { background : white; color : black; font-family : Helvetica, Arial, sans-serif; font-size : 18px; }
             .maintable { background : white; }
             .maintable tr td { padding-left : 20px; padding-right : 20px; }
             .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
@@ -164,38 +164,44 @@ async function generate() {
 			.giglist tr td div.headliner span { font-size : 10px; text-transform: lowercase; font-weight : normal; }
 			.giglist tr td div.performers { line-height : 120%; padding-bottom : 3px; font-weight : bold; }
             .giglist a { color : #888; text-transform: none; }
-            h1 { margin-top : 10px; margin-bottom : 10px; font-size : 60px; font-weight : bold; letter-spacing : -2px; line-height : 100%; }
+            h1 { margin-top : 10px; margin-bottom : 10px; font-size : 30px; font-weight : bold; letter-spacing : -1px; line-height : 100%; }
             .maintable a { color : black; }
             .nav td { font-size : 18px; padding-bottom : 20px; }
             .preamble, .gigcontainer { border-width : 1px 0px 0px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
             .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #344A2F; padding-left : 10px; }
 
-            .plug { background :#eee; padding : 15px; margin-bottom : 10px; }
-            .plug p { font-style : italic; font-size : 14px; margin : 0; text-align : center }
-            .subscribeme, .subscribeme a { color : white; }
+            .plug { border : solid 2px black; margin-bottom : 10px; }
+            .plug p { font-size : 14px; margin : 10px 15px; }
+						.plug h2 { margin : 0; font-weight : normal; font-size : 20px; margin : 20px 15px 10px 15px;}
+            .subscribeme, .subscribeme a { color : #666; }
         </style>
     </head>
     <body>
     <p class="subscribeme" style="font-size : 12px; text-align : center; margin-bottom : 20px;">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
-            <td>
-                <img src="https://downloads.sydneymusic.net/newlogo.png" vspace="20" height="100" />
-            </td>
-        </tr>
-        <tr class="nav">
-            <td>
-                &raquo; <a href="https://sydneymusic.net">go to sydneymusic.net</a> (it's a nice place)
+            <td align="center" style="padding : 15px">
+                <a href="https://sydneymusic.net"><img src="https://downloads.sydneymusic.net/email-header.png" alt="SydneyMusic.net" height="100" border="0" /></a>
+								<div style="font-size : 12px; margin-top : 5px; font-style : italic; font-weight : bold">• Helping Sydney get out to shows since 2002 •</div>
             </td>
         </tr>
         <tr>
             <td class="preamble">
-				<h1>${content.welcomeHeading}</h1>
+                <h1>${content.welcomeHeading}</h1>
 				${content.preambleContent}
 
                 <div class="plug">
-                    <p><strong>This project is made possible thanks to the financial support of our community</strong>. If you like the work we do, please consider supporting us via our <a href="https://patreon.com/sydneymusic">Patreon</a> or <a href="https://store.sydneymusic.net">merch store</a>.</p>
+                  <p style="font-weight : bold; text-transform : uppercase; font-size : 11px; color : #fff; padding : 10px 15px; margin : 0; background : black;">A NOTE FROM JOE — PLEASE READ</p>  
+                    <h2>We’re back, but we have a really steep hill to climb</h2>
+                    <p>We’ve secured financial runway that sees SydneyMusic funded for <strong>6 weeks</strong> — that’s the fighting chance we’ve been given, along with an improvement to our monthly recurring donations.</p>
+                    <p>This guide still needs a significant number of hours per week to maintain, which goes towards paying musicians, writers, and creatives that contribute to the project as Gig Researchers.</p>
+                    <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
+
+                    <h2>Here’s how to help — takes 30 seconds</h2>
+                    <p>&raquo; <strong>Become a monthly supporter</strong> for <a href="https://square.link/u/JYzf9LTF">$15</a>, <a href="https://square.link/u/moL86XF5">$50</a> or <a href="https://square.link/u/Dicl3TrR">$200</a> a month.</p>
+                    <p>&raquo; You can also <a href="https://square.link/u/eS7bgm8M">choose whatever amount you like</a> as a monthly or one-off donation.</p>
+                    <p style="font-size : 11px;"><strong>Prefer to donate via bank transfer?</strong> We can provide you with a Deductible Gift Receipt.<br />E-mail <a href="mailto:joe@sydneymusic.net">Joe</a> for more information.</p>
                 </div>
             </td>
         </tr>
@@ -204,8 +210,6 @@ async function generate() {
                 <h1>Gigs This Week</h1>
 
                 <p>There are <strong>${total}</strong> shows in this week's newsletter.</p>
-
-                <p>Don't forget nearly all of these bands can be found in the <a href="https://sydneymusic.net/playlist">Gig Guide Playlist</a>.</p><p>You can also view more information about the shows and links to ticket sales via the <a href="https://sydneymusic.net/gig-guide">gig guide</a> on our website.</p>
 
                 <table border="0" cellspacing="0" cellpadding="0">
                    ${template}
