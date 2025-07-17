@@ -183,7 +183,7 @@ async function generate() {
         <tr>
             <td align="center" style="padding : 15px">
                 <a href="https://sydneymusic.net"><img src="https://downloads.sydneymusic.net/email-header.png" alt="SydneyMusic.net" height="100" border="0" /></a>
-								<div style="font-size : 12px; margin-top : 5px; font-style : italic; font-weight : bold">• Helping Sydney get out to shows since 2002 •</div>
+								<div style="font-size : 12px; margin-top : 5px; font-style : italic; font-weight : bold">• Helping Sydney get out to shows since 2022 •</div>
             </td>
         </tr>
         <tr>
