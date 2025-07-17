@@ -152,7 +152,7 @@ async function generate() {
             .maintable tr td { padding-left : 20px; padding-right : 20px; }
             .maintable tr tr td { padding-left : 0px; padding-right : 0px; }
             .preamble p { margin-top : 12px; }
-            p, td { font-family : Helvetica, Arial, sans-serif; }
+            p, td { font-family : Helvetica, Arial, sans-serif; font-size : 14px; }
 			p { line-height : 150%; }
             .ruby { color : #344A2F }
             .graphite { color : #6d7278 }
@@ -178,7 +178,7 @@ async function generate() {
         </style>
     </head>
     <body>
-    <p class="subscribeme" style="font-size : 12px; text-align : center; margin-bottom : 20px;">Welcome to the SydneyMusic.net gig guide newsletter!<br />Want to get this in your inbox every week? <a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">You can subscribe over here.</a></p>
+    <p class="subscribeme" style="font-size : 12px; text-align : center; margin-bottom : 20px;">Welcome to the SydneyMusic.net gig guide newsletter!<br /><a href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b">Subscribe</a> to get this in your inbox every week.</p>
     <table align="center" style="max-width : 550px" class="maintable">
         <tr>
             <td align="center" style="padding : 15px">
