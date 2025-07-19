@@ -1,41 +1,48 @@
 <script>
 	import Button from '../../lib/components/button-dark.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import DonationForm from '../../lib/components/donation-form.svelte';
 </script>
+
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
-
-	<div class="bg-yellow-50 p-3 text-center" style="border : solid 1px black">
-		<p class="italic font-bold">All donations over $2 made to SydneyMusic Ltd. are now tax deductible.</p>
-	</div>
-
-	<div class="grid grid-flow-row md:grid-flow-col grid-rows-2">
+	<div class="flex flex-col lg:flex-row-reverse lg:items-end">
+		<img src="/hero-character.png" class="w-full h-auto max-w-64 my-auto" />
 		<div>
-			<h1 class="text-lg lg:text-3xl font-semibold">SydneyMusic.net needs your support.</h1>
-			<h1 class="text-sm lg:text-3xl font-semibold">Help keep us running, support the scene, and get more people out to shows.</h1>
-			<div class="cta support mt-3">
-				<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
-			</div>
+			<h1 class="text-lg lg:text-3xl font-semibold mb-4">
+				SydneyMusic.net needs your support.<br />
+				Help keep us running, support the scene, and get more people out to shows.
+			</h1>
+			<p>
+				Sydneymusic.net is a not-for-profit initiative, built and maintained by a small team of
+				volunteers and music lovers. We don't receive any government funding or run advertising - we
+				run this site because we love this city and its incredible music scene.
+			</p>
 		</div>
-		<div class="self-start">
-			<p class="mt-2 md:mt-4 lg:mt-8">Sydneymusic.net is a not-for-profit initiative, built and maintained by a small team of volunteers and music lovers. We don't receive any government funding or run advertising - we run this site because we love this city and its incredible music scene.</p>
-		</div>
-		<div class="md:row-span-2"><img src="/hero-character.png" class="m-auto w-1/2 md:w-1/2" /></div>
 	</div>
+
+	<DonationForm
+		showPromotionalContent={false}
+		align="left"
+		shadow={false}
+	/>
 
 	<div class="cta support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
 		<div>
-			<h3>Make a donation</h3>
-			<p>Make a one off or recurring monthly donation today. Any small amount helps keep us running.</p>
-			<Button variant="secondary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank" />
-		</div>
-		<div>
 			<h3>Buy some merch</h3>
-			<p>Represent your favourite local gig guide while looking awesome and supporting us financially.</p>
-			<Button variant="secondary" label="Visit our shop" href="https://store.sydneymusic.net" target="_blank" />
+			<p>
+				Represent your favourite local gig guide while looking awesome and supporting us
+				financially.
+			</p>
+			<Button
+				variant="secondary"
+				label="Visit our shop"
+				href="https://store.sydneymusic.net"
+				target="_blank"
+			/>
 		</div>
 	</div>
-	
+
 	<div class="border-t border-black">
 		<h3 class="font-bold text-center my-10">SydneyMusic.net will always remain free</h3>
 
@@ -50,7 +57,10 @@
 				</ul>
 			</div>
 			<div class="basis-1/2 md:pr-32">
-				<p>You can also support us by sharing the site, sending in blurbs or gig listings, or volunteering your expertise and/or time.</p>	
+				<p>
+					You can also support us by sharing the site, sending in blurbs or gig listings, or
+					volunteering your expertise and/or time.
+				</p>
 			</div>
 		</div>
 	</div>

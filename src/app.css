@@ -9,8 +9,9 @@
 	font-weight: 400;
 	font-display: swap;
 	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgLsM.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -19,8 +20,9 @@
 	font-weight: 400;
 	font-display: swap;
 	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgA.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
@@ -29,8 +31,9 @@
 	font-weight: 400;
 	font-display: swap;
 	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7ThA.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -39,8 +42,9 @@
 	font-weight: 400;
 	font-display: swap;
 	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK4.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
@@ -49,8 +53,9 @@
 	font-weight: 500;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -59,8 +64,9 @@
 	font-weight: 500;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
@@ -69,8 +75,9 @@
 	font-weight: 600;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -79,8 +86,9 @@
 	font-weight: 600;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
@@ -89,8 +97,9 @@
 	font-weight: 700;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvipYY1Fw.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -99,8 +108,9 @@
 	font-weight: 700;
 	font-display: swap;
 	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvspYY.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* latin-ext */
 @font-face {
@@ -109,8 +119,9 @@
 	font-weight: 700;
 	font-display: swap;
 	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYotEyq5.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113,
-		U+2C60-2C7F, U+A720-A7FF;
+	unicode-range:
+		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
 }
 /* latin */
 @font-face {
@@ -119,8 +130,9 @@
 	font-weight: 700;
 	font-display: swap;
 	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYQtEw.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -201,8 +213,8 @@
 	}
 
 	.filterbox label {
-		border : solid 1px black;
-		padding : 5px 10px;
+		border: solid 1px black;
+		padding: 5px 10px;
 	}
 
 	.filterbox > *:hover {
@@ -215,8 +227,8 @@
 	}
 
 	.filterbox label:has(input:checked) {
-		background :black;
-		color : white;
+		background: black;
+		color: white;
 	}
 
 	input:checked + .toggle-bg:after {
@@ -268,11 +280,11 @@ body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 }
 
 .eventcardhost .eventcard {
-	@apply flex-1
+	@apply flex-1;
 }
 
 .eventcardhost .headliner {
-	cursor : pointer;
+	cursor: pointer;
 }
 
 .eventcardhost .headliner:hover {
@@ -294,10 +306,11 @@ body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 
 body.selectedonly .day:not(:has(.selected)) ~ .guide-divider,
 body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
-	display : none;
+	display: none;
 }
 
-.guide-divider, .storeplug {
+.guide-divider,
+.storeplug {
 	@apply mb-5;
 }
 
@@ -322,7 +335,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .guide-divider span {
-	@apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[75%];
+	@apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[100%];
 	text-align: center;
 }
 .guide-divider span a {
@@ -398,12 +411,12 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
 
 .guide-month > h3::before {
-	content : "";
-	background : white;
-	height : 100%;
-	width : 20px;
-	position : absolute;
-	margin-left : -20px;
+	content: '';
+	background: white;
+	height: 100%;
+	width: 20px;
+	position: absolute;
+	margin-left: -20px;
 }
 .guide-month > h3 {
 	@apply sticky top-0 z-40;
@@ -411,26 +424,37 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .accordion-content {
-	transition: max-height 0.3s ease-out, padding 0.3s ease;
+	transition:
+		max-height 0.3s ease-out,
+		padding 0.3s ease;
 }
 
 header nav .navbar {
-	@apply flex justify-center font-semibold w-full gap-x-3;
+	@apply flex justify-center lg:justify-end font-semibold w-full gap-x-1 sm:gap-x-3;
 }
 
-header nav .navbar a {
-	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;	
+header nav .navbar .navbar-link {
+	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
 }
 
-header nav .navbar a.current {
-	@apply border-b-2 border-ruby
+header nav .navbar .navbar-link-icon {
+	@apply border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-0 sm:px-1 py-0 sm:py-3 w-7 lg:w-9 h-auto hidden sm:block;
 }
 
-header nav .navbar a.support {
-	@apply bg-black text-white
+header nav .navbar .navbar-link-icon svg {
+	@apply w-full h-auto;
 }
 
-header nav a span, span.new {
+header nav .navbar .navbar-link.current {
+	@apply border-b-2 border-ruby;
+}
+
+header nav .navbar .support {
+	@apply uppercase border-b-2 border-transparent hover:bg-ruby/90 hover:text-white text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3 bg-ruby text-white;
+}
+
+header nav a span,
+span.new {
 	vertical-align: middle;
 	margin-top: -2px;
 	background: yellow;
@@ -448,10 +472,15 @@ header nav a span, span.new {
 	@apply mb-8;
 }
 
-.feature-thisweek .bigtext {
+.bigtext {
 	font-family: 'ITC Souvenir';
 	color: black;
-	@apply text-4xl md:text-7xl;
+	@apply text-3xl md:text-5xl mt-0 mb-0;
+}
+
+.medtext {
+	font-family: 'ITC Souvenir';
+	@apply text-xl md:text-3xl mt-0 mb-0;
 }
 
 .feature-thisweek.prose {
@@ -509,11 +538,13 @@ h1.special {
 
 .bottom-sheet {
 	@apply fixed bottom-0 inset-x-0 border-black bg-yellow-50 p-6;
-	z-index : 102;
+	z-index: 102;
 	transform: translateY(100%);
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition:
+		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
-	border-top : solid 1px black;
+	border-top: solid 1px black;
 }
 
 .bottom-sheet.show {
@@ -527,7 +558,7 @@ h1.special {
 
 .cta a {
 	@apply flex font-semibold justify-self-start px-3 md:px-6 py-2 transition-opacity duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
-	border : solid 1px black;
+	border: solid 1px black;
 }
 
 .cta.support div a {
@@ -539,18 +570,18 @@ h1.special {
 }
 
 .mything * {
-	color : lime !important;
+	color: lime !important;
 }
 
 .lib-logo {
 	@apply w-24 h-24;
-	background-image : url(/canman-about@1x.png);
-	background-repeat : no-repeat;
-	background-position : center center;
-	background-size : 6.8rem;
-	border-radius : 100%;
-	border : solid 2px black;
-	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
+	background-image: url(/canman-about@1x.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 6.8rem;
+	border-radius: 100%;
+	border: solid 2px black;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .link-in-bio.primary {
@@ -558,11 +589,11 @@ h1.special {
 
 .link-in-bio.primary > div {
 	@apply h-56 flex items-end;
-	position : relative;
-	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
-	border : solid 4px black; 
-	background-size : cover;
-	background-image : attr(data-bg);
+	position: relative;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+	border: solid 4px black;
+	background-size: cover;
+	background-image: attr(data-bg);
 }
 
 .link-in-bio.primary .linkpanel {
@@ -570,14 +601,14 @@ h1.special {
 
 .link-in-bio.primary .linkpanel .link {
 	@apply text-xl;
-	margin-bottom : 10px;
-	line-height : 120%;
+	margin-bottom: 10px;
+	line-height: 120%;
 }
 
 .link-in-bio.primary .linkpanel .link a {
 	@apply text-xl;
-	color : white;
-	font-weight : bold;
+	color: white;
+	font-weight: bold;
 }
 
 .link-in-bio.primary .linkpanel .description {
@@ -586,20 +617,20 @@ h1.special {
 
 .link-in-bio.primary > div::before {
 	width: 50px;
-	position : absolute;
-	top : 0px;
-	left : 0px;
-	content : attr(data-idx);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	content: attr(data-idx);
 	aspect-ratio: 1;
-	background : black;
-	color : white;
+	background: black;
+	color: white;
 	padding-left: 5px;
-	font-weight : bold;
-	clip-path : polygon(100% 0,0% 0%,0% 100%);
+	font-weight: bold;
+	clip-path: polygon(100% 0, 0% 0%, 0% 100%);
 }
 
 .link-in-bio.primary > div > div {
-	background : linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.6));
+	background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6));
 }
 
 .link-in-bio.secondary {
@@ -607,78 +638,77 @@ h1.special {
 }
 
 .link-in-bio.secondary div.title::before {
-	content : '> ';
+	content: '> ';
 }
 
 .link-in-bio div p {
-	margin : 0;
+	margin: 0;
 }
 
 .artists ul li {
-	display : inline;
+	display: inline;
 	list-style-position: inside;
 }
 
 .artists ul li::after {
-	content : " • ";
-	font-weight : normal;
+	content: ' • ';
+	font-weight: normal;
 }
 .artists ul li:last-child::after {
-	content : "";
+	content: '';
 }
 
 .artists ul li:nth-child(odd) {
-	font-style : italic;
+	font-style: italic;
 }
 
 .artists ul li:nth-child(even) {
-	font-weight : 600;
+	font-weight: 600;
 }
 
 .eventcardhost .headliner {
-	cursor : pointer;
+	cursor: pointer;
 }
 
-@media(hover: hover) and (pointer: fine) {
-
+@media (hover: hover) and (pointer: fine) {
 	.eventcardhost:hover:has(.headliner:hover) .sharegig,
 	.sharegig:hover {
-		opacity : 1;
+		opacity: 1;
 	}
 }
 
 .sharegig {
-	opacity : .5;
+	opacity: 0.5;
 }
 
 .eventcardhost:has(.sharegig.selected) .headliner {
 }
 
 .sharegig.selected {
-	opacity : 1;
-	background-image : url(/shareability-selected.svg);
-	background-size : contain;
-	background-repeat : no-repeat;
-	background-position : top left;
+	opacity: 1;
+	background-image: url(/shareability-selected.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: top left;
 }
 .sharegig.selected img {
-	opacity : 0;
+	opacity: 0;
 }
 
 #sharesheet {
 	@apply p-3 flex flex-col items-center;
-	background : #FFFBEB;
-	bottom : 20px;
-	position : fixed;
-	color : black;
-	width : 90%;
-	max-width : 400px;
-	left : 50%;
+	background: #fffbeb;
+	bottom: 20px;
+	position: fixed;
+	color: black;
+	width: 90%;
+	max-width: 400px;
+	left: 50%;
 	transform: translateX(-50%);
-	display : none;
-	z-index : 101;
-	border : solid 1px black;
-	box-shadow : 3px 3px 0px black;
+	display: none;
+	z-index: 101;
+	border: solid 1px black;
+	box-shadow: 3px 3px 0px black;
 }
 
 #sharesheet .buttonpanel {
@@ -691,44 +721,72 @@ h1.special {
 
 #shareprompt {
 	@apply p-5 flex flex-row justify-center gap-x-2;
-	background-color : rgba(255,255,255,0.5);
+	background-color: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(5px);
-	position : fixed;
-	bottom : 0;
-	width : 100%;
-	z-index : 101;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 101;
 }
 
 #shareprompt button {
-	background : #FFFBEB;
-	color : black;
-	border : black solid 1px;
-	box-shadow: 3px 3px 0px rgb(0,0,0);
+	background: #fffbeb;
+	color: black;
+	border: black solid 1px;
+	box-shadow: 3px 3px 0px rgb(0, 0, 0);
 	@apply px-3 py-2 text-sm uppercase;
 }
 
 #shareprompt span {
-	background : black;
-	color : white;
-	border-radius : 10px;
-	padding : 2px 5px;
-	margin-left : 6px;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	padding: 2px 5px;
+	margin-left: 6px;
 }
 
 #share-preview {
-	overflow-y : scroll;
+	overflow-y: scroll;
 }
 
 body.showsheet #sharesheet {
-	display : flex;
+	display: flex;
 }
 
 body:not(.gotgigs) #shareprompt,
 body.showsheet #shareprompt {
-	display : none;
+	display: none;
 }
 
 body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
-	content:"You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
+	content: "You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
 	@apply text-sm italic border border-black bg-yellow-50 p-2 block;
+}
+
+@media (min-width: 1024px) {
+	.hero-bg {
+		background-image: url(/canman-homehero@2x.png);
+		background-position: center right;
+		background-size: cover;
+	}
+}
+
+/* Support Popover */
+.popover-trigger {
+	display: none;
+}
+
+.popover-content {
+	max-height: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	overflow: hidden;
+}
+
+.popover-trigger:checked + .popover-label + .popover-content {
+	max-height: 30rem;
+	opacity: 1;
+	pointer-events: auto;
+	overflow: visible;
 }

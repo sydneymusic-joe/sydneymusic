@@ -10,32 +10,22 @@
 </script>
 
 <SeoSocial />
-<img
-	srcset="/canman-homehero@2x.png 2048w, /canman-homehero@1x.png 1024w"
-	alt="SydneyMusic.net mascot Can Man welcoming you to the website"
-	class="aspect-3/1 md:w-full lg:max-w-5xl mb-10 m-auto"
-/>
-
 
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<div class="feature-thisweek space-y-8 md:py-5 text-center prose">
-			<div class="bigtext">
-				There are <span class="text-ruby">{data.gigs.thisWeek} shows</span> in the gig guide this week
-			</div>
-			<div class="links">
-				<a href="/gig-guide"><span>Read</span> the full guide</a>
-				<a
-					href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
-					><span>Subscribe</span> to weekly e-mail</a
-				>
-				<a href="/playlist" title="Every act playing in Sydney this week in one playlist"
-					><span>Listen</span> to gig guide playlist</a
-				>
-				<a href="https://www.instagram.com/sydneymusicdotnet"
-					><span>Follow</span> on Instagram for daily stories</a
-				>
+		<div class="feature-thisweek space-y-8 md:pb-5 text-left prose">
+			<div class="flex flex-col lg:flex-row-reverse gap-0 lg:items-stretch hero-bg">
+				<div class="hero-xs w-full lg:w-1/2 lg:h-full">
+					<img src="/canman-homehero@1x.png" class="block lg:hidden m-0" alt="" />
+				</div>
+				<div class="bg-white w-full lg:w-1/2 flex flex-col justify-end items-start py-8 gap-4 lg:mt-32">
+					<p class="bigtext">
+						<span class="text-ruby">{data.gigs.thisWeek} shows</span> waiting to be discovered in Sydney
+						this week.
+					</p>
+					<Button href="/gig-guide" label="Read the full guide" />
+				</div>
 			</div>
 		</div>
 

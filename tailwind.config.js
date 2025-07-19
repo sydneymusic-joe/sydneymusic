@@ -1,5 +1,8 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts,cjs}'],
+	safelist: [
+		'bg-ruby'
+	],
 	theme: {
 		extend: {
 			typography: {
@@ -31,7 +34,19 @@ module.exports = {
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
 				pjforest:'#344A2F',
-				backgroundDark: '#221F20'
+				backgroundDark: '#221F20',
+				gray: {
+					50: '#fafafa',
+					100: '#f5f5f5',
+					200: '#eeeeee',
+					300: '#e0e0e0',
+					400: '#bdbdbd',
+					500: '#9e9e9e',
+					600: '#757575',
+					700: '#616161',
+					800: '#424242',
+					900: '#212121'
+				}
 			},
 			aspectRatio: {
 				'3/1': '3/1',
