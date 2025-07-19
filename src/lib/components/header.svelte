@@ -31,9 +31,6 @@
 					</a>
 				{/each}
 
-				<a href="/playlist" title="Every act playing in Sydney this week in one playlist" class="navbar-link-icon">
-					<IconListen />
-				</a>
 				<a href="https://www.instagram.com/sydneymusicdotnet" target="_blank" title="Follow us on Instagram" class="navbar-link-icon mr-4">
 					<IconInstagram />
 				</a>
