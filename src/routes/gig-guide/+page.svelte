@@ -24,23 +24,29 @@
 		whichPrompt++;
 		return '';
 	};
+	let gigCount = $derived(data.gigs.reduce((acc, month) => 
+		acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0), 0
+	));
 </script>
 
 <SeoSocial title="Gig Guide" />
 
 <div class="max-w-5xl px-5 mx-auto overflow-x-clip">
-	<div class="pb-7 mb-5 border-b border-solid border-black text-center space-y-3">
-		<div
-			class="tracking-tight text-[32px] leading-[1.75rem] xs:text-[42px] xs:leading-9 lg:text-5xl" style="font-family : 'Instrument Serif'">
-			<h1>You’re on the Gig Guide.</h1>
+	<div class="grid md:grid-cols-sidebar-right-wide mb-10">
+		<div class="sm:pr-20 flex flex-col justify-end items-start gap-4">
+			<h1 class="bigtext lg:mt-10 max-w-md text-pretty">
+				<span class="italic">The</span> Sydney gig guide featuring <span class="text-ruby">{gigCount} upcoming shows</span>
+			</h1>
 		</div>
-		<div class="space-y-2">
-			<p class="italic">Proudly serving Sydney since 2022</p>
-			<p class="text-xs md:text-md">
-				Last updated: <span class="">{data.lastUpdated}</span><br />
-				<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
-				<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
-			</p>
+		<div class="flex flex-col justify-end items-start">
+			
+				<p class="italic">Proudly serving Sydney since 2022</p>
+				<p class="text-xs md:text-md">
+					Last updated: <span class="">{data.lastUpdated}</span><br />
+					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
+					<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
+				</p>
+			
 		</div>
 	</div>
 
