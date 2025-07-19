@@ -1,4 +1,7 @@
+
 <script>
+	import DonationForm from './donation-form.svelte';
+	import EmailSignup from './email-signup.svelte';
 	/**
 	 * @typedef {Object} Props
 	 * @property {number} [Index]
@@ -7,6 +10,12 @@
 	/** @type {Props} */
 	let { Index = $bindable(0) } = $props();
 	let prompts = [
+		{
+			type:'email',
+		},
+		{
+			type:'donorbox',
+		},
 		{
 			type: 'component',
 			content: `
@@ -127,6 +136,14 @@
 
 {#if prompts[Index].type === 'component'}
 	{@html prompts[Index].content}
+{:else if prompts[Index].type === 'email'}
+	<div class="mt-5 mb-10">
+		<EmailSignup />
+	</div>
+{:else if prompts[Index].type === 'donorbox'}
+	<div class="mt-5 mb-10">
+	<DonationForm align="center" />
+	</div>
 {:else if prompts[Index].type === 'text'}
 	<div class="guide-divider">
 		<div></div>

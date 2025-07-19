@@ -19,6 +19,7 @@
 	class:lg:mr-0={align === 'right'}
 	class:lg:ml-0={align === 'left'}
 	class:lg:mr-auto={align === 'left'}
+	class:lg:m-auto={align === 'center'}
     class:shadow-lg={shadow}
 	class="w-full max-w-[40rem] p-5 bg-{bg} text-{text} flex flex-col gap-4"
 >

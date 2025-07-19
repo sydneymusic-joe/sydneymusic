@@ -2,25 +2,11 @@
 	import { navigationFooterSecondary, navigationFooter } from '../globals.mjs';
 	import Logo from './logo.svelte';
 	import Button from './button.svelte';
+	import EmailSignup from './email-signup.svelte';
 </script>
 
 <footer class="max-w-5xl px-5 mx-auto mt-5 lg:mt-20 mb-10">
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-200 p-5 sm:p-10 text-black">
-		<div class="text-right">
-			<h2 class="medtext text-sm">Sydney's best music.<br />In your inbox.</h2>
-		</div>
-		<div class="flex flex-col gap-4">
-			<p class="max-w-xs text-pretty">
-				Sign up to our weekly newsletter for spam-free high-grade Sydney Music:
-			</p>
-			<div class="max-w-40">
-				<Button 
-					href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
-					label="Subscribe"
-				/>
-			</div>
-		</div>
-	</div>
+	<EmailSignup />
 
 	<div class="bg-gray-900 p-5 sm:p-10 text-white">
 		<p>
