@@ -37,8 +37,7 @@
 
 	{#if showPromotionalContent}
 		<p class="text-sm md:text-base font-light">
-			We're getting Sydney out to see the incredible local gigs. 78% of
-			readers see more live music because of our work. And we need your help: <strong class="font-bold"
+			We get Sydney out to more live shows — and our guide is read by 25,000 people every month. This not-for-profit project needs to raise funds for its survival: <strong class="font-bold"
 				>Can you help us support live music in Sydney?
 			</strong>
 		</p>
@@ -93,7 +92,7 @@
 		>.
 	</p>
 	<p class="font-light text-xs md:text-md">
-		All donations of $2 and above are tax deductible.{#if showPromotionalContent}
+		All donations of $2 and above are tax deductible. {#if showPromotionalContent}
 			SydneyMusic.net is a not-for-profit initiative, built and maintained by a small team of music
 			lovers. We don't receive any government funding. We don't run advertising. <a
 				href="/support"
