@@ -20,7 +20,7 @@
 	class:lg:ml-0={align === 'left'}
 	class:lg:mr-auto={align === 'left'}
     class:shadow-lg={shadow}
-	class="w-full max-w-lg p-5 bg-{bg} text-{text} flex flex-col gap-4"
+	class="w-full max-w-[40rem] p-5 bg-{bg} text-{text} flex flex-col gap-4"
 >
 	<h2 class="text-lg font-semibold md:text-2xl pr-5 uppercase italic leading-none">
 		SydneyMusic needs your support
