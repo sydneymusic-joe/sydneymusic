@@ -17,7 +17,4 @@
 
 <Header />
 {@render children?.()}
-<!-- {#each bottomSheetConfig as sheet (sheet.key)}
- 	<BottomSheet key={sheet.key} message={sheet.message} action={sheet.action} />
- {/each} -->
 <Footer />
