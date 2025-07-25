@@ -9,7 +9,7 @@
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
 	<div class="flex flex-col lg:flex-row-reverse lg:items-end">
-		<img src="/hero-character.png" class="w-full h-auto max-w-64 my-auto" />
+		<img src="/hero-character.png" class="w-full h-auto max-w-64 my-auto" alt="" />
 		<div>
 			<h1 class="text-lg lg:text-3xl font-semibold mb-4">
 				SydneyMusic.net needs your support.<br />

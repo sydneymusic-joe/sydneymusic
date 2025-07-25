@@ -1,8 +1,6 @@
 <script>
 	import { twMerge } from 'tailwind-merge';
-
-	export let level = 1;
-	export let variant = 'lg';
+	let { level = 1, variant = 'lg', class: className, children, ...restProps } = $props();
 
 	const variantClasses = {
 		'2xl': 'font-serif uppercase italic font-light text-5xl lg:text-7xl mb-5',
@@ -13,11 +11,11 @@
 		xs: 'font-sans font-bold text-base lg:text-lg mb-5'
 	};
 
-	$: baseClass = variantClasses[variant] || variantClasses.lg;
-	$: mergedClass = twMerge(baseClass, $$restProps.class);
-	$: tag = `h${level}`;
+	const baseClass = $derived(variantClasses[variant] || variantClasses.lg);
+	const mergedClass = $derived(twMerge(baseClass, className));
+	const tag = $derived(`h${level}`);
 </script>
 
-<svelte:element this={tag} {...$$restProps} class={mergedClass} >
-	<slot />
+<svelte:element this={tag} {...restProps} class={mergedClass} >
+	{@render children()}
 </svelte:element>

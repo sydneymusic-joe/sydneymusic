@@ -12,7 +12,7 @@
 	import Paragraph from './paragraph.svelte';
 </script>
 
-<footer class="w-fullmt-5 lg:mt-20 mb-10">
+<footer class="w-full mt-5 lg:mt-20">
 	<div class="bg-gray-200">
 		<Container>
 			<EmailSignup shadow={false} />

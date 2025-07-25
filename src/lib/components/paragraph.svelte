@@ -1,7 +1,6 @@
 <script>
 	import { twMerge } from 'tailwind-merge';
-	
-	export let variant = 'md';
+	let { variant = 'md', class: className, children, ...restProps } = $props();
 
 	const variantClasses = {
 		'2xl': 'font-serif text-4xl lg:text-6xl leading-tight mb-5 max-w-md text-pretty',
@@ -12,10 +11,10 @@
 		xs: 'font-sans text-xs lg:text-sm leading-tight mb-5 max-w-md text-pretty'
 	};
 
-	$: baseClass = variantClasses[variant] || variantClasses.md;
-	$: mergedClass = twMerge(baseClass, $$restProps.class);
+	const baseClass = $derived(variantClasses[variant] || variantClasses.md);
+	const mergedClass = $derived(twMerge(baseClass, className));
 </script>
 
-<p  {...$$restProps} class={mergedClass}>
-	<slot />
-</p> 
+<p {...restProps} class={mergedClass}>
+	{@render children()}
+</p>

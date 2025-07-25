@@ -4,7 +4,6 @@
 	import Button from '$lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
-	import PromotionButton from '$lib/components/promotion-button.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import Paragraph from '$lib/components/paragraph.svelte';
 
