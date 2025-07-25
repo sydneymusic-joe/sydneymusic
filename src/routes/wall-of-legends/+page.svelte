@@ -42,7 +42,7 @@
 					<Sponsor logo="/logos/rode.svg" logoSize="lg">
 						Thank you to <a
 							href="https://rode.com"
-							class="link"
+							class="underline"
 							target="_blank"
 							rel="noopener noreferrer">RØDE</a
 						>
