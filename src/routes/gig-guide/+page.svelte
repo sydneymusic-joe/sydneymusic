@@ -1,14 +1,12 @@
 <script>
 	import Event from '$lib/components/event.svelte';
 	import Button from '$lib/components/button.svelte';
-	import Feedprompt from '../../lib/components/feedprompt.svelte';
+	import Feedprompt from '$lib/components/feedprompt.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { createCalendarLink } from '../../lib/globals.mjs';
+	import { createCalendarLink } from '$lib/globals.mjs';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
-	import PromotionButton from '../../lib/components/promotion-button.svelte';
-	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
-	import Heading from '../../lib/components/heading.svelte';
-
+	import Heading from '$lib/components/heading.svelte';
+	import Paragraph from '$lib/components/paragraph.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -41,12 +39,12 @@
 		</div>
 		<div class="flex flex-col justify-end items-start">
 			
-				<p class="italic">Proudly serving Sydney since 2022</p>
-				<p class="text-xs md:text-md">
+				<Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
+				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
 					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
 					<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
-				</p>
+				</Paragraph>
 			
 		</div>
 	</div>
@@ -73,11 +71,11 @@
 				{#each data.gigs as month}
 					<div class="guide-month mb-10">
 						{#each month.items as { label, items }}
-							<h3 class="text-md lg:text-lg font-semibold mb-5" style="border-bottom : solid 1px black">
+							<Heading level={3} variant="md" class="border-b border-black">
 								<span class="text-ruby">{label.split(':')[1]}</span>
 								{label.split(':')[0]}
 								{month.label}
-							</h3>
+							</Heading>
 							<div class="day">
 							{#each items as event}
 								<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
@@ -112,7 +110,7 @@
 			<div class="space-y-5 mt-20 md:mt-0">
 				<PlaylistPromo showtitle="true" />
 
-				<h3 class="notch-left text-lg lg:text-xl">About this guide</h3>
+				<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 				<div class="prose prose-sm">
 					<p>
 						This guide is as simple as we can practically get away with. We’ll include some

@@ -1,8 +1,10 @@
 <script>
-	import Button from '../../lib/components/button.svelte';
+	import Button from '$lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
-	import DonationForm from '../../lib/components/donation-form.svelte';
-</script>
+	import DonationForm from '$lib/components/donation-form.svelte';
+	import Heading from '$lib/components/heading.svelte';
+	import Paragraph from '$lib/components/paragraph.svelte';
+</script>	
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
@@ -29,11 +31,11 @@
 
 	<div class="support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
 		<div>
-			<h3>Buy some merch</h3>
-			<p>
+			<Heading level={3} variant="lg">Buy some merch</Heading>
+			<Paragraph>
 				Represent your favourite local gig guide while looking awesome and supporting us
 				financially.
-			</p>
+			</Paragraph>
 			<Button
 				variant="secondary"
 				label="Visit our shop"

@@ -4,8 +4,8 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import Embed from '$lib/components/article/embed.svelte';
 	import Figure from '$lib/components/article/figure.svelte';
-	import { isBlock, isInlineItem, isItemLink } from 'datocms-structured-text-utils';
-
+	import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
+	import Heading from '$lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 
@@ -21,7 +21,7 @@
 	<div class="space-y-10">
 		<div>
 			<div class="prose prose-xl">
-				<h1 class="uppercase text-xl italic mt-10">{data.headline}</h1>
+				<Heading level={1} variant="xl" class="uppercase">{data.headline}</Heading>
 			</div>
 		</div>
 		<div class="grid lg:grid-cols-sidebar-right">
@@ -55,7 +55,7 @@
 
 	<!-- Second section -->
 	<div class="space-y-10">
-		<h2 class="notch-left text-xl">More reads</h2>
+		<Heading level={2} variant="xl" class="notch-left">More reads</Heading>
 		<div class="grid lg:grid-cols-2">
 			<div class="space-y-10 sm:pr-20 lg:pr-28">
 				{#each data.otherReads as { headline, excerpt, slug }, i}

@@ -27,7 +27,7 @@ export const navigationFooterSupport = [
 ];
 
 export const navigationFooterAbout = [
-	{ title: 'About & FAQ', href: '/about' },
+	{ title: 'About', href: '/about' },
 	{ title: 'Reads', href: '/reads' },
 	{ title: 'Contact', href: '/contact' },
 	{ title: 'Links', href: '/links' },

@@ -21,6 +21,7 @@
 		<div class="max-w-40">
 			<Button 
 				href="https://sydneymusic.us17.list-manage.com/subscribe?u=33fe15202bc9075111c10636a&id=08cf9e0f0b"
+				variant="primary"
 				label="Subscribe" target="_blank"
 			/>
 		</div>

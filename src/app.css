@@ -339,6 +339,10 @@ span.new {
 	@apply text-3xl md:text-5xl mt-0 mb-0;
 }
 
+body .prose {
+	@apply text-black;
+}
+
 .feature-thisweek.prose {
 	@apply max-w-[100%];
 }

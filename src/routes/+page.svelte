@@ -1,12 +1,12 @@
 <script>
 	import Event from '$lib/components/event.svelte';
 	import Read from '$lib/components/read.svelte';
-	import Button from '../lib/components/button.svelte';
+	import Button from '$lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
-	import PromotionButton from '../lib/components/promotion-button.svelte';
-	import Heading from '../lib/components/heading.svelte';
-	import Paragraph from '../lib/components/paragraph.svelte';
+	import PromotionButton from '$lib/components/promotion-button.svelte';
+	import Heading from '$lib/components/heading.svelte';
+	import Paragraph from '$lib/components/paragraph.svelte';
 
 	let { data } = $props();
 </script>
@@ -34,17 +34,17 @@
 		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
-				<h1 class="notch-left text-xl">Sydney live music this week</h1>
+				<Heading level={1} variant="lg" class="notch-left">Sydney live music this week</Heading>
 
 				<div class="space-y-10 sm:pr-20 lg:pr-28">
 					{#each data.gigs as { label, items }, i}
 						<!-- Only get the next 2 days -->
 						{#if i < 2}
 							<div class="space-y-5">
-								<h3 class="notch-left text-lg">
+								<Heading level={3} variant="md" class="notch-left">
 									<span class="font-bold text-ruby">{label.split(':')[0]}</span>
 									<span class="font-normal text-graphite">{label.split(':')[1]}</span>
-								</h3>
+								</Heading>
 								<div>
 									{#each items as event, i}
 										{#if i < 3}
@@ -80,7 +80,7 @@
 
 			<!-- Right col -->
 			<div class="space-y-10">
-				<h1 class="notch-left text-xl">Latest Reads</h1>
+				<Heading level={2} variant="md" class="notch-left mt-2">Latest Reads</Heading>
 				<div class="space-y-10 sm:pr-20 lg:pr-28">
 					{#each data.reads as { headline, excerpt, slug }}
 						<a href="/reads/{slug}" class="block">
@@ -106,7 +106,7 @@
 		<div class="grid md:grid-cols-2 gap-5">
 			<!-- left col -->
 			<div class="space-y-6 mb-20 md:mb-0">
-				<h2 class="notch-left text-xl">Welcome to SydneyMusic!</h2>
+				<Heading level={2} variant="lg" class="notch-left">Welcome to SydneyMusic!</Heading>
 				<div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
 					<p class="font-bold">
 						This site exists to promote the community that music creates, with a local focus on
@@ -124,7 +124,7 @@
 			</div>
 
 			<div class="space-y-6">
-				<h2 class="notch-left text-xl">Join our Discord!</h2>
+				<Heading level={2} variant="lg" class="notch-left">Join our Discord!</Heading>
 
 				<div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
 					<p>
