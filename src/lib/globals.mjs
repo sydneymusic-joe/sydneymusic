@@ -9,45 +9,28 @@ export const navigation = [
 	{ title: 'Gigs', href: '/gig-guide' },
 	{ title: 'Venues', href: '/gig-guide/venues' },
 	{ title: 'Reads', href: '/reads' },
-	{ title: 'Merch', href: 'https://store.sydneymusic.net' },
+	{ title: 'Merch', href: 'https://store.sydneymusic.net' }
 ];
 
-export const navigationFooter = [
+export const navigationFooterMusic = [
 	{ title: 'Home', href: '/' },
-	{ title: 'Gig Guide', href: '/gig-guide' },
+	{ title: 'Sydney Gig Guide', href: '/gig-guide' },
 	{ title: 'Venue Directory', href: '/gig-guide/venues' },
-	{ title: 'About & FAQ', href: '/about' },
-	{ title: 'Donate / Merch Store', href: 'https://store.sydneymusic.net' }
-];
-
-export const navigationFooterSecondary = [
-	{ title: 'Contact', href: '/contact' },
-	{ title: 'Reads', href: '/reads' },
-	{ title: 'Links', href: '/links' },
-	{ title: 'Join the Discord!', href: 'https://discord.gg/jv8VKrXymJ' },
 	{ title: 'Weekly Gig Guide Playlist', href: '/playlist' }
 ];
 
-//ToDo: Get config from source of truth in datoCMS
-export const bottomSheetConfig = [
-	{
-		key: 'savedPromoHomepage',
-		route: '/',
-		delay: 5000,
-		localStorageKey: 'doitagaindonorPromo'
-	},
-	{
-		key: 'savedPromoGigGuide',
-		route: '/gig-guide',
-		delay: 10000,
-		localStorageKey: 'doitagaindonorPromo'
-	},
-	{
-		key: 'savedPromoVenues',
-		route: '/gig-guide/venues',
-		delay: 5000,
-		localStorageKey: 'doitagaindonorPromo'
-	}
+export const navigationFooterSupport = [
+	{ title: 'Support Sydney Music', href: '/suport' },
+	{ title: 'Wall of Legends', href: '/wall-of-legends' },
+	{ title: 'Merch Store', href: 'https://store.sydneymusic.net' },
+	{ title: 'Join the Discord!', href: 'https://discord.gg/jv8VKrXymJ' }
+];
+
+export const navigationFooterAbout = [
+	{ title: 'About & FAQ', href: '/about' },
+	{ title: 'Reads', href: '/reads' },
+	{ title: 'Contact', href: '/contact' },
+	{ title: 'Links', href: '/links' },
 ];
 
 export const formatDay = (dateOrString) => {

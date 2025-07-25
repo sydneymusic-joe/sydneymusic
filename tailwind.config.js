@@ -21,9 +21,8 @@ module.exports = {
 				xs: '480px'
 			},
 			fontFamily: {
-				sans: ['IBM Plex Sans Condensed', 'sans-serif'],
-				instrumentSerif: ['Instrument Serif', 'serif'],
-				instrumentSans: ['Instrument Sans', 'sans-serif']
+				sans: ['Instrument Sans', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
+				serif: ['Instrument Serif', `"Superclarendon, 'Bookman Old Style', 'Sitka Heading', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif"`],
 			},
 			fontSize: {
 				xl: '1.375rem'

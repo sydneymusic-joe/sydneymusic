@@ -2,145 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgLsM.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgA.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7ThA.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK4.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYotEyq5.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYQtEw.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-	font-family: 'ITC Souvenir';
-	font-display: swap;
-	src: url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
-}
-
 @font-face {
 	font-family: 'Instrument Serif';
 	font-style: normal;
@@ -478,11 +339,6 @@ span.new {
 	@apply text-3xl md:text-5xl mt-0 mb-0;
 }
 
-.medtext {
-	font-family: 'ITC Souvenir';
-	@apply text-xl md:text-3xl mt-0 mb-0;
-}
-
 .feature-thisweek.prose {
 	@apply max-w-[100%];
 }
@@ -534,22 +390,6 @@ h1.special {
 	padding: 15px;
 	@apply bg-ruby;
 	color: white;
-}
-
-.bottom-sheet {
-	@apply fixed bottom-0 inset-x-0 border-black bg-yellow-50 p-6;
-	z-index: 102;
-	transform: translateY(100%);
-	transition:
-		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-		opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	pointer-events: none;
-	border-top: solid 1px black;
-}
-
-.bottom-sheet.show {
-	transform: translateY(0);
-	pointer-events: auto; /* Enable interaction when shown */
 }
 
 .cta h3 {
