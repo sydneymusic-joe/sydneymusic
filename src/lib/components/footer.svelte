@@ -25,7 +25,7 @@
 					<Logo invert={true} />
 				</a>
 
-				<p class="prose text-xs text-slate-300 mt-5">
+				<p class="prose text-xs text-gray-300 mt-5">
 					&copy; SydneyMusic Ltd. 2022-2024<br />
 					ABN 87 663 482 513<br />
 					<br />

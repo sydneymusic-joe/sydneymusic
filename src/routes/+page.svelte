@@ -91,7 +91,7 @@
 		</div>
 	</div>
 
-	<div class="home-storelink rounded bg-slate-200 text-sm p-5 border-b-2">
+	<div class="home-storelink rounded bg-gray-200 text-sm p-5 border-b-2">
 		<p class="prose max-w-none">
 			<strong>The SydneyMusic store is now open!</strong><br />If you like what we do, you can
 			support the site by making a donation or buying some merch through
