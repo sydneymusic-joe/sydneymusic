@@ -7,6 +7,7 @@
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 	import PromotionButton from '../../lib/components/promotion-button.svelte';
 	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
+	import Heading from '../../lib/components/heading.svelte';
 
 	let { data } = $props();
 
@@ -31,12 +32,12 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mx-auto overflow-x-clip">
+<div class="max-w-5xl px-5 mx-auto overflow-x-clip pt-20">
 	<div class="grid md:grid-cols-sidebar-right-wide mb-10">
 		<div class="sm:pr-20 flex flex-col justify-end items-start gap-4">
-			<h1 class="bigtext lg:mt-10 max-w-md text-pretty">
+			<Heading level={1} variant="xl" class="max-w-md">
 				<span class="italic">The</span> Sydney gig guide featuring <span class="text-ruby">{gigCount} upcoming shows</span>
-			</h1>
+			</Heading>
 		</div>
 		<div class="flex flex-col justify-end items-start">
 			

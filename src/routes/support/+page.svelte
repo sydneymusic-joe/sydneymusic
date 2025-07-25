@@ -1,5 +1,5 @@
 <script>
-	import Button from '../../lib/components/button-dark.svelte';
+	import Button from '../../lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import DonationForm from '../../lib/components/donation-form.svelte';
 </script>
@@ -27,7 +27,7 @@
 		shadow={false}
 	/>
 
-	<div class="cta support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
+	<div class="support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
 		<div>
 			<h3>Buy some merch</h3>
 			<p>
@@ -65,7 +65,7 @@
 		</div>
 	</div>
 
-	<div class="flex place-content-center cta">
+	<div class="flex place-content-center">
 		<div>
 			<Button variant="secondary" href="/about" label="Learn more about SydneyMusic.net"></Button>
 		</div>

@@ -372,45 +372,9 @@ span.new {
 	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'><style type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
 }
 
-h1.special {
-	font-family: 'ITC Souvenir';
-	font-size: 28px;
-	line-height: 100%;
-	@apply text-center;
-	margin-bottom: 8px;
-	margin-top: 10px;
-}
-
 .yt-embed iframe {
 	width: 100%;
 	aspect-ratio: 16/9;
-}
-
-#support-banner {
-	padding: 15px;
-	@apply bg-ruby;
-	color: white;
-}
-
-.cta h3 {
-	@apply font-bold;
-}
-
-.cta a {
-	@apply flex font-semibold justify-self-start px-3 md:px-6 py-2 transition-opacity duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
-	border: solid 1px black;
-}
-
-.cta.support div a {
-	@apply mt-4;
-}
-
-.cta a.primary {
-	@apply bg-black text-[#ffffff] hover:bg-[#ffffff] hover:text-[#000000];
-}
-
-.mything * {
-	color: lime !important;
 }
 
 .lib-logo {

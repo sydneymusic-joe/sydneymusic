@@ -5,8 +5,9 @@
 	export let variant = 'lg';
 
 	const variantClasses = {
-		xl: 'font-serif uppercase italic text-6xl lg:text-8xl',
-		lg: 'font-serif uppercase italic text-4xl lg:text-6xl',
+		'2xl': 'font-serif uppercase italic text-5xl lg:text-7xl',
+		xl: 'font-serif uppercase italic text-4xl lg:text-5xl',
+		lg: 'font-serif uppercase italic text-2xl lg:text-4xl',
 		md: 'font-serif uppercase italic text-xl lg:text-2xl',
 		sm: 'font-sans font-bold text-lg lg:text-xl',
 		xs: 'font-sans font-bold text-base lg:text-lg'

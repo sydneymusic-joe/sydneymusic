@@ -5,6 +5,8 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import PromotionButton from '../lib/components/promotion-button.svelte';
+	import Heading from '../lib/components/heading.svelte';
+	import Paragraph from '../lib/components/paragraph.svelte';
 
 	let { data } = $props();
 </script>
@@ -14,17 +16,17 @@
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<div class="feature-thisweek space-y-8 md:pb-5 text-left prose">
+		<div class="feature-thisweek space-y-8 md:pb-5 text-left">
 			<div class="flex flex-col lg:flex-row-reverse gap-0 lg:items-stretch hero-bg">
 				<div class="hero-xs w-full lg:w-1/2 lg:h-full">
 					<img src="/canman-homehero@1x.png" class="block lg:hidden m-0" alt="" />
 				</div>
 				<div class="bg-white w-full lg:w-1/2 flex flex-col justify-end items-start py-8 gap-4 lg:mt-32">
-					<p class="bigtext">
-						<span class="text-ruby">{data.gigs.thisWeek} shows</span> waiting to be discovered in Sydney
+					<Paragraph variant="2xl">
+						<span class="text-ruby italic">{data.gigs.thisWeek} shows</span> waiting to be discovered in Sydney
 						this week.
-					</p>
-					<Button href="/gig-guide" label="Read the full guide" />
+					</Paragraph>
+					<Button variant="primary" href="/gig-guide" label="Read the full guide" />
 				</div>
 			</div>
 		</div>
@@ -72,7 +74,7 @@
 							</div>
 						{/if}
 					{/each}
-					<Button label="More Gigs" href="/gig-guide" />
+					<Button label="More Gigs" href="/gig-guide" variant="outline" />
 				</div>
 			</div>
 
@@ -85,7 +87,7 @@
 							<Read {headline} body={excerpt} />
 						</a>
 					{/each}
-					<Button label="More Reads" href="/reads" />
+					<Button label="More Reads" href="/reads" variant="outline" />
 				</div>
 			</div>
 		</div>

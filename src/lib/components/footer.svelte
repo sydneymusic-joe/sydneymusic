@@ -39,7 +39,7 @@
 			<div class="grid lg:grid-cols-5 gap-5 lg:gap-20 justify-between py-5">
 				<div class="lg:col-span-2">
 					<a href="/" class="block mb-10 max-w-64 lg:max-w-none">
-						<Logo invert={true} />
+						<Logo invert={true} stickers={true} />
 					</a>
 
 					<Paragraph variant="xs">
