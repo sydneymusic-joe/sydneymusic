@@ -1,4 +1,6 @@
 <script>
+	import Heading from "./heading.svelte";
+
 	/**
 	 * @typedef {Object} Props
 	 * @property {boolean} [showtitle]
@@ -9,7 +11,7 @@
 </script>
 
 {#if showtitle}
-	<h3 class="notch-left text-lg lg:text-xl">Gig Guide Playlist</h3>
+	<Heading level={3} variant="md" class="notch-left">Gig Guide Playlist</Heading>
 {/if}
 <div class="prose prose-sm">
 	<p>Listen to (almost) every artist listed in the gig guide this week:</p>

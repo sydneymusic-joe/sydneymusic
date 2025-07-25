@@ -1,5 +1,6 @@
 <script>
-	import Button from './button-dark.svelte';
+	import Button from './button.svelte';
+	import Heading from './heading.svelte';
 	/**
 	 * @type {boolean}
 	 */
@@ -23,9 +24,9 @@
     class:shadow-lg={shadow}
 	class="w-full max-w-[40rem] p-5 bg-{bg} text-{text} flex flex-col gap-4"
 >
-	<h2 class="text-lg font-semibold md:text-2xl pr-5 uppercase italic leading-none">
+	<Heading level={2} variant="lg">
 		SydneyMusic needs your support
-	</h2>
+	</Heading>
 
 	<div class="w-full -mt-2">
 		<div class="text-xs mb-1 opacity-80 text-right pr-1">{fundedPercentage}% funded</div>
@@ -45,13 +46,14 @@
 	{/if}
 	<h3><strong>Become a monthly donor:</strong></h3>
 	<div>
-		<div class="cta flex flex-row gap-3 w-full text-md lg:text-xl">
+		<div class="flex flex-row flex-wrap gap-3 w-full text-md lg:text-xl">
 			<Button
 				label="$2"
 				href="https://square.link/u/L0GTRapn"
 				target="_blank"
 				variant="primary"
 				pointer=""
+				size="lg"
 			/>
 			<Button
 				label="$5"
@@ -59,6 +61,7 @@
 				target="_blank"
 				variant="primary"
 				pointer=""
+				size="lg"
 			/>
 			<Button
 				label="$15"
@@ -66,6 +69,7 @@
 				target="_blank"
 				variant="primary"
 				pointer=""
+				size="lg"
 			/>
 			<Button
 				label="$50"
@@ -73,6 +77,7 @@
 				target="_blank"
 				variant="primary"
 				pointer=""
+				size="lg"
 			/>
 			<Button
 				label="$200"
@@ -80,12 +85,13 @@
 				target="_blank"
 				variant="primary"
 				pointer=""
+				size="lg"
 			/>
 		</div>
 	</div>
 	<p class="text-md font-light">
-		Or <a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline"
-			>choose a different amount</a
+		<a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline"
+			>Choose a different amount</a
 		>
 		or
 		<a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline"

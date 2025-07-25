@@ -1,5 +1,6 @@
 <script>
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Heading from '$lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="About / FAQ" />
@@ -8,7 +9,7 @@
 	<div class="grid md:grid-cols-sidebar-right-wide">
 		<!-- left col -->
 		<div class="about-copy space-y-6 sm:pr-20">
-			<h2 class="notch-left text-xl">What is SydneyMusic.net?</h2>
+			<Heading level={2} variant="xl" class="notch-left">What is SydneyMusic.net?</Heading>
 
 			<div>
 				<p class="font-bold">
@@ -30,7 +31,7 @@
 				</p>
 			</div>
 
-			<h2 class="notch-left text-xl">How Does It Work?</h2>
+			<Heading level={2} variant="xl" class="notch-left">How Does It Work?</Heading>
 
 			<div>
 				<p>This site is emphatically not-for-profit.</p>
@@ -56,7 +57,7 @@
 				</p>
 			</div>
 
-			<h2 class="notch-left text-xl">Who's Behind This?</h2>
+			<Heading level={2} variant="xl" class="notch-left">Who's Behind This?</Heading>
 
 			<div>
 				<p>The website and initiative was co-founded by:</p>
@@ -93,7 +94,7 @@
 				</p>
 			</div>
 
-			<h2 class="notch-left text-xl">Site code</h2>
+			<Heading level={2} variant="xl" class="notch-left">Site code</Heading>
 			<div>
 				<p>
 					The repository containing all of SydneyMusic.net's code can be <a
@@ -117,7 +118,7 @@
 				</p>
 			</div>
 
-			<h2 class="notch-left text-xl">FAQ</h2>
+			<Heading level={2} variant="xl" class="notch-left">FAQ</Heading>
 
 			<div>
 				<p>We'll update this when we start getting frequent questions.</p>

@@ -1,16 +1,13 @@
 <script>
 	import {
-		previewMode,
-		groupBy,
 		createCalendarLink,
-		formatDayOfWeek,
-		formatDateLong
 	} from '$lib/globals.mjs';
 	import { render } from 'datocms-structured-text-to-html-string';
 
 	
 	import Event from '$lib/components/event.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Heading from '$lib/components/heading.svelte';
 	/**
 	 * @typedef {Object} Props
 	 * @property {any} data - export let venueData;
@@ -108,9 +105,9 @@
 
 							{#each eventsFuture as month}
 								<div class="guide-month space-y-10">
-									<h3 class="notch-left text-lg lg:text-xl">
+									<Heading level={3} variant="md" class="notch-left">
 										{month.label}
-									</h3>
+									</Heading>
 									<div class="grid">
 										{#each month.items as { label, items }}
 											<div class="relative day flex items-start">
@@ -160,9 +157,9 @@
 					<div class="accordion-content overflow-hidden max-h-0">
 						{#each data.eventsPast as month}
 							<div class="guide-month">
-								<h3 class="notch-left text-lg lg:text-xl">
+								<Heading level={3} variant="md" class="notch-left">
 									{month.label}
-								</h3>
+								</Heading>
 								<div class="grid">
 									{#each month.items as { label, items }}
 										<div class="relative day flex items-start">

@@ -1,15 +1,15 @@
 <script>
 	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { formatDay, formatDateLong, createCalendarLink } from '../../../lib/globals.mjs';
+	import { formatDay, formatDateLong, createCalendarLink } from '$lib/globals.mjs';
 	import Event from '$lib/components/event.svelte';
-
+	import Heading from '$lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 
 <SeoSocial title="Gig Guide - Latest Feed" />
 
 <div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
-	<h1 class="notch-left text-xl">Gig Guide <span class="text-ruby">Latest 50 Updates</span></h1>
+	<Heading level={1} variant="xl" class="notch-left">Gig Guide <span class="text-ruby">Latest 50 Updates</span></Heading>
 </div>
 
 <div class="max-w-5xl px-5 mt-5 mx-auto space-y-32 pb-24">
@@ -71,7 +71,7 @@
 			</div>
 			<!-- right col -->
 			<div class="space-y-10 mt-20 md:mt-0">
-				<h3 class="notch-left text-lg lg:text-xl">This is a beta feature</h3>
+				<Heading level={3} variant="md" class="notch-left">This is a beta feature</Heading>
 				<div class="prose prose-sm">
 					<p>
 						You can send feedback to <a href="mailto:contact@sydneymusic.net"

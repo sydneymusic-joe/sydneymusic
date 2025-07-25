@@ -1,5 +1,6 @@
 <script>
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Heading from '$lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 
@@ -9,7 +10,7 @@
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
-			<h2 class="notch-left text-xl">A Bunch Of Links</h2>
+			<Heading level={2} variant="xl" class="notch-left">A Bunch Of Links</Heading>
 
 			<div class="space-y-3 pl-3">
 				{#each data.links as { label, items }, i}
@@ -31,9 +32,9 @@
 				{/each}
 			</div>
 
-			<h2 class="notch-left text-xl">
+			<Heading level={2} variant="xl" class="notch-left">
 				... and a complete listing of all of the venues that we've listed shows for
-			</h2>
+			</Heading>
 
 			<p class="prose">
 				This is now on a dedicated <a href="/gig-guide/venues">Venues page</a>
