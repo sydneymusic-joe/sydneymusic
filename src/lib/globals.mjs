@@ -20,7 +20,7 @@ export const navigationFooterMusic = [
 ];
 
 export const navigationFooterSupport = [
-	{ title: 'Support Sydney Music', href: '/suport' },
+	{ title: 'Support Sydney Music', href: '/support' },
 	{ title: 'Wall of Legends', href: '/wall-of-legends' },
 	{ title: 'Merch Store', href: 'https://store.sydneymusic.net' },
 	{ title: 'Join the Discord!', href: 'https://discord.gg/jv8VKrXymJ' }
