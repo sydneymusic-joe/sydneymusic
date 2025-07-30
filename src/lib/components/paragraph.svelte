@@ -8,7 +8,7 @@
 		lg: 'font-serif text-lg lg:text-xl leading-tight mb-5 max-w-md text-pretty',
 		md: 'font-sans text-base lg:text-lg leading-normal mb-5 max-w-md text-pretty',
 		sm: 'font-sans text-sm lg:text-base leading-normal mb-5 max-w-md text-pretty',
-		xs: 'font-sans text-xs lg:text-sm leading-tight mb-5 max-w-md text-pretty'
+		xs: 'font-sans text-sm leading-tight mb-5 max-w-md text-pretty'
 	};
 
 	const baseClass = $derived(variantClasses[variant] || variantClasses.md);
