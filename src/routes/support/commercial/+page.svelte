@@ -44,6 +44,7 @@
 						<label for="thoughts">Any thoughts?</label>
 						<textarea name="thoughts"></textarea>
 						<button type="submit" class="mt-2 p-2 font-serif uppercase italic bg-black text-white block font-bold hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline">Let's chat!</button>
+						<div class="text-xs">We won‘t spam you, but we’ll keep you posted on what we’re up to.</div>
 					</form>
 				</div>
 			</div>

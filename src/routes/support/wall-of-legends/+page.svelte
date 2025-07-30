@@ -8,10 +8,8 @@
 	import Sponsor from '$lib/components/sponsor.svelte';
 	import Button from '$lib/components/button.svelte';
 
-	const data = {
-		readers: 414,
-		readersBudget: 18.24
-	};
+	export let data;
+  const { myData } = data;
 </script>
 
 <SeoSocial title="Wall of Legends" />
@@ -43,10 +41,10 @@
 
 				<TimelineItem title="Our Readers" color="black">
 					<Sponsor>
-						SydneyMusic is supported by <strong class="font-medium"> {data.readers} readers</strong>
+						SydneyMusic is supported by <strong class="font-medium"> {myData.recurringDonorCount} readers</strong>
 						that fund
 						<strong class="font-medium"
-							>{data.readersBudget}% of our monthly minimum viable budget</strong
+							>{Math.round((myData.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong
 						>.
 					</Sponsor>
 				</TimelineItem>

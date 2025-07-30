@@ -7,11 +7,11 @@
 	let { 
         showPromotionalContent = true, 
         align = 'right', 
-        bg = 'ruby', 
-        text = 'white',
+        bg = 'yellow-100', 
+        text = 'black',
         shadow = true
     } = $props();
-	const fundedPercentage = 55;
+	const fundedPercentage = 60;
 </script>
 
 <div
@@ -22,7 +22,7 @@
 	class:lg:mr-auto={align === 'left'}
 	class:lg:m-auto={align === 'center'}
     class:shadow-lg={shadow}
-	class="w-full max-w-[40rem] p-5 bg-{bg} text-{text} flex flex-col gap-4"
+	class="w-full border-2 border-black max-w-[40rem] p-5 bg-{bg} text-{text} flex flex-col gap-4"
 >
 	<Heading level={2} variant="lg">
 		SydneyMusic needs your support
@@ -51,41 +51,41 @@
 				label="$2"
 				href="https://square.link/u/L0GTRapn"
 				target="_blank"
-				variant="primary"
+				variant="outline"
 				pointer=""
-				size="lg"
+				size="lg" class="bg-white"
 			/>
 			<Button
 				label="$5"
 				href="https://square.link/u/Gw8URGj2"
 				target="_blank"
-				variant="primary"
+				variant="outline"
 				pointer=""
-				size="lg"
+				size="lg" class="bg-white"
 			/>
 			<Button
 				label="$15"
 				href="https://square.link/u/JYzf9LTF"
 				target="_blank"
-				variant="primary"
+				variant="outline"
 				pointer=""
-				size="lg"
+				size="lg" class="bg-white"
 			/>
 			<Button
 				label="$50"
 				href="https://square.link/u/moL86XF5"
 				target="_blank"
-				variant="primary"
+				variant="outline"
 				pointer=""
-				size="lg"
+				size="lg" class="bg-white"
 			/>
 			<Button
 				label="$200"
 				href="https://square.link/u/Dicl3TrR"
 				target="_blank"
-				variant="primary"
+				variant="outline"
 				pointer=""
-				size="lg"
+				size="lg" class="bg-white"
 			/>
 		</div>
 	</div>
