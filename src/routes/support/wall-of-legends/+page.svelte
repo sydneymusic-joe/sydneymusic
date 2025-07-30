@@ -9,7 +9,7 @@
 	import Button from '$lib/components/button.svelte';
 
 	const data = {
-		readers: 350,
+		readers: 414,
 		readersBudget: 18.24
 	};
 </script>
@@ -34,9 +34,9 @@
 			</div>
 
 			<div class="max-w-xl mx-auto">
-			<Heading class="text-center my-5" variant="2xl">The Wall of Legends</Heading>
+			<Heading class="text-center my-5 mt-10" variant="2xl">The Wall of Legends</Heading>
 
-				<Heading>The <a href="/gig-guide" class="text-ruby underline">gig guide</a> is made possible by ...</Heading>
+				<Heading class="text-center">The <a href="/gig-guide" class="text-ruby underline">gig guide</a> is made possible by ...</Heading>
 
 			<div class="relative pl-8 space-y-8">
 				<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
@@ -98,8 +98,8 @@
 				<div>
 					<Heading level={2} variant="lg" class="notch-left">Original Supporters</Heading>
 					<Paragraph variant="md">
-						With heartfelt thanks to the following organisations and individuals for getting us
-						through our SydneyMusic's 2024-2025 "bike shop" era:
+						We would not be here without the following organisations and individuals that got us
+						through our 2024-2025 "bike shop" era:
 					</Paragraph>
 				</div>
 
@@ -107,17 +107,17 @@
 					<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
 
 					<TimelineItem title="Anchor Supporters" color="#e5c97b">
-						<Paragraph>Nielson Foundation</Paragraph>
+						<img src="/logos/neilson.png" class="max-w-40" />
 					</TimelineItem>
 
 					<TimelineItem title="Fundraisers thanks to" color="#777">
 						<div class="space-y-2">
-							<Paragraph>Doc Sprocket Cycle Workshop</Paragraph>
-							<Paragraph>Crosstalk Records</Paragraph>
+							<img src="/logos/doc-sprocket.svg" class="max-w-64" alt="Doc Sprocket Cycle Workshop, Newtown" />
+							<img src="/logos/crosstalk.svg" alt="Crosstalk Records, Leichhardt" class="max-w-64" />
+							<img src="/logos/pbc.png" alt="Petersham Bowling Club" class="max-w-40" />
+							<img src="/logos/mbc.png" alt="Music & Booze Co" class="max-w-64" />
 							<Paragraph>Adam Lewis & Dom Alessio</Paragraph>
-							<Paragraph>Petersham Bowling Club</Paragraph>
-							<Paragraph>Monkey Dot & Inmortality</Paragraph>
-							<Paragraph>Jack Rule & Music and Booze Co</Paragraph>
+							<Paragraph><a href="https://www.instagram.com/monkeydotband/?hl=en" class="underline text-ruby">Monkey Dot</a> & <a href="https://www.instagram.com/inmortal.swag/?hl=en" class="underline text-ruby">Inmortality</a></Paragraph>
 						</div>
 					</TimelineItem>
 				</div>

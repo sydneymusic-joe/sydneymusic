@@ -1,9 +1,8 @@
 <script>
-	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Button from '$lib/components/button.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import Paragraph from '$lib/components/paragraph.svelte';
-	import Button from '$lib/components/button.svelte';
-	import Page from '../wall-of-legends/+page.svelte';
+	import SeoSocial from '$lib/components/seo-social.svelte';
 </script>
 
 <SeoSocial />
@@ -24,23 +23,31 @@
 
 <div class="max-w-5xl px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
 
-	<Heading>Thank you to the incredible organisations, businesses and individuals that have made a commitment to support SydneyMusic in the upcoming FY26 year.</Heading>
-
-	<div class="flex mb-5">
-		<Button label="See the full list here" variant="primary" href="/support/wall-of-legends" />
-		</div>
-
-	<Paragraph>Your support helps us to “connect Sydney with its scene” and get more people out seeing local, community-first underground live music.</Paragraph>
-
-	<div class="space-y-5">
+	<div class="md:flex md:flex-row gap-10">
 		<div>
 			<Heading>Become a sponsor</Heading>
-			<Paragraph>If you are a business or organisation and would like to sponsor SydneyMusic:</Paragraph>
 
-			<div class="flex">
-				<Button label="I want to become a sponsor" href="mailto:sponsorships@sydneymusic.net" variant="primary" />
+			<Paragraph>We’re about to start implementing a sponsorship model to support the gig guide. We’re keen to chat to live music-loving local businesses as we embark on this journey.</Paragraph>
+			<Paragraph>Interested? Get in touch.</Paragraph>
+
+			<div class="space-y-5">
+				<div>
+					<form name="contact" method="POST" data-netlify="true" class="grid w-[75%] gap-2 mb-20">
+						<label for="name">Name:</label>
+						<input name="name" type="text" required />
+						<label for="company">Company:</label>
+						<input name="company" type="text" required />
+						<label for="email">Email:</label>
+						<input name="email" type="email" required />
+						<label for="email">Mobile Number:</label>
+						<input name="email" type="text" />
+						<label for="thoughts">Any thoughts?</label>
+						<textarea name="thoughts"></textarea>
+						<button type="submit" class="mt-2 p-2 font-serif uppercase italic bg-black text-white block font-bold hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline">Let's chat!</button>
+					</form>
 				</div>
-		</div>
+			</div>
+	</div>
 		<div>
 			<Heading>License our API feed</Heading>
 			<Paragraph>Our entire gig guide is available as an API feed by license agreement.</Paragraph>

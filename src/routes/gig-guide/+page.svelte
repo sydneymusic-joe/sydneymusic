@@ -56,14 +56,14 @@
 <div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
 	<div class="contents md:flex md:flex-col">
 		<!-- header -->
-		<div class="order-1">
-			<Heading level={1} variant="xl" class="max-w-md">
+		<div class="order-1 place-self-center md:place-self-auto">
+			<Heading level={1} variant="xl" class="text-center md:text-left sm:max-w-md">
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
 		</div>
 
 		<!-- gig guide -->
-		<div class="sm:pr-20 gigcolumn order-3">
+		<div class="md:pr-20 gigcolumn order-3">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 			<div class="filterbox w-full mb-5">
 				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -118,13 +118,13 @@
 
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
-		<div class="order-2 mb-10 md:mb-0">
+		<div class="order-2 mb-10 md:mb-0 w-[350px] place-self-center">
 			<img src="/canman-flagman-clifftheglyph.png" class="w-[60%] ml-3" alt="Can Man holding a flag with Cliff the Glyph" />
 			<div class="border-2 border-solid border-black bg-yellow-100 p-3 space-y-3">
 				<h2 class="text-xl italic font-bold">SydneyMusic is 60% saved</h2>
 				<div class="flex bg-[#F3A482] rounded-lg"><div class="bg-ruby w-[60%] h-3 rounded-lg"></div></div>
 				<Paragraph variant="xs" class="font-600 italic">We’re grateful for the assistance of our readers, alongside RØDE and Heaps Normal for helping us to get back online.</Paragraph>
-				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to “connect Sydney with its scene” and get people out to shows.</Paragraph>
+				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to connect Sydney with its scene and get people out to shows.</Paragraph>
 				<div class="space-y-2">
 					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
 					<div class="text-xs"><a href="/support/commercial" class="black underline">Commercial sponsorship and data API licensing</a></div>
