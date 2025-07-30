@@ -142,6 +142,12 @@
 	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.woff2) format('woff2');
 }
 @font-face {
+	font-family: 'Instrument Serif';
+	font-style: italic;
+	font-weight: 400;
+	src: url(/fonts/instrument-serif/InstrumentSerif-Italic.woff2) format('woff2');
+}
+@font-face {
 	font-family: 'Instrument Sans';
 	font-style: normal;
 	font-weight: 400;
