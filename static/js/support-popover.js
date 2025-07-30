@@ -73,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		const popover = createSupportPopover(config);
 		if (!popover) return;
 
-		if (config.delay > 0) {
+		/*if (config.delay > 0) {
 			setTimeout(popover.openPopover, config.delay);
 		} else {
 			popover.openPopover();
-		}
+		}*/
 	};
 
 	const initialiseSupportPopovers = () => {
