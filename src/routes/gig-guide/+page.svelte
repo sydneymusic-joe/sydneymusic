@@ -124,12 +124,18 @@
 				<h2 class="text-xl italic font-bold">SydneyMusic is 60% saved</h2>
 				<div class="flex bg-[#F3A482] rounded-lg"><div class="bg-ruby w-[60%] h-3 rounded-lg"></div></div>
 				<Paragraph variant="xs" class="font-600 italic">We’re grateful for the assistance of our readers, alongside RØDE and Heaps Normal for helping us to get back online.</Paragraph>
-				<Paragraph variant="xs"><strong>We’re not out of the woods yet:</strong> but we want to see live music thrive, and with your help we can continue our mission to “connect Sydney with its scene”</Paragraph>
+				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to “connect Sydney with its scene” and get people out to shows.</Paragraph>
 				<div class="space-y-2">
 					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
 					<div class="text-xs"><a href="/support/commercial" class="black underline">Commercial sponsorship and data API licensing</a></div>
 				</div>
-				<div class="flex flex-wrap flex-row text-xs space-x-3 items-center"><div class="font-bold italic uppercase">Thank you to</div><div>•</div><img src="/sponsors-rode.svg" alt="Røde" class="h-4" /><img src="/logos/heaps-normal.png" class="h-8" alt="Heaps Normal" /></div>
+				<div class="flex flex-wrap flex-row text-xs space-x-2 items-center">
+					<div class="font-bold italic uppercase">Thank you to</div>
+					<div>•</div>
+					<img src="/sponsors-rode.svg" alt="Røde" class="h-4" />
+					<img src="/logos/heaps-normal.png" class="h-8" alt="Heaps Normal" />
+					<div class="uppercase opacity-40 font-bold italic"><a href="/support/commercial">+ your name here?</a></div>
+				</div>
 			</div>
 		</div>
 		

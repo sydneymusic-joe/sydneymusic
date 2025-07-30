@@ -9,8 +9,8 @@
 	import Button from '$lib/components/button.svelte';
 
 	const data = {
-		readers: 824,
-		readersBudget: 17
+		readers: 350,
+		readersBudget: 18.24
 	};
 </script>
 
@@ -22,17 +22,21 @@
 				<img src="/canman-flagman-clifftheglyph.png" class="max-w-40 md:max-w-80 object-contain" alt="Can Man with a flag with Cliff the Glyph on it" />
 				<div class="p-5 space-y-5 md:max-w-[50%]">
 					<Heading level={1} variant="xl" class="-mb-2 normal-case">We exist to <span class="text-ruby">connect Sydney with its scene</span></Heading>
-					<p><strong>Since 2022 we've researched and published information on more than 16,000 gigs.</strong></p><p>Our guide is read by over 25,000 people every month — we exist to get more people out supporting local live music.</p>
-					<Button variant="outline" label="Become a Sponsor"> </Button>
-					<Button variant="outline" label="Data API, Insights & Analysis, and Other Services"> </Button>
+					<p><strong>We've researched and published information on more than 16,000 gigs since we formed in March 2022.</strong></p>
+					<p>Our guide is read by over 25,000 people every month — but we need your help to stay in the game.</p>
+					<div class="flex space-x-2">
+						<Button variant="primary" label="Become a Sponsor" href="/support/commercial/" />
+						<Button variant="outline" label="Make a Donation" href="/support" />
+						</div>
 				</div>
 			</div>
 			<div class="bg-white border-2 border-black border-solid">
 			</div>
 
+			<div class="max-w-xl mx-auto">
 			<Heading class="text-center my-5" variant="2xl">The Wall of Legends</Heading>
 
-				<Heading>This project is made possible by ...</Heading>
+				<Heading>The <a href="/gig-guide" class="text-ruby underline">gig guide</a> is made possible by ...</Heading>
 
 			<div class="relative pl-8 space-y-8">
 				<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
@@ -95,19 +99,15 @@
 					<Heading level={2} variant="lg" class="notch-left">Original Supporters</Heading>
 					<Paragraph variant="md">
 						With heartfelt thanks to the following organisations and individuals for getting us
-						through our FY25 "bike shop" era:
+						through our SydneyMusic's 2024-2025 "bike shop" era:
 					</Paragraph>
 				</div>
 
 				<div class="relative pl-8 space-y-8">
 					<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
 
-					<TimelineItem title="Key Era Anchors" color="#e5c97b">
+					<TimelineItem title="Anchor Supporters" color="#e5c97b">
 						<Paragraph>Nielson Foundation</Paragraph>
-					</TimelineItem>
-
-					<TimelineItem title="Thank you to" color="#e5e5e5">
-						<Paragraph>APRA AMCOS</Paragraph>
 					</TimelineItem>
 
 					<TimelineItem title="Fundraisers thanks to" color="#777">
@@ -121,6 +121,7 @@
 						</div>
 					</TimelineItem>
 				</div>
+			</div>
 			</div>
 		</div>
 </Container>
