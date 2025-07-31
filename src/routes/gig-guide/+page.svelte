@@ -126,7 +126,7 @@
 				<Paragraph variant="xs" class="font-600 italic">We’re grateful for the assistance of our readers, alongside RØDE and Heaps Normal for helping us to get back online.</Paragraph>
 				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to connect Sydney with its scene and get people out to shows.</Paragraph>
 				<div class="space-y-2">
-					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
+					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" target="_blank" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
 					<div class="text-xs"><a href="/support/commercial" class="black underline">Commercial sponsorship and data API licensing</a></div>
 				</div>
 				<div class="flex flex-wrap flex-row text-xs space-x-2 items-center">

@@ -27,12 +27,12 @@
 		<div>
 			<Heading>Become a sponsor</Heading>
 
-			<Paragraph>We’re about to start implementing a sponsorship model to support the gig guide. We’re keen to chat to live music-loving local businesses as we embark on this journey.</Paragraph>
+			<Paragraph>We’re about to start implementing a sponsorship model to support <a href="/gig-guide" class="text-ruby underline">Sydney’s most comprehensive gig guide</a>. We’re keen to chat to live music-loving local businesses as we embark on this journey.</Paragraph>
 			<Paragraph>Interested? Get in touch.</Paragraph>
 
 			<div class="space-y-5">
 				<div>
-					<form name="contact" method="POST" data-netlify="true" class="grid w-[75%] gap-2 mb-20">
+					<form name="contact" method="POST" data-netlify="true" class="grid md:w-[75%] gap-2 mb-20">
 						<label for="name">Name:</label>
 						<input name="name" type="text" required />
 						<label for="company">Company:</label>
@@ -50,7 +50,7 @@
 			</div>
 	</div>
 		<div>
-			<Heading>License our API feed</Heading>
+			<Heading><a name="api">License our API feed</a></Heading>
 			<Paragraph>Our entire gig guide is available as an API feed by license agreement.</Paragraph>
 
 			<Paragraph>Getting access to our data gives you incredibly comprehensive, high quality information about every gig we could find taking place across Greater Sydney, vetted to maximum accuracy by humans — covering backyard shows, art spaces and warehouses through to commercial live music at all levels.</Paragraph>

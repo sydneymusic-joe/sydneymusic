@@ -1,6 +1,6 @@
 <script>
 	import Paragraph from '$lib/components/paragraph.svelte';
-	let { logo, logoSize = 'md', children } = $props();
+	let { logo, logoSize = 'md', children, name = 'Sponsor logo', href='' } = $props();
 </script>
 
 <div
@@ -8,12 +8,15 @@
 >
 	{#if logo}
 		<div
-			class="max-w-full aspect-square flex items-center justify-center shrink-0"
-			class:w-48={logoSize === 'lg'}
-			class:w-36={logoSize === 'md'}
-			class:w-20={logoSize === 'sm'}
+			class="max-w-full flex items-center justify-center shrink-0"
+			class:w-32={logoSize === 'lg'}
+			class:md:w-48={logoSize === 'lg'}
+			class:w-24={logoSize === 'md'}
+			class:md:w-36={logoSize === 'md'}
+			class:w-12={logoSize === 'sm'}
+			class:md:w-20={logoSize === 'sm'}
 		>
-			<img src={logo} alt="Sponsor logo" class="object-contain w-full h-full" />
+			<a href="{href}"><img src={logo} alt="{name}" class="object-contain w-full h-full" /></a>
 		</div>
 	{/if}	
 	{#if children}
