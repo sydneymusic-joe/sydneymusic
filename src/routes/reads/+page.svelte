@@ -1,7 +1,7 @@
 <script>
 	import Read from '$lib/components/read.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
-
+	import Heading from '$lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 
@@ -24,7 +24,7 @@
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
-			<h2 class="notch-left text-xl">Latest Reads</h2>
+			<Heading level={2} variant="xl" class="notch-left">Latest Reads</Heading>
 
 			{#each data.reads.latest as { headline, excerpt, slug }}
 				<a href="/reads/{slug}" class="block">
@@ -36,7 +36,7 @@
 
 	{#each data.reads.byMonth as month}
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
-			<h2 class="notch-left text-xl">{month.label}</h2>
+			<Heading level={2} variant="lg" class="notch-left">{month.label}</Heading>
 			<div class="grid lg:grid-cols-2 gap-10">
 				{#each month.items as { headline, excerpt, slug }}
 					<a href="/reads/{slug}" class="block">

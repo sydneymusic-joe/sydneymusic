@@ -1,6 +1,7 @@
 <script>
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import Button from '$lib/components/button.svelte';
+	import Heading from '$lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="Join the SydneyMusic.net team" />
@@ -19,9 +20,9 @@
 </picture>
 <div class="max-w-5xl px-5 mt-5 mx-auto space-y-5 pb-24">
 	<div class="prose">
-		<h1 class="notch-left text-xl">
+		<Heading level={1} variant="xl" class="notch-left">
 			Join the team: <span class="text-ruby">Front-end Developer/Designer</span>
-		</h1>
+		</Heading>
 		<p>
 			<strong
 				>We’re looking for a passionate and creative hybrid developer/designer to help us evolve our
@@ -97,7 +98,7 @@
 			<li>Have an ABN - you'll be working as a contractor on a time and materials basis.</li>
 		</ul>
 
-		<h1 class="notch-left text-xl">About SydneyMusic.net</h1>
+		<Heading level={2} variant="lg" class="notch-left">About SydneyMusic.net</Heading>
 
 		<p>
 			SydneyMusic.net is a not-for-profit organisation that maintains a local, 100% human researched
@@ -111,7 +112,7 @@
 			and a <a href="https://sydneymusic.net/playlist">streaming playlist</a>.
 		</p>
 
-		<h1 class="notch-left text-xl">Setting your price</h1>
+		<Heading level={2} variant="lg" class="notch-left">Setting your price</Heading>
 
 		<p>
 			This is our first financial investment in product development for the SydneyMusic.net website:

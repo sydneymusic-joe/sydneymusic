@@ -1,10 +1,11 @@
 <script>
 	import Event from '$lib/components/event.svelte';
 	import Read from '$lib/components/read.svelte';
-	import Button from '../lib/components/button.svelte';
+	import Button from '$lib/components/button.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
-	import PromotionButton from '../lib/components/promotion-button.svelte';
+	import Heading from '$lib/components/heading.svelte';
+	import Paragraph from '$lib/components/paragraph.svelte';
 
 	let { data } = $props();
 </script>
@@ -14,17 +15,17 @@
 <div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
-		<div class="feature-thisweek space-y-8 md:pb-5 text-left prose">
+		<div class="feature-thisweek space-y-8 md:pb-5 text-left">
 			<div class="flex flex-col lg:flex-row-reverse gap-0 lg:items-stretch hero-bg">
 				<div class="hero-xs w-full lg:w-1/2 lg:h-full">
 					<img src="/canman-homehero@1x.png" class="block lg:hidden m-0" alt="" />
 				</div>
 				<div class="bg-white w-full lg:w-1/2 flex flex-col justify-end items-start py-8 gap-4 lg:mt-32">
-					<p class="bigtext">
-						<span class="text-ruby">{data.gigs.thisWeek} shows</span> waiting to be discovered in Sydney
+					<Paragraph variant="2xl">
+						<span class="text-ruby italic">{data.gigs.thisWeek} shows</span> waiting to be discovered in Sydney
 						this week.
-					</p>
-					<Button href="/gig-guide" label="Read the full guide" />
+					</Paragraph>
+					<Button variant="primary" href="/gig-guide" label="Read the full guide" />
 				</div>
 			</div>
 		</div>
@@ -32,17 +33,17 @@
 		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
-				<h1 class="notch-left text-xl">Sydney live music this week</h1>
+				<Heading level={1} variant="lg" class="notch-left">Sydney live music this week</Heading>
 
 				<div class="space-y-10 sm:pr-20 lg:pr-28">
 					{#each data.gigs as { label, items }, i}
 						<!-- Only get the next 2 days -->
 						{#if i < 2}
 							<div class="space-y-5">
-								<h3 class="notch-left text-lg">
+								<Heading level={3} variant="md" class="notch-left">
 									<span class="font-bold text-ruby">{label.split(':')[0]}</span>
 									<span class="font-normal text-graphite">{label.split(':')[1]}</span>
-								</h3>
+								</Heading>
 								<div>
 									{#each items as event, i}
 										{#if i < 3}
@@ -72,26 +73,26 @@
 							</div>
 						{/if}
 					{/each}
-					<Button label="More Gigs" href="/gig-guide" />
+					<Button label="More Gigs" href="/gig-guide" variant="outline" />
 				</div>
 			</div>
 
 			<!-- Right col -->
 			<div class="space-y-10">
-				<h1 class="notch-left text-xl">Latest Reads</h1>
+				<Heading level={2} variant="md" class="notch-left mt-2">Latest Reads</Heading>
 				<div class="space-y-10 sm:pr-20 lg:pr-28">
 					{#each data.reads as { headline, excerpt, slug }}
 						<a href="/reads/{slug}" class="block">
 							<Read {headline} body={excerpt} />
 						</a>
 					{/each}
-					<Button label="More Reads" href="/reads" />
+					<Button label="More Reads" href="/reads" variant="outline" />
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="home-storelink rounded bg-slate-200 text-sm p-5 border-b-2">
+	<div class="home-storelink rounded bg-gray-200 text-sm p-5 border-b-2">
 		<p class="prose max-w-none">
 			<strong>The SydneyMusic store is now open!</strong><br />If you like what we do, you can
 			support the site by making a donation or buying some merch through
@@ -104,7 +105,7 @@
 		<div class="grid md:grid-cols-2 gap-5">
 			<!-- left col -->
 			<div class="space-y-6 mb-20 md:mb-0">
-				<h2 class="notch-left text-xl">Welcome to SydneyMusic!</h2>
+				<Heading level={2} variant="lg" class="notch-left">Welcome to SydneyMusic!</Heading>
 				<div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
 					<p class="font-bold">
 						This site exists to promote the community that music creates, with a local focus on
@@ -122,7 +123,7 @@
 			</div>
 
 			<div class="space-y-6">
-				<h2 class="notch-left text-xl">Join our Discord!</h2>
+				<Heading level={2} variant="lg" class="notch-left">Join our Discord!</Heading>
 
 				<div class="text-base leading-relaxed sm:pr-20 lg:pr-28 space-y-4 px-3">
 					<p>

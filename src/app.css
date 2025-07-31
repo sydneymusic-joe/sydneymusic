@@ -136,16 +136,16 @@
 }
 
 @font-face {
-	font-family: 'ITC Souvenir';
-	font-display: swap;
-	src: url(/fonts/itc-souvenir-std-medium.woff2) format('woff2');
-}
-
-@font-face {
 	font-family: 'Instrument Serif';
 	font-style: normal;
 	font-weight: 400;
 	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.woff2) format('woff2');
+}
+@font-face {
+	font-family: 'Instrument Serif';
+	font-style: italic;
+	font-weight: 400;
+	src: url(/fonts/instrument-serif/InstrumentSerif-Italic.woff2) format('woff2');
 }
 @font-face {
 	font-family: 'Instrument Sans';
@@ -478,9 +478,8 @@ span.new {
 	@apply text-3xl md:text-5xl mt-0 mb-0;
 }
 
-.medtext {
-	font-family: 'ITC Souvenir';
-	@apply text-xl md:text-3xl mt-0 mb-0;
+body .prose {
+	@apply text-black;
 }
 
 .feature-thisweek.prose {
@@ -516,61 +515,9 @@ span.new {
 	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'><style type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
 }
 
-h1.special {
-	font-family: 'ITC Souvenir';
-	font-size: 28px;
-	line-height: 100%;
-	@apply text-center;
-	margin-bottom: 8px;
-	margin-top: 10px;
-}
-
 .yt-embed iframe {
 	width: 100%;
 	aspect-ratio: 16/9;
-}
-
-#support-banner {
-	padding: 15px;
-	@apply bg-ruby;
-	color: white;
-}
-
-.bottom-sheet {
-	@apply fixed bottom-0 inset-x-0 border-black bg-yellow-50 p-6;
-	z-index: 102;
-	transform: translateY(100%);
-	transition:
-		transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-		opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	pointer-events: none;
-	border-top: solid 1px black;
-}
-
-.bottom-sheet.show {
-	transform: translateY(0);
-	pointer-events: auto; /* Enable interaction when shown */
-}
-
-.cta h3 {
-	@apply font-bold;
-}
-
-.cta a {
-	@apply flex font-semibold justify-self-start px-3 md:px-6 py-2 transition-opacity duration-500 ease-in-out text-black hover:bg-[#ffffff] hover:text-[#000000];
-	border: solid 1px black;
-}
-
-.cta.support div a {
-	@apply mt-4;
-}
-
-.cta a.primary {
-	@apply bg-black text-[#ffffff] hover:bg-[#ffffff] hover:text-[#000000];
-}
-
-.mything * {
-	color: lime !important;
 }
 
 .lib-logo {
@@ -789,4 +736,14 @@ body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	opacity: 1;
 	pointer-events: auto;
 	overflow: visible;
+}
+
+form label {
+	font-weight :bold;
+}
+form input, form textarea {
+	border : solid 2px black;
+	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
+	padding : 10px;
+	margin-bottom : 10px;
 }

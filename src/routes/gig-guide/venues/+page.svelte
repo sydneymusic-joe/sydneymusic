@@ -1,5 +1,6 @@
 <script>
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Heading from '$lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 
@@ -19,7 +20,7 @@
 </picture>
 
 <div class="max-w-5xl px-5 mt-10 mx-auto">
-	<h1 class="notch-left text-2xl mb-5">Live Music Venues in Sydney</h1>
+	<Heading level={1} variant="xl" class="notch-left mb-5">Live Music Venues in Sydney</Heading>
 
 	<div class="px-3 prose max-w-[100%] mb-10">
 		<p>

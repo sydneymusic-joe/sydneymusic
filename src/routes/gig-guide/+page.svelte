@@ -1,13 +1,12 @@
 <script>
-	import Event from '$lib/components/event.svelte';
 	import Button from '$lib/components/button.svelte';
-	import Feedprompt from '../../lib/components/feedprompt.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { createCalendarLink } from '../../lib/globals.mjs';
+	import Event from '$lib/components/event.svelte';
+	import Feedprompt from '$lib/components/feedprompt.svelte';
+	import Heading from '$lib/components/heading.svelte';
+	import Paragraph from '$lib/components/paragraph.svelte';
 	import PlaylistPromo from '$lib/components/playlist.svelte';
-	import PromotionButton from '../../lib/components/promotion-button.svelte';
-	import AboriginalFlag from '$lib/components/aboriginal-flag.svelte';
-
+	import SeoSocial from '$lib/components/seo-social.svelte';
+	import { createCalendarLink } from '$lib/globals.mjs';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -31,122 +30,152 @@
 
 <SeoSocial title="Gig Guide" />
 
-<div class="max-w-5xl px-5 mx-auto overflow-x-clip">
-	<div class="grid md:grid-cols-sidebar-right-wide mb-10">
-		<div class="sm:pr-20 flex flex-col justify-end items-start gap-4">
-			<h1 class="bigtext lg:mt-10 max-w-md text-pretty">
-				<span class="italic">The</span> Sydney gig guide featuring <span class="text-ruby">{gigCount} upcoming shows</span>
-			</h1>
-		</div>
-		<div class="flex flex-col justify-end items-start">
-			
-				<p class="italic">Proudly serving Sydney since 2022</p>
-				<p class="text-xs md:text-md">
+		<!--<div class="flex flex-col justify-end items-start">
+				<Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
+				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
 					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
 					<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
-				</p>
+				</Paragraph>
 			
+		</div>-->
+
+<picture>
+	<source
+		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
+		media="(min-width : 640px)"
+	/>
+	<source srcset="/canman-gigs-mobile.png" media="(max-width : 640px)" />
+	<img
+		src="/canman-gigs@1x.png"
+		alt="SydneyMusic.net mascot Can Man loves a read"
+		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+	/>
+</picture>
+
+<div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
+	<div class="contents md:flex md:flex-col">
+		<!-- header -->
+		<div class="order-1 place-self-center md:place-self-auto">
+			<Heading level={1} variant="xl" class="text-center md:text-left sm:max-w-md">
+				Welcome to Sydney’s most comprehensive gig guide
+			</Heading>
+		</div>
+
+		<!-- gig guide -->
+		<div class="md:pr-20 gigcolumn order-3">
+			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
+			<div class="filterbox w-full mb-5">
+				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
+					<input type="checkbox" id="toggle-freegigs" class="sr-only" />
+					Free / pay-what-you-can
+				</label>
+				<label for="toggle-selected" class="flex items-center cursor-pointer relative">
+					<input type="checkbox" id="toggle-selected" class="sr-only" />
+					My favourites
+				</label>
+			</div>
+
+			{#each data.gigs as month}
+				<div class="guide-month mb-10">
+					{#each month.items as { label, items }}
+						<Heading level={3} variant="md" class="border-b border-black">
+							<span class="text-ruby">{label.split(':')[1]}</span>
+							{label.split(':')[0]}
+							{month.label}
+						</Heading>
+						<div class="day">
+						{#each items as event}
+							<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
+								<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
+								<Event
+									name={event.promotedName}
+									gigId={event.id}
+									performers={event.performersListJson}
+									calendarLink={createCalendarLink(event)}
+									venue={event.venue}
+									website={event.ticketUrl}
+									comment={event.furtherInfo}
+									initials={event.furtherInfoContributorInitials}
+									time={event.time}
+									isFree={event.isFree}
+									isPwyc={event.isPwyc}
+								/>
+							</div>
+							{increment()}
+						{/each}
+						</div>
+						{#if gigCounter > 9}
+							<Feedprompt Index={whichPrompt} />
+							{resetCounter()}
+							{incrementDisplay()}
+						{/if}
+					{/each}
+				</div>
+			{/each}
 		</div>
 	</div>
 
-	<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
-	<div class="filterbox w-full mb-5">
-		<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
-			<input type="checkbox" id="toggle-freegigs" class="sr-only" />
-			Free / pay-what-you-can
-		</label>
-		<label for="toggle-selected" class="flex items-center cursor-pointer relative">
-			<input type="checkbox" id="toggle-selected" class="sr-only" />
-			My favourites
-		</label>
-	</div>
-
-
 	<!-- First section -->
-	<div class="space-y-10">
-		<div class="grid md:grid-cols-sidebar-right-wide">
-			<!-- left col -->
-			<div class="sm:pr-20 gigcolumn">
-
-				{#each data.gigs as month}
-					<div class="guide-month mb-10">
-						{#each month.items as { label, items }}
-							<h3 class="text-md lg:text-lg font-semibold mb-5" style="border-bottom : solid 1px black">
-								<span class="text-ruby">{label.split(':')[1]}</span>
-								{label.split(':')[0]}
-								{month.label}
-							</h3>
-							<div class="day">
-							{#each items as event}
-								<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-									<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
-									<Event
-										name={event.promotedName}
-										gigId={event.id}
-										performers={event.performersListJson}
-										calendarLink={createCalendarLink(event)}
-										venue={event.venue}
-										website={event.ticketUrl}
-										comment={event.furtherInfo}
-										initials={event.furtherInfoContributorInitials}
-										time={event.time}
-										isFree={event.isFree}
-										isPwyc={event.isPwyc}
-									/>
-								</div>
-								{increment()}
-							{/each}
-							</div>
-							{#if gigCounter > 9}
-								<Feedprompt Index={whichPrompt} />
-								{resetCounter()}
-								{incrementDisplay()}
-							{/if}
-						{/each}
-					</div>
-				{/each}
+	<div class="contents md:flex md:flex-col">
+		<div class="order-2 mb-10 md:mb-0 w-[350px] place-self-center">
+			<img src="/canman-flagman-clifftheglyph.png" class="w-[60%] ml-3" alt="Can Man holding a flag with Cliff the Glyph" />
+			<div class="border-2 border-solid border-black bg-yellow-100 p-3 space-y-3">
+				<h2 class="text-xl italic font-bold">SydneyMusic is 60% saved</h2>
+				<div class="flex bg-[#F3A482] rounded-lg"><div class="bg-ruby w-[60%] h-3 rounded-lg"></div></div>
+				<Paragraph variant="xs" class="font-600 italic">We’re grateful for the assistance of our readers, alongside RØDE and Heaps Normal for helping us to get back online.</Paragraph>
+				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to connect Sydney with its scene and get people out to shows.</Paragraph>
+				<div class="space-y-2">
+					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" target="_blank" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
+					<div class="text-xs"><a href="/support/commercial" class="black underline">Commercial sponsorship and data API licensing</a></div>
+				</div>
+				<div class="flex flex-wrap flex-row text-xs space-x-2 items-center">
+					<div class="font-bold italic uppercase">Thank you to</div>
+					<div>•</div>
+					<img src="/sponsors-rode.svg" alt="Røde" class="h-4" />
+					<img src="/logos/heaps-normal.png" class="h-8" alt="Heaps Normal" />
+					<div class="uppercase opacity-40 font-bold italic"><a href="/support/commercial">+ your name here?</a></div>
+				</div>
 			</div>
-			<!-- right col -->
-			<div class="space-y-5 mt-20 md:mt-0">
-				<PlaylistPromo showtitle="true" />
+		</div>
+		
+		<!-- right col -->
+		<div class="space-y-5 mt-20 order-4">
+			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
+			<div class="prose prose-sm">
+				<p>
+					This guide is as simple as we can practically get away with. We’ll include some
+					occasional commentary (feel free to submit your own!) to help give you context on what
+					can be a dizzyingly complex network of musicians, collectives, communities, and spaces,
+					or just make sure you don’t miss out on catching your next favourite act.
+				</p>
+				<p>
+					Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
+						>Send our friendly team of Gig Researchers an email!</a
+					>
+				</p>
+			</div>
+			<div class="space-y-3">
+				<Button label="Submit a gig" href="mailto:gigs@sydneymusic.net" />
+			</div>
 
-				<h3 class="notch-left text-lg lg:text-xl">About this guide</h3>
-				<div class="prose prose-sm">
-					<p>
-						This guide is as simple as we can practically get away with. We’ll include some
-						occasional commentary (feel free to submit your own!) to help give you context on what
-						can be a dizzyingly complex network of musicians, collectives, communities, and spaces,
-						or just make sure you don’t miss out on catching your next favourite act.
-					</p>
-					<p>
-						Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
-							>Send our friendly team of Gig Researchers an email!</a
-						>
-					</p>
-				</div>
-				<div class="space-y-3">
-					<Button label="Submit a gig" href="mailto:gigs@sydneymusic.net" />
-				</div>
+			<div class="prose prose-sm">
+				<p>
+					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br />
+					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
+					publish your marketing/social copy verbatim or give you special consideration in the guide.
+					We generally don’t list cover/tribute bands or background-music sets at hospitality venues.
+					All listings are at our own discretion. We will also graciously refuse any offer of door
+					spots for shows where we can buy tickets.
+				</p>
 
-				<div class="prose prose-sm">
-					<p>
-						<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br />
-						Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
-						publish your marketing/social copy verbatim or give you special consideration in the guide.
-						We generally don’t list cover/tribute bands or background-music sets at hospitality venues.
-						All listings are at our own discretion. We will also graciously refuse any offer of door
-						spots for shows where we can buy tickets.
-					</p>
-
-					<p><strong>Affiliate disclosure:</strong><br />
-						To keep SydneyMusic.net running, we’re testing out affiliate links programs with several ticketing providers. This means we may receive a little bit of money if you click through and buy tickets to a gig via the links here in the guide. We’re not tracking you, we still don’t have ads or cookies, and nothing else about our gig guide changes – we will never base any decisions about which gigs we highlight or list on whether they’re ticketed through a certain provider or not. And we’re still committed to total transparency. We’re just getting a little back for the clicks we send to big and medium ticketing companies – and buying tickets to shows at all levels is still one of the best ways to support our whole community.</p>
-					<p>For more about how affiliate links work, or any other questions, feedback, and ideas about how to keep SydneyMusic sustainable, send us a message via <a href="mailto:contact@sydneymusic.net">e-mail</a> or <a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>, or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.</p>
-				</div>
-				<div class="space-y-3">
-					<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
-					<Button label="Other links" href="/links" />
-				</div>
+				<p><strong>Affiliate disclosure:</strong><br />
+					To keep SydneyMusic.net running, we’re testing out affiliate links programs with several ticketing providers. This means we may receive a little bit of money if you click through and buy tickets to a gig via the links here in the guide. We’re not tracking you, we still don’t have ads or cookies, and nothing else about our gig guide changes – we will never base any decisions about which gigs we highlight or list on whether they’re ticketed through a certain provider or not. And we’re still committed to total transparency. We’re just getting a little back for the clicks we send to big and medium ticketing companies – and buying tickets to shows at all levels is still one of the best ways to support our whole community.</p>
+				<p>For more about how affiliate links work, or any other questions, feedback, and ideas about how to keep SydneyMusic sustainable, send us a message via <a href="mailto:contact@sydneymusic.net">e-mail</a> or <a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>, or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.</p>
+			</div>
+			<div class="space-y-3">
+				<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
+				<Button label="Other links" href="/links" />
 			</div>
 		</div>
 	</div>

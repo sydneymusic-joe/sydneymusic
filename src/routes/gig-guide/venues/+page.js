@@ -1,5 +1,5 @@
 import APId from '$lib/datocms/';
-import { groupBy } from '../../../lib/globals.mjs';
+import { groupBy } from '$lib/globals.mjs';
 
 const getVenues = async () => {
 	const pagesize = 100;
