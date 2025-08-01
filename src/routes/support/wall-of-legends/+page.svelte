@@ -43,13 +43,23 @@
 				<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
 
 				<TimelineItem title="Our Readers" color="black">
-					<Sponsor>
+					<div class="bg-gray-50 p-8 rounded-lg border border-gray-400 space-y-2 text-center">
+					<Paragraph variant="sm">
 						SydneyMusic is supported by <strong class="font-medium"> {myData.recurringDonorCount} readers</strong>
 						that fund
 						<strong class="font-medium"
 							>{Math.round((myData.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong
 						>.
-					</Sponsor>
+					</Paragraph>
+											<Button
+							href="/support"
+							variant="outline"
+							size="md"
+							class="inline-block"
+							label="Become a Supporter"
+						/>
+					</div>
+
 				</TimelineItem>
 
 				<TimelineItem title="Platinum" color="#c5c4c2">
