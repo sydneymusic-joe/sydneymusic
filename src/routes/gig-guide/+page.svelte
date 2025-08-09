@@ -7,6 +7,7 @@
 	import PlaylistPromo from '$lib/components/playlist.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
+	import DonationForm from '../../lib/components/donation-form.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -23,14 +24,17 @@
 		whichPrompt++;
 		return '';
 	};
-	let gigCount = $derived(data.gigs.reduce((acc, month) => 
-		acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0), 0
-	));
+	let gigCount = $derived(
+		data.gigs.reduce(
+			(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
+			0
+		)
+	);
 </script>
 
 <SeoSocial title="Gig Guide" />
 
-		<!--<div class="flex flex-col justify-end items-start">
+<!--<div class="flex flex-col justify-end items-start">
 				<Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
 				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
@@ -85,25 +89,39 @@
 							{month.label}
 						</Heading>
 						<div class="day">
-						{#each items as event}
-							<div class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc ? 'freegig' : ''} {event.isPwyc ? 'pwycgig' : ''}">
-								<div data-gigid="{event.id}" data-gigStartDate="{event.date}" class="sharegig mt-[3px] w-5 flex-none cursor-pointer"><img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" /></div>
-								<Event
-									name={event.promotedName}
-									gigId={event.id}
-									performers={event.performersListJson}
-									calendarLink={createCalendarLink(event)}
-									venue={event.venue}
-									website={event.ticketUrl}
-									comment={event.furtherInfo}
-									initials={event.furtherInfoContributorInitials}
-									time={event.time}
-									isFree={event.isFree}
-									isPwyc={event.isPwyc}
-								/>
-							</div>
-							{increment()}
-						{/each}
+							{#each items as event}
+								<div
+									class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
+										? 'freegig'
+										: ''} {event.isPwyc ? 'pwycgig' : ''}"
+								>
+									<div
+										data-gigid={event.id}
+										data-gigStartDate={event.date}
+										class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
+									>
+										<img
+											class="w-6"
+											alt="Add to your selections"
+											src="/shareability-unselected.svg"
+										/>
+									</div>
+									<Event
+										name={event.promotedName}
+										gigId={event.id}
+										performers={event.performersListJson}
+										calendarLink={createCalendarLink(event)}
+										venue={event.venue}
+										website={event.ticketUrl}
+										comment={event.furtherInfo}
+										initials={event.furtherInfoContributorInitials}
+										time={event.time}
+										isFree={event.isFree}
+										isPwyc={event.isPwyc}
+									/>
+								</div>
+								{increment()}
+							{/each}
 						</div>
 						{#if gigCounter > 9}
 							<Feedprompt Index={whichPrompt} />
@@ -118,36 +136,27 @@
 
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
-		<div class="order-2 mb-10 md:mb-0 w-[350px] place-self-center">
-			<img src="/canman-flagman-clifftheglyph.png" class="w-[60%] ml-3" alt="Can Man holding a flag with Cliff the Glyph" />
-			<div class="border-2 border-solid border-black bg-yellow-100 p-3 space-y-3">
-				<h2 class="text-xl italic font-bold">SydneyMusic is 60% saved</h2>
-				<div class="flex bg-[#F3A482] rounded-lg"><div class="bg-ruby w-[60%] h-3 rounded-lg"></div></div>
-				<Paragraph variant="xs" class="font-600 italic">We’re grateful for the assistance of our readers, alongside RØDE and Heaps Normal for helping us to get back online.</Paragraph>
-				<Paragraph variant="xs"><strong>We’re not out of the woods yet</strong>, but with your help we can continue our mission to connect Sydney with its scene and get people out to shows.</Paragraph>
-				<div class="space-y-2">
-					<div class="flex flex-row gap-x-2"><Button label="Donate Now" variant="primary" pointer="" href="https://checkout.square.site/merchant/ML6CT8VAK4J47/checkout/SQ5WSOGMBCBYECOZF2JANBSX" target="_blank" /> <Button label="Wall of Legends" variant="outline" class="bg-white" pointer="" href="/support/wall-of-legends" /></div>
-					<div class="text-xs"><a href="/support/commercial" class="black underline">Commercial sponsorship and data API licensing</a></div>
-				</div>
-				<div class="flex flex-wrap flex-row text-xs space-x-2 items-center">
-					<div class="font-bold italic uppercase">Thank you to</div>
-					<div>•</div>
-					<img src="/sponsors-rode.svg" alt="Røde" class="h-4" />
-					<img src="/logos/heaps-normal.png" class="h-8" alt="Heaps Normal" />
-					<div class="uppercase opacity-40 font-bold italic"><a href="/support/commercial">+ your name here?</a></div>
-				</div>
-			</div>
+		<div class="order-2 mt-20 md:mt-10 mb-5 md:mb-0 w-[350px] place-self-center">
+		<DonationForm
+			headline="SydneyMusic is 60% saved"
+			theme="yellow"
+			size="sm"
+			showSponsors={true}
+			showFineprint={false}
+			showPercentage={false}
+			appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
+			callToAction="We're not out of the woods yet – can you support us?"
+		/>
 		</div>
-		
 		<!-- right col -->
 		<div class="space-y-5 mt-20 order-4">
 			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 			<div class="prose prose-sm">
 				<p>
-					This guide is as simple as we can practically get away with. We’ll include some
-					occasional commentary (feel free to submit your own!) to help give you context on what
-					can be a dizzyingly complex network of musicians, collectives, communities, and spaces,
-					or just make sure you don’t miss out on catching your next favourite act.
+					This guide is as simple as we can practically get away with. We’ll include some occasional
+					commentary (feel free to submit your own!) to help give you context on what can be a
+					dizzyingly complex network of musicians, collectives, communities, and spaces, or just
+					make sure you don’t miss out on catching your next favourite act.
 				</p>
 				<p>
 					Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
@@ -165,13 +174,29 @@
 					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
 					publish your marketing/social copy verbatim or give you special consideration in the guide.
 					We generally don’t list cover/tribute bands or background-music sets at hospitality venues.
-					All listings are at our own discretion. We will also graciously refuse any offer of door
-					spots for shows where we can buy tickets.
+					All listings are at our own discretion. We will also graciously refuse any offer of door spots
+					for shows where we can buy tickets.
 				</p>
 
-				<p><strong>Affiliate disclosure:</strong><br />
-					To keep SydneyMusic.net running, we’re testing out affiliate links programs with several ticketing providers. This means we may receive a little bit of money if you click through and buy tickets to a gig via the links here in the guide. We’re not tracking you, we still don’t have ads or cookies, and nothing else about our gig guide changes – we will never base any decisions about which gigs we highlight or list on whether they’re ticketed through a certain provider or not. And we’re still committed to total transparency. We’re just getting a little back for the clicks we send to big and medium ticketing companies – and buying tickets to shows at all levels is still one of the best ways to support our whole community.</p>
-				<p>For more about how affiliate links work, or any other questions, feedback, and ideas about how to keep SydneyMusic sustainable, send us a message via <a href="mailto:contact@sydneymusic.net">e-mail</a> or <a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>, or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.</p>
+				<p>
+					<strong>Affiliate disclosure:</strong><br />
+					To keep SydneyMusic.net running, we’re testing out affiliate links programs with several ticketing
+					providers. This means we may receive a little bit of money if you click through and buy tickets
+					to a gig via the links here in the guide. We’re not tracking you, we still don’t have ads or
+					cookies, and nothing else about our gig guide changes – we will never base any decisions about
+					which gigs we highlight or list on whether they’re ticketed through a certain provider or not.
+					And we’re still committed to total transparency. We’re just getting a little back for the clicks
+					we send to big and medium ticketing companies – and buying tickets to shows at all levels is
+					still one of the best ways to support our whole community.
+				</p>
+				<p>
+					For more about how affiliate links work, or any other questions, feedback, and ideas about
+					how to keep SydneyMusic sustainable, send us a message via <a
+						href="mailto:contact@sydneymusic.net">e-mail</a
+					>
+					or <a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>,
+					or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.
+				</p>
 			</div>
 			<div class="space-y-3">
 				<Button label="Join the Discord!" href="https://discord.gg/jv8VKrXymJ" />
@@ -181,9 +206,10 @@
 	</div>
 </div>
 
-
 <div id="shareprompt" class="hidden">
-	<button class="share plausible-event-name=Share+Prompt+Click">Share my selections<span></span></button>
+	<button class="share plausible-event-name=Share+Prompt+Click"
+		>Share my selections<span></span></button
+	>
 	<button class="clear plausible-event-name=Share+Clear+All">Clear all</button>
 </div>
 
@@ -191,7 +217,11 @@
 	<div class="title text-lg font-bold">You've selected <span></span> to share!</div>
 	<div class="hint text-sm italic">Here's a preview of your list:</div>
 
-	<div id="share-preview" class="bg-white text-xs max-h-[200px] max-w-[360px] m-y-5 text-black p-2 break-all" style="border : 1px dashed">
+	<div
+		id="share-preview"
+		class="bg-white text-xs max-h-[200px] max-w-[360px] m-y-5 text-black p-2 break-all"
+		style="border : 1px dashed"
+	>
 		Preview text here
 	</div>
 

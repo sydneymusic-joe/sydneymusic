@@ -40,31 +40,32 @@
 					<IconInstagram />
 				</a>
 
-				<input type="checkbox" id="support-trigger" class="popover-trigger" />
-				<label for="support-trigger" class="popover-label support cursor-pointer inline-block">
+				<input type="checkbox" id="support-trigger" class="popover-trigger peer" />
+				<label for="support-trigger" class="min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden">
 					Support Us
+				</label>
+				<label for="support-trigger" class="min-w-36 popover-label support cursor-pointer hidden peer-checked:flex flex-row items-center justify-end gap-2">
+					<span>Support</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						stroke="white"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-label="Close"
+						class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg
+					>
 				</label>
 
 				<div
 					class="popover-content relative lg:absolute left-auto max-w-[40rem] lg:right-0 lg:top-[3.35rem] lg:z-50 w-full lg:w-auto basis-full lg:basis-auto min-w-full lg:min-w-0 order-last lg:order-none"
 				>
-					<div class="max-w-[40rem] mx-auto relative">
-						<DonationForm />
-						<!-- // Close Button -->
-						<label for="support-trigger" class="close-button absolute top-2 right-2 cursor-pointer">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="white"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg
-							>
-						</label>
+					<div class="max-w-[30rem] mx-auto relative">
+						<DonationForm class="pt-10" />
 					</div>
 				</div>
 			</div>
