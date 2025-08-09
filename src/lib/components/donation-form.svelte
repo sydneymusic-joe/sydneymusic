@@ -57,11 +57,11 @@
 			className
 		)}
 	>
-		<div class={twMerge('pr-20', size === 'md' && 'pr-24')}>
+		<div class={twMerge('pr-20', size === 'sm' && 'pr-24')}>
 			<Heading
 				level={2}
 				variant={size}
-				class={twMerge('italic mb-0 text-pretty', size === 'md' && 'text-lg')}>{headline}</Heading
+				class={twMerge('italic mb-0 text-pretty', size === 'sm' && 'text-lg')}>{headline}</Heading
 			>
 		</div>
 		<div class="relative">
@@ -74,12 +74,12 @@
 		</div>
 
 		{#if appealContent}
-			<Paragraph variant="xs" class="mb-0 leading-tight">
+			<Paragraph variant={size === "lg" ? "sm" : "xs"} class="mb-0 leading-tight">
 				{appealContent}
 			</Paragraph>
 		{/if}
 		<div>
-			<Paragraph variant="xs" class="mb-2 leading-tight lg:leading-tight">
+			<Paragraph variant={size === "lg" ? "sm" : "xs"} class="mb-2 leading-tight lg:leading-tight">
 				<strong class="font-bold">{callToAction}</strong>
 			</Paragraph>
 			<Paragraph variant="xs" class="mb-0">Donate monthly:</Paragraph>

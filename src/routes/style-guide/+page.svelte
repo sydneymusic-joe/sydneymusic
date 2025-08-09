@@ -147,11 +147,14 @@
 				<DonationForm theme="dark" size="lg" />
 			</div>
 			<div class="col-span-3">
-				<code class="text-sm text-gray-600 mb-2 block">size="md" with options</code>
+				<code class="text-sm text-gray-600 mb-2 block">size="sm" with options</code>
 				<DonationForm
 					theme="dark"
-					size="md"
+					size="sm"
 					showSponsors={true}
+					showFineprint={false}
+					showPercentage={false}
+					headline="SydneyMusic is 60% saved"
 					appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
 					callToAction="We're not out of the woods yet – can you support us?"
 				/>
