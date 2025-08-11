@@ -28,7 +28,7 @@ const getGigs = async () => {
 
 	let data = [];
 	let query = '';
-	while (iter < 10) {
+	while (iter < 12) {
 		query += `
 		page${iter + 1}:allEvents(
 			orderBy: [gigStartDate_ASC],
@@ -62,7 +62,7 @@ const getGigs = async () => {
 		${query}
 	}`);
 
-	for (iter = 1; iter < 11; iter++) {
+	for (iter = 1; iter < 13; iter++) {
 		const p = page['page' + iter];
 		if (p.length == 0) break;
 
