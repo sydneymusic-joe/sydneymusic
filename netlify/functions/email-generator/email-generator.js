@@ -193,8 +193,8 @@ async function generate() {
 
                 <div class="plug">
                   <p style="font-weight : bold; text-transform : uppercase; font-size : 11px; color : #fff; padding : 10px 15px; margin : 0; background : black;">A NOTE FROM JOE — PLEASE READ</p>  
-                    <h2>We’ve been back for 4 weeks. We still need your help.</h2>
-                    <p>Thank you to our monthly supporters that fund 20% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</p>
+                    <h2>SydneyMusic is not yet financially secure. Help us today.</h2>
+                    <p><strong>Thank you to our monthly supporters that fund 20% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
                     <p>All donations go towards working to secure the organisation’s future, and paying musicians, writers, and creatives that contribute to the project as Gig Researchers.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
