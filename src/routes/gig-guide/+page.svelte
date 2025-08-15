@@ -146,6 +146,7 @@
 			showPercentage={false}
 			appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
 			callToAction="We're not out of the woods yet – can you support us?"
+			donorStats={data.donorStats}
 		/>
 		</div>
 		<!-- right col -->

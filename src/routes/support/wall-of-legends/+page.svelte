@@ -9,7 +9,7 @@
 	import TimelineItem from '$lib/components/timeline-item.svelte';
 
 	export let data;
-  const { myData } = data;
+  	const { donorStats } = data;
 </script>
 
 <SeoSocial title="Wall of Legends" />
@@ -45,10 +45,10 @@
 				<TimelineItem title="Our Readers" color="black">
 					<div class="bg-gray-50 p-8 rounded-lg border border-gray-400 space-y-2 text-center">
 					<Paragraph variant="sm">
-						SydneyMusic is supported by <strong class="font-medium"> {myData.recurringDonorCount} readers</strong>
+						SydneyMusic is supported by <strong class="font-medium"> {donorStats.recurringDonorCount} readers</strong>
 						that fund
 						<strong class="font-medium"
-							>{Math.round((myData.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong
+							>{Math.round((donorStats.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong>
 						>.
 					</Paragraph>
 											<Button

@@ -15,6 +15,7 @@
 	 * @property {'md' | 'lg'} [size] - Size variant for the donation form
 	 * @property {boolean} [showPercentage] - Whether to show the percentage text on the progress bar
 	 * @property {boolean} [shadow] - Whether to apply shadow styling
+	 * @property {Object} [donorStats] - Donor stats object from layout.js
 	 */
 
 	/** @type {Props} */
@@ -28,6 +29,7 @@
 		size = 'lg',
 		shadow = true,
 		showPercentage = true,
+		donorStats,
 		class: className
 	} = $props();
 	const fundedPercentage = 60;
@@ -44,6 +46,8 @@
 		theme === 'light' &&
 			'bg-black text-white hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white border-2 border-transparent hover:border-black focus:border-black'
 	);
+
+	console.log("<DonationForm> donorStats", donorStats);
 </script>
 
 <div class={twMerge('w-full', shadow && 'shadow-lg')}>
@@ -172,7 +176,7 @@
 	</div>
 	{#if showSponsors}
 		<div class="border-t border-gray-200 bg-white p-5" class:shadow-lg={shadow}>
-			<Paragraph variant="xs" class="mb-0">Thanks to 120 individuals and these legends:</Paragraph>
+			<Paragraph variant="xs" class="mb-0">Thanks to {donorStats ? donorStats.recurringDonorCount + donorStats.oneOffDonors : 290} individuals and these legends:</Paragraph>
 
 			<div class="flex flex-wrap flex-row text-xs gap-4 my-2 items-center justify-start">
 				<img src="/sponsors-rode.svg" alt="Røde" class="h-4" />

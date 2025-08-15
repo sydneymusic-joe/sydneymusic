@@ -4,6 +4,8 @@
 	import Paragraph from '$lib/components/paragraph.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import DonationForm from '../../lib/components/donation-form.svelte';
+
+	let { data } = $props();
 </script>
 
 <SeoSocial title="Style Guide" />
@@ -144,7 +146,7 @@
 		<div class="grid grid-cols-4 md:grid-cols-8 gap-8">
 			<div class="col-span-4">
 				<code class="text-sm text-gray-600 mb-2 block">size="lg" (default)</code>
-				<DonationForm theme="dark" size="lg" />
+				<DonationForm theme="dark" size="lg" donorStats={data.donorStats} />
 			</div>
 			<div class="col-span-3">
 				<code class="text-sm text-gray-600 mb-2 block">size="sm" with options</code>
@@ -157,6 +159,7 @@
 					headline="SydneyMusic is 60% saved"
 					appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
 					callToAction="We're not out of the woods yet – can you support us?"
+					donorStats={data.donorStats}
 				/>
 			</div>
 		</div>
@@ -167,19 +170,19 @@
 			<div class="grid md:grid-cols-2 gap-8">
 				<div>
 					<code class="text-sm text-gray-600 mb-2 block">theme="dark" (default)</code>
-					<DonationForm theme="dark" />
+					<DonationForm theme="dark" donorStats={data.donorStats} />
 				</div>
 				<div>
 					<code class="text-sm text-gray-600 mb-2 block">theme="ruby"</code>
-					<DonationForm theme="ruby" />
+					<DonationForm theme="ruby" donorStats={data.donorStats} />
 				</div>
 				<div>
 					<code class="text-sm text-gray-600 mb-2 block">theme="yellow"</code>
-					<DonationForm theme="yellow" />
+					<DonationForm theme="yellow" donorStats={data.donorStats} />
 				</div>
 				<div>
 					<code class="text-sm text-gray-600 mb-2 block">theme="light"</code>
-					<DonationForm theme="light" />
+					<DonationForm theme="light" donorStats={data.donorStats} />
 				</div>
 			</div>
 		</div>
