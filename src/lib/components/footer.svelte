@@ -62,7 +62,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">Music</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/gig-guide">Music</a></Heading>
 					{#each navigationFooterMusic as item}
 						<a
 							href={item.href}
@@ -74,7 +74,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">Support Us</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/support">Support Us</a></Heading>
 					{#each navigationFooterSupport as item}
 						<a
 							href={item.href}
@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">About</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/about">About</a></Heading>
 					{#each navigationFooterAbout as item}
 						<a
 							href={item.href}

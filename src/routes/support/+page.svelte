@@ -27,7 +27,7 @@
 		<DonationForm showPromotionalContent={false} align="left" shadow={false} theme="yellow" />
 	</div>
 
-	<div class="support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
+	<div class="support grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-20 gap-y-20">
 		<div>
 			<Heading level={3} variant="lg">Wall of Legends</Heading>
 			<Paragraph>
@@ -50,6 +50,30 @@
 				variant="secondary"
 				label="Visit our shop"
 				href="https://store.sydneymusic.net"
+				target="_blank"
+			/>
+		</div>
+		<div>
+			<Heading level={3} variant="lg">Commercial Sponsorship</Heading>
+			<Paragraph>
+				Become a commercial sponsor and help us keep SydneyMusic running:
+			</Paragraph>
+			<Button
+				variant="secondary"
+				label="Become a sponsor"
+				href="/support/commercial"
+				target="_blank"
+			/>
+		</div>
+		<div>
+			<Heading level={3} variant="lg">License our API</Heading>
+			<Paragraph>
+				Get access to our high fidelity feed covering all of Sydney's live music.
+			</Paragraph>
+			<Button
+				variant="secondary"
+				label="License our API"
+				href="/api-license"
 				target="_blank"
 			/>
 		</div>
