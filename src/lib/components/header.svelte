@@ -41,10 +41,16 @@
 				</a>
 
 				<input type="checkbox" id="support-trigger" class="popover-trigger peer" />
-				<label for="support-trigger" class="min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden">
+				<label
+					for="support-trigger"
+					class="min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden"
+				>
 					Support Us
 				</label>
-				<label for="support-trigger" class="min-w-36 popover-label support cursor-pointer hidden peer-checked:flex flex-row items-center justify-end gap-2">
+				<label
+					for="support-trigger"
+					class="close-button min-w-36 popover-label support cursor-pointer hidden peer-checked:flex flex-row items-center justify-end gap-2"
+				>
 					<span>Support</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
