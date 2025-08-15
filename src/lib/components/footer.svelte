@@ -48,14 +48,14 @@
 						ABN 87 663 482 513<br />
 						<br />
 						SydneyMusic is registered as a not-for-profit entity with the
-						<a href="https://www.acnc.gov.au" class="text-white"
+						<a href="https://www.acnc.gov.au" class="text-white" target="_blank"
 							>Australian Charities and Not-for-profits Commission</a
 						>.
 					</Paragraph>
 					<Paragraph variant="xs">
 						The SydneyMusic "Can Man" mascot and illustrations were created by and &copy; Hugh
 						McKinnon, 2022. The SydneyMusic logo and merchandise was created by <a
-							href="https://studio3.am/"
+							href="https://studio3.am/" target="_blank"
 							class="text-white">Studio 3AM</a
 						>.
 					</Paragraph>
