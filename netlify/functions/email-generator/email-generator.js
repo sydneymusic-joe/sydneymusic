@@ -193,9 +193,9 @@ async function generate() {
 
                 <div class="plug">
                   <p style="font-weight : bold; text-transform : uppercase; font-size : 11px; color : #fff; padding : 10px 15px; margin : 0; background : black;">A NOTE FROM JOE — PLEASE READ</p>  
-                    <h2>We’re back, but we have a really steep hill to climb</h2>
-                    <p>We’ve secured financial runway that sees SydneyMusic funded for <strong>6 weeks</strong> — that’s the fighting chance we’ve been given, along with an improvement to our monthly recurring donations.</p>
-                    <p>This guide still needs a significant number of hours per week to maintain, which goes towards paying musicians, writers, and creatives that contribute to the project as Gig Researchers.</p>
+                    <h2>We’re back — but we’re not out of the woods</h2>
+                    <p><strong>Thank you to our monthly supporters that fund 20% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
+                    <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
                     <h2>Here’s how to help — takes 30 seconds</h2>
