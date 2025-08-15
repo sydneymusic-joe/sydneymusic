@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const arr = stor.split(',');
 
 		arr.forEach(g => {
-			document.querySelector(`.sharegig[data-gigid=${g}]`).classList.add('selected');
+			document.querySelector(`.sharegig[data-gigid=${g}]`)?.classList?.add('selected');
 		});
 
 		updateShareSheet();
@@ -47,22 +47,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	const updateShareSheet = () => {
 		let counter = document.querySelector("#sharesheet .title span");
 		const total = getAllSelectedPanels().length;
-		document.querySelector('#shareprompt span').textContent = total;
+		const sharePromptSpan = document.querySelector('#shareprompt span');
+		if (sharePromptSpan) {
+			sharePromptSpan.textContent = total;
+		}
 		if (counter) {
 			counter.innerText = total === 1 ? "a gig" : total + " gigs";
 		}
 		updateLocalStorage();
 		document.body.classList.toggle('gotgigs', total > 0);
 
-		document.getElementById('share-preview').innerText = getTextPrefix() + "\n\n" + getGigText();
+		const sharePreview = document.getElementById('share-preview');
+		if (sharePreview) {
+			sharePreview.innerText = getTextPrefix() + "\n\n" + getGigText();
+		}
 	};
 
-	document.querySelector('#shareprompt button.share').addEventListener('click', function(evt) {
-		document.body.classList.add('showsheet');
-	});
-	document.querySelector('#shareprompt button.clear').addEventListener('click', function(evt) {
+	const sharePromptShare = document.querySelector('#shareprompt button.share');
+	if (sharePromptShare) {
+		sharePromptShare.addEventListener('click', function() {
+			document.body.classList.add('showsheet');
+		});
+	}
+	const sharePromptClear = document.querySelector('#shareprompt button.clear');
+	if (sharePromptClear) {
+		sharePromptClear.addEventListener('click', function() {
 		clearAllGigs();
-	});
+		});
+	}
 
 	const getGigText = () => {
 		const items = getAllSelectedPanels();
@@ -99,7 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		return gigList;
 	}
-	document.querySelector('#shareability-copy').addEventListener('click', function(evt) {
+
+	const shareabilityCopy = document.querySelector('#shareability-copy');
+	if (shareabilityCopy) {
+		shareabilityCopy.addEventListener('click', function(evt) {
 		confetti({
 			particleCount: 100,
 			spread: 70,
@@ -107,13 +122,19 @@ document.addEventListener('DOMContentLoaded', () => {
 		  });
 		evt.target.classList.add('success');
 		navigator.clipboard.writeText(getTextPrefix() + "\n\n" + getGigText());
-	});
+		});
+	}
 
-	document.getElementById('share-links').addEventListener('click', function(evt) {
-		updateShareSheet();
-	});
+	const shareLinks = document.getElementById('share-links');
+	if (shareLinks) {
+		shareLinks.addEventListener('click', function(evt) {
+			updateShareSheet();
+		});
+	}
 
-	document.querySelector('#shareability-share').addEventListener('click', function(evt) {
+	const shareabilityShare = document.querySelector('#shareability-share');
+	if (shareabilityShare) {
+		shareabilityShare.addEventListener('click', function(evt) {
 		if (navigator.share) {
 			navigator.share({
 				title : getTextPrefix(),
@@ -123,22 +144,29 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('Sharing is not supported on this browser.');
 		}
 		evt.target.classList.add('success');
-	});
+		});
+	}
 
-	document.getElementById('shareability-close').addEventListener('click', function(evt) {
-		document.body.classList.remove('showsheet');
-	});
+	const shareabilityClose = document.getElementById('shareability-close');
+	if (shareabilityClose) {
+		shareabilityClose.addEventListener('click', function(evt) {
+			document.body?.classList?.remove('showsheet');
+		});
+	}
 
-	let btns = document.querySelectorAll('.sharegig');
+	const shareGigs = document.querySelectorAll('.sharegig');
 
-	btns.forEach((sharegig) => {
+	shareGigs.forEach((sharegig) => {
 		sharegig.addEventListener('click', function () {
 			this.classList.toggle("selected", !this.classList.contains('selected'));
 			updateShareSheet();
 		});
-		sharegig.parentElement.querySelector('.headliner').addEventListener('click', function(evt) {
-			sharegig.click();
-		});
+		const headliner = sharegig.parentElement.querySelector('.headliner');
+		if (headliner) {
+			headliner.addEventListener('click', function(evt) {
+				sharegig.click();
+			});
+		}
 	});
 
 	getLocalStorage();
