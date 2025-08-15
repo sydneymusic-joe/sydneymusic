@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-		<div class="grid md:grid-cols-2 gap-5 gap-y-20">
+		<div class="grid md:grid-cols-2 gap-10 gap-y-20">
 			<!-- left col -->
 			<div class="space-y-10">
 				<Heading level={1} variant="lg" class="notch-left">Sydney live music this week</Heading>
@@ -80,7 +80,7 @@
 			<!-- Right col -->
 			<div class="space-y-10">
 				<Heading level={2} variant="md" class="notch-left mt-2">Latest Reads</Heading>
-				<div class="space-y-10 sm:pr-20 lg:pr-28">
+				<div class="space-y-5 sm:pr-20 lg:pr-20">
 					{#each data.reads as { headline, excerpt, slug }}
 						<a href="/reads/{slug}" class="block">
 							<Read {headline} body={excerpt} />
@@ -93,10 +93,9 @@
 	</div>
 
 	<div class="home-storelink rounded bg-gray-200 text-sm p-5 border-b-2">
-		<p class="prose max-w-none">
-			<strong>The SydneyMusic store is now open!</strong><br />If you like what we do, you can
-			support the site by making a donation or buying some merch through
-			<a href="https://store.sydneymusic.net">our new online store</a>.
+		<p class="prose max-w-md">
+			<Heading level={2} variant="md" class="not-italic mb-2">The SydneyMusic store is now open!</Heading>
+			<Paragraph>If you like what we do, you can support the site by making a donation or buying some merch through <a href="https://store.sydneymusic.net">our new online store</a>.</Paragraph>
 		</p>
 	</div>
 
