@@ -20,7 +20,8 @@ export const navigationFooterMusic = [
 ];
 
 export const navigationFooterSupport = [
-	{ title: 'Support Sydney Music', href: '/support' },
+	{ title: 'Make a Donation', href: '/support' },
+	{ title: 'Commercial Sponsorship', href: '/support/commercial' },
 	{ title: 'Wall of Legends', href: '/support/wall-of-legends' },
 	{ title: 'Merch Store', href: 'https://store.sydneymusic.net' },
 	{ title: 'Join the Discord!', href: 'https://discord.gg/jv8VKrXymJ' }
@@ -31,6 +32,7 @@ export const navigationFooterAbout = [
 	{ title: 'Reads', href: '/reads' },
 	{ title: 'Contact', href: '/contact' },
 	{ title: 'Links', href: '/links' },
+	{ title: 'License our API', href: '/api-license' },
 ];
 
 export const formatDay = (dateOrString) => {

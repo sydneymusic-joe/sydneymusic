@@ -4,7 +4,7 @@
 	import DonationForm from '$lib/components/donation-form.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import Paragraph from '$lib/components/paragraph.svelte';
-</script>	
+</script>
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
@@ -23,13 +23,23 @@
 		</div>
 	</div>
 
-	<DonationForm
-		showPromotionalContent={false}
-		align="left"
-		shadow={false}
-	/>
+	<div class="max-w-lg">
+		<DonationForm showPromotionalContent={false} align="left" shadow={false} theme="yellow" />
+	</div>
 
-	<div class="support grid grid-flow-row sm:grid-flow-col gap-x-8 md:gap-x-24 gap-y-8">
+	<div class="support grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-20 gap-y-20">
+		<div>
+			<Heading level={3} variant="lg">Wall of Legends</Heading>
+			<Paragraph>
+				See the individuals and organisations that are keeping SydneyMusic running:
+			</Paragraph>
+			<Button
+				variant="secondary"
+				label="View the Wall"
+				href="/support/wall-of-legends"
+				target="_blank"
+			/>
+		</div>
 		<div>
 			<Heading level={3} variant="lg">Buy some merch</Heading>
 			<Paragraph>
@@ -43,10 +53,34 @@
 				target="_blank"
 			/>
 		</div>
+		<div>
+			<Heading level={3} variant="lg">Commercial Sponsorship</Heading>
+			<Paragraph>
+				Become a commercial sponsor and help us keep SydneyMusic running:
+			</Paragraph>
+			<Button
+				variant="secondary"
+				label="Become a sponsor"
+				href="/support/commercial"
+				target="_blank"
+			/>
+		</div>
+		<div>
+			<Heading level={3} variant="lg">License our API</Heading>
+			<Paragraph>
+				Get access to our high fidelity feed covering all of Sydney's live music.
+			</Paragraph>
+			<Button
+				variant="secondary"
+				label="License our API"
+				href="/api-license"
+				target="_blank"
+			/>
+		</div>
 	</div>
 
-	<div class="border-t border-black">
-		<h3 class="font-bold text-center my-10">SydneyMusic.net will always remain free</h3>
+	<div class="border-t border-gray-400 pt-10 mt-10 flex flex-col gap-y-5">
+		<Heading level={3} variant="lg" class="mb-0">SydneyMusic.net will always remain free</Heading>
 
 		<div class="flex flex-col sm:flex-row gap-y-8">
 			<div class="basis-1/2">
@@ -65,10 +99,7 @@
 				</p>
 			</div>
 		</div>
-	</div>
-
-	<div class="flex place-content-center">
-		<div>
+		<div class="flex flex-row items-start">
 			<Button variant="secondary" href="/about" label="Learn more about SydneyMusic.net"></Button>
 		</div>
 	</div>

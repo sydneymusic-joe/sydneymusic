@@ -16,12 +16,12 @@
 	description={data.excerpt}
 />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<div class="max-w-5xl px-5 mx-auto pt-16 lg:pt-24 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<div>
 			<div class="prose prose-xl">
-				<Heading level={1} variant="xl" class="uppercase">{data.headline}</Heading>
+				<Heading level={1} variant="2xl" class="uppercase">{data.headline}</Heading>
 			</div>
 		</div>
 		<div class="grid lg:grid-cols-sidebar-right">
@@ -54,7 +54,7 @@
 	</div>
 
 	<!-- Second section -->
-	<div class="space-y-10">
+	<div class="space-y-10 pt-16">
 		<Heading level={2} variant="xl" class="notch-left">More reads</Heading>
 		<div class="grid lg:grid-cols-2">
 			<div class="space-y-10 sm:pr-20 lg:pr-28">
