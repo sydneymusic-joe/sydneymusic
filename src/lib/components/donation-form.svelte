@@ -46,8 +46,6 @@
 		theme === 'light' &&
 			'bg-black text-white hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white border-2 border-transparent hover:border-black focus:border-black'
 	);
-
-	console.log("<DonationForm> donorStats", donorStats);
 </script>
 
 <div class={twMerge('w-full', shadow && 'shadow-lg')}>
