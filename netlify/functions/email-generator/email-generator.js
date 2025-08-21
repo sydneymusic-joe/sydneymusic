@@ -192,9 +192,8 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                  <p style="font-weight : bold; text-transform : uppercase; font-size : 11px; color : #fff; padding : 10px 15px; margin : 0; background : black;">A NOTE FROM JOE — PLEASE READ</p>  
-                    <h2>We’re back — but we’re not out of the woods</h2>
-                    <p><strong>Thank you to our monthly supporters that fund 20% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
+                    <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <span class="ruby">Wall of Legends</span></h2>
+                    <p><strong>Thank you to our monthly supporters that fund 22.9% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
                     <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
