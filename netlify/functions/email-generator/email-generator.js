@@ -154,9 +154,9 @@ async function generate() {
             .preamble p { margin-top : 12px; }
             p, td { font-family : Helvetica, Arial, sans-serif; font-size : 14px; }
 			p { line-height : 150%; }
-            .ruby { color : #344A2F }
+            .ruby { color : #e02020 }
             .graphite { color : #6d7278 }
-			.section { text-transform : uppercase; color : #344A2F; font-weight : bold; }
+			.section { text-transform : uppercase; color : #e02020; font-weight : bold; }
             tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
             tr.day td { padding-top : 20px }
             .giglist tr td { font-size : 15px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
@@ -169,7 +169,7 @@ async function generate() {
             .nav td { font-size : 18px; padding-bottom : 20px; }
             .preamble, .gigcontainer { border-width : 1px 0px 0px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
-            .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #344A2F; padding-left : 10px; }
+            .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #e02020; padding-left : 10px; }
 
             .plug { border : solid 2px black; margin-bottom : 10px; }
             .plug p { font-size : 14px; margin : 10px 15px; }
@@ -192,7 +192,7 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                    <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <span class="ruby">Wall of Legends</span></h2>
+                    <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <a href="https://sydneymusic.net/support/wall-of-legends" class="ruby">Wall of Legends</a></h2>
                     <p><strong>Thank you to our monthly supporters that fund 22.9% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
                     <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
