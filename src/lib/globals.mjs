@@ -30,7 +30,7 @@ export const navigationFooterAbout = [
 	{ title: 'About', href: '/about' },
 	{ title: 'Reads', href: '/reads' },
 	{ title: 'Contact', href: '/contact' },
-	{ title: 'Links', href: '/links' },
+	{ title: 'Links', href: '/links' }
 ];
 
 export const formatDay = (dateOrString) => {
