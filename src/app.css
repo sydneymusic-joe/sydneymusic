@@ -453,17 +453,6 @@ header nav .navbar .support {
 	@apply uppercase border-b-2 border-transparent hover:bg-ruby/90 hover:text-white text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3 bg-ruby text-white;
 }
 
-header nav a span,
-span.new {
-	vertical-align: middle;
-	margin-top: -2px;
-	background: yellow;
-	line-height: 100%;
-	font-size: 11px;
-	border-radius: 3px;
-	padding: 2px;
-}
-
 /* venue page stuff */
 .blurb p {
 	@apply m-0 mb-2;
@@ -731,12 +720,15 @@ body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	overflow: hidden;
 }
 
+.popover-trigger:checked ~ .popover-content,
 .popover-trigger:checked + .popover-label + .popover-content {
 	max-height: 30rem;
 	opacity: 1;
 	pointer-events: auto;
 	overflow: visible;
 }
+
+
 
 form label {
 	font-weight :bold;
