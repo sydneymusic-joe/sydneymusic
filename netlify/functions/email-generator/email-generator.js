@@ -193,7 +193,7 @@ async function generate() {
 
                 <div class="plug">
                     <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <a href="https://sydneymusic.net/support/wall-of-legends" class="ruby">Wall of Legends</a></h2>
-                    <p><strong>Thank you to our monthly supporters that fund 22.9% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
+                    <p><strong>Thank you to our monthly supporters that fund 23% of our monthly budget — and thank you to our one-off donors that saw another 8.5% of our budget donated last month.</strong></p>
                     <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
