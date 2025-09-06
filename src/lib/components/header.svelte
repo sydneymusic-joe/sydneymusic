@@ -5,7 +5,37 @@
 	import DonationForm from './donation-form.svelte';
 	import IconListen from './icon-listen.svelte';
 	import IconInstagram from './icon-instagram.svelte';
+	import Container from './container.svelte';
+
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [showNotice]
+	 * @property {Object} [donorStats] - Donor stats object from layout.js
+	 */
+
+	/** @type {Props} */
+	let { showNotice = false, donorStats } = $props();
+
 </script>
+
+{#if showNotice}
+	<div class="bg-black text-white">
+		<Container>
+			<div class="flex flex-col-reverse sm:flex-row gap-4 relative items-start sm:items-end">
+				<img
+					src="/images/canman-peek-transparent.png"
+					class="w-20 h-auto flex-none"
+					alt="Can Man holding a flag with Cliff the Glyph"
+				/>
+				<span class="pt-4 pb-0 sm:pb-4 ">
+					SydneyMusic is {Math.round(40 + (donorStats ? donorStats.recurringBudgetPercent : 20))}%
+					saved. Can you
+					<a href="/support" class="underline text-red-300">support live music in Sydney</a>?
+				</span>
+			</div>
+		</Container>
+	</div>
+{/if}
 
 <header>
 	<div class="lg:hidden flex justify-center">
