@@ -5,8 +5,13 @@
 	 * @typedef {Object} Props
 	 * @property {string} [label]
 	 * @property {string} [href]
+	 * @property {string} [target]
+	 * @property {string} [prefix]
+	 * @property {string} [pointer]
 	 * @property {'primary' | 'secondary' | 'subtle' | 'outline'} [variant]
 	 * @property {'sm' | 'md' | 'lg'} [size]
+	 * @property {string} [className]
+	 * @property {string} [eventName]
 	 */
 
 	/** @type {Props} */
@@ -19,6 +24,7 @@
 		variant = 'secondary',
 		size = 'md',
 		class: className,
+		eventName = 'Button',
 		...restProps
 	} = $props();
 
@@ -42,7 +48,7 @@
 	const variantClass = $derived(variantClasses[variant] || variantClasses.secondary);
 	const sizeClass = $derived(sizeClasses[size] || sizeClasses.md);
 	const mergedClass = $derived(
-		twMerge('plausible-event-name=Button', variantClass, sizeClass, className)
+		twMerge(`plausible-event-name=${eventName}`, variantClass, sizeClass, className)
 	);
 </script>
 
@@ -50,5 +56,6 @@
 	{#if prefix}
 		<span class="text-xs -mt-2">{prefix}</span>
 	{/if}
-	{label} {pointer}
+	{label}
+	{pointer}
 </a>

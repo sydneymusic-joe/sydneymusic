@@ -101,7 +101,8 @@
 					variant="outline"
 					pointer=""
 					{size}
-					class={buttonClass}
+					class={`${buttonClass} plausible-event-amount=2`}
+					eventName="Donation+Amount"
 				/>
 				<Button
 					label="5"
@@ -111,7 +112,8 @@
 					variant="outline"
 					pointer=""
 					{size}
-					class={buttonClass}
+					class={`${buttonClass} plausible-event-amount=5`}
+					eventName="Donation+Amount"
 				/>
 				<Button
 					label="15"
@@ -121,7 +123,8 @@
 					variant="outline"
 					pointer=""
 					{size}
-					class={buttonClass}
+					class={`${buttonClass} plausible-event-amount=15`}
+					eventName="Donation+Amount"
 				/>
 				<Button
 					label="50"
@@ -131,7 +134,8 @@
 					variant="outline"
 					pointer=""
 					{size}
-					class={buttonClass}
+					class={`${buttonClass} plausible-event-amount=50`}
+					eventName="Donation+Amount"
 				/>
 				<Button
 					label="200"
@@ -141,7 +145,8 @@
 					variant="outline"
 					pointer=""
 					{size}
-					class={buttonClass}
+					class={`${buttonClass} plausible-event-amount=200`}
+					eventName="Donation+Amount"
 				/>
 			</div>
 		</div>
@@ -150,12 +155,12 @@
 				Donate a <a
 					href="https://square.link/u/eS7bgm8M"
 					target="_blank"
-					class="underline font-light"
+					class="underline font-light plausible-event-name=Donation+Other"
 				>
 					different amount</a
 				>
 				or
-				<a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline font-light"
+				<a href="https://square.link/u/eS7bgm8M" target="_blank" class="underline font-light plausible-event-name=Donation+OnceOff"
 					>donate once-off</a
 				>.
 			</Paragraph>
@@ -166,7 +171,7 @@
 						music lovers. We don't receive any government funding. We don't run advertising. <a
 							href="/support"
 							target="_blank"
-							class="underline">Learn more &raquo;</a
+							class="underline plausible-event-name=Donation+LearnMore">Learn more &raquo;</a
 						>{/if}
 				</p>
 			{/if}
