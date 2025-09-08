@@ -48,21 +48,21 @@
 						ABN 87 663 482 513<br />
 						<br />
 						SydneyMusic is registered as a not-for-profit entity with the
-						<a href="https://www.acnc.gov.au" class="text-white"
+						<a href="https://www.acnc.gov.au" class="text-white" target="_blank"
 							>Australian Charities and Not-for-profits Commission</a
 						>.
 					</Paragraph>
 					<Paragraph variant="xs">
 						The SydneyMusic "Can Man" mascot and illustrations were created by and &copy; Hugh
 						McKinnon, 2022. The SydneyMusic logo and merchandise was created by <a
-							href="https://studio3.am/"
+							href="https://studio3.am/" target="_blank"
 							class="text-white">Studio 3AM</a
 						>.
 					</Paragraph>
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">Music</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/gig-guide">Music</a></Heading>
 					{#each navigationFooterMusic as item}
 						<a
 							href={item.href}
@@ -74,7 +74,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">Support Us</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/support">Support Us</a></Heading>
 					{#each navigationFooterSupport as item}
 						<a
 							href={item.href}
@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="space-y-3">
-					<Heading level={2} class="text-white" variant="md">About</Heading>
+					<Heading level={2} class="text-white" variant="md"><a class="no-underline hover:underline" href="/about">About</a></Heading>
 					{#each navigationFooterAbout as item}
 						<a
 							href={item.href}

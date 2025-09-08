@@ -142,7 +142,7 @@
 	</div>
 {:else if prompts[Index].type === 'donorbox'}
 	<div class="mt-5 mb-10">
-	<DonationForm align="center" />
+	<DonationForm align="center" class="mt-20" />
 	</div>
 {:else if prompts[Index].type === 'text'}
 	<div class="guide-divider">

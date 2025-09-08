@@ -6,12 +6,6 @@ const supportPopoverConfig = [
 		localStorageKey: 'supportDonorPopover'
 	},
 	{
-		key: 'savedPromoGigGuide',
-		route: '/gig-guide',
-		delay: 1000,
-		localStorageKey: 'supportDonorPopover'
-	},
-	{
 		key: 'savedPromoVenues',
 		route: '/gig-guide/venues',
 		delay: 1000,
@@ -20,13 +14,14 @@ const supportPopoverConfig = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+
 	const createSupportPopover = (config) => {
 		const supportTrigger = document.getElementById('support-trigger');
 		const closeButton = document.querySelector('.close-button');
 		const popoverContent = document.querySelector('.popover-content');
 
-		if (!supportTrigger || !closeButton || !popoverContent) {
-			console.error('Support popover elements not found');
+		if (!supportTrigger || !popoverContent || !closeButton) {
+			console.error('Support popover elements not found', supportTrigger, popoverContent, closeButton);
 			return null;
 		}
 
@@ -73,11 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		const popover = createSupportPopover(config);
 		if (!popover) return;
 
-		/*if (config.delay > 0) {
+		if (config.delay > 0) {
 			setTimeout(popover.openPopover, config.delay);
 		} else {
 			popover.openPopover();
-		}*/
+		}
 	};
 
 	const initialiseSupportPopovers = () => {

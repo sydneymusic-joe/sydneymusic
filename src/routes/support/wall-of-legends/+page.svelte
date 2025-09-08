@@ -9,7 +9,7 @@
 	import TimelineItem from '$lib/components/timeline-item.svelte';
 
 	export let data;
-  const { myData } = data;
+  	const { donorStats } = data;
 </script>
 
 <SeoSocial title="Wall of Legends" />
@@ -25,10 +25,10 @@
 					<p>We know that the best way to make live music more sustainable is to get more people out enjoying it, and the best way to do that is by making it easier to find — in every corner of our city.</p>
 					<p>Our guide is read by over 25,000 people every month, but it takes 50 hours of human effort every week to curate and compile the resource.</p>
 					<p><strong>Help us keep this project alive:</strong></p>
-					<div class="flex flex-col space-y-2 max-w-[220px]">
-						<Button variant="primary" label="Become a Sponsor" href="/support/commercial/" />
-						<Button variant="outline" label="Make a Donation" href="/support" />
-						<Button variant="outline" label="License our API" href="/support/commercial#api" />
+					<div class="flex flex-col lg:flex-row gap-2">
+						<Button size="lg" variant="primary" label="Become a Sponsor" href="/support/commercial/" />
+						<Button size="lg" variant="outline" label="Make a Donation" href="/support" />
+						<!-- <Button variant="outline" label="License our API" href="/api-license" /> -->
 					</div>
 				</div>
 			</div>
@@ -45,11 +45,11 @@
 				<TimelineItem title="Our Readers" color="black">
 					<div class="bg-gray-50 p-8 rounded-lg border border-gray-400 space-y-2 text-center">
 					<Paragraph variant="sm">
-						SydneyMusic is supported by <strong class="font-medium"> {myData.recurringDonorCount} readers</strong>
+						SydneyMusic is supported by <strong class="font-medium"> {donorStats.recurringDonorCount} readers</strong>
 						that fund
 						<strong class="font-medium"
-							>{Math.round((myData.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong
-						>.
+							>{Math.round((donorStats.recurringBudgetPercent + Number.EPSILON) * 100) / 100}% of our monthly minimum viable budget</strong>
+						.
 					</Paragraph>
 											<Button
 							href="/support"

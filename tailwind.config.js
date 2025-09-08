@@ -29,6 +29,20 @@ module.exports = {
 			},
 			colors: {
 				ruby: '#e02020',
+				// Color scale for ruby/red:
+				red: {
+					50: '#fef2f2',
+					100: '#ffe1e1',
+					200: '#ffc9c9',
+					300: '#fea3a3',
+					400: '#fb6e6e',
+					500: '#f34040',
+					600: '#e02020',
+					700: '#bd1818',
+					800: '#9c1818',
+					900: '#811b1b',
+					950: '#460909'
+				},
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
