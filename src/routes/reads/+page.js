@@ -5,7 +5,7 @@ const getReads = async () => {
 	const data = await API(`query {
     allArticles(
       orderBy: _firstPublishedAt_DESC,
-      first: 20
+      first: 100
       ) {
           headline
           excerpt

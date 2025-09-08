@@ -1,17 +1,17 @@
 import { formatDate, groupBy, formatDay, createCalendarLink } from '../../../src/lib/globals.mjs';
 import { GraphQLClient, gql } from 'graphql-request';
-import {marked} from 'marked';
+import { marked } from 'marked';
 
 export default async (req, context) => {
-    let ret = await generate();
-    return new Response(ret, {
-        headers: { "content-type": "text/html"},
-      });
+	let ret = await generate();
+	return new Response(ret, {
+		headers: { 'content-type': 'text/html' }
+	});
 };
 
 export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
 	headers: {
-		authorization: `Bearer ${Netlify.env.get("VITE_DATOCMS_TOKEN")}`
+		authorization: `Bearer ${Netlify.env.get('VITE_DATOCMS_TOKEN')}`
 	}
 });
 
@@ -20,7 +20,7 @@ const getGigs = async () => {
 
 	const dateFrom = new Date();
 	const dateTo = new Date();
-    dateTo.setDate(dateFrom.getDate() + 7);
+	dateTo.setDate(dateFrom.getDate() + 7);
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -81,28 +81,34 @@ const getGigs = async () => {
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
 
 		// Group by month
-		return { 'total' : total, 'gigs' : byMonth.map((month) => {
-			return {
-				...month,
-				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
-			};
-		})};
+		return {
+			total: total,
+			gigs: byMonth.map((month) => {
+				return {
+					...month,
+					items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
+				};
+			})
+		};
 	}
 	return [];
 };
 
 async function generate() {
 	const obj = await getGigs();
-    const total = obj.total;
-    const gigs = obj.gigs;
+	const total = obj.total;
+	const gigs = obj.gigs;
 
-    let content = await client.request(gql`{
-        emailnewsletter {
-            welcomeHeading,
-            preambleContent,
-            newsletterDate
-        }}`);
-    content = content.emailnewsletter;
+	let content = await client.request(gql`
+		{
+			emailnewsletter {
+				welcomeHeading
+				preambleContent
+				newsletterDate
+			}
+		}
+	`);
+	content = content.emailnewsletter;
 
 	var template = '';
 	for (const month of gigs) {
@@ -110,11 +116,11 @@ async function generate() {
 		for (const day of month.items) {
 			template += `
             <tr class="day">
-                <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${
-									day.label.split(':')[1].substr(0,3)
-								}</strong><br /><font style="font-size : 36px; font-weight : bold">${
-				day.label.split(':')[0]
-			}</font></td>
+                <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${day.label
+									.split(':')[1]
+									.substr(0, 3)}</strong><br /><font style="font-size : 36px; font-weight : bold">${
+									day.label.split(':')[0]
+								}</font></td>
                 <td>
                     <table border="0" cellspacing="0" cellpadding="0" class="giglist">`;
 
@@ -154,9 +160,9 @@ async function generate() {
             .preamble p { margin-top : 12px; }
             p, td { font-family : Helvetica, Arial, sans-serif; font-size : 14px; }
 			p { line-height : 150%; }
-            .ruby { color : #344A2F }
+            .ruby { color : #e02020 }
             .graphite { color : #6d7278 }
-			.section { text-transform : uppercase; color : #344A2F; font-weight : bold; }
+			.section { text-transform : uppercase; color : #e02020; font-weight : bold; }
             tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
             tr.day td { padding-top : 20px }
             .giglist tr td { font-size : 15px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
@@ -169,7 +175,7 @@ async function generate() {
             .nav td { font-size : 18px; padding-bottom : 20px; }
             .preamble, .gigcontainer { border-width : 1px 0px 0px 0px; border-color : #666; border-style : solid; padding-bottom : 20px; padding-top : 20px; }
             .preamble li { margin-bottom : 10px; line-height : 150%; }
-            .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #344A2F; padding-left : 10px; }
+            .blurb { font-size : 14px; line-height : 140%; margin-top : 5px; text-transform : none; border-left : solid 3px #e02020; padding-left : 10px; }
 
             .plug { border : solid 2px black; margin-bottom : 10px; }
             .plug p { font-size : 14px; margin : 10px 15px; }
@@ -192,9 +198,8 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                  <p style="font-weight : bold; text-transform : uppercase; font-size : 11px; color : #fff; padding : 10px 15px; margin : 0; background : black;">A NOTE FROM JOE — PLEASE READ</p>  
-                    <h2>We’re back — but we’re not out of the woods</h2>
-                    <p><strong>Thank you to our monthly supporters that fund 20% of our monthly budget — and thank you to our one-off donors that saw another 20% of our budget donated last month.</strong></p>
+                    <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <a href="https://sydneymusic.net/support/wall-of-legends" class="ruby">Wall of Legends</a></h2>
+                    <p><strong>Thank you to our monthly supporters that fund <span class="ruby">23%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">8.5%</span> of our budget donated last month.</strong></p>
                     <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
@@ -219,5 +224,5 @@ async function generate() {
     </table>
 </body></html>`;
 
-return template;
+	return template;
 }

@@ -27,7 +27,7 @@ const getLinks = async () => {
 		}
 	}`);
 
-	data.linkInBio.links.forEach(l => {
+	data.linkInBio.links.forEach((l) => {
 		if (l.url == '' && l.articleLink != null) {
 			l.title = l.articleLink.headline;
 			l.description = l.articleLink.excerpt;
@@ -42,9 +42,8 @@ const getLinks = async () => {
 		return data.linkInBio;
 	}
 
-	return {}
-}
-
+	return {};
+};
 
 export async function load() {
 	let linkinbio = await getLinks();

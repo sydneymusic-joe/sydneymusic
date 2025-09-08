@@ -41,8 +41,8 @@ export async function load({ params }) {
 	while (i * 100 < total) {
 		q += `
 			page${i + 1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${
-			i * 100
-		}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
+				i * 100
+			}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
 				id,
 				gigStartDate,
 				promotedName,
