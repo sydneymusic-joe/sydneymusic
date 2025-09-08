@@ -731,12 +731,11 @@ body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 
 
 form label {
-	font-weight: bold;
+	font-weight :bold;
 }
-form input,
-form textarea {
-	border: solid 2px black;
-	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
-	padding: 10px;
-	margin-bottom: 10px;
+form input, form textarea {
+	border : solid 2px black;
+	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
+	padding : 10px;
+	margin-bottom : 10px;
 }
