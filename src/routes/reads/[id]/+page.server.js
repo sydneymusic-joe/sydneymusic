@@ -1,5 +1,5 @@
-import { render, renderNodeRule } from 'datocms-structured-text-to-html-string';
-import { isHeading } from 'datocms-structured-text-utils';
+import {render, renderNodeRule} from 'datocms-structured-text-to-html-string';
+import {isHeading} from 'datocms-structured-text-utils';
 import API from '$lib/datocms/';
 import { previewMode, formatDateLong } from '$lib/globals.mjs';
 
