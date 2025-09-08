@@ -1,8 +1,6 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts,cjs}'],
-	safelist: [
-		'bg-ruby'
-	],
+	safelist: ['bg-ruby'],
 	theme: {
 		extend: {
 			typography: {
@@ -21,8 +19,14 @@ module.exports = {
 				xs: '480px'
 			},
 			fontFamily: {
-				sans: ['IBM Plex Sans Condensed', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
-				serif: ['Instrument Serif', `"Superclarendon, 'Bookman Old Style', 'Sitka Heading', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif"`],
+				sans: [
+					'IBM Plex Sans Condensed',
+					`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
+				],
+				serif: [
+					'Instrument Serif',
+					`"Superclarendon, 'Bookman Old Style', 'Sitka Heading', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif"`
+				]
 			},
 			fontSize: {
 				xl: '1.375rem'
@@ -32,7 +36,7 @@ module.exports = {
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
-				pjforest:'#344A2F',
+				pjforest: '#344A2F',
 				backgroundDark: '#221F20',
 				gray: {
 					50: '#fafafa',

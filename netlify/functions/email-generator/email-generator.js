@@ -1,17 +1,17 @@
 import { formatDate, groupBy, formatDay, createCalendarLink } from '../../../src/lib/globals.mjs';
 import { GraphQLClient, gql } from 'graphql-request';
-import {marked} from 'marked';
+import { marked } from 'marked';
 
 export default async (req, context) => {
-    let ret = await generate();
-    return new Response(ret, {
-        headers: { "content-type": "text/html"},
-      });
+	let ret = await generate();
+	return new Response(ret, {
+		headers: { 'content-type': 'text/html' }
+	});
 };
 
 export const client = new GraphQLClient(`https://graphql.datocms.com/`, {
 	headers: {
-		authorization: `Bearer ${Netlify.env.get("VITE_DATOCMS_TOKEN")}`
+		authorization: `Bearer ${Netlify.env.get('VITE_DATOCMS_TOKEN')}`
 	}
 });
 
@@ -20,7 +20,7 @@ const getGigs = async () => {
 
 	const dateFrom = new Date();
 	const dateTo = new Date();
-    dateTo.setDate(dateFrom.getDate() + 7);
+	dateTo.setDate(dateFrom.getDate() + 7);
 
 	let data = await client.request(gql`{
         getCount : _allEventsMeta(filter: {
@@ -81,28 +81,34 @@ const getGigs = async () => {
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
 
 		// Group by month
-		return { 'total' : total, 'gigs' : byMonth.map((month) => {
-			return {
-				...month,
-				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
-			};
-		})};
+		return {
+			total: total,
+			gigs: byMonth.map((month) => {
+				return {
+					...month,
+					items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
+				};
+			})
+		};
 	}
 	return [];
 };
 
 async function generate() {
 	const obj = await getGigs();
-    const total = obj.total;
-    const gigs = obj.gigs;
+	const total = obj.total;
+	const gigs = obj.gigs;
 
-    let content = await client.request(gql`{
-        emailnewsletter {
-            welcomeHeading,
-            preambleContent,
-            newsletterDate
-        }}`);
-    content = content.emailnewsletter;
+	let content = await client.request(gql`
+		{
+			emailnewsletter {
+				welcomeHeading
+				preambleContent
+				newsletterDate
+			}
+		}
+	`);
+	content = content.emailnewsletter;
 
 	var template = '';
 	for (const month of gigs) {
@@ -110,11 +116,11 @@ async function generate() {
 		for (const day of month.items) {
 			template += `
             <tr class="day">
-                <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${
-									day.label.split(':')[1].substr(0,3)
-								}</strong><br /><font style="font-size : 36px; font-weight : bold">${
-				day.label.split(':')[0]
-			}</font></td>
+                <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${day.label
+									.split(':')[1]
+									.substr(0, 3)}</strong><br /><font style="font-size : 36px; font-weight : bold">${
+									day.label.split(':')[0]
+								}</font></td>
                 <td>
                     <table border="0" cellspacing="0" cellpadding="0" class="giglist">`;
 
@@ -218,5 +224,5 @@ async function generate() {
     </table>
 </body></html>`;
 
-return template;
+	return template;
 }
