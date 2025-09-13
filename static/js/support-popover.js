@@ -1,16 +1,16 @@
 const supportPopoverConfig = [
-	{
-		key: 'savedPromoHomepage',
-		route: '/',
-		delay: 1000,
-		localStorageKey: 'supportDonorPopover'
-	},
-	{
-		key: 'savedPromoVenues',
-		route: '/gig-guide/venues',
-		delay: 1000,
-		localStorageKey: 'supportDonorPopover'
-	}
+	// {
+	// 	key: 'savedPromoHomepage',
+	// 	route: '/',
+	// 	delay: 1000,
+	// 	localStorageKey: 'supportDonorPopover'
+	// },
+	// {
+	// 	key: 'savedPromoVenues',
+	// 	route: '/gig-guide/venues',
+	// 	delay: 1000,
+	// 	localStorageKey: 'supportDonorPopover'
+	// }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
