@@ -14,46 +14,59 @@ const supportPopoverConfig = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	const createSupportPopover = (config) => {
-		const supportTrigger = document.getElementById('support-trigger');
-		const closeButton = document.querySelector('.close-button');
+		const popoverTrigger = document.getElementById('popover-trigger');
+		const openLabel = document.querySelector('.popover-open');
+		const closeLabel = document.querySelector('.popover-close');
 		const popoverContent = document.querySelector('.popover-content');
 
-		if (!supportTrigger || !popoverContent || !closeButton) {
-			console.error('Support popover elements not found', supportTrigger, popoverContent, closeButton);
+		if (!popoverTrigger || !popoverContent || !openLabel || !closeLabel) {
+			console.error(
+				'Support popover elements not found',
+				popoverTrigger,
+				popoverContent,
+				openLabel,
+				closeLabel
+			);
 			return null;
 		}
 
 		const closePopover = (evt) => {
-			supportTrigger.checked = false;
+			popoverTrigger.checked = false;
+			if (window && window.plausible) window.plausible('Close Support Popover', { interactive });
 
 			if (!evt) return;
 
 			// Set localStorage when close button is clicked
-			if (config.localStorageKey && evt.target.closest('.close-button')) {
+			if (config.localStorageKey && evt.target.closest('.popover-close')) {
 				localStorage.setItem(config.localStorageKey, 'true');
 			}
 		};
 
-		const handleOutsideClick = (event) => {
-			if (!popoverContent.contains(event.target) && !event.target.closest('.popover-label')) {
-				closePopover(false);
-			}
+		const openPopover = (interactive = true) => {
+			popoverTrigger.checked = true;
+			if (window && window.plausible)
+				window.plausible(`${interactive ? 'Open' : 'View'} Support Popover`, { interactive });
 		};
-
-		const openPopover = () => {
-			supportTrigger.checked = true;
-			document.addEventListener('click', handleOutsideClick);
-		};
-
-		closeButton.addEventListener('click', closePopover);
 
 		// Listen for checkbox changes to handle cleanup
-		supportTrigger.addEventListener('change', (e) => {
+		popoverTrigger.addEventListener('change', (e) => {
 			if (!e.target.checked) {
 				document.removeEventListener('click', handleOutsideClick);
 			}
+		});
+
+		// Add tracking to label actions
+		openLabel.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			openPopover();
+		});
+
+		closeLabel.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			closePopover(e);
 		});
 
 		return { openPopover };
@@ -71,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (config.delay > 0) {
 			setTimeout(popover.openPopover, config.delay);
 		} else {
-			popover.openPopover();
+			popover.openPopover(false);
 		}
 	};
 

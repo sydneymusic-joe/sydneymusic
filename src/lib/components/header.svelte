@@ -70,16 +70,18 @@
 					<IconInstagram />
 				</a>
 
-				<input type="checkbox" id="support-trigger" class="popover-trigger peer" />
+				<input type="checkbox" id="popover-trigger" class="popover-trigger peer" />
 				<label
-					for="support-trigger"
-					class="min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden"
+					for="popover-trigger"
+					class="popover-open min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden"
+					id="popover-trigger-open"
 				>
 					Support Us
 				</label>
 				<label
-					for="support-trigger"
-					class="close-button min-w-36 popover-label support cursor-pointer hidden peer-checked:flex flex-row items-center justify-end gap-2"
+					for="popover-trigger"
+					class="popover-close min-w-36 popover-label support cursor-pointer hidden peer-checked:flex flex-row items-center justify-end gap-2"
+					id="popover-trigger-close"
 				>
 					<span>Support</span>
 					<svg
