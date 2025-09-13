@@ -7,9 +7,6 @@ export async function load({ fetch }) {
 	const sponsorPercent = 40;
 	const totalFundedPercent = Math.round(sponsorPercent + (data ? data.recurringBudgetPercent : 22));
 
-	const sponsorPercent = 40;
-	const totalFundedPercent = Math.round(sponsorPercent + (data ? data.recurringBudgetPercent : 22));
-
 	return {
 		donorStats: {
 			...data,

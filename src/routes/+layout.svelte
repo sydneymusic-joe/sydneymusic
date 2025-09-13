@@ -15,8 +15,8 @@
 
 	const { donorStats } = data;
 
-	// Split Test: Show the notice on the homepage, reads, venues VS the support popover
-	const showNotice = url.pathname === "/" || ['/reads', '/gig-guide/venues'].some(path => url.pathname.startsWith(path));
+	// Split Test: Show the notice on all pages except the support page it links to
+	const showNotice = ['/support'].some(path => !url.pathname.startsWith(path));
 
 </script>
 
