@@ -32,7 +32,6 @@
 		donorStats,
 		class: className
 	} = $props();
-	const fundedPercentage = 60;
 	const buttonClass = twMerge(
 		'bg-white text-xl flex flex-row items-center justify-center outline-none focus:outline-none',
 		size === 'sm' && 'text-xl',
@@ -67,10 +66,10 @@
 			>
 		</div>
 		<div class="relative">
-			<ProgressBar percentage={fundedPercentage} {theme} {showPercentage} />
+			<ProgressBar percentage={donorStats ? donorStats.totalFundedPercent : 62} {theme} {showPercentage} />
 			<img
 				src={theme === 'dark' ? '/images/canman-flagman.png' : '/images/canman-flagman.png'}
-				class="w-20 sm:w-28 absolute bottom-3 -right-6"
+				class="w-20 lg:w-28 absolute bottom-3 -right-6"
 				alt="Can Man holding a flag with Cliff the Glyph"
 			/>
 		</div>
