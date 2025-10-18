@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const closePopover = (evt) => {
 			popoverTrigger.checked = false;
-			if (window && window.plausible) window.plausible('Close Support Popover', { interactive });
+			if (window && window.plausible) window.plausible('Close Support Popover', { interactive: true });
 
 			if (!evt) return;
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		openLabel.addEventListener('click', (e) => {
 			e.preventDefault();
 			e.stopPropagation();
-			openPopover();
+			openPopover(true);
 		});
 
 		closeLabel.addEventListener('click', (e) => {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!popover) return;
 
 		if (config.delay > 0) {
-			setTimeout(popover.openPopover, config.delay);
+			setTimeout(popover.openPopover(false), config.delay);
 		} else {
 			popover.openPopover(false);
 		}
