@@ -8,6 +8,7 @@
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import DonationForm from '../../lib/components/donation-form.svelte';
+	import { mds } from '$lib/donorstats.js';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -138,7 +139,7 @@
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mt-20 md:mt-10 mb-5 md:mb-0 w-[350px] place-self-center">
 		<DonationForm
-			headline="SydneyMusic is 60% saved"
+			headline="SydneyMusic is {mds.totalFundedPercent}% saved"
 			theme="yellow"
 			size="sm"
 			showSponsors={true}
@@ -146,7 +147,7 @@
 			showPercentage={false}
 			appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
 			callToAction="We're not out of the woods yet – can you support us?"
-			donorStats={data.donorStats}
+			donorStats={mds}
 		/>
 		</div>
 		<!-- right col -->
