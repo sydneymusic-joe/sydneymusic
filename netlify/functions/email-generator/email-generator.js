@@ -192,8 +192,9 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                    <h2 style="font-style : italic"><strong>Support SydneyMusic</strong><br />and join the <a href="https://sydneymusic.net/support/wall-of-legends" class="ruby">Wall of Legends</a></h2>
-                    <p><strong>Thank you to our monthly supporters that fund <span class="ruby">23.92%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">4.3%</span> of our budget donated last month.</strong></p>
+                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">23.92%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">4.3%</span> of our budget donated last month.</strong></p>
+                    <p style="text-align : center">We've made a huge amount of progress in the last 4 months, and we couldn't have done it without our community. <strong>But we still need your help.</strong></p>
+                    <div style="text-align : center; padding : 20px 0px"><a href="https://sydneymusic.net/support" style="font-weight : bold;  background : white; color : black; border : solid 2px black; text-decoration : underline; font-size : 18px; padding : 11px 18px; box-shadow : 5px 5px 0px rgba(0,0,0,0.5)">Support the guide here!</a></div>
                     <p>All donations go towards running this gig guide — paying musicians, writers, and creatives that contribute to the project as Gig Researchers — and working to secure the organisation’s future.</p>
                     <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
 
