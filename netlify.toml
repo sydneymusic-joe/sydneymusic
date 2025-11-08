@@ -45,3 +45,8 @@
   from = "/discussion"
   to = "https://docs.google.com/forms/d/e/1FAIpQLSeqvBq381rDhQFPHIDQIR7DCBKrAqKFFesZfU2PIBgQcwa9rg/viewform"
   status = 301
+
+[[redirects]]
+  from = "/viewsource"
+  to = "https://github.com/sydneymusic-joe/sydneymusic"
+  status = 301

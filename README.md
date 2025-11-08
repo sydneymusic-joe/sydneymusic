@@ -15,7 +15,9 @@ SydneyMusic.net is a static site that is generated at build time. It has been co
 - SvelteKit
 - TailwindCSS
 
-... and we're deploying to Netlify and using Contentful as our Headless CMS.
+... and we're deploying to Netlify and using **DatoCMS** as our Headless CMS
+
+(**Note:** the below instructions detail setting up the website to use **Contentful**, our previous CMS. This repository's code now uses **DatoCMS**. We need to update our documentation, but let us know if you need a hand with setup)
 
 ## How this repo works
 

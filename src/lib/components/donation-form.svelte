@@ -4,6 +4,7 @@
 	import Heading from './heading.svelte';
 	import Paragraph from './paragraph.svelte';
 	import ProgressBar from './progress-bar.svelte';
+	import { mds } from '../donorstats.js';
 
 	/**
 	 * @typedef {Object} Props
@@ -32,6 +33,9 @@
 		donorStats,
 		class: className
 	} = $props();
+
+	donorStats=mds;
+
 	const buttonClass = twMerge(
 		'bg-white text-xl flex flex-row items-center justify-center outline-none focus:outline-none',
 		size === 'sm' && 'text-xl',
@@ -66,7 +70,7 @@
 			>
 		</div>
 		<div class="relative">
-			<ProgressBar percentage={donorStats ? donorStats.totalFundedPercent : 62} {theme} {showPercentage} />
+			<ProgressBar percentage={donorStats ? donorStats.totalFundedPercent : 0} {theme} {showPercentage} />
 			<img
 				src={theme === 'dark' ? '/images/canman-flagman.png' : '/images/canman-flagman.png'}
 				class="w-20 lg:w-28 absolute bottom-3 -right-6"
@@ -178,7 +182,7 @@
 	</div>
 	{#if showSponsors}
 		<div class="border-t border-gray-200 bg-white p-5" class:shadow-lg={shadow}>
-			<Paragraph variant="xs" class="mb-0">Thanks to {donorStats ? donorStats.recurringDonorCount + donorStats.oneOffDonors : 290} individuals and these legends:</Paragraph>
+			<Paragraph variant="xs" class="mb-0">Thanks to {mds ? mds.recurringDonorCount + mds.oneOffDonors : 290} individuals and these legends:</Paragraph>
 
 			<div class="flex flex-wrap flex-row text-xs gap-4 my-2 items-center justify-start">
 				<img src="/sponsors-rode.svg" alt="Røde" class="h-4" />

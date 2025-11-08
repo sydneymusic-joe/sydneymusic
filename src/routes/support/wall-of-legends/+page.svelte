@@ -7,9 +7,10 @@
 	import SponsorAppeal from '$lib/components/sponsor-appeal.svelte';
 	import Sponsor from '$lib/components/sponsor.svelte';
 	import TimelineItem from '$lib/components/timeline-item.svelte';
+	import {mds} from '$lib/donorstats.js';
 
 	export let data;
-  	const { donorStats } = data;
+  	const donorStats = mds;
 </script>
 
 <SeoSocial title="Wall of Legends" />
@@ -86,6 +87,9 @@
 				</TimelineItem>
 
 				<TimelineItem title="Small Business Supporters" color="#777">
+					<Sponsor logo="/logos/crosstalk.svg" href="https://www.crosstalkrecords.com/" name="Crosstalk Records">
+						Thank you to <a href="https://www.crosstalkrecords.com/" target="_blank" class="underline">Crosstalk Records</a> for being our first Small Business Supporters.
+					</Sponsor>
 					<SponsorAppeal />
 				</TimelineItem>
 
