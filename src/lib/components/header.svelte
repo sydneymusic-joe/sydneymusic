@@ -32,7 +32,7 @@
 				</div>
 				<p class="pt-4 pb-0 md:pb-4 flex w-full items-center justify-start md:justify-end flex-wrap gap-2 text-sm sm:text-md">
 					<span>
-						<span class="hidden sm:inline">SydneyMusic is {donorStats ? donorStats.totalFundedPercent : 62}%
+						<span class="hidden sm:inline">SydneyMusic is {donorStats ? donorStats.totalFundedPercent : 55}%
 					funded.</span>
 					
 					Can you{" "}<span class="hidden md:inline">chip in to</span>{" "}
