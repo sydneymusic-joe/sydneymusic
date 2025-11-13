@@ -66,7 +66,7 @@
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
 			<div class="text-sm text-center md:text-left mb-8">
-				Join <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> readers that help keep us running.<a
+				Join <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> readers who help keep this resource alive.<a
 					href="https://square.link/u/eS7bgm8M"
 					target="_blank"
 					class="underline font-bold plausible-event-name=Donation+Lofi block"
