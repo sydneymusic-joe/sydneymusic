@@ -65,8 +65,14 @@
 			<Heading level={1} variant="xl" class="text-center md:text-left sm:max-w-md">
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
+			<div class="text-sm text-center md:text-left mb-8">
+				Join <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> readers that help keep us running.<a
+					href="https://square.link/u/eS7bgm8M"
+					target="_blank"
+					class="underline font-bold plausible-event-name=Donation+Lofi block"
+				>Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
+			</div>
 		</div>
-
 		<!-- gig guide -->
 		<div class="md:pr-20 gigcolumn order-3">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>

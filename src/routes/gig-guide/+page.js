@@ -1,5 +1,6 @@
 import APId from '$lib/datocms/';
 import { formatDate, formatDateLong, groupBy, formatDay } from '$lib/globals.mjs';
+	import { mds } from '../../lib/donorstats.js';
 
 const getLastUpdated = async () => {
 	const data = await APId(`{
@@ -109,6 +110,7 @@ export async function load() {
 
 	return {
 		gigs,
-		lastUpdated
+		lastUpdated,
+		mds
 	};
 }
