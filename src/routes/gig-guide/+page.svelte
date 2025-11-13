@@ -67,7 +67,7 @@
 			</Heading>
 			<div class="text-sm text-center md:text-left mb-8">
 				Join <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> readers who help keep this resource alive.<a
-					href="https://square.link/u/eS7bgm8M"
+					href="/support"
 					target="_blank"
 					class="underline font-bold plausible-event-name=Donation+Lofi block"
 				>Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
