@@ -11,10 +11,10 @@
 	let { Index = $bindable(0) } = $props();
 	let prompts = [
 		{
-			type:'email',
+			type:'donorbox',
 		},
 		{
-			type:'donorbox',
+			type:'email',
 		},
 		{
 			type: 'component',

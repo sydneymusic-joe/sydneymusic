@@ -137,18 +137,15 @@
 
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
-		<div class="order-2 mt-20 md:mt-10 mb-5 md:mb-0 w-[350px] place-self-center">
-		<DonationForm
-			headline="SydneyMusic is {mds.totalFundedPercent}% saved"
-			theme="yellow"
-			size="sm"
-			showSponsors={true}
-			showFineprint={false}
-			showPercentage={false}
-			appealContent="Our wonderful readers, RØDE and Heaps Normal helped us get back online. With your help we can connect Sydney with its scene and get people out to shows."
-			callToAction="We're not out of the woods yet – can you support us?"
-			donorStats={mds}
-		/>
+		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
+			<div class="bg-black text-white shadow-lg">
+				<a href="https://store.sydneymusic.net" target="_blank"><img src="/store-promo.jpg" /></a>
+				<div class="p-8">
+				<Heading>Merch is back!</Heading>
+				<p class="text-sm">Our “Music In Every Corner” tees and totes are now available for limited pre-order!</p>
+				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Pre-order now" /></div>
+				</div>
+			</div>
 		</div>
 		<!-- right col -->
 		<div class="space-y-5 mt-20 order-4">
