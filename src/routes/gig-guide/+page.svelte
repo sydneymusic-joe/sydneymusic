@@ -3,12 +3,8 @@
 	import Event from '$lib/components/event.svelte';
 	import Feedprompt from '$lib/components/feedprompt.svelte';
 	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import PlaylistPromo from '$lib/components/playlist.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
-	import DonationForm from '../../lib/components/donation-form.svelte';
-	import { mds } from '$lib/donorstats.js';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -66,7 +62,7 @@
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
 			<div class="text-sm text-center md:text-left mb-8">
-				Join <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> readers who help keep this resource alive.<a
+				<strong>We need your help to keep this resource alive!</strong><br />Thanks to our <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> monthly supporters.<a
 					href="/support"
 					target="_blank"
 					class="underline font-bold plausible-event-name=Donation+Lofi block"
