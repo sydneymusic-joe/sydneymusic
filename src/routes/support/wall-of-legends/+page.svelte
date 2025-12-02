@@ -64,6 +64,16 @@
 				</TimelineItem>
 
 				<TimelineItem title="Platinum" color="#c5c4c2">
+					<Sponsor logo="/logos/neilson.png" href="https://www.neilson.org.au/" name="Neilson Foundation">
+						Thank you to the <a
+							href="https://www.neilson.org.au/"
+							class="underline"
+							target="_blank"
+							rel="noopener noreferrer">Neilson Foundation</a
+						>
+						for generously donating
+						<strong class="font-medium">22.2% of this financial year's minimum viable budget</strong>
+					</Sponsor>
 					<Sponsor logo="/logos/rode.svg" logoSize="lg" name="RØDE" href="https://rode.com">
 						Thank you to <a
 							href="https://rode.com"
