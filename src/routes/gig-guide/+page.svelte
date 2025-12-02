@@ -144,8 +144,8 @@
 				<a href="https://store.sydneymusic.net" target="_blank"><img src="/store-promo.jpg" /></a>
 				<div class="p-8">
 				<Heading>Merch is back!</Heading>
-				<p class="text-sm">Our “Music In Every Corner” tees and totes are now available for limited pre-order!</p>
-				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Pre-order now" /></div>
+				<p class="text-sm">Our “Music In Every Corner” tees and totes have been restocked and are shipping now! All proceeds go towards keeping this guide running.</p>
+				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Order now" /></div>
 				</div>
 			</div>
 		</div>
