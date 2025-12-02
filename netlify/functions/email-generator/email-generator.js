@@ -192,7 +192,7 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">24.48%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">4.3%</span> of our budget donated last month.</strong></p>
+                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">24.80%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">6%</span> of our budget donated last month.</strong></p>
                     <p style="text-align : center">We've made a huge amount of progress in the last 5 months, and we couldn't have done it without our community. <strong>But we still need your help.</strong></p>
                     <div style="text-align : center; padding : 20px 0px"><a href="https://sydneymusic.net/support" style="font-weight : bold;  background : white; color : black; border : solid 2px black; text-decoration : underline; font-size : 18px; padding : 11px 18px; box-shadow : 5px 5px 0px rgba(0,0,0,0.5)">Support the guide here!</a></div>
                     <p>All donations are tax deductible and go towards the hard costs and labour needed to run this resource and secure its future viability.</p>
