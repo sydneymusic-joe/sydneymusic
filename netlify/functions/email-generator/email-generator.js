@@ -192,7 +192,7 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">24.66%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">9.3%</span> of our budget donated last month.</strong></p>
+                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">23.50%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">36.6%</span> of our month's budget donated last month.</strong></p>
                     <p style="text-align : center"><strong>We need your help to improve this resource.</strong> By making the guide more user friendly and easier to explore, we can help more Sydneysiders discover their scene.</p>
                     <div style="text-align : center; padding : 20px 0px"><a href="https://sydneymusic.net/support" style="font-weight : bold;  background : white; color : black; border : solid 2px black; text-decoration : underline; font-size : 18px; padding : 11px 18px; box-shadow : 5px 5px 0px rgba(0,0,0,0.5)">Support the guide here!</a></div>
                     <p>All donations are tax deductible and go towards the hard costs and labour needed to run this resource and secure its future viability.</p>
