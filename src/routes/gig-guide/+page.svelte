@@ -141,7 +141,7 @@
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
 			<div class="bg-black text-white" style="height : 440px; background-image : url(/survey-promo.jpg); background-size : cover; background-position : center center">
 				<div class="flex flex-col p-8 h-full">
-				<Heading class="grow text-shadow-md"><span style="text-shadow : 1px 1px 1px black">Got opinions?</span></Heading>
+				<Heading class="grow text-shadow-md text-4xl"><span style="text-shadow : 1px 1px 1px black">Got opinions?</span></Heading>
 				<div class="shrink self-end">
 					<div class="text-lg"><strong>We want to hear them!</strong></div>
 					<p class="text-sm mt-1">We’re looking at how we can make the gig guide better in 2026 — and we’re keen to hear what you think. Takes about 5 minutes!</p>
