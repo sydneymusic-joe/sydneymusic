@@ -62,7 +62,7 @@
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
 			<div class="text-sm text-center md:text-left mb-8">
-				<strong>We need your help to keep this resource alive!</strong><br />Thanks to our <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> monthly supporters.<a
+				<strong>We need your help to keep this resource alive!</strong><div>Thanks to our <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> monthly supporters.</div><a
 					href="/support"
 					target="_blank"
 					class="underline font-bold plausible-event-name=Donation+Lofi+block">Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
