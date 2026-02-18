@@ -65,8 +65,7 @@
 				<strong>We need your help to keep this resource alive!</strong><br />Thanks to our <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> monthly supporters.<a
 					href="/support"
 					target="_blank"
-					class="underline font-bold plausible-event-name=Donation+Lofi block"
-				>Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
+					class="underline font-bold plausible-event-name=Donation+Lofi+block">Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
 			</div>
 		</div>
 		<!-- gig guide -->
@@ -140,12 +139,14 @@
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
-			<div class="bg-black text-white shadow-lg">
-				<a href="https://store.sydneymusic.net" target="_blank"><img src="/store-promo.jpg" /></a>
-				<div class="p-8">
-				<Heading>Merch is back!</Heading>
-				<p class="text-sm">Our “Music In Every Corner” tees and totes have been restocked and are shipping now! All proceeds go towards keeping this guide running.</p>
-				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Order now" /></div>
+			<div class="bg-black text-white" style="height : 440px; background-image : url(/survey-promo.jpg); background-size : cover; background-position : center center">
+				<div class="flex flex-col p-8 h-full">
+				<Heading class="grow text-shadow-md"><span style="text-shadow : 1px 1px 1px black">Got opinions?</span></Heading>
+				<div class="shrink self-end">
+					<div class="text-lg"><strong>We want to hear them!</strong></div>
+					<p class="text-sm mt-1">We’re looking at how we can make the gig guide better in 2026 — and we’re keen to hear what you think. Takes about 5 minutes!</p>
+					<div class="mt-5"><Button class="border-2 border-ruby bg-black text-white plausible-event-name=Survey+2026+Main" href="https://survey.sydneymusic.net/t/uCNn7HD8myus" target="_blank" label="Share your thoughts" /></div>
+				</div>
 				</div>
 			</div>
 		</div>
