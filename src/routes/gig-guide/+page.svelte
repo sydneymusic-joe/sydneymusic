@@ -139,15 +139,12 @@
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
-			<div class="bg-black text-white" style="height : 440px; background-image : url(/survey-promo-2.jpg); background-size : cover; background-position : center center">
-				<div class="flex flex-col p-8 h-full">
-					<div class="grow"></div>
-				<div class="shrink self-end pr-8">
-					<Heading class="text-shadow-md text-4xl"><span style="text-shadow : 1px 1px 1px black">Help us improve this guide!</span></Heading>
-					<div class="text-lg"><strong>How can we make live music in Sydney easier to explore?</strong></div>
-					<div class="mt-5"><Button class="border-2 border-ruby bg-black text-white plausible-event-name=Survey+2026+Main" href="https://survey.sydneymusic.net/t/uCNn7HD8myus" target="_blank" label="Share your thoughts" /></div>
-					<div class="text-xs italic pt-3">This survey takes about 5 minutes to complete</div>
-				</div>
+			<div class="bg-black text-white shadow-lg">
+				<a href="https://store.sydneymusic.net" target="_blank"><img src="/store-promo.jpg" /></a>
+				<div class="p-8">
+				<Heading>Merch running low!</Heading>
+				<p class="text-sm">Our last run of “Music In Every Corner” tees and totes are nearly gone! All proceeds go towards keeping this guide running.</p>
+				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Order now" /></div>
 				</div>
 			</div>
 		</div>
