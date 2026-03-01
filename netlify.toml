@@ -50,3 +50,8 @@
   from = "/viewsource"
   to = "https://github.com/sydneymusic-joe/sydneymusic"
   status = 301
+
+[[redirects]]
+  from = "/state-of-live-music"
+  to = "https://downloads.sydneymusic.net/sydneymusic-2026-02-27-state-of-live-music.pdf"
+  status = 301
