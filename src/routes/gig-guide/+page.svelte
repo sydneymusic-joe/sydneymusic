@@ -140,11 +140,11 @@
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
 			<div class="bg-black text-white shadow-lg">
-				<a href="https://store.sydneymusic.net" target="_blank"><img src="/store-promo.jpg" /></a>
+				<a href="https://sydneymusic.net/reads/sydneymusic-turns-4-nsw-government-social-issues-committee-submission" target="_blank"><img src="/report-promo.jpg" /></a>
 				<div class="p-8">
-				<Heading>Merch running low!</Heading>
-				<p class="text-sm">Our last run of “Music In Every Corner” tees and totes are nearly gone! All proceeds go towards keeping this guide running.</p>
-				<div class="mt-5"><Button href="https://store.sydneymusic.net" target="_blank" label="Order now" /></div>
+				<Heading>State of Live Music: read our report</Heading>
+				<p class="text-sm">We were invited by the NSW Government to submit a report for their “State Of Live Music” inquiry, so we analysed and compiled 364 survey responses and sent them in. Check it out.</p>
+				<div class="mt-5"><Button href="https://sydneymusic.net/reads/sydneymusic-turns-4-nsw-government-social-issues-committee-submission" target="_blank" label="Read the report" /></div>
 				</div>
 			</div>
 		</div>
