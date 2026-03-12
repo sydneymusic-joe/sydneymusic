@@ -193,7 +193,7 @@ async function generate() {
 
                 <div class="plug">
                     <p style="font-size : 130%; text-align : center"><strong><span class="ruby">87.6%</span> of surveyed readers say the gig guide helps them discover new bands and artists.</strong></p>
-                    <p style="text-align : center">SydneyMusic needs your help to continue connecting punters to new local music.</p>
+                    <p style="text-align : center">SydneyMusic needs your help to continue connecting punters to local music.</p>
                     <div style="text-align : center; padding : 20px 0px"><a href="https://sydneymusic.net/support" style="font-weight : bold;  background : white; color : black; border : solid 2px black; text-decoration : underline; font-size : 18px; padding : 11px 18px; box-shadow : 5px 5px 0px rgba(0,0,0,0.5)">Support the guide here!</a></div>
                     <p style="font-size : 90%; text-align : center">All donations are tax deductible and go towards the hard costs and labour needed to run this resource and secure its future viability.</p>
                 </div>
