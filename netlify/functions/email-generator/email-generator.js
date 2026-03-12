@@ -192,16 +192,9 @@ async function generate() {
 				${content.preambleContent}
 
                 <div class="plug">
-                    <p style="font-size : 130%; text-align : center"><strong>Thank you to our monthly supporters that fund <span class="ruby">23.50%</span> of our monthly budget — and thank you to our one-off donors that saw another <span class="ruby">36.6%</span> of our month's budget donated last month.</strong></p>
-                    <p style="text-align : center"><strong>We need your help to improve this resource.</strong> By making the guide more user friendly and easier to explore, we can help more Sydneysiders discover their scene.</p>
+                    <p style="font-size : 130%; text-align : center"><strong>Become a supporter and help us get more people out to shows!</strong></p>
                     <div style="text-align : center; padding : 20px 0px"><a href="https://sydneymusic.net/support" style="font-weight : bold;  background : white; color : black; border : solid 2px black; text-decoration : underline; font-size : 18px; padding : 11px 18px; box-shadow : 5px 5px 0px rgba(0,0,0,0.5)">Support the guide here!</a></div>
                     <p>All donations are tax deductible and go towards the hard costs and labour needed to run this resource and secure its future viability.</p>
-                    <p><strong>Can you help us?</strong> We plan to be less reliant on reader donations in the future — but if you want to see SydneyMusic become self-sustaining, your donations are crucial to helping us get us there.</p>
-
-                    <h2>Here’s how to help — takes 30 seconds</h2>
-                    <p>&raquo; <strong>Become a monthly supporter</strong> for <a href="https://square.link/u/JYzf9LTF">$15</a>, <a href="https://square.link/u/moL86XF5">$50</a> or <a href="https://square.link/u/Dicl3TrR">$200</a> a month.</p>
-                    <p>&raquo; You can also <a href="https://square.link/u/eS7bgm8M">choose whatever amount you like</a> as a monthly or one-off donation.</p>
-                    <p style="font-size : 11px;"><strong>Prefer to donate via bank transfer?</strong> We can provide you with a Deductible Gift Receipt.<br />E-mail <a href="mailto:joe@sydneymusic.net">Joe</a> for more information.</p>
                 </div>
             </td>
         </tr>
