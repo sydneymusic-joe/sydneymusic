@@ -21,17 +21,26 @@
 {#if showNotice}
 	<div class="bg-black text-white">
 		<Container>
-			<div class="flex flex-col-reverse sm:flex-row gap-4 relative items-start sm:items-end">
-				<img
-					src="/images/canman-peek-transparent.png"
-					class="w-20 h-auto flex-none"
-					alt="Can Man holding a flag with Cliff the Glyph"
-				/>
-				<span class="pt-4 pb-0 sm:pb-4 ">
-					SydneyMusic is {Math.round(40 + (donorStats ? donorStats.recurringBudgetPercent : 20))}%
-					saved. Can you
-					<a href="/support" class="underline text-red-300">support live music in Sydney</a>?
-				</span>
+			<div class="flex flex-col-reverse md:flex-row gap-2 md:gap-4 relative items-start md:items-end">
+				<div class="w-full md:w-auto flex flex-row items-end justify-between">
+					<img
+						src="/images/canman-peek-transparent.png"
+						class="w-20 md:w-24 md:mt-2 h-auto flex-none"
+						alt="Can Man holding a flag with Cliff the Glyph"
+					/>
+					<a href="/support" class="block md:hidden bg-red-600 text-white font-bold uppercase rounded-sm px-2 py-1 mb-2 plausible-event-name=Notice+Donate">Donate</a>
+				</div>
+				<p class="pt-4 pb-0 md:pb-4 flex w-full items-center justify-start md:justify-end flex-wrap gap-2 text-sm sm:text-md">
+					<span>
+						<span class="hidden sm:inline">SydneyMusic is {donorStats ? donorStats.totalFundedPercent : 55}%
+					funded.</span>
+					
+					Can you{" "}<span class="hidden md:inline">chip in to</span>{" "}
+					<em>support live music</em> in Sydney?
+					</span>
+
+					<a href="/support" class="hidden md:block bg-red-600 text-white font-bold uppercase rounded-sm px-2 py-1 plausible-event-name=Notice+Donate">Donate</a>
+				</p>
 			</div>
 		</Container>
 	</div>
