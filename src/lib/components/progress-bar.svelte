@@ -14,7 +14,7 @@
 	let {
 		percentage,
 		suffix = '%',
-		text = 'funded',
+		text = 'funded for FY27',
 		theme = 'dark',
 		showPercentage = true
 	} = $props();

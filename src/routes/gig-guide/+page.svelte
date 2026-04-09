@@ -5,6 +5,7 @@
 	import Heading from '$lib/components/heading.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
+	import { mds } from '../../lib/donorstats.js';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -143,7 +144,7 @@
 				<a href="https://store.sydneymusic.net" target="_blank"><img src="/merchpromo.jpg" /></a>
 				<div class="p-8">
 				<Heading>SydneyMusic FY27 fundraiser</Heading>
-				<p class="text-sm">We have secured <strong>42%</strong> of the minimum monthly support we need to cover our costs from July 2026 onwards, and are appealing to our community to help us get the rest of the way.</p>
+				<p class="text-sm">We have secured <strong>{mds.totalFundedPercent}%</strong> of the minimum monthly support we need to cover our costs from July 2026 onwards, and are appealing to our community to help us get the rest of the way.</p>
 				<p class="text-sm mt-4"><a href="https://store.sydneymusic.net" class="underline">Pick up some merch</a> or <a class="underline" href="/support">become a monthly supporter</a> to help us get the rest of the way!</p>
 				<div class="mt-5 flex gap-5 flex-row"><Button href="https://store.sydneymusic.net" target="_blank" label="Merch Store" /><Button href="https://sydneymusic.net/support" target="_blank" label="Support us" /></div>
 				</div>

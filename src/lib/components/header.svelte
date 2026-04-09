@@ -38,6 +38,7 @@
 {/if}
 
 <header>
+	<div class="bg-black text-xs text-white py-2 text-center"><a href="https://store.sydneymusic.net/" target="_blank" class="underline">NEW MERCH DROP</a>&nbsp; • &nbsp;10% off all pre-orders!</div>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-5">
 			<Logo size="sm" stickers={true} />
