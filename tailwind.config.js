@@ -28,7 +28,8 @@ module.exports = {
 				xl: '1.375rem'
 			},
 			colors: {
-				ruby: '#e02020',
+				//ruby: '#e02020',
+				ruby: '#F04E98',
 				// Color scale for ruby/red:
 				red: {
 					50: '#fef2f2',

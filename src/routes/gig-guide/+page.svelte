@@ -139,12 +139,13 @@
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
-			<div class="bg-black text-white shadow-lg">
-				<a href="https://sydneymusic.net/reads/sydneymusic-turns-4-nsw-government-social-issues-committee-submission" target="_blank"><img src="/report-promo.jpg" /></a>
+			<div class="bg-black text-white border-2 border-ruby">
+				<a href="https://store.sydneymusic.net" target="_blank"><img src="/merchpromo.jpg" /></a>
 				<div class="p-8">
-				<Heading>State of Live Music: read our report</Heading>
-				<p class="text-sm">We were invited by the NSW Government to submit a report for their “State Of Live Music” inquiry, so we analysed and compiled 364 survey responses and sent them in. Check it out.</p>
-				<div class="mt-5"><Button href="https://sydneymusic.net/reads/sydneymusic-turns-4-nsw-government-social-issues-committee-submission" target="_blank" label="Read the report" /></div>
+				<Heading>SydneyMusic FY27 fundraiser</Heading>
+				<p class="text-sm">We have secured <strong>42%</strong> of the minimum monthly support we need to cover our costs from July 2026 onwards, and are appealing to our community to help us get the rest of the way.</p>
+				<p class="text-sm mt-4"><a href="https://store.sydneymusic.net" class="underline">Pick up some merch</a> or <a class="underline" href="/support">become a monthly supporter</a> to help us get the rest of the way!</p>
+				<div class="mt-5 flex gap-5 flex-row"><Button href="https://store.sydneymusic.net" target="_blank" label="Merch Store" /><Button href="https://sydneymusic.net/support" target="_blank" label="Support us" /></div>
 				</div>
 			</div>
 		</div>
