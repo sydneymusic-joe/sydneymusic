@@ -35,8 +35,8 @@
 
 	// Mapping of ticketing providers to their affiliate link templates
 	const ticketingProviderTemplates = {
-		'ticketmaster.com.au': 'https://ticketmaster-au.tm7566.net/c/6123356/431533/7566?u={url}&utm_medium=affiliate',
-		'moshtix.com.au': 'https://moshtix-au.sjv.io/c/6123356/1070760/13716?u={url}&utm_medium=affiliate',
+		'ticketmaster.com.au': 'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+		'moshtix.com.au': 'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
 		'ticketek.com.au':'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
 	};
 
