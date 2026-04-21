@@ -21,8 +21,8 @@ module.exports = {
 				xs: '480px'
 			},
 			fontFamily: {
-				sans: ['"General Sans"', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
-				serif: ['"General Sans"', `Helvetica, sans-serif`],
+				sans: ['GeneralSans-Variable', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
+				serif: ['GeneralSans-Variable', `Helvetica, sans-serif`],
 			},
 			fontSize: {
 				xl: '1.375rem'
