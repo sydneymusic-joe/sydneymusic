@@ -56,9 +56,11 @@
 	<div class="contents md:flex md:flex-col">
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
-			<Heading level={1} variant="md" class="mb-10 stretch uppercase font-normal text-center sm:max-w-xl md:mr-10" style="line-height : 1">
-				Welcome to Sydney’s most comprehensive gig guide
-			</Heading>
+			<div class="flex justify-center md:mr-10">
+				<Heading level={1} variant="md" class="mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
+					Welcome to Sydney’s most comprehensive gig guide
+				</Heading>
+			</div>
 			<div class="bg-merchbrown text-white text-center p-5 mx-[-20px] md:ml-0 md:mr-10">
 				<div class="guide-divider" style="margin-bottom : 0.25rem">
 					<div></div>

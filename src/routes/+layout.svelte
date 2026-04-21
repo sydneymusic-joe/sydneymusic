@@ -30,7 +30,7 @@
 <Footer />
 		<div class="[&:has(input:checked)]:hidden transition-all transition-discrete absolute top-0 left-0 w-full h-full m-auto bg-merchbrown z-100">
 			<div class="absolute right-10 top-10 cursor-pointer">
-				<label class="block"><input type="checkbox" class="sr-only" title="Close the popup" />
+				<label class="block"><input type="checkbox" checked="" class="sr-only" title="Close the popup" />
 				<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="32"
