@@ -53,9 +53,9 @@
 				</a>
 
 				<a href="/support"
-				class="min-w-36 popover-label support cursor-pointer inline-block peer-checked:hidden"
+				class="support cursor-pointer"
 				>
-					Support Us
+					Support
 			</a>
 			</div>
 		</div>

@@ -4,6 +4,7 @@
 	import Feedprompt from '$lib/components/feedprompt.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Playlist from '$lib/components/playlist.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import { mds } from '../../lib/donorstats.js';
 	let { data } = $props();
@@ -55,11 +56,11 @@
 	<div class="contents md:flex md:flex-col">
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
-			<Heading level={1} variant="md" class="mb-10 stretch uppercase font-normal text-center sm:max-w-xl md:mr-20" style="line-height : 1">
+			<Heading level={1} variant="md" class="mb-10 stretch uppercase font-normal text-center sm:max-w-xl md:mr-10" style="line-height : 1">
 				Welcome to Sydney’s most comprehensive gig guide
 			</Heading>
-			<div class="bg-merchbrown text-white text-center p-5 mx-[-20px] md:ml-0 md:mr-20">
-				<div class="guide-divider">
+			<div class="bg-merchbrown text-white text-center p-5 mx-[-20px] md:ml-0 md:mr-10">
+				<div class="guide-divider" style="margin-bottom : 0.25rem">
 					<div></div>
 					<div class="flex flex-row justify-center gap-x-3 mx-3">
 						<div><img src="/banksia.svg" class="h-12" /></div>
@@ -68,65 +69,80 @@
 					</div>
 					<div></div>
 				</div>
-				<div class="mb-2">Hello! It is once again fundraising time. We are grateful to have been fully funded for the last 6 months, but we need to raise 58% of our baseline operational costs for FY27 (we’ve got 42% sorted already).</div>
+				<div class="mb-2">Hello! It is, once again, fundraising time. We are grateful to have been fully funded for the last 6 months, but we need to raise 58% of our baseline operational costs for FY27 (we’ve got 42% sorted already).</div>
 				<div class="font-semibold mb-2">We need <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more sign-ups to hit our recurring supporter target</div>
 				<div class="space-y-2">
 					<p>This is a critical time, and we can’t do it without your help.</p>
 				</div>
-				<h2 class="stretch uppercase mt-5">Choose your fighter:</h2>
+				<div class="flex flex-row justify-center gap-x-2 mt-5">
+				<img src="/horns.svg" class="h-12" />
+				<h2 class="stretch uppercase mt-5 leading-[1.3]">Choose your fighter:</h2>
+				<img src="/canhand.svg" class="h-12" />
+				</div>
 				<div class="flex flex-wrap flex-row justify-center gap-x-5 gap-y-3 my-5">
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/L0GTRapn" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
 						<span class="ml-2 text-white">$2</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer" />
-						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">$2</span>
-					</label>
-					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/Gw8URGj2" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
 						<span class="ml-2 text-white">$5</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" checked="" class="sr-only peer" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/hbwswm65" checked="" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
 						<span class="ml-2 text-white">$10</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/otfmCL39" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">$15</span>
+						<span class="ml-2 text-white">$25</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer	" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/moL86XF5" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">$30</span>
+						<span class="ml-2 text-white">$50</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" data-buttonlabel="Make a one-off donation" class="sr-only peer	" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/Dicl3TrR" class="sr-only peer" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">I’d rather make a one-off donation</span>
+						<span class="ml-2 text-white">$200</span>
 					</label>
 					<label class="relative flex items-center cursor-pointer">
-						<input type="radio" name="donoramount" class="sr-only peer" data-buttonlabel="Shop for merch" />
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/PbEmze4h" data-buttonlabel="Make a one-off donation" class="sr-only peer	" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">I’d like to make a one-off donation</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" class="sr-only peer" data-buttonhref="https://store.sydneymusic.net" data-buttonlabel="Shop for merch" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
 						<span class="ml-2 text-white">I’d like to buy a t-shirt!</span>
 					</label>
 				</div>
 
-				<Button label="Become a monthly supporter" />
+				<Button label="Become a monthly supporter" id="support-button" href="https://square.link/u/hbwswm65" />
+
+				<script>
+					var donorItems = document.querySelectorAll('input[name=donoramount]');
+					donorItems.forEach(el => {
+						el.addEventListener('click', function (evt) {
+							document.getElementById('support-button').href = evt.srcElement.attributes['data-buttonhref'].value;
+							document.getElementById('support-button').innerHTML = (evt.srcElement.attributes['data-buttonlabel'] ? evt.srcElement.attributes['data-buttonlabel'].value : "Become a monthly supporter") + " &raquo;";
+						});
+					});
+				</script>
 
 				<div class="italic mt-2 text-xs">All donations over $2 are tax deductible. SydneyMusic is a registered not-for-profit organisation and is recognised as a Deductible Gift Recipient by the ATO</div>
-				<div class="italic mt-2 text-xs">The average donor amount from our {data.mds.recurringDonorCount} supporters is $10</div>
+				<div class="italic mt-2 text-xs">The average donation from our {data.mds.recurringDonorCount} supporters is $10</div>
 				<div class="italic mt-2 text-xs">
-					<a href="/support/commercial" class="underline">Commercial enquiries</a> • <a href="/api-license" class="underline">API licensing</a> • <a href="mailto:contact@sydneymusic.net" class="underline">General enquiries</a></div>
+					<a href="/support/commercial" class="underline">Commercial enquiries</a> • <a href="/api-license" class="underline">API licensing</a> • <a href="mailto:contact@sydneymusic.net" class="underline">General enquiries</a>
+				</div>
 			</div>
 		</div>
 		<!-- gig guide -->
-		<div class="md:pr-20 gigcolumn order-3">
+		<div class="md:pr-10 gigcolumn order-3">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 			<div class="filterbox w-full mb-5">
 				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -199,6 +215,7 @@
 		</div>
 		<!-- right col -->
 		<div class="space-y-5 mt-20 order-4">
+			<Playlist showtitle="true" />
 			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 			<div class="prose prose-sm">
 				<p>

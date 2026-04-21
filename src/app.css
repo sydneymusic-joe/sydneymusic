@@ -37,28 +37,12 @@
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply uppercase font-semibold leading-tight block border-b border-black w-full px-2;
+		@apply font-semibold leading-tight block border-b border-black w-full;
 		position: relative;
 	}
 
 	.notch-left * {
 		@apply font-semibold uppercase leading-tight;
-	}
-
-	.notch-right::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute right-0 bottom-0 h-3 border-r;
-	}
-
-	.notch-left::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute left-0 bottom-0 h-3 border-l;
-	}
-
-	.notch-thic {
-		@apply border-b-2;
 	}
 
 	.notch-thic.notch-right::after {
@@ -314,7 +298,7 @@ header nav .navbar {
 	@apply flex justify-center lg:justify-end w-full gap-x-1 sm:gap-x-3;
 }
 
-header nav .navbar .navbar-link {
+header nav .navbar .navbar-link, header nav .navbar .support {
 	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
 	transform : scaleY(1.9);
 	line-height : 50%;
@@ -334,8 +318,7 @@ header nav .navbar .navbar-link.current {
 }
 
 header nav .navbar .support {
-	display : none;
-	@apply uppercase border-b-2 border-transparent hover:bg-ruby/90 hover:text-white text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3 bg-ruby text-white;
+	@apply uppercase border-transparent hover:bg-ruby/90 hover:text-white bg-ruby text-white;
 	transform : scaleY(1.9);
 }
 
