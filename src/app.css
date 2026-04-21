@@ -251,7 +251,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .venue a {
-	@apply font-bold;
+	@apply font-medium;
 }
 .venue a.rip {
 	color: #aaa;

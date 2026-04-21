@@ -23,10 +23,14 @@
 			>
 		</li>
 		<li>
-			Qobuz
+			<a
+				href="https://open.qobuz.com/playlist/53642525"
+				target="_blank" class="plausible-event-name=Playlist">Qobuz</a>
 		</li>
 		<li>
-			Soundcloud
+			<a
+				href="https://soundcloud.com/sydneymusicdotnet/sets/sydneymusic-gig-guide"
+				target="_blank" class="plausible-event-name=Playlist">Soundcloud</a>
 		</li>
 		<li>
 			<a
@@ -41,7 +45,9 @@
 			>
 		</li>
 		<li>
-			YouTube
+			<a
+				href="https://www.youtube.com/playlist?list=PLJhdmoGU3t08fBeRkiS0Y56IBvG-OTRgM"
+				target="_blank" class="plausible-event-name=Playlist">YouTube</a>
 		</li>
 	</ul>
 	<p>Updated every Thursday!</p>

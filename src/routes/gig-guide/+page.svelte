@@ -43,7 +43,7 @@
 			
 		</div>-->
 
-<div class="py-5 md:py-12 mb-5 md:mb-0" style="background-image : linear-gradient(180deg, rgb(240 78 152 / 0.9), #231104);">
+<div class="py-5 md:py-12 mb-5 md:mb-0 hidden md:block" style="background-image : linear-gradient(180deg, rgb(240 78 152 / 0.9), #231104);">
 		<picture>
 	<img
 		src="/sticker-pixels.svg"
@@ -65,21 +65,21 @@
 				<div class="guide-divider" style="margin-bottom : 0.25rem">
 					<div></div>
 					<div class="flex flex-row justify-center gap-x-3 mx-3">
-						<div><img src="/banksia.svg" class="h-12" /></div>
+						<div><img src="/banksia.svg" class="h-12" alt="Pixelated Banksia icon" /></div>
 						<Heading class="text-ruby uppercase font-normal"><div class="stretch leading-[1.9] md:leading-[1.3]">Fundraiser FY27</div></Heading>
-						<div><img src="/padlock.svg" class="h-12" /></div>
+						<div><img src="/padlock.svg" class="h-12" alt="Pixelated unlocked padlock icon" /></div>
 					</div>
 					<div></div>
 				</div>
 				<div class="mb-2">Hello! It is, once again, fundraising time. We are grateful to have been fully funded for the last 6 months, but we need to raise 58% of our baseline operational costs for FY27 (we’ve got 42% sorted already).</div>
-				<div class="font-semibold mb-2">We need <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more sign-ups to hit our recurring supporter target</div>
+				<div class="font-semibold mb-2">We need <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly sign-ups to hit our June 30 supporter target</div>
 				<div class="space-y-2">
 					<p>This is a critical time, and we can’t do it without your help.</p>
 				</div>
 				<div class="flex flex-row justify-center gap-x-2 mt-5">
-				<img src="/horns.svg" class="h-12" />
+				<img src="/horns.svg" class="h-12" alt="Pixelated horned hands icon" />
 				<h2 class="stretch uppercase mt-5 leading-[1.3]">Choose your fighter:</h2>
-				<img src="/canhand.svg" class="h-12" />
+				<img src="/canhand.svg" class="h-12" alt="Pixelated Can Man hand icon" />
 				</div>
 				<div class="flex flex-wrap flex-row justify-center gap-x-5 gap-y-3 my-5">
 					<label class="relative flex items-center cursor-pointer">

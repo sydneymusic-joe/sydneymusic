@@ -48,7 +48,7 @@
 		{#each data.venues as { label, items }, i}
 			<div class="venue">
 				<h4
-					class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-bold uppercase italic leading-tight"
+					class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-semibold uppercase italic leading-tight"
 				>
 					{label != 'null' ? label : 'Unknown Suburb'}
 				</h4>
