@@ -72,9 +72,10 @@
 					<div></div>
 				</div>
 				<div class="space-y-3">
-					<div>Hello! SydneyMusic urgently needs your help.</div>
+					<div class="font-semibold">Hello! Before we get to the gigs ...</div>
+					<div>SydneyMusic urgently needs your help.</div>
 					<div>This resource is 100% community-supported. To keep the gig guide online from July 1 we need to raise money towards our baseline budget for FY27 (we’ve got {data.mds.totalFundedPercent}% sorted already).</div>
-					<div class="font-semibold">We need to sign up <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly supporters by June 30 to meet our goal for ongoing community support.</div>
+					<div class="font-semibold">We need to sign up <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly supporters by June 30 to meet our goal for this form of support.</div>
 					<div>Please consider making a contribution to help us get more people out to shows. Thank you!</div>
 				</div>
 				<div class="flex flex-row justify-center gap-x-2 mt-5">
