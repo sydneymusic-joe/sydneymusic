@@ -42,7 +42,7 @@
 			
 		</div>-->
 
-<div class="py-5 md:py-12 mb-5 md:mb-0" style="background-image : url(/lifeisamazingson.jpg); background-attachment: fixed; background-position : left -170px; background-size : cover">
+<div class="py-5 md:py-12 mb-5 md:mb-0" style="background-image : linear-gradient(180deg, rgb(240 78 152 / 0.9), #231104);">
 		<picture>
 	<img
 		src="/sticker-pixels.svg"
