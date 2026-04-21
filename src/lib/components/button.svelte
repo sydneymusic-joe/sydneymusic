@@ -36,7 +36,7 @@
 		subtle:
 			'font-sans block font-semibold hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
 		outline:
-			'font-serif uppercase italic border border-black block font-bold hover:border-ruby focus:border-ruby hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline'
+			'font-serif uppercase border border-black block font-medium hover:border-ruby focus:border-ruby hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline'
 	};
 
 	const sizeClasses = {

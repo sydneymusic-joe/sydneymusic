@@ -57,11 +57,11 @@
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
-				<Heading level={1} variant="md" class="mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
+				<Heading level={1} variant="md" class="mt-5 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
 					Welcome to Sydney’s most comprehensive gig guide
 				</Heading>
 			</div>
-			<div class="bg-merchbrown text-white text-center p-5 mx-[-20px] md:ml-0 md:mr-10">
+			<div class="bg-merchbrown text-white text-center p-5 md:p-10 mx-[-20px] md:ml-0 md:mr-10">
 				<div class="guide-divider" style="margin-bottom : 0.25rem">
 					<div></div>
 					<div class="flex flex-row justify-center gap-x-3 mx-3">
@@ -71,10 +71,11 @@
 					</div>
 					<div></div>
 				</div>
-				<div class="mb-2">Hello! It is, once again, fundraising time. We are grateful to have been fully funded for the last 6 months, but we need to raise 58% of our baseline operational costs for FY27 (we’ve got 42% sorted already).</div>
-				<div class="font-semibold mb-2">We need <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly sign-ups to hit our June 30 supporter target</div>
-				<div class="space-y-2">
-					<p>This is a critical time, and we can’t do it without your help.</p>
+				<div class="space-y-3">
+					<div>Hello! SydneyMusic urgently needs your help.</div>
+					<div>This resource is 100% community-supported. To keep the gig guide online from July 1 we need to raise money towards our baseline budget for FY27 (we’ve got {data.mds.totalFundedPercent}% sorted already).</div>
+					<div class="font-semibold">We need to sign up <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly supporters by June 30 to meet our goal for ongoing community support.</div>
+					<div>Please consider making a contribution to help us get more people out to shows. Thank you!</div>
 				</div>
 				<div class="flex flex-row justify-center gap-x-2 mt-5">
 				<img src="/horns.svg" class="h-12" alt="Pixelated horned hands icon" />
@@ -124,7 +125,10 @@
 					</label>
 				</div>
 
-				<Button label="Become a monthly supporter" id="support-button" href="https://square.link/u/hbwswm65" />
+				<div class="space-y-2">
+				<Button label="Become a monthly supporter" variant="primary" id="support-button" href="https://square.link/u/hbwswm65" />
+				<Button label="Learn more" href="/support" />
+				</div>
 
 				<script>
 					var donorItems = document.querySelectorAll('input[name=donoramount]');
@@ -136,9 +140,9 @@
 					});
 				</script>
 
-				<div class="italic mt-2 text-xs">All donations over $2 are tax deductible. SydneyMusic is a registered not-for-profit organisation and is recognised as a Deductible Gift Recipient by the ATO</div>
-				<div class="italic mt-2 text-xs">The average donation from our {data.mds.recurringDonorCount} supporters is $10</div>
-				<div class="italic mt-2 text-xs">
+				<div class="mt-2 text-xs">All donations over $2 are tax deductible. SydneyMusic is a registered not-for-profit organisation and is recognised as a Deductible Gift Recipient by the ATO</div>
+				<div class="mt-2 text-xs">The average donation from our {data.mds.recurringDonorCount} supporters is $10</div>
+				<div class="mt-2 text-xs">
 					<a href="/support/commercial" class="underline">Commercial enquiries</a> • <a href="/api-license" class="underline">API licensing</a> • <a href="mailto:contact@sydneymusic.net" class="underline">General enquiries</a>
 				</div>
 			</div>

@@ -12,6 +12,11 @@
 
 <div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
 
+	<div class="text-center space-y-3">
+		<div class="italic text-4xl">84.3% of surveyed readers say they see more live music because of the SydneyMusic gig guide</div>
+		<div class="italic text-gray-600">from SydneyMusic’s annual survey (363 respondents, February 2026)</div>
+	</div>
+
 	<div class="support grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-20 gap-y-20">
 		<div>
 			<Heading level={3} variant="lg">Wall of Legends</Heading>
