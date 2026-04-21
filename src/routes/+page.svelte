@@ -23,10 +23,10 @@
 				<div
 					class="bg-white w-full lg:w-1/2 flex flex-col justify-end items-start py-8 gap-4 lg:mt-32"
 				>
-					<Paragraph variant="2xl">
+					<h1 class="text-4xl">
 						<span class="text-ruby italic">{data.gigs.thisWeek} shows</span> waiting to be discovered
 						in Sydney this week.
-					</Paragraph>
+					</h1>
 					<Button variant="primary" href="/gig-guide" label="Read the full guide" />
 				</div>
 			</div>

@@ -30,9 +30,9 @@
 
 	const variantClasses = {
 		primary:
-			'font-serif uppercase italic bg-black text-white block font-bold hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
+			'font-serif bg-ruby text-white block font-semibold hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
 		secondary:
-			'font-serif uppercase italic bg-gray-200 text-gray-800 block font-bold hover:bg-gray-300 focus:bg-gray-300 hover:text-gray-800 focus:text-gray-800 focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
+			'font-serif bg-rubydarker text-white block font-medium hover:bg-gray-300 focus:bg-gray-300 hover:text-gray-800 focus:text-gray-800 focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
 		subtle:
 			'font-sans block font-semibold hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
 		outline:
