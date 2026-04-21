@@ -53,7 +53,7 @@
 </picture>
 </div>
 <div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
-	<div class="contents md:flex md:flex-col">
+	<div class="contents md:flex md:flex-col space-y-5">
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
@@ -122,13 +122,13 @@
 					<label class="relative flex items-center cursor-pointer">
 						<input type="radio" name="donoramount" class="sr-only peer" data-buttonhref="https://store.sydneymusic.net" data-buttonlabel="Shop for merch" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">I’d like to buy a t-shirt!</span>
+						<span class="ml-2 text-white">I’d like to buy a t-shirt or some stickers!</span>
 					</label>
 				</div>
 
 				<div class="space-y-2">
-				<Button label="Become a monthly supporter" variant="primary" id="support-button" href="https://square.link/u/hbwswm65" />
-				<Button label="Learn more" href="/support" />
+				<Button label="Become a monthly supporter" variant="primary" id="support-button" href="https://square.link/u/hbwswm65" target="_blank" />
+				<Button label="Learn more" href="/support" target="_blank" />
 				</div>
 
 				<script>
@@ -149,7 +149,7 @@
 			</div>
 		</div>
 		<!-- gig guide -->
-		<div class="md:pr-10 gigcolumn order-3">
+		<div class="md:pr-10 gigcolumn order-2">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 			<div class="filterbox w-full mb-5">
 				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
