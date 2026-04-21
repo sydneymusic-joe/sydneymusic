@@ -21,8 +21,8 @@ module.exports = {
 				xs: '480px'
 			},
 			fontFamily: {
-				sans: ['IBM Plex Sans Condensed', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
-				serif: ['Instrument Serif', `"Superclarendon, 'Bookman Old Style', 'Sitka Heading', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif"`],
+				sans: ['GeneralSans-Variable', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
+				serif: ['GeneralSans-Variable', `Helvetica, sans-serif`],
 			},
 			fontSize: {
 				xl: '1.375rem'
@@ -30,6 +30,8 @@ module.exports = {
 			colors: {
 				//ruby: '#e02020',
 				ruby: '#F04E98',
+				rubydarker:'#78274C',
+				merchbrown:'#231104',
 				// Color scale for ruby/red:
 				red: {
 					50: '#fef2f2',

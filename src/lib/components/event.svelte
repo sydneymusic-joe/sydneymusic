@@ -62,11 +62,11 @@
 		? 'smn'
 		: ''}">
 	<div class="">
-		<h4 class="headliner text-lg font-bold uppercase italic leading-[1.5rem]">{name}</h4>
-		{#if performers && performers.length}<p class="supports uppercase text-sm font-semibold">
+		<h4 class="headliner text-lg font-medium leading-[1.5rem]">{name}</h4>
+		{#if performers && performers.length}<p class="supports text-sm font-normal">
 				W/ {performers.join(', ')}
 			</p>{/if}
-		<p class="text-sm uppercase text-neutral-500">
+		<p class="text-sm text-neutral-500">
 			<span class="time">{time}</span>
 			{#if venue}<a
 					href="/gig-guide/venues/{venue.slug}"

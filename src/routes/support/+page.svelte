@@ -4,27 +4,17 @@
 	import DonationForm from '$lib/components/donation-form.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import Paragraph from '$lib/components/paragraph.svelte';
+	import Support from '$lib/components/support-page.svelte';
 </script>
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
-<div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
-	<div class="flex flex-col lg:flex-row-reverse lg:items-end">
-		<img src="/hero-character.png" class="w-full h-auto max-w-64 my-auto" alt="" />
-		<div>
-			<h1 class="text-lg lg:text-3xl font-semibold mb-4">
-				SydneyMusic.net needs your support.<br />
-				Help keep us running, support the scene, and get more people out to shows.
-			</h1>
-			<p>
-				Sydneymusic.net is a not-for-profit initiative, built and maintained by a small team of
-				volunteers and music lovers. We don't receive any government funding or run advertising - we
-				run this site because we love this city and its incredible music scene.
-			</p>
-		</div>
-	</div>
+	<Support />
 
-	<div class="max-w-lg">
-		<DonationForm showPromotionalContent={false} align="left" shadow={false} theme="yellow" />
+<div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
+
+	<div class="text-center space-y-3">
+		<div class="italic text-4xl">84.3% of surveyed readers say they see more live music because of the SydneyMusic gig guide</div>
+		<div class="italic text-gray-600">from SydneyMusic’s annual survey (363 respondents, February 2026)</div>
 	</div>
 
 	<div class="support grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-20 gap-y-20">

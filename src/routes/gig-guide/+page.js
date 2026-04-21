@@ -88,14 +88,16 @@ const getGigs = async () => {
 		});
 
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
-
-		// Group by month
-		return byMonth.map((month) => {
+		let prep = byMonth.map((month) => {
 			return {
 				...month,
 				items: groupBy(month.items, (i) => `${i.date.getDate()}:${formatDay(i.date)}`)
 			};
 		});
+		prep.totalCount = ret;
+
+		// Group by month
+		return prep;
 	}
 	return {};
 };

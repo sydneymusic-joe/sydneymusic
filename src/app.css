@@ -2,185 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* latin-ext */
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KLLgLsM.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
+  font-family: 'GeneralSans-Variable';
+  src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
 }
-/* latin */
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 700.0;
+*
+* available axes:
+'wght' (range from 200.0 to 700.0
+*/
 @font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8nN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas-KzLgA.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYanyK7ThA.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/Gg8lN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYapyK4.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY5a67vspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY527LvspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvipYY1Fw.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8gN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHY4S7bvspYY.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYotEyq5.woff2) format('woff2');
-	unicode-range:
-		U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
-		U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'IBM Plex Sans Condensed';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(/fonts/Gg8iN4UfRSqiPg7Jn2ZI12V4DCEwkj1E4LVeHYas8BfulYQtEw.woff2) format('woff2');
-	unicode-range:
-		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
-		U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-	font-family: 'Instrument Serif';
-	font-style: normal;
-	font-weight: 400;
-	src: url(/fonts/instrument-serif/InstrumentSerif-Regular.woff2) format('woff2');
-}
-@font-face {
-	font-family: 'Instrument Serif';
-	font-style: italic;
-	font-weight: 400;
-	src: url(/fonts/instrument-serif/InstrumentSerif-Italic.woff2) format('woff2');
-}
-@font-face {
-	font-family: 'Instrument Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(/fonts/instrument-sans/InstrumentSans-Regular.ttf) format('ttf');
+  font-family: 'GeneralSans-Variable';
+  src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: italic;
 }
 
 @layer base {
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply uppercase font-semibold leading-tight block border-b border-black w-full px-2;
+		@apply font-semibold leading-tight block border-b border-black w-full;
 		position: relative;
 	}
 
 	.notch-left * {
 		@apply font-semibold uppercase leading-tight;
-	}
-
-	.notch-right::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute right-0 bottom-0 h-3 border-r;
-	}
-
-	.notch-left::after {
-		content: '';
-		border-color: inherit;
-		@apply absolute left-0 bottom-0 h-3 border-l;
-	}
-
-	.notch-thic {
-		@apply border-b-2;
 	}
 
 	.notch-thic.notch-right::after {
@@ -262,6 +124,10 @@
 	@apply pb-5;
 }
 
+.stretch {
+	transform : scaleY(1.9);
+}
+
 body.freegigs .guide-month:not(:has(.freegig)),
 body.selectedonly .guide-month:not(:has(.selected)) {
 	@apply hidden;
@@ -318,11 +184,11 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 	@apply relative flex items-center;
 }
 
-.guide-divider div:first-child {
+.guide-divider > div:first-child {
 	@apply flex-grow border-t border-gray-400;
 	position: relative;
 }
-.guide-divider div:first-child::before {
+.guide-divider > div:first-child::before {
 	position: absolute;
 	content: '';
 	width: 50px;
@@ -341,8 +207,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 .guide-divider span a {
 	@apply underline;
 }
-
-.guide-divider div:last-child {
+.guide-divider > div:last-child {
 	@apply flex-grow border-t border-gray-400;
 }
 
@@ -386,7 +251,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .venue a {
-	@apply font-bold;
+	@apply font-medium;
 }
 .venue a.rip {
 	color: #aaa;
@@ -419,7 +284,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 	margin-left: -20px;
 }
 .guide-month > h3 {
-	@apply sticky top-0 z-40;
+	@apply sticky top-2 z-40;
 	background: white;
 }
 
@@ -430,15 +295,18 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 header nav .navbar {
-	@apply flex justify-center lg:justify-end font-semibold w-full gap-x-1 sm:gap-x-3;
+	@apply flex justify-center lg:justify-end w-full gap-x-1 sm:gap-x-3;
 }
 
-header nav .navbar .navbar-link {
+header nav .navbar .navbar-link, header nav .navbar .support {
 	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
+	transform : scaleY(1.9);
+	line-height : 50%;
 }
 
 header nav .navbar .navbar-link-icon {
 	@apply border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-0 sm:px-1 py-0 sm:py-3 w-7 lg:w-9 h-auto hidden sm:block;
+	display : none;
 }
 
 header nav .navbar .navbar-link-icon svg {
@@ -450,7 +318,8 @@ header nav .navbar .navbar-link.current {
 }
 
 header nav .navbar .support {
-	@apply uppercase border-b-2 border-transparent hover:bg-ruby/90 hover:text-white text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3 bg-ruby text-white;
+	@apply uppercase border-transparent hover:bg-ruby/90 hover:text-white bg-ruby text-white;
+	transform : scaleY(1.9);
 }
 
 /* venue page stuff */

@@ -22,7 +22,7 @@
 	/** @type {Props} */
 	let {
 		headline = 'SydneyMusic needs your support',
-		appealContent = 'We get Sydney out to more live shows — and our guide is read by 25,000 people every month. This not-for-profit project needs to raise funds for its survival.',
+		appealContent = 'We get Sydney out to more live shows — and our guide is read by over 35,000 people every month. This not-for-profit project needs to raise funds for its survival.',
 		callToAction = 'Can you help us support live music in Sydney?',
 		showSponsors = false,
 		showFineprint = true,

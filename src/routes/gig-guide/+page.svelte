@@ -4,6 +4,7 @@
 	import Feedprompt from '$lib/components/feedprompt.svelte';
 	import Heading from '$lib/components/heading.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Playlist from '$lib/components/playlist.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import { mds } from '../../lib/donorstats.js';
 	let { data } = $props();
@@ -42,35 +43,113 @@
 			
 		</div>-->
 
-<picture>
-	<source
-		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
-		media="(min-width : 640px)"
-	/>
-	<source srcset="/canman-gigs-mobile.png" media="(max-width : 640px)" />
+<div class="py-5 md:py-12 mb-5 md:mb-0 hidden md:block" style="background-image : linear-gradient(180deg, rgb(240 78 152 / 0.9), #231104);">
+		<picture>
 	<img
-		src="/canman-gigs@1x.png"
+		src="/sticker-pixels.svg"
 		alt="SydneyMusic.net mascot Can Man loves a read"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		class="aspect-3/1 md:aspect-banner object-contain w-52 md:w-full mx-auto md:max-w-5xl"
 	/>
 </picture>
-
+</div>
 <div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
-	<div class="contents md:flex md:flex-col">
+	<div class="contents md:flex md:flex-col space-y-5">
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
-			<Heading level={1} variant="xl" class="text-center md:text-left sm:max-w-md">
-				Welcome to Sydney’s most comprehensive gig guide
-			</Heading>
-			<div class="text-sm text-center md:text-left mb-8">
-				<strong>We need your help to keep this resource alive!</strong><div>Thanks to our <a href="/support/wall-of-legends" class="font-bold">{data.mds.recurringDonorCount}</a> monthly supporters.</div><a
-					href="/support"
-					target="_blank"
-					class="underline font-bold plausible-event-name=Donation+Lofi+block">Become a Supporter</a><div class="text-xs italic text-gray-500">All donations over $2 are tax deductible</div>
+			<div class="flex justify-center md:mr-10">
+				<Heading level={1} variant="md" class="mt-5 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
+					Welcome to Sydney’s most comprehensive gig guide
+				</Heading>
+			</div>
+			<div class="bg-merchbrown text-white text-center p-5 md:p-10 mx-[-20px] md:ml-0 md:mr-10">
+				<div class="guide-divider" style="margin-bottom : 0.25rem">
+					<div></div>
+					<div class="flex flex-row justify-center gap-x-3 mx-3">
+						<div><img src="/banksia.svg" class="h-12" alt="Pixelated Banksia icon" /></div>
+						<Heading class="text-ruby uppercase font-normal"><div class="stretch leading-[1.9] md:leading-[1.3]">Fundraiser FY27</div></Heading>
+						<div><img src="/padlock.svg" class="h-12" alt="Pixelated unlocked padlock icon" /></div>
+					</div>
+					<div></div>
+				</div>
+				<div class="space-y-3">
+					<div class="font-semibold">There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.</div>
+					<div>But first: SydneyMusic urgently needs your help.</div>
+					<div>This resource is 100% community-supported. To keep the gig guide online from July 1 we need to raise money towards our baseline budget for FY27 (we’ve got {data.mds.totalFundedPercent}% sorted already).</div>
+					<div class="font-semibold">We need to sign up <span class="text-ruby">{450-data.mds.recurringDonorCount}</span> more monthly supporters by June 30 to meet our goal for this form of support.</div>
+					<div>Your support is hugely appreciated. Thank you!</div>
+				</div>
+				<div class="flex flex-row justify-center gap-x-2 mt-5">
+				<img src="/horns.svg" class="h-12" alt="Pixelated horned hands icon" />
+				<h2 class="stretch uppercase mt-5 leading-[1.3]">Choose your fighter:</h2>
+				<img src="/canhand.svg" class="h-12" alt="Pixelated Can Man hand icon" />
+				</div>
+				<div class="flex flex-wrap flex-row justify-center gap-x-5 gap-y-3 my-5">
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/L0GTRapn" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$2</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/Gw8URGj2" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$5</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/hbwswm65" checked="" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$10</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/otfmCL39" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$25</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/moL86XF5" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$50</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/Dicl3TrR" class="sr-only peer" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">$200</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" data-buttonhref="https://square.link/u/PbEmze4h" data-buttonlabel="Make a one-off donation" class="sr-only peer	" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">I’d like to make a one-off donation</span>
+					</label>
+					<label class="relative flex items-center cursor-pointer">
+						<input type="radio" name="donoramount" class="sr-only peer" data-buttonhref="https://store.sydneymusic.net" data-buttonlabel="Shop for merch" />
+						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
+						<span class="ml-2 text-white">I’d like to buy a t-shirt or some stickers!</span>
+					</label>
+				</div>
+
+				<div class="space-y-2">
+				<Button label="Become a monthly supporter" variant="primary" id="support-button" href="https://square.link/u/hbwswm65" target="_blank" />
+				<Button label="Learn more" href="/support" target="_blank" />
+				</div>
+
+				<script>
+					var donorItems = document.querySelectorAll('input[name=donoramount]');
+					donorItems.forEach(el => {
+						el.addEventListener('click', function (evt) {
+							document.getElementById('support-button').href = evt.srcElement.attributes['data-buttonhref'].value;
+							document.getElementById('support-button').innerHTML = (evt.srcElement.attributes['data-buttonlabel'] ? evt.srcElement.attributes['data-buttonlabel'].value : "Become a monthly supporter") + " &raquo;";
+						});
+					});
+				</script>
+
+				<div class="mt-2 text-xs">All donations over $2 are tax deductible. SydneyMusic is a registered not-for-profit organisation and is recognised as a Deductible Gift Recipient by the ATO</div>
+				<div class="mt-2 text-xs">The average donation from our {data.mds.recurringDonorCount} supporters is $10</div>
+				<div class="mt-2 text-xs">
+					<a href="/support/commercial" class="underline">Commercial enquiries</a> • <a href="/api-license" class="underline">API licensing</a> • <a href="mailto:contact@sydneymusic.net" class="underline">General enquiries</a>
+				</div>
 			</div>
 		</div>
 		<!-- gig guide -->
-		<div class="md:pr-20 gigcolumn order-3">
+		<div class="md:pr-10 gigcolumn order-2">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 			<div class="filterbox w-full mb-5">
 				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -86,7 +165,7 @@
 			{#each data.gigs as month}
 				<div class="guide-month mb-10">
 					{#each month.items as { label, items }}
-						<Heading level={3} variant="md" class="border-b border-black">
+						<Heading level={3} variant="md" class="stretch font-normal mb-8 mt-8 uppercase border-b border-black">
 							<span class="text-ruby">{label.split(':')[1]}</span>
 							{label.split(':')[0]}
 							{month.label}
@@ -140,18 +219,10 @@
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
 		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
-			<div class="bg-black text-white border-2 border-ruby">
-				<a href="https://store.sydneymusic.net" target="_blank"><img src="/merchpromo.jpg" /></a>
-				<div class="p-8">
-				<Heading>SydneyMusic FY27 fundraiser</Heading>
-				<p class="text-sm">We have secured <strong>{mds.totalFundedPercent}%</strong> of the minimum monthly support we need to cover our costs from July 2026 onwards, and are appealing to our community to help us get the rest of the way.</p>
-				<p class="text-sm mt-4"><a href="https://store.sydneymusic.net" class="underline">Pick up some merch</a> or <a class="underline" href="/support">become a monthly supporter</a> to help us keep publishing Sydney’s most comprehensive gig guide!</p>
-				<div class="mt-5 flex gap-5 flex-col"><Button href="https://store.sydneymusic.net" target="_blank" label="Merch Store" /><Button href="https://sydneymusic.net/support" target="_blank" label="Become a supporter" /></div>
-				</div>
-			</div>
 		</div>
 		<!-- right col -->
 		<div class="space-y-5 mt-20 order-4">
+			<Playlist showtitle="true" />
 			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 			<div class="prose prose-sm">
 				<p>
