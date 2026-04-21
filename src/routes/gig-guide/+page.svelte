@@ -122,7 +122,7 @@
 					<label class="relative flex items-center cursor-pointer">
 						<input type="radio" name="donoramount" class="sr-only peer" data-buttonhref="https://store.sydneymusic.net" data-buttonlabel="Shop for merch" />
 						<div class="w-6 h-6 bg-transparent border-2 border-ruby rounded-full peer-checked:bg-ruby peer-checked:border-ruby"></div>
-						<span class="ml-2 text-white">I’d like to buy a t-shirt or some stickers!</span>
+						<span class="ml-2 text-white">I’d like to buy a t-shirt or stickers!</span>
 					</label>
 				</div>
 
