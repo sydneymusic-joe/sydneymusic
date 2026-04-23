@@ -110,7 +110,7 @@ async function generate() {
 		for (const day of month.items) {
 			template += `
             <tr class="day">
-                <td valign="top" align="center" width="80" class="daylabel"><strong style="text-transform : uppercase;" class="ruby">${
+                <td valign="top" align="center" width="80" class="daylabel"><strong class="ruby">${
 									day.label.split(':')[1].substr(0,3)
 								}</strong><br /><font style="font-size : 36px; font-weight : bold">${
 				day.label.split(':')[0]
@@ -156,10 +156,10 @@ async function generate() {
 			p { line-height : 150%; }
             .ruby { color : #e02020 }
             .graphite { color : #6d7278 }
-			.section { text-transform : uppercase; color : #e02020; font-weight : bold; }
-            tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; text-transform : uppercase; font-weight : bold; }
+			.section { color : #e02020; font-weight : bold; }
+            tr.month td { border-bottom : solid 1px black; padding-bottom : 2px; font-weight : bold; }
             tr.day td { padding-top : 20px }
-            .giglist tr td { font-size : 15px; padding-top : 0; padding-bottom : 16px; text-transform : uppercase;  }
+            .giglist tr td { font-size : 15px; padding-top : 0; padding-bottom : 16px; }
             .giglist tr td div.headliner { padding-bottom : 2px; font-size : 18px; font-weight : bold; }
 			.giglist tr td div.headliner span { font-size : 10px; text-transform: lowercase; font-weight : normal; }
 			.giglist tr td div.performers { line-height : 120%; padding-bottom : 3px; font-weight : bold; }
