@@ -43,21 +43,16 @@
 			
 		</div>-->
 
-<div class="py-5 md:py-12 mb-5 md:mb-0 hidden md:block" style="background-image : linear-gradient(180deg, rgb(240 78 152 / 0.9), #231104);">
-		<picture>
-	<img
-		src="/sticker-pixels.svg"
-		alt="SydneyMusic.net mascot Can Man loves a read"
-		class="aspect-3/1 md:aspect-banner object-contain w-52 md:w-full mx-auto md:max-w-5xl"
-	/>
-</picture>
+<div class="py-5 md:py-12" style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%">
+		<a href="https://store.sydneymusic.net" title="Go to the store to buy a tee"><div class="h-32 lg:h-72">
+		</div></a>
 </div>
 <div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
 	<div class="contents md:flex md:flex-col space-y-5">
 		<!-- header -->
 		<div class="order-1 place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
-				<Heading level={1} variant="md" class="mt-5 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
+				<Heading level={1} variant="md" class="mt-5 md:mt-0 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
 					Welcome to Sydney’s most comprehensive gig guide
 				</Heading>
 			</div>
