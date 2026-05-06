@@ -36,8 +36,11 @@
 				<div class="space-y-3">
 					<p><strong>Sydney’s most comprehensive gig guide needs your help!</strong></p>
 					<p>We need to raise $30,000 to help cover our operating expenses for the first half of FY27.</p>
-					<Button variant="primary" label="Make a donation" />
-					<Button variant="secondary" label="Buy some merch" />
+					<div class="flex flex-col gap-y-2 md:w-[50%]">
+					<Button variant="primary" href="https://square.link/u/eS7bgm8M" label="Make a donation" />
+					<Button variant="secondary" href="https://store.sydneymusic.net" label="Buy some merch" />
+					<Button variant="secondary" href="/support" label="Learn more" />
+					</div>
 				</div>
 			</div>
 		</div>
