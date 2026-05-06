@@ -62,7 +62,7 @@
 			<div class="font-semibold text-center md:mr-10">There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.</div>
 			<div class="flex flex-col items-center md:mr-10 my-5 gap-y-5">
 				<div class="w-[75%]"><a href="/support/tote"><img src="/pdtote.png" class="w-full" style="box-shadow : 10px 10px 0px rgba(0,0,0,0.5); border : solid 3px black" /></a></div>
-				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen introduces a special new fundraiser initiative</a></div>
+				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new SydneyMusic fundraiser!</a></div>
 			</div>
 			<div class="flex flex-col items-center md:mr-10 my-10">
 				<Heading class="stretch">We need your support!</Heading>

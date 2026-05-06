@@ -14,11 +14,12 @@
 			<Button variant="primary" label="E-mail us to contribute!" href="mailto:contact@sydneymusic.net" />
 		</div>
 		<div class="flex-1 text-white p-12 flex items-center">
-			<div class="space-y-5">
+			<div class="space-y-3">
 				<h1 class="text-2xl stretch">The ultimate Sydney music tote bag!</h1>
-				<p>The SydneyMusic gig guide is a labour of love that takes 60 hours per week to maintain. To keep the guide in good health, we need to raise our FY27 operational budget.</p>
-				<p>We have the <strong>last-ever Can Man tote bag from our first merch drop in 2022</strong>, and we’re filling it with an incredible one-of-a-kind collection of merch from Sydney artists &mdash; and it could be yours to win!</p>
-				<p>Thank you to Party Dozen for kicking things off!</p>
+				<p>We’ve got the <strong>last-ever Can Man tote bag from our first merch drop in 2022</strong>.</p>
+				<p>In the next few weeks we’re going to be accepting donations of special merch items from Sydney artists and creating an incredible one-of-a-kind collection for one lucky winner.</p>
+				<p>The tote will be raffled at a very special event soon — stay tuned for more info!</p>
+				<p>Thank you to <strong>Party Dozen</strong> for kicking things off!</p>
 				<h2 class="text-xl stretch">What’s in the bag?</h2>
 				<p>We’ll keep updating this list as we go. So far we have:</p>
 				<ul>
