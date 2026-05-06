@@ -5,7 +5,7 @@
 	import { mds } from '../../../lib/donorstats.js';
 </script>
 
-<SeoSocial title="SydneyMusic FY27 Fundraiser" />
+<SeoSocial title="FY27 Fundraiser: The Ultimate Sydney Music Tote Bag" description="SydneyMusic needs to raise funds for FY27. We’re putting together the ultimate Sydney music tote bag to keep the gig guide online!" image="/pdtote-og.jpg" />
 
 <div class="bg-merchbrown">
 	<div class="flex flex-col md:flex-row">
