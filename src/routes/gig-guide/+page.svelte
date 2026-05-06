@@ -43,9 +43,9 @@
 			
 		</div>-->
 
-<div class="py-5 md:py-12 h-48 lg:h-72 relative" style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%">
-		<div class="bg-black absolute bottom-3 left-3">
-			<Button href="https://store.sydneymusic.net" label="New merch shipping now">
+<div class="py-5 md:py-8 h-48 md:h-72 relative" style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%">
+		<div class="flex flex-col items-center justify-items-end h-full">
+			<Button href="https://store.sydneymusic.net" class="text-md bg-white" variant="outline" label="T-shirts shipping now!">
 				
 			</Button>
 	</div>
