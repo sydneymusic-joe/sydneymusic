@@ -19,10 +19,10 @@
 </script>
 
 <header>
-	<div class="bg-black text-xs text-white py-2 text-center"><a href="https://store.sydneymusic.net/" target="_blank" class="underline">NEW MERCH DROP</a>&nbsp; • Tees shipping now!</div>
+	<div class="bg-black text-xs text-white py-2 text-center"><a href="https://store.sydneymusic.net/" target="_blank" class="underline">NEW MERCH</a>&nbsp; • T-shirts, fans and stickers!</div>
 	<div class="lg:hidden flex justify-center">
-		<a href="/" class="mt-5">
-			<Logo size="sm" stickers={true} />
+		<a href="/" class="mt-3">
+			<Logo size="sm" stickers={false} />
 		</a>
 	</div>
 
@@ -55,7 +55,7 @@
 				<a href="/support"
 				class="support cursor-pointer"
 				>
-					Support
+					Donate!
 			</a>
 			</div>
 		</div>

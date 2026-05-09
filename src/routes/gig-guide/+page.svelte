@@ -65,10 +65,16 @@
 				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
 			</div>
 			<div class="flex flex-col items-center md:mr-10 my-10">
-				<Heading class="stretch">We need your support!</Heading>
-				<div class="space-y-3 text-center items-center flex flex-col">
-				<p>We need to sign up <strong>{450-mds.recurringDonorCount}</strong> more monthly supporters by June 30 to meet our FY27 goal</p>
-				<Button label="Become a Supporter" variant="primary" href="https://square.link/u/eS7bgm8M" />
+				<Heading level={2} variant="md" class="uppercase stretch">Become a supporter</Heading>
+				<div class="space-y-2 text-center items-center flex flex-col">
+				<div class="flex gap-x-3 items-center">
+					<img src="/fundraise-heart.svg" class="h-8" />
+					<p><strong class="font-semibold">We are fundraising for FY27!</strong><br /><strong class="font-semibold">{mds.totalFundedPercent}%</strong> of FY27 target raised</p>
+				</div>
+				<div class="flex flex-row gap-3 pt-3">
+				<Button label="Donate now" variant="outline" href="https://square.link/u/eS7bgm8M" />
+				<Button label="More info" variant="secondary" href="/support" />
+				</div>
 				</div>
 			</div>
 		</div>

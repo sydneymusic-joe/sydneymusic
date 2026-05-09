@@ -11,7 +11,7 @@
 		</div>
 		<div class="flex-1 text-white p-12 flex items-center">
 		<div>
-			<div class="mb-12"><Logo class="w-32 lg:w-64" /></div>
+			<div class="mb-12"><Logo invert={true} class="w-32 lg:w-64" /></div>
 			<h1 class="stretch font-normal uppercase text-xl lg:text-4xl mb-12" style="line-height : 90%;">Over 35,000 gig-goers served every month</h1>
 			<div class="mb-6 space-y-3 text-md lg:text-md">
 				<p>We receive feedback every week from punters telling us that this guide has helped them to connect with live music communities they never would have found otherwise.</p>
