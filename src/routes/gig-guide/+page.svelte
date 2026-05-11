@@ -75,6 +75,7 @@
 				<Button label="Donate now" variant="outline" href="https://square.link/u/eS7bgm8M" />
 				<Button label="More info" variant="secondary" href="/support" />
 				</div>
+				<div class="italic text-sm">Donations over $2 are tax deductible.</div>
 				</div>
 			</div>
 		</div>
