@@ -27,8 +27,10 @@
 				<Heading variant="md" class="uppercase font-normal stretch">What’s in the bag?</Heading>
 				<div class="space-y-3">
 					<p>We’ll keep updating this list as we go. So far we have:</p>
-					<ul>
+					<ul class="space-y-3">
 						<li><strong>Party Dozen — The Invisible Man</strong><br /><span class="text-sm">Vinyl LP • Original pressing • Last copy of 275</span></li>
+						<li><strong>Krystal Rivvers — Arora</strong><br /><span class="text-sm">Vinyl EP • Limited pressing of 200</span></li>
+						<li><strong>Lady Lyon — Cub</strong><br /><span class="text-sm">Vinyl LP • with Teeth bandana</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
