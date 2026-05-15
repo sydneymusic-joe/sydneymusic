@@ -60,16 +60,16 @@
 				</Heading>
 			</div>
 			<div class="font-semibold text-center md:mr-10">There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.</div>
-			<div class="flex flex-col items-center md:mr-10 my-5 gap-y-5">
+			<!--<div class="flex flex-col items-center md:mr-10 my-5 gap-y-5">
 				<div class="w-[75%]"><a href="/support/tote"><img src="/pdtote.png" class="w-full max-w-[500px]" style="box-shadow : 10px 10px 0px rgba(0,0,0,0.5); border : solid 3px black" /></a></div>
 				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
-			</div>
+			</div>-->
 			<div class="flex flex-col items-center md:mr-10 my-10">
-				<Heading level={2} variant="md" class="uppercase stretch">Become a supporter</Heading>
+				<Heading level={2} variant="md" class="uppercase stretch">Become a supporter!</Heading>
 				<div class="space-y-2 text-center items-center flex flex-col">
 				<div class="flex gap-x-3 items-center">
 					<img src="/fundraise-heart.svg" class="h-8" />
-					<p><strong class="font-semibold">We are fundraising for FY27!</strong><br /><strong class="font-semibold">{mds.totalFundedPercent}%</strong> of FY27 target raised</p>
+					<p><strong class="font-semibold">We are fundraising for FY27</strong><br /><strong class="font-semibold">{mds.totalFundedPercent}%</strong> of FY27 target raised</p>
 				</div>
 				<div class="flex flex-row gap-3 pt-3">
 				<Button label="Donate now" variant="outline" href="https://square.link/u/eS7bgm8M" />
