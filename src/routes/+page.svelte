@@ -6,13 +6,16 @@
 	import { createCalendarLink } from '$lib/globals.mjs';
 	import Heading from '$lib/components/heading.svelte';
 	import Paragraph from '$lib/components/paragraph.svelte';
+	import { mds } from '../lib/donorstats.js';
+	import DonationForm from '$lib/components/donation-form.svelte';
 
 	let { data } = $props();
 </script>
 
 <SeoSocial />
 
-<div class="max-w-5xl px-5 mx-auto space-y-20 pb-24">
+<div class="max-w-5xl px-5 mx-auto pb-24">
+
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="feature-thisweek space-y-8 md:pb-5 text-left">
@@ -27,10 +30,21 @@
 						<span class="text-ruby italic">{data.gigs.thisWeek} shows</span> waiting to be discovered
 						in Sydney this week.
 					</h1>
-					<Button variant="primary" href="/gig-guide" label="Read the full guide" />
+					<Button variant="secondary" href="/gig-guide" label="Read the full guide" />
 				</div>
 			</div>
 		</div>
+	<div class="bg-merchbrown p-5 text-white space-y-2 flex flex-col md:items-center">
+		<Heading variant="sm" class="mt-3 leading-[0.9] stretch uppercase font-medium">We are fundraising for FY27 and need your support</Heading>
+		<p><strong class="font-semibold">We get people out to shows by making them easy to discover.</strong></p>
+		<p>We have raised <strong>{mds.totalFundedPercent}%</strong> of our monthly recurring budget for FY27. Can you help us get the rest of the way?</p>
+		<div class="flex flex-col md:flex-row gap-2 pt-5">
+		<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank"></Button>
+		<Button variant="secondary" label="Learn more" href="/support"></Button>
+		</div>
+		<p class="text-sm italic">Donations of $2 and over are tax deductible</p>
+	</div>
+
 
 		<div class="grid md:grid-cols-2 gap-10 gap-y-20">
 			<!-- left col -->
