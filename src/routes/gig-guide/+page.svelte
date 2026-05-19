@@ -1,12 +1,13 @@
 <script>
-	import Button from '$lib/components/button.svelte';
 	import Event from '$lib/components/event.svelte';
 	import Feedprompt from '$lib/components/feedprompt.svelte';
-	import Heading from '$lib/components/heading.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import Playlist from '$lib/components/playlist.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
+	import Button from '$lib/components/button.svelte';
+	import Heading from '$lib/components/heading.svelte';
 	import { mds } from '../../lib/donorstats.js';
+	import DonationForm from '../../lib/components/donation-form.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -53,7 +54,7 @@
 <div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
 	<div class="contents md:flex md:flex-col space-y-5">
 		<!-- header -->
-		<div class="order-1 place-self-center md:place-self-auto">
+		<div class="place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
 				<Heading level={1} variant="md" class="mt-5 md:mt-0 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
 					Welcome to Sydney’s most comprehensive gig guide
@@ -64,23 +65,14 @@
 				<div class="w-[75%]"><a href="/support/tote"><img src="/pdtote.png" class="w-full max-w-[500px]" style="box-shadow : 10px 10px 0px rgba(0,0,0,0.5); border : solid 3px black" /></a></div>
 				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
 			</div>-->
-			<div class="flex flex-col items-center md:mr-10 my-10">
-				<Heading level={2} variant="md" class="uppercase stretch">Become a supporter!</Heading>
-				<div class="space-y-2 text-center items-center flex flex-col">
-				<div class="flex gap-x-3 items-center">
-					<img src="/fundraise-heart.svg" class="h-8" />
-					<p><strong class="font-semibold">We are fundraising for FY27</strong><br /><strong class="font-semibold">{mds.totalFundedPercent}%</strong> of FY27 target raised</p>
-				</div>
-				<div class="flex flex-row gap-3 pt-3">
-				<Button label="Donate now" variant="outline" href="https://square.link/u/eS7bgm8M" />
-				<Button label="More info" variant="secondary" href="/support" />
-				</div>
-				<div class="italic text-sm">Donations over $2 are tax deductible.</div>
-				</div>
+
+			<div class="mt-5">
+			<DonationForm />
 			</div>
+			
 		</div>
 		<!-- gig guide -->
-		<div class="md:pr-10 gigcolumn order-2">
+		<div class="md:pr-10 gigcolumn">
 			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
 			<div class="filterbox w-full mb-5">
 				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
@@ -149,10 +141,10 @@
 
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
-		<div class="order-2 mb-5 md:mb-0 w-[350px] place-self-center">
+		<div class="mb-5 md:mb-0 w-[350px] place-self-center">
 		</div>
 		<!-- right col -->
-		<div class="space-y-5 mt-20 order-4">
+		<div class="space-y-5 mt-20">
 			<Playlist showtitle="true" />
 			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 			<div class="prose prose-sm">

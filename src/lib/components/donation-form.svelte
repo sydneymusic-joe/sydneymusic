@@ -1,9 +1,6 @@
 <script>
-	import { twMerge } from 'tailwind-merge';
 	import Button from './button.svelte';
 	import Heading from './heading.svelte';
-	import Paragraph from './paragraph.svelte';
-	import ProgressBar from './progress-bar.svelte';
 	import { mds } from '../donorstats.js';
 
 	/**
@@ -21,34 +18,12 @@
 
 	/** @type {Props} */
 	let {
-		headline = 'SydneyMusic needs your support',
-		appealContent = 'We get Sydney out to more live shows — and our guide is read by over 35,000 people every month. This not-for-profit project needs to raise funds for its survival.',
-		callToAction = 'Can you help us support live music in Sydney?',
-		showSponsors = false,
-		showFineprint = true,
-		theme = 'dark',
-		size = 'lg',
-		shadow = true,
-		showPercentage = true,
 		donorStats,
 		class: className
 	} = $props();
 
 	donorStats=mds;
 
-	const buttonClass = twMerge(
-		'bg-white text-xl flex flex-row items-center justify-center outline-none focus:outline-none',
-		size === 'sm' && 'text-xl',
-		size === 'lg' && 'text-3xl',
-		theme === 'dark' &&
-			'bg-ruby/90 text-white hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white border-2 border-transparent hover:border-white focus:border-white',
-		theme === 'ruby' &&
-			'bg-gray-100 text-black hover:bg-white focus:bg-white hover:text-black focus:text-black border-2 border-transparent hover:border-red-800 focus:border-red-800',
-		theme === 'yellow' &&
-			'bg-black text-white hover:bg-black/80 focus:bg-black/80 hover:text-yellow-200 focus:text-yellow-200 border-2 border-transparent hover:border-black focus:border-black',
-		theme === 'light' &&
-			'bg-black text-white hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white border-2 border-transparent hover:border-black focus:border-black'
-	);
 </script>
 
 <div class="bg-merchbrown text-white text-center p-5 md:p-10 mx-[-20px] md:ml-0 md:mr-10">
@@ -62,7 +37,7 @@
 					<div></div>
 				</div>
 				<div class="space-y-3">
-					<div>SydneyMusic urgently needs your help.</div>
+					<div><strong class="font-semibold">SydneyMusic urgently needs your help.</strong></div>
 					<div>This resource is 100% community-supported. To keep the gig guide online from July 1 we need to raise money towards our baseline budget for FY27 (we’ve got {donorStats.totalFundedPercent}% sorted already).</div>
 					<div class="font-semibold">We need to sign up <span class="text-ruby">{450-donorStats.recurringDonorCount}</span> more monthly supporters by June 30 to meet our goal for this form of support.</div>
 					<div>Your support is hugely appreciated. Thank you!</div>

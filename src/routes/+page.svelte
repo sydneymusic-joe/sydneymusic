@@ -14,7 +14,7 @@
 
 <SeoSocial />
 
-<div class="max-w-5xl px-5 mx-auto pb-24">
+<div class="max-w-5xl px-5 mx-auto pb-24 space-y-20">
 
 	<!-- First section -->
 	<div class="space-y-10">
@@ -34,11 +34,22 @@
 				</div>
 			</div>
 		</div>
-	<div class="bg-merchbrown p-5 text-white space-y-2 flex flex-col md:items-center">
-		<Heading variant="sm" class="mt-3 leading-[0.9] stretch uppercase font-medium">We are fundraising for FY27 and need your support</Heading>
-		<p><strong class="font-semibold">We get people out to shows by making them easy to discover.</strong></p>
-		<p>We have raised <strong>{mds.totalFundedPercent}%</strong> of our monthly recurring budget for FY27. Can you help us get the rest of the way?</p>
-		<div class="flex flex-col md:flex-row gap-2 pt-5">
+	<div class="bg-merchbrown p-5 text-white space-y-2 flex flex-col xs:items-center">
+		<div class="guide-divider" style="margin-bottom : 0rem">
+			<div></div>
+			<div class="flex flex-row justify-center gap-x-3 mx-3">
+				<div><img src="/banksia.svg" class="h-12" alt="Pixelated Banksia icon" /></div>
+				<Heading class="text-ruby uppercase font-normal text-center"><div class="stretch leading-[1.9] md:leading-[1.3]">Support us</div></Heading>
+				<div><img src="/padlock.svg" class="h-12" alt="Pixelated unlocked padlock icon" /></div>
+			</div>
+			<div></div>
+		</div>
+
+		<div class="text-center  space-y-2">
+		<p><strong class="font-semibold">The gig guide critically needs your support before June 30.</strong></p>
+		<p>We have raised <strong class="text-ruby">{mds.totalFundedPercent}%</strong> of our monthly recurring budget for FY27. Can you help us get the rest of the way?</p>
+		</div>
+		<div class="flex flex-col xs:flex-row gap-2 pt-5">
 		<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank"></Button>
 		<Button variant="secondary" label="Learn more" href="/support"></Button>
 		</div>
@@ -108,14 +119,20 @@
 		</div>
 	</div>
 
-	<div class="home-storelink rounded bg-gray-200 text-sm p-5 border-b-2">
-		<Heading level={2} variant="md" class="not-italic mb-2"
-			>The SydneyMusic store is now open!</Heading
+	<div class="bg-gray-200 text-sm p-5 border-b-2 grid gap-4 grid-rows-2 md:grid-rows-none md:grid-cols-2 md:grid-flow-col">
+		<div>
+		<Heading level={2} variant="md" class="stretch font-normal mt-3 mb-2 uppercase"
+			>New merch shipping now!</Heading
 		>
-		<Paragraph class="mb-0"
+		<Paragraph class="mb-0 mt-5"
 			>If you like what we do, you can support the site by making a donation or buying some merch
-			through <a href="https://store.sydneymusic.net">our new online store</a>.</Paragraph
+			through our new online store.</Paragraph
 		>
+		<Button class="mt-3" label="Visit store" href="https://store.sydneymusic.net" />
+		</div>
+		<div class="bg-[url(/merch-tees.jpg)] bg-cover bg-center">
+			
+		</div>
 	</div>
 
 	<!-- Second section -->
