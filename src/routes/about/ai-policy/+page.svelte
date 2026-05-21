@@ -32,6 +32,19 @@
 
 <p>We take pride in the gig guide, which is the byproduct of hours of human work every week. We think that the time spent researching, learning and thinking about our local ecosystem is shown in the quality of what we produce for you — and we do that so you can take control of your discovery and have a complete view of what’s happening in our amazing city.</p>
 
+<Heading variant="md" level="2" class="notch-left">“OK, but why don’t you use AI to make the guide instead of paying people?”</Heading>
+
+<p>Put simply: we think it would make the gig guide worse, and our testing bears this out.</p>
+
+<p>We are confident that the guide’s secret sauce lies in the many hours we’ve spent poring over information about artists, venues, promoters and events. The human judgement involved in the research we do has consistently surpassed the accuracy and capabilities of LLMs. AI chatbots and LLMs authoritatively produce responses that <em>seem</em> right, unless you already know enough about the subject to tell when it’s wrong.</p>
+
+<p><strong>Most of the hyper-local info that makes our gig guide useful to you doesn’t actually exist anywhere else on the internet.</strong> If you ask ChatGPT what’s on in Sydney tonight, it will pull information from, among a few others, <em>our gig guide</em> – info researched and curated by humans – and use it to create a sort of guide-slop that sounds right but is not actually useful info. We have consistently proven that for the granularity and specificity of the information presented in our guide, it’s mostly wrong, and it’s usually wrong about the big basic stuff too. (If you don’t believe it, try it right now – ChatGPT informed us a real band that was actually in town <em>last week</em> is playing <em>tonight</em>, at a venue that does exist but which they <em>did not play</em> at once during their entire tour. Looks about right. Is 100% wrong.)</p>
+
+<p><strong>Everything that your AI bot of choice spits out is based on information that was the result of work done by a human.</strong> Even big platforms like Songkick and BandsInTown are a mix of automatically “scraped” info and human input, and they can’t always tell the difference between, say, a burlesque night and a gig, or between a covers band and a local act performing their own songs. Understanding the distinctions between these things matter: companies that prioritise efficiency over precision are going to miss the details. That’s a major element of what’s being lost from our culture as organisations and businesses “pivot” to prioritising AI output and processes, largely in order to get rid of those pesky, expensive human workers.</p>
+
+<p>The information our human team members are researching exists on a huge range of different platforms, websites and social pages — and sometimes not on the Internet at all — all laid out differently, all displaying the basic info we need for the guide. Even if we managed to write a script or build a tool to collect all that information, humans would still need to double-check it to make sure that this bit is actually the venue name and not the name of the band night, or work out whether the headliner is listed first or last. That’s the stuff that makes our gig guide good and useful, and AI can’t use context clues to work this stuff out. Humans can. And if we need to have that step in the workflow anyway, then the automation isn’t actually adding anything. Once you factor in building, maintaining and fact-checking an automated tool, all that extra work usually negates the benefits it is supposed to deliver.</p>
+
+
 <Heading variant="md" level="2" class="notch-left">Our rationale from a tech point of view</Heading>
 <p>We’re nerds and we love tech. We don’t reject technical evolution just for the sake of it.</p>
 
