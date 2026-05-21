@@ -28,13 +28,13 @@
 
 <p>We value the time and energy that humans spend researching, learning, creating and doing — and that includes the process of discovering music and gigs. Algorithms that make decisions on how information is processed and sourced without transparency or control remove human agency.</p>
 
-<p>AI now extends the conversation about algorithms beyond “content consumption” but we think that the same core principles apply: when you take shortcuts in work, you remove the hundreds of tiny decisions we make every day that refine our rationale and ideas, and help us to improve, and invite curiosity.</p>
+<p>AI now extends the conversation about algorithms beyond “content consumption” but the same core principles apply: when you take shortcuts in work, you remove the hundreds of tiny decisions we make every day that refine our rationale and ideas, and help us to improve, and invite curiosity.</p>
 
-<p>We take pride in the gig guide, which is the byproduct of hours of human work every week. We think that the time spent researching, learning and thinking about our local ecosystem is shown in the quality of what we produce for you — and we do that so you can take control of your discovery and have a complete view of what’s happening in our amazing city.</p>
+<p>We take pride in the gig guide, which is the byproduct of hours of human work every week. The time spent researching, learning and thinking about our local ecosystem is shown in the quality of what we produce for you — and we do that so you can take control of your discovery and have a complete view of what’s happening in our amazing city.</p>
 
 <Heading variant="md" level="2" class="notch-left">“OK, but why don’t you use AI to make the guide instead of paying people?”</Heading>
 
-<p>Put simply: we think it would make the gig guide worse, and our testing bears this out.</p>
+<p>Put simply: it would make the gig guide worse, and our testing bears this out.</p>
 
 <p>We are confident that the guide’s secret sauce lies in the many hours we’ve spent poring over information about artists, venues, promoters and events. The human judgement involved in the research we do has consistently surpassed the accuracy and capabilities of LLMs. AI chatbots and LLMs authoritatively produce responses that <em>seem</em> right, unless you already know enough about the subject to tell when it’s wrong.</p>
 
@@ -50,7 +50,7 @@
 
 <p>We’re particularly concerned that the adoption of generative AI is focused on the products built by a limited number of scaled (and mostly US-based) tech companies. We don’t like that these platforms are a bit of a blunt instrument: they’re trained by gobbling up a huge amount of human output, and then the responses don’t really have any method or transparency in how their responses are produced — they’re largely a black box.</p>
 
-<p>We think there may be positive applications of Large Language Model (LLM) technology, but we don’t like the principles that currently steer its evolution via corporate investment.</p>
+<p>There may be positive applications of Large Language Model (LLM) technology, but we don’t like the principles that currently steer its evolution via corporate investment.</p>
 
 <p>If we were to make use of LLMs in the future, we would like to see the tech being used in ways that celebrate and promote small-scale design principles that favour individual ownership rather than centralisation of resources.</p>
 
