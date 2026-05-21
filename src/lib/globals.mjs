@@ -29,6 +29,7 @@ export const navigationFooterSupport = [
 
 export const navigationFooterAbout = [
 	{ title: 'About', href: '/about' },
+	{ title: 'AI Policy', href: '/about/ai-policy' },
 	{ title: 'Reads', href: '/reads' },
 	{ title: 'Contact', href: '/contact' },
 	{ title: 'Links', href: '/links' },
