@@ -61,7 +61,8 @@ export async function load({ params }) {
 	}`);
 
 	let combinedGigs = [];
-	for (i = 0; i <= total % 100; i++) {
+
+	for (i = 0; i <= total / 100; i++) {
 		const p = sourcePages['page' + (i + 1)];
 		if (!p || p.length == 0) break;
 		combinedGigs = combinedGigs.concat(sourcePages['page' + (i + 1)]);
