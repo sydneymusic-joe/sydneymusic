@@ -38,7 +38,7 @@
 			/>
 			<Button
 				label="Read the position description" variant="secondary"
-				href="https://docs.google.com/document/d/1qkV4V_JFc-quXYDCnyZYtjZto-Lea7pD3UcHT-9vBuI/edit?tab=t.0"
+				href="https://drive.google.com/file/d/1nS53VatD9h77sYgSJqpueKO_z6pUEc1Y/view?usp=drive_link"
 				target="_blank"
 			/>
 		</div>
@@ -62,7 +62,7 @@
 		</p>
 
 		<p>
-			As you grow in the role, you’ll <strong>help develop a voice for our comms</strong> and contribute ideas that support our mission to get more people more involved in more gigs
+			As you grow in the role, you’ll <strong>help develop the voice of our comms</strong> and contribute ideas that support our mission to get more people more involved in more gigs.
 		</p>
 
 		<Heading level={2} variant="sm" class="font-medium stretch uppercase">Who this role is for</Heading>
