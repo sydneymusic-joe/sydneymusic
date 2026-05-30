@@ -4,7 +4,7 @@
 	import Heading from '$lib/components/heading.svelte';
 </script>
 
-<SeoSocial title="Join the SydneyMusic.net team" />
+<SeoSocial title="JOIN OUR TEAM: Communications Producer" description="Want to run SydneyMusic’s social media and email comms? Apply for our part-time position, closes June 8." image="https://sydneymusic.net/merch-tees.jpg" />
 
 <picture>
 	<source
