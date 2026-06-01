@@ -19,7 +19,7 @@
 </script>
 
 <header>
-	<div class="bg-black text-xs text-white py-2 text-center">Made by humans, for humans&nbsp; • &nbsp;<a href="/about/ai-policy" target="_blank" class="underline">Read our new AI policy</a></div>
+	<div class="bg-black text-xs text-white py-2 text-center"><span class="font-semibold">We’re hiring!</span>&nbsp; • &nbsp;We are looking for a <a href="/jobs/comms" target="_blank" class="underline">Comms Producer</a></div>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-3">
 			<Logo size="sm" stickers={false} />
