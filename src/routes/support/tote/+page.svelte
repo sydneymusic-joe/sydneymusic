@@ -31,6 +31,8 @@
 						<li><strong>Party Dozen — The Invisible Man</strong><br /><span class="text-sm">Vinyl LP • Original pressing • Last copy of 275</span></li>
 						<li><strong>Krystal Rivvers — Arora</strong><br /><span class="text-sm">Vinyl EP • Limited pressing of 200</span></li>
 						<li><strong>Lady Lyon — Cub</strong><br /><span class="text-sm">Vinyl LP • with Teeth bandana</span></li>
+						<li><strong>BAYANG x BRACT — REDBRICKGOTHIK</strong><br /><span class="text-sm">Vinyl LP • One of last copies of 150</span></li>
+						<li><strong>KL(AÜS) — self-titled debut</strong><br /><span class="text-sm">Vinyl LP (transparent green) • Last copy of 250 • Castles In Space UK pressing</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
