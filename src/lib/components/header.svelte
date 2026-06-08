@@ -22,7 +22,7 @@
 		<div class="text-md"><strong>Weds 17 June</strong> • 4pm—9pm • FREE</div>
 		<div class="text-xs">DJs, live music, BBQ, all ages, tote bag raffle!</div>
 		<div class="flex flex-row place-content-center gap-x-3 mt-3">
-			<Button label="RSVP Now" href="/party" target="_blank" />
+			<Button label="RSVP Now" href="https://sydneymusic.net/party" target="_blank" />
 			<Button label="Donate" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
 		</div>
 		<div class="py-3"><strong class="font-medium">We are fundraising for FY27!</strong> <a href="/support" class="underline">Learn more</a>.</div>
