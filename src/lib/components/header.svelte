@@ -2,10 +2,8 @@
 	import { page } from '$app/stores';
 	import { navigation } from '../globals.mjs';
 	import Logo from './logo.svelte';
-	import DonationForm from './donation-form.svelte';
-	import IconListen from './icon-listen.svelte';
 	import IconInstagram from './icon-instagram.svelte';
-	import Container from './container.svelte';
+	import Button from './button.svelte';
 
 	/**
 	 * @typedef {Object} Props
@@ -19,7 +17,16 @@
 </script>
 
 <header>
-	<div class="bg-black text-xs text-white py-2 text-center"><span class="font-semibold">We’re hiring!</span>&nbsp; • &nbsp;<a href="/jobs/comms" target="_blank" class="underline">Want to run our socials?</a></div>
+	<div class="bg-merchbrown text-white py-5 text-center">
+		<div class="font-medium text-xl stretch my-2"><span class="text-ruby">FUNDRAISER</span> PARTY!</div>
+		<div class="text-md"><strong>Weds 17 June</strong> • 4pm—9pm • FREE</div>
+		<div class="text-xs">DJs, live music, BBQ, all ages, tote bag raffle!</div>
+		<div class="flex flex-row place-content-center gap-x-3 mt-3">
+			<Button label="RSVP Now" href="/party" target="_blank" />
+			<Button label="Donate" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
+		</div>
+		<div class="py-3"><strong class="font-medium">We are fundraising for FY27!</strong> <a href="/support" class="underline">Learn more</a>.</div>
+	</div>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-3">
 			<Logo size="sm" stickers={false} />
