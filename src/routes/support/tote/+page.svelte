@@ -28,7 +28,7 @@
 				<div class="space-y-3">
 					<p>We’ll keep updating this list as we go. So far we have:</p>
 					<ul class="space-y-3">
-						<li><strong>Party Dozen — The Invisible Man</strong><br /><span class="text-sm">Vinyl LP • Original pressing • Last copy of 275</span></li>
+						<li><strong>Party Dozen — The Living Man</strong><br /><span class="text-sm">Vinyl LP • Original pressing • Last copy of 275</span></li>
 						<li><strong>Krystal Rivvers — Arora</strong><br /><span class="text-sm">Vinyl EP • Limited pressing of 200</span></li>
 						<li><strong>Lady Lyon — Cub</strong><br /><span class="text-sm">Vinyl LP • with Teeth bandana</span></li>
 						<li><strong>BAYANG x BRACT — REDBRICKGOTHIK</strong><br /><span class="text-sm">Vinyl LP • One of last copies of 150</span></li>
