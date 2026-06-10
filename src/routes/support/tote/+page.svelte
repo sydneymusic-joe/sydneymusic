@@ -33,6 +33,7 @@
 						<li><strong>Lady Lyon — Cub</strong><br /><span class="text-sm">Vinyl LP • with Teeth bandana</span></li>
 						<li><strong>BAYANG x BRACT — REDBRICKGOTHIK</strong><br /><span class="text-sm">Vinyl LP • One of last copies of 150</span></li>
 						<li><strong>KL(AÜS) — self-titled debut</strong><br /><span class="text-sm">Vinyl LP (transparent green) • Last copy of 250 • Castles In Space UK pressing</span></li>
+						<li><strong>12 Point Buck — Slow Release</strong><br /><span class="text-sm">Vinyl LP (pink) • Last copy of 160</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
