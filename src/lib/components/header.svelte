@@ -23,8 +23,7 @@
 		</div>
 		<div class="text-sm">
 			Free (<a href="/support" class="text-ruby font-bold underline">fundraiser</a>) party • Weds 17 Jun • <a href="https://sydneymusic.net/party" class="underline font-bold">RSVP here</a><br />
-			<span class="text-gray-400">DJs • BBQ • free drinks • live music • raffle</span><br />
-			<marquee>Did you know that &lt;marquee&gt; still works?</marquee>
+			<span class="text-gray-400">DJs • BBQ • free drinks • live music • raffle</span>
 		</div>
 	</div>
 	<div class="lg:hidden flex justify-center">
