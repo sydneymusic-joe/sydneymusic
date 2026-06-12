@@ -21,7 +21,7 @@
 				<div class="space-y-3">
 					<p>We’ve got the <strong>last-ever Can Man tote bag from our first merch drop in 2022</strong>.</p>
 					<p>In the next few weeks we’re going to fill it with donated items from Sydney artists — creating an incredible one-of-a-kind collection for one lucky winner.</p>
-					<p>The tote will be raffled at our free <a href="https://events.humanitix.com/sydneymusic-fy27-fundraiser-and-merch-launch-party" target="_blank" class="underline">Merch Launch &amp; Fundraiser Party</a> in Chippendale on the <strong>3rd of June, 2026</strong>. <a href="https://events.humanitix.com/sydneymusic-fy27-fundraiser-and-merch-launch-party" class="underline" target="_blank">RSVP now!</a></p>
+					<p>The tote will be raffled at our free <a href="https://events.humanitix.com/sydneymusic-fy27-fundraiser-and-merch-launch-party" target="_blank" class="underline">Merch Launch &amp; Fundraiser Party</a> in Chippendale on the <strong>17th of June, 2026</strong>. <a href="https://events.humanitix.com/sydneymusic-fy27-fundraiser-and-merch-launch-party" class="underline" target="_blank">RSVP now!</a></p>
 					<p>Thank you to <strong>Party Dozen</strong> for kicking things off!</p>
 				</div>
 				<Heading variant="md" class="uppercase font-normal stretch">What’s in the bag?</Heading>

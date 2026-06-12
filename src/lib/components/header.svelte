@@ -17,15 +17,15 @@
 </script>
 
 <header>
-	<div class="bg-merchbrown text-white py-5 text-center">
-		<div class="font-medium text-xl stretch my-2"><span class="text-ruby">FUNDRAISER</span> PARTY!</div>
-		<div class="text-md"><strong>Weds 17 June</strong> • 4pm—9pm • FREE</div>
-		<div class="text-xs">DJs, live music, BBQ, all ages, tote bag raffle!</div>
-		<div class="flex flex-row place-content-center gap-x-3 mt-3">
-			<Button label="RSVP Now" href="https://sydneymusic.net/party" target="_blank" />
-			<Button label="Donate" href="https://square.link/u/eS7bgm8M" target="_blank" variant="primary" />
+	<div class="bg-black text-white py-3 text-center">
+		<div class="font-bold">
+			THIS WEDNESDAY
 		</div>
-		<div class="py-3"><strong class="font-medium">We are fundraising for FY27!</strong> <a href="/support" class="underline">Learn more</a>.</div>
+		<div class="text-sm">
+			Free (<a href="/support" class="text-ruby font-bold underline">fundraiser</a>) party • Weds 17 Jun • <a href="https://sydneymusic.net/party" class="underline font-bold">RSVP here</a><br />
+			<span class="text-gray-400">DJs • BBQ • free drinks • live music • raffle</span><br />
+			<marquee>Did you know that &lt;marquee&gt; still works?</marquee>
+		</div>
 	</div>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-3">
