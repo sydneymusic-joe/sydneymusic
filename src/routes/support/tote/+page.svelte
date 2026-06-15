@@ -58,6 +58,7 @@
 
 					<p>But wait! There’s more:</p>
 					<ul class="space-y-3">
+						<li><strong>A family pass to see and meet The Wiggles</strong><br /><span class="text-sm">Donated by Murray Cook</span></li>
 						<li><strong>Petersham Bowling Club merch</strong><br /><span class="text-sm">1x PBC Hat<br />1x PBC stubby cooler</span></li>
 						<li><strong>2x SydneyMusic.net merch packs featuring:</strong><br /><span class="text-sm">Our LAST EVER “Every Corner” tote bags<br />1x 2026 “Hot Shows” t-shirt<br />1x 2026 “Hot Shows” fan<br />Full set of 2026 stickers including “Hearts”, “Hot Shows“ and the “Pixels” bumper sticker</span></li>
 					</ul>
