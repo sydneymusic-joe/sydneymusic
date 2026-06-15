@@ -34,10 +34,35 @@
 						<li><strong>BAYANG x BRACT — REDBRICKGOTHIK</strong><br /><span class="text-sm">Vinyl LP • One of last copies of 150</span></li>
 						<li><strong>KL(AÜS) — self-titled debut</strong><br /><span class="text-sm">Vinyl LP (transparent green) • Last copy of 250 • Castles In Space UK pressing</span></li>
 						<li><strong>12 Point Buck — Slow Release</strong><br /><span class="text-sm">Vinyl LP (pink) • Last copy of 160</span></li>
-						<li><strong>BELIEVE — Nature‘s God</strong><br /><span class="text-sm">One-of-a-kind pre-release test pressing • Album out August 21!</span></li>
+						<li><strong>BELIEVE — Nature’s God</strong><br /><span class="text-sm">Pre-release test pressing • Album out August 21!</span></li>
+						<li><strong>Youth Group — “Skeleton Jar” badges</strong><br /><span class="text-sm">3x original badges from 2004</span></li>
+						<li><strong>sleepmakeswaves — ...and so we destroyed everything</strong><br /><span class="text-sm">Pre-release test pressing of 15th anniversary remaster (2LP)</span></li>
+						<li><strong>The Buoys — signed merch</strong><br /><span class="text-sm">“I Want You” longsleeve t-shirt</span></li>
+						<li><strong>Dougal Gorman — Crowded</strong><br /><span class="text-sm">Live music photography book • 1 of 75</span></li>
+						<li><strong>Lo Carmen & The Great Beyond — Transatlantic Light</strong><br /><span class="text-sm">Limited pressing of 200</span></li>
+						<li><strong>Ben Lee & Ione Skye</strong><br /><span class="text-sm">Weirder Together “one-of-a-kind” t-shirt</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
+
+				<Heading variant="md" class="uppercase font-normal stretch">Also up for grabs ...</Heading>
+
+				<div class="space-y-3">
+					<p>Thank you to these labels for donating additional packs to be won in the raffle:</p>
+					
+					<ul class="space-y-3">
+						<li><strong>Last Ride Records — 4x releases</strong><br /><span class="text-sm">SPEED — All My Angels 12” EP (clear w/ metallic gold)<br />Histamine — Quality of Life CD<br />Phantoms — All The Devils Are Here 7"<br />No Apologies — Survival 12” LP</span></li>
+						<li><strong>EMI Music (Universal) Australia — 3x releases</strong><br /><span class="text-sm">Calum Hood — ORDER chaos ORDER 12” LP<br />Nick Ward — House With The Blue Door 12” LP <br />Meg Mac — It’s My Party<br />Alison Wonderland — Ghost World t-shirt</span></li>
+						<li><strong>Sony Music Australia — 2x releases</strong><br /><span class="text-sm">The Kid LAROI — The First Time (deluxe 12” LP)<br />MAY-A — Apricots 7” (white)</span></li>
+					</ul>
+
+					<p>But wait! There’s more:</p>
+					<ul class="space-y-3">
+						<li><strong>Petersham Bowling Club merch</strong><br /><span class="text-sm">1x PBC Hat<br />1x PBC stubby cooler</span></li>
+						<li><strong>2x SydneyMusic.net merch packs featuring:</strong><br /><span class="text-sm">Our LAST EVER “Every Corner” tote bags<br />1x 2026 “Hot Shows” t-shirt<br />1x 2026 “Hot Shows” fan<br />Full set of 2026 stickers including “Hearts”, “Hot Shows“ and the “Pixels” bumper sticker</span></li>
+					</ul>
+				</div>
+
 				<Heading variant="md" class="uppercase font-normal stretch">Support SydneyMusic!</Heading>
 				<div class="space-y-3">
 					<p><strong>Sydney’s most comprehensive gig guide needs your help!</strong></p>
