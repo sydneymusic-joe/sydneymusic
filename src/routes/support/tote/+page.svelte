@@ -41,6 +41,9 @@
 						<li><strong>Dougal Gorman — Crowded</strong><br /><span class="text-sm">Live music photography book • 1 of 75</span></li>
 						<li><strong>Lo Carmen & The Great Beyond — Transatlantic Light</strong><br /><span class="text-sm">Limited pressing of 200</span></li>
 						<li><strong>Ben Lee & Ione Skye</strong><br /><span class="text-sm">Weirder Together “one-of-a-kind” t-shirt</span></li>
+						<li><strong>Red Riders — “Replica Replica” tee</strong><br /><span class="text-sm">Original t-shirt from 2006!</span></li>
+						<li><strong>Palms — multiple items</strong><br /><span class="text-sm">Palms hoodie, “Intensity Sunshine” LP and “Crazy Rack” album t-shirt</span></li>
+						<li><strong>Yasmina Sadiki — Sydney Opera House items</strong><br /><span class="text-sm">1x signed poster for May 2025 Opera House show<br />1x copy of “Singles” 3-track CD EP</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
@@ -58,6 +61,7 @@
 
 					<p>But wait! There’s more:</p>
 					<ul class="space-y-3">
+						<li><strong>Jimmy Barnes and co prize pack</strong><br /><span class="text-sm">4x books by Jimmy Barnes: “Highways and Byways”, “Killing Time”, “Working Class Man” and “Rosie The Rhinocerous”<br />1x book by Jimmy & Janes Barnes: “Where The River Bends”<br />1x Elly-May Barnes “No Good” CD<br />1x Jimmy Barnes “Flesh And Blood” CD<br />1x Don Walker “Lightning In A Clear Blue Sky” CD</span></li>
 						<li><strong>A family pass to see and meet The Wiggles</strong><br /><span class="text-sm">Donated by Murray Cook</span></li>
 						<li><strong>Petersham Bowling Club merch</strong><br /><span class="text-sm">1x PBC Hat<br />1x PBC stubby cooler</span></li>
 						<li><strong>2x SydneyMusic.net merch packs featuring:</strong><br /><span class="text-sm">Our LAST EVER “Every Corner” tote bags<br />1x 2026 “Hot Shows” t-shirt<br />1x 2026 “Hot Shows” fan<br />Full set of 2026 stickers including “Hearts”, “Hot Shows“ and the “Pixels” bumper sticker</span></li>
