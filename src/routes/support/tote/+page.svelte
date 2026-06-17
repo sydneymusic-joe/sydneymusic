@@ -44,6 +44,8 @@
 						<li><strong>Red Riders — “Replica Replica” tee</strong><br /><span class="text-sm">Original t-shirt from 2006!</span></li>
 						<li><strong>Palms — multiple items</strong><br /><span class="text-sm">Palms hoodie, “Intensity Sunshine” LP and “Crazy Rack” album t-shirt</span></li>
 						<li><strong>Yasmina Sadiki — Sydney Opera House items</strong><br /><span class="text-sm">1x signed poster for May 2025 Opera House show<br />1x copy of “Singles” 3-track CD EP</span></li>
+						<li><strong>Collarbones — Turning</strong><br /><span class="text-sm">Vinyl LP (black) with bonus Marcus Whale “Ecstasy” CD</span></li>
+						<li><strong>EGOISM — And Go Nowhere</strong><br /><span class="text-sm">Original blue pressing (extremely sold out)<br />Plus bonus “(Trust Me)” EP (etched 12”)</span></li>
 					</ul>
 					<p>Want to contribute? <a href="mailto:contact@sydneymusic.net" class="underline">Get in touch</a> for more information.</p>
 				</div>
