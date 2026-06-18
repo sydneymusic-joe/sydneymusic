@@ -18,12 +18,9 @@
 
 <header>
 	<div class="bg-black text-white py-3 text-center">
-		<div class="font-bold">
-			THIS WEDNESDAY
-		</div>
 		<div class="text-sm">
-			Free (<a href="/support" class="text-ruby font-bold underline">fundraiser</a>) party • Weds 17 Jun • <a href="https://sydneymusic.net/party" class="underline font-bold">RSVP here</a><br />
-			<span class="text-gray-400">DJs • BBQ • free drinks • live music • raffle</span>
+			<span class="font-medium">The Ultimate Sydney Music Tote Bag has been won!</span><br />
+			<a href="/support/tote" class="underline">See the amazing music and merch that got donated</a>
 		</div>
 	</div>
 	<div class="lg:hidden flex justify-center">
