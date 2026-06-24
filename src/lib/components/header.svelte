@@ -4,6 +4,7 @@
 	import Logo from './logo.svelte';
 	import IconInstagram from './icon-instagram.svelte';
 	import Button from './button.svelte';
+	import { mds } from '../donorstats.js';
 
 	/**
 	 * @typedef {Object} Props
@@ -17,11 +18,15 @@
 </script>
 
 <header>
-	<div class="bg-black text-white py-3 text-center">
-		<div class="text-sm">
-			<span class="font-medium">The Ultimate Sydney Music Tote Bag has been won!</span><br />
-			<a href="/support/tote" class="underline">See the amazing music and merch that got donated</a>
+	<div class="bg-black text-white py-3 text-center flex flex-row justify-center items-center gap-x-5">
+		<div><img src="/banksia.svg" class="h-14" /></div>
+		<div>
+			<span class="font-semibold text-lg text-ruby">FY27 Fundraising Appeal	</span>
+			<div class="text-sm">
+			We’ve raised <strong class="font-semibold">{mds.totalFundedPercent}%</strong> of our goal.<br />Help us cover our costs!<br /><a href="/support" class="underline font-semibold">Donate today</a> • Tax deductible
+			</div>
 		</div>
+		<div><img src="/padlock.svg" class="h-14" /></div>
 	</div>
 	<div class="lg:hidden flex justify-center">
 		<a href="/" class="mt-3">
