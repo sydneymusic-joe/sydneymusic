@@ -46,8 +46,8 @@
 		</div>
 
 		<div class="text-center  space-y-2">
-		<p><strong class="font-semibold">The gig guide critically needs your support before June 30.</strong></p>
-		<p>We have raised <strong class="text-ruby">{mds.totalFundedPercent}%</strong> of our monthly recurring budget for FY27. Can you help us get the rest of the way?</p>
+		<p><strong class="font-semibold">The gig guide critically needs your support to make it through FY27.</strong></p>
+		<p>We have raised <strong class="text-ruby">{mds.totalFundedPercent}%</strong> of our monthly recurring budget. Can you help us get the rest of the way?</p>
 		</div>
 		<div class="flex flex-col xs:flex-row gap-2 pt-5">
 		<Button variant="primary" label="Make a donation" href="https://square.link/u/eS7bgm8M" target="_blank"></Button>
