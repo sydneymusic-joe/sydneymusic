@@ -8,6 +8,11 @@
   status = 301
 
 [[redirects]]
+  from = "/gig-guide/venues/unholy-playhouse"
+  to = "/gig-guide/venues/divine-playhouse-fka-unholy"
+  status = 301
+
+[[redirects]]
   from = "/party"
   to = "https://events.humanitix.com/sydneymusic-fy27-fundraiser-and-merch-launch-party"
   status = 301
