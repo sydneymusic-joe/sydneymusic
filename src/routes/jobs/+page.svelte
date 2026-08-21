@@ -24,7 +24,7 @@
 <div class="max-w-5xl px-5 mt-5 mx-auto space-y-5 pb-24">
 	<div class="prose">
 
-		<Heading level={2} variant="lg" class="font-medium stretch uppercase">Join the team</Heading>
+		<Heading level={2} variant="lg" class="mt-10 font-medium stretch uppercase">Join the team</Heading>
 
 		<p>Welcome to our jobs board! Here’s what we’ve got on offer at the moment.</p>
 

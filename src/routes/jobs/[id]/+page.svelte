@@ -7,8 +7,8 @@
 	let job = data.allJobs[0];
 </script>
 
-<SeoSocial title="JOIN OUR TEAM: {job.roleTitle}" description="{job.shortDescription}" image="https://sydneymusic.net/merch-tees.jpg" />
 
+<SeoSocial title={"JOIN OUR TEAM: " + job.roleTitle} description={job.shortDescription} image="https://sydneymusic.net/merch-tees.jpg" />
 <picture>
 	<source
 		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
@@ -36,12 +36,12 @@
 		<div class="max-w-[50%] py-8 space-y-3">
 			<Button
 				label="Apply Now"
-				href="{job.applicationUrl}"
+				href={job.applicationUrl}
 				target="_blank" variant="primary"
 			/>
 			<Button
 				label="Read the position description" variant="secondary"
-				href="{job.positionDescriptionUrl}"
+				href={job.positionDescriptionUrl}
 				target="_blank"
 			/>
 		</div>
