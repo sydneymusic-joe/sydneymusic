@@ -28,7 +28,7 @@
 
 		<p>Welcome to our jobs board! Here’s what we’ve got on offer at the moment.</p>
 
-		<div class="grid grid-cols-2 gap-5">
+		<div class="grid md:grid-cols-2 gap-5">
 		{#each data.allJobs as job}
 			<div class="border rounded-lg p-3">
 				<div class="text-lg"><a href="/jobs/{job.permalink}">{job.roleTitle}</a></div>
