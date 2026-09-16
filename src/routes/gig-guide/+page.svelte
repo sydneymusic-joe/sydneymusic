@@ -66,8 +66,21 @@
 				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
 			</div>-->
 
-			<div class="mt-5">
-			<DonationForm />
+			<div class="md:mr-10">
+			<div style="background-image : url(/triv-bg.gif); background-size : contain; aspect-ratio : 4/5; margin : 20px auto;" class="rounded-xl h-[450px] md:h-[500px]">
+
+				<div class="flex flex-col text-center space-y-2 items-center justify-center h-full">
+					<Heading variant="md" class="stretch uppercase text-center px-5" style="background-color : rgba(0,0,0,0.4); color : white">Ultimate music trivia</Heading>
+					<div class="italic font-semibold text-xl">Boutique trivia for real heads</div>
+					<div class="font-medium">Hosted by DJY and Secret Breakfast</div>
+					<div>A special fundraiser for SydneyMusic.net</div>
+					<div class="text-sm">Tues 29/9 • Heaps Normal Health Club</div>
+					<Button label="Tables limited! Book now" href="https://moshtix.com.au/v2/event/sydneymusic-net-music-trivia-fundraiser/200427" target="_blank" />
+					<div class="text-xs pt-3"><span class="font-medium">SydneyMusic needs your support!</span><br /><a href="/support" class="underline">Become a supporter</a></div>
+				</div>
+
+			</div>
+
 			</div>
 			
 		</div>
