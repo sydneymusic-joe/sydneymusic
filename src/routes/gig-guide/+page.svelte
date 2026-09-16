@@ -66,8 +66,8 @@
 				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
 			</div>-->
 
-			<div class="mr-10">
-			<div style="background-image : url(/triv-bg.gif); background-size : contain; aspect-ratio : 4/5; height : 500px; margin : 20px auto;" class="rounded-xl">
+			<div class="md:mr-10">
+			<div style="background-image : url(/triv-bg.gif); background-size : contain; aspect-ratio : 4/5; margin : 20px auto;" class="rounded-xl h-[450px] md:h-[500px]">
 
 				<div class="flex flex-col text-center space-y-2 items-center justify-center h-full">
 					<Heading variant="md" class="stretch uppercase text-center px-5" style="background-color : rgba(0,0,0,0.4); color : white">Ultimate music trivia</Heading>
