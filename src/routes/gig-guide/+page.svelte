@@ -1,13 +1,11 @@
 <script>
+	import Button from '$lib/components/button.svelte';
 	import Event from '$lib/components/event.svelte';
 	import Feedprompt from '$lib/components/feedprompt.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Playlist from '$lib/components/playlist.svelte';
-	import { createCalendarLink } from '$lib/globals.mjs';
-	import Button from '$lib/components/button.svelte';
 	import Heading from '$lib/components/heading.svelte';
-	import { mds } from '../../lib/donorstats.js';
-	import DonationForm from '../../lib/components/donation-form.svelte';
+	import Playlist from '$lib/components/playlist.svelte';
+	import SeoSocial from '$lib/components/seo-social.svelte';
+	import { createCalendarLink } from '$lib/globals.mjs';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -56,7 +54,7 @@
 		<!-- header -->
 		<div class="place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
-				<Heading level={1} variant="md" class="mt-5 md:mt-0 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1">
+				<Heading level={1} variant="md" class="mt-5 md:mt-0 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1;">
 					Welcome to Sydney’s most comprehensive gig guide
 				</Heading>
 			</div>
@@ -67,15 +65,17 @@
 			</div>-->
 
 			<div class="md:mr-10">
-			<div style="background-image : url(/triv-bg.gif); background-size : contain; aspect-ratio : 4/5; margin : 20px auto;" class="rounded-xl h-[450px] md:h-[500px]">
+			<div style="margin : 20px auto;" class="rounded-xl bg-ruby">
 
-				<div class="flex flex-col text-center space-y-2 items-center justify-center h-full">
-					<Heading variant="md" class="stretch uppercase text-center px-5" style="background-color : rgba(0,0,0,0.4); color : white">Ultimate music trivia</Heading>
-					<div class="italic font-semibold text-xl">Boutique trivia for real heads</div>
-					<div class="font-medium">Hosted by DJY and Secret Breakfast</div>
-					<div>A special fundraiser for SydneyMusic.net</div>
-					<div class="text-sm">Tues 29/9 • Heaps Normal Health Club</div>
-					<Button label="Tables limited! Book now" href="https://moshtix.com.au/v2/event/sydneymusic-net-music-trivia-fundraiser/200427" target="_blank" />
+				<div class="flex flex-col text-center space-y-2 items-center justify-center h-full p-5 md:p-8">
+					<div class="flex flex-row gap-x-2"><img src="/triv-bang.png" class="hidden md:block" style="height : 45px" /><img src="/triv-point.png" style="height : 45px" /><img src="/triv-header.svg" style="height : 45px" alt="MUSIC TRIVIA" /><img src="/triv-note.png" style="height : 45px" /><img src="/triv-banks.png" class="hidden md:block" style="height : 45px" /></div>
+					<div class="italic font-medium">A special fundraiser for SydneyMusic.net</div>
+					<div class="text-sm"><strong class="font-medium">This Tuesday</strong> @ 6pm<br />Heaps Normal Health Club, Marrickville</div>
+					<div class="py-3"><Button label="Tables limited! Book now" variant="outline" style="background-color : white; box-shadow : 4px 4px 0px black" href="https://moshtix.com.au/v2/event/sydneymusic-net-music-trivia-fundraiser/200427" target="_blank" /></div>
+					<div class="text-sm md:px-14"><strong>GRAND PRIZE:</strong><br />Each member of the winning team<br />gets an <span class="font-semibold">Audio Technica LP60X turntable</span></div>
+					<div class="text-sm mt-3 md:px-14"><strong>ALSO UP FOR GRABS:</strong><br />$250 voucher from <span class="font-semibold">Turramurra Music</span><br />A pair of <span class="font-semibold">RØDE NTH-50 headphones</span><br />$150 voucher from <span class="font-semibold">Beatdisc Records</span><br /><span class="font-semibold">Heaps Normal</span> and <span class="font-semibold">SydneyMusic</span> prize packs<br /><em>and more to be announced!</em></div>
+					<div class="font-medium"><div class="mx-auto w-[75%] md:w-[50%]"><img src="/triv-hosts.png" alt="DJY and Secret Breakfast" class="w-full"></div><div class="md:w-[75%] py-2 mx-auto bg-black text-white">Hosted by DJY and Secret Breakfast</div></div>
+					<div class="italic text-sm">Plus DJs, games, food, drinks, and much more!</div>
 					<div class="text-xs pt-3"><span class="font-medium">SydneyMusic needs your support!</span><br /><a href="/support" class="underline">Become a supporter</a></div>
 				</div>
 
