@@ -6,6 +6,7 @@
 	import Playlist from '$lib/components/playlist.svelte';
 	import SeoSocial from '$lib/components/seo-social.svelte';
 	import { createCalendarLink } from '$lib/globals.mjs';
+	import DonationForm from '$lib/components/donation-form.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -59,28 +60,9 @@
 				</Heading>
 			</div>
 			<div class="font-semibold text-center md:mr-10">There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.</div>
-			<!--<div class="flex flex-col items-center md:mr-10 my-5 gap-y-5">
-				<div class="w-[75%]"><a href="/support/tote"><img src="/pdtote.png" class="w-full max-w-[500px]" style="box-shadow : 10px 10px 0px rgba(0,0,0,0.5); border : solid 3px black" /></a></div>
-				<div class="text-center text-sm"><strong>WATCH:</strong> <a href="/support/tote" class="underline">Party Dozen launch new fundraiser!</a></div>
-			</div>-->
 
-			<div class="md:mr-10">
-			<div style="margin : 20px auto;" class="rounded-xl bg-ruby">
-
-				<div class="flex flex-col text-center space-y-2 items-center justify-center h-full p-5 md:p-8">
-					<div class="flex flex-row gap-x-2"><img src="/triv-bang.png" class="hidden md:block" style="height : 45px" /><img src="/triv-point.png" style="height : 45px" /><img src="/triv-header.svg" style="height : 45px" alt="MUSIC TRIVIA" /><img src="/triv-note.png" style="height : 45px" /><img src="/triv-banks.png" class="hidden md:block" style="height : 45px" /></div>
-					<div class="italic font-medium">A special fundraiser for SydneyMusic.net</div>
-					<div class="text-sm"><strong class="font-medium">This Tuesday</strong> @ 6pm<br />Heaps Normal Health Club, Marrickville</div>
-					<div class="py-3"><Button label="Tables limited! Book now" variant="outline" style="background-color : white; box-shadow : 4px 4px 0px black" href="https://moshtix.com.au/v2/event/sydneymusic-net-music-trivia-fundraiser/200427" target="_blank" /></div>
-					<div class="text-sm md:px-14"><strong>GRAND PRIZE:</strong><br />Each member of the winning team<br />gets an <span class="font-semibold">Audio Technica LP60X turntable</span></div>
-					<div class="text-sm mt-3 md:px-14"><strong>ALSO UP FOR GRABS:</strong><br />$250 voucher from <span class="font-semibold">Turramurra Music</span><br />A pair of <span class="font-semibold">RØDE NTH-50 headphones</span><br />$295 premium service from <span class="font-semibold">Doc Sprocket</span><br />$150 voucher from <span class="font-semibold">Beatdisc Records</span><br />1x custom lathe-cut 7” from <span class="font-semibold">Crosstalk Records</span><br /><span class="font-semibold">Heaps Normal</span> and <span class="font-semibold">SydneyMusic</span> prize packs</div>
-					<div class="font-medium"><div class="mx-auto w-[75%] md:w-[50%]"><img src="/triv-hosts.png" alt="DJY and Secret Breakfast" class="w-full"></div><div class="md:w-[75%] py-2 mx-auto bg-black text-white">Hosted by DJY and Secret Breakfast</div></div>
-					<div class="italic text-sm">Plus DJs, games, food, drinks, and much more!</div>
-					<div class="text-xs pt-3"><span class="font-medium">SydneyMusic needs your support!</span><br /><a href="/support" class="underline">Become a supporter</a></div>
-				</div>
-
-			</div>
-
+			<div class="mt-5">
+			<DonationForm />
 			</div>
 			
 		</div>
