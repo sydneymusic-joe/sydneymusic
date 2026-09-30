@@ -23,13 +23,13 @@ const getLastUpdated = async () => {
 const getGigs = async () => {
 	const d = new Date();
 
-	const pagesize = 100;
+	const pagesize = 400;
 	let iter = 0;
-	let ret = 100;
+	let ret = 400;
 
 	let data = [];
 	let query = '';
-	while (iter < 12) {
+	while (iter < 5) {
 		query += `
 		page${iter + 1}:allEvents(
 			orderBy: [gigStartDate_ASC],
@@ -63,7 +63,7 @@ const getGigs = async () => {
 		${query}
 	}`);
 
-	for (iter = 1; iter < 13; iter++) {
+	for (iter = 1; iter < 6; iter++) {
 		const p = page['page' + iter];
 		if (p.length == 0) break;
 
