@@ -2,12 +2,12 @@ import APId from '$lib/datocms/';
 import { groupBy } from '$lib/globals.mjs';
 
 const getVenues = async () => {
-	const pagesize = 100;
+	const pagesize = 400;
 	let iter = 0;
-	let ret = 100;
+	let ret = 400;
 
 	let data = null;
-	while (ret == 100) {
+	while (ret == 400) {
 		const dataLinks = await APId(`{
 			allVenues(
 				filter : { hideFromDirectory : {eq : false}, suburb : {isPresent : true} },

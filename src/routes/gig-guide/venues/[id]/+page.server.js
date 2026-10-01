@@ -35,14 +35,15 @@ export async function load({ params }) {
 	}
 	`);
 
+	const pageSize = 400;
 	const total = gigs.allVenues[0]._allReferencingEventsMeta.count;
 	let q = '';
 	let i = 0;
-	while (i * 100 < total) {
+	while (i * pageSize < total) {
 		q += `
 			page${i + 1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${
-			i * 100
-		}, first : 100, filter : { venue : { eq : "${venueInfo.id}"}}) {
+			i * pageSize
+		}, first : ${pageSize}, filter : { venue : { eq : "${venueInfo.id}"}}) {
 				id,
 				gigStartDate,
 				promotedName,
@@ -62,7 +63,7 @@ export async function load({ params }) {
 
 	let combinedGigs = [];
 
-	for (i = 0; i <= total / 100; i++) {
+	for (i = 0; i <= total / pageSize; i++) {
 		const p = sourcePages['page' + (i + 1)];
 		if (!p || p.length == 0) break;
 		combinedGigs = combinedGigs.concat(sourcePages['page' + (i + 1)]);
