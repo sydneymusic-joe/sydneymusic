@@ -1,5 +1,4 @@
 <script>
-	import { twMerge } from 'tailwind-merge';
 	import './styles.scss';
 
 	/**
@@ -30,26 +29,22 @@
 	} = $props();
 
 	const variantClasses = {
-		primary:
-			'font-serif bg-ruby text-white block font-semibold hover:bg-ruby focus:bg-ruby hover:text-white focus:text-white focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
-		secondary:
-			'font-serif bg-rubydarker text-white block font-medium hover:bg-gray-300 focus:bg-gray-300 hover:text-gray-800 focus:text-gray-800 focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
-		subtle:
-			'font-sans block font-semibold hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline',
-		outline:
-			'font-serif uppercase border border-black block font-medium hover:border-ruby focus:border-ruby hover:text-ruby focus:text-ruby focus:outline focus:outline-2 focus:outline-ruby transition-colors no-underline'
+		primary: 'Button--primary',
+		secondary: 'Button--secondary',
+		subtle: 'Button--subtle',
+		outline: 'Button--outline'
 	};
 
 	const sizeClasses = {
-		sm: 'px-3 py-1 text-sm',
-		md: 'px-4 py-2 text-lg',
-		lg: 'px-6 py-3 text-xl'
+		sm: 'Button--small',
+		md: 'Button--medium',
+		lg: 'Button--large'
 	};
 
 	const variantClass = $derived(variantClasses[variant] || variantClasses.secondary);
 	const sizeClass = $derived(sizeClasses[size] || sizeClasses.md);
 	const mergedClass = $derived(
-		twMerge(`plausible-event-name=${eventName}`, variantClass, sizeClass, className)
+		`plausible-event-name=${eventName} Button ${variantClass} ${sizeClass} ${className}`
 	);
 </script>
 
