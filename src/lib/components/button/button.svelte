@@ -31,14 +31,14 @@
 	const variantClasses = {
 		primary: 'Button--primary',
 		secondary: 'Button--secondary',
-		subtle: 'Button--subtle',
-		outline: 'Button--outline'
+		// subtle: 'Button--subtle',
+		// outline: 'Button--outline'
 	};
 
 	const sizeClasses = {
 		sm: 'Button--small',
 		md: 'Button--medium',
-		lg: 'Button--large'
+		// lg: 'Button--large'
 	};
 
 	const variantClass = $derived(variantClasses[variant] || variantClasses.secondary);
