@@ -24,16 +24,16 @@ async function getGigs() {
 	const now = new Date();
 
 	const data = await APId(`{
-    allEvents(
-      orderBy: [gigStartDate_ASC],
-      first: 10, 
-      filter: { gigStartDate : { gte: "${new Date(now.setHours(0)).toISOString()}" } }
-    ) {
-      gigStartDate
-      promotedName
-      performersListJson
-    }
-  }`);
+		allEvents(
+			orderBy: [gigStartDate_ASC],
+			first: 10, 
+			filter: { gigStartDate : { gte: "${new Date(now.setHours(0)).toISOString()}" } }
+		) {
+			gigStartDate
+			promotedName
+			performersListJson
+		}
+	}`);
 
 	if (!data) {
 		return [];
