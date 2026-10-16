@@ -52,9 +52,7 @@
 	}
 
 	// Check if the website matches a ticketing provider and wrap it in an affiliate link
-	if (website) {
-		website = getAffiliateLink(website);
-	}
+	const websiteWithAffiliateLink = $derived(getAffiliateLink(website));
 </script>
 
 <div
@@ -75,10 +73,10 @@
 				>{/if}
 		</p>
 	</div>
-	{#if website || calendarLink}
+	{#if websiteWithAffiliateLink || calendarLink}
 		<div class={`flex items-center space-x-3 sm:space-x-5`}>
-			{#if website}
-				<a href={website} target="_blank" class="moreinfo flex items-center space-x-1 text-sm group">
+			{#if websiteWithAffiliateLink}
+				<a href={websiteWithAffiliateLink} target="_blank" class="moreinfo flex items-center space-x-1 text-sm group">
 					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path
 							class="group-hover:text-ruby"
