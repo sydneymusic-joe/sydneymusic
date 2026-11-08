@@ -15,7 +15,8 @@
 		class: className,
 		...restProps
 	} = $props();
-	const fill = invert ? 'white' : 'black';
+
+	const fill = $derived(invert ? 'white' : 'black');
 
 	const sizeClasses = {
 		xs: 'w-20 h-auto',

@@ -9,11 +9,10 @@
 	/**
 	 * @typedef {Object} Props
 	 * @property {boolean} [showNotice]
-	 * @property {Object} [donorStats] - Donor stats object from layout.js
 	 */
 
 	/** @type {Props} */
-	let { showNotice = false, donorStats } = $props();
+	let { showNotice = false } = $props();
 
 </script>
 
