@@ -1,7 +1,7 @@
 <script>
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Button from '$lib/components/button.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="JOIN OUR TEAM: Communications Producer" description="Want to run SydneyMusic’s social media and email comms? Apply for our part-time position, closes June 8." image="https://sydneymusic.net/merch-tees.jpg" />

@@ -1,13 +1,13 @@
 <script>
-	import Event from '$lib/components/event.svelte';
-	import Read from '$lib/components/read.svelte';
-	import Button from '$lib/components/button.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { createCalendarLink } from '$lib/globals.mjs';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
+	import Event from '#lib/components/event.svelte';
+	import Read from '#lib/components/read.svelte';
+	import Button from '#lib/components/button.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import { createCalendarLink } from '#lib/globals.mjs';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
 	import { mds } from '../lib/donorstats.js';
-	import DonationForm from '$lib/components/donation-form.svelte';
+	import DonationForm from '#lib/components/donation-form.svelte';
 
 	let { data } = $props();
 </script>

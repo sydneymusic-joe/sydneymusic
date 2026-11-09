@@ -11,11 +11,11 @@
 'wght' (range from 200.0 to 700.0
 */
 @font-face {
-  font-family: 'GeneralSans-Variable';
-  src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
+	font-family: 'GeneralSans-Variable';
+	src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
 }
 /**
 * This is a variable font
@@ -26,11 +26,11 @@
 'wght' (range from 200.0 to 700.0
 */
 @font-face {
-  font-family: 'GeneralSans-Variable';
-  src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: italic;
+	font-family: 'GeneralSans-Variable';
+	src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: italic;
 }
 
 @layer base {
@@ -125,7 +125,7 @@
 }
 
 .stretch {
-	transform : scaleY(1.9);
+	transform: scaleY(1.9);
 }
 
 body.freegigs .guide-month:not(:has(.freegig)),
@@ -298,15 +298,16 @@ header nav .navbar {
 	@apply flex justify-center lg:justify-end w-full gap-x-1 sm:gap-x-3;
 }
 
-header nav .navbar .navbar-link, header nav .navbar .support {
+header nav .navbar .navbar-link,
+header nav .navbar .support {
 	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
-	transform : scaleY(1.9);
-	line-height : 50%;
+	transform: scaleY(1.9);
+	line-height: 50%;
 }
 
 header nav .navbar .navbar-link-icon {
 	@apply border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-0 sm:px-1 py-0 sm:py-3 w-7 lg:w-9 h-auto hidden sm:block;
-	display : none;
+	display: none;
 }
 
 header nav .navbar .navbar-link-icon svg {
@@ -319,7 +320,7 @@ header nav .navbar .navbar-link.current {
 
 header nav .navbar .support {
 	@apply uppercase border-transparent hover:bg-ruby/90 hover:text-white bg-ruby text-white;
-	transform : scaleY(1.9);
+	transform: scaleY(1.9);
 }
 
 /* venue page stuff */
@@ -597,14 +598,13 @@ body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	overflow: visible;
 }
 
-
-
 form label {
-	font-weight :bold;
+	font-weight: bold;
 }
-form input, form textarea {
-	border : solid 2px black;
-	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
-	padding : 10px;
-	margin-bottom : 10px;
+form input,
+form textarea {
+	border: solid 2px black;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	margin-bottom: 10px;
 }

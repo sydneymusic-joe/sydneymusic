@@ -1,12 +1,12 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import Event from '$lib/components/event.svelte';
-	import Feedprompt from '$lib/components/feedprompt.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Playlist from '$lib/components/playlist.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { createCalendarLink } from '$lib/globals.mjs';
-	import DonationForm from '$lib/components/donation-form.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Event from '#lib/components/event.svelte';
+	import Feedprompt from '#lib/components/feedprompt.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Playlist from '#lib/components/playlist.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import { createCalendarLink } from '#lib/globals.mjs';
+	import DonationForm from '#lib/components/donation-form.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);

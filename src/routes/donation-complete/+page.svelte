@@ -1,9 +1,9 @@
 <script>
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import Read from '$lib/components/read.svelte';
-	import Button from '$lib/components/button.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
+	import Read from '#lib/components/read.svelte';
+	import Button from '#lib/components/button.svelte';
 	let { data } = $props();
 </script>
 

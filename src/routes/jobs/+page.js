@@ -1,4 +1,4 @@
-import APId from '$lib/datocms/';
+import APId from '#lib/datocms/index.js';
 
 export async function load() {
 	const jobs = APId(`{

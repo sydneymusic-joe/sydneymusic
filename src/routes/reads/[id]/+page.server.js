@@ -1,7 +1,7 @@
-import {render, renderNodeRule} from 'datocms-structured-text-to-html-string';
-import {isHeading} from 'datocms-structured-text-utils';
-import API from '$lib/datocms/';
-import { previewMode, formatDateLong } from '$lib/globals.mjs';
+import { render, renderNodeRule } from 'datocms-structured-text-to-html-string';
+import { isHeading } from 'datocms-structured-text-utils';
+import API from '#lib/datocms/index.js';
+import { previewMode, formatDateLong } from '#lib/globals.mjs';
 
 function htmlEncode(s) {
 	return s
@@ -16,19 +16,19 @@ function htmlEncode(s) {
 function renderOptions(links) {
 	return {
 		/*renderNode: {
-			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
-				// find the entry in the entryBlockMap by ID
-				const entry = entryBlockMap.get(node.data.target.sys.id);
-				if (entry.__typename == 'EmbedTweet') {
-					return `<div class="font-sans rounded border px-6 py-4 max-w-md">
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        // find the entry in the entryBlockMap by ID
+        const entry = entryBlockMap.get(node.data.target.sys.id);
+        if (entry.__typename == 'EmbedTweet') {
+          return `<div class="font-sans rounded border px-6 py-4 max-w-md">
             <div class="flex items-center">
               <img src="${entry.profileImage.url}" class="mt-0 mb-0 h-12 w-12 rounded-full" alt="${
-						entry.name
-					} Profile Image" />
+            entry.name
+          } Profile Image" />
               <div class="flex leading-tight flex-col ml-4">
                   <a class="font-bold text-black" href="https://twitter.com/${entry.username}">${
-						entry.name
-					}</a>
+            entry.name
+          }</a>
                   <span class="text-grey">@${entry.username}</span>
                 </div>
                 <svg viewBox="328 355 335 276" class="ml-auto" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -37,8 +37,8 @@ function renderOptions(links) {
               </div>
               <div class=" mt-3 mb-1 leading-normal text-lg">${htmlEncode(entry.content)}</div>
               <div class="text-grey mb-3 text-sm"><a href="${
-								entry.tweetUrl
-							}">11:56 AM - Aug 3, 2009</a></div>
+                entry.tweetUrl
+              }">11:56 AM - Aug 3, 2009</a></div>
               <div class="flex text-grey text-sm">
                 <div class="flex items-center mr-4">
                   <svg class="mr-2" width="24" height="24" viewBox="0 0 24 24"><path class="fill-current"  d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.045.286.12.403.143.225.385.347.633.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.368-3.43-7.788-7.8-7.79zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.334-.75-.75-.75h-.395c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"/></svg>
@@ -54,15 +54,15 @@ function renderOptions(links) {
                 </div>
               </div>
             </div>`;
-				} else if (entry.__typename == 'EmbedVideo') {
-					return `<div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/${htmlEncode(
-						entry.videoId
-					)}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
-				}
-			},
-			[BLOCKS.EMBEDDED_ASSET]: (node) => {
-				const asset = assetBlockMap.get(node.data.target.sys.id);
-				return `
+        } else if (entry.__typename == 'EmbedVideo') {
+          return `<div class="yt-embed"><iframe src="https://www.youtube-nocookie.com/embed/${htmlEncode(
+            entry.videoId
+          )}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+        }
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const asset = assetBlockMap.get(node.data.target.sys.id);
+        return `
           <figure>
             <img src="${asset.url}?w=2000" alt="${asset.description}" />
             <figcaption>
@@ -71,8 +71,8 @@ function renderOptions(links) {
             </figcaption>
           </figure>
           `;
-			}
-		}*/
+      }
+    }*/
 	};
 }
 

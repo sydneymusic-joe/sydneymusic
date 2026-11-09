@@ -1,6 +1,6 @@
 <script>
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 

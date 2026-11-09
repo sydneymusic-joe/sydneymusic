@@ -1,7 +1,7 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import Button from '#lib/components/button.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
 	import { mds } from '../../../lib/donorstats.js';
 </script>
 

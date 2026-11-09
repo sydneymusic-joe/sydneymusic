@@ -1,13 +1,13 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import Container from '$lib/components/container.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import SponsorAppeal from '$lib/components/sponsor-appeal.svelte';
-	import Sponsor from '$lib/components/sponsor.svelte';
-	import TimelineItem from '$lib/components/timeline-item.svelte';
-	import {mds} from '$lib/donorstats.js';
+	import Button from '#lib/components/button.svelte';
+	import Container from '#lib/components/container.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import SponsorAppeal from '#lib/components/sponsor-appeal.svelte';
+	import Sponsor from '#lib/components/sponsor.svelte';
+	import TimelineItem from '#lib/components/timeline-item.svelte';
+	import {mds} from '#lib/donorstats.js';
 
 	export let data;
   	const donorStats = mds;

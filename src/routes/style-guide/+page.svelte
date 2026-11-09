@@ -1,8 +1,8 @@
 <script>
-	import Container from '$lib/components/container.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
+	import Container from '#lib/components/container.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
 	import DonationForm from '../../lib/components/donation-form.svelte';
 
 	let { data } = $props();

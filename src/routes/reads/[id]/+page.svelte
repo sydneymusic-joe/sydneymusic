@@ -1,11 +1,11 @@
 <script>
 	import { StructuredText } from '@datocms/svelte';
-	import Read from '$lib/components/read.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Embed from '$lib/components/article/embed.svelte';
-	import Figure from '$lib/components/article/figure.svelte';
+	import Read from '#lib/components/read.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Embed from '#lib/components/article/embed.svelte';
+	import Figure from '#lib/components/article/figure.svelte';
 	import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
-	import Heading from '$lib/components/heading.svelte';
+	import Heading from '#lib/components/heading.svelte';
 	let { data } = $props();
 </script>
 

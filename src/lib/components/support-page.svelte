@@ -1,6 +1,6 @@
 <script>
-	import Logo from '$lib/components/logo.svelte';
-	import Button from '$lib/components/button.svelte';
+	import Logo from '#lib/components/logo.svelte';
+	import Button from '#lib/components/button.svelte';
 
 // class="[&:has(input:checked)]:hidden transition-all transition-discrete absolute top-0 left-0 w-full h-full m-auto bg-merchbrown z-100"
 </script>

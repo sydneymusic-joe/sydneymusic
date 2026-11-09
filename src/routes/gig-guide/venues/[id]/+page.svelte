@@ -1,13 +1,13 @@
 <script>
 	import {
 		createCalendarLink,
-	} from '$lib/globals.mjs';
+	} from '#lib/globals.mjs';
 	import { render } from 'datocms-structured-text-to-html-string';
 
 	
-	import Event from '$lib/components/event.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import Event from '#lib/components/event.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
 	/**
 	 * @typedef {Object} Props
 	 * @property {any} data - export let venueData;

@@ -1,6 +1,6 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
 	import { mds } from '../../lib/donorstats.js';
 </script>
 <div class="flex flex-col items-center md:mr-10 my-10">

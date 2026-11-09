@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { navigation } from '../globals.mjs';
 	import Logo from './logo.svelte';
 	import IconInstagram from './icon-instagram.svelte';
@@ -28,13 +28,12 @@
 		</div>
 		<div><img src="/padlock.svg" class="h-14" /></div>
 	</div>
-	<div class="lg:hidden flex justify-center">
-		<a href="/" class="mt-3">
-			<Logo size="sm" stickers={false} />
-		</a>
-	</div>
 
-	<nav class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-15 mb-5 space-y-5">
+	<div class="lg:hidden flex justify-center"><a href="/" class="mt-3"><Logo size="sm" stickers={false} /></a></div>
+
+	<nav
+		class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-15 mb-5 space-y-5"
+	>
 		<div class="w-full flex justify-between items-center">
 			<a href="/" class="hidden lg:block shrink-0">
 				<Logo size="sm" stickers={false} />
@@ -45,10 +44,8 @@
 					<a
 						href={item.href}
 						class="navbar-link plausible-event-name=Top+Nav"
-						class:current={$page.url.pathname === item.href}
-					>
-						{item.title}
-					</a>
+						class:current={page.url.pathname === item.href}
+					>{item.title}</a>
 				{/each}
 
 				<a

@@ -1,10 +1,10 @@
 <script>
 	import '../app.css';
-	import Header from '$lib/components/header.svelte';
-	import Footer from '$lib/components/footer.svelte';
-	import Button from '$lib/components/button.svelte';
-	import Logo from '$lib/components/logo.svelte';
-	import { page } from '$app/stores';
+	import Header from '#lib/components/header.svelte';
+	import Footer from '#lib/components/footer.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Logo from '#lib/components/logo.svelte';
+	import { page } from '$app/state';
 	/**
 	 * @typedef {Object} Props
 	 * @property {import('svelte').Snippet} [children]
@@ -13,7 +13,7 @@
 
 	/** @type {Props} */
 	let { children, data } = $props();
-	let { url } = $page;
+	let { url } = page;
 
 	const { donorStats } = data;
 
@@ -23,8 +23,8 @@
 
 </script>
 
-<svelte:head />
+<svelte:head></svelte:head>
 
-<Header {showNotice} {donorStats} />
+<Header showNotice={showNotice} donorStats={donorStats} />
 {@render children?.()}
 <Footer />

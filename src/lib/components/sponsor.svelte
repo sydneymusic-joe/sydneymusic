@@ -1,5 +1,5 @@
 <script>
-	import Paragraph from '$lib/components/paragraph.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
 	let { logo, logoSize = 'md', children, name = 'Sponsor logo', href='' } = $props();
 </script>
 

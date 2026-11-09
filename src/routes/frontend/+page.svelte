@@ -1,7 +1,7 @@
 <script>
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import Button from '$lib/components/button.svelte';
-	import Heading from '$lib/components/heading.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="Join the SydneyMusic.net team" />

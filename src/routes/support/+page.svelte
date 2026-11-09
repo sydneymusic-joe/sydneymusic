@@ -1,10 +1,10 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import DonationForm from '$lib/components/donation-form.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import Support from '$lib/components/support-page.svelte';
+	import Button from '#lib/components/button.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import DonationForm from '#lib/components/donation-form.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
+	import Support from '#lib/components/support-page.svelte';
 </script>
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />

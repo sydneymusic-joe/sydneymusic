@@ -1,8 +1,6 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts,cjs}'],
-	safelist: [
-		'bg-ruby'
-	],
+	safelist: ['bg-ruby'],
 	theme: {
 		extend: {
 			typography: {
@@ -21,8 +19,11 @@ module.exports = {
 				xs: '480px'
 			},
 			fontFamily: {
-				sans: ['GeneralSans-Variable', `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`],
-				serif: ['GeneralSans-Variable', `Helvetica, sans-serif`],
+				sans: [
+					'GeneralSans-Variable',
+					`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
+				],
+				serif: ['GeneralSans-Variable', `Helvetica, sans-serif`]
 			},
 			fontSize: {
 				xl: '1.375rem'
@@ -30,8 +31,8 @@ module.exports = {
 			colors: {
 				//ruby: '#e02020',
 				ruby: '#F04E98',
-				rubydarker:'#78274C',
-				merchbrown:'#231104',
+				rubydarker: '#78274C',
+				merchbrown: '#231104',
 				// Color scale for ruby/red:
 				red: {
 					50: '#fef2f2',
@@ -49,7 +50,7 @@ module.exports = {
 				graphite: '#6d7278',
 				acknowledgement: '#BEBEBE',
 				pill: '#666666',
-				pjforest:'#344A2F',
+				pjforest: '#344A2F',
 				backgroundDark: '#221F20',
 				gray: {
 					50: '#fafafa',
