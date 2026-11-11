@@ -61,7 +61,7 @@
 			return function (t) {
 				var e = [n, t];
 				if (o) throw new TypeError('Generator is already executing.');
-				for (; s && e[(s = 0)] && (a = 0), a; )
+				for (; s && e[(s = 0)] && (a = 0), a;)
 					try {
 						if (
 							((o = 1),
@@ -89,9 +89,10 @@
 								((e = a.ops.pop()), a.trys.pop());
 								continue;
 							default:
-								if (
-									!((u = 0 < (u = a.trys).length && u[u.length - 1]) || (6 !== e[0] && 2 !== e[0]))
-								) {
+								if (!(
+									(u = 0 < (u = a.trys).length && u[u.length - 1]) ||
+									(6 !== e[0] && 2 !== e[0])
+								)) {
 									a = 0;
 									continue;
 								}

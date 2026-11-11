@@ -35,9 +35,12 @@
 
 	// Mapping of ticketing providers to their affiliate link templates
 	const ticketingProviderTemplates = {
-		'ticketmaster.com.au': 'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-		'moshtix.com.au': 'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-		'ticketek.com.au':'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
+		'ticketmaster.com.au':
+			'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+		'moshtix.com.au':
+			'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+		'ticketek.com.au':
+			'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
 	};
 
 	// Function to wrap URL in the appropriate affiliate link
@@ -57,10 +60,7 @@
 	}
 </script>
 
-<div
-	class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1
-		? 'smn'
-		: ''}">
+<div class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''}">
 	<div class="">
 		<h4 class="headliner text-lg font-medium leading-[1.5rem]">{name}</h4>
 		{#if performers && performers.length}<p class="supports text-sm font-normal">
@@ -78,7 +78,11 @@
 	{#if website || calendarLink}
 		<div class={`flex items-center space-x-3 sm:space-x-5`}>
 			{#if website}
-				<a href={website} target="_blank" class="moreinfo flex items-center space-x-1 text-sm group">
+				<a
+					href={website}
+					target="_blank"
+					class="moreinfo flex items-center space-x-1 text-sm group"
+				>
 					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path
 							class="group-hover:text-ruby"
@@ -117,13 +121,15 @@
 				<div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
 			{/if}
 			{#if isPwyc}
-				<div class="bg-pjforest text-[10px] font-semibold text-white px-3 py-px rounded-lg">PWYC</div>
+				<div class="bg-pjforest text-[10px] font-semibold text-white px-3 py-px rounded-lg">
+					PWYC
+				</div>
 			{/if}
 		</div>
 	{/if}
 	{#if comment}
 		<div
-			class="relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic mr-[-28px]"
+			class="comment relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic mr-[-28px]"
 		>
 			<svg
 				class="absolute left-0 top-0 w-10 h-10 transform -translate-x-1/2"
