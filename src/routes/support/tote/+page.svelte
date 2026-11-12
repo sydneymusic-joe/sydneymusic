@@ -17,7 +17,7 @@
 		</div>
 		<div class="flex-1 text-white p-12 flex items-center">
 			<div class="space-y-8">
-				<Heading class="text-2xl font-normal uppercase stretch leading-[1.0]">The ultimate Sydney music tote bag!</Heading>
+				<Heading class="text-2xl font-normal uppercase stretch leading-none">The ultimate Sydney music tote bag!</Heading>
 				<div class="space-y-3">
 					<p>We’ve got the <strong>last-ever Can Man tote bag from our first merch drop in 2022</strong>.</p>
 					<p>In the next few weeks we’re going to fill it with donated items from Sydney artists — creating an incredible one-of-a-kind collection for one lucky winner.</p>

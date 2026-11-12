@@ -1,48 +1,48 @@
 {
-  "name": "sydneymusic",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "imports": {
-    "#lib": "./src/lib/index.js",
-    "#lib/*": "./src/lib/*"
-  },
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-    "postbuild": "npx svelte-sitemap --domain https://sydneymusic.net"
-  },
-  "dependencies": {
-    "@datocms/svelte": "^4.2.16",
-    "@netlify/functions": "^2.1.0",
-    "csv-parse": "^7.0.3",
-    "datocms-structured-text-to-html-string": "^6.0.0",
-    "dotenv": "^16.3.1",
-    "fetch": "^1.1.0",
-    "form-data": "^4.0.0",
-    "graphql": "^16.15.0",
-    "graphql-request": "^7.4.0",
-    "hashids": "^2.3.0",
-    "html-minifier": "^5.0.1",
-    "ical-generator": "^3.4.3",
-    "marked": "^15.0.6",
-    "tailwind-merge": "^3.7.0"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^8.0.0",
-    "@sveltejs/adapter-static": "^4.0.1",
-    "@sveltejs/kit": "^3.1.1",
-    "@sveltejs/vite-plugin-svelte": "^7.3.1",
-    "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.5",
-    "prettier": "^3.1.0",
-    "prettier-plugin-svelte": "^3.2.6",
-    "svelte": "^5.57.2",
-    "svelte-sitemap": "^2.6.0",
-    "tailwindcss": "^4.3.5",
-    "vite": "^8.3.6"
-  }
+	"name": "sydneymusic",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
+		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+		"postbuild": "npx svelte-sitemap --domain https://sydneymusic.net"
+	},
+	"dependencies": {
+		"@datocms/svelte": "^4.2.16",
+		"@netlify/functions": "^2.1.0",
+		"csv-parse": "^7.0.3",
+		"datocms-structured-text-to-html-string": "^6.0.0",
+		"dotenv": "^16.3.1",
+		"fetch": "^1.1.0",
+		"form-data": "^4.0.0",
+		"graphql": "^16.15.0",
+		"graphql-request": "^7.4.0",
+		"hashids": "^2.3.0",
+		"html-minifier": "^5.0.1",
+		"ical-generator": "^3.4.3",
+		"marked": "^15.0.6",
+		"tailwind-merge": "^3.7.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^8.0.0",
+		"@sveltejs/adapter-static": "^4.0.1",
+		"@sveltejs/kit": "^3.1.1",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@tailwindcss/typography": "^0.5.20",
+		"@tailwindcss/vite": "^4.3.5",
+		"prettier": "^3.1.0",
+		"prettier-plugin-svelte": "^3.2.6",
+		"svelte": "^5.57.2",
+		"svelte-sitemap": "^2.6.0",
+		"tailwindcss": "^4.3.5",
+		"vite": "^8.3.6"
+	}
 }

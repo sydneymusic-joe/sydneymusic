@@ -22,7 +22,7 @@
 <div class="max-w-5xl px-5 mt-10 mx-auto">
 	<Heading level={1} variant="xl" class="notch-left mb-5">Live Music Venues in Sydney</Heading>
 
-	<div class="px-3 prose max-w-[100%] mb-10">
+	<div class="px-3 prose max-w-full mb-10">
 		<p>
 			Here’s every live music venue in Sydney that's hosted gigs since SydneyMusic's inception in
 			2022.

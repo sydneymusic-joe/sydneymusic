@@ -28,7 +28,7 @@
 						<img
 							src="/merch-promo.jpg"
 							alt="SydneyMusic.net new merch featuring a logo t-shirt and stubby cooler"
-							class="object-cover aspect-[5/6]"
+							class="object-cover aspect-5/6"
 						/>
 					</picture>
 					</a>
@@ -76,7 +76,7 @@
 						<img
 							src="/merch-promo-shirt.jpg"
 							alt="SydneyMusic.net new merch featuring dancer graphic on a black t-shirt"
-							class="object-cover aspect-[5/7]" style="border : solid 1px black"
+							class="object-cover aspect-5/7" style="border : solid 1px black"
 						/>
 					</picture>
 					</a>

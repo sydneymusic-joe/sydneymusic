@@ -41,7 +41,7 @@
 				<Heading class="text-center">The <a href="/gig-guide" class="text-ruby underline">gig guide</a> is made possible by ...</Heading>
 
 			<div class="relative pl-8 space-y-8">
-				<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
+				<div class="absolute left-0 top-2 bottom-0 w-px bg-gray-400"></div>
 
 				<TimelineItem title="Our Readers" color="black">
 					<div class="bg-gray-50 p-8 rounded-lg border border-gray-400 space-y-2 text-center">
@@ -131,7 +131,7 @@
 				</div>
 
 				<div class="relative pl-8 space-y-8">
-					<div class="absolute left-0 top-2 bottom-0 w-[1px] bg-gray-400"></div>
+					<div class="absolute left-0 top-2 bottom-0 w-px bg-gray-400"></div>
 
 					<TimelineItem title="Anchor Supporters" color="#e5c97b">
 						<Sponsor logo="/logos/neilson.png" href="https://www.neilson.org.au/" name="Neilson Foundation"></Sponsor>
