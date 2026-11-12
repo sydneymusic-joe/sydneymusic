@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
-@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/typography';
 
-@source inline("bg-ruby");
+@source inline('bg-ruby');
 
 @theme {
 	--breakpoint-xs: 30rem;
@@ -107,11 +107,11 @@
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply relative font-semibold leading-tight block border-b border-black w-full;
+		@apply relative block w-full border-b border-black leading-tight font-semibold;
 	}
 
 	.notch-left * {
-		@apply font-semibold uppercase leading-tight;
+		@apply leading-tight font-semibold uppercase;
 	}
 
 	.notch-thic.notch-right::after {
@@ -123,7 +123,7 @@
 	}
 
 	.about-copy > div {
-		@apply px-3 prose;
+		@apply prose px-3;
 	}
 
 	.about-copy dt {
@@ -135,15 +135,15 @@
 	}
 
 	.time {
-		@apply border-r mr-3 pr-3 border-r-[#7f7f7f];
+		@apply mr-3 border-r border-r-[#7f7f7f] pr-3;
 	}
 
 	.filterbox {
-		@apply flex flex-wrap gap-x-2 mb-[-15px];
+		@apply mb-[-15px] flex flex-wrap gap-x-2;
 	}
 
 	.filterbox label {
-		@apply border border-black py-[5px] px-[10px];
+		@apply border border-black px-[10px] py-[5px];
 	}
 
 	.filterbox > *:hover {
@@ -168,7 +168,7 @@
 	}
 
 	figcaption .description:not(:empty) {
-		@apply border-l-[#aaa] border-l pl-2.5 ml-2;
+		@apply ml-2 border-l border-l-[#aaa] pl-2.5;
 	}
 
 	.accordion-header h3::before {
@@ -180,7 +180,7 @@
 	}
 
 	.accordion-content > div {
-		@apply px-3 py-5 space-y-3;
+		@apply space-y-3 px-3 py-5;
 	}
 }
 
@@ -269,7 +269,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .guide-divider span {
-	@apply shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-full;
+	@apply max-w-[250px] shrink px-3 text-xs text-gray-600 italic sm:max-w-full;
 	text-align: center;
 }
 
@@ -283,15 +283,15 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 
 /* mm-mm-mm-mm-mm it's map time */
 #gigmap {
-	@apply bg-black h-screen w-screen text-white p-5 relative;
+	@apply relative h-screen w-screen bg-black p-5 text-white;
 }
 
 #gigmap .toolbar {
-	@apply flex flex-col gap-4 z-10 absolute;
+	@apply absolute z-10 flex flex-col gap-4;
 }
 
 #gigmap .toolbar > div {
-	@apply bg-ruby py-2 px-5 basis-1/3 rounded-lg transition-colors;
+	@apply basis-1/3 rounded-lg bg-ruby px-5 py-2 transition-colors;
 }
 
 #gigmap .toolbar > div:hover {
@@ -301,7 +301,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 #map-container {
 	position: absolute;
 	z-index: 0;
-	@apply h-screen w-screen top-0 left-0;
+	@apply top-0 left-0 h-screen w-screen;
 }
 
 .home-storelink {
@@ -374,23 +374,23 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 header nav .navbar {
-	@apply flex justify-center lg:justify-end w-full gap-x-1 sm:gap-x-3;
+	@apply flex w-full justify-center gap-x-1 sm:gap-x-3 lg:justify-end;
 }
 
 header nav .navbar .navbar-link,
 header nav .navbar .support {
-	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
+	@apply border-b-2 border-transparent px-2 py-1 text-center text-sm whitespace-nowrap uppercase hover:border-ruby hover:text-ruby sm:px-4 sm:py-3 lg:text-lg;
 	transform: scaleY(1.9);
 	line-height: 50%;
 }
 
 header nav .navbar .navbar-link-icon {
-	@apply border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-0 sm:px-1 py-0 sm:py-3 w-7 lg:w-9 h-auto hidden sm:block;
+	@apply hidden h-auto w-7 border-b-2 border-transparent px-0 py-0 text-center text-sm whitespace-nowrap hover:border-ruby hover:text-ruby sm:block sm:px-1 sm:py-3 lg:w-9 lg:text-lg;
 	display: none;
 }
 
 header nav .navbar .navbar-link-icon svg {
-	@apply w-full h-auto;
+	@apply h-auto w-full;
 }
 
 header nav .navbar .navbar-link.current {
@@ -398,7 +398,7 @@ header nav .navbar .navbar-link.current {
 }
 
 header nav .navbar .support {
-	@apply uppercase border-transparent hover:bg-ruby/90 hover:text-white bg-ruby text-white;
+	@apply border-transparent bg-ruby text-white uppercase hover:bg-ruby/90 hover:text-white;
 	transform: scaleY(1.9);
 }
 
@@ -414,7 +414,7 @@ header nav .navbar .support {
 .bigtext {
 	font-family: 'ITC Souvenir';
 	color: black;
-	@apply text-3xl md:text-5xl mt-0 mb-0;
+	@apply mt-0 mb-0 text-3xl md:text-5xl;
 }
 
 body .prose {
@@ -436,7 +436,7 @@ body .prose {
 }
 
 .blinddate-plug {
-	@apply border-l-2 border-r-2 px-8 my-3 border-ruby text-center p-3;
+	@apply my-3 border-r-2 border-l-2 border-ruby p-3 px-8 text-center;
 	border-radius: 20px;
 	font-family: 'ITC Souvenir';
 }
@@ -460,7 +460,7 @@ body .prose {
 }
 
 .lib-logo {
-	@apply w-24 h-24;
+	@apply h-24 w-24;
 	background-image: url(/canman-about@1x.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -474,7 +474,7 @@ body .prose {
 }
 
 .link-in-bio.primary > div {
-	@apply h-56 flex items-end;
+	@apply flex h-56 items-end;
 	position: relative;
 	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
 	border: solid 4px black;
@@ -584,7 +584,7 @@ body .prose {
 }
 
 #sharesheet {
-	@apply p-3 flex flex-col items-center;
+	@apply flex flex-col items-center p-3;
 	background: #fffbeb;
 	bottom: 20px;
 	position: fixed;
@@ -600,15 +600,15 @@ body .prose {
 }
 
 #sharesheet .buttonpanel {
-	@apply flex uppercase font-bold m-5 gap-x-2;
+	@apply m-5 flex gap-x-2 font-bold uppercase;
 }
 
 #sharesheet .buttonpanel > button {
-	@apply uppercase border-2 border-black px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby bg-white;
+	@apply border-2 border-black bg-white px-4 py-2 text-lg font-bold uppercase hover:border-ruby hover:text-ruby;
 }
 
 #shareprompt {
-	@apply p-5 flex flex-row justify-center gap-x-2;
+	@apply flex flex-row justify-center gap-x-2 p-5;
 	background-color: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(5px);
 	position: fixed;
@@ -648,7 +648,7 @@ body.showsheet #shareprompt {
 
 body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	content: "You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
-	@apply text-sm italic border border-black bg-yellow-50 p-2 block;
+	@apply block border border-black bg-yellow-50 p-2 text-sm italic;
 }
 
 @media (min-width: 1024px) {

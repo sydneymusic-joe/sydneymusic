@@ -1,14 +1,14 @@
 <script>
-	import { isBlock } from 'datocms-structured-text-utils';
+import { isBlock } from 'datocms-structured-text-utils';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {any} [node]
-	 * @property {any} [block]
-	 */
+/**
+ * @typedef {Object} Props
+ * @property {any} [node]
+ * @property {any} [block]
+ */
 
-	/** @type {Props} */
-	let { node = null, block = null } = $props();
+/** @type {Props} */
+let { node = null, block = null } = $props();
 </script>
 
 {#if block.__typename == 'StructuredTextAssetRecord' && isBlock(node)}
@@ -20,4 +20,3 @@
 		</figcaption>
 	</figure>
 {/if}
-

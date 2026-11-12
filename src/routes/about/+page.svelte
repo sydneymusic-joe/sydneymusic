@@ -1,11 +1,11 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Heading from '#lib/components/heading.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Heading from '#lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="About / FAQ" />
 
-<div class="max-w-5xl px-5 mx-auto">
+<div class="mx-auto max-w-5xl px-5">
 	<div class="grid md:grid-cols-sidebar-right-wide">
 		<!-- left col -->
 		<div class="about-copy space-y-6 sm:pr-20">
@@ -129,7 +129,7 @@
 			<img
 				srcset="/canman-about@2x.png 964w, /canman-about@1x.png 482w"
 				alt="Our mascot Can Man"
-				class="aspect-square w-full mt-12 hidden md:block"
+				class="mt-12 hidden aspect-square w-full md:block"
 			/>
 		</div>
 	</div>

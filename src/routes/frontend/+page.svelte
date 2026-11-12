@@ -1,7 +1,7 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Button from '#lib/components/button.svelte';
-	import Heading from '#lib/components/heading.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Button from '#lib/components/button.svelte';
+import Heading from '#lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="Join the SydneyMusic.net team" />
@@ -15,10 +15,10 @@
 	<img
 		src="/canman-gigs@1x.png"
 		alt="SydneyMusic.net mascot Can Man loves a gig"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		class="mx-auto aspect-3/1 w-full object-cover sm:aspect-banner lg:max-w-5xl"
 	/>
 </picture>
-<div class="max-w-5xl px-5 mt-5 mx-auto space-y-5 pb-24">
+<div class="mx-auto mt-5 max-w-5xl space-y-5 px-5 pb-24">
 	<div class="prose">
 		<Heading level={1} variant="xl" class="notch-left">
 			Join the team: <span class="text-ruby">Front-end Developer/Designer</span>
@@ -32,7 +32,7 @@
 
 		<p>Job applications close: 14/8/24</p>
 	</div>
-	<div class="w-48 ml-5">
+	<div class="ml-5 w-48">
 		<Button
 			label="Apply Now"
 			href="https://docs.google.com/forms/d/e/1FAIpQLSeTAVO3ASs1wv2NIHEnxgSpxUStwz4VWbzgLMvj0XFvL3Nkug/viewform"
@@ -140,7 +140,7 @@
 			<a href="mailto:joe@sydneymusic.net">joe@sydneymusic.net</a>
 		</p>
 	</div>
-	<div class="w-48 ml-5">
+	<div class="ml-5 w-48">
 		<Button
 			label="Apply Now"
 			href="https://docs.google.com/forms/d/e/1FAIpQLSeTAVO3ASs1wv2NIHEnxgSpxUStwz4VWbzgLMvj0XFvL3Nkug/viewform"

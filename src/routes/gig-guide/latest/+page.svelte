@@ -1,24 +1,26 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import { formatDay, formatDateLong, createCalendarLink } from '#lib/globals.mjs';
-	import Event from '#lib/components/event.svelte';
-	import Heading from '#lib/components/heading.svelte';
-	let { data } = $props();
+import SeoSocial from '#lib/components/seo-social.svelte';
+import { formatDay, formatDateLong, createCalendarLink } from '#lib/globals.mjs';
+import Event from '#lib/components/event.svelte';
+import Heading from '#lib/components/heading.svelte';
+let { data } = $props();
 </script>
 
 <SeoSocial title="Gig Guide - Latest Feed" />
 
-<div class="max-w-5xl px-5 mt-10 mx-auto space-y-4">
-	<Heading level={1} variant="xl" class="notch-left">Gig Guide <span class="text-ruby">Latest 50 Updates</span></Heading>
+<div class="mx-auto mt-10 max-w-5xl space-y-4 px-5">
+	<Heading level={1} variant="xl" class="notch-left"
+		>Gig Guide <span class="text-ruby">Latest 50 Updates</span></Heading
+	>
 </div>
 
-<div class="max-w-5xl px-5 mt-5 mx-auto space-y-32 pb-24">
+<div class="mx-auto mt-5 max-w-5xl space-y-32 px-5 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="grid md:grid-cols-sidebar-right-wide">
 			<!-- left col -->
 			<div class="sm:pr-20">
-				<div class="space-y-8 ml-3">
+				<div class="ml-3 space-y-8">
 					<div class="prose">
 						<p>
 							If you like to stay <em>really</em> up-to-the-second on gig announcements, this (currently
@@ -36,20 +38,20 @@
 							<div class="flex items-center space-x-2">
 								{#if event.isNew}
 									<div
-										class="bg-red-500 text-[10px] font-semibold text-white px-3 py-px rounded-lg"
+										class="rounded-lg bg-red-500 px-3 py-px text-[10px] font-semibold text-white"
 									>
 										NEW
 									</div>
 								{:else}
 									<div
-										class="bg-blue-500 text-[10px] font-semibold text-white px-3 py-px rounded-lg"
+										class="rounded-lg bg-blue-500 px-3 py-px text-[10px] font-semibold text-white"
 									>
 										UPDATED
 									</div>
 								{/if}
 								<div class="text-[10px]">published at {event.updatedNice}</div>
 							</div>
-							<div class="uppercase mt-2 text-sm font-bold">
+							<div class="mt-2 text-sm font-bold uppercase">
 								{formatDay(event.date)}, <span class="text-ruby">{formatDateLong(event.date)}</span>
 								{1900 + event.date.getYear()}
 							</div>
@@ -70,7 +72,7 @@
 				</div>
 			</div>
 			<!-- right col -->
-			<div class="space-y-10 mt-20 md:mt-0">
+			<div class="mt-20 space-y-10 md:mt-0">
 				<Heading level={3} variant="md" class="notch-left">This is a beta feature</Heading>
 				<div class="prose prose-sm">
 					<p>

@@ -1,12 +1,12 @@
 <script>
-	import { StructuredText } from '@datocms/svelte';
-	import Read from '#lib/components/read.svelte';
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Embed from '#lib/components/article/embed.svelte';
-	import Figure from '#lib/components/article/figure.svelte';
-	import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
-	import Heading from '#lib/components/heading.svelte';
-	let { data } = $props();
+import { StructuredText } from '@datocms/svelte';
+import Read from '#lib/components/read.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Embed from '#lib/components/article/embed.svelte';
+import Figure from '#lib/components/article/figure.svelte';
+import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
+import Heading from '#lib/components/heading.svelte';
+let { data } = $props();
 </script>
 
 <SeoSocial
@@ -16,7 +16,7 @@
 	description={data.excerpt}
 />
 
-<div class="max-w-5xl px-5 mx-auto pt-16 lg:pt-24 pb-24">
+<div class="mx-auto max-w-5xl px-5 pt-16 pb-24 lg:pt-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<div>
@@ -28,7 +28,7 @@
 			<div class="prose prose-xl">
 				{#if data.heroImage}
 					<figure>
-						<img src="{data.heroImage.url}?w=2000" alt="{data.heroImage.title}" />
+						<img src="{data.heroImage.url}?w=2000" alt={data.heroImage.title} />
 						<figcaption>
 							<span>Image: {data.heroImage.title}</span>
 							<span class="description">{data.heroImage.alt}</span>
@@ -40,13 +40,13 @@
 			<div>
 				<dl class="mt-20 lg:mt-0">
 					{#if data.author}
-						<dt class="text-ruby uppercase text-sm">by</dt>
-						<dd class="uppercase italic text-lg">
+						<dt class="text-sm text-ruby uppercase">by</dt>
+						<dd class="text-lg uppercase italic">
 							<a href={data.author.authorUrl}>{data.author.authorName}</a>
 						</dd>
 					{/if}
-					<dt class="mt-10 text-ruby uppercase text-sm">Published</dt>
-					<dd class="uppercase italic text-lg">{data.publishDate}</dd>
+					<dt class="mt-10 text-sm text-ruby uppercase">Published</dt>
+					<dd class="text-lg uppercase italic">{data.publishDate}</dd>
 				</dl>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 				{#each data.otherReads as { headline, excerpt, slug }, i}
 					{#if i < 2}
 						<a href="/reads/{slug}" class="block">
-							<Read {headline} body={excerpt} />
+							<Read headline={headline} body={excerpt} />
 						</a>
 					{/if}
 				{/each}
@@ -70,7 +70,7 @@
 				{#each data.otherReads as { headline, excerpt, slug }, i}
 					{#if i > 1}
 						<a href="/reads/{slug}" class="block">
-							<Read {headline} body={excerpt} />
+							<Read headline={headline} body={excerpt} />
 						</a>
 					{/if}
 				{/each}

@@ -1,7 +1,7 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Heading from '#lib/components/heading.svelte';
-	let { data } = $props();
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Heading from '#lib/components/heading.svelte';
+let { data } = $props();
 </script>
 
 <SeoSocial title="Live Music Venues in Sydney" />
@@ -15,14 +15,14 @@
 	<img
 		src="/canman-gigs@1x.png"
 		alt="SydneyMusic.net mascot Can Man loves a gig"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		class="mx-auto aspect-3/1 w-full object-cover sm:aspect-banner lg:max-w-5xl"
 	/>
 </picture>
 
-<div class="max-w-5xl px-5 mt-10 mx-auto">
+<div class="mx-auto mt-10 max-w-5xl px-5">
 	<Heading level={1} variant="xl" class="notch-left mb-5">Live Music Venues in Sydney</Heading>
 
-	<div class="px-3 prose max-w-full mb-10">
+	<div class="prose mb-10 max-w-full px-3">
 		<p>
 			Here’s every live music venue in Sydney that's hosted gigs since SydneyMusic's inception in
 			2022.
@@ -48,7 +48,7 @@
 		{#each data.venues as { label, items }, i}
 			<div class="venue">
 				<h4
-					class="-ml-3 border-l-2 pl-3 border-ruby text-lg font-semibold uppercase italic leading-tight"
+					class="-ml-3 border-l-2 border-ruby pl-3 text-lg leading-tight font-semibold uppercase italic"
 				>
 					{label != 'null' ? label : 'Unknown Suburb'}
 				</h4>
@@ -58,7 +58,7 @@
 							<dt>
 								<a
 									href="/gig-guide/venues/{slug}"
-									class={`hover:text-ruby transition-colors duration-100 ease-in-out ${
+									class={`transition-colors duration-100 ease-in-out hover:text-ruby ${
 										isRip && 'rip'
 									}`}
 								>

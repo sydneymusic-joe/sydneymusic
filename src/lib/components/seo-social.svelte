@@ -1,33 +1,33 @@
 <script>
-	/**
-	 * @typedef {Object} Props
-	 * @property {string} [title]
-	 * @property {string} [description]
-	 * @property {string} [keywords]
-	 * @property {any} canonical
-	 * @property {any} type
-	 * @property {string} [image]
-	 * @property {number} [imageWidth]
-	 * @property {number} [imageHeight]
-	 */
+/**
+ * @typedef {Object} Props
+ * @property {string} [title]
+ * @property {string} [description]
+ * @property {string} [keywords]
+ * @property {any} canonical
+ * @property {any} type
+ * @property {string} [image]
+ * @property {number} [imageWidth]
+ * @property {number} [imageHeight]
+ */
 
-	/** @type {Props} */
-	let {
-		title = $bindable(''),
-		description = 'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.',
-		keywords = 'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife',
-		canonical,
-		type,
-		image = 'https://sydneymusic.net/social-image.png',
-		imageWidth = 1200,
-		imageHeight = 630
-	} = $props();
+/** @type {Props} */
+let {
+	title = $bindable(''),
+	description = 'SydneyMusic.net is your guide to music in Sydney, with a gig guide, a Discord community and stuff to read.',
+	keywords = 'sydney,live music,gig guide,community,shows,diy,listings,music writing,nightlife',
+	canonical,
+	type,
+	image = 'https://sydneymusic.net/social-image.png',
+	imageWidth = 1200,
+	imageHeight = 630
+} = $props();
 
-	if (title != '') {
-		title += ' | ';
-	}
+if (title != '') {
+	title += ' | ';
+}
 
-	title += "SydneyMusic.net - Sydney's live music community guide";
+title += "SydneyMusic.net - Sydney's live music community guide";
 </script>
 
 <svelte:head>
