@@ -171,5 +171,34 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	const searchFilter = document.getElementById("search-filter")
+
+	const updateSearch = () => {
+		const gigElements = document.querySelectorAll(".eventcard");
+		if(searchFilter.value != "") {
+			for(let gigElement of gigElements) {
+				if(gigElement.innerText.toLowerCase().includes(searchFilter.value.toLowerCase())) {
+					gigElement.parentElement.classList.add("search-match");
+				} else {
+					gigElement.parentElement.classList.remove("search-match");
+				}
+			}
+		} else {
+			for(let gigElement of gigElements) {
+				gigElement.parentElement.classList.remove("search-match");
+			}
+
+		}
+		if(searchFilter.value != "") {
+			document.body.classList.add('searchonly');
+		} else {
+			document.body.classList.remove('searchonly');
+		}
+	}
+
+	searchFilter.addEventListener("change", () => {
+		updateSearch();
+	});
+
 	getLocalStorage();
 });

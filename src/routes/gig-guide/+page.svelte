@@ -78,6 +78,9 @@
 					<input type="checkbox" id="toggle-selected" class="sr-only" />
 					My favourites
 				</label>
+				<label class="flex items-center relative">
+					<input type="text" placeholder="search for gigs" id="search-filter" />
+				</label>
 			</div>
 
 			{#each data.gigs as month}
