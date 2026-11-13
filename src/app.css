@@ -129,19 +129,23 @@
 }
 
 body.freegigs .guide-month:not(:has(.freegig)),
-body.selectedonly .guide-month:not(:has(.selected)) {
+body.selectedonly .guide-month:not(:has(.selected)),
+body.searchonly .guide-month:not(:has(.search-match)) {
 	@apply hidden;
 }
 body.freegigs .day:not(:has(.freegig)),
-body.selectedonly .day:not(:has(.selected)) {
+body.selectedonly .day:not(:has(.selected)),
+body.searchonly .day:not(:has(.search-match)) {
 	@apply hidden;
 }
 body.freegigs .guide-month > h3:not(:has(+ .day .freegig)),
-body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)) {
+body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)),
+body.searchonly .guide-month > h3:not(:has(+ .day .search-match)) {
 	@apply hidden;
 }
 body.freegigs .eventcardhost:not(:is(.freegig)),
-body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
+body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))),
+body.searchonly .eventcardhost:not(:is(.search-match)) {
 	@apply hidden;
 }
 
