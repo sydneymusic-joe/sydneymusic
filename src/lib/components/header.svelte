@@ -1,41 +1,45 @@
 <script>
-	import { page } from '$app/state';
-	import { navigation } from '../globals.mjs';
-	import Logo from './logo.svelte';
-	import IconInstagram from './icon-instagram.svelte';
-	import Button from './button.svelte';
-	import { mds } from '../donorstats.js';
+import { page } from '$app/state';
+import { navigation } from '../globals.mjs';
+import Logo from './logo.svelte';
+import IconInstagram from './icon-instagram.svelte';
+import Button from './button.svelte';
+import { mds } from '../donorstats.js';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {boolean} [showNotice]
-	 * @property {Object} [donorStats] - Donor stats object from layout.js
-	 */
+/**
+ * @typedef {Object} Props
+ * @property {boolean} [showNotice]
+ * @property {Object} [donorStats] - Donor stats object from layout.js
+ */
 
-	/** @type {Props} */
-	let { showNotice = false, donorStats } = $props();
-
+/** @type {Props} */
+let { showNotice = false, donorStats } = $props();
 </script>
 
 <header>
-	<div class="bg-black text-white py-3 text-center flex flex-row justify-center items-center gap-x-5">
+	<div
+		class="flex flex-row items-center justify-center gap-x-5 bg-black py-3 text-center text-white"
+	>
 		<div><img src="/banksia.svg" class="h-14" /></div>
 		<div>
-			<span class="font-semibold text-lg text-ruby">FY27 Fundraising Appeal	</span>
+			<span class="text-lg font-semibold text-ruby">FY27 Fundraising Appeal </span>
 			<div class="text-sm">
-			We’ve raised <strong class="font-semibold">{mds.totalFundedPercent}%</strong> of our goal.<br />Help us cover our costs!<br /><a href="/support" class="underline font-semibold">Donate today</a> • Tax deductible
+				We’ve raised <strong class="font-semibold">{mds.totalFundedPercent}%</strong> of our goal.<br
+				/>Help us cover our costs!<br /><a href="/support" class="font-semibold underline"
+					>Donate today</a
+				> • Tax deductible
 			</div>
 		</div>
 		<div><img src="/padlock.svg" class="h-14" /></div>
 	</div>
 
-	<div class="lg:hidden flex justify-center"><a href="/" class="mt-3"><Logo size="sm" stickers={false} /></a></div>
+	<div class="flex justify-center lg:hidden">
+		<a href="/" class="mt-3"><Logo size="sm" stickers={false} /></a>
+	</div>
 
-	<nav
-		class="max-w-5xl lg:px-5 mx-auto mt-5 lg:mt-15 mb-5 space-y-5"
-	>
-		<div class="w-full flex justify-between items-center">
-			<a href="/" class="hidden lg:block shrink-0">
+	<nav class="mx-auto mt-5 mb-5 max-w-5xl space-y-5 lg:mt-15 lg:px-5">
+		<div class="flex w-full items-center justify-between">
+			<a href="/" class="hidden shrink-0 lg:block">
 				<Logo size="sm" stickers={false} />
 			</a>
 
@@ -44,8 +48,8 @@
 					<a
 						href={item.href}
 						class="navbar-link plausible-event-name=Top+Nav"
-						class:current={page.url.pathname === item.href}
-					>{item.title}</a>
+						class:current={page.url.pathname === item.href}>{item.title}</a
+					>
 				{/each}
 
 				<a
@@ -57,11 +61,7 @@
 					<IconInstagram />
 				</a>
 
-				<a href="/support"
-				class="support cursor-pointer"
-				>
-					Donate!
-			</a>
+				<a href="/support" class="support cursor-pointer"> Donate! </a>
 			</div>
 		</div>
 	</nav>

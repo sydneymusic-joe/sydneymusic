@@ -1,10 +1,14 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Button from '#lib/components/button.svelte';
-	import Heading from '#lib/components/heading.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Button from '#lib/components/button.svelte';
+import Heading from '#lib/components/heading.svelte';
 </script>
 
-<SeoSocial title="JOIN OUR TEAM: Communications Producer" description="Want to run SydneyMusic’s social media and email comms? Apply for our part-time position, closes June 8." image="https://sydneymusic.net/merch-tees.jpg" />
+<SeoSocial
+	title="JOIN OUR TEAM: Communications Producer"
+	description="Want to run SydneyMusic’s social media and email comms? Apply for our part-time position, closes June 8."
+	image="https://sydneymusic.net/merch-tees.jpg"
+/>
 
 <picture>
 	<source
@@ -15,35 +19,39 @@
 	<img
 		src="/canman-gigs@1x.png"
 		alt="SydneyMusic.net mascot Can Man loves a gig"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		class="mx-auto aspect-3/1 w-full object-cover sm:aspect-banner lg:max-w-5xl"
 	/>
 </picture>
-<div class="max-w-5xl px-5 mt-5 mx-auto space-y-5 pb-24">
+<div class="mx-auto mt-5 max-w-5xl space-y-5 px-5 pb-24">
 	<div class="prose">
-		<Heading level={4} variant="sm">Join the team: </Heading>
-		<Heading level={1} variant="lg" class="text-ruby uppercase stretch font-medium">
+		<Heading level={4} variant="sm">Join the team:</Heading>
+		<Heading level={1} variant="lg" class="stretch font-medium text-ruby uppercase">
 			Communications Producer
 		</Heading>
 		<p>Part-time • Fixed-term contract (12 months)</p>
 		<p>
 			<strong
-				>We’re looking for a passionate and creative person with prior experience running public-facing communications. This role’s primary responsibility will be to manage our social media accounts and email newsletters.</strong
+				>We’re looking for a passionate and creative person with prior experience running
+				public-facing communications. This role’s primary responsibility will be to manage our
+				social media accounts and email newsletters.</strong
 			>
 		</p>
-		<div class="max-w-[50%] py-8 space-y-3">
+		<div class="max-w-[50%] space-y-3 py-8">
 			<Button
 				label="Apply Now"
 				href="https://form.fillout.com/t/kpbMPRgNQPus"
-				target="_blank" variant="primary"
+				target="_blank"
+				variant="primary"
 			/>
 			<Button
-				label="Read the position description" variant="secondary"
+				label="Read the position description"
+				variant="secondary"
 				href="https://drive.google.com/file/d/1nS53VatD9h77sYgSJqpueKO_z6pUEc1Y/view?usp=drive_link"
 				target="_blank"
 			/>
 		</div>
 
-		<Heading level={2} variant="sm" class="font-medium stretch uppercase">At a glance</Heading>
+		<Heading level={2} variant="sm" class="stretch font-medium uppercase">At a glance</Heading>
 		<ul>
 			<li><strong>Job applications close:</strong> 8th of June 2026 at 5pm</li>
 			<li>12 hours a week (1.5 days equiv.)</li>
@@ -52,27 +60,35 @@
 			<li>Days: Wednesday-Sunday</li>
 		</ul>
 
-		<Heading level={2} variant="sm" class="font-medium stretch uppercase">About the gig</Heading>
+		<Heading level={2} variant="sm" class="stretch font-medium uppercase">About the gig</Heading>
 		<p>
-			You’ll support the SydneyMusic team by taking over the <strong>daily Instagram stories</strong> every day except Monday and Tuesday - you’ll design assets, tag artists, issue corrections where necessary and respond to enquiries. 
+			You’ll support the SydneyMusic team by taking over the <strong>daily Instagram stories</strong
+			> every day except Monday and Tuesday - you’ll design assets, tag artists, issue corrections where
+			necessary and respond to enquiries.
 		</p>
 
 		<p>
-			You’ll also own the <strong>weekly email</strong> - writing it most weeks, and helping redesign it to offer more to our subscribers.
+			You’ll also own the <strong>weekly email</strong> - writing it most weeks, and helping redesign
+			it to offer more to our subscribers.
 		</p>
 
 		<p>
-			As you grow in the role, you’ll <strong>help develop the voice of our comms</strong> and contribute ideas that support our mission to get more people more involved in more gigs.
+			As you grow in the role, you’ll <strong>help develop the voice of our comms</strong> and contribute
+			ideas that support our mission to get more people more involved in more gigs.
 		</p>
 
-		<Heading level={2} variant="sm" class="font-medium stretch uppercase">Who this role is for</Heading>
+		<Heading level={2} variant="sm" class="stretch font-medium uppercase"
+			>Who this role is for</Heading
+		>
 
 		<p>
-			This role would suit someone working as a freelance, early-mid career comms professional or student, who is flexible (or requires flexibility!) in their hours – you’ll be working mornings almost exclusively, in blocks of between 1-3 hours. 
+			This role would suit someone working as a freelance, early-mid career comms professional or
+			student, who is flexible (or requires flexibility!) in their hours – you’ll be working
+			mornings almost exclusively, in blocks of between 1-3 hours.
 		</p>
 
-
-		<Heading level={2} variant="sm" class="font-medium stretch uppercase">About SydneyMusic</Heading>
+		<Heading level={2} variant="sm" class="stretch font-medium uppercase">About SydneyMusic</Heading
+		>
 		<p>
 			SydneyMusic.net is a not-for-profit organisation that maintains a local, 100% human researched
 			and edited gig guide to help solve the problem of discoverability for our grassroots music
@@ -85,7 +101,7 @@
 			and a <a href="https://sydneymusic.net/playlist">streaming playlist</a>.
 		</p>
 
-		<Heading level={2} variant="sm" class="font-medium stretch uppercase">Got questions?</Heading>
+		<Heading level={2} variant="sm" class="stretch font-medium uppercase">Got questions?</Heading>
 
 		<p>
 			Talk to Joe Hardy at
@@ -93,11 +109,10 @@
 		</p>
 	</div>
 
-
-	
 	<div class="w-48">
 		<Button
-			label="Apply Now" variant="primary"
+			label="Apply Now"
+			variant="primary"
 			href="https://form.fillout.com/t/kpbMPRgNQPus"
 			target="_blank"
 		/>
@@ -105,7 +120,9 @@
 
 	<div class="space-y-3">
 		<img src="/Logo-NSWGovSoundNSW.png" class="w-48" />
-		<div class="text-xs">This role is entirely funded by a Contemporary Music Local Audience Development Grant from Sound NSW.</div>
+		<div class="text-xs">
+			This role is entirely funded by a Contemporary Music Local Audience Development Grant from
+			Sound NSW.
+		</div>
 	</div>
-
 </div>

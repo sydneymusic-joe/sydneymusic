@@ -1,28 +1,25 @@
 <script>
-	import {
-		createCalendarLink,
-	} from '#lib/globals.mjs';
-	import { render } from 'datocms-structured-text-to-html-string';
+import { createCalendarLink } from '#lib/globals.mjs';
+import { render } from 'datocms-structured-text-to-html-string';
 
-	
-	import Event from '#lib/components/event.svelte';
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Heading from '#lib/components/heading.svelte';
-	/**
-	 * @typedef {Object} Props
-	 * @property {any} data - export let venueData;
-	 * @property {any} [venueData]
-	 * @property {any} [eventsFuture]
-	 * @property {any} [eventsPast]
-	 */
+import Event from '#lib/components/event.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Heading from '#lib/components/heading.svelte';
+/**
+ * @typedef {Object} Props
+ * @property {any} data - export let venueData;
+ * @property {any} [venueData]
+ * @property {any} [eventsFuture]
+ * @property {any} [eventsPast]
+ */
 
-	/** @type {Props} */
-	let {
-		data,
-		venueData = data.venueData,
-		eventsFuture = data.eventsFuture,
-		eventsPast = data.eventsPast
-	} = $props();
+/** @type {Props} */
+let {
+	data,
+	venueData = data.venueData,
+	eventsFuture = data.eventsFuture,
+	eventsPast = data.eventsPast
+} = $props();
 </script>
 
 <SeoSocial title="{venueData.venueName} venue information" />
@@ -36,17 +33,17 @@
 	<img
 		src="/canman-gigs@1x.png"
 		alt="SydneyMusic.net mascot Can Man loves a gig"
-		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+		class="mx-auto aspect-3/1 w-full object-cover sm:aspect-banner lg:max-w-5xl"
 	/>
 </picture>
 
-<div class="max-w-5xl px-5 mx-auto mt-10 space-y-32 pb-24">
+<div class="mx-auto mt-10 max-w-5xl space-y-32 px-5 pb-24">
 	<!-- First section -->
 	<div>
 		<div class="space-y-10">
 			<div class="prose prose-xl">
-				<h3 class="uppercase text-sm text-ruby">Venue Profile</h3>
-				<h1 class="uppercase text-xl italic">{venueData.venueName}</h1>
+				<h3 class="text-sm text-ruby uppercase">Venue Profile</h3>
+				<h1 class="text-xl uppercase italic">{venueData.venueName}</h1>
 
 				{#if venueData.isRip}
 					<p class="text-sm">🕯️ <strong>Note:</strong> This venue is sadly no longer with us.</p>
@@ -58,7 +55,8 @@
 					><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
 						target="_blank"
 						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ??
-							''},%20{venueData.suburb}&ia=maps&iaxm=maps">see map</a
+							''},%20{venueData.suburb}&ia=maps&iaxm=maps"
+						>see map</a
 					>]
 				</p>
 
@@ -70,14 +68,14 @@
 
 				{#if venueData.blurb}
 					<div class="blurb">
-						<h3 class="uppercase text-sm text-ruby">About {venueData.venueName}</h3>
+						<h3 class="text-sm text-ruby uppercase">About {venueData.venueName}</h3>
 						<div class="prose text-sm">
 							{@html render(venueData.blurb)}
 						</div>
 					</div>
 				{/if}
 
-				<div class="bg-gray-200 p-5 rounded-md prose">
+				<div class="prose rounded-md bg-gray-200 p-5">
 					<p class="m-0"><strong>Do you have information about this venue?</strong></p>
 					<p class="m-0">
 						We want to build a comprehensive reference of venue specs, accessibility information and
@@ -91,15 +89,15 @@
 			<div>
 				{#if !venueData.isRip}
 					<div class="transition">
-						<div class="accordion-header cursor-pointer transition flex items-center">
-							<h3 class="uppercase text-2xl italic font-bold">
+						<div class="accordion-header flex cursor-pointer items-center transition">
+							<h3 class="text-2xl font-bold uppercase italic">
 								Upcoming Gigs <span class="font-normal text-gray-500"
 									>({eventsFuture.childCount})</span
 								>
 							</h3>
 						</div>
-						<div class="accordion-content overflow-hidden max-h-0">
-							{#if eventsFuture.length === 0}<div class="pl-3 py-2">
+						<div class="accordion-content max-h-0 overflow-hidden">
+							{#if eventsFuture.length === 0}<div class="py-2 pl-3">
 									There are no upcoming gigs listed for this venue.
 								</div>{/if}
 
@@ -110,18 +108,18 @@
 									</Heading>
 									<div class="grid">
 										{#each month.items as { label, items }}
-											<div class="relative day flex items-start">
+											<div class="day relative flex items-start">
 												<div
-													class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+													class="sticky top-10 grid items-center justify-center pr-8 text-center font-bold sm:pr-10 sm:pl-3"
 												>
 													<p
-														class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase"
+														class="text-base leading-none font-semibold text-ruby uppercase sm:text-lg"
 													>
 														{label.split(':')[1].substr(0,3)}
 													</p>
-													<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+													<p class="text-3xl leading-none sm:text-4xl">{label.split(':')[0]}</p>
 												</div>
-												<div class="w-full mb-5">
+												<div class="mb-5 w-full">
 													{#each items as event}
 														<Event
 															name={event.promotedName}
@@ -149,12 +147,12 @@
 
 			<div>
 				<div class="transition">
-					<div class="accordion-header cursor-pointer transition flex items-center">
-						<h3 class="uppercase text-2xl italic font-bold">
+					<div class="accordion-header flex cursor-pointer items-center transition">
+						<h3 class="text-2xl font-bold uppercase italic">
 							Past Gigs <span class="font-normal text-gray-500">({eventsPast.childCount})</span>
 						</h3>
 					</div>
-					<div class="accordion-content overflow-hidden max-h-0">
+					<div class="accordion-content max-h-0 overflow-hidden">
 						{#each data.eventsPast as month}
 							<div class="guide-month">
 								<Heading level={3} variant="md" class="notch-left">
@@ -162,18 +160,18 @@
 								</Heading>
 								<div class="grid">
 									{#each month.items as { label, items }}
-										<div class="relative day flex items-start">
+										<div class="day relative flex items-start">
 											<div
-												class="sticky top-10 grid text-center items-center justify-center pr-8 sm:pl-3 sm:pr-10 font-bold"
+												class="sticky top-10 grid items-center justify-center pr-8 text-center font-bold sm:pr-10 sm:pl-3"
 											>
 												<p
-													class="text-ruby font-semibold text-base sm:text-lg leading-none uppercase"
+													class="text-base leading-none font-semibold text-ruby uppercase sm:text-lg"
 												>
 													{label.split(':')[1].substr(0,3)}
 												</p>
-												<p class="text-3xl sm:text-4xl leading-none">{label.split(':')[0]}</p>
+												<p class="text-3xl leading-none sm:text-4xl">{label.split(':')[0]}</p>
 											</div>
-											<div class="w-full mb-5">
+											<div class="mb-5 w-full">
 												{#each items as event, i}
 													<Event
 														name={event.promotedName}

@@ -1,68 +1,68 @@
 <script>
-	/**
-	 * @typedef {Object} Props
-	 * @property {string} [name]
-	 * @property {string} [gigId]
-	 * @property {any} [venue]
-	 * @property {any} [website]
-	 * @property {any} [calendarLink]
-	 * @property {any} [performers]
-	 * @property {any} [comment]
-	 * @property {any} [initials]
-	 * @property {any} [time]
-	 * @property {boolean} [isFree]
-	 * @property {boolean} [isPwyc]
-	 */
+/**
+ * @typedef {Object} Props
+ * @property {string} [name]
+ * @property {string} [gigId]
+ * @property {any} [venue]
+ * @property {any} [website]
+ * @property {any} [calendarLink]
+ * @property {any} [performers]
+ * @property {any} [comment]
+ * @property {any} [initials]
+ * @property {any} [time]
+ * @property {boolean} [isFree]
+ * @property {boolean} [isPwyc]
+ */
 
-	/** @type {Props} */
-	let {
-		name = 'Performer',
-		gigId = '',
-		venue = null,
-		website = null,
-		calendarLink = null,
-		performers = [],
-		comment = null,
-		initials = $bindable(null),
-		time = $bindable(null),
-		isFree = false,
-		isPwyc = false
-	} = $props();
+/** @type {Props} */
+let {
+	name = 'Performer',
+	gigId = '',
+	venue = null,
+	website = null,
+	calendarLink = null,
+	performers = [],
+	comment = null,
+	initials = $bindable(null),
+	time = $bindable(null),
+	isFree = false,
+	isPwyc = false
+} = $props();
 
-	// Can't set a default here cause null is explicitly provided
-	if (!initials) initials = 'NB:';
-	if (!time) time = '8pm';
+// Can't set a default here cause null is explicitly provided
+if (!initials) initials = 'NB:';
+if (!time) time = '8pm';
 
-	// Mapping of ticketing providers to their affiliate link templates
-	const ticketingProviderTemplates = {
-		'ticketmaster.com.au':
-			'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-		'moshtix.com.au':
-			'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-		'ticketek.com.au':
-			'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
-	};
+// Mapping of ticketing providers to their affiliate link templates
+const ticketingProviderTemplates = {
+	'ticketmaster.com.au':
+		'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+	'moshtix.com.au':
+		'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+	'ticketek.com.au':
+		'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
+};
 
-	// Function to wrap URL in the appropriate affiliate link
-	function getAffiliateLink(url) {
-		for (const [provider, template] of Object.entries(ticketingProviderTemplates)) {
-			if (url.includes(provider)) {
-				const encodedUrl = encodeURIComponent(url);
-				return template.replace('{url}', encodedUrl);
-			}
+// Function to wrap URL in the appropriate affiliate link
+function getAffiliateLink(url) {
+	for (const [provider, template] of Object.entries(ticketingProviderTemplates)) {
+		if (url.includes(provider)) {
+			const encodedUrl = encodeURIComponent(url);
+			return template.replace('{url}', encodedUrl);
 		}
-		return url; // Return the original URL if no provider matches
 	}
+	return url; // Return the original URL if no provider matches
+}
 
-	// Check if the website matches a ticketing provider and wrap it in an affiliate link
-	if (website) {
-		website = getAffiliateLink(website);
-	}
+// Check if the website matches a ticketing provider and wrap it in an affiliate link
+if (website) {
+	website = getAffiliateLink(website);
+}
 </script>
 
-<div class="space-y-2 eventcard {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''}">
+<div class="eventcard space-y-2 {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''}">
 	<div class="">
-		<h4 class="headliner text-lg font-medium leading-[1.5rem]">{name}</h4>
+		<h4 class="headliner text-lg leading-6 font-medium">{name}</h4>
 		{#if performers && performers.length}<p class="supports text-sm font-normal">
 				W/ {performers.join(', ')}
 			</p>{/if}
@@ -70,7 +70,7 @@
 			<span class="time">{time}</span>
 			{#if venue}<a
 					href="/gig-guide/venues/{venue.slug}"
-					class="venue hover:underline hover:text-black transition-colors duration-100 ease-in-out"
+					class="venue transition-colors duration-100 ease-in-out hover:text-black hover:underline"
 					>{venue.venueName}</a
 				>{/if}
 		</p>
@@ -81,9 +81,9 @@
 				<a
 					href={website}
 					target="_blank"
-					class="moreinfo flex items-center space-x-1 text-sm group"
+					class="moreinfo group flex items-center space-x-1 text-sm"
 				>
-					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
+					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path
 							class="group-hover:text-ruby"
 							fill="currentColor"
@@ -100,9 +100,9 @@
 			{#if calendarLink}
 				<a
 					href={calendarLink}
-					class="addtocalendar flex items-center space-x-1 text-sm group plausible-event-name=Add+To+Calendar plausible-event-gigid={gigId}"
+					class="addtocalendar group plausible-event-name=Add+To+Calendar flex items-center space-x-1 text-sm plausible-event-gigid={gigId}"
 				>
-					<svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
+					<svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 557 559">
 						<path
 							class="group-hover:text-ruby"
 							fill="currentColor"
@@ -118,10 +118,10 @@
 			{/if}
 
 			{#if isFree}
-				<div class="bg-pill text-[10px] font-semibold text-white px-3 py-px rounded-lg">FREE</div>
+				<div class="rounded-lg bg-pill px-3 py-px text-[10px] font-semibold text-white">FREE</div>
 			{/if}
 			{#if isPwyc}
-				<div class="bg-pjforest text-[10px] font-semibold text-white px-3 py-px rounded-lg">
+				<div class="rounded-lg bg-pjforest px-3 py-px text-[10px] font-semibold text-white">
 					PWYC
 				</div>
 			{/if}
@@ -129,10 +129,10 @@
 	{/if}
 	{#if comment}
 		<div
-			class="comment relative border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm min-h-[43px] italic mr-[-28px]"
+			class="comment relative mr-[-28px] min-h-[43px] border border-black bg-yellow-50 py-2 pr-4 pl-7 text-sm italic"
 		>
 			<svg
-				class="absolute left-0 top-0 w-10 h-10 transform -translate-x-1/2"
+				class="absolute top-0 left-0 h-10 w-10 -translate-x-1/2 transform"
 				viewBox="0 0 20 20"
 				xmlns="http://www.w3.org/2000/svg"
 			>

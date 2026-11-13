@@ -1,21 +1,11 @@
 <script>
-	let {
-		url,
-		datetime,
-		username,
-		name,
-		content,
-		replies,
-		likes,
-		retweets,
-		profileimg
-	} = $props();
+let { url, datetime, username, name, content, replies, likes, retweets, profileimg } = $props();
 </script>
 
-<div class="font-sans rounded border px-6 py-4 max-w-md">
+<div class="max-w-md rounded border px-6 py-4 font-sans">
 	<div class="flex items-center">
 		<img src={profileimg} class="h-12 w-12 rounded-full" alt="{name} Profile Image" />
-		<div class="flex flex-col ml-4">
+		<div class="ml-4 flex flex-col">
 			<a class="font-bold text-black" href="https://twitter.com/{username}">{name}</a>
 			<span class="text-grey">@{username}</span>
 		</div>
@@ -32,10 +22,10 @@
 			/>
 		</svg>
 	</div>
-	<div class=" mt-3 mb-1 leading-normal text-lg">{content}</div>
+	<div class=" mt-3 mb-1 text-lg leading-normal">{content}</div>
 	<div class="text-grey mb-3 text-sm"><a href={url}>11:56 AM - Aug 3, 2009</a></div>
-	<div class="flex text-grey">
-		<div class="flex items-center mr-4">
+	<div class="text-grey flex">
+		<div class="mr-4 flex items-center">
 			<svg class="mr-2" width="24" height="24" viewBox="0 0 24 24"
 				><path
 					class="fill-current"
@@ -44,7 +34,7 @@
 			>
 			<span>{replies}</span>
 		</div>
-		<div class="flex items-center mr-4">
+		<div class="mr-4 flex items-center">
 			<svg class="mr-2" width="24" height="24" viewBox="0 0 24 24"
 				><path
 					class="fill-current"

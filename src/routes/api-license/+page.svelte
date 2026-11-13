@@ -1,9 +1,9 @@
 <script>
-	import Button from '#lib/components/button.svelte';
-	import Heading from '#lib/components/heading.svelte';
-	import Paragraph from '#lib/components/paragraph.svelte';
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Container from '#lib/components/container.svelte';
+import Button from '#lib/components/button.svelte';
+import Heading from '#lib/components/heading.svelte';
+import Paragraph from '#lib/components/paragraph.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Container from '#lib/components/container.svelte';
 </script>
 
 <SeoSocial />
@@ -18,14 +18,14 @@
 		<img
 			src="/canman-gigs@1x.png"
 			alt="SydneyMusic.net mascot Can Man loves a read"
-			class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+			class="mx-auto aspect-3/1 w-full object-cover sm:aspect-banner lg:max-w-5xl"
 		/>
 	</picture>
 </Container>
 
 <Container class="mt-10">
-	<div class="flex flex-col md:flex-row gap-10 pb-10">
-		<div class="bg-yellow-100 p-5 md:p-10 max-w-3/4">
+	<div class="flex flex-col gap-10 pb-10 md:flex-row">
+		<div class="max-w-3/4 bg-yellow-100 p-5 md:p-10">
 			<Heading level={1} variant="xl" class="mb-5"><a name="api">License our API feed</a></Heading>
 
 			<Paragraph>Our entire gig guide is available as an API feed by license agreement.</Paragraph>

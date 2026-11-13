@@ -1,6 +1,6 @@
 <script module>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import PlaylistPromo from '#lib/components/playlist.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import PlaylistPromo from '#lib/components/playlist.svelte';
 </script>
 
 <SeoSocial
@@ -8,7 +8,7 @@
 	description="The SydneyMusic.net playlist is updated every Wednesday and is streaming on Apple Music, Spotify and Tidal."
 />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<div class="mx-auto max-w-5xl space-y-32 px-5 pb-24">
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<PlaylistPromo showtitle="true" />

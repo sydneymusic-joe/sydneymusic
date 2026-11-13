@@ -1,11 +1,11 @@
 <script>
-	import SeoSocial from '#lib/components/seo-social.svelte';
-	import Heading from '#lib/components/heading.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import Heading from '#lib/components/heading.svelte';
 </script>
 
 <SeoSocial title="Contact" />
 
-<div class="max-w-5xl px-5 mx-auto space-y-32 pb-24">
+<div class="mx-auto max-w-5xl space-y-32 px-5 pb-24">
 	<div class="space-y-10">
 		<div class="space-y-10 sm:pr-20 lg:pr-28">
 			<Heading level={2} variant="xl" class="notch-left">Contact Us</Heading>
