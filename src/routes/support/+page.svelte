@@ -1,23 +1,26 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import DonationForm from '$lib/components/donation-form.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Paragraph from '$lib/components/paragraph.svelte';
-	import Support from '$lib/components/support-page.svelte';
+import Button from '#lib/components/button.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import DonationForm from '#lib/components/donation-form.svelte';
+import Heading from '#lib/components/heading.svelte';
+import Paragraph from '#lib/components/paragraph.svelte';
+import Support from '#lib/components/support-page.svelte';
 </script>
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
-	<Support />
+<Support />
 
-<div class="max-w-5xl px-5 mx-auto mt-10 pb-24 space-y-8 md:space-y-10 lg:space-y-12">
-
-	<div class="text-center space-y-3">
-		<div class="italic text-4xl">84.3% of surveyed readers say they see more live music because of the SydneyMusic gig guide</div>
-		<div class="italic text-gray-600">from SydneyMusic’s annual survey (363 respondents, February 2026)</div>
+<div class="mx-auto mt-10 max-w-5xl space-y-8 px-5 pb-24 md:space-y-10 lg:space-y-12">
+	<div class="space-y-3 text-center">
+		<div class="text-4xl italic">
+			84.3% of surveyed readers say they see more live music because of the SydneyMusic gig guide
+		</div>
+		<div class="text-gray-600 italic">
+			from SydneyMusic’s annual survey (363 respondents, February 2026)
+		</div>
 	</div>
 
-	<div class="support grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-20 gap-y-20">
+	<div class="support grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 md:gap-x-20">
 		<div>
 			<Heading level={3} variant="lg">Wall of Legends</Heading>
 			<Paragraph>
@@ -45,9 +48,7 @@
 		</div>
 		<div>
 			<Heading level={3} variant="lg">Commercial Sponsorship</Heading>
-			<Paragraph>
-				Become a commercial sponsor and help us keep SydneyMusic running:
-			</Paragraph>
+			<Paragraph>Become a commercial sponsor and help us keep SydneyMusic running:</Paragraph>
 			<Button
 				variant="secondary"
 				label="Become a sponsor"
@@ -60,22 +61,17 @@
 			<Paragraph>
 				Get access to our high fidelity feed covering all of Sydney's live music.
 			</Paragraph>
-			<Button
-				variant="secondary"
-				label="License our API"
-				href="/api-license"
-				target="_blank"
-			/>
+			<Button variant="secondary" label="License our API" href="/api-license" target="_blank" />
 		</div>
 	</div>
 
-	<div class="border-t border-gray-400 pt-10 mt-10 flex flex-col gap-y-5">
+	<div class="mt-10 flex flex-col gap-y-5 border-t border-gray-400 pt-10">
 		<Heading level={3} variant="lg" class="mb-0">SydneyMusic.net will always remain free</Heading>
 
-		<div class="flex flex-col sm:flex-row gap-y-8">
+		<div class="flex flex-col gap-y-8 sm:flex-row">
 			<div class="basis-1/2">
 				<p>Your support helps with:</p>
-				<ul class="list-disc list-outside ml-4">
+				<ul class="ml-4 list-outside list-disc">
 					<li>Ongoing basic operational costs</li>
 					<li>Fairly paying researchers and writers</li>
 					<li>Improving our guide</li>

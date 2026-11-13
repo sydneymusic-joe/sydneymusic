@@ -1,5 +1,5 @@
-import APId from '$lib/datocms/';
-import { formatDate, groupBy, formatDay } from '$lib/globals.mjs';
+import APId from '#lib/datocms/index.js';
+import { formatDate, groupBy, formatDay } from '#lib/globals.mjs';
 
 const getGigs = async () => {
 	const d = new Date();

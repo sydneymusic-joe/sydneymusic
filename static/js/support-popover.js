@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const closePopover = (evt) => {
 			popoverTrigger.checked = false;
-			if (window && window.plausible) window.plausible('Close Support Popover', { interactive: true });
+			if (window && window.plausible)
+				window.plausible('Close Support Popover', { interactive: true });
 
 			if (!evt) return;
 

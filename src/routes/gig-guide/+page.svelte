@@ -1,34 +1,34 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import Event from '$lib/components/event.svelte';
-	import Feedprompt from '$lib/components/feedprompt.svelte';
-	import Heading from '$lib/components/heading.svelte';
-	import Playlist from '$lib/components/playlist.svelte';
-	import SeoSocial from '$lib/components/seo-social.svelte';
-	import { createCalendarLink } from '$lib/globals.mjs';
-	import DonationForm from '$lib/components/donation-form.svelte';
-	let { data } = $props();
+import Button from '#lib/components/button.svelte';
+import Event from '#lib/components/event.svelte';
+import Feedprompt from '#lib/components/feedprompt.svelte';
+import Heading from '#lib/components/heading.svelte';
+import Playlist from '#lib/components/playlist.svelte';
+import SeoSocial from '#lib/components/seo-social.svelte';
+import { createCalendarLink } from '#lib/globals.mjs';
+import DonationForm from '#lib/components/donation-form.svelte';
+let { data } = $props();
 
-	let gigCounter = $state(0);
-	let whichPrompt = $state(0);
-	const increment = () => {
-		gigCounter++;
-		return '';
-	};
-	const resetCounter = () => {
-		if (gigCounter > 9) gigCounter = 0;
-		return '';
-	};
-	const incrementDisplay = () => {
-		whichPrompt++;
-		return '';
-	};
-	let gigCount = $derived(
-		data.gigs.reduce(
-			(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
-			0
-		)
-	);
+let gigCounter = $state(0);
+let whichPrompt = $state(0);
+const increment = () => {
+	gigCounter++;
+	return '';
+};
+const resetCounter = () => {
+	if (gigCounter > 9) gigCounter = 0;
+	return '';
+};
+const incrementDisplay = () => {
+	whichPrompt++;
+	return '';
+};
+let gigCount = $derived(
+	data.gigs.reduce(
+		(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
+		0
+	)
+);
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -43,38 +43,50 @@
 			
 		</div>-->
 
-<div class="py-5 md:py-8 h-48 md:h-72 relative" style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%">
-		<div class="flex flex-col items-center justify-items-end h-full">
-			<Button href="https://store.sydneymusic.net" class="text-md bg-white" variant="outline" label="T-shirts shipping now!">
-				
-			</Button>
+<div
+	class="relative h-48 py-5 md:h-72 md:py-8"
+	style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%"
+>
+	<div class="flex h-full flex-col items-center justify-items-end">
+		<Button
+			href="https://store.sydneymusic.net"
+			class="text-md bg-white"
+			variant="outline"
+			label="T-shirts shipping now!"
+		></Button>
 	</div>
 </div>
-<div class="max-w-5xl flex flex-col md:flex-row px-5 mx-auto overflow-x-clip pt-5 md:pt-10">
-	<div class="contents md:flex md:flex-col space-y-5">
+<div class="mx-auto flex max-w-5xl flex-col overflow-x-clip px-5 pt-5 md:flex-row md:pt-10">
+	<div class="contents space-y-5 md:flex md:flex-col">
 		<!-- header -->
 		<div class="place-self-center md:place-self-auto">
 			<div class="flex justify-center md:mr-10">
-				<Heading level={1} variant="md" class="mt-5 md:mt-0 mb-10 stretch uppercase font-normal text-center sm:max-w-lg" style="line-height : 1;">
+				<Heading
+					level={1}
+					variant="md"
+					class="stretch mt-5 mb-10 text-center font-normal uppercase sm:max-w-lg md:mt-0"
+					style="line-height : 1;"
+				>
 					Welcome to Sydney’s most comprehensive gig guide
 				</Heading>
 			</div>
-			<div class="font-semibold text-center md:mr-10">There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.</div>
+			<div class="text-center font-semibold md:mr-10">
+				There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.
+			</div>
 
 			<div class="mt-5">
-			<DonationForm />
+				<DonationForm />
 			</div>
-			
 		</div>
 		<!-- gig guide -->
-		<div class="md:pr-10 gigcolumn">
-			<h4 class="mb-2 uppercase text-sm font-semibold text-ruby">Filter:</h4>
-			<div class="filterbox w-full mb-5">
-				<label for="toggle-freegigs" class="flex items-center cursor-pointer relative">
+		<div class="gigcolumn md:pr-10">
+			<h4 class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</h4>
+			<div class="filterbox mb-5 w-full">
+				<label for="toggle-freegigs" class="relative flex cursor-pointer items-center">
 					<input type="checkbox" id="toggle-freegigs" class="sr-only" />
 					Free / pay-what-you-can
 				</label>
-				<label for="toggle-selected" class="flex items-center cursor-pointer relative">
+				<label for="toggle-selected" class="relative flex cursor-pointer items-center">
 					<input type="checkbox" id="toggle-selected" class="sr-only" />
 					My favourites
 				</label>
@@ -83,7 +95,11 @@
 			{#each data.gigs as month}
 				<div class="guide-month mb-10">
 					{#each month.items as { label, items }}
-						<Heading level={3} variant="md" class="stretch font-normal mb-8 mt-8 uppercase border-b border-black">
+						<Heading
+							level={3}
+							variant="md"
+							class="stretch mt-8 mb-8 border-b border-black font-normal uppercase"
+						>
 							<span class="text-ruby">{label.split(':')[1]}</span>
 							{label.split(':')[0]}
 							{month.label}
@@ -136,10 +152,9 @@
 
 	<!-- First section -->
 	<div class="contents md:flex md:flex-col">
-		<div class="mb-5 md:mb-0 w-[350px] place-self-center">
-		</div>
+		<div class="mb-5 w-[350px] place-self-center md:mb-0"></div>
 		<!-- right col -->
-		<div class="space-y-5 mt-20">
+		<div class="mt-20 space-y-5">
 			<Playlist showtitle="true" />
 			<Heading level={3} variant="md" class="notch-left">About this guide</Heading>
 			<div class="prose prose-sm">
@@ -161,7 +176,7 @@
 
 			<div class="prose prose-sm">
 				<p>
-					<span class="font-bold text-sm">Artists, managers, promoters, and venues:</span><br />
+					<span class="text-sm font-bold">Artists, managers, promoters, and venues:</span><br />
 					Self-promo is fine — we love it when you let us know what you’ve got going on! But we won’t
 					publish your marketing/social copy verbatim or give you special consideration in the guide.
 					We generally don’t list cover/tribute bands or background-music sets at hospitality venues.
@@ -210,20 +225,20 @@
 
 	<div
 		id="share-preview"
-		class="bg-white text-xs max-h-[200px] max-w-[360px] m-y-5 text-black p-2 break-all"
+		class="m-y-5 max-h-[200px] max-w-[360px] bg-white p-2 text-xs break-all text-black"
 		style="border : 1px dashed"
 	>
 		Preview text here
 	</div>
 
 	<div class="text-xs">
-		<div class="flex gap-x-1 items-center">
+		<div class="flex items-center gap-x-1">
 			<input type="checkbox" id="share-links" checked />
 			<label for="share-links">Include links</label>
 		</div>
 	</div>
 
-	<div class="flex buttonpanel">
+	<div class="buttonpanel flex">
 		<button id="shareability-copy" class="plausible-event-name=Share+Sheet+Copy">Copy</button>
 		<button id="shareability-share" class="plausible-event-name=Share+Sheet+Share">Share</button>
 		<button id="shareability-close" class="plausible-event-name=Share+Sheet+Close">Close</button>
