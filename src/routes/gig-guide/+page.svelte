@@ -1,6 +1,6 @@
 <script>
 	import Button from '#lib/components/button.svelte';
-	import Event from '#lib/components/gig-guide/event.svelte';
+	import Event from '#lib/components/event.svelte';
 	import Feedprompt from '#lib/components/feedprompt.svelte';
 	import Heading from '#lib/components/heading.svelte';
 	import Playlist from '#lib/components/playlist.svelte';
