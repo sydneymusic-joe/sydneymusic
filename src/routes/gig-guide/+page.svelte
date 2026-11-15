@@ -1,34 +1,34 @@
 <script>
-import Button from '#lib/components/button.svelte';
-import Event from '#lib/components/event.svelte';
-import Feedprompt from '#lib/components/feedprompt.svelte';
-import Heading from '#lib/components/heading.svelte';
-import Playlist from '#lib/components/playlist.svelte';
-import SeoSocial from '#lib/components/seo-social.svelte';
-import { createCalendarLink } from '#lib/globals.mjs';
-import DonationForm from '#lib/components/donation-form.svelte';
-let { data } = $props();
+	import Button from '#lib/components/button.svelte';
+	import Event from '#lib/components/gig-guide/event.svelte';
+	import Feedprompt from '#lib/components/feedprompt.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Playlist from '#lib/components/playlist.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import { createCalendarLink } from '#lib/globals.mjs';
+	import DonationForm from '#lib/components/donation-form.svelte';
+	let { data } = $props();
 
-let gigCounter = $state(0);
-let whichPrompt = $state(0);
-const increment = () => {
-	gigCounter++;
-	return '';
-};
-const resetCounter = () => {
-	if (gigCounter > 9) gigCounter = 0;
-	return '';
-};
-const incrementDisplay = () => {
-	whichPrompt++;
-	return '';
-};
-let gigCount = $derived(
-	data.gigs.reduce(
-		(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
-		0
-	)
-);
+	let gigCounter = $state(0);
+	let whichPrompt = $state(0);
+	const increment = () => {
+		gigCounter++;
+		return '';
+	};
+	const resetCounter = () => {
+		if (gigCounter > 9) gigCounter = 0;
+		return '';
+	};
+	const incrementDisplay = () => {
+		whichPrompt++;
+		return '';
+	};
+	let gigCount = $derived(
+		data.gigs.reduce(
+			(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
+			0
+		)
+	);
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -71,7 +71,7 @@ let gigCount = $derived(
 				</Heading>
 			</div>
 			<div class="text-center font-semibold md:mr-10">
-				There are {new Intl.NumberFormat("en-AU").format(data.gigs.totalCount)} gigs to be explored below.
+				There are {new Intl.NumberFormat('en-AU').format(data.gigs.totalCount)} gigs to be explored below.
 			</div>
 
 			<div class="mt-5">
