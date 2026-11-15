@@ -1,5 +1,5 @@
 <script>
-let { url, datetime, username, name, content, replies, likes, retweets, profileimg } = $props();
+	let { url, datetime, username, name, content, replies, likes, retweets, profileimg } = $props();
 </script>
 
 <div class="max-w-md rounded border px-6 py-4 font-sans">

@@ -1,23 +1,23 @@
 <script>
-import { twMerge } from 'tailwind-merge';
+	import { twMerge } from 'tailwind-merge';
 
-/**
- * @typedef {Object} Props
- * @property {number} percentage - The percentage value for the progress bar (0-100)
- * @property {string} [suffix] - The suffix text to display after the percentage
- * @property {string} [text] - The text to display after the percentage and suffix
- * @property {'dark' | 'ruby' | 'yellow' | 'light'} [theme] - Color theme for the progress bar
- * @property {boolean} [showPercentage] - Whether to show the percentage text on the progress bar
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {number} percentage - The percentage value for the progress bar (0-100)
+	 * @property {string} [suffix] - The suffix text to display after the percentage
+	 * @property {string} [text] - The text to display after the percentage and suffix
+	 * @property {'dark' | 'ruby' | 'yellow' | 'light'} [theme] - Color theme for the progress bar
+	 * @property {boolean} [showPercentage] - Whether to show the percentage text on the progress bar
+	 */
 
-/** @type {Props} */
-let {
-	percentage,
-	suffix = '%',
-	text = 'funded for FY27',
-	theme = 'dark',
-	showPercentage = true
-} = $props();
+	/** @type {Props} */
+	let {
+		percentage,
+		suffix = '%',
+		text = 'funded for FY27',
+		theme = 'dark',
+		showPercentage = true
+	} = $props();
 </script>
 
 <div class="-mt-2 w-full">

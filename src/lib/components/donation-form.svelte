@@ -1,25 +1,25 @@
 <script>
-import { mds } from '../donorstats.js';
-import Button from './button.svelte';
-import Heading from './heading.svelte';
+	import { mds } from '../donorstats.js';
+	import Button from './button.svelte';
+	import Heading from './heading.svelte';
 
-/**
- * @typedef {Object} Props
- * @property {string} [headline] - The main headline text for the donation form
- * @property {string} [appealContent] - The appeal content text explaining SydneyMusic's mission
- * @property {string} [callToAction] - The call to action text encouraging support
- * @property {boolean} [showSponsors] - Whether to show sponsor information
- * @property {'dark' | 'ruby' | 'yellow' | 'white' | 'light'} [theme] - Color theme for the donation form
- * @property {'md' | 'lg'} [size] - Size variant for the donation form
- * @property {boolean} [showPercentage] - Whether to show the percentage text on the progress bar
- * @property {boolean} [shadow] - Whether to apply shadow styling
- * @property {Object} [donorStats] - Donor stats object from layout.js
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [headline] - The main headline text for the donation form
+	 * @property {string} [appealContent] - The appeal content text explaining SydneyMusic's mission
+	 * @property {string} [callToAction] - The call to action text encouraging support
+	 * @property {boolean} [showSponsors] - Whether to show sponsor information
+	 * @property {'dark' | 'ruby' | 'yellow' | 'white' | 'light'} [theme] - Color theme for the donation form
+	 * @property {'md' | 'lg'} [size] - Size variant for the donation form
+	 * @property {boolean} [showPercentage] - Whether to show the percentage text on the progress bar
+	 * @property {boolean} [shadow] - Whether to apply shadow styling
+	 * @property {Object} [donorStats] - Donor stats object from layout.js
+	 */
 
-/** @type {Props} */
-let { donorStats, class: className } = $props();
+	/** @type {Props} */
+	let { donorStats, class: className } = $props();
 
-donorStats = mds;
+	donorStats = mds;
 </script>
 
 <div class="mx-[-20px] bg-merchbrown p-5 text-center text-white md:mr-10 md:ml-0 md:p-10">
@@ -42,8 +42,8 @@ donorStats = mds;
 			sorted already).
 		</div>
 		<div class="font-semibold">
-			We are seeking <span class="text-ruby">{450-donorStats.recurringDonorCount}</span> new monthly supporters
-			to help us cover costs.
+			We are seeking <span class="text-ruby">{450 - donorStats.recurringDonorCount}</span> new monthly
+			supporters to help us cover costs.
 		</div>
 		<div>Your support is hugely appreciated. Thank you!</div>
 	</div>
@@ -166,17 +166,17 @@ donorStats = mds;
 	</div>
 
 	<script>
-	var donorItems = document.querySelectorAll('input[name=donoramount]');
-	donorItems.forEach((el) => {
-		el.addEventListener('click', function (evt) {
-			document.getElementById('support-button').href =
-				evt.srcElement.attributes['data-buttonhref'].value;
-			document.getElementById('support-button').innerHTML =
-				(evt.srcElement.attributes['data-buttonlabel']
-					? evt.srcElement.attributes['data-buttonlabel'].value
-					: 'Become a monthly supporter') + ' &raquo;';
+		var donorItems = document.querySelectorAll('input[name=donoramount]');
+		donorItems.forEach((el) => {
+			el.addEventListener('click', function (evt) {
+				document.getElementById('support-button').href =
+					evt.srcElement.attributes['data-buttonhref'].value;
+				document.getElementById('support-button').innerHTML =
+					(evt.srcElement.attributes['data-buttonlabel']
+						? evt.srcElement.attributes['data-buttonlabel'].value
+						: 'Become a monthly supporter') + ' &raquo;';
+			});
 		});
-	});
 	</script>
 
 	<div class="mt-2 text-xs">

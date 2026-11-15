@@ -1,12 +1,12 @@
 <script>
-import { StructuredText } from '@datocms/svelte';
-import Read from '#lib/components/read.svelte';
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Embed from '#lib/components/article/embed.svelte';
-import Figure from '#lib/components/article/figure.svelte';
-import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
-import Heading from '#lib/components/heading.svelte';
-let { data } = $props();
+	import { StructuredText } from '@datocms/svelte';
+	import Read from '#lib/components/read.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Embed from '#lib/components/article/embed.svelte';
+	import Figure from '#lib/components/article/figure.svelte';
+	import { isBlock, isInlineItem } from 'datocms-structured-text-utils';
+	import Heading from '#lib/components/heading.svelte';
+	let { data } = $props();
 </script>
 
 <SeoSocial
@@ -35,7 +35,13 @@ let { data } = $props();
 						</figcaption>
 					</figure>
 				{/if}
-				<StructuredText data={data.body} components={[[isInlineItem, Embed], [isBlock, Figure]]} />
+				<StructuredText
+					data={data.body}
+					components={[
+						[isInlineItem, Embed],
+						[isBlock, Figure]
+					]}
+				/>
 			</div>
 			<div>
 				<dl class="mt-20 lg:mt-0">
@@ -61,7 +67,7 @@ let { data } = $props();
 				{#each data.otherReads as { headline, excerpt, slug }, i}
 					{#if i < 2}
 						<a href="/reads/{slug}" class="block">
-							<Read headline={headline} body={excerpt} />
+							<Read {headline} body={excerpt} />
 						</a>
 					{/if}
 				{/each}
@@ -70,7 +76,7 @@ let { data } = $props();
 				{#each data.otherReads as { headline, excerpt, slug }, i}
 					{#if i > 1}
 						<a href="/reads/{slug}" class="block">
-							<Read headline={headline} body={excerpt} />
+							<Read {headline} body={excerpt} />
 						</a>
 					{/if}
 				{/each}

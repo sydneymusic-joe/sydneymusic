@@ -1,13 +1,13 @@
 <script>
-import Heading from './heading.svelte';
+	import Heading from './heading.svelte';
 
-/**
- * @typedef {Object} Props
- * @property {boolean} [showtitle]
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [showtitle]
+	 */
 
-/** @type {Props} */
-let { showtitle = false } = $props();
+	/** @type {Props} */
+	let { showtitle = false } = $props();
 </script>
 
 {#if showtitle}

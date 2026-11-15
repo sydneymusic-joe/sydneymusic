@@ -1,25 +1,25 @@
 <script>
-import { createCalendarLink } from '#lib/globals.mjs';
-import { render } from 'datocms-structured-text-to-html-string';
+	import { createCalendarLink } from '#lib/globals.mjs';
+	import { render } from 'datocms-structured-text-to-html-string';
 
-import Event from '#lib/components/event.svelte';
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Heading from '#lib/components/heading.svelte';
-/**
- * @typedef {Object} Props
- * @property {any} data - export let venueData;
- * @property {any} [venueData]
- * @property {any} [eventsFuture]
- * @property {any} [eventsPast]
- */
+	import Event from '#lib/components/event.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {any} data - export let venueData;
+	 * @property {any} [venueData]
+	 * @property {any} [eventsFuture]
+	 * @property {any} [eventsPast]
+	 */
 
-/** @type {Props} */
-let {
-	data,
-	venueData = data.venueData,
-	eventsFuture = data.eventsFuture,
-	eventsPast = data.eventsPast
-} = $props();
+	/** @type {Props} */
+	let {
+		data,
+		venueData = data.venueData,
+		eventsFuture = data.eventsFuture,
+		eventsPast = data.eventsPast
+	} = $props();
 </script>
 
 <SeoSocial title="{venueData.venueName} venue information" />
@@ -55,8 +55,7 @@ let {
 					><br />{venueData.suburb ?? ''} NSW {venueData.postcode ?? ''} [<a
 						target="_blank"
 						href="https://duckduckgo.com/?va=a&t=hp&q={venueData.address ??
-							''},%20{venueData.suburb}&ia=maps&iaxm=maps"
-						>see map</a
+							''},%20{venueData.suburb}&ia=maps&iaxm=maps">see map</a
 					>]
 				</p>
 
@@ -115,7 +114,7 @@ let {
 													<p
 														class="text-base leading-none font-semibold text-ruby uppercase sm:text-lg"
 													>
-														{label.split(':')[1].substr(0,3)}
+														{label.split(':')[1].substr(0, 3)}
 													</p>
 													<p class="text-3xl leading-none sm:text-4xl">{label.split(':')[0]}</p>
 												</div>
@@ -167,7 +166,7 @@ let {
 												<p
 													class="text-base leading-none font-semibold text-ruby uppercase sm:text-lg"
 												>
-													{label.split(':')[1].substr(0,3)}
+													{label.split(':')[1].substr(0, 3)}
 												</p>
 												<p class="text-3xl leading-none sm:text-4xl">{label.split(':')[0]}</p>
 											</div>

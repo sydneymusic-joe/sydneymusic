@@ -1,6 +1,6 @@
 <script>
-import Heading from '#lib/components/heading.svelte';
-import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Button from '#lib/components/button.svelte';
 </script>
 
 <div class="space-y-0 rounded-lg border border-dashed border-gray-400 bg-gray-100 p-8 text-center">

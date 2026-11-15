@@ -1,14 +1,14 @@
 <script>
-import {
-	navigationFooterMusic,
-	navigationFooterSupport,
-	navigationFooterAbout
-} from '../globals.mjs';
-import Logo from './logo.svelte';
-import EmailSignup from './email-signup.svelte';
-import Container from './container.svelte';
-import Heading from './heading.svelte';
-import Paragraph from './paragraph.svelte';
+	import {
+		navigationFooterMusic,
+		navigationFooterSupport,
+		navigationFooterAbout
+	} from '../globals.mjs';
+	import Logo from './logo.svelte';
+	import EmailSignup from './email-signup.svelte';
+	import Container from './container.svelte';
+	import Heading from './heading.svelte';
+	import Paragraph from './paragraph.svelte';
 </script>
 
 <footer class="mt-5 w-full lg:mt-20">

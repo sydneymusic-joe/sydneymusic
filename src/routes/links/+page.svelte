@@ -1,7 +1,7 @@
 <script>
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Heading from '#lib/components/heading.svelte';
-let { data } = $props();
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	let { data } = $props();
 </script>
 
 <SeoSocial title="Links" />

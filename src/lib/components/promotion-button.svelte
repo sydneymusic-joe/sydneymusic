@@ -1,17 +1,17 @@
 <script>
-/**
- * @typedef {Object} Props
- * @property {string} [label]
- * @property {string} [href]
- * @property {string} [variant]
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [label]
+	 * @property {string} [href]
+	 * @property {string} [variant]
+	 */
 
-/** @type {Props} */
-let { label = 'Button', href = '#', variant = 'primary' } = $props();
+	/** @type {Props} */
+	let { label = 'Button', href = '#', variant = 'primary' } = $props();
 </script>
 
 <a
-	href={href}
+	{href}
 	target="_blank"
 	class="border border-black p-2 uppercase {variant === 'primary'
 		? 'plausible-event-name=Become+A+Supporter bg-[#EBB436]'

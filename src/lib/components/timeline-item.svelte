@@ -1,9 +1,9 @@
 <script>
-import { twMerge } from 'tailwind-merge';
-import Heading from './heading.svelte';
-let { title = '', color = 'bg-gray-400', class: className, children, ...restProps } = $props();
-const baseClass = 'relative space-y-4';
-const mergedClass = $derived(twMerge(baseClass, className));
+	import { twMerge } from 'tailwind-merge';
+	import Heading from './heading.svelte';
+	let { title = '', color = 'bg-gray-400', class: className, children, ...restProps } = $props();
+	const baseClass = 'relative space-y-4';
+	const mergedClass = $derived(twMerge(baseClass, className));
 </script>
 
 <div {...restProps} class={mergedClass}>

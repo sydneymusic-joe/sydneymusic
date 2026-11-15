@@ -1,14 +1,14 @@
 <script>
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Button from '#lib/components/button.svelte';
-import Heading from '#lib/components/heading.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
 
-let { data } = $props();
-let job = data.allJobs[0];
+	let { data } = $props();
+	let job = data.allJobs[0];
 </script>
 
 <SeoSocial
-	title={"JOIN OUR TEAM: " + job.roleTitle}
+	title={'JOIN OUR TEAM: ' + job.roleTitle}
 	description={job.shortDescription}
 	image="https://sydneymusic.net/merch-tees.jpg"
 />
@@ -32,7 +32,7 @@ let job = data.allJobs[0];
 		<Heading level={1} variant="lg" class="stretch font-medium text-ruby uppercase">
 			{job.roleTitle}
 		</Heading>
-		<p>{job.subheadSpecs.join(" • ")}</p>
+		<p>{job.subheadSpecs.join(' • ')}</p>
 		<p>
 			<strong>{job.shortDescription}</strong>
 		</p>
@@ -50,13 +50,13 @@ let job = data.allJobs[0];
 		<ul>
 			<li>
 				<strong>Job applications close:</strong>
-				{Intl.DateTimeFormat("en-AU", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "Australia/Sydney",
-  }).format(Date.parse(job.applicationsClose))}
+				{Intl.DateTimeFormat('en-AU', {
+					dateStyle: 'medium',
+					timeStyle: 'short',
+					timeZone: 'Australia/Sydney'
+				}).format(Date.parse(job.applicationsClose))}
 			</li>
-			<li>{@html job.atAGlance.join("</li><li>")}</li>
+			<li>{@html job.atAGlance.join('</li><li>')}</li>
 		</ul>
 
 		<Heading level={2} variant="sm" class="stretch font-medium uppercase">About the gig</Heading>

@@ -1,8 +1,8 @@
 <script>
-import Read from '#lib/components/read.svelte';
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Heading from '#lib/components/heading.svelte';
-let { data } = $props();
+	import Read from '#lib/components/read.svelte';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	let { data } = $props();
 </script>
 
 <SeoSocial title="Reads" />
@@ -28,7 +28,7 @@ let { data } = $props();
 
 			{#each data.reads.latest as { headline, excerpt, slug }}
 				<a href="/reads/{slug}" class="block">
-					<Read headline={headline} body={excerpt} />
+					<Read {headline} body={excerpt} />
 				</a>
 			{/each}
 		</div>
@@ -40,7 +40,7 @@ let { data } = $props();
 			<div class="grid gap-10 lg:grid-cols-2">
 				{#each month.items as { headline, excerpt, slug }}
 					<a href="/reads/{slug}" class="block">
-						<Read headline={headline} body={excerpt} />
+						<Read {headline} body={excerpt} />
 					</a>
 				{/each}
 			</div>

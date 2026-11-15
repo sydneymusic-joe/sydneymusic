@@ -1,19 +1,19 @@
 <script>
-import { page } from '$app/state';
-import { navigation } from '../globals.mjs';
-import Logo from './logo.svelte';
-import IconInstagram from './icon-instagram.svelte';
-import Button from './button.svelte';
-import { mds } from '../donorstats.js';
+	import { page } from '$app/state';
+	import { navigation } from '../globals.mjs';
+	import Logo from './logo.svelte';
+	import IconInstagram from './icon-instagram.svelte';
+	import Button from './button.svelte';
+	import { mds } from '../donorstats.js';
 
-/**
- * @typedef {Object} Props
- * @property {boolean} [showNotice]
- * @property {Object} [donorStats] - Donor stats object from layout.js
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {boolean} [showNotice]
+	 * @property {Object} [donorStats] - Donor stats object from layout.js
+	 */
 
-/** @type {Props} */
-let { showNotice = false, donorStats } = $props();
+	/** @type {Props} */
+	let { showNotice = false, donorStats } = $props();
 </script>
 
 <header>

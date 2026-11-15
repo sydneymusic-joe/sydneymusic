@@ -1,10 +1,10 @@
 <script>
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Button from '#lib/components/button.svelte';
-import Heading from '#lib/components/heading.svelte';
-import { formatDate, formatDateLong, groupBy, formatDay } from '#lib/globals.mjs';
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Button from '#lib/components/button.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import { formatDate, formatDateLong, groupBy, formatDay } from '#lib/globals.mjs';
 
-let { data } = $props();
+	let { data } = $props();
 </script>
 
 <SeoSocial

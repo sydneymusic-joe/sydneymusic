@@ -1,63 +1,63 @@
 <script>
-/**
- * @typedef {Object} Props
- * @property {string} [name]
- * @property {string} [gigId]
- * @property {any} [venue]
- * @property {any} [website]
- * @property {any} [calendarLink]
- * @property {any} [performers]
- * @property {any} [comment]
- * @property {any} [initials]
- * @property {any} [time]
- * @property {boolean} [isFree]
- * @property {boolean} [isPwyc]
- */
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [name]
+	 * @property {string} [gigId]
+	 * @property {any} [venue]
+	 * @property {any} [website]
+	 * @property {any} [calendarLink]
+	 * @property {any} [performers]
+	 * @property {any} [comment]
+	 * @property {any} [initials]
+	 * @property {any} [time]
+	 * @property {boolean} [isFree]
+	 * @property {boolean} [isPwyc]
+	 */
 
-/** @type {Props} */
-let {
-	name = 'Performer',
-	gigId = '',
-	venue = null,
-	website = null,
-	calendarLink = null,
-	performers = [],
-	comment = null,
-	initials = $bindable(null),
-	time = $bindable(null),
-	isFree = false,
-	isPwyc = false
-} = $props();
+	/** @type {Props} */
+	let {
+		name = 'Performer',
+		gigId = '',
+		venue = null,
+		website = null,
+		calendarLink = null,
+		performers = [],
+		comment = null,
+		initials = $bindable(null),
+		time = $bindable(null),
+		isFree = false,
+		isPwyc = false
+	} = $props();
 
-// Can't set a default here cause null is explicitly provided
-if (!initials) initials = 'NB:';
-if (!time) time = '8pm';
+	// Can't set a default here cause null is explicitly provided
+	if (!initials) initials = 'NB:';
+	if (!time) time = '8pm';
 
-// Mapping of ticketing providers to their affiliate link templates
-const ticketingProviderTemplates = {
-	'ticketmaster.com.au':
-		'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-	'moshtix.com.au':
-		'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
-	'ticketek.com.au':
-		'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
-};
+	// Mapping of ticketing providers to their affiliate link templates
+	const ticketingProviderTemplates = {
+		'ticketmaster.com.au':
+			'https://ticketmaster.evyy.net/c/6123356/1965672/24024?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+		'moshtix.com.au':
+			'https://ticketmaster.evyy.net/c/6123356/1958987/23905?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038',
+		'ticketek.com.au':
+			'https://ticketekau.pxf.io/c/6123356/1070554/13713?u={url}&partnerpropertyid=6900038&MediaPartnerPropertyId=6900038'
+	};
 
-// Function to wrap URL in the appropriate affiliate link
-function getAffiliateLink(url) {
-	for (const [provider, template] of Object.entries(ticketingProviderTemplates)) {
-		if (url.includes(provider)) {
-			const encodedUrl = encodeURIComponent(url);
-			return template.replace('{url}', encodedUrl);
+	// Function to wrap URL in the appropriate affiliate link
+	function getAffiliateLink(url) {
+		for (const [provider, template] of Object.entries(ticketingProviderTemplates)) {
+			if (url.includes(provider)) {
+				const encodedUrl = encodeURIComponent(url);
+				return template.replace('{url}', encodedUrl);
+			}
 		}
+		return url; // Return the original URL if no provider matches
 	}
-	return url; // Return the original URL if no provider matches
-}
 
-// Check if the website matches a ticketing provider and wrap it in an affiliate link
-if (website) {
-	website = getAffiliateLink(website);
-}
+	// Check if the website matches a ticketing provider and wrap it in an affiliate link
+	if (website) {
+		website = getAffiliateLink(website);
+	}
 </script>
 
 <div class="eventcard space-y-2 {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''}">

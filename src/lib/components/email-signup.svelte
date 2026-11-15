@@ -1,11 +1,11 @@
 <script>
-import Button from './button.svelte';
-import Heading from './heading.svelte';
-import Paragraph from './paragraph.svelte';
-/**
- * @type {boolean}
- */
-let { shadow = true } = $props();
+	import Button from './button.svelte';
+	import Heading from './heading.svelte';
+	import Paragraph from './paragraph.svelte';
+	/**
+	 * @type {boolean}
+	 */
+	let { shadow = true } = $props();
 </script>
 
 <div

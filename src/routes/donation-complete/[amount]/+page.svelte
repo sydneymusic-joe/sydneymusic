@@ -1,10 +1,10 @@
 <script>
-import SeoSocial from '#lib/components/seo-social.svelte';
-import Heading from '#lib/components/heading.svelte';
-import Paragraph from '#lib/components/paragraph.svelte';
-import Read from '#lib/components/read.svelte';
-import Button from '#lib/components/button.svelte';
-let { data } = $props();
+	import SeoSocial from '#lib/components/seo-social.svelte';
+	import Heading from '#lib/components/heading.svelte';
+	import Paragraph from '#lib/components/paragraph.svelte';
+	import Read from '#lib/components/read.svelte';
+	import Button from '#lib/components/button.svelte';
+	let { data } = $props();
 </script>
 
 <SeoSocial
@@ -43,7 +43,7 @@ let { data } = $props();
 			<div class="space-y-5 sm:pr-20 lg:pr-20">
 				{#each data.reads as { headline, excerpt, slug }}
 					<a href="/reads/{slug}" class="block">
-						<Read headline={headline} body={excerpt} />
+						<Read {headline} body={excerpt} />
 					</a>
 				{/each}
 				<Button label="More Reads" href="/reads" variant="outline" />
