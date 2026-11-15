@@ -1,6 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@source inline('bg-ruby');
+
+@theme {
+	--breakpoint-xs: 30rem;
+
+	--font-sans:
+		'GeneralSans-Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+	--font-serif: 'GeneralSans-Variable', Helvetica, sans-serif;
+
+	--text-xl: 1.375rem;
+
+	--color-ruby: #f04e98;
+	--color-rubydarker: #78274c;
+	--color-merchbrown: #231104;
+	--color-graphite: #6d7278;
+	--color-acknowledgement: #bebebe;
+	--color-pill: #666666;
+	--color-pjforest: #344a2f;
+	--color-backgroundDark: #221f20;
+
+	--color-red-50: #fef2f2;
+	--color-red-100: #ffe1e1;
+	--color-red-200: #ffc9c9;
+	--color-red-300: #fea3a3;
+	--color-red-400: #fb6e6e;
+	--color-red-500: #f34040;
+	--color-red-600: #e02020;
+	--color-red-700: #bd1818;
+	--color-red-800: #9c1818;
+	--color-red-900: #811b1b;
+	--color-red-950: #460909;
+
+	--color-gray-50: #fafafa;
+	--color-gray-100: #f5f5f5;
+	--color-gray-200: #eeeeee;
+	--color-gray-300: #e0e0e0;
+	--color-gray-400: #bdbdbd;
+	--color-gray-500: #9e9e9e;
+	--color-gray-600: #757575;
+	--color-gray-700: #616161;
+	--color-gray-800: #424242;
+	--color-gray-900: #212121;
+
+	--aspect-banner: 7 / 1;
+	--aspect-banner-small: 4 / 1;
+}
+
+@utility grid-cols-sidebar-right {
+	grid-template-columns: 1fr 220px;
+}
+
+@utility grid-cols-sidebar-right-wide {
+	grid-template-columns: 1fr 320px;
+}
+
+@utility grid-cols-sidebar-left-wide {
+	grid-template-columns: 320px 1fr;
+}
+
+@utility prose {
+	--tw-prose-links: #000;
+
+	& :where(a):hover {
+		color: #e02020;
+	}
+}
 
 /**
 * This is a variable font
@@ -11,12 +80,13 @@
 'wght' (range from 200.0 to 700.0
 */
 @font-face {
-  font-family: 'GeneralSans-Variable';
-  src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: normal;
+	font-family: 'GeneralSans-Variable';
+	src: url('/fonts/GeneralSans-Variable.woff2') format('woff2');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
 }
+
 /**
 * This is a variable font
 * You can control variable axes as shown below:
@@ -26,23 +96,22 @@
 'wght' (range from 200.0 to 700.0
 */
 @font-face {
-  font-family: 'GeneralSans-Variable';
-  src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
-  font-weight: 200 700;
-  font-display: swap;
-  font-style: italic;
+	font-family: 'GeneralSans-Variable';
+	src: url('/fonts/GeneralSans-VariableItalic.woff2') format('woff2');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: italic;
 }
 
 @layer base {
 	.notch-thic,
 	.notch-right,
 	.notch-left {
-		@apply font-semibold leading-tight block border-b border-black w-full;
-		position: relative;
+		@apply relative block w-full border-b border-black leading-tight font-semibold;
 	}
 
 	.notch-left * {
-		@apply font-semibold uppercase leading-tight;
+		@apply leading-tight font-semibold uppercase;
 	}
 
 	.notch-thic.notch-right::after {
@@ -54,33 +123,31 @@
 	}
 
 	.about-copy > div {
-		@apply px-3 prose;
+		@apply prose px-3;
 	}
 
 	.about-copy dt {
 		@apply font-bold uppercase;
 	}
+
 	.about-copy dd {
 		@apply mb-2;
 	}
 
 	.time {
-		@apply border-r mr-3 pr-3;
-		border-color: #7f7f7f;
+		@apply mr-3 border-r border-r-[#7f7f7f] pr-3;
 	}
 
 	.filterbox {
-		@apply flex flex-wrap gap-x-2;
-		margin-bottom: -15px;
+		@apply mb-[-15px] flex flex-wrap gap-x-2;
 	}
 
 	.filterbox label {
-		border: solid 1px black;
-		padding: 5px 10px;
+		@apply border border-black px-[10px] py-[5px];
 	}
 
 	.filterbox > *:hover {
-		transition: ease-in-out 0.2s;
+		@apply duration-200 ease-in-out;
 	}
 
 	.filterbox label,
@@ -89,22 +156,19 @@
 	}
 
 	.filterbox label:has(input:checked) {
-		background: black;
-		color: white;
+		@apply bg-black text-white;
 	}
 
 	input:checked + .toggle-bg:after {
-		transform: translateX(80%);
+		@apply translate-x-4/5;
 	}
 
-	figcaption {
-		@apply text-sm !important;
+	figcaption span {
+		@apply text-sm;
 	}
 
 	figcaption .description:not(:empty) {
-		border-left: solid 1px #aaa;
-		padding-left: 10px;
-		margin-left: 8px;
+		@apply ml-2 border-l border-l-[#aaa] pl-2.5;
 	}
 
 	.accordion-header h3::before {
@@ -116,7 +180,7 @@
 	}
 
 	.accordion-content > div {
-		@apply px-3 py-5 space-y-3;
+		@apply space-y-3 px-3 py-5;
 	}
 }
 
@@ -125,21 +189,24 @@
 }
 
 .stretch {
-	transform : scaleY(1.9);
+	transform: scaleY(1.9);
 }
 
 body.freegigs .guide-month:not(:has(.freegig)),
 body.selectedonly .guide-month:not(:has(.selected)) {
 	@apply hidden;
 }
+
 body.freegigs .day:not(:has(.freegig)),
 body.selectedonly .day:not(:has(.selected)) {
 	@apply hidden;
 }
+
 body.freegigs .guide-month > h3:not(:has(+ .day .freegig)),
 body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)) {
 	@apply hidden;
 }
+
 body.freegigs .eventcardhost:not(:is(.freegig)),
 body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
@@ -156,7 +223,7 @@ body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 .eventcardhost .headliner:hover {
 }
 
-.smn .bg-yellow-50:before {
+.smn .comment:before {
 	position: absolute;
 	content: '';
 	height: 51px;
@@ -185,9 +252,10 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .guide-divider > div:first-child {
-	@apply flex-grow border-t border-gray-400;
+	@apply grow border-t border-gray-400;
 	position: relative;
 }
+
 .guide-divider > div:first-child::before {
 	position: absolute;
 	content: '';
@@ -201,26 +269,31 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 .guide-divider span {
-	@apply flex-shrink italic text-xs text-gray-600 px-3 max-w-[250px] sm:max-w-[100%];
+	@apply max-w-[250px] shrink px-3 text-xs text-gray-600 italic sm:max-w-full;
 	text-align: center;
 }
+
 .guide-divider span a {
 	@apply underline;
 }
+
 .guide-divider > div:last-child {
-	@apply flex-grow border-t border-gray-400;
+	@apply grow border-t border-gray-400;
 }
 
 /* mm-mm-mm-mm-mm it's map time */
 #gigmap {
-	@apply bg-black h-screen w-screen text-white p-5 relative;
+	@apply relative h-screen w-screen bg-black p-5 text-white;
 }
+
 #gigmap .toolbar {
-	@apply flex flex-col gap-4 z-10 absolute;
+	@apply absolute z-10 flex flex-col gap-4;
 }
+
 #gigmap .toolbar > div {
-	@apply bg-ruby py-2 px-5 basis-1/3 rounded-lg transition-colors;
+	@apply basis-1/3 rounded-lg bg-ruby px-5 py-2 transition-colors;
 }
+
 #gigmap .toolbar > div:hover {
 	@apply bg-ruby/50;
 }
@@ -228,7 +301,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 #map-container {
 	position: absolute;
 	z-index: 0;
-	@apply h-screen w-screen top-0 left-0;
+	@apply top-0 left-0 h-screen w-screen;
 }
 
 .home-storelink {
@@ -242,9 +315,11 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 .venues h4 {
 	/*@apply break-after-column*/
 }
+
 .venues .venue {
 	break-inside: avoid-column;
 }
+
 .venues .venue .gigcount {
 	@apply font-normal;
 	color: #aaa;
@@ -253,14 +328,17 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 .venue a {
 	@apply font-medium;
 }
+
 .venue a.rip {
 	color: #aaa;
 	font-weight: normal;
 }
+
 .venue .rip::after {
 	content: '🕯️';
 	margin-left: 5px;
 }
+
 .home-storelink::before {
 	position: absolute;
 	content: '';
@@ -283,6 +361,7 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 	position: absolute;
 	margin-left: -20px;
 }
+
 .guide-month > h3 {
 	@apply sticky top-2 z-40;
 	background: white;
@@ -295,22 +374,23 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 header nav .navbar {
-	@apply flex justify-center lg:justify-end w-full gap-x-1 sm:gap-x-3;
+	@apply flex w-full justify-center gap-x-1 sm:gap-x-3 lg:justify-end;
 }
 
-header nav .navbar .navbar-link, header nav .navbar .support {
-	@apply uppercase border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-2 py-1 sm:px-4 sm:py-3;
-	transform : scaleY(1.9);
-	line-height : 50%;
+header nav .navbar .navbar-link,
+header nav .navbar .support {
+	@apply border-b-2 border-transparent px-2 py-1 text-center text-sm whitespace-nowrap uppercase hover:border-ruby hover:text-ruby sm:px-4 sm:py-3 lg:text-lg;
+	transform: scaleY(1.9);
+	line-height: 50%;
 }
 
 header nav .navbar .navbar-link-icon {
-	@apply border-b-2 border-transparent hover:border-ruby hover:text-ruby text-center whitespace-nowrap text-sm lg:text-lg px-0 sm:px-1 py-0 sm:py-3 w-7 lg:w-9 h-auto hidden sm:block;
-	display : none;
+	@apply hidden h-auto w-7 border-b-2 border-transparent px-0 py-0 text-center text-sm whitespace-nowrap hover:border-ruby hover:text-ruby sm:block sm:px-1 sm:py-3 lg:w-9 lg:text-lg;
+	display: none;
 }
 
 header nav .navbar .navbar-link-icon svg {
-	@apply w-full h-auto;
+	@apply h-auto w-full;
 }
 
 header nav .navbar .navbar-link.current {
@@ -318,14 +398,15 @@ header nav .navbar .navbar-link.current {
 }
 
 header nav .navbar .support {
-	@apply uppercase border-transparent hover:bg-ruby/90 hover:text-white bg-ruby text-white;
-	transform : scaleY(1.9);
+	@apply border-transparent bg-ruby text-white uppercase hover:bg-ruby/90 hover:text-white;
+	transform: scaleY(1.9);
 }
 
 /* venue page stuff */
 .blurb p {
 	@apply m-0 mb-2;
 }
+
 .blurb {
 	@apply mb-8;
 }
@@ -333,7 +414,7 @@ header nav .navbar .support {
 .bigtext {
 	font-family: 'ITC Souvenir';
 	color: black;
-	@apply text-3xl md:text-5xl mt-0 mb-0;
+	@apply mt-0 mb-0 text-3xl md:text-5xl;
 }
 
 body .prose {
@@ -341,7 +422,7 @@ body .prose {
 }
 
 .feature-thisweek.prose {
-	@apply max-w-[100%];
+	@apply max-w-full;
 }
 
 .feature-thisweek .links a {
@@ -355,7 +436,7 @@ body .prose {
 }
 
 .blinddate-plug {
-	@apply border-l-2 border-r-2 px-8 my-3 border-ruby text-center p-3;
+	@apply my-3 border-r-2 border-l-2 border-ruby p-3 px-8 text-center;
 	border-radius: 20px;
 	font-family: 'ITC Souvenir';
 }
@@ -370,7 +451,7 @@ body .prose {
 }
 
 .blinddate-plug a:hover {
-	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'><style type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
+	background-image: url("data:image/svg+xml;charset=utf8,<svg id='Squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'>\3c style type='text/css'%3E.st0{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style><path fill='none' stroke='%23f00' stroke-width='1' class='st0' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/></svg>");
 }
 
 .yt-embed iframe {
@@ -379,7 +460,7 @@ body .prose {
 }
 
 .lib-logo {
-	@apply w-24 h-24;
+	@apply h-24 w-24;
 	background-image: url(/canman-about@1x.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -393,7 +474,7 @@ body .prose {
 }
 
 .link-in-bio.primary > div {
-	@apply h-56 flex items-end;
+	@apply flex h-56 items-end;
 	position: relative;
 	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
 	border: solid 4px black;
@@ -459,6 +540,7 @@ body .prose {
 	content: ' • ';
 	font-weight: normal;
 }
+
 .artists ul li:last-child::after {
 	content: '';
 }
@@ -496,12 +578,13 @@ body .prose {
 	background-repeat: no-repeat;
 	background-position: top left;
 }
+
 .sharegig.selected img {
 	opacity: 0;
 }
 
 #sharesheet {
-	@apply p-3 flex flex-col items-center;
+	@apply flex flex-col items-center p-3;
 	background: #fffbeb;
 	bottom: 20px;
 	position: fixed;
@@ -517,15 +600,15 @@ body .prose {
 }
 
 #sharesheet .buttonpanel {
-	@apply flex uppercase font-bold m-5 gap-x-2;
+	@apply m-5 flex gap-x-2 font-bold uppercase;
 }
 
 #sharesheet .buttonpanel > button {
-	@apply uppercase border-2 border-black px-4 font-bold py-2 text-lg hover:border-ruby hover:text-ruby bg-white;
+	@apply border-2 border-black bg-white px-4 py-2 text-lg font-bold uppercase hover:border-ruby hover:text-ruby;
 }
 
 #shareprompt {
-	@apply p-5 flex flex-row justify-center gap-x-2;
+	@apply flex flex-row justify-center gap-x-2 p-5;
 	background-color: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(5px);
 	position: fixed;
@@ -565,7 +648,7 @@ body.showsheet #shareprompt {
 
 body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	content: "You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
-	@apply text-sm italic border border-black bg-yellow-50 p-2 block;
+	@apply block border border-black bg-yellow-50 p-2 text-sm italic;
 }
 
 @media (min-width: 1024px) {
@@ -597,14 +680,14 @@ body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
 	overflow: visible;
 }
 
-
-
 form label {
-	font-weight :bold;
+	font-weight: bold;
 }
-form input, form textarea {
-	border : solid 2px black;
-	box-shadow : 5px 5px 0px rgba(0,0,0,0.5);
-	padding : 10px;
-	margin-bottom : 10px;
+
+form input,
+form textarea {
+	border: solid 2px black;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	margin-bottom: 10px;
 }

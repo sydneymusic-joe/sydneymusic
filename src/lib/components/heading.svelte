@@ -16,6 +16,6 @@
 	const tag = $derived(`h${level}`);
 </script>
 
-<svelte:element this={tag} {...restProps} class={mergedClass} >
+<svelte:element this={tag} {...restProps} class={mergedClass}>
 	{@render children()}
 </svelte:element>

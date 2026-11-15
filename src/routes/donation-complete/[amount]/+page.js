@@ -1,5 +1,5 @@
 /** @type {import('./$types').EntryGenerator} */
-import APId from '$lib/datocms/';
+import APId from '#lib/datocms/index.js';
 
 const getReads = async () => {
 	const data = await APId(`query {
@@ -35,6 +35,6 @@ export async function load() {
 
 	return {
 		title: 'Thanks you for your donation!',
-		reads,
+		reads
 	};
 }

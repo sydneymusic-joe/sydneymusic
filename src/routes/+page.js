@@ -1,5 +1,5 @@
-import APId from '$lib/datocms/';
-import { previewMode, groupBy, formatDayOfWeek, formatDateLong } from '$lib/globals.mjs';
+import APId from '#lib/datocms/index.js';
+import { previewMode, groupBy, formatDayOfWeek, formatDateLong } from '#lib/globals.mjs';
 
 const getGigs = async () => {
 	// ToDo: We're doing this in the or server's local timezone.

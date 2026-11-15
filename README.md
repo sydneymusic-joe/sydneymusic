@@ -47,8 +47,16 @@ You will also need to create a free Contentful account at www.contentful.com. Yo
 First, we're going to get Everything In Its Right Place
 
 1. Download this codebase to your local hard drive, preferably using `git clone`.
-2. To install all of the npm dependencies for the first time, open a Terminal session, navigate to the folder you've downloaded the code to and run `npm install`.
-3. Import our Contentful content model into your own Contentful account by using the file and instructions provided in the `contentful/` directory in this repo
+1. We use NVM (Node Version Manager) to ensure everyone uses a consistent Node.js version, avoiding compatibility issues across development environments. [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+   - The required Node.js version is defined in .nvmrc. To use it, run:
+
+     ```shell
+     nvm install  # Install the version specified in .nvmrc
+     nvm use      # Switch to that version
+     ```
+
+1. To install all of the npm dependencies for the first time, open a Terminal session, navigate to the folder you've downloaded the code to and run `npm install`.
+1. Import our Contentful content model into your own Contentful account by using the file and instructions provided in the `contentful/` directory in this repo
 
 Congrats, you now have a local development environment and a Headless CMS to store all your data in!
 

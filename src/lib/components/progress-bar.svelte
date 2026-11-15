@@ -20,13 +20,13 @@
 	} = $props();
 </script>
 
-<div class="w-full -mt-2">
+<div class="-mt-2 w-full">
 	{#if showPercentage}
-		<div class="text-xs mb-1 opacity-80 text-left pl-1 pr-10">{percentage}{suffix} {text}</div>
+		<div class="mb-1 pr-10 pl-1 text-left text-xs opacity-80">{percentage}{suffix} {text}</div>
 	{/if}
 	<div
 		class={twMerge(
-			'w-full opacity-40 rounded-sm h-4',
+			'h-4 w-full rounded-sm opacity-40',
 			theme === 'dark' && 'bg-ruby',
 			theme === 'ruby' && 'bg-black',
 			theme === 'yellow' && 'bg-yellow-600',
@@ -35,7 +35,7 @@
 	></div>
 	<div
 		class={twMerge(
-			'h-4 -mt-4 rounded-sm transition-all duration-700 relative',
+			'relative -mt-4 h-4 rounded-sm transition-all duration-700',
 			theme === 'dark' && 'bg-ruby',
 			theme === 'ruby' && 'bg-black',
 			theme === 'yellow' && 'bg-black',

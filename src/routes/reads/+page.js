@@ -1,5 +1,5 @@
-import API from '$lib/datocms/';
-import { previewMode, formatDate, groupBy } from '$lib/globals.mjs';
+import API from '#lib/datocms/index.js';
+import { previewMode, formatDate, groupBy } from '#lib/globals.mjs';
 
 const getReads = async () => {
 	const data = await API(`query {

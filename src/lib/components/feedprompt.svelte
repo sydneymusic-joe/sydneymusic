@@ -1,4 +1,3 @@
-
 <script>
 	import DonationForm from './donation-form.svelte';
 	import DonationPrompt from './donation-prompt.svelte';
@@ -12,10 +11,10 @@
 	let { Index = $bindable(0) } = $props();
 	let prompts = [
 		{
-			type:'donorprompt',
+			type: 'donorprompt'
 		},
 		{
-			type:'email',
+			type: 'email'
 		},
 		{
 			type: 'component',
@@ -28,7 +27,7 @@
 						<img
 							src="/merch-promo.jpg"
 							alt="SydneyMusic.net new merch featuring a logo t-shirt and stubby cooler"
-							class="object-cover aspect-[5/6]"
+							class="object-cover aspect-5/6"
 						/>
 					</picture>
 					</a>
@@ -76,7 +75,7 @@
 						<img
 							src="/merch-promo-shirt.jpg"
 							alt="SydneyMusic.net new merch featuring dancer graphic on a black t-shirt"
-							class="object-cover aspect-[5/7]" style="border : solid 1px black"
+							class="object-cover aspect-5/7" style="border : solid 1px black"
 						/>
 					</picture>
 					</a>
@@ -143,7 +142,7 @@
 	</div>
 {:else if prompts[Index].type === 'donorbox'}
 	<div class="mt-5 mb-10">
-	<DonationForm align="center" class="mt-20" />
+		<DonationForm align="center" class="mt-20" />
 	</div>
 {:else if prompts[Index].type === 'donorprompt'}
 	<div>

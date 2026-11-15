@@ -1,5 +1,5 @@
-import API from '$lib/datocms/';
-import { previewMode, formatDate, groupBy, formatDay } from '$lib/globals.mjs';
+import API from '#lib/datocms/index.js';
+import { previewMode, formatDate, groupBy, formatDay } from '#lib/globals.mjs';
 
 export async function load({ params }) {
 	let data = await API(`query {
@@ -42,8 +42,8 @@ export async function load({ params }) {
 	while (i * pageSize < total) {
 		q += `
 			page${i + 1}:allEvents(orderBy : [gigStartDate_ASC], skip : ${
-			i * pageSize
-		}, first : ${pageSize}, filter : { venue : { eq : "${venueInfo.id}"}}) {
+				i * pageSize
+			}, first : ${pageSize}, filter : { venue : { eq : "${venueInfo.id}"}}) {
 				id,
 				gigStartDate,
 				promotedName,

@@ -54,7 +54,7 @@
 
 <a {href} {target} {...restProps} class={mergedClass}>
 	{#if prefix}
-		<span class="text-xs -mt-2">{prefix}</span>
+		<span class="-mt-2 text-xs">{prefix}</span>
 	{/if}
 	{label}
 	{pointer}
