@@ -10,7 +10,10 @@ export default defineConfig({
 		tailwind(),
 		sveltekit({
 			preprocess: vitePreprocess(),
-			adapter: adapter()
+			adapter: adapter(),
+			prerender: {
+				concurrency: 5
+			}
 		})
 	]
 });
