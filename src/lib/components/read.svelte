@@ -15,7 +15,7 @@
 </script>
 
 <div class="border-l border-l-gray-300 px-5 py-1 hover:border-l-ruby focus:border-l-ruby">
-	<Heading level={4} variant="md" class="mb-2 not-italic">{headline}</Heading>
+	<Heading level={3} variant="md" class="mb-2 not-italic">{headline}</Heading>
 
 	<p>
 		{body}

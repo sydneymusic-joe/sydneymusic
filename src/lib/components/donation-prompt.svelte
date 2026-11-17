@@ -8,7 +8,7 @@
 	<Heading level={2} variant="md" class="stretch uppercase">Become a supporter!</Heading>
 	<div class="flex flex-col items-center space-y-2 text-center">
 		<div class="flex items-center gap-x-3">
-			<img src="/fundraise-heart.svg" class="h-8" />
+			<img src="/fundraise-heart.svg" class="h-8" alt="" />
 			<p>
 				<strong class="font-semibold">We are fundraising for FY27</strong><br /><strong
 					class="font-semibold">{mds.totalFundedPercent}%</strong

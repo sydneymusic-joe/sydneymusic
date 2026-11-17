@@ -8,85 +8,91 @@
 </script>
 
 <SeoSocial title="Support Sydney's most comprehensive gig guide" />
-<Support />
 
-<div class="mx-auto mt-10 max-w-5xl space-y-8 px-5 pb-24 md:space-y-10 lg:space-y-12">
-	<div class="space-y-3 text-center">
-		<div class="text-4xl italic">
+<main>
+	<Support />
+
+	<div class="mx-auto mt-10 max-w-5xl space-y-8 px-5 pb-24 md:space-y-10 lg:space-y-12">
+		<p class="space-y-3 text-center text-4xl italic">
 			84.3% of surveyed readers say they see more live music because of the SydneyMusic gig guide
-		</div>
-		<div class="text-gray-600 italic">
-			from SydneyMusic’s annual survey (363 respondents, February 2026)
-		</div>
-	</div>
+			<span class="mt-2 block text-base text-gray-600">
+				from SydneyMusic’s annual survey (363 respondents, February 2026)
+			</span>
+		</p>
 
-	<div class="support grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 md:gap-x-20">
-		<div>
-			<Heading level={3} variant="lg">Wall of Legends</Heading>
-			<Paragraph>
-				See the individuals and organisations that are keeping SydneyMusic running:
-			</Paragraph>
-			<Button
-				variant="secondary"
-				label="View the Wall"
-				href="/support/wall-of-legends"
-				target="_blank"
-			/>
-		</div>
-		<div>
-			<Heading level={3} variant="lg">Buy some merch</Heading>
-			<Paragraph>
-				Represent your favourite local gig guide while looking awesome and supporting us
-				financially.
-			</Paragraph>
-			<Button
-				variant="secondary"
-				label="Visit our shop"
-				href="https://store.sydneymusic.net"
-				target="_blank"
-			/>
-		</div>
-		<div>
-			<Heading level={3} variant="lg">Commercial Sponsorship</Heading>
-			<Paragraph>Become a commercial sponsor and help us keep SydneyMusic running:</Paragraph>
-			<Button
-				variant="secondary"
-				label="Become a sponsor"
-				href="/support/commercial"
-				target="_blank"
-			/>
-		</div>
-		<div>
-			<Heading level={3} variant="lg">License our API</Heading>
-			<Paragraph>
-				Get access to our high fidelity feed covering all of Sydney's live music.
-			</Paragraph>
-			<Button variant="secondary" label="License our API" href="/api-license" target="_blank" />
-		</div>
-	</div>
-
-	<div class="mt-10 flex flex-col gap-y-5 border-t border-gray-400 pt-10">
-		<Heading level={3} variant="lg" class="mb-0">SydneyMusic.net will always remain free</Heading>
-
-		<div class="flex flex-col gap-y-8 sm:flex-row">
-			<div class="basis-1/2">
-				<p>Your support helps with:</p>
-				<ul class="ml-4 list-outside list-disc">
-					<li>Ongoing basic operational costs</li>
-					<li>Fairly paying researchers and writers</li>
-					<li>Improving our guide</li>
-					<li>Developing a sustainability model</li>
-				</ul>
+		<section class="support grid grid-cols-1 gap-x-10 gap-y-20 md:grid-cols-2 md:gap-x-20">
+			<div>
+				<Heading level={2} variant="lg">Wall of Legends</Heading>
+				<Paragraph>
+					See the individuals and organisations that are keeping SydneyMusic running:
+				</Paragraph>
+				<Button
+					variant="secondary"
+					label="View the Wall"
+					href="/support/wall-of-legends"
+					target="_blank"
+				/>
 			</div>
-			<div class="basis-1/2 md:pr-32">
-				<p>
-					You can also support us by sharing the site, sending in blurbs or gig listings, or
-					volunteering your expertise and/or time.
-				</p>
+			<div>
+				<Heading level={2} variant="lg">Buy some merch</Heading>
+				<Paragraph>
+					Represent your favourite local gig guide while looking awesome and supporting us
+					financially.
+				</Paragraph>
+				<Button
+					variant="secondary"
+					label="Visit our shop"
+					href="https://store.sydneymusic.net"
+					target="_blank"
+				/>
 			</div>
-		</div>
-		<div class="flex flex-row items-start">
-			<Button variant="secondary" href="/about" label="Learn more about SydneyMusic.net"></Button>
-		</div>
+			<div>
+				<Heading level={2} variant="lg">Commercial Sponsorship</Heading>
+				<Paragraph>Become a commercial sponsor and help us keep SydneyMusic running:</Paragraph>
+				<Button
+					variant="secondary"
+					label="Become a sponsor"
+					href="/support/commercial"
+					target="_blank"
+				/>
+			</div>
+			<div>
+				<Heading level={2} variant="lg">License our API</Heading>
+				<Paragraph>
+					Get access to our high fidelity feed covering all of Sydney's live music.
+				</Paragraph>
+				<Button variant="secondary" label="License our API" href="/api-license" target="_blank" />
+			</div>
+		</section>
+
+		<section class="mt-10 flex flex-col gap-y-5 border-t border-gray-400 pt-10">
+			<Heading level={3} variant="lg" class="mb-0">SydneyMusic.net will always remain free</Heading>
+
+			<div class="flex flex-col gap-y-8 sm:flex-row">
+				<div class="basis-1/2">
+					<p>Your support helps with:</p>
+					<ul class="ml-4 list-outside list-disc">
+						<li>Ongoing basic operational costs</li>
+						<li>Fairly paying researchers and writers</li>
+						<li>Improving our guide</li>
+						<li>Developing a sustainability model</li>
+					</ul>
+				</div>
+				<div class="basis-1/2 md:pr-32">
+					<p>
+						You can also support us by sharing the site, sending in blurbs or gig listings, or
+						volunteering your expertise and/or time.
+					</p>
+				</div>
+			</div>
+			<div class="flex flex-row items-start">
+				<Button
+					class="w-full md:w-[452px]"
+					variant="secondary"
+					href="/about"
+					label="Learn more about SydneyMusic.net"
+				></Button>
+			</div>
+		</section>
 	</div>
-</div>
+</main>

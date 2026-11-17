@@ -33,7 +33,7 @@
 		</Container>
 	</div>
 
-	<nav class="bg-black py-10 text-gray-500">
+	<div class="bg-black py-10 text-gray-500">
 		<Container>
 			<div class="grid justify-between gap-5 py-5 lg:grid-cols-5 lg:gap-20">
 				<div class="lg:col-span-2">
@@ -104,5 +104,5 @@
 				</div>
 			</div>
 		</Container>
-	</nav>
+	</div>
 </footer>
