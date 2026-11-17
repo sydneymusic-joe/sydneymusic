@@ -1,6 +1,26 @@
+export const csr = true;
+
 import APId from '#lib/datocms/index.js';
 import { formatDate, formatDateLong, groupBy, formatDay } from '#lib/globals.mjs';
 import { mds } from '../../lib/donorstats.js';
+
+function getEventKeywords(event) {
+	if (!event) return '';
+	return [
+		new Date(event.date).toLocaleDateString(undefined, {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		}),
+		event.promotedName ?? '',
+		(event.performersListJson ?? []).length ? event.performersListJson.join(' ') : '',
+		event.venue.venueName ?? '',
+		event.venue.suburb ?? '',
+		!!event.isFree ? 'free' : '',
+		!!event.isPwyc ? 'pwyc' : ''
+	].join(' ');
+}
 
 const getLastUpdated = async () => {
 	const data = await APId(`{
@@ -76,7 +96,8 @@ const getGigs = async () => {
 			let { gigStartDate, ...rest } = i;
 			let d = new Date(gigStartDate);
 			let hours = d.getHours() != 12 ? d.getHours() % 12 : 12;
-			return {
+
+			let g = {
 				date: d,
 				time:
 					hours +
@@ -85,6 +106,16 @@ const getGigs = async () => {
 					(d.getHours() >= 12 ? 'pm' : 'am'),
 				...rest
 			};
+
+			g.keywords = getEventKeywords(g);
+			g.dateLabel = new Date(g.date).toLocaleDateString('en-AU', {
+				weekday: 'long',
+				year: 'numeric',
+				month: 'long',
+				day: 'numeric'
+			});
+
+			return g;
 		});
 
 		let byMonth = groupBy(event, (i) => formatDate(i.date));
@@ -110,8 +141,11 @@ export async function load() {
 		.toTimeString()
 		.substring(0, 5)}`;
 
+	let flattenedGigs = gigs.flatMap((gigMonth) => gigMonth.items.flatMap((gigDay) => gigDay.items));
+
 	return {
 		gigs,
+		flattenedGigs,
 		lastUpdated,
 		mds
 	};

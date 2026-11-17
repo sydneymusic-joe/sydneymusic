@@ -1,3 +1,4 @@
+export const csr = false;
 import API from '#lib/datocms/index.js';
 import { previewMode, formatDate, groupBy } from '#lib/globals.mjs';
 
