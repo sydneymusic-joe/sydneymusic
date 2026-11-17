@@ -9,7 +9,7 @@
 	<div class="grid md:grid-cols-sidebar-right-wide">
 		<!-- left col -->
 		<div class="about-copy space-y-6 sm:pr-20">
-			<Heading level={2} variant="xl" class="notch-left">What is SydneyMusic.net?</Heading>
+			<Heading level={1} variant="xl" class="notch-left">What is SydneyMusic.net?</Heading>
 
 			<div>
 				<p class="font-bold">
@@ -31,7 +31,7 @@
 				</p>
 			</div>
 
-			<Heading level={2} variant="xl" class="notch-left">How Does It Work?</Heading>
+			<Heading level={1} variant="xl" class="notch-left">How Does It Work?</Heading>
 
 			<div>
 				<p>This site is emphatically not-for-profit.</p>
@@ -57,7 +57,7 @@
 				</p>
 			</div>
 
-			<Heading level={2} variant="xl" class="notch-left">Who's Behind This?</Heading>
+			<Heading level={1} variant="xl" class="notch-left">Who's Behind This?</Heading>
 
 			<div>
 				<p>The website and initiative was co-founded by:</p>
@@ -94,7 +94,7 @@
 				</p>
 			</div>
 
-			<Heading level={2} variant="xl" class="notch-left">Site code</Heading>
+			<Heading level={1} variant="xl" class="notch-left">Site code</Heading>
 			<div>
 				<p>
 					The repository containing all of SydneyMusic.net's code can be <a
@@ -118,7 +118,7 @@
 				</p>
 			</div>
 
-			<Heading level={2} variant="xl" class="notch-left">FAQ</Heading>
+			<Heading level={1} variant="xl" class="notch-left">FAQ</Heading>
 
 			<div>
 				<p>We'll update this when we start getting frequent questions.</p>

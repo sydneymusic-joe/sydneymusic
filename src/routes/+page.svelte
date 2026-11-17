@@ -14,7 +14,7 @@
 
 <SeoSocial />
 
-<div class="mx-auto max-w-5xl space-y-20 px-5 pb-24">
+<main class="mx-auto max-w-5xl space-y-20 px-5 pb-24">
 	<!-- First section -->
 	<div class="space-y-10">
 		<div class="feature-thisweek space-y-8 text-left md:pb-5">
@@ -79,7 +79,7 @@
 						<!-- Only get the next 2 days -->
 						{#if i < 2}
 							<div class="space-y-5">
-								<Heading level={3} variant="md" class="notch-left">
+								<Heading level={2} variant="md" class="notch-left">
 									<span class="font-bold text-ruby">{label.split(':')[0]}</span>
 									<span class="font-normal text-graphite">{label.split(':')[1]}</span>
 								</Heading>
@@ -184,4 +184,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</main>
