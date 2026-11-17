@@ -352,6 +352,17 @@ body.selectedonly .day:not(:has(.selected)) ~ .storeplug {
 }
 
 /*header { @apply sticky top-0 py-3; background-color : rgba(255,255,255,0.8); z-index : 100; }*/
+.sticky-header {
+	@apply sticky top-2 z-40 bg-white;
+	&::before {
+		content: '';
+		background: white;
+		height: 100%;
+		width: 20px;
+		position: absolute;
+		margin-left: -20px;
+	}
+}
 
 .guide-month > h3::before {
 	content: '';

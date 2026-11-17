@@ -7,10 +7,13 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
-	let { data } = $props();
+	import { onMount } from 'svelte';
 
-	let gigCounter = $state(0);
-	let whichPrompt = $state(0);
+	let { data } = $props();
+	let searchTerm = $state('');
+
+	let gigCounter = 0;
+	let whichPrompt = 0;
 	const increment = () => {
 		gigCounter++;
 		return '';
@@ -23,19 +26,34 @@
 		whichPrompt++;
 		return '';
 	};
-	let gigCount = $derived(
-		data.gigs.reduce(
-			(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
-			0
-		)
+
+	let gigCount = data.gigs.reduce(
+		(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
+		0
 	);
+
+	let gigIndex = [];
+
+	onMount(() => {
+		const nodes = document.querySelectorAll('[data-keywords]');
+		gigIndex = Array.from(nodes, (el) => ({
+			el,
+			text: el.dataset.keywords ?? ''
+		}));
+	});
+
+	function handleSearch() {
+		const term = searchTerm.trim().toLowerCase();
+		for (const g of gigIndex) {
+			g.el.classList.toggle('hidden', term !== '' && !g.text.toLowerCase().includes(term));
+		}
+	}
 </script>
 
 <SeoSocial title="Gig Guide" />
 
 <main class="min-h-screen w-full">
-	<!--<div class="flex flex-col justify-end items-start">
-				<Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
+	<!--<div class="flex flex-col justify-end items-start"> <Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
 				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
 					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
@@ -92,9 +110,57 @@
 						<input type="checkbox" id="toggle-selected" class="sr-only" />
 						My favourites
 					</label>
+					<input
+						type="search"
+						bind:value={searchTerm}
+						onchange={handleSearch}
+						placeholder="Filter items..."
+						class="w-full rounded border p-2"
+					/>
 				</div>
 
-				{#each data.gigs as month}
+				{#each data.flattenedGigs as event, index}
+					{const previousEvent = data.flattenedGigs[index - 1]}
+					{#if event.dateLabel !== previousEvent?.dateLabel}
+						<Heading
+							level={3}
+							variant="md"
+							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
+						>
+							<span class="text-ruby">{event.dateLabel.split(' ')[0]}</span>
+							{event.dateLabel.split(' ').slice(1).join(' ')}
+						</Heading>
+					{/if}
+					<div
+						data-keywords={event.keywords}
+						class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
+							? 'freegig'
+							: ''} {event.isPwyc ? 'pwycgig' : ''}"
+					>
+						<div
+							data-gigid={event.id}
+							data-gigStartDate={event.date}
+							class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
+						>
+							<img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" />
+						</div>
+						<Event
+							name={event.promotedName}
+							gigId={event.id}
+							performers={event.performersListJson}
+							calendarLink={createCalendarLink(event)}
+							venue={event.venue}
+							website={event.ticketUrl}
+							comment={event.furtherInfo}
+							initials={event.furtherInfoContributorInitials}
+							time={event.time}
+							isFree={event.isFree}
+							isPwyc={event.isPwyc}
+						/>
+					</div>
+				{/each}
+
+				{#each data.gigs.slice(0, 2) as month}
 					<div class="guide-month mb-10">
 						{#each month.items as { label, items }}
 							<Heading
@@ -109,6 +175,7 @@
 							<div class="day">
 								{#each items as event}
 									<div
+										data-keywords={event.keywords}
 										class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
 											? 'freegig'
 											: ''} {event.isPwyc ? 'pwycgig' : ''}"
@@ -141,7 +208,7 @@
 									{increment()}
 								{/each}
 							</div>
-							{#if gigCounter > 9}
+							{#if gigCounter > 9 && !searchTerm}
 								<Feedprompt Index={whichPrompt} />
 								{resetCounter()}
 								{incrementDisplay()}

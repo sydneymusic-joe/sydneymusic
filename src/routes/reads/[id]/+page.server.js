@@ -1,3 +1,4 @@
+export const csr = false;
 import { render, renderNodeRule } from 'datocms-structured-text-to-html-string';
 import { isHeading } from 'datocms-structured-text-utils';
 import API from '#lib/datocms/index.js';
