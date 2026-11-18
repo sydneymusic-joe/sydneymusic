@@ -11,42 +11,50 @@
 
 	let { data } = $props();
 	let searchTerm = $state('');
+	let eventCount = $state(0);
 
-	let gigCounter = 0;
-	let whichPrompt = 0;
-	const increment = () => {
-		gigCounter++;
-		return '';
-	};
-	const resetCounter = () => {
-		if (gigCounter > 9) gigCounter = 0;
-		return '';
-	};
-	const incrementDisplay = () => {
-		whichPrompt++;
-		return '';
-	};
-
-	let gigCount = data.gigs.reduce(
-		(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
-		0
-	);
-
-	let gigIndex = [];
+	let eventDays = [];
 
 	onMount(() => {
-		const nodes = document.querySelectorAll('[data-keywords]');
-		gigIndex = Array.from(nodes, (el) => ({
-			el,
-			text: el.dataset.keywords ?? ''
-		}));
+		const groupNodes = document.querySelectorAll('[data-event-day]');
+
+		eventDays = Array.from(groupNodes, (groupNode) => {
+			const eventNodes = groupNode.querySelectorAll('[data-keywords]');
+			return {
+				groupNode,
+				events: Array.from(eventNodes, (el) => ({
+					el,
+					keywords: (el.dataset.keywords ?? '').toLowerCase()
+				}))
+			};
+		});
+
+		eventCount = eventDays.reduce((sum, day) => sum + day.events.length, 0);
 	});
 
-	function handleSearch() {
+	function handleSearch(e) {
+		e?.preventDefault();
+
 		const term = searchTerm.trim().toLowerCase();
-		for (const g of gigIndex) {
-			g.el.classList.toggle('hidden', term !== '' && !g.text.toLowerCase().includes(term));
+		let totalVisible = 0;
+
+		for (const eventDay of eventDays) {
+			let visibleCount = 0;
+
+			for (const event of eventDay.events) {
+				let isMatch = term === '' || event.keywords.includes(term);
+				event.el.classList.toggle('hidden', !isMatch);
+				if (isMatch) visibleCount++;
+			}
+			eventDay.groupNode.classList.toggle('hidden', visibleCount === 0);
+			totalVisible += visibleCount;
 		}
+		eventCount = totalVisible;
+	}
+
+	function handleToggleFreeGigs(e) {
+		e?.preventDefault();
+		document.body.classList.toggle('freegigs', e.target.checked);
 	}
 </script>
 
@@ -100,121 +108,88 @@
 			</div>
 			<!-- gig guide -->
 			<div class="gigcolumn md:pr-10">
+				<form role="search" onsubmit={handleSearch} class="my-4 flex flex-col">
+					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
+					<input
+						id="search-input"
+						type="search"
+						bind:value={searchTerm}
+						oninput={handleSearch}
+						placeholder="Search gigs..."
+						class="w-full rounded border p-2"
+					/>
+				</form>
 				<header class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</header>
 				<div class="filterbox mb-5 w-full">
 					<label for="toggle-freegigs" class="relative flex cursor-pointer items-center">
-						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
+						<input
+							type="checkbox"
+							id="toggle-freegigs"
+							class="sr-only"
+							onchange={handleToggleFreeGigs}
+						/>
 						Free / pay-what-you-can
 					</label>
 					<label for="toggle-selected" class="relative flex cursor-pointer items-center">
 						<input type="checkbox" id="toggle-selected" class="sr-only" />
 						My favourites
 					</label>
-					<input
-						type="search"
-						bind:value={searchTerm}
-						onchange={handleSearch}
-						placeholder="Filter items..."
-						class="w-full rounded border p-2"
-					/>
 				</div>
 
-				{#each data.flattenedGigs as event, index}
-					{const previousEvent = data.flattenedGigs[index - 1]}
-					{#if event.dateLabel !== previousEvent?.dateLabel}
+				{let index = 0}
+				{#each Object.keys(data.gigLookup) as gigDate}
+					<section class="day" data-event-day>
 						<Heading
 							level={3}
 							variant="md"
 							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
 						>
-							<span class="text-ruby">{event.dateLabel.split(' ')[0]}</span>
-							{event.dateLabel.split(' ').slice(1).join(' ')}
+							<span class="text-ruby">
+								{gigDate.split(' ')[0]}
+							</span>
+							{gigDate.split(' ').slice(1).join(' ')}
 						</Heading>
-					{/if}
-					<div
-						data-keywords={event.keywords}
-						class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
-							? 'freegig'
-							: ''} {event.isPwyc ? 'pwycgig' : ''}"
-					>
-						<div
-							data-gigid={event.id}
-							data-gigStartDate={event.date}
-							class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
-						>
-							<img class="w-6" alt="Add to your selections" src="/shareability-unselected.svg" />
-						</div>
-						<Event
-							name={event.promotedName}
-							gigId={event.id}
-							performers={event.performersListJson}
-							calendarLink={createCalendarLink(event)}
-							venue={event.venue}
-							website={event.ticketUrl}
-							comment={event.furtherInfo}
-							initials={event.furtherInfoContributorInitials}
-							time={event.time}
-							isFree={event.isFree}
-							isPwyc={event.isPwyc}
-						/>
-					</div>
-				{/each}
 
-				{#each data.gigs.slice(0, 2) as month}
-					<div class="guide-month mb-10">
-						{#each month.items as { label, items }}
-							<Heading
-								level={3}
-								variant="md"
-								class="stretch mt-8 mb-8 border-b border-black font-normal uppercase"
-							>
-								<span class="text-ruby">{label.split(':')[1]}</span>
-								{label.split(':')[0]}
-								{month.label}
-							</Heading>
-							<div class="day">
-								{#each items as event}
+						<ul class="gigs">
+							{#each data.gigLookup[gigDate] as event}
+								<li
+									data-keywords={event.keywords}
+									class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
+										? 'freegig'
+										: ''}
+									{event.isPwyc ? 'pwycgig' : ''}"
+								>
 									<div
-										data-keywords={event.keywords}
-										class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
-											? 'freegig'
-											: ''} {event.isPwyc ? 'pwycgig' : ''}"
+										data-gigid={event.id}
+										data-gigStartDate={event.date}
+										class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
 									>
-										<div
-											data-gigid={event.id}
-											data-gigStartDate={event.date}
-											class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
-										>
-											<img
-												class="w-6"
-												alt="Add to your selections"
-												src="/shareability-unselected.svg"
-											/>
-										</div>
-										<Event
-											name={event.promotedName}
-											gigId={event.id}
-											performers={event.performersListJson}
-											calendarLink={createCalendarLink(event)}
-											venue={event.venue}
-											website={event.ticketUrl}
-											comment={event.furtherInfo}
-											initials={event.furtherInfoContributorInitials}
-											time={event.time}
-											isFree={event.isFree}
-											isPwyc={event.isPwyc}
+										<img
+											class="w-6"
+											alt="Add to your selections"
+											src="/shareability-unselected.svg"
 										/>
 									</div>
-									{increment()}
-								{/each}
-							</div>
-							{#if gigCounter > 9 && !searchTerm}
-								<Feedprompt Index={whichPrompt} />
-								{resetCounter()}
-								{incrementDisplay()}
-							{/if}
-						{/each}
-					</div>
+									<Event
+										name={event.promotedName}
+										gigId={event.id}
+										performers={event.performersListJson}
+										calendarLink={createCalendarLink(event)}
+										venue={event.venue}
+										website={event.ticketUrl}
+										comment={event.furtherInfo}
+										initials={event.furtherInfoContributorInitials}
+										time={event.time}
+										isFree={event.isFree}
+										isPwyc={event.isPwyc}
+									/>
+								</li>
+								{#if !searchTerm}
+									<Feedprompt Index={index++} />
+								{/if}
+							{/each}
+						</ul>
+					</section>
 				{/each}
 			</div>
 		</div>
