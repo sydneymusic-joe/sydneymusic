@@ -7,6 +7,7 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
+	import Header from '../../lib/components/header.svelte';
 	let { data } = $props();
 
 	let gigCounter = $state(0);
@@ -43,19 +44,19 @@
 			
 		</div>-->
 
-<div
-	class="relative h-48 py-5 md:h-72 md:py-8"
-	style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%"
->
-	<div class="flex h-full flex-col items-center justify-items-end">
-		<Button
-			href="https://store.sydneymusic.net"
-			class="text-md bg-white"
-			variant="outline"
-			label="T-shirts shipping now!"
-		></Button>
-	</div>
-</div>
+
+<picture>
+	<source
+		srcset="/canman-gigs@2x.png 2560w, /canman-gigs@1x.png 1280w"
+		media="(min-width : 640px)"
+	/>
+	<source srcset="/canman-gigs-mobile.png" media="(max-width : 640px)" />
+	<img
+		src="/canman-gigs@1x.png"
+		alt="SydneyMusic.net mascot Can Man loves a read"
+		class="aspect-3/1 sm:aspect-banner object-cover w-full mx-auto lg:max-w-5xl"
+	/>
+</picture>
 <div class="mx-auto flex max-w-5xl flex-col overflow-x-clip px-5 pt-5 md:flex-row md:pt-10">
 	<div class="contents space-y-5 md:flex md:flex-col">
 		<!-- header -->
@@ -74,8 +75,21 @@
 				There are {new Intl.NumberFormat('en-AU').format(data.gigs.totalCount)} gigs to be explored below.
 			</div>
 
-			<div class="mt-5">
-				<DonationForm />
+			<div class="mt-5 mr-10">
+				<div class="flex flex-row gap-5">
+					<div class="w-[50%]"><a href="https://store.sydneymusic.net"><img src="/fan-maya.jpeg" class="w-48" /></a></div>
+					<div>
+						<Heading variant="sm" class="uppercase font-medium notch-left">Tell everyone you’re a fan</Heading>
+						<p class="text-sm"><strong class="font-medium">SydneyMusic is made possible with the support of our community.</strong> Pick up some merch or become a supporter today!</p>
+
+						<div class="flex flex-col mt-5 gap-2">
+							<Button variant="primary" label="Merch store" href="https://store.sydneymusic.net" />
+							<Button label="Become a supporter" href="/support" />
+						</div>
+
+						<p class="text-xs italic mt-5">Thanks to <a href="http://theundergroundstage.com" class="underline" target="_blank">The Underground Stage</a> for this pic!<br />Featuring Maya from <a href="https://instagram.com/bestbandsyouneverheard" class="underline" target="_blank">Best Bands You Never Heard</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- gig guide -->
