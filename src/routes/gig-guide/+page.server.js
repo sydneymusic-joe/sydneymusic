@@ -4,6 +4,7 @@ import APId from '#lib/datocms/index.js';
 import { formatDate, formatDateLong, groupBy, formatDay } from '#lib/globals.mjs';
 import { mds } from '../../lib/donorstats.js';
 
+// These are the keywords used to match user input
 function getEventKeywords(event) {
 	if (!event) return '';
 	return [
@@ -19,7 +20,9 @@ function getEventKeywords(event) {
 		event.venue.suburb ?? '',
 		!!event.isFree ? 'free' : '',
 		!!event.isPwyc ? 'pwyc' : ''
-	].join(' ');
+	]
+		.join(' ')
+		.trim();
 }
 
 const getLastUpdated = async () => {
@@ -143,9 +146,18 @@ export async function load() {
 
 	let flattenedGigs = gigs.flatMap((gigMonth) => gigMonth.items.flatMap((gigDay) => gigDay.items));
 
+	let gigLookup = Object.fromEntries(
+		gigs.flatMap((gigMonth) =>
+			gigMonth.items.map((gigDay) =>
+				gigDay.items.length ? [gigDay.items[0].dateLabel, gigDay.items] : []
+			)
+		)
+	);
+
 	return {
 		gigs,
 		flattenedGigs,
+		gigLookup,
 		lastUpdated,
 		mds
 	};
