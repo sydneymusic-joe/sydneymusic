@@ -1,4 +1,5 @@
 export const csr = false;
+
 import APId from '#lib/datocms/index.js';
 import { groupBy } from '#lib/globals.mjs';
 
