@@ -1,4 +1,5 @@
 <script>
+	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import Button from '#lib/components/button.svelte';
@@ -9,10 +10,9 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
-	import { onMount } from 'svelte';
 
 	let { data } = $props();
-	let searchTerm = $state(page.url.searchParams.get('q') ?? '');
+	let searchTerm = $state('');
 	let searchResults = $state(0);
 	let debounce;
 
@@ -31,13 +31,23 @@
 				}))
 			};
 		});
+
+		const term = page.url.searchParams.get('q') ?? '';
+		searchTerm = term;
+
+		filterEvents(searchTerm);
+
+		if (term.trim()) {
+			tick().then(() => {
+				document.querySelector('.gigcolumn')?.scrollIntoView({
+					behavior: 'auto',
+					block: 'start'
+				});
+			});
+		}
 	});
 
-	function handleSearch(e) {
-		e?.preventDefault();
-		const value = e?.target.value;
-		searchTerm = value;
-
+	function filterEvents(value) {
 		const term = value.trim().toLowerCase();
 
 		let totalVisible = 0;
@@ -55,17 +65,26 @@
 		}
 
 		searchResults = totalVisible;
+	}
+
+	function handleSearch(e) {
+		e?.preventDefault();
+		const value = e?.target.value;
+		searchTerm = value;
+
+		filterEvents(value);
 
 		clearTimeout(debounce);
 		debounce = setTimeout(() => {
-			const url = new URL(page.url);
+			const term = value.trim();
+			const url = new URL(window.location.href);
 
 			if (term) {
 				url.searchParams.set('q', value);
 			} else {
 				url.searchParams.delete('q');
 			}
-			goto(url, { state: page.$state, shallow: true, replace: true });
+			goto(url, { state: page.state, shallow: true, replace: true });
 		}, 200);
 	}
 
@@ -125,7 +144,7 @@
 			</div>
 			<!-- gig guide -->
 			<div class="gigcolumn md:pr-10">
-				<form role="search" class="my-4 flex flex-col" onsubmit={handleSearch}>
+				<form role="search" class="my-4 flex flex-col" onsubmit={(e) => e.preventDefault()}>
 					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
 					<input
 						id="search-input"
