@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import Button from '#lib/components/button.svelte';
 	import Event from '#lib/components/event.svelte';
 	import Feedprompt from '#lib/components/feedprompt.svelte';
@@ -10,8 +12,9 @@
 	import { onMount } from 'svelte';
 
 	let { data } = $props();
-	let searchTerm = $state('');
+	let searchTerm = $state(page.url.searchParams.get('q') ?? '');
 	let searchResults = $state(0);
+	let debounce;
 
 	let eventDays = [];
 
@@ -32,8 +35,11 @@
 
 	function handleSearch(e) {
 		e?.preventDefault();
+		const value = e?.target.value;
+		searchTerm = value;
 
-		const term = searchTerm.trim().toLowerCase();
+		const term = value.trim().toLowerCase();
+
 		let totalVisible = 0;
 
 		for (const eventDay of eventDays) {
@@ -47,7 +53,20 @@
 			eventDay.groupNode.classList.toggle('hidden', visibleCount === 0);
 			totalVisible += visibleCount;
 		}
+
 		searchResults = totalVisible;
+
+		clearTimeout(debounce);
+		debounce = setTimeout(() => {
+			const url = new URL(page.url);
+
+			if (term) {
+				url.searchParams.set('q', value);
+			} else {
+				url.searchParams.delete('q');
+			}
+			goto(url, { state: page.$state, shallow: true, replace: true });
+		}, 200);
 	}
 
 	function handleToggleFreeGigs(e) {
@@ -106,12 +125,12 @@
 			</div>
 			<!-- gig guide -->
 			<div class="gigcolumn md:pr-10">
-				<form role="search" onsubmit={handleSearch} class="my-4 flex flex-col">
+				<form role="search" class="my-4 flex flex-col" onsubmit={handleSearch}>
 					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
 					<input
 						id="search-input"
 						type="search"
-						bind:value={searchTerm}
+						value={searchTerm}
 						oninput={handleSearch}
 						placeholder="Search gigs..."
 						class="w-full rounded border p-2"
