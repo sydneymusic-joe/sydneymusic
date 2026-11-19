@@ -11,7 +11,7 @@
 
 	let { data } = $props();
 	let searchTerm = $state('');
-	let eventCount = $state(0);
+	let searchResults = $state(0);
 
 	let eventDays = [];
 
@@ -28,8 +28,6 @@
 				}))
 			};
 		});
-
-		eventCount = eventDays.reduce((sum, day) => sum + day.events.length, 0);
 	});
 
 	function handleSearch(e) {
@@ -49,7 +47,7 @@
 			eventDay.groupNode.classList.toggle('hidden', visibleCount === 0);
 			totalVisible += visibleCount;
 		}
-		eventCount = totalVisible;
+		searchResults = totalVisible;
 	}
 
 	function handleToggleFreeGigs(e) {
@@ -137,7 +135,7 @@
 				</div>
 
 				{let index = 0}
-				{#each Object.keys(data.gigLookup) as gigDate}
+				{#each data.gigs.items as gigDay}
 					<section class="day" data-event-day>
 						<Heading
 							level={3}
@@ -145,13 +143,13 @@
 							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
 						>
 							<span class="text-ruby">
-								{gigDate.split(' ')[0]}
+								{gigDay.label.split(' ')[0]}
 							</span>
-							{gigDate.split(' ').slice(1).join(' ')}
+							{gigDay.label.split(' ').slice(1).join(' ')}
 						</Heading>
 
 						<ul class="gigs">
-							{#each data.gigLookup[gigDate] as event}
+							{#each gigDay.items as event}
 								<li
 									data-keywords={event.keywords}
 									class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
@@ -191,6 +189,12 @@
 						</ul>
 					</section>
 				{/each}
+				{#if searchTerm != undefined && searchResults === 0}
+					<div class="block border border-black bg-yellow-50 p-2 text-sm italic">
+						Oops! We couldn't find any results for your search. Try using different keywords or
+						check your spelling.
+					</div>
+				{/if}
 			</div>
 		</div>
 

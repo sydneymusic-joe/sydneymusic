@@ -136,6 +136,7 @@
 	const promptIndex = $derived(Index % prompts.length);
 </script>
 
+<!-- Every 10 -->
 {#if (Index + 1) % 10 === 0}
 	{#if prompts[promptIndex].type === 'component'}
 		{@html prompts[promptIndex].content}
