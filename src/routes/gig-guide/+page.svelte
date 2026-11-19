@@ -176,7 +176,7 @@
 				{#each data.gigs.items as gigDay}
 					<section class="day" data-event-day>
 						<Heading
-							level={3}
+							level={2}
 							variant="md"
 							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
 						>
@@ -221,7 +221,9 @@
 									/>
 								</li>
 								{#if !searchTerm}
-									<Feedprompt Index={index++} />
+									<li>
+										<Feedprompt Index={index++} />
+									</li>
 								{/if}
 							{/each}
 						</ul>
