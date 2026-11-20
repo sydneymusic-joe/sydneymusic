@@ -1,4 +1,7 @@
 <script>
+	import { onMount, tick } from 'svelte';
+	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import Button from '#lib/components/button.svelte';
 	import Event from '#lib/components/event.svelte';
 	import Feedprompt from '#lib/components/feedprompt.svelte';
@@ -7,35 +10,94 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
-	let { data } = $props();
 
-	let gigCounter = $state(0);
-	let whichPrompt = $state(0);
-	const increment = () => {
-		gigCounter++;
-		return '';
-	};
-	const resetCounter = () => {
-		if (gigCounter > 9) gigCounter = 0;
-		return '';
-	};
-	const incrementDisplay = () => {
-		whichPrompt++;
-		return '';
-	};
-	let gigCount = $derived(
-		data.gigs.reduce(
-			(acc, month) => acc + month.items.reduce((dayAcc, day) => dayAcc + day.items.length, 0),
-			0
-		)
-	);
+	let { data } = $props();
+	let searchTerm = $state('');
+	let searchResults = $state(0);
+	let debounce;
+
+	let eventDays = [];
+
+	onMount(() => {
+		const groupNodes = document.querySelectorAll('[data-event-day]');
+
+		eventDays = Array.from(groupNodes, (groupNode) => {
+			const eventNodes = groupNode.querySelectorAll('[data-keywords]');
+			return {
+				groupNode,
+				events: Array.from(eventNodes, (el) => ({
+					el,
+					keywords: (el.dataset.keywords ?? '').toLowerCase()
+				}))
+			};
+		});
+
+		const term = page.url.searchParams.get('q') ?? '';
+		searchTerm = term;
+
+		filterEvents(searchTerm);
+
+		if (term.trim()) {
+			tick().then(() => {
+				document.querySelector('.gigcolumn')?.scrollIntoView({
+					behavior: 'auto',
+					block: 'start'
+				});
+			});
+		}
+	});
+
+	function filterEvents(value) {
+		const term = value.trim().toLowerCase();
+
+		let totalVisible = 0;
+
+		for (const eventDay of eventDays) {
+			let visibleCount = 0;
+
+			for (const event of eventDay.events) {
+				let isMatch = term === '' || event.keywords.includes(term);
+				event.el.classList.toggle('hidden', !isMatch);
+				if (isMatch) visibleCount++;
+			}
+			eventDay.groupNode.classList.toggle('hidden', visibleCount === 0);
+			totalVisible += visibleCount;
+		}
+
+		searchResults = totalVisible;
+	}
+
+	function handleSearch(e) {
+		e?.preventDefault();
+		const value = e?.target.value;
+		searchTerm = value;
+
+		filterEvents(value);
+
+		clearTimeout(debounce);
+		debounce = setTimeout(() => {
+			const term = value.trim();
+			const url = new URL(window.location.href);
+
+			if (term) {
+				url.searchParams.set('q', value);
+			} else {
+				url.searchParams.delete('q');
+			}
+			goto(url, { state: page.state, shallow: true, replace: true });
+		}, 200);
+	}
+
+	function handleToggleFreeGigs(e) {
+		e?.preventDefault();
+		document.body.classList.toggle('freegigs', e.target.checked);
+	}
 </script>
 
 <SeoSocial title="Gig Guide" />
 
 <main class="min-h-screen w-full">
-	<!--<div class="flex flex-col justify-end items-start">
-				<Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
+	<!--<div class="flex flex-col justify-end items-start"> <Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
 				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
 					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
@@ -82,10 +144,26 @@
 			</div>
 			<!-- gig guide -->
 			<div class="gigcolumn md:pr-10">
+				<form role="search" class="my-4 flex flex-col" onsubmit={(e) => e.preventDefault()}>
+					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
+					<input
+						id="search-input"
+						type="search"
+						value={searchTerm}
+						oninput={handleSearch}
+						placeholder="Search gigs..."
+						class="w-full rounded border p-2"
+					/>
+				</form>
 				<header class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</header>
 				<div class="filterbox mb-5 w-full">
 					<label for="toggle-freegigs" class="relative flex cursor-pointer items-center">
-						<input type="checkbox" id="toggle-freegigs" class="sr-only" />
+						<input
+							type="checkbox"
+							id="toggle-freegigs"
+							class="sr-only"
+							onchange={handleToggleFreeGigs}
+						/>
 						Free / pay-what-you-can
 					</label>
 					<label for="toggle-selected" class="relative flex cursor-pointer items-center">
@@ -94,61 +172,69 @@
 					</label>
 				</div>
 
-				{#each data.gigs as month}
-					<div class="guide-month mb-10">
-						{#each month.items as { label, items }}
-							<Heading
-								level={3}
-								variant="md"
-								class="stretch mt-8 mb-8 border-b border-black font-normal uppercase"
-							>
-								<span class="text-ruby">{label.split(':')[1]}</span>
-								{label.split(':')[0]}
-								{month.label}
-							</Heading>
-							<div class="day">
-								{#each items as event}
+				{let index = 0}
+				{#each data.gigs.items as gigDay}
+					<section class="day flow-root" data-event-day>
+						<Heading
+							level={2}
+							variant="md"
+							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
+						>
+							<span class="text-ruby">
+								{gigDay.label.split(' ')[0]}
+							</span>
+							{gigDay.label.split(' ').slice(1).join(' ')}
+						</Heading>
+
+						<ul class="gigs">
+							{#each gigDay.items as event}
+								<li
+									data-keywords={event.keywords}
+									class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
+										? 'freegig'
+										: ''}
+									{event.isPwyc ? 'pwycgig' : ''}"
+								>
 									<div
-										class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
-											? 'freegig'
-											: ''} {event.isPwyc ? 'pwycgig' : ''}"
+										data-gigid={event.id}
+										data-gigStartDate={event.date}
+										class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
 									>
-										<div
-											data-gigid={event.id}
-											data-gigStartDate={event.date}
-											class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
-										>
-											<img
-												class="w-6"
-												alt="Add to your selections"
-												src="/shareability-unselected.svg"
-											/>
-										</div>
-										<Event
-											name={event.promotedName}
-											gigId={event.id}
-											performers={event.performersListJson}
-											calendarLink={createCalendarLink(event)}
-											venue={event.venue}
-											website={event.ticketUrl}
-											comment={event.furtherInfo}
-											initials={event.furtherInfoContributorInitials}
-											time={event.time}
-											isFree={event.isFree}
-											isPwyc={event.isPwyc}
+										<img
+											class="w-6"
+											alt="Add to your selections"
+											src="/shareability-unselected.svg"
 										/>
 									</div>
-									{increment()}
-								{/each}
-							</div>
-							{#if gigCounter > 9}
-								<Feedprompt Index={whichPrompt} />
-								{resetCounter()}
-								{incrementDisplay()}
-							{/if}
-						{/each}
-					</div>
+									<Event
+										name={event.promotedName}
+										gigId={event.id}
+										performers={event.performersListJson}
+										calendarLink={createCalendarLink(event)}
+										venue={event.venue}
+										website={event.ticketUrl}
+										comment={event.furtherInfo}
+										initials={event.furtherInfoContributorInitials}
+										time={event.time}
+										isFree={event.isFree}
+										isPwyc={event.isPwyc}
+									/>
+								</li>
+								{#if !searchTerm}
+									<li>
+										<Feedprompt Index={index++} />
+									</li>
+								{/if}
+							{/each}
+						</ul>
+					</section>
 				{/each}
+				{#if searchTerm != undefined && searchResults === 0}
+					<div class="block border border-black bg-yellow-50 p-2 text-sm italic">
+						Oops! We couldn't find any results for your search. Try using different keywords or
+						check your spelling.
+					</div>
+				{/if}
 			</div>
 		</div>
 
