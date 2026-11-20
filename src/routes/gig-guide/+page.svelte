@@ -174,7 +174,7 @@
 
 				{let index = 0}
 				{#each data.gigs.items as gigDay}
-					<section class="day" data-event-day>
+					<section class="day flow-root" data-event-day>
 						<Heading
 							level={2}
 							variant="md"
