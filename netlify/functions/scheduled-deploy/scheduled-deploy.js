@@ -1,5 +1,4 @@
 import { schedule } from '@netlify/functions';
-import fetch from 'node-fetch';
 
 const REBUILD_URL = process.env.BUILD_TRIGGER_URL;
 
