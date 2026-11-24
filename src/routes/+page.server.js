@@ -1,5 +1,5 @@
 import APId from '#lib/datocms/index.js';
-import { previewMode, groupBy, formatDayOfWeek, formatDateLong } from '#lib/globals.mjs';
+import { groupBy, formatDayOfWeek, formatDateLong } from '#lib/globals.mjs';
 
 const getGigs = async () => {
 	// ToDo: We're doing this in the or server's local timezone.
@@ -24,9 +24,9 @@ const getGigs = async () => {
 
 	const data = await APId(`{
       allEvents(
-        orderBy: [gigStartDate_ASC], 
+        orderBy: [gigStartDate_ASC],
         first: 50,
-        filter: { 
+        filter: {
           gigStartDate: { gte : "${n.toISOString()}", lte: "${d.toISOString()}" }
         }
       ) {

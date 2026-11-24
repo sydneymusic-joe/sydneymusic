@@ -19,22 +19,6 @@ function formatLocaleDateString(date) {
 	});
 }
 
-// These are the keywords used to match user input
-function getEventKeywords(event) {
-	if (!event) return '';
-	return [
-		event.promotedName ?? '',
-		(event.performersListJson ?? []).length ? event.performersListJson.join(' ') : '',
-		event.venue.venueName ?? '',
-		event.venue.suburb ?? '',
-		!!event.isFree ? 'free' : '',
-		!!event.isPwyc ? 'pwyc' : '',
-		formatLocaleDateString(event.date)
-	]
-		.join(' ')
-		.trim();
-}
-
 const getLastUpdated = async () => {
 	const data = await APId(`{
 		allEvents(
@@ -47,7 +31,7 @@ const getLastUpdated = async () => {
 	`);
 
 	if (!data) return null;
-	return data.allEvents[0]._publishedAt;
+	return formatLastUpdated(data.allEvents[0]._publishedAt);
 };
 
 const getGigs = async () => {
@@ -99,7 +83,7 @@ const getGigs = async () => {
 		data = data.concat(p);
 	}
 
-	let gigs = data.map((event) => {
+	const gigs = data.map((event) => {
 		const date = new Date(event.gigStartDate);
 		const localeDateString = formatLocaleDateString(date);
 		const time = date.toLocaleTimeString('en-AU', { timeStyle: 'short' });
@@ -123,13 +107,14 @@ const getGigs = async () => {
 			...event
 		};
 	});
+
 	return { totalCount: gigs.length, items: groupBy(gigs, (g) => g.localeDateString) };
 };
 
 export async function load() {
 	return {
 		gigs: await getGigs(),
-		lastUpdated: formatLastUpdated(await getLastUpdated()),
+		lastUpdated: await getLastUpdated(),
 		mds
 	};
 }
