@@ -20,7 +20,7 @@
 	<div
 		class="flex flex-row items-center justify-center gap-x-5 bg-black py-3 text-center text-white"
 	>
-		<div><img src="/banksia.svg" class="h-14" /></div>
+		<div><img src="/banksia.svg" class="h-14" alt="" /></div>
 		<div>
 			<span class="text-lg font-semibold text-ruby">FY27 Fundraising Appeal </span>
 			<div class="text-sm">
@@ -30,7 +30,7 @@
 				> • Tax deductible
 			</div>
 		</div>
-		<div><img src="/padlock.svg" class="h-14" /></div>
+		<div><img src="/padlock.svg" class="h-14" alt="" /></div>
 	</div>
 
 	<div class="flex justify-center lg:hidden">

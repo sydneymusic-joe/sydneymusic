@@ -62,7 +62,7 @@
 
 <div class="eventcard space-y-2 {name.toLowerCase().indexOf('sydneymusic.net') > -1 ? 'smn' : ''}">
 	<div class="">
-		<h4 class="headliner text-lg leading-6 font-medium">{name}</h4>
+		<h3 class="headliner text-lg leading-6 font-medium">{name}</h3>
 		{#if performers && performers.length}<p class="supports text-sm font-normal">
 				W/ {performers.join(', ')}
 			</p>{/if}
