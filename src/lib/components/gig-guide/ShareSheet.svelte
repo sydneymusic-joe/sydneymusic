@@ -44,6 +44,7 @@
 
 	// get all the selected elements
 	// for each element we extract the event info
+	// TODO: comeback to do this proper without DOM queries
 	function getGigText(gigs) {
 		return Array.from(gigs, (gig) => {
 			const eventcard = gig.nextElementSibling; // The next sibling is the .eventcard
