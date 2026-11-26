@@ -11,9 +11,9 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
-	import FavouritesToggle from '../../lib/components/gig-guide/FavouritesToggle.svelte';
-	import SharePrompt from '../../lib/components/gig-guide/SharePrompt.svelte';
-	import ShareSheet from '../../lib/components/gig-guide/ShareSheet.svelte';
+	import FavouritesToggle from '#lib/components/gig-guide/FavouritesToggle.svelte';
+	import SharePrompt from '#lib/components/gig-guide/SharePrompt.svelte';
+	import ShareSheet from '#lib/components/gig-guide/ShareSheet.svelte';
 	import { twJoin } from 'tailwind-merge';
 
 	let { data } = $props();
@@ -105,39 +105,33 @@
 		return totalVisible;
 	}
 
-	function updateSearchParam(searchTerm) {
-		clearTimeout(debounce);
-		debounce = setTimeout(() => {
-			const url = new URL(window.location.href);
+	function updateSearchParam(key, value) {
+		const url = new URL(window.location.href);
 
-			if (searchTerm) {
-				url.searchParams.set('s', searchTerm);
-			} else {
-				url.searchParams.delete('s');
-			}
-			goto(url, { state: page.state, shallow: true, replace: true });
-		}, 200);
+		if (value) {
+			url.searchParams.set(key, value);
+		} else {
+			url.searchParams.delete(key);
+		}
+		goto(url, { state: page.state, shallow: true, replace: true });
 	}
 
 	function handleSearch(e) {
 		e.preventDefault();
 		searchTerm = e.target.value.trim();
-		filterEvents();
-		updateSearchParam(searchTerm);
+
+		clearTimeout(debounce);
+		debounce = setTimeout(() => {
+			filterEvents();
+			updateSearchParam('s', searchTerm);
+		}, 250);
 	}
 
 	function handleToggleFreeGigs(e) {
 		freeToggle = e.currentTarget.checked;
+
 		filterEvents();
-
-		const url = new URL(window.location.href);
-
-		if (freeToggle) {
-			url.searchParams.set('free', freeToggle);
-		} else {
-			url.searchParams.delete('free');
-		}
-		goto(url, { state: page.state, shallow: true, replace: true });
+		updateSearchParam('free', freeToggle);
 	}
 
 	function handleToggleFavGigs(e) {
@@ -145,15 +139,7 @@
 		favToggle = e.target.checked;
 
 		filterEvents();
-
-		const url = new URL(window.location.href);
-
-		if (favToggle) {
-			url.searchParams.set('favs', favToggle);
-		} else {
-			url.searchParams.delete('favs');
-		}
-		goto(url, { state: page.state, shallow: true, replace: true });
+		updateSearchParam('favs', favToggle);
 	}
 
 	function handleFavClick(e) {
@@ -170,14 +156,18 @@
 	}
 
 	function clearSelectedFavs() {
-		// TODO: reset the favToggle state and filteredEvents
 		favourites.clear();
+		favToggle = false;
+
+		filterEvents();
+		updateSearchParam('favs', favToggle);
 	}
 
-	function showShareSheet() {
-		document.body.classList.add('showsheet');
+	function showShareSheet(e) {
 		showingShareSheet = true;
 	}
+
+	console.log({ showingShareSheet });
 </script>
 
 <SeoSocial title="Gig Guide" />
