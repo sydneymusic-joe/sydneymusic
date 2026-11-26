@@ -192,22 +192,22 @@
 	transform: scaleY(1.9);
 }
 
-body.freegigs .guide-month:not(:has(.freegig)),
-body.selectedonly .guide-month:not(:has(.selected)) {
-	@apply hidden;
-}
-
-body.freegigs .day:not(:has(.freegig)),
-body.selectedonly .day:not(:has(.selected)) {
-	@apply hidden;
-}
-
-body.freegigs .guide-month > h3:not(:has(+ .day .freegig)),
-body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)) {
-	@apply hidden;
-}
-
-body.freegigs .eventcardhost:not(:is(.freegig)),
+/* body.freegigs .guide-month:not(:has(.freegig)), */
+/* body.selectedonly .guide-month:not(:has(.selected)) { */
+/* 	@apply hidden; */
+/* } */
+/**/
+/* body.freegigs .day:not(:has(.freegig)), */
+/* body.selectedonly .day:not(:has(.selected)) { */
+/* 	@apply hidden; */
+/* } */
+/**/
+/* body.freegigs .guide-month > h3:not(:has(+ .day .freegig)), */
+/* body.selectedonly .guide-month > h3:not(:has(+ .day .eventcardhost .sharegig.selected)) { */
+/* 	@apply hidden; */
+/* } */
+/**/
+/* body.freegigs .eventcardhost:not(:is(.freegig)), */
 body.selectedonly .eventcardhost:has(.sharegig:not(:is(.selected))) {
 	@apply hidden;
 }
@@ -652,12 +652,12 @@ body.showsheet #sharesheet {
 	display: flex;
 }
 
-body:not(.gotgigs) #shareprompt,
-body.showsheet #shareprompt {
-	display: none;
-}
+/* body:not(.gotgigs) #shareprompt, */
+/* body.showsheet #shareprompt { */
+/* 	display: none; */
+/* } */
 
-body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::before {
+body.selectedonly .gigcolumn:not(:has(.sharegig.selected))::after {
 	content: "You don't currently have any gigs selected. Select one or more checkboxes next to a gig to build your own list.";
 	@apply block border border-black bg-yellow-50 p-2 text-sm italic;
 }

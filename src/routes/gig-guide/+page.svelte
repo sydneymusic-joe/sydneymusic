@@ -2,6 +2,7 @@
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { SvelteSet } from 'svelte/reactivity';
 	import Button from '#lib/components/button.svelte';
 	import Event from '#lib/components/event.svelte';
 	import Feedprompt from '#lib/components/feedprompt.svelte';
@@ -10,53 +11,90 @@
 	import SeoSocial from '#lib/components/seo-social.svelte';
 	import { createCalendarLink } from '#lib/globals.mjs';
 	import DonationForm from '#lib/components/donation-form.svelte';
+	import FavouritesToggle from '../../lib/components/gig-guide/FavouritesToggle.svelte';
+	import SharePrompt from '../../lib/components/gig-guide/SharePrompt.svelte';
+	import ShareSheet from '../../lib/components/gig-guide/ShareSheet.svelte';
+	import { twJoin } from 'tailwind-merge';
 
 	let { data } = $props();
 	let searchTerm = $state('');
-	let searchResults = $state(0);
-	let debounce;
+	let freeToggle = $state(false);
+	let favToggle = $state(false);
+	let filterResults = $state(0);
+	let showingShareSheet = $state(false);
+	let favourites = new SvelteSet();
 
 	let eventDays = [];
+	let debounce;
+	let gigListElement;
+
+	function getSearchParam(key) {
+		return (page.url.searchParams.get(key) ?? '').trim();
+	}
 
 	onMount(() => {
+		buildDOMGigReferences();
+
+		searchTerm = getSearchParam('s');
+		freeToggle = getSearchParam('free') === 'true' || getSearchParam('pwyc') === 'true';
+		favToggle = getSearchParam('favs') === 'true';
+
+		if (searchTerm) {
+			gigListElement?.scrollIntoView({
+				behavior: 'auto',
+				block: 'start'
+			});
+		}
+
+		const selectedGigs = localStorage.getItem('selectedgigs');
+
+		if (selectedGigs) {
+			selectedGigs.split(',').forEach((id) => favourites.add(id));
+		}
+
+		filterEvents();
+	});
+
+	function buildDOMGigReferences() {
 		const groupNodes = document.querySelectorAll('[data-event-day]');
 
 		eventDays = Array.from(groupNodes, (groupNode) => {
+			// we get the events that have `data-keywords` attribute
 			const eventNodes = groupNode.querySelectorAll('[data-keywords]');
 			return {
 				groupNode,
 				events: Array.from(eventNodes, (el) => ({
 					el,
-					keywords: (el.dataset.keywords ?? '').toLowerCase()
+					id: el.firstChild.dataset.gigid,
+					keywords: (el.dataset.keywords ?? '').toLowerCase(),
+					free: el.dataset.free === 'true',
+					pwyc: el.dataset.pwyc === 'true'
 				}))
 			};
 		});
+	}
 
-		const term = page.url.searchParams.get('q') ?? '';
-		searchTerm = term;
+	// if we have an empty string
+	function filterEvents() {
+		const term = searchTerm.toLowerCase();
 
-		filterEvents(searchTerm);
+		filterResults = setEventVisibility((event) => {
+			return (
+				(!term || event.keywords.includes(term)) &&
+				(!freeToggle || event.free || event.pwyc) &&
+				(!favToggle || favourites.has(event.id))
+			);
+		});
+	}
 
-		if (term.trim()) {
-			tick().then(() => {
-				document.querySelector('.gigcolumn')?.scrollIntoView({
-					behavior: 'auto',
-					block: 'start'
-				});
-			});
-		}
-	});
-
-	function filterEvents(value) {
-		const term = value.trim().toLowerCase();
-
+	function setEventVisibility(fn) {
 		let totalVisible = 0;
 
 		for (const eventDay of eventDays) {
 			let visibleCount = 0;
 
 			for (const event of eventDay.events) {
-				let isMatch = term === '' || event.keywords.includes(term);
+				const isMatch = !!fn(event);
 				event.el.classList.toggle('hidden', !isMatch);
 				if (isMatch) visibleCount++;
 			}
@@ -64,61 +102,106 @@
 			totalVisible += visibleCount;
 		}
 
-		searchResults = totalVisible;
+		return totalVisible;
 	}
 
-	function handleSearch(e) {
-		e?.preventDefault();
-		const value = e?.target.value;
-		searchTerm = value;
-
-		filterEvents(value);
-
+	function updateSearchParam(searchTerm) {
 		clearTimeout(debounce);
 		debounce = setTimeout(() => {
-			const term = value.trim();
 			const url = new URL(window.location.href);
 
-			if (term) {
-				url.searchParams.set('q', value);
+			if (searchTerm) {
+				url.searchParams.set('s', searchTerm);
 			} else {
-				url.searchParams.delete('q');
+				url.searchParams.delete('s');
 			}
 			goto(url, { state: page.state, shallow: true, replace: true });
 		}, 200);
 	}
 
+	function handleSearch(e) {
+		e.preventDefault();
+		searchTerm = e.target.value.trim();
+		filterEvents();
+		updateSearchParam(searchTerm);
+	}
+
 	function handleToggleFreeGigs(e) {
-		e?.preventDefault();
-		document.body.classList.toggle('freegigs', e.target.checked);
+		freeToggle = e.currentTarget.checked;
+		filterEvents();
+
+		const url = new URL(window.location.href);
+
+		if (freeToggle) {
+			url.searchParams.set('free', freeToggle);
+		} else {
+			url.searchParams.delete('free');
+		}
+		goto(url, { state: page.state, shallow: true, replace: true });
+	}
+
+	function handleToggleFavGigs(e) {
+		favToggle = e.target.checked;
+
+		filterEvents();
+
+		const url = new URL(window.location.href);
+
+		if (favToggle) {
+			url.searchParams.set('favs', favToggle);
+		} else {
+			url.searchParams.delete('favs');
+		}
+		goto(url, { state: page.state, shallow: true, replace: true });
+	}
+
+	function handleFavClick(e) {
+		e.target.classList.toggle('selected');
+
+		let gigId = e.currentTarget.dataset.gigid;
+		if (favourites.has(gigId)) {
+			favourites.delete(gigId);
+		} else {
+			favourites.add(gigId);
+		}
+
+		localStorage.setItem('selectedgigs', [...favourites.values()]);
+	}
+
+	function clearSelectedFavs() {
+		favourites.clear();
+	}
+
+	function showShareSheet() {
+		document.body.classList.add('showsheet');
+		showingShareSheet = true;
 	}
 </script>
 
 <SeoSocial title="Gig Guide" />
 
-<main class="min-h-screen w-full">
+<main class="min-h-screen w-screen">
 	<!--<div class="flex flex-col justify-end items-start"> <Paragraph variant="sm" class="italic mb-0">Proudly serving Sydney since 2022</Paragraph>
 				<Paragraph variant="xs">
 					Last updated: <span class="">{data.lastUpdated}</span><br />
 					<a href="/gig-guide/latest/" class="font-bold text-ruby underline">View latest updates</a> &raquo;<br />
 					<a href="mailto:gigs@sydneymusic.net" class="text-ruby underline">Send us gig tips</a>
 				</Paragraph>
-			
+
 		</div>-->
 
 	<div
 		class="relative h-48 py-5 md:h-72 md:py-8"
-		style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%"
-	>
+		style="background-image : url(/teebg.jpg); background-size : cover; background-position : center 35%">
 		<div class="flex h-full flex-col items-center justify-items-end">
 			<Button
 				href="https://store.sydneymusic.net"
 				class="text-md bg-white"
 				variant="outline"
-				label="T-shirts shipping now!"
-			></Button>
+				label="T-shirts shipping now!"></Button>
 		</div>
 	</div>
+
 	<div class="mx-auto flex max-w-5xl flex-col overflow-x-clip px-5 pt-5 md:flex-row md:pt-10">
 		<div class="contents space-y-5 md:flex md:flex-col">
 			<!-- header -->
@@ -128,8 +211,7 @@
 						level={1}
 						variant="md"
 						class="stretch mt-5 mb-10 text-center font-normal uppercase sm:max-w-lg md:mt-0"
-						style="line-height : 1;"
-					>
+						style="line-height : 1;">
 						Welcome to Sydney’s most comprehensive gig guide
 					</Heading>
 				</div>
@@ -143,7 +225,7 @@
 				</div>
 			</div>
 			<!-- gig guide -->
-			<div class="gigcolumn md:pr-10">
+			<div bind:this={gigListElement} class="md:pr-10">
 				<form role="search" class="my-4 flex flex-col" onsubmit={(e) => e.preventDefault()}>
 					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
 					<input
@@ -152,8 +234,7 @@
 						value={searchTerm}
 						oninput={handleSearch}
 						placeholder="Search gigs..."
-						class="w-full rounded border p-2"
-					/>
+						class="w-full rounded border p-2" />
 				</form>
 				<header class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</header>
 				<div class="filterbox mb-5 w-full">
@@ -162,14 +243,11 @@
 							type="checkbox"
 							id="toggle-freegigs"
 							class="sr-only"
-							onchange={handleToggleFreeGigs}
-						/>
+							checked={freeToggle}
+							onchange={handleToggleFreeGigs} />
 						Free / pay-what-you-can
 					</label>
-					<label for="toggle-selected" class="relative flex cursor-pointer items-center">
-						<input type="checkbox" id="toggle-selected" class="sr-only" />
-						My favourites
-					</label>
+					<FavouritesToggle value={favToggle} onchange={handleToggleFavGigs} />
 				</div>
 
 				{let index = 0}
@@ -178,8 +256,7 @@
 						<Heading
 							level={2}
 							variant="md"
-							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase"
-						>
+							class="sticky-header stretch mt-8 mb-8 border-b border-black font-normal uppercase">
 							<span class="text-ruby">
 								{gigDay.label.split(' ')[0]}
 							</span>
@@ -190,22 +267,31 @@
 							{#each gigDay.items as event}
 								<li
 									data-keywords={event.keywords}
-									class="eventcardhost flex flex-row-reverse gap-2 {event.isFree || event.isPwyc
-										? 'freegig'
-										: ''}
-									{event.isPwyc ? 'pwycgig' : ''}"
-								>
-									<div
+									data-free={event.isFree || event.isPwyc}
+									data-pwyc={event.isPwyc}
+									data-fav={favourites.has(event.id)}
+									class={twJoin(
+										'eventcardhost flex flex-row-reverse gap-2',
+										(event.isFree || event.isPwyc) && 'freegig',
+										event.isPwyc && 'pwycgig'
+									)}>
+									<button
+										type="button"
+										class={twJoin(
+											'sharegig mb-auto w-5 cursor-pointer',
+											favourites.has(event.id) && 'selected'
+										)}
 										data-gigid={event.id}
 										data-gigStartDate={event.date}
-										class="sharegig mt-[3px] w-5 flex-none cursor-pointer"
-									>
+										onclick={handleFavClick}>
 										<img
-											class="w-6"
-											alt="Add to your selections"
-											src="/shareability-unselected.svg"
-										/>
-									</div>
+											width={24}
+											height={24}
+											class="size-6"
+											alt=""
+											src="/shareability-unselected.svg" />
+										<span class="sr-only">Add to your selections</span>
+									</button>
 									<Event
 										name={event.promotedName}
 										gigId={event.id}
@@ -217,10 +303,9 @@
 										initials={event.furtherInfoContributorInitials}
 										time={event.time}
 										isFree={event.isFree}
-										isPwyc={event.isPwyc}
-									/>
+										isPwyc={event.isPwyc} />
 								</li>
-								{#if !searchTerm}
+								{#if !filterResults}
 									<li>
 										<Feedprompt Index={index++} />
 									</li>
@@ -229,7 +314,7 @@
 						</ul>
 					</section>
 				{/each}
-				{#if searchTerm != undefined && searchResults === 0}
+				{#if searchTerm && filterResults === 0}
 					<div class="block border border-black bg-yellow-50 p-2 text-sm italic">
 						Oops! We couldn't find any results for your search. Try using different keywords or
 						check your spelling.
@@ -254,8 +339,7 @@
 					</p>
 					<p>
 						Got a gig you think should be listed here? <a href="mailto:gigs@sydneymusic.net"
-							>Send our friendly team of Gig Researchers an email!</a
-						>
+							>Send our friendly team of Gig Researchers an email!</a>
 					</p>
 				</div>
 				<div class="space-y-3">
@@ -286,8 +370,7 @@
 					<p>
 						For more about how affiliate links work, or any other questions, feedback, and ideas
 						about how to keep SydneyMusic sustainable, send us a message via <a
-							href="mailto:contact@sydneymusic.net">e-mail</a
-						>
+							href="mailto:contact@sydneymusic.net">e-mail</a>
 						or
 						<a href="https://instagram.com/sydneymusicdotnet">@sydneymusicdotnet on Instagram</a>,
 						or <a href="https://discord.gg/hpe2EVZZ">join our Discord</a>.
@@ -300,37 +383,13 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="shareprompt" class="hidden">
-		<button class="share plausible-event-name=Share+Prompt+Click"
-			>Share my selections<span></span></button
-		>
-		<button class="clear plausible-event-name=Share+Clear+All">Clear all</button>
-	</div>
-
-	<div id="sharesheet" class="space-y-3">
-		<div class="title text-lg font-bold">You've selected <span></span> to share!</div>
-		<div class="hint text-sm italic">Here's a preview of your list:</div>
-
-		<div
-			id="share-preview"
-			class="m-y-5 max-h-[200px] max-w-[360px] bg-white p-2 text-xs break-all text-black"
-			style="border : 1px dashed"
-		>
-			Preview text here
-		</div>
-
-		<div class="text-xs">
-			<div class="flex items-center gap-x-1">
-				<input type="checkbox" id="share-links" checked />
-				<label for="share-links">Include links</label>
-			</div>
-		</div>
-
-		<div class="buttonpanel flex">
-			<button id="shareability-copy" class="plausible-event-name=Share+Sheet+Copy">Copy</button>
-			<button id="shareability-share" class="plausible-event-name=Share+Sheet+Share">Share</button>
-			<button id="shareability-close" class="plausible-event-name=Share+Sheet+Close">Close</button>
-		</div>
-	</div>
+	{#if favourites.size > 0}
+		<SharePrompt
+			selectedCount={favourites.size}
+			onShare={showShareSheet}
+			onClear={clearSelectedFavs} />
+	{/if}
+	{#if showingShareSheet}
+		<ShareSheet selectedCount={favourites.size} />
+	{/if}
 </main>
