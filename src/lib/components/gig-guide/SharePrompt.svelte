@@ -11,6 +11,7 @@
 </div>
 
 <style>
+	/* TODO: clean up css properties to prefer tailwind classes */
 	@reference "tailwindcss";
 	div {
 		@apply flex flex-row justify-center gap-x-2 p-5;

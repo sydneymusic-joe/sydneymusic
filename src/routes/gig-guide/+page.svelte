@@ -141,6 +141,7 @@
 	}
 
 	function handleToggleFavGigs(e) {
+		// TODO need to close the sharesheet if it is visible
 		favToggle = e.target.checked;
 
 		filterEvents();
@@ -169,6 +170,7 @@
 	}
 
 	function clearSelectedFavs() {
+		// TODO: reset the favToggle state and filteredEvents
 		favourites.clear();
 	}
 
