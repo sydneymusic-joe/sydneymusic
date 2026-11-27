@@ -167,7 +167,17 @@
 		showingShareSheet = true;
 	}
 
-	console.log({ showingShareSheet });
+	function clearSearch(e) {
+		searchTerm = '';
+		filterEvents();
+		updateSearchParam('s', searchTerm);
+	}
+
+	function handleSearchKeydown(e) {
+		if (e.key === 'Enter') {
+			e.blur();
+		}
+	}
 </script>
 
 <SeoSocial title="Gig Guide" />
@@ -218,28 +228,40 @@
 			</div>
 			<!-- gig guide -->
 			<div bind:this={gigListElement} class="md:pr-10">
-				<form role="search" class="my-4 flex flex-col" onsubmit={(e) => e.preventDefault()}>
+				<div class="my-4 flex flex-col">
 					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Search:</header>
-					<input
-						id="search-input"
-						type="search"
-						value={searchTerm}
-						oninput={handleSearch}
-						placeholder="Search gigs..."
-						class="w-full rounded border p-2" />
-				</form>
-				<header class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</header>
-				<div class="filterbox mb-5 w-full">
-					<label for="toggle-freegigs" class="relative flex cursor-pointer items-center">
+					<search class="relative mb-8 flex w-full basis-1/2 items-center">
 						<input
-							type="checkbox"
-							id="toggle-freegigs"
-							class="sr-only"
-							checked={freeToggle}
-							onchange={handleToggleFreeGigs} />
-						Free / pay-what-you-can
-					</label>
-					<FavouritesToggle value={favToggle} onchange={handleToggleFavGigs} />
+							id="search-input"
+							type="search"
+							value={searchTerm}
+							oninput={handleSearch}
+							onkeydown={handleSearchKeydown}
+							placeholder="Search gigs..."
+							class="w-full rounded border-2 p-2.5 shadow-[5px_5px] shadow-gray-500" />
+						<button
+							type="button"
+							onclick={clearSearch}
+							class={twJoin(
+								'absolute right-2 size-8 cursor-pointer text-ruby',
+								!searchTerm && 'hidden'
+							)}>
+							✖<span class="sr-only">clear search field</span>
+						</button>
+					</search>
+					<header class="mb-2 text-sm font-semibold text-ruby uppercase">Filter:</header>
+					<div class="filterbox mb-5 w-full">
+						<label for="toggle-freegigs" class="relative flex cursor-pointer items-center">
+							<input
+								type="checkbox"
+								id="toggle-freegigs"
+								class="sr-only"
+								checked={freeToggle}
+								onchange={handleToggleFreeGigs} />
+							Free / pay-what-you-can
+						</label>
+						<FavouritesToggle value={favToggle} onchange={handleToggleFavGigs} />
+					</div>
 				</div>
 
 				{let index = 0}
@@ -385,3 +407,26 @@
 		<ShareSheet selectedCount={favourites.size} />
 	{/if}
 </main>
+
+<style>
+	/* removes clear button from searchbar */
+	input[type='search']::-ms-clear {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+
+	input[type='search']::-ms-reveal {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+
+	/* clears the 'X' in searchbar from Chrome */
+	input[type='search']::-webkit-search-decoration,
+	input[type='search']::-webkit-search-cancel-button,
+	input[type='search']::-webkit-search-results-button,
+	input[type='search']::-webkit-search-results-decoration {
+		display: none;
+	}
+</style>
