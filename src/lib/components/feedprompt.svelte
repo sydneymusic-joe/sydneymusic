@@ -8,7 +8,8 @@
 	 */
 
 	/** @type {Props} */
-	let { Index = $bindable(0) } = $props();
+	let { Index } = $props();
+
 	let prompts = [
 		{
 			type: 'donorprompt'
@@ -131,29 +132,33 @@
 				'Are we missing your favourite venue? <a href="mailto:contact@sydneymusic.net">Let us know</a>!'
 		}
 	];
-	Index = Index % prompts.length;
+
+	const promptIndex = $derived(Index % prompts.length);
 </script>
 
-{#if prompts[Index].type === 'component'}
-	{@html prompts[Index].content}
-{:else if prompts[Index].type === 'email'}
-	<div class="mt-5 mb-10">
-		<EmailSignup />
-	</div>
-{:else if prompts[Index].type === 'donorbox'}
-	<div class="mt-5 mb-10">
-		<DonationForm align="center" class="mt-20" />
-	</div>
-{:else if prompts[Index].type === 'donorprompt'}
-	<div>
-		<DonationPrompt />
-	</div>
-{:else if prompts[Index].type === 'text'}
-	<div class="guide-divider">
-		<div></div>
-		<span>
-			{@html prompts[Index].content}
-		</span>
-		<div></div>
-	</div>
+<!-- Every 10 -->
+{#if (Index + 1) % 10 === 0}
+	{#if prompts[promptIndex].type === 'component'}
+		{@html prompts[promptIndex].content}
+	{:else if prompts[promptIndex].type === 'email'}
+		<div class="mt-5 mb-10">
+			<EmailSignup />
+		</div>
+	{:else if prompts[promptIndex].type === 'donorbox'}
+		<div class="mt-5 mb-10">
+			<DonationForm align="center" class="mt-20" />
+		</div>
+	{:else if prompts[promptIndex].type === 'donorprompt'}
+		<div>
+			<DonationPrompt />
+		</div>
+	{:else if prompts[promptIndex].type === 'text'}
+		<div class="guide-divider">
+			<div></div>
+			<span>
+				{@html prompts[promptIndex].content}
+			</span>
+			<div></div>
+		</div>
+	{/if}
 {/if}
