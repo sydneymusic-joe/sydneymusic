@@ -175,7 +175,7 @@
 
 	function handleSearchKeydown(e) {
 		if (e.key === 'Enter') {
-			e.blur();
+			e.target.blur();
 		}
 	}
 </script>
@@ -339,7 +339,7 @@
 
 		<!-- First section -->
 		<div class="contents md:flex md:flex-col">
-			<div class="mb-5 w-[350px] place-self-center md:mb-0"></div>
+			<div class="mb-5 w-87.5 place-self-center md:mb-0"></div>
 			<!-- right col -->
 			<div class="mt-20 space-y-5">
 				<Playlist showtitle="true" />
